@@ -1,0 +1,3 @@
+.target:
+  btrq $0x59, %rbx
+  retq

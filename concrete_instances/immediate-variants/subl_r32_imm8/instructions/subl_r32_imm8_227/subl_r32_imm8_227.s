@@ -1,0 +1,3 @@
+.target:
+  subl $0xe3, %ebx
+  retq

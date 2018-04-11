@@ -1,0 +1,3 @@
+.target:
+  shrl $0x1a, %ebx
+  retq

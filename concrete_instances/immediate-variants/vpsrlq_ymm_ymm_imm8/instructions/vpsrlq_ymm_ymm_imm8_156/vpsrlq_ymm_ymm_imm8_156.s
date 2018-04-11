@@ -1,0 +1,3 @@
+.target:
+  vpsrlq $0x9c, %ymm2, %ymm1
+  retq

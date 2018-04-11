@@ -1,0 +1,3 @@
+.target:
+  andl $0x24, %ebx
+  retq

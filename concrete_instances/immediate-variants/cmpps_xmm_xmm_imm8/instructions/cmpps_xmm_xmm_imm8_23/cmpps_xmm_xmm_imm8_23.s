@@ -1,0 +1,3 @@
+.target:
+  cmpps $0x17, %xmm2, %xmm1
+  retq

@@ -1,0 +1,3 @@
+.target:
+  vroundps $0xdf, %xmm2, %xmm1
+  retq

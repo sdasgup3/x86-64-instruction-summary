@@ -1,0 +1,3 @@
+.target:
+  pinsrb $0x6c, %ebx, %xmm1
+  retq

@@ -1,0 +1,3 @@
+.target:
+  psrad $0x76, %xmm1
+  retq

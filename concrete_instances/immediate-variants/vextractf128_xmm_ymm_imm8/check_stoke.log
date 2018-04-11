@@ -1,0 +1,63 @@
+[4m[1m[34mFiring Last 5[0m
+Thread 3 start: vextractf128_xmm_ymm_imm8_147
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vextractf128_xmm_ymm_imm8/instructions/vextractf128_xmm_ymm_imm8_147/vextractf128_xmm_ymm_imm8_147.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ymm1 }" --live_out "{ %ymm1 }" 
+Thread 4 start: vextractf128_xmm_ymm_imm8_221
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vextractf128_xmm_ymm_imm8/instructions/vextractf128_xmm_ymm_imm8_221/vextractf128_xmm_ymm_imm8_221.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ymm1 }" --live_out "{ %ymm1 }" 
+Thread 2 start: vextractf128_xmm_ymm_imm8_75
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vextractf128_xmm_ymm_imm8/instructions/vextractf128_xmm_ymm_imm8_75/vextractf128_xmm_ymm_imm8_75.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ymm1 }" --live_out "{ %ymm1 }" 
+Thread 1 start: vextractf128_xmm_ymm_imm8_2
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vextractf128_xmm_ymm_imm8/instructions/vextractf128_xmm_ymm_imm8_2/vextractf128_xmm_ymm_imm8_2.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ymm1 }" --live_out "{ %ymm1 }" 
+Thread 5 terminated abnormally: Can't open imm_instructions/vextractf128_xmm_ymm_imm8/instructions/vextractf128_xmm_ymm_imm8_248/vextractf128_xmm_ymm_imm8_248.meta.json: No such file or directory at /home/sdasgup3/x86-semantics/scripts/process_spec.pl line 546, <$fp> line 5.
+Thread 5 start: vextractf128_xmm_ymm_imm8_248
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Thread 1 done!: vextractf128_xmm_ymm_imm8_2
+Thread 2 done!: vextractf128_xmm_ymm_imm8_75
+Completed 6000cases
+Thread 3 done!: vextractf128_xmm_ymm_imm8_147
+Thread 4 done!: vextractf128_xmm_ymm_imm8_221

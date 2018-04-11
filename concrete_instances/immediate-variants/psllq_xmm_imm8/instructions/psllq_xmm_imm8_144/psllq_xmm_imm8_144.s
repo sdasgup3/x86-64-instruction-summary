@@ -1,0 +1,3 @@
+.target:
+  psllq $0x90, %xmm1
+  retq

@@ -1,0 +1,672 @@
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_0 
+strata does not support 'vcmpps $0x0, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_1 
+strata does not support 'vcmpps $0x1, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_2 
+strata does not support 'vcmpps $0x2, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_3 
+strata does not support 'vcmpps $0x3, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_4 
+strata does not support 'vcmpps $0x4, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_5 
+strata does not support 'vcmpps $0x5, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_6 
+strata does not support 'vcmpps $0x6, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_7 
+strata does not support 'vcmpps $0x7, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_8 
+strata does not support 'vcmpps $0x8, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_9 
+strata does not support 'vcmpps $0x9, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_10 
+strata does not support 'vcmpps $0xa, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_11 
+Circuit for 'vcmpps $0xb, %xmm3, %xmm2, %xmm1' (opcode vcmpps_xmm_xmm_xmm_imm8_11)
+  not equivalent for '%ymm1':
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ ((cmp_single_pred(%ymm2[127:96], %ymm3[127:96], 0xb₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[95:64], %ymm3[95:64], 0xb₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[63:32], %ymm3[63:32], 0xb₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0xb₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))))
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_12 
+strata does not support 'vcmpps $0xc, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_13 
+strata does not support 'vcmpps $0xd, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_14 
+strata does not support 'vcmpps $0xe, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_15 
+Circuit for 'vcmpps $0xf, %xmm3, %xmm2, %xmm1' (opcode vcmpps_xmm_xmm_xmm_imm8_15)
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ ((0x0₆₄ ⊕ (0x0₆₄ | sign-extend-64(div_single(0x0₃₂, 0x0₃₂))[47:32] ∘ sign-extend-64(div_single(0x0₃₂, 0x0₃₂))[47:32] ∘ (sign-extend-64(div_single(0x0₃₂, 0x0₃₂))[47:32] ∘ sign-extend-64(div_single(0x0₃₂, 0x0₃₂))[47:32]))) ∘ (0x0₆₄ ⊕ (0x0₆₄ | sign-extend-64(div_single(0x0₃₂, 0x0₃₂))[47:32] ∘ sign-extend-64(div_single(0x0₃₂, 0x0₃₂))[47:32] ∘ (sign-extend-64(div_single(0x0₃₂, 0x0₃₂))[47:32] ∘ sign-extend-64(div_single(0x0₃₂, 0x0₃₂))[47:32]))))
+    hand-written:  0x0₁₂₈ ∘ ((cmp_single_pred(%ymm2[127:96], %ymm3[127:96], 0xf₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[95:64], %ymm3[95:64], 0xf₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[63:32], %ymm3[63:32], 0xf₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0xf₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))))
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_16 
+strata does not support 'vcmpps $0x10, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_17 
+strata does not support 'vcmpps $0x11, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_18 
+strata does not support 'vcmpps $0x12, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_19 
+strata does not support 'vcmpps $0x13, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_20 
+strata does not support 'vcmpps $0x14, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_21 
+strata does not support 'vcmpps $0x15, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_22 
+strata does not support 'vcmpps $0x16, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_23 
+strata does not support 'vcmpps $0x17, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_24 
+strata does not support 'vcmpps $0x18, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_25 
+strata does not support 'vcmpps $0x19, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_26 
+strata does not support 'vcmpps $0x1a, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_27 
+Circuit for 'vcmpps $0x1b, %xmm3, %xmm2, %xmm1' (opcode vcmpps_xmm_xmm_xmm_imm8_27)
+  not equivalent for '%ymm1':
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ ((cmp_single_pred(%ymm2[127:96], %ymm3[127:96], 0x1b₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[95:64], %ymm3[95:64], 0x1b₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[63:32], %ymm3[63:32], 0x1b₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0x1b₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))))
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_28 
+strata does not support 'vcmpps $0x1c, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_29 
+strata does not support 'vcmpps $0x1d, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_30 
+strata does not support 'vcmpps $0x1e, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_31 
+Circuit for 'vcmpps $0x1f, %xmm3, %xmm2, %xmm1' (opcode vcmpps_xmm_xmm_xmm_imm8_31)
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ (sign-extend-64((0x0₁ ∘ 0xffffff80ffffff80₆₄ + 0x0₁ ∘ 0xffffff80000000ff₆₄)[31:0] ⊕ 0xffffff80₃₂) ∘ sign-extend-64((0x0₁ ∘ 0xffffff80ffffff80₆₄ + 0x0₁ ∘ 0xffffff80000000ff₆₄)[31:0] ⊕ 0xffffff80₃₂))
+    hand-written:  0x0₁₂₈ ∘ ((cmp_single_pred(%ymm2[127:96], %ymm3[127:96], 0x1f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[95:64], %ymm3[95:64], 0x1f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[63:32], %ymm3[63:32], 0x1f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0x1f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))))
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_32 
+strata does not support 'vcmpps $0x20, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_33 
+strata does not support 'vcmpps $0x21, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_34 
+strata does not support 'vcmpps $0x22, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_35 
+strata does not support 'vcmpps $0x23, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_36 
+strata does not support 'vcmpps $0x24, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_37 
+strata does not support 'vcmpps $0x25, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_38 
+strata does not support 'vcmpps $0x26, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_39 
+strata does not support 'vcmpps $0x27, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_40 
+strata does not support 'vcmpps $0x28, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_41 
+strata does not support 'vcmpps $0x29, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_42 
+strata does not support 'vcmpps $0x2a, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_43 
+Circuit for 'vcmpps $0x2b, %xmm3, %xmm2, %xmm1' (opcode vcmpps_xmm_xmm_xmm_imm8_43)
+  not equivalent for '%ymm1':
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ ((cmp_single_pred(%ymm2[127:96], %ymm3[127:96], 0x2b₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[95:64], %ymm3[95:64], 0x2b₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[63:32], %ymm3[63:32], 0x2b₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0x2b₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))))
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_44 
+strata does not support 'vcmpps $0x2c, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_45 
+strata does not support 'vcmpps $0x2d, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_46 
+strata does not support 'vcmpps $0x2e, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_47 
+Circuit for 'vcmpps $0x2f, %xmm3, %xmm2, %xmm1' (opcode vcmpps_xmm_xmm_xmm_imm8_47)
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ ((0x0₁ ∘ (0x0₁₆ ∘ sign-extend-64(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂))[63:48] ∘ (0x0₁₆ ∘ sign-extend-64(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂))[47:32]) ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (0x0₁₆ ∘ (0x0₁ ∘ (sign-extend-64(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂))[63:32] ∘ sign-extend-64(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂))[63:32]) + 0x0₁ ∘ (sign-extend-64(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂))[63:32] ∘ sign-extend-64(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂))[63:32]))[31:16] ∘ (0x0₁₆ ∘ (0x0₁ ∘ (sign-extend-64(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂))[63:32] ∘ sign-extend-64(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂))[63:32]) + 0x0₁ ∘ (sign-extend-64(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂))[63:32] ∘ sign-extend-64(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂))[63:32]))[15:0])))[63:0] ∘ (0x0₁ ∘ (0x0₁₆ ∘ sign-extend-64(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂))[63:48] ∘ (0x0₁₆ ∘ sign-extend-64(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂))[47:32]) ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (0x0₁₆ ∘ (0x0₁ ∘ (sign-extend-64(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂))[63:32] ∘ sign-extend-64(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂))[63:32]) + 0x0₁ ∘ (sign-extend-64(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂))[63:32] ∘ sign-extend-64(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂))[63:32]))[31:16] ∘ (0x0₁₆ ∘ (0x0₁ ∘ (sign-extend-64(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂))[63:32] ∘ sign-extend-64(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂))[63:32]) + 0x0₁ ∘ (sign-extend-64(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂))[63:32] ∘ sign-extend-64(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂))[63:32]))[15:0])))[63:0])
+    hand-written:  0x0₁₂₈ ∘ ((cmp_single_pred(%ymm2[127:96], %ymm3[127:96], 0x2f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[95:64], %ymm3[95:64], 0x2f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[63:32], %ymm3[63:32], 0x2f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0x2f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))))
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_48 
+strata does not support 'vcmpps $0x30, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_49 
+strata does not support 'vcmpps $0x31, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_50 
+strata does not support 'vcmpps $0x32, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_51 
+strata does not support 'vcmpps $0x33, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_52 
+strata does not support 'vcmpps $0x34, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_53 
+strata does not support 'vcmpps $0x35, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_54 
+strata does not support 'vcmpps $0x36, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_55 
+strata does not support 'vcmpps $0x37, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_56 
+strata does not support 'vcmpps $0x38, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_57 
+strata does not support 'vcmpps $0x39, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_58 
+strata does not support 'vcmpps $0x3a, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_59 
+Circuit for 'vcmpps $0x3b, %xmm3, %xmm2, %xmm1' (opcode vcmpps_xmm_xmm_xmm_imm8_59)
+  not equivalent for '%ymm1':
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ ((cmp_single_pred(%ymm2[127:96], %ymm3[127:96], 0x3b₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[95:64], %ymm3[95:64], 0x3b₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[63:32], %ymm3[63:32], 0x3b₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0x3b₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))))
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_60 
+strata does not support 'vcmpps $0x3c, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_61 
+strata does not support 'vcmpps $0x3d, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_62 
+strata does not support 'vcmpps $0x3e, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_63 
+Circuit for 'vcmpps $0x3f, %xmm3, %xmm2, %xmm1' (opcode vcmpps_xmm_xmm_xmm_imm8_63)
+  not equivalent for '%ymm1':
+    strata:        0x0₄₀ ∘ 0x0₈₈ ∘ ((0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ 0x0₆₄)[63:16] ∘ (0x0₁₆ | (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ 0x0₆₄)[15:0]) ∘ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ 0x0₆₄)[63:0])
+    hand-written:  0x0₁₂₈ ∘ ((cmp_single_pred(%ymm2[127:96], %ymm3[127:96], 0x3f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[95:64], %ymm3[95:64], 0x3f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[63:32], %ymm3[63:32], 0x3f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0x3f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))))
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_64 
+strata does not support 'vcmpps $0x40, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_65 
+strata does not support 'vcmpps $0x41, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_66 
+strata does not support 'vcmpps $0x42, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_67 
+strata does not support 'vcmpps $0x43, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_68 
+strata does not support 'vcmpps $0x44, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_69 
+strata does not support 'vcmpps $0x45, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_70 
+strata does not support 'vcmpps $0x46, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_71 
+strata does not support 'vcmpps $0x47, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_72 
+strata does not support 'vcmpps $0x48, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_73 
+strata does not support 'vcmpps $0x49, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_74 
+strata does not support 'vcmpps $0x4a, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_75 
+Circuit for 'vcmpps $0x4b, %xmm3, %xmm2, %xmm1' (opcode vcmpps_xmm_xmm_xmm_imm8_75)
+  not equivalent for '%ymm1':
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ ((cmp_single_pred(%ymm2[127:96], %ymm3[127:96], 0x4b₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[95:64], %ymm3[95:64], 0x4b₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[63:32], %ymm3[63:32], 0x4b₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0x4b₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))))
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_76 
+strata does not support 'vcmpps $0x4c, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_77 
+strata does not support 'vcmpps $0x4d, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_78 
+strata does not support 'vcmpps $0x4e, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_79 
+Circuit for 'vcmpps $0x4f, %xmm3, %xmm2, %xmm1' (opcode vcmpps_xmm_xmm_xmm_imm8_79)
+  not equivalent for '%ymm1':
+    strata:        0x0₃₂ ∘ (0x0₃₂ ∘ (0x0₃₂ ∘ (0x0₃₂ ∘ (sign-extend-64((0x0₁ ∘ (0x0₁₆ ∘ div_single(0x0₃₂, 0x0₃₂)[31:16] ∘ (0x0₁₆ ∘ div_single(0x0₃₂, 0x0₃₂)[15:0]) ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (0x0₁₆ ∘ (0x0₁ ∘ (div_single(0x0₃₂, 0x0₃₂) ∘ div_single(0x0₃₂, 0x0₃₂)) + 0x0₁ ∘ (div_single(0x0₃₂, 0x0₃₂) ∘ div_single(0x0₃₂, 0x0₃₂)))[31:16] ∘ (0x0₁₆ ∘ (0x0₁ ∘ (div_single(0x0₃₂, 0x0₃₂) ∘ div_single(0x0₃₂, 0x0₃₂)) + 0x0₁ ∘ (div_single(0x0₃₂, 0x0₃₂) ∘ div_single(0x0₃₂, 0x0₃₂)))[15:0])))[63:32])[63:32] ∘ (sign-extend-64((0x0₁ ∘ (0x0₁₆ ∘ div_single(0x0₃₂, 0x0₃₂)[31:16] ∘ (0x0₁₆ ∘ div_single(0x0₃₂, 0x0₃₂)[15:0]) ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (0x0₁₆ ∘ (0x0₁ ∘ (div_single(0x0₃₂, 0x0₃₂) ∘ div_single(0x0₃₂, 0x0₃₂)) + 0x0₁ ∘ (div_single(0x0₃₂, 0x0₃₂) ∘ div_single(0x0₃₂, 0x0₃₂)))[31:16] ∘ (0x0₁₆ ∘ (0x0₁ ∘ (div_single(0x0₃₂, 0x0₃₂) ∘ div_single(0x0₃₂, 0x0₃₂)) + 0x0₁ ∘ (div_single(0x0₃₂, 0x0₃₂) ∘ div_single(0x0₃₂, 0x0₃₂)))[15:0])))[63:32])[63:32] ∘ (sign-extend-64((0x0₁ ∘ (0x0₁₆ ∘ div_single(0x0₃₂, 0x0₃₂)[31:16] ∘ (0x0₁₆ ∘ div_single(0x0₃₂, 0x0₃₂)[15:0]) ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (0x0₁₆ ∘ (0x0₁ ∘ (div_single(0x0₃₂, 0x0₃₂) ∘ div_single(0x0₃₂, 0x0₃₂)) + 0x0₁ ∘ (div_single(0x0₃₂, 0x0₃₂) ∘ div_single(0x0₃₂, 0x0₃₂)))[31:16] ∘ (0x0₁₆ ∘ (0x0₁ ∘ (div_single(0x0₃₂, 0x0₃₂) ∘ div_single(0x0₃₂, 0x0₃₂)) + 0x0₁ ∘ (div_single(0x0₃₂, 0x0₃₂) ∘ div_single(0x0₃₂, 0x0₃₂)))[15:0])))[63:32])[63:32] ∘ sign-extend-64((0x0₁ ∘ (0x0₁₆ ∘ div_single(0x0₃₂, 0x0₃₂)[31:16] ∘ (0x0₁₆ ∘ div_single(0x0₃₂, 0x0₃₂)[15:0]) ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (0x0₁₆ ∘ (0x0₁ ∘ (div_single(0x0₃₂, 0x0₃₂) ∘ div_single(0x0₃₂, 0x0₃₂)) + 0x0₁ ∘ (div_single(0x0₃₂, 0x0₃₂) ∘ div_single(0x0₃₂, 0x0₃₂)))[31:16] ∘ (0x0₁₆ ∘ (0x0₁ ∘ (div_single(0x0₃₂, 0x0₃₂) ∘ div_single(0x0₃₂, 0x0₃₂)) + 0x0₁ ∘ (div_single(0x0₃₂, 0x0₃₂) ∘ div_single(0x0₃₂, 0x0₃₂)))[15:0])))[63:32])[63:32]))))))
+    hand-written:  0x0₁₂₈ ∘ ((cmp_single_pred(%ymm2[127:96], %ymm3[127:96], 0x4f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[95:64], %ymm3[95:64], 0x4f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[63:32], %ymm3[63:32], 0x4f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0x4f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))))
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_80 
+strata does not support 'vcmpps $0x50, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_81 
+strata does not support 'vcmpps $0x51, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_82 
+strata does not support 'vcmpps $0x52, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_83 
+strata does not support 'vcmpps $0x53, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_84 
+strata does not support 'vcmpps $0x54, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_85 
+strata does not support 'vcmpps $0x55, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_86 
+strata does not support 'vcmpps $0x56, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_87 
+strata does not support 'vcmpps $0x57, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_88 
+strata does not support 'vcmpps $0x58, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_89 
+strata does not support 'vcmpps $0x59, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_90 
+strata does not support 'vcmpps $0x5a, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_91 
+Circuit for 'vcmpps $0x5b, %xmm3, %xmm2, %xmm1' (opcode vcmpps_xmm_xmm_xmm_imm8_91)
+  not equivalent for '%ymm1':
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ ((cmp_single_pred(%ymm2[127:96], %ymm3[127:96], 0x5b₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[95:64], %ymm3[95:64], 0x5b₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[63:32], %ymm3[63:32], 0x5b₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0x5b₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))))
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_92 
+strata does not support 'vcmpps $0x5c, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_93 
+strata does not support 'vcmpps $0x5d, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_94 
+strata does not support 'vcmpps $0x5e, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_95 
+Circuit for 'vcmpps $0x5f, %xmm3, %xmm2, %xmm1' (opcode vcmpps_xmm_xmm_xmm_imm8_95)
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ (0xffffffffffffffff₆₄ ∘ 0xffffffff₃₂ ∘ 0xffffffff₃₂)
+    hand-written:  0x0₁₂₈ ∘ ((cmp_single_pred(%ymm2[127:96], %ymm3[127:96], 0x5f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[95:64], %ymm3[95:64], 0x5f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[63:32], %ymm3[63:32], 0x5f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0x5f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))))
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_96 
+strata does not support 'vcmpps $0x60, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_97 
+strata does not support 'vcmpps $0x61, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_98 
+strata does not support 'vcmpps $0x62, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_99 
+strata does not support 'vcmpps $0x63, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_100 
+strata does not support 'vcmpps $0x64, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_101 
+strata does not support 'vcmpps $0x65, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_102 
+strata does not support 'vcmpps $0x66, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_103 
+strata does not support 'vcmpps $0x67, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_104 
+strata does not support 'vcmpps $0x68, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_105 
+strata does not support 'vcmpps $0x69, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_106 
+strata does not support 'vcmpps $0x6a, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_107 
+Circuit for 'vcmpps $0x6b, %xmm3, %xmm2, %xmm1' (opcode vcmpps_xmm_xmm_xmm_imm8_107)
+  not equivalent for '%ymm1':
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ ((cmp_single_pred(%ymm2[127:96], %ymm3[127:96], 0x6b₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[95:64], %ymm3[95:64], 0x6b₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[63:32], %ymm3[63:32], 0x6b₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0x6b₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))))
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_108 
+strata does not support 'vcmpps $0x6c, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_109 
+strata does not support 'vcmpps $0x6d, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_110 
+strata does not support 'vcmpps $0x6e, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_111 
+Circuit for 'vcmpps $0x6f, %xmm3, %xmm2, %xmm1' (opcode vcmpps_xmm_xmm_xmm_imm8_111)
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ ((0x0₈ ⊕ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ 0x0₆₄)[7:0]) ∘ (0x0₈ ⊕ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ 0x0₆₄)[7:0]) ∘ (0x0₈ ⊕ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ 0x0₆₄)[7:0]) ∘ (0x0₈ ⊕ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ 0x0₆₄)[7:0]) ∘ ((0x0₈ ⊕ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ 0x0₆₄)[7:0]) ∘ (0x0₈ ⊕ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ 0x0₆₄)[7:0]) ∘ (0x0₈ ⊕ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ 0x0₆₄)[7:0]) ∘ (0x0₈ ⊕ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ 0x0₆₄)[7:0])) ∘ ((0x0₈ ⊕ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ 0x0₆₄)[7:0]) ∘ (0x0₈ ⊕ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ 0x0₆₄)[7:0]) ∘ (0x0₈ ⊕ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ 0x0₆₄)[7:0]) ∘ (0x0₈ ⊕ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ 0x0₆₄)[7:0])) ∘ ((0x0₈ ⊕ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ 0x0₆₄)[7:0]) ∘ (0x0₈ ⊕ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ 0x0₆₄)[7:0]) ∘ (0x0₈ ⊕ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ 0x0₆₄)[7:0]) ∘ (0x0₈ ⊕ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ 0x0₆₄)[7:0])))
+    hand-written:  0x0₁₂₈ ∘ ((cmp_single_pred(%ymm2[127:96], %ymm3[127:96], 0x6f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[95:64], %ymm3[95:64], 0x6f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[63:32], %ymm3[63:32], 0x6f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0x6f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))))
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_112 
+strata does not support 'vcmpps $0x70, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_113 
+strata does not support 'vcmpps $0x71, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_114 
+strata does not support 'vcmpps $0x72, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_115 
+strata does not support 'vcmpps $0x73, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_116 
+strata does not support 'vcmpps $0x74, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_117 
+strata does not support 'vcmpps $0x75, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_118 
+strata does not support 'vcmpps $0x76, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_119 
+strata does not support 'vcmpps $0x77, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_120 
+strata does not support 'vcmpps $0x78, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_121 
+strata does not support 'vcmpps $0x79, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_122 
+strata does not support 'vcmpps $0x7a, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_123 
+Circuit for 'vcmpps $0x7b, %xmm3, %xmm2, %xmm1' (opcode vcmpps_xmm_xmm_xmm_imm8_123)
+  not equivalent for '%ymm1':
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ ((cmp_single_pred(%ymm2[127:96], %ymm3[127:96], 0x7b₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[95:64], %ymm3[95:64], 0x7b₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[63:32], %ymm3[63:32], 0x7b₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0x7b₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))))
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_124 
+strata does not support 'vcmpps $0x7c, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_125 
+strata does not support 'vcmpps $0x7d, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_126 
+strata does not support 'vcmpps $0x7e, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_127 
+Circuit for 'vcmpps $0x7f, %xmm3, %xmm2, %xmm1' (opcode vcmpps_xmm_xmm_xmm_imm8_127)
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ (sign-extend-64(sign-extend-64(div_single(0x0₃₂, 0x0₃₂))[63:32]) ∘ sign-extend-64(sign-extend-64(div_single(0x0₃₂, 0x0₃₂))[63:32]))
+    hand-written:  0x0₁₂₈ ∘ ((cmp_single_pred(%ymm2[127:96], %ymm3[127:96], 0x7f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[95:64], %ymm3[95:64], 0x7f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[63:32], %ymm3[63:32], 0x7f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0x7f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))))
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_128 
+strata does not support 'vcmpps $0x80, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_129 
+strata does not support 'vcmpps $0x81, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_130 
+strata does not support 'vcmpps $0x82, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_131 
+strata does not support 'vcmpps $0x83, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_132 
+strata does not support 'vcmpps $0x84, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_133 
+strata does not support 'vcmpps $0x85, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_134 
+strata does not support 'vcmpps $0x86, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_135 
+strata does not support 'vcmpps $0x87, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_136 
+strata does not support 'vcmpps $0x88, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_137 
+strata does not support 'vcmpps $0x89, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_138 
+strata does not support 'vcmpps $0x8a, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_139 
+Circuit for 'vcmpps $0x8b, %xmm3, %xmm2, %xmm1' (opcode vcmpps_xmm_xmm_xmm_imm8_139)
+  not equivalent for '%ymm1':
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ ((cmp_single_pred(%ymm2[127:96], %ymm3[127:96], 0x8b₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[95:64], %ymm3[95:64], 0x8b₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[63:32], %ymm3[63:32], 0x8b₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0x8b₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))))
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_140 
+strata does not support 'vcmpps $0x8c, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_141 
+strata does not support 'vcmpps $0x8d, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_142 
+strata does not support 'vcmpps $0x8e, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_143 
+Circuit for 'vcmpps $0x8f, %xmm3, %xmm2, %xmm1' (opcode vcmpps_xmm_xmm_xmm_imm8_143)
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ (0xffffffffffffffff₆₄ ∘ 0xffffffffffffffff₆₄)
+    hand-written:  0x0₁₂₈ ∘ ((cmp_single_pred(%ymm2[127:96], %ymm3[127:96], 0x8f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[95:64], %ymm3[95:64], 0x8f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[63:32], %ymm3[63:32], 0x8f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0x8f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))))
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_144 
+strata does not support 'vcmpps $0x90, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_145 
+strata does not support 'vcmpps $0x91, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_146 
+strata does not support 'vcmpps $0x92, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_147 
+strata does not support 'vcmpps $0x93, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_148 
+strata does not support 'vcmpps $0x94, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_149 
+strata does not support 'vcmpps $0x95, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_150 
+strata does not support 'vcmpps $0x96, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_151 
+strata does not support 'vcmpps $0x97, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_152 
+strata does not support 'vcmpps $0x98, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_153 
+strata does not support 'vcmpps $0x99, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_154 
+strata does not support 'vcmpps $0x9a, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_155 
+Circuit for 'vcmpps $0x9b, %xmm3, %xmm2, %xmm1' (opcode vcmpps_xmm_xmm_xmm_imm8_155)
+  not equivalent for '%ymm1':
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ ((cmp_single_pred(%ymm2[127:96], %ymm3[127:96], 0x9b₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[95:64], %ymm3[95:64], 0x9b₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[63:32], %ymm3[63:32], 0x9b₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0x9b₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))))
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_156 
+strata does not support 'vcmpps $0x9c, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_157 
+strata does not support 'vcmpps $0x9d, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_158 
+strata does not support 'vcmpps $0x9e, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_159 
+Circuit for 'vcmpps $0x9f, %xmm3, %xmm2, %xmm1' (opcode vcmpps_xmm_xmm_xmm_imm8_159)
+  not equivalent for '%ymm1':
+    strata:        0x0₆₄ ∘ 0x0₈ ∘ (0x0₅₆ ∘ (0xffffffffffffffff₆₄ ∘ 0xffffffff₃₂ ∘ 0xffffffff₃₂))
+    hand-written:  0x0₁₂₈ ∘ ((cmp_single_pred(%ymm2[127:96], %ymm3[127:96], 0x9f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[95:64], %ymm3[95:64], 0x9f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[63:32], %ymm3[63:32], 0x9f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0x9f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))))
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_160 
+strata does not support 'vcmpps $0xa0, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_161 
+strata does not support 'vcmpps $0xa1, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_162 
+strata does not support 'vcmpps $0xa2, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_163 
+strata does not support 'vcmpps $0xa3, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_164 
+strata does not support 'vcmpps $0xa4, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_165 
+strata does not support 'vcmpps $0xa5, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_166 
+strata does not support 'vcmpps $0xa6, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_167 
+strata does not support 'vcmpps $0xa7, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_168 
+strata does not support 'vcmpps $0xa8, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_169 
+strata does not support 'vcmpps $0xa9, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_170 
+strata does not support 'vcmpps $0xaa, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_171 
+Circuit for 'vcmpps $0xab, %xmm3, %xmm2, %xmm1' (opcode vcmpps_xmm_xmm_xmm_imm8_171)
+  not equivalent for '%ymm1':
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ ((cmp_single_pred(%ymm2[127:96], %ymm3[127:96], 0xab₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[95:64], %ymm3[95:64], 0xab₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[63:32], %ymm3[63:32], 0xab₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0xab₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))))
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_172 
+strata does not support 'vcmpps $0xac, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_173 
+strata does not support 'vcmpps $0xad, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_174 
+strata does not support 'vcmpps $0xae, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_175 
+Circuit for 'vcmpps $0xaf, %xmm3, %xmm2, %xmm1' (opcode vcmpps_xmm_xmm_xmm_imm8_175)
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ (sign-extend-64(sign-extend-64(div_single(0x0₃₂, 0x0₃₂))[63:32])[63:32] ∘ sign-extend-64(sign-extend-64(div_single(0x0₃₂, 0x0₃₂))[63:32])[63:32] ∘ sign-extend-64(div_single(0x0₃₂, 0x0₃₂))[63:32] ∘ sign-extend-64(div_single(0x0₃₂, 0x0₃₂))[63:32])
+    hand-written:  0x0₁₂₈ ∘ ((cmp_single_pred(%ymm2[127:96], %ymm3[127:96], 0xaf₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[95:64], %ymm3[95:64], 0xaf₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[63:32], %ymm3[63:32], 0xaf₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0xaf₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))))
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_176 
+strata does not support 'vcmpps $0xb0, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_177 
+strata does not support 'vcmpps $0xb1, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_178 
+strata does not support 'vcmpps $0xb2, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_179 
+strata does not support 'vcmpps $0xb3, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_180 
+strata does not support 'vcmpps $0xb4, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_181 
+strata does not support 'vcmpps $0xb5, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_182 
+strata does not support 'vcmpps $0xb6, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_183 
+strata does not support 'vcmpps $0xb7, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_184 
+strata does not support 'vcmpps $0xb8, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_185 
+strata does not support 'vcmpps $0xb9, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_186 
+strata does not support 'vcmpps $0xba, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_187 
+Circuit for 'vcmpps $0xbb, %xmm3, %xmm2, %xmm1' (opcode vcmpps_xmm_xmm_xmm_imm8_187)
+  not equivalent for '%ymm1':
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ ((cmp_single_pred(%ymm2[127:96], %ymm3[127:96], 0xbb₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[95:64], %ymm3[95:64], 0xbb₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[63:32], %ymm3[63:32], 0xbb₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0xbb₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))))
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_188 
+strata does not support 'vcmpps $0xbc, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_189 
+strata does not support 'vcmpps $0xbd, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_190 
+strata does not support 'vcmpps $0xbe, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_191 
+Circuit for 'vcmpps $0xbf, %xmm3, %xmm2, %xmm1' (opcode vcmpps_xmm_xmm_xmm_imm8_191)
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ (sign-extend-64(sign-extend-64(div_double(0x0₆₄, 0x0₆₄)[63:32])[63:32]) ∘ sign-extend-64(sign-extend-64(div_double(0x0₆₄, 0x0₆₄)[63:32])[63:32]))
+    hand-written:  0x0₁₂₈ ∘ ((cmp_single_pred(%ymm2[127:96], %ymm3[127:96], 0xbf₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[95:64], %ymm3[95:64], 0xbf₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[63:32], %ymm3[63:32], 0xbf₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0xbf₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))))
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_192 
+strata does not support 'vcmpps $0xc0, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_193 
+strata does not support 'vcmpps $0xc1, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_194 
+strata does not support 'vcmpps $0xc2, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_195 
+strata does not support 'vcmpps $0xc3, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_196 
+strata does not support 'vcmpps $0xc4, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_197 
+strata does not support 'vcmpps $0xc5, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_198 
+strata does not support 'vcmpps $0xc6, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_199 
+strata does not support 'vcmpps $0xc7, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_200 
+strata does not support 'vcmpps $0xc8, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_201 
+strata does not support 'vcmpps $0xc9, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_202 
+strata does not support 'vcmpps $0xca, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_203 
+Circuit for 'vcmpps $0xcb, %xmm3, %xmm2, %xmm1' (opcode vcmpps_xmm_xmm_xmm_imm8_203)
+  not equivalent for '%ymm1':
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ ((cmp_single_pred(%ymm2[127:96], %ymm3[127:96], 0xcb₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[95:64], %ymm3[95:64], 0xcb₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[63:32], %ymm3[63:32], 0xcb₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0xcb₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))))
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_204 
+strata does not support 'vcmpps $0xcc, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_205 
+strata does not support 'vcmpps $0xcd, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_206 
+strata does not support 'vcmpps $0xce, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_207 
+Circuit for 'vcmpps $0xcf, %xmm3, %xmm2, %xmm1' (opcode vcmpps_xmm_xmm_xmm_imm8_207)
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ (sign-extend-64(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂))[63:32] ∘ sign-extend-64(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂))[63:32] ∘ sign-extend-64(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂))[63:32] ∘ sign-extend-64(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂))[63:32])
+    hand-written:  0x0₁₂₈ ∘ ((cmp_single_pred(%ymm2[127:96], %ymm3[127:96], 0xcf₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[95:64], %ymm3[95:64], 0xcf₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[63:32], %ymm3[63:32], 0xcf₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0xcf₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))))
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_208 
+strata does not support 'vcmpps $0xd0, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_209 
+strata does not support 'vcmpps $0xd1, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_210 
+strata does not support 'vcmpps $0xd2, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_211 
+strata does not support 'vcmpps $0xd3, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_212 
+strata does not support 'vcmpps $0xd4, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_213 
+strata does not support 'vcmpps $0xd5, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_214 
+strata does not support 'vcmpps $0xd6, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_215 
+strata does not support 'vcmpps $0xd7, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_216 
+strata does not support 'vcmpps $0xd8, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_217 
+strata does not support 'vcmpps $0xd9, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_218 
+strata does not support 'vcmpps $0xda, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_219 
+Circuit for 'vcmpps $0xdb, %xmm3, %xmm2, %xmm1' (opcode vcmpps_xmm_xmm_xmm_imm8_219)
+  not equivalent for '%ymm1':
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ ((cmp_single_pred(%ymm2[127:96], %ymm3[127:96], 0xdb₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[95:64], %ymm3[95:64], 0xdb₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[63:32], %ymm3[63:32], 0xdb₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0xdb₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))))
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_220 
+strata does not support 'vcmpps $0xdc, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_221 
+strata does not support 'vcmpps $0xdd, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_222 
+strata does not support 'vcmpps $0xde, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_223 
+Circuit for 'vcmpps $0xdf, %xmm3, %xmm2, %xmm1' (opcode vcmpps_xmm_xmm_xmm_imm8_223)
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ (sign-extend-64((0x0₁ ∘ 0xffff0000ffff0000₆₄ + 0x1₆₅ + 0x0₁ ∘ (0x0₁₆ ∘ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ 0xffffffffffffffff₆₄)[31:16] ∘ (0x0₁₆ ∘ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ 0xffffffffffffffff₆₄)[15:0])))[63:32]) ∘ sign-extend-64((0x0₁ ∘ 0xffff0000ffff0000₆₄ + 0x1₆₅ + 0x0₁ ∘ (0x0₁₆ ∘ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ 0xffffffffffffffff₆₄)[31:16] ∘ (0x0₁₆ ∘ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ 0xffffffffffffffff₆₄)[15:0])))[31:0]))
+    hand-written:  0x0₁₂₈ ∘ ((cmp_single_pred(%ymm2[127:96], %ymm3[127:96], 0xdf₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[95:64], %ymm3[95:64], 0xdf₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[63:32], %ymm3[63:32], 0xdf₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0xdf₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))))
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_224 
+strata does not support 'vcmpps $0xe0, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_225 
+strata does not support 'vcmpps $0xe1, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_226 
+strata does not support 'vcmpps $0xe2, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_227 
+strata does not support 'vcmpps $0xe3, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_228 
+strata does not support 'vcmpps $0xe4, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_229 
+strata does not support 'vcmpps $0xe5, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_230 
+strata does not support 'vcmpps $0xe6, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_231 
+strata does not support 'vcmpps $0xe7, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_232 
+strata does not support 'vcmpps $0xe8, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_233 
+strata does not support 'vcmpps $0xe9, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_234 
+strata does not support 'vcmpps $0xea, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_235 
+Circuit for 'vcmpps $0xeb, %xmm3, %xmm2, %xmm1' (opcode vcmpps_xmm_xmm_xmm_imm8_235)
+  not equivalent for '%ymm1':
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ ((cmp_single_pred(%ymm2[127:96], %ymm3[127:96], 0xeb₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[95:64], %ymm3[95:64], 0xeb₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[63:32], %ymm3[63:32], 0xeb₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0xeb₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))))
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_236 
+strata does not support 'vcmpps $0xec, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_237 
+strata does not support 'vcmpps $0xed, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_238 
+strata does not support 'vcmpps $0xee, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_239 
+Circuit for 'vcmpps $0xef, %xmm3, %xmm2, %xmm1' (opcode vcmpps_xmm_xmm_xmm_imm8_239)
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ (sign-extend-64(sign-extend-64(div_single(0x0₃₂, 0x0₃₂))[63:32]) ∘ sign-extend-64(sign-extend-64(div_single(0x0₃₂, 0x0₃₂))[63:32]))
+    hand-written:  0x0₁₂₈ ∘ ((cmp_single_pred(%ymm2[127:96], %ymm3[127:96], 0xef₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[95:64], %ymm3[95:64], 0xef₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[63:32], %ymm3[63:32], 0xef₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0xef₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))))
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_240 
+strata does not support 'vcmpps $0xf0, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_241 
+strata does not support 'vcmpps $0xf1, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_242 
+strata does not support 'vcmpps $0xf2, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_243 
+strata does not support 'vcmpps $0xf3, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_244 
+strata does not support 'vcmpps $0xf4, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_245 
+strata does not support 'vcmpps $0xf5, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_246 
+strata does not support 'vcmpps $0xf6, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_247 
+strata does not support 'vcmpps $0xf7, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_248 
+strata does not support 'vcmpps $0xf8, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_249 
+strata does not support 'vcmpps $0xf9, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_250 
+strata does not support 'vcmpps $0xfa, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_251 
+Circuit for 'vcmpps $0xfb, %xmm3, %xmm2, %xmm1' (opcode vcmpps_xmm_xmm_xmm_imm8_251)
+  not equivalent for '%ymm1':
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ ((cmp_single_pred(%ymm2[127:96], %ymm3[127:96], 0xfb₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[95:64], %ymm3[95:64], 0xfb₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[63:32], %ymm3[63:32], 0xfb₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0xfb₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))))
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_252 
+strata does not support 'vcmpps $0xfc, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_253 
+strata does not support 'vcmpps $0xfd, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_254 
+strata does not support 'vcmpps $0xfe, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpps_xmm_xmm_xmm_imm8_255 
+Circuit for 'vcmpps $0xff, %xmm3, %xmm2, %xmm1' (opcode vcmpps_xmm_xmm_xmm_imm8_255)
+  not equivalent for '%ymm1':
+    strata:        0x0₆₄ ∘ 0x0₆₄ ∘ (sign-extend-64(sign-extend-64(div_single(0x0₃₂, 0x0₃₂))[63:32]) ∘ sign-extend-64(sign-extend-64(div_single(0x0₃₂, 0x0₃₂))[63:32]))
+    hand-written:  0x0₁₂₈ ∘ ((cmp_single_pred(%ymm2[127:96], %ymm3[127:96], 0xff₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[95:64], %ymm3[95:64], 0xff₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm2[63:32], %ymm3[63:32], 0xff₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0xff₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))))
+
+

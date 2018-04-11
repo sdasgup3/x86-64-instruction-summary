@@ -1,0 +1,657 @@
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_0 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_1 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_2 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_3 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_4 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_5 
+strata does not support 'vinsertps $0x5, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_6 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_7 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_8 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_9 
+Circuit for 'vinsertps $0x9, %xmm3, %xmm2, %xmm1' (opcode vinsertps_xmm_xmm_xmm_imm8_9)
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ (0x0₃₂ ∘ %ymm2[95:88] ∘ %ymm2[87:64] ∘ %ymm2[63:32] ∘ cvt_double_to_single(0x0₃₂ ∘ %ymm2[95:88] ∘ %ymm2[87:64]))
+    hand-written:  0x0₁₂₈ ∘ (0x0₃₂ ∘ %ymm2[95:64] ∘ %ymm2[63:32] ∘ 0x0₃₂)
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_10 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_11 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_12 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_13 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_14 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_15 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_16 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_17 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_18 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_19 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_20 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_21 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_22 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_23 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_24 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_25 
+Circuit for 'vinsertps $0x19, %xmm3, %xmm2, %xmm1' (opcode vinsertps_xmm_xmm_xmm_imm8_25)
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ (0x0₃₂ ∘ %ymm2[95:64] ∘ (%ymm3[31:0] ∘ cvt_double_to_single(0x0₃₂ ∘ %ymm2[63:32])))
+    hand-written:  0x0₁₂₈ ∘ (0x0₃₂ ∘ %ymm2[95:64] ∘ %ymm3[31:0] ∘ 0x0₃₂)
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_26 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_27 
+Circuit for 'vinsertps $0x1b, %xmm3, %xmm2, %xmm1' (opcode vinsertps_xmm_xmm_xmm_imm8_27)
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ ((0x0₁ ∘ (0x0₃₂ ∘ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x1₆₅ + 0x0₁ ∘ 0x0₆₄)[63:32]) + 0x0₁ ∘ (0x0₃₂ ∘ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x1₆₅ + 0x0₁ ∘ 0x0₆₄)[31:0]))[31:0] ∘ (0x0₁ ∘ (0x0₁ ∘ (0x0₃₂ ∘ %ymm2[95:64] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm2[95:64] ∘ %ymm2[95:64]))[63:0] + 0x0₁ ∘ (0x0₃₂ ∘ (0x0₁ ∘ (0x0₃₂ ∘ %ymm2[95:64] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm2[95:64] ∘ %ymm2[95:64]))[63:32]))[31:0] ∘ (0x0₁ ∘ ((0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x1₆₅ + 0x0₁ ∘ 0x0₆₄)[63:32] ∘ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x1₆₅ + 0x0₁ ∘ 0x0₆₄)[63:32]) + 0x0₁ ∘ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x1₆₅ + 0x0₁ ∘ 0x0₆₄)[63:0])[31:0] ∘ (0x0₁ ∘ ((0x0₁ ∘ (0x0₃₂ ∘ cvt_double_to_int32(0x0₃₂ ∘ %ymm2[63:32]) ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (cvt_double_to_int32(0x0₃₂ ∘ %ymm2[63:32]) ∘ cvt_double_to_int32(0x0₃₂ ∘ %ymm2[63:32])))[63:32] ∘ (0x0₁ ∘ (0x0₃₂ ∘ cvt_double_to_int32(0x0₃₂ ∘ %ymm2[63:32]) ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (cvt_double_to_int32(0x0₃₂ ∘ %ymm2[63:32]) ∘ cvt_double_to_int32(0x0₃₂ ∘ %ymm2[63:32])))[63:32]) + 0x0₁ ∘ (0x0₁ ∘ (0x0₃₂ ∘ cvt_double_to_int32(0x0₃₂ ∘ %ymm2[63:32]) ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (cvt_double_to_int32(0x0₃₂ ∘ %ymm2[63:32]) ∘ cvt_double_to_int32(0x0₃₂ ∘ %ymm2[63:32])))[63:0])[31:0])
+    hand-written:  0x0₁₂₈ ∘ (0x0₃₂ ∘ %ymm2[95:64] ∘ 0x0₃₂ ∘ 0x0₃₂)
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_28 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_29 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_30 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_31 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_32 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_33 
+strata does not support 'vinsertps $0x21, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_34 
+Circuit for 'vinsertps $0x22, %xmm3, %xmm2, %xmm1' (opcode vinsertps_xmm_xmm_xmm_imm8_34)
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ (%ymm2[127:96] ∘ %ymm3[31:0] ∘ vfmsub132_double(0x0₃₂ ∘ %ymm2[63:32], 0x0₆₄, 0x0₃₂ ∘ %ymm2[31:0])[31:0] ∘ %ymm2[31:0])
+    hand-written:  0x0₁₂₈ ∘ (%ymm2[127:96] ∘ %ymm3[31:0] ∘ 0x0₃₂ ∘ %ymm2[31:0])
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_35 
+strata does not support 'vinsertps $0x23, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_36 
+Circuit for 'vinsertps $0x24, %xmm3, %xmm2, %xmm1' (opcode vinsertps_xmm_xmm_xmm_imm8_36)
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ (%ymm2[127:96] ∘ sub_double(0x0₃₂ ∘ %ymm2[95:64], 0x0₃₂ ∘ %ymm2[95:64])[31:0] ∘ %ymm2[63:32] ∘ %ymm2[31:0])
+    hand-written:  0x0₁₂₈ ∘ (%ymm2[127:96] ∘ 0x0₃₂ ∘ %ymm2[63:32] ∘ %ymm2[31:0])
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_37 
+Circuit for 'vinsertps $0x25, %xmm3, %xmm2, %xmm1' (opcode vinsertps_xmm_xmm_xmm_imm8_37)
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ (%ymm2[127:96] ∘ 0x0₃₂ ∘ %ymm2[63:32] ∘ cvt_double_to_single(0x0₃₂ ∘ %ymm2[95:64]))
+    hand-written:  0x0₁₂₈ ∘ (%ymm2[127:96] ∘ 0x0₃₂ ∘ %ymm2[63:32] ∘ 0x0₃₂)
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_38 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_39 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_40 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_41 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_42 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_43 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_44 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_45 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_46 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_47 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_48 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_49 
+Circuit for 'vinsertps $0x31, %xmm3, %xmm2, %xmm1' (opcode vinsertps_xmm_xmm_xmm_imm8_49)
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ (%ymm3[31:0] ∘ %ymm2[95:64] ∘ (%ymm2[63:32] ∘ cvt_double_to_single(0x0₃₂ ∘ %ymm1[31:0])))
+    hand-written:  0x0₁₂₈ ∘ (%ymm3[31:0] ∘ %ymm2[95:64] ∘ %ymm2[63:32] ∘ 0x0₃₂)
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_50 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_51 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_52 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_53 
+Circuit for 'vinsertps $0x35, %xmm3, %xmm2, %xmm1' (opcode vinsertps_xmm_xmm_xmm_imm8_53)
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ (%ymm3[31:0] ∘ 0x0₃₂ ∘ (%ymm2[63:32] ∘ cvt_double_to_single(0x0₃₂ ∘ %ymm3[63:32])))
+    hand-written:  0x0₁₂₈ ∘ (%ymm3[31:0] ∘ 0x0₃₂ ∘ %ymm2[63:32] ∘ 0x0₃₂)
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_54 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_55 
+strata does not support 'vinsertps $0x37, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_56 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_57 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_58 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_59 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_60 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_61 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_62 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_63 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_64 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_65 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_66 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_67 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_68 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_69 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_70 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_71 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_72 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_73 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_74 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_75 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_76 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_77 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_78 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_79 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_80 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_81 
+strata does not support 'vinsertps $0x51, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_82 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_83 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_84 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_85 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_86 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_87 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_88 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_89 
+strata does not support 'vinsertps $0x59, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_90 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_91 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_92 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_93 
+Circuit for 'vinsertps $0x5d, %xmm3, %xmm2, %xmm1' (opcode vinsertps_xmm_xmm_xmm_imm8_93)
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ (0x0₆₄ ∘ %ymm3[63:32] ∘ cvt_double_to_single(0x0₃₂ ∘ cvt_double_to_int32_truncate(%ymm3[63:0])))
+    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ %ymm3[63:32] ∘ 0x0₃₂)
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_94 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_95 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_96 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_97 
+strata does not support 'vinsertps $0x61, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_98 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_99 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_100 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_101 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_102 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_103 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_104 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_105 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_106 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_107 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_108 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_109 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_110 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_111 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_112 
+strata does not support 'vinsertps $0x70, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_113 
+strata does not support 'vinsertps $0x71, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_114 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_115 
+Circuit for 'vinsertps $0x73, %xmm3, %xmm2, %xmm1' (opcode vinsertps_xmm_xmm_xmm_imm8_115)
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ (%ymm3[63:32] ∘ %ymm2[95:64] ∘ (cvt_double_to_single(0x0₂₄ ∘ %ymm1[15:8] ∘ (0x0₂₄ ∘ %ymm1[7:0])) ∘ 0x0₃₂))
+    hand-written:  0x0₁₂₈ ∘ (%ymm3[63:32] ∘ %ymm2[95:64] ∘ 0x0₃₂ ∘ 0x0₃₂)
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_116 
+strata does not support 'vinsertps $0x74, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_117 
+Circuit for 'vinsertps $0x75, %xmm3, %xmm2, %xmm1' (opcode vinsertps_xmm_xmm_xmm_imm8_117)
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ (%ymm3[63:32] ∘ mul_double(0x0₃₂ ∘ %ymm2[95:64], 0x0₃₂ ∘ %ymm2[95:64])[63:32] ∘ (%ymm2[63:32] ∘ mul_double(0x0₃₂ ∘ %ymm2[95:64], 0x0₃₂ ∘ %ymm2[95:64])[31:0]))
+    hand-written:  0x0₁₂₈ ∘ (%ymm3[63:32] ∘ 0x0₃₂ ∘ %ymm2[63:32] ∘ 0x0₃₂)
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_118 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_119 
+Circuit for 'vinsertps $0x77, %xmm3, %xmm2, %xmm1' (opcode vinsertps_xmm_xmm_xmm_imm8_119)
+  not equivalent for '%ymm1':
+    strata:        0x0₃₂ ∘ (0x0₃₂ ∘ 0x0₆₄) ∘ (%ymm3[63:32] ∘ cvt_double_to_single(0x0₃₂ ∘ %ymm2[63:32]) ∘ sign-extend-64((0x0₁ ∘ (0x0₁₆ ∘ cvt_single_to_double(%ymm2[31:0])[31:16] ∘ (0x0₁₆ ∘ cvt_single_to_double(%ymm2[31:0])[15:0]) ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (0x0₁₆ ∘ (0x0₁ ∘ (cvt_single_to_double(%ymm2[31:0])[31:0] ∘ cvt_single_to_double(%ymm2[31:0])[31:0]) + 0x0₁ ∘ (cvt_single_to_double(%ymm2[31:0])[31:0] ∘ cvt_single_to_double(%ymm2[31:0])[31:0]))[31:16] ∘ (0x0₁₆ ∘ (0x0₁ ∘ (cvt_single_to_double(%ymm2[31:0])[31:0] ∘ cvt_single_to_double(%ymm2[31:0])[31:0]) + 0x0₁ ∘ (cvt_single_to_double(%ymm2[31:0])[31:0] ∘ cvt_single_to_double(%ymm2[31:0])[31:0]))[15:0])))[31:0]))
+    hand-written:  0x0₁₂₈ ∘ (%ymm3[63:32] ∘ 0x0₃₂ ∘ 0x0₃₂ ∘ 0x0₃₂)
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_120 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_121 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_122 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_123 
+Circuit for 'vinsertps $0x7b, %xmm3, %xmm2, %xmm1' (opcode vinsertps_xmm_xmm_xmm_imm8_123)
+  not equivalent for '%ymm1':
+    strata:        (0x0₆₄ ⊕ (%ymm12[255:192] | 0x0₆₄) ⊕ (0x0₆₄ ⊕ (%ymm12[255:192] | 0x0₆₄) | %ymm12[255:192]) | 0x0₆₄) ∘ (0x0₆₄ ⊕ (%ymm12[191:128] | 0x0₆₄) ⊕ (0x0₆₄ ⊕ (%ymm12[191:128] | 0x0₆₄) | %ymm12[191:128]) | 0x0₆₄) ∘ (0x0₃₂ ∘ %ymm2[95:64] ∘ sub_double(0x0₆₄ ⊕ (%ymm12[63:0] | 0x0₆₄) ⊕ (%ymm12[63:0] | 0x0₆₄ ⊕ (%ymm12[63:0] | 0x0₆₄)), 0x0₆₄ ⊕ (%ymm12[127:64] | 0x0₆₄) ⊕ (%ymm12[127:64] | 0x0₆₄ ⊕ (%ymm12[127:64] | 0x0₆₄))))
+    hand-written:  0x0₁₂₈ ∘ (0x0₃₂ ∘ %ymm2[95:64] ∘ 0x0₃₂ ∘ 0x0₃₂)
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_124 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_125 
+Circuit for 'vinsertps $0x7d, %xmm3, %xmm2, %xmm1' (opcode vinsertps_xmm_xmm_xmm_imm8_125)
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ (0x0₆₄ ∘ %ymm2[63:32] ∘ cvt_double_to_single(0x0₁₆ ∘ %ymm3[31:16] ∘ (0x0₁₆ ∘ %ymm3[15:0])))
+    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ %ymm2[63:32] ∘ 0x0₃₂)
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_126 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_127 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_128 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_129 
+Circuit for 'vinsertps $0x81, %xmm3, %xmm2, %xmm1' (opcode vinsertps_xmm_xmm_xmm_imm8_129)
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ (%ymm2[127:32] ∘ sub_single(cvt_int32_to_single(%ymm2[95:64]), cvt_int32_to_single(%ymm2[95:64])))
+    hand-written:  0x0₁₂₈ ∘ (%ymm2[127:32] ∘ 0x0₃₂)
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_130 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_131 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_132 
+strata does not support 'vinsertps $0x84, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_133 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_134 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_135 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_136 
+strata does not support 'vinsertps $0x88, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_137 
+Circuit for 'vinsertps $0x89, %xmm3, %xmm2, %xmm1' (opcode vinsertps_xmm_xmm_xmm_imm8_137)
+  not equivalent for '%ymm1':
+    strata:        0x0₆₄ ∘ 0x0₆₄ ∘ ((%ymm2[127:64] ⊕ 0x0₃₂ ∘ %ymm2[95:64] ⊕ (%ymm2[127:64] | %ymm2[127:64] ⊕ 0x0₃₂ ∘ %ymm2[95:64])) ∘ (%ymm2[63:0] ⊕ %ymm2[63:32] ∘ cvt_double_to_single(0x0₃₂ ∘ %ymm3[95:64]) ⊕ (%ymm2[63:0] | %ymm2[63:0] ⊕ %ymm2[63:32] ∘ cvt_double_to_single(0x0₃₂ ∘ %ymm3[95:64]))))
+    hand-written:  0x0₁₂₈ ∘ (0x0₃₂ ∘ %ymm2[95:64] ∘ %ymm2[63:32] ∘ 0x0₃₂)
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_138 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_139 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_140 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_141 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_142 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_143 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_144 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_145 
+strata does not support 'vinsertps $0x91, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_146 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_147 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_148 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_149 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_150 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_151 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_152 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_153 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_154 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_155 
+Circuit for 'vinsertps $0x9b, %xmm3, %xmm2, %xmm1' (opcode vinsertps_xmm_xmm_xmm_imm8_155)
+  not equivalent for '%ymm1':
+    strata:        sign-extend-64((0x0₁ ∘ (0x0₃₂ ∘ (0x0₂₄ ∘ cvt_double_to_int32_truncate(0x0₃₂ ∘ %ymm2[95:64])[31:24])) + 0x0₁ ∘ 0xffffff80₆₄)[31:0] ⊕ 0xffffff80₃₂) ∘ sign-extend-64((0x0₁ ∘ (0x0₂₄ ∘ cvt_double_to_int32_truncate(0x0₃₂ ∘ %ymm2[95:64])[23:16] ∘ 0xffffff80₃₂) + 0x0₁ ∘ (0x0₃₂ ∘ (0x0₂₄ ∘ cvt_double_to_int32_truncate(0x0₃₂ ∘ %ymm2[95:64])[23:16])))[31:0] ⊕ 0xffffff80₃₂) ∘ (0x0₃₂ ∘ %ymm2[95:64] ∘ sign-extend-64((0x0₁ ∘ 0xffffff80ffffff80₆₄ + 0x0₁ ∘ (0xffffff80₃₂ ∘ (0x0₂₄ ∘ cvt_double_to_int32_truncate(0x0₃₂ ∘ %ymm2[95:64])[7:0])))[31:0] ⊕ 0xffffff80₃₂))
+    hand-written:  0x0₁₂₈ ∘ (0x0₃₂ ∘ %ymm2[95:64] ∘ 0x0₃₂ ∘ 0x0₃₂)
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_156 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_157 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_158 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_159 
+Circuit for 'vinsertps $0x9f, %xmm3, %xmm2, %xmm1' (opcode vinsertps_xmm_xmm_xmm_imm8_159)
+  not equivalent for '%ymm1':
+    strata:        0x0₃₂ ∘ (0x0₃₂ ∘ (0x0₃₂ ∘ (0x0₃₂ ∘ (cvt_single_to_int32(0x0₁₆ ∘ %ymm2[63:48]) ∘ (cvt_single_to_int32(0x0₁₆ ∘ %ymm2[47:32]) ∘ (cvt_single_to_int32(0x0₁₆ ∘ %ymm2[31:16]) ∘ cvt_single_to_int32(0x0₁₆ ∘ %ymm2[15:0])))))))
+    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₃₂ ∘ 0x0₃₂)
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_160 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_161 
+strata does not support 'vinsertps $0xa1, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_162 
+Circuit for 'vinsertps $0xa2, %xmm3, %xmm2, %xmm1' (opcode vinsertps_xmm_xmm_xmm_imm8_162)
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ (%ymm2[127:96] ∘ vfmsub132_double(0x0₃₂ ∘ %ymm2[31:0], vfnmsub132_double(0x0₆₄, 0x0₃₂ ∘ %ymm3[95:64], 0x0₆₄), 0x0₃₂ ∘ %ymm2[95:64])[31:0] ∘ 0x0₃₂ ∘ %ymm2[31:0])
+    hand-written:  0x0₁₂₈ ∘ (%ymm2[127:96] ∘ %ymm3[95:64] ∘ 0x0₃₂ ∘ %ymm2[31:0])
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_163 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_164 
+strata does not support 'vinsertps $0xa4, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_165 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_166 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_167 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_168 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_169 
+Circuit for 'vinsertps $0xa9, %xmm3, %xmm2, %xmm1' (opcode vinsertps_xmm_xmm_xmm_imm8_169)
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ (0x0₃₂ ∘ %ymm3[95:64] ∘ %ymm2[63:32] ∘ sqrt_single(cvt_double_to_int32_truncate(0x0₃₂ ∘ %ymm3[31:0])))
+    hand-written:  0x0₁₂₈ ∘ (0x0₃₂ ∘ %ymm3[95:64] ∘ %ymm2[63:32] ∘ 0x0₃₂)
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_170 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_171 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_172 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_173 
+Circuit for 'vinsertps $0xad, %xmm3, %xmm2, %xmm1' (opcode vinsertps_xmm_xmm_xmm_imm8_173)
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ (0x0₆₄ ∘ %ymm2[63:32] ∘ sqrt_single((0x0₁ ∘ ((0x0₁ ∘ (%ymm3[31:0] ∘ %ymm3[31:0] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm3[31:0] ∘ %ymm3[31:0]))[63:32] ∘ (0x0₁ ∘ (%ymm3[31:0] ∘ %ymm3[31:0] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm3[31:0] ∘ %ymm3[31:0]))[63:32]) + 0x0₁ ∘ (0x0₁ ∘ (%ymm3[31:0] ∘ %ymm3[31:0] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm3[31:0] ∘ %ymm3[31:0]))[63:0])[31:0]))
+    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ %ymm2[63:32] ∘ 0x0₃₂)
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_174 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_175 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_176 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_177 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_178 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_179 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_180 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_181 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_182 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_183 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_184 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_185 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_186 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_187 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_188 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_189 
+Circuit for 'vinsertps $0xbd, %xmm3, %xmm2, %xmm1' (opcode vinsertps_xmm_xmm_xmm_imm8_189)
+  not equivalent for '%ymm1':
+    strata:        vfnmadd132_double(0x0₆₄, 0x0₆₄, 0x0₆₄) ∘ (vfnmadd132_double(0x0₆₄, 0x0₆₄, 0x0₆₄) ∘ (vfnmadd132_double(0x0₆₄, 0x0₆₄, 0x0₆₄) ∘ vfnmadd132_double(0x0₆₄, %ymm2[63:32] ∘ cvt_double_to_single(0x0₃₂ ∘ %ymm2[95:64]), 0x0₆₄)))
+    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ %ymm2[63:32] ∘ 0x0₃₂)
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_190 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_191 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_192 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_193 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_194 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_195 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_196 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_197 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_198 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_199 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_200 
+strata does not support 'vinsertps $0xc8, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_201 
+Circuit for 'vinsertps $0xc9, %xmm3, %xmm2, %xmm1' (opcode vinsertps_xmm_xmm_xmm_imm8_201)
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ 0x0₈ ∘ 0x0₈ ∘ (0x0₁₆ ∘ (%ymm2[95:32] ∘ cvt_double_to_single(0x0₃₂ ∘ %ymm3[63:32])))
+    hand-written:  0x0₁₂₈ ∘ (0x0₃₂ ∘ %ymm2[95:64] ∘ %ymm2[63:32] ∘ 0x0₃₂)
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_202 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_203 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_204 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_205 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_206 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_207 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_208 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_209 
+Circuit for 'vinsertps $0xd1, %xmm3, %xmm2, %xmm1' (opcode vinsertps_xmm_xmm_xmm_imm8_209)
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ (%ymm2[127:64] ∘ %ymm3[127:96] ∘ cvt_double_to_single(0x0₃₂ ∘ %ymm1[127:96]))
+    hand-written:  0x0₁₂₈ ∘ (%ymm2[127:64] ∘ %ymm3[127:96] ∘ 0x0₃₂)
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_210 
+Circuit for 'vinsertps $0xd2, %xmm3, %xmm2, %xmm1' (opcode vinsertps_xmm_xmm_xmm_imm8_210)
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ (%ymm2[127:64] ∘ cvt_double_to_int32(0x0₃₂ ∘ %ymm2[95:64]) ∘ %ymm2[31:0])
+    hand-written:  0x0₁₂₈ ∘ (%ymm2[127:64] ∘ 0x0₃₂ ∘ %ymm2[31:0])
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_211 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_212 
+strata does not support 'vinsertps $0xd4, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_213 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_214 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_215 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_216 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_217 
+Circuit for 'vinsertps $0xd9, %xmm3, %xmm2, %xmm1' (opcode vinsertps_xmm_xmm_xmm_imm8_217)
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ (0x0₃₂ ∘ %ymm2[95:64] ∘ (%ymm3[127:96] ∘ cvt_double_to_single(0x0₃₂ ∘ %ymm2[95:64])))
+    hand-written:  0x0₁₂₈ ∘ (0x0₃₂ ∘ %ymm2[95:64] ∘ %ymm3[127:96] ∘ 0x0₃₂)
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_218 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_219 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_220 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_221 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_222 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_223 
+strata does not support 'vinsertps $0xdf, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_224 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_225 
+Circuit for 'vinsertps $0xe1, %xmm3, %xmm2, %xmm1' (opcode vinsertps_xmm_xmm_xmm_imm8_225)
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ (%ymm2[127:96] ∘ vfmsub132_double(0x0₃₂ ∘ %ymm3[127:96], vfnmsub132_double(vfnmsub132_double(0x0₃₂ ∘ (maxcmp_single(%ymm2[95:64], 0x0₃₂ ⊕ (%ymm3[127:96] | 0x0₃₂) ⊕ (%ymm3[127:96] | 0x0₃₂ ⊕ (%ymm3[127:96] | 0x0₃₂))) = 0x1₁ ? %ymm2[95:64] : 0x0₃₂ ⊕ (%ymm3[127:96] | 0x0₃₂) ⊕ (%ymm3[127:96] | 0x0₃₂ ⊕ (%ymm3[127:96] | 0x0₃₂))), 0x0₃₂ ∘ %ymm3[127:96], 0x0₆₄), vfnmsub132_double(0x0₃₂ ∘ (maxcmp_single(%ymm2[95:64], 0x0₃₂ ⊕ (%ymm3[127:96] | 0x0₃₂) ⊕ (%ymm3[127:96] | 0x0₃₂ ⊕ (%ymm3[127:96] | 0x0₃₂))) = 0x1₁ ? %ymm2[95:64] : 0x0₃₂ ⊕ (%ymm3[127:96] | 0x0₃₂) ⊕ (%ymm3[127:96] | 0x0₃₂ ⊕ (%ymm3[127:96] | 0x0₃₂))), 0x0₃₂ ∘ %ymm3[127:96], 0x0₆₄), 0x0₃₂ ∘ vfnmsub132_double(0x0₆₄, 0x0₆₄, 0x0₆₄)[63:32]), 0x0₃₂ ∘ %ymm2[95:64])[31:0] ∘ %ymm2[63:32] ∘ cvt_double_to_int32_truncate(0x0₃₂ ∘ %ymm2[63:32]))
+    hand-written:  0x0₁₂₈ ∘ (%ymm2[127:96] ∘ %ymm3[127:96] ∘ %ymm2[63:32] ∘ 0x0₃₂)
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_226 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_227 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_228 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_229 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_230 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_231 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_232 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_233 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_234 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_235 
+Circuit for 'vinsertps $0xeb, %xmm3, %xmm2, %xmm1' (opcode vinsertps_xmm_xmm_xmm_imm8_235)
+  not equivalent for '%ymm1':
+    strata:        0x0₄₈ ∘ (0x0₈₀ ∘ (0x0₃₂ ∘ %ymm3[127:96] ∘ mul_double(0x0₃₂ ∘ %ymm3[127:96], 0x0₃₂ ∘ %ymm3[95:64])))
+    hand-written:  0x0₁₂₈ ∘ (0x0₃₂ ∘ %ymm3[127:96] ∘ 0x0₃₂ ∘ 0x0₃₂)
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_236 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_237 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_238 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_239 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_240 
+strata does not support 'vinsertps $0xf0, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_241 
+strata does not support 'vinsertps $0xf1, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_242 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_243 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_244 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_245 
+Circuit for 'vinsertps $0xf5, %xmm3, %xmm2, %xmm1' (opcode vinsertps_xmm_xmm_xmm_imm8_245)
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ (%ymm3[127:96] ∘ 0x0₃₂ ∘ %ymm2[63:32] ∘ approx_reciprocal_single(approx_reciprocal_single(0x0₃₂ ⊕ (%ymm3[31:0] | 0x0₃₂) ⊕ (%ymm3[31:0] | 0x0₃₂ ⊕ (%ymm3[31:0] | 0x0₃₂)))))
+    hand-written:  0x0₁₂₈ ∘ (%ymm3[127:96] ∘ 0x0₃₂ ∘ %ymm2[63:32] ∘ 0x0₃₂)
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_246 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_247 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_248 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_249 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_250 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_251 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_252 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_253 
+strata does not support 'vinsertps $0xfd, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_254 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_255 
+Equivalent.

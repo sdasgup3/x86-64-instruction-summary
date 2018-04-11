@@ -1,0 +1,3 @@
+.target:
+  rorq $0x50, %rbx
+  retq
