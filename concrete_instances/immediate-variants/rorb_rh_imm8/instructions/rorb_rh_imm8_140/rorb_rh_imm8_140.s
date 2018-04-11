@@ -1,0 +1,3 @@
+.target:
+  rorb $0x8c, %ah
+  retq

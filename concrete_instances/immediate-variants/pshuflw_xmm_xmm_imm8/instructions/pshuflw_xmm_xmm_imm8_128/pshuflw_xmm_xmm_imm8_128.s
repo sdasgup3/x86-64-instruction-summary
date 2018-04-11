@@ -1,0 +1,3 @@
+.target:
+  pshuflw $0x80, %xmm2, %xmm1
+  retq

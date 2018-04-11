@@ -1,0 +1,181 @@
+[4m[1m[34mFiring Last 12[0m
+Thread 1 start: vpextrw_r64_xmm_imm8_5
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vpextrw_r64_xmm_imm8/instructions/vpextrw_r64_xmm_imm8_5/vpextrw_r64_xmm_imm8_5.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 }" --live_out "{ %rbx }" 
+Thread 2 start: vpextrw_r64_xmm_imm8_37
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vpextrw_r64_xmm_imm8/instructions/vpextrw_r64_xmm_imm8_37/vpextrw_r64_xmm_imm8_37.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 }" --live_out "{ %rbx }" 
+Thread 3 start: vpextrw_r64_xmm_imm8_69
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vpextrw_r64_xmm_imm8/instructions/vpextrw_r64_xmm_imm8_69/vpextrw_r64_xmm_imm8_69.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 }" --live_out "{ %rbx }" 
+Thread 4 start: vpextrw_r64_xmm_imm8_87
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vpextrw_r64_xmm_imm8/instructions/vpextrw_r64_xmm_imm8_87/vpextrw_r64_xmm_imm8_87.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 }" --live_out "{ %rbx }" 
+Thread 5 start: vpextrw_r64_xmm_imm8_109
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vpextrw_r64_xmm_imm8/instructions/vpextrw_r64_xmm_imm8_109/vpextrw_r64_xmm_imm8_109.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 }" --live_out "{ %rbx }" 
+Thread 6 start: vpextrw_r64_xmm_imm8_151
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vpextrw_r64_xmm_imm8/instructions/vpextrw_r64_xmm_imm8_151/vpextrw_r64_xmm_imm8_151.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 }" --live_out "{ %rbx }" 
+Thread 7 start: vpextrw_r64_xmm_imm8_173
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vpextrw_r64_xmm_imm8/instructions/vpextrw_r64_xmm_imm8_173/vpextrw_r64_xmm_imm8_173.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 }" --live_out "{ %rbx }" 
+Thread 8 start: vpextrw_r64_xmm_imm8_207
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vpextrw_r64_xmm_imm8/instructions/vpextrw_r64_xmm_imm8_207/vpextrw_r64_xmm_imm8_207.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 }" --live_out "{ %rbx }" 
+Thread 9 start: vpextrw_r64_xmm_imm8_221
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vpextrw_r64_xmm_imm8/instructions/vpextrw_r64_xmm_imm8_221/vpextrw_r64_xmm_imm8_221.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 }" --live_out "{ %rbx }" 
+Thread 10 start: vpextrw_r64_xmm_imm8_223
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vpextrw_r64_xmm_imm8/instructions/vpextrw_r64_xmm_imm8_223/vpextrw_r64_xmm_imm8_223.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 }" --live_out "{ %rbx }" 
+Thread 11 start: vpextrw_r64_xmm_imm8_239
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vpextrw_r64_xmm_imm8/instructions/vpextrw_r64_xmm_imm8_239/vpextrw_r64_xmm_imm8_239.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 }" --live_out "{ %rbx }" 
+Thread 12 start: vpextrw_r64_xmm_imm8_254
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vpextrw_r64_xmm_imm8/instructions/vpextrw_r64_xmm_imm8_254/vpextrw_r64_xmm_imm8_254.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 }" --live_out "{ %rbx }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Thread 12 done!: vpextrw_r64_xmm_imm8_254
+Thread 4 done!: vpextrw_r64_xmm_imm8_87
+Thread 1 done!: vpextrw_r64_xmm_imm8_5
+Thread 7 done!: vpextrw_r64_xmm_imm8_173
+Thread 5 done!: vpextrw_r64_xmm_imm8_109
+Thread 11 done!: vpextrw_r64_xmm_imm8_239
+Thread 8 done!: vpextrw_r64_xmm_imm8_207
+Thread 3 done!: vpextrw_r64_xmm_imm8_69
+Thread 9 done!: vpextrw_r64_xmm_imm8_221
+Thread 10 done!: vpextrw_r64_xmm_imm8_223
+Thread 2 done!: vpextrw_r64_xmm_imm8_37
+Thread 6 done!: vpextrw_r64_xmm_imm8_151

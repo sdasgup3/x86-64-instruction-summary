@@ -1,0 +1,3 @@
+.target:
+  psrld $0x5d, %xmm1
+  retq

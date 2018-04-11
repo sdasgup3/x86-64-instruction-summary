@@ -1,0 +1,3 @@
+.target:
+  adcq $0x1b, %rbx
+  retq

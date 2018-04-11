@@ -1,0 +1,3 @@
+.target:
+  rorl $0xa0, %ebx
+  retq

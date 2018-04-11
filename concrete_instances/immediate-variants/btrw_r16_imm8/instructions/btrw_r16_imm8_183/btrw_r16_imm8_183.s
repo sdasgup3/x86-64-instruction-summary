@@ -1,0 +1,3 @@
+.target:
+  btrw $0xb7, %bx
+  retq

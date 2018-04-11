@@ -1,0 +1,1415 @@
+[4m[1m[34mFiring Last 99[0m
+Thread 1 start: vshufps_xmm_xmm_xmm_imm8_12
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_12/vshufps_xmm_xmm_xmm_imm8_12.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 2 start: vshufps_xmm_xmm_xmm_imm8_16
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_16/vshufps_xmm_xmm_xmm_imm8_16.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 3 start: vshufps_xmm_xmm_xmm_imm8_18
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_18/vshufps_xmm_xmm_xmm_imm8_18.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 5 start: vshufps_xmm_xmm_xmm_imm8_20
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_20/vshufps_xmm_xmm_xmm_imm8_20.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 4 start: vshufps_xmm_xmm_xmm_imm8_19
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_19/vshufps_xmm_xmm_xmm_imm8_19.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 6 start: vshufps_xmm_xmm_xmm_imm8_22
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_22/vshufps_xmm_xmm_xmm_imm8_22.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 7 start: vshufps_xmm_xmm_xmm_imm8_23
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_23/vshufps_xmm_xmm_xmm_imm8_23.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 14 start: vshufps_xmm_xmm_xmm_imm8_45
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_45/vshufps_xmm_xmm_xmm_imm8_45.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 13 start: vshufps_xmm_xmm_xmm_imm8_44
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_44/vshufps_xmm_xmm_xmm_imm8_44.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 10 start: vshufps_xmm_xmm_xmm_imm8_29
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_29/vshufps_xmm_xmm_xmm_imm8_29.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 11 start: vshufps_xmm_xmm_xmm_imm8_33
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_33/vshufps_xmm_xmm_xmm_imm8_33.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 12 start: vshufps_xmm_xmm_xmm_imm8_39
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_39/vshufps_xmm_xmm_xmm_imm8_39.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 9 start: vshufps_xmm_xmm_xmm_imm8_28
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_28/vshufps_xmm_xmm_xmm_imm8_28.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 8 start: vshufps_xmm_xmm_xmm_imm8_27
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_27/vshufps_xmm_xmm_xmm_imm8_27.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 16 start: vshufps_xmm_xmm_xmm_imm8_51
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_51/vshufps_xmm_xmm_xmm_imm8_51.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 15 start: vshufps_xmm_xmm_xmm_imm8_50
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_50/vshufps_xmm_xmm_xmm_imm8_50.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 17 start: vshufps_xmm_xmm_xmm_imm8_53
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_53/vshufps_xmm_xmm_xmm_imm8_53.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 18 start: vshufps_xmm_xmm_xmm_imm8_54
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_54/vshufps_xmm_xmm_xmm_imm8_54.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 19 start: vshufps_xmm_xmm_xmm_imm8_55
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_55/vshufps_xmm_xmm_xmm_imm8_55.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 20 start: vshufps_xmm_xmm_xmm_imm8_57
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_57/vshufps_xmm_xmm_xmm_imm8_57.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 21 start: vshufps_xmm_xmm_xmm_imm8_61
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_61/vshufps_xmm_xmm_xmm_imm8_61.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 22 start: vshufps_xmm_xmm_xmm_imm8_71
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_71/vshufps_xmm_xmm_xmm_imm8_71.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 23 start: vshufps_xmm_xmm_xmm_imm8_82
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_82/vshufps_xmm_xmm_xmm_imm8_82.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 24 start: vshufps_xmm_xmm_xmm_imm8_83
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_83/vshufps_xmm_xmm_xmm_imm8_83.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 25 start: vshufps_xmm_xmm_xmm_imm8_88
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_88/vshufps_xmm_xmm_xmm_imm8_88.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 26 start: vshufps_xmm_xmm_xmm_imm8_90
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_90/vshufps_xmm_xmm_xmm_imm8_90.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 27 start: vshufps_xmm_xmm_xmm_imm8_91
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_91/vshufps_xmm_xmm_xmm_imm8_91.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 28 start: vshufps_xmm_xmm_xmm_imm8_93
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_93/vshufps_xmm_xmm_xmm_imm8_93.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 29 start: vshufps_xmm_xmm_xmm_imm8_98
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_98/vshufps_xmm_xmm_xmm_imm8_98.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 30 start: vshufps_xmm_xmm_xmm_imm8_99
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_99/vshufps_xmm_xmm_xmm_imm8_99.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 31 start: vshufps_xmm_xmm_xmm_imm8_100
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_100/vshufps_xmm_xmm_xmm_imm8_100.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 32 start: vshufps_xmm_xmm_xmm_imm8_103
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_103/vshufps_xmm_xmm_xmm_imm8_103.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 33 start: vshufps_xmm_xmm_xmm_imm8_105
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_105/vshufps_xmm_xmm_xmm_imm8_105.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 34 start: vshufps_xmm_xmm_xmm_imm8_107
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_107/vshufps_xmm_xmm_xmm_imm8_107.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 35 start: vshufps_xmm_xmm_xmm_imm8_108
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_108/vshufps_xmm_xmm_xmm_imm8_108.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 36 start: vshufps_xmm_xmm_xmm_imm8_110
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_110/vshufps_xmm_xmm_xmm_imm8_110.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 37 start: vshufps_xmm_xmm_xmm_imm8_113
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_113/vshufps_xmm_xmm_xmm_imm8_113.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 38 start: vshufps_xmm_xmm_xmm_imm8_115
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_115/vshufps_xmm_xmm_xmm_imm8_115.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 39 start: vshufps_xmm_xmm_xmm_imm8_116
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_116/vshufps_xmm_xmm_xmm_imm8_116.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 40 start: vshufps_xmm_xmm_xmm_imm8_117
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_117/vshufps_xmm_xmm_xmm_imm8_117.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 41 start: vshufps_xmm_xmm_xmm_imm8_118
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_118/vshufps_xmm_xmm_xmm_imm8_118.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 42 start: vshufps_xmm_xmm_xmm_imm8_119
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_119/vshufps_xmm_xmm_xmm_imm8_119.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 43 start: vshufps_xmm_xmm_xmm_imm8_120
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_120/vshufps_xmm_xmm_xmm_imm8_120.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 44 start: vshufps_xmm_xmm_xmm_imm8_121
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_121/vshufps_xmm_xmm_xmm_imm8_121.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 45 start: vshufps_xmm_xmm_xmm_imm8_123
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_123/vshufps_xmm_xmm_xmm_imm8_123.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 46 start: vshufps_xmm_xmm_xmm_imm8_124
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_124/vshufps_xmm_xmm_xmm_imm8_124.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 48 start: vshufps_xmm_xmm_xmm_imm8_128
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_128/vshufps_xmm_xmm_xmm_imm8_128.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 47 start: vshufps_xmm_xmm_xmm_imm8_125
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_125/vshufps_xmm_xmm_xmm_imm8_125.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 49 start: vshufps_xmm_xmm_xmm_imm8_131
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_131/vshufps_xmm_xmm_xmm_imm8_131.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 50 start: vshufps_xmm_xmm_xmm_imm8_134
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_134/vshufps_xmm_xmm_xmm_imm8_134.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 51 start: vshufps_xmm_xmm_xmm_imm8_139
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_139/vshufps_xmm_xmm_xmm_imm8_139.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 52 start: vshufps_xmm_xmm_xmm_imm8_140
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_140/vshufps_xmm_xmm_xmm_imm8_140.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 53 start: vshufps_xmm_xmm_xmm_imm8_141
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_141/vshufps_xmm_xmm_xmm_imm8_141.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 54 start: vshufps_xmm_xmm_xmm_imm8_144
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_144/vshufps_xmm_xmm_xmm_imm8_144.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 55 start: vshufps_xmm_xmm_xmm_imm8_147
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_147/vshufps_xmm_xmm_xmm_imm8_147.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 56 start: vshufps_xmm_xmm_xmm_imm8_148
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_148/vshufps_xmm_xmm_xmm_imm8_148.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 57 start: vshufps_xmm_xmm_xmm_imm8_150
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_150/vshufps_xmm_xmm_xmm_imm8_150.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 58 start: vshufps_xmm_xmm_xmm_imm8_154
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_154/vshufps_xmm_xmm_xmm_imm8_154.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 59 start: vshufps_xmm_xmm_xmm_imm8_155
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_155/vshufps_xmm_xmm_xmm_imm8_155.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 60 start: vshufps_xmm_xmm_xmm_imm8_156
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_156/vshufps_xmm_xmm_xmm_imm8_156.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 61 start: vshufps_xmm_xmm_xmm_imm8_157
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_157/vshufps_xmm_xmm_xmm_imm8_157.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 62 start: vshufps_xmm_xmm_xmm_imm8_161
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_161/vshufps_xmm_xmm_xmm_imm8_161.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 63 start: vshufps_xmm_xmm_xmm_imm8_163
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_163/vshufps_xmm_xmm_xmm_imm8_163.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 64 start: vshufps_xmm_xmm_xmm_imm8_169
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_169/vshufps_xmm_xmm_xmm_imm8_169.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 65 start: vshufps_xmm_xmm_xmm_imm8_176
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_176/vshufps_xmm_xmm_xmm_imm8_176.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 66 start: vshufps_xmm_xmm_xmm_imm8_177
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_177/vshufps_xmm_xmm_xmm_imm8_177.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 67 start: vshufps_xmm_xmm_xmm_imm8_178
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_178/vshufps_xmm_xmm_xmm_imm8_178.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 68 start: vshufps_xmm_xmm_xmm_imm8_179
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_179/vshufps_xmm_xmm_xmm_imm8_179.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 69 start: vshufps_xmm_xmm_xmm_imm8_180
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_180/vshufps_xmm_xmm_xmm_imm8_180.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 70 start: vshufps_xmm_xmm_xmm_imm8_181
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_181/vshufps_xmm_xmm_xmm_imm8_181.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 71 start: vshufps_xmm_xmm_xmm_imm8_184
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_184/vshufps_xmm_xmm_xmm_imm8_184.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 72 start: vshufps_xmm_xmm_xmm_imm8_188
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_188/vshufps_xmm_xmm_xmm_imm8_188.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 73 start: vshufps_xmm_xmm_xmm_imm8_189
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_189/vshufps_xmm_xmm_xmm_imm8_189.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 74 start: vshufps_xmm_xmm_xmm_imm8_190
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_190/vshufps_xmm_xmm_xmm_imm8_190.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 75 start: vshufps_xmm_xmm_xmm_imm8_193
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_193/vshufps_xmm_xmm_xmm_imm8_193.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 76 start: vshufps_xmm_xmm_xmm_imm8_195
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_195/vshufps_xmm_xmm_xmm_imm8_195.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 77 start: vshufps_xmm_xmm_xmm_imm8_197
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_197/vshufps_xmm_xmm_xmm_imm8_197.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 78 start: vshufps_xmm_xmm_xmm_imm8_198
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_198/vshufps_xmm_xmm_xmm_imm8_198.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 79 start: vshufps_xmm_xmm_xmm_imm8_199
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_199/vshufps_xmm_xmm_xmm_imm8_199.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 80 start: vshufps_xmm_xmm_xmm_imm8_201
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_201/vshufps_xmm_xmm_xmm_imm8_201.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 81 start: vshufps_xmm_xmm_xmm_imm8_203
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_203/vshufps_xmm_xmm_xmm_imm8_203.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 82 start: vshufps_xmm_xmm_xmm_imm8_204
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_204/vshufps_xmm_xmm_xmm_imm8_204.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 83 start: vshufps_xmm_xmm_xmm_imm8_205
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_205/vshufps_xmm_xmm_xmm_imm8_205.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 84 start: vshufps_xmm_xmm_xmm_imm8_207
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_207/vshufps_xmm_xmm_xmm_imm8_207.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 85 start: vshufps_xmm_xmm_xmm_imm8_209
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_209/vshufps_xmm_xmm_xmm_imm8_209.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 86 start: vshufps_xmm_xmm_xmm_imm8_210
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_210/vshufps_xmm_xmm_xmm_imm8_210.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 87 start: vshufps_xmm_xmm_xmm_imm8_211
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_211/vshufps_xmm_xmm_xmm_imm8_211.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 88 start: vshufps_xmm_xmm_xmm_imm8_212
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_212/vshufps_xmm_xmm_xmm_imm8_212.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 89 start: vshufps_xmm_xmm_xmm_imm8_213
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_213/vshufps_xmm_xmm_xmm_imm8_213.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 90 start: vshufps_xmm_xmm_xmm_imm8_215
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_215/vshufps_xmm_xmm_xmm_imm8_215.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 92 start: vshufps_xmm_xmm_xmm_imm8_218
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_218/vshufps_xmm_xmm_xmm_imm8_218.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 93 start: vshufps_xmm_xmm_xmm_imm8_219
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_219/vshufps_xmm_xmm_xmm_imm8_219.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 91 start: vshufps_xmm_xmm_xmm_imm8_217
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_217/vshufps_xmm_xmm_xmm_imm8_217.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 94 start: vshufps_xmm_xmm_xmm_imm8_231
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_231/vshufps_xmm_xmm_xmm_imm8_231.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 95 start: vshufps_xmm_xmm_xmm_imm8_235
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_235/vshufps_xmm_xmm_xmm_imm8_235.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 96 start: vshufps_xmm_xmm_xmm_imm8_241
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_241/vshufps_xmm_xmm_xmm_imm8_241.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 97 start: vshufps_xmm_xmm_xmm_imm8_242
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_242/vshufps_xmm_xmm_xmm_imm8_242.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 98 start: vshufps_xmm_xmm_xmm_imm8_249
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_249/vshufps_xmm_xmm_xmm_imm8_249.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 99 start: vshufps_xmm_xmm_xmm_imm8_252
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vshufps_xmm_xmm_xmm_imm8/instructions/vshufps_xmm_xmm_xmm_imm8_252/vshufps_xmm_xmm_xmm_imm8_252.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Thread 21 done!: vshufps_xmm_xmm_xmm_imm8_61
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Thread 3 done!: vshufps_xmm_xmm_xmm_imm8_18
+Thread 23 done!: vshufps_xmm_xmm_xmm_imm8_82
+Thread 16 done!: vshufps_xmm_xmm_xmm_imm8_51
+Thread 5 done!: vshufps_xmm_xmm_xmm_imm8_20
+Thread 15 done!: vshufps_xmm_xmm_xmm_imm8_50
+Thread 92 done!: vshufps_xmm_xmm_xmm_imm8_218
+Thread 24 done!: vshufps_xmm_xmm_xmm_imm8_83
+Thread 18 done!: vshufps_xmm_xmm_xmm_imm8_54
+Thread 6 done!: vshufps_xmm_xmm_xmm_imm8_22
+Thread 1 done!: vshufps_xmm_xmm_xmm_imm8_12
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Thread 28 done!: vshufps_xmm_xmm_xmm_imm8_93
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Thread 11 done!: vshufps_xmm_xmm_xmm_imm8_33
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Thread 56 done!: vshufps_xmm_xmm_xmm_imm8_148
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Thread 4 done!: vshufps_xmm_xmm_xmm_imm8_19
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Thread 27 done!: vshufps_xmm_xmm_xmm_imm8_91
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Thread 91 done!: vshufps_xmm_xmm_xmm_imm8_217
+Thread 47 done!: vshufps_xmm_xmm_xmm_imm8_125
+Completed 4000cases
+Thread 59 done!: vshufps_xmm_xmm_xmm_imm8_155
+Thread 69 done!: vshufps_xmm_xmm_xmm_imm8_180
+Thread 66 done!: vshufps_xmm_xmm_xmm_imm8_177
+Thread 96 done!: vshufps_xmm_xmm_xmm_imm8_241
+Thread 87 done!: vshufps_xmm_xmm_xmm_imm8_211
+Thread 67 done!: vshufps_xmm_xmm_xmm_imm8_178
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Thread 61 done!: vshufps_xmm_xmm_xmm_imm8_157
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Thread 34 done!: vshufps_xmm_xmm_xmm_imm8_107
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Thread 93 done!: vshufps_xmm_xmm_xmm_imm8_219
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Thread 50 done!: vshufps_xmm_xmm_xmm_imm8_134
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Thread 70 done!: vshufps_xmm_xmm_xmm_imm8_181
+Thread 52 done!: vshufps_xmm_xmm_xmm_imm8_140
+Thread 41 done!: vshufps_xmm_xmm_xmm_imm8_118
+Thread 68 done!: vshufps_xmm_xmm_xmm_imm8_179
+Thread 73 done!: vshufps_xmm_xmm_xmm_imm8_189
+Thread 55 done!: vshufps_xmm_xmm_xmm_imm8_147
+Completed 6000cases
+Thread 43 done!: vshufps_xmm_xmm_xmm_imm8_120
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Thread 71 done!: vshufps_xmm_xmm_xmm_imm8_184
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Thread 60 done!: vshufps_xmm_xmm_xmm_imm8_156
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Thread 39 done!: vshufps_xmm_xmm_xmm_imm8_116
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Thread 90 done!: vshufps_xmm_xmm_xmm_imm8_215
+Thread 94 done!: vshufps_xmm_xmm_xmm_imm8_231
+Thread 62 done!: vshufps_xmm_xmm_xmm_imm8_161
+Thread 81 done!: vshufps_xmm_xmm_xmm_imm8_203
+Thread 65 done!: vshufps_xmm_xmm_xmm_imm8_176
+Thread 78 done!: vshufps_xmm_xmm_xmm_imm8_198
+Thread 97 done!: vshufps_xmm_xmm_xmm_imm8_242
+Thread 74 done!: vshufps_xmm_xmm_xmm_imm8_190
+Thread 72 done!: vshufps_xmm_xmm_xmm_imm8_188
+Thread 37 done!: vshufps_xmm_xmm_xmm_imm8_113
+Thread 76 done!: vshufps_xmm_xmm_xmm_imm8_195
+Thread 98 done!: vshufps_xmm_xmm_xmm_imm8_249
+Thread 58 done!: vshufps_xmm_xmm_xmm_imm8_154
+Thread 64 done!: vshufps_xmm_xmm_xmm_imm8_169
+Thread 57 done!: vshufps_xmm_xmm_xmm_imm8_150
+Thread 85 done!: vshufps_xmm_xmm_xmm_imm8_209
+Thread 53 done!: vshufps_xmm_xmm_xmm_imm8_141
+Thread 42 done!: vshufps_xmm_xmm_xmm_imm8_119
+Thread 77 done!: vshufps_xmm_xmm_xmm_imm8_197
+Thread 99 done!: vshufps_xmm_xmm_xmm_imm8_252
+Thread 95 done!: vshufps_xmm_xmm_xmm_imm8_235
+Thread 63 done!: vshufps_xmm_xmm_xmm_imm8_163
+Thread 79 done!: vshufps_xmm_xmm_xmm_imm8_199
+Thread 49 done!: vshufps_xmm_xmm_xmm_imm8_131
+Thread 46 done!: vshufps_xmm_xmm_xmm_imm8_124
+Thread 89 done!: vshufps_xmm_xmm_xmm_imm8_213
+Thread 75 done!: vshufps_xmm_xmm_xmm_imm8_193
+Thread 48 done!: vshufps_xmm_xmm_xmm_imm8_128
+Thread 35 done!: vshufps_xmm_xmm_xmm_imm8_108
+Thread 51 done!: vshufps_xmm_xmm_xmm_imm8_139
+Thread 83 done!: vshufps_xmm_xmm_xmm_imm8_205
+Thread 80 done!: vshufps_xmm_xmm_xmm_imm8_201
+Thread 40 done!: vshufps_xmm_xmm_xmm_imm8_117
+Thread 25 done!: vshufps_xmm_xmm_xmm_imm8_88
+Thread 88 done!: vshufps_xmm_xmm_xmm_imm8_212
+Thread 32 done!: vshufps_xmm_xmm_xmm_imm8_103
+Thread 36 done!: vshufps_xmm_xmm_xmm_imm8_110
+Thread 82 done!: vshufps_xmm_xmm_xmm_imm8_204
+Thread 22 done!: vshufps_xmm_xmm_xmm_imm8_71
+Thread 38 done!: vshufps_xmm_xmm_xmm_imm8_115
+Thread 54 done!: vshufps_xmm_xmm_xmm_imm8_144
+Thread 84 done!: vshufps_xmm_xmm_xmm_imm8_207
+Thread 30 done!: vshufps_xmm_xmm_xmm_imm8_99
+Thread 33 done!: vshufps_xmm_xmm_xmm_imm8_105
+Thread 45 done!: vshufps_xmm_xmm_xmm_imm8_123
+Thread 20 done!: vshufps_xmm_xmm_xmm_imm8_57
+Thread 44 done!: vshufps_xmm_xmm_xmm_imm8_121
+Thread 9 done!: vshufps_xmm_xmm_xmm_imm8_28
+Thread 17 done!: vshufps_xmm_xmm_xmm_imm8_53
+Thread 7 done!: vshufps_xmm_xmm_xmm_imm8_23
+Thread 8 done!: vshufps_xmm_xmm_xmm_imm8_27
+Thread 29 done!: vshufps_xmm_xmm_xmm_imm8_98
+Thread 86 done!: vshufps_xmm_xmm_xmm_imm8_210
+Thread 12 done!: vshufps_xmm_xmm_xmm_imm8_39
+Thread 19 done!: vshufps_xmm_xmm_xmm_imm8_55
+Thread 2 done!: vshufps_xmm_xmm_xmm_imm8_16
+Thread 14 done!: vshufps_xmm_xmm_xmm_imm8_45
+Thread 10 done!: vshufps_xmm_xmm_xmm_imm8_29
+Thread 13 done!: vshufps_xmm_xmm_xmm_imm8_44
+Thread 31 done!: vshufps_xmm_xmm_xmm_imm8_100
+Thread 26 done!: vshufps_xmm_xmm_xmm_imm8_90

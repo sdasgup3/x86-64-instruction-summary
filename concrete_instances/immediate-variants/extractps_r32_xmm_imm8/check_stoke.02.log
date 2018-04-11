@@ -1,0 +1,31 @@
+[4m[1m[34mFiring Last 2[0m
+Thread 1 start: extractps_r32_xmm_imm8_231
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/extractps_r32_xmm_imm8/instructions/extractps_r32_xmm_imm8_231/extractps_r32_xmm_imm8_231.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 }" --live_out "{ %rbx }" 
+Thread 2 start: extractps_r32_xmm_imm8_253
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/extractps_r32_xmm_imm8/instructions/extractps_r32_xmm_imm8_253/extractps_r32_xmm_imm8_253.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 }" --live_out "{ %rbx }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 2000cases
+Completed 3000cases
+Completed 3000cases
+Completed 4000cases
+Completed 4000cases
+Completed 5000cases
+Completed 5000cases
+Completed 6000cases
+Completed 6000cases
+Thread 2 done!: extractps_r32_xmm_imm8_253
+Thread 1 done!: extractps_r32_xmm_imm8_231

@@ -1,0 +1,3 @@
+.target:
+  orl $0x16, %ebx
+  retq

@@ -1,0 +1,3 @@
+.target:
+  andw $0x97, %bx
+  retq

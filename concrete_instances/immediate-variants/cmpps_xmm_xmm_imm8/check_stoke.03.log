@@ -1,0 +1,2527 @@
+[4m[1m[34mFiring 256.[0m
+Thread 1 start: cmpps_xmm_xmm_imm8_0
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_0/cmpps_xmm_xmm_imm8_0.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 2 start: cmpps_xmm_xmm_imm8_1
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_1/cmpps_xmm_xmm_imm8_1.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 3 start: cmpps_xmm_xmm_imm8_2
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_2/cmpps_xmm_xmm_imm8_2.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 7 start: cmpps_xmm_xmm_imm8_6
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_6/cmpps_xmm_xmm_imm8_6.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 8 start: cmpps_xmm_xmm_imm8_7
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_7/cmpps_xmm_xmm_imm8_7.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 4 start: cmpps_xmm_xmm_imm8_3
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_3/cmpps_xmm_xmm_imm8_3.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 5 start: cmpps_xmm_xmm_imm8_4
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_4/cmpps_xmm_xmm_imm8_4.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 9 start: cmpps_xmm_xmm_imm8_8
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_8/cmpps_xmm_xmm_imm8_8.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 11 start: cmpps_xmm_xmm_imm8_10
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_10/cmpps_xmm_xmm_imm8_10.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 12 start: cmpps_xmm_xmm_imm8_11
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_11/cmpps_xmm_xmm_imm8_11.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 13 start: cmpps_xmm_xmm_imm8_12
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_12/cmpps_xmm_xmm_imm8_12.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 15 start: cmpps_xmm_xmm_imm8_14
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_14/cmpps_xmm_xmm_imm8_14.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 16 start: cmpps_xmm_xmm_imm8_15
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_15/cmpps_xmm_xmm_imm8_15.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 17 start: cmpps_xmm_xmm_imm8_16
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_16/cmpps_xmm_xmm_imm8_16.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 18 start: cmpps_xmm_xmm_imm8_17
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_17/cmpps_xmm_xmm_imm8_17.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 10 start: cmpps_xmm_xmm_imm8_9
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_9/cmpps_xmm_xmm_imm8_9.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 19 start: cmpps_xmm_xmm_imm8_18
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_18/cmpps_xmm_xmm_imm8_18.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 6 start: cmpps_xmm_xmm_imm8_5
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_5/cmpps_xmm_xmm_imm8_5.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 20 start: cmpps_xmm_xmm_imm8_19
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_19/cmpps_xmm_xmm_imm8_19.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 21 start: cmpps_xmm_xmm_imm8_20
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_20/cmpps_xmm_xmm_imm8_20.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 14 start: cmpps_xmm_xmm_imm8_13
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_13/cmpps_xmm_xmm_imm8_13.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 22 start: cmpps_xmm_xmm_imm8_21
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_21/cmpps_xmm_xmm_imm8_21.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 24 start: cmpps_xmm_xmm_imm8_23
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_23/cmpps_xmm_xmm_imm8_23.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 23 start: cmpps_xmm_xmm_imm8_22
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_22/cmpps_xmm_xmm_imm8_22.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 26 start: cmpps_xmm_xmm_imm8_25
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_25/cmpps_xmm_xmm_imm8_25.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 27 start: cmpps_xmm_xmm_imm8_26
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_26/cmpps_xmm_xmm_imm8_26.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 28 start: cmpps_xmm_xmm_imm8_27
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_27/cmpps_xmm_xmm_imm8_27.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 25 start: cmpps_xmm_xmm_imm8_24
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_24/cmpps_xmm_xmm_imm8_24.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 29 start: cmpps_xmm_xmm_imm8_28
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_28/cmpps_xmm_xmm_imm8_28.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 30 start: cmpps_xmm_xmm_imm8_29
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_29/cmpps_xmm_xmm_imm8_29.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 31 start: cmpps_xmm_xmm_imm8_30
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_30/cmpps_xmm_xmm_imm8_30.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 32 start: cmpps_xmm_xmm_imm8_31
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_31/cmpps_xmm_xmm_imm8_31.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 33 start: cmpps_xmm_xmm_imm8_32
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_32/cmpps_xmm_xmm_imm8_32.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 34 start: cmpps_xmm_xmm_imm8_33
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_33/cmpps_xmm_xmm_imm8_33.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 35 start: cmpps_xmm_xmm_imm8_34
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_34/cmpps_xmm_xmm_imm8_34.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 36 start: cmpps_xmm_xmm_imm8_35
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_35/cmpps_xmm_xmm_imm8_35.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 37 start: cmpps_xmm_xmm_imm8_36
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_36/cmpps_xmm_xmm_imm8_36.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 38 start: cmpps_xmm_xmm_imm8_37
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_37/cmpps_xmm_xmm_imm8_37.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 39 start: cmpps_xmm_xmm_imm8_38
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_38/cmpps_xmm_xmm_imm8_38.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 40 start: cmpps_xmm_xmm_imm8_39
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_39/cmpps_xmm_xmm_imm8_39.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 41 start: cmpps_xmm_xmm_imm8_40
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_40/cmpps_xmm_xmm_imm8_40.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 42 start: cmpps_xmm_xmm_imm8_41
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_41/cmpps_xmm_xmm_imm8_41.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 43 start: cmpps_xmm_xmm_imm8_42
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_42/cmpps_xmm_xmm_imm8_42.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 44 start: cmpps_xmm_xmm_imm8_43
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_43/cmpps_xmm_xmm_imm8_43.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 45 start: cmpps_xmm_xmm_imm8_44
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_44/cmpps_xmm_xmm_imm8_44.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 46 start: cmpps_xmm_xmm_imm8_45
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_45/cmpps_xmm_xmm_imm8_45.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 47 start: cmpps_xmm_xmm_imm8_46
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_46/cmpps_xmm_xmm_imm8_46.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 48 start: cmpps_xmm_xmm_imm8_47
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_47/cmpps_xmm_xmm_imm8_47.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 49 start: cmpps_xmm_xmm_imm8_48
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_48/cmpps_xmm_xmm_imm8_48.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 50 start: cmpps_xmm_xmm_imm8_49
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_49/cmpps_xmm_xmm_imm8_49.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 51 start: cmpps_xmm_xmm_imm8_50
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_50/cmpps_xmm_xmm_imm8_50.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 52 start: cmpps_xmm_xmm_imm8_51
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_51/cmpps_xmm_xmm_imm8_51.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 53 start: cmpps_xmm_xmm_imm8_52
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_52/cmpps_xmm_xmm_imm8_52.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 54 start: cmpps_xmm_xmm_imm8_53
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_53/cmpps_xmm_xmm_imm8_53.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 55 start: cmpps_xmm_xmm_imm8_54
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_54/cmpps_xmm_xmm_imm8_54.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 56 start: cmpps_xmm_xmm_imm8_55
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_55/cmpps_xmm_xmm_imm8_55.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 57 start: cmpps_xmm_xmm_imm8_56
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_56/cmpps_xmm_xmm_imm8_56.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 59 start: cmpps_xmm_xmm_imm8_58
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_58/cmpps_xmm_xmm_imm8_58.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 58 start: cmpps_xmm_xmm_imm8_57
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_57/cmpps_xmm_xmm_imm8_57.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 60 start: cmpps_xmm_xmm_imm8_59
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_59/cmpps_xmm_xmm_imm8_59.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 61 start: cmpps_xmm_xmm_imm8_60
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_60/cmpps_xmm_xmm_imm8_60.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 62 start: cmpps_xmm_xmm_imm8_61
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_61/cmpps_xmm_xmm_imm8_61.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 63 start: cmpps_xmm_xmm_imm8_62
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_62/cmpps_xmm_xmm_imm8_62.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 64 start: cmpps_xmm_xmm_imm8_63
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_63/cmpps_xmm_xmm_imm8_63.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 65 start: cmpps_xmm_xmm_imm8_64
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_64/cmpps_xmm_xmm_imm8_64.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 66 start: cmpps_xmm_xmm_imm8_65
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_65/cmpps_xmm_xmm_imm8_65.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 67 start: cmpps_xmm_xmm_imm8_66
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_66/cmpps_xmm_xmm_imm8_66.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 68 start: cmpps_xmm_xmm_imm8_67
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_67/cmpps_xmm_xmm_imm8_67.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 69 start: cmpps_xmm_xmm_imm8_68
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_68/cmpps_xmm_xmm_imm8_68.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 70 start: cmpps_xmm_xmm_imm8_69
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_69/cmpps_xmm_xmm_imm8_69.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 71 start: cmpps_xmm_xmm_imm8_70
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_70/cmpps_xmm_xmm_imm8_70.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 73 start: cmpps_xmm_xmm_imm8_72
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_72/cmpps_xmm_xmm_imm8_72.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 72 start: cmpps_xmm_xmm_imm8_71
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_71/cmpps_xmm_xmm_imm8_71.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 74 start: cmpps_xmm_xmm_imm8_73
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_73/cmpps_xmm_xmm_imm8_73.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 75 start: cmpps_xmm_xmm_imm8_74
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_74/cmpps_xmm_xmm_imm8_74.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 76 start: cmpps_xmm_xmm_imm8_75
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_75/cmpps_xmm_xmm_imm8_75.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 77 start: cmpps_xmm_xmm_imm8_76
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_76/cmpps_xmm_xmm_imm8_76.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 78 start: cmpps_xmm_xmm_imm8_77
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_77/cmpps_xmm_xmm_imm8_77.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 79 start: cmpps_xmm_xmm_imm8_78
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_78/cmpps_xmm_xmm_imm8_78.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 80 start: cmpps_xmm_xmm_imm8_79
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_79/cmpps_xmm_xmm_imm8_79.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 81 start: cmpps_xmm_xmm_imm8_80
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_80/cmpps_xmm_xmm_imm8_80.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 82 start: cmpps_xmm_xmm_imm8_81
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_81/cmpps_xmm_xmm_imm8_81.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 83 start: cmpps_xmm_xmm_imm8_82
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_82/cmpps_xmm_xmm_imm8_82.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 84 start: cmpps_xmm_xmm_imm8_83
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_83/cmpps_xmm_xmm_imm8_83.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 85 start: cmpps_xmm_xmm_imm8_84
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_84/cmpps_xmm_xmm_imm8_84.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 86 start: cmpps_xmm_xmm_imm8_85
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_85/cmpps_xmm_xmm_imm8_85.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 87 start: cmpps_xmm_xmm_imm8_86
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_86/cmpps_xmm_xmm_imm8_86.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 88 start: cmpps_xmm_xmm_imm8_87
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_87/cmpps_xmm_xmm_imm8_87.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 89 start: cmpps_xmm_xmm_imm8_88
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_88/cmpps_xmm_xmm_imm8_88.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 90 start: cmpps_xmm_xmm_imm8_89
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_89/cmpps_xmm_xmm_imm8_89.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 91 start: cmpps_xmm_xmm_imm8_90
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_90/cmpps_xmm_xmm_imm8_90.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 92 start: cmpps_xmm_xmm_imm8_91
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_91/cmpps_xmm_xmm_imm8_91.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 93 start: cmpps_xmm_xmm_imm8_92
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_92/cmpps_xmm_xmm_imm8_92.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 94 start: cmpps_xmm_xmm_imm8_93
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_93/cmpps_xmm_xmm_imm8_93.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 95 start: cmpps_xmm_xmm_imm8_94
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_94/cmpps_xmm_xmm_imm8_94.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 96 start: cmpps_xmm_xmm_imm8_95
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_95/cmpps_xmm_xmm_imm8_95.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 97 start: cmpps_xmm_xmm_imm8_96
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_96/cmpps_xmm_xmm_imm8_96.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 98 start: cmpps_xmm_xmm_imm8_97
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_97/cmpps_xmm_xmm_imm8_97.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 99 start: cmpps_xmm_xmm_imm8_98
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_98/cmpps_xmm_xmm_imm8_98.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 100 start: cmpps_xmm_xmm_imm8_99
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_99/cmpps_xmm_xmm_imm8_99.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 101 start: cmpps_xmm_xmm_imm8_100
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_100/cmpps_xmm_xmm_imm8_100.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 102 start: cmpps_xmm_xmm_imm8_101
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_101/cmpps_xmm_xmm_imm8_101.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 103 start: cmpps_xmm_xmm_imm8_102
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_102/cmpps_xmm_xmm_imm8_102.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 104 start: cmpps_xmm_xmm_imm8_103
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_103/cmpps_xmm_xmm_imm8_103.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 105 start: cmpps_xmm_xmm_imm8_104
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_104/cmpps_xmm_xmm_imm8_104.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 106 start: cmpps_xmm_xmm_imm8_105
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_105/cmpps_xmm_xmm_imm8_105.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 107 start: cmpps_xmm_xmm_imm8_106
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_106/cmpps_xmm_xmm_imm8_106.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 108 start: cmpps_xmm_xmm_imm8_107
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_107/cmpps_xmm_xmm_imm8_107.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 109 start: cmpps_xmm_xmm_imm8_108
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_108/cmpps_xmm_xmm_imm8_108.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 110 start: cmpps_xmm_xmm_imm8_109
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_109/cmpps_xmm_xmm_imm8_109.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 111 start: cmpps_xmm_xmm_imm8_110
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_110/cmpps_xmm_xmm_imm8_110.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 112 start: cmpps_xmm_xmm_imm8_111
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_111/cmpps_xmm_xmm_imm8_111.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 113 start: cmpps_xmm_xmm_imm8_112
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_112/cmpps_xmm_xmm_imm8_112.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 114 start: cmpps_xmm_xmm_imm8_113
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_113/cmpps_xmm_xmm_imm8_113.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 115 start: cmpps_xmm_xmm_imm8_114
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_114/cmpps_xmm_xmm_imm8_114.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 116 start: cmpps_xmm_xmm_imm8_115
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_115/cmpps_xmm_xmm_imm8_115.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 117 start: cmpps_xmm_xmm_imm8_116
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_116/cmpps_xmm_xmm_imm8_116.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 118 start: cmpps_xmm_xmm_imm8_117
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_117/cmpps_xmm_xmm_imm8_117.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 119 start: cmpps_xmm_xmm_imm8_118
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_118/cmpps_xmm_xmm_imm8_118.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 120 start: cmpps_xmm_xmm_imm8_119
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_119/cmpps_xmm_xmm_imm8_119.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 121 start: cmpps_xmm_xmm_imm8_120
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_120/cmpps_xmm_xmm_imm8_120.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 122 start: cmpps_xmm_xmm_imm8_121
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_121/cmpps_xmm_xmm_imm8_121.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 123 start: cmpps_xmm_xmm_imm8_122
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_122/cmpps_xmm_xmm_imm8_122.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 124 start: cmpps_xmm_xmm_imm8_123
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_123/cmpps_xmm_xmm_imm8_123.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 125 start: cmpps_xmm_xmm_imm8_124
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_124/cmpps_xmm_xmm_imm8_124.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 126 start: cmpps_xmm_xmm_imm8_125
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_125/cmpps_xmm_xmm_imm8_125.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 127 start: cmpps_xmm_xmm_imm8_126
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_126/cmpps_xmm_xmm_imm8_126.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 128 start: cmpps_xmm_xmm_imm8_127
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_127/cmpps_xmm_xmm_imm8_127.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 129 start: cmpps_xmm_xmm_imm8_128
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_128/cmpps_xmm_xmm_imm8_128.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 130 start: cmpps_xmm_xmm_imm8_129
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_129/cmpps_xmm_xmm_imm8_129.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 131 start: cmpps_xmm_xmm_imm8_130
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_130/cmpps_xmm_xmm_imm8_130.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 132 start: cmpps_xmm_xmm_imm8_131
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_131/cmpps_xmm_xmm_imm8_131.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 133 start: cmpps_xmm_xmm_imm8_132
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_132/cmpps_xmm_xmm_imm8_132.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 134 start: cmpps_xmm_xmm_imm8_133
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_133/cmpps_xmm_xmm_imm8_133.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 135 start: cmpps_xmm_xmm_imm8_134
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_134/cmpps_xmm_xmm_imm8_134.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 136 start: cmpps_xmm_xmm_imm8_135
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_135/cmpps_xmm_xmm_imm8_135.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 137 start: cmpps_xmm_xmm_imm8_136
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_136/cmpps_xmm_xmm_imm8_136.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 138 start: cmpps_xmm_xmm_imm8_137
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_137/cmpps_xmm_xmm_imm8_137.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 139 start: cmpps_xmm_xmm_imm8_138
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_138/cmpps_xmm_xmm_imm8_138.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 140 start: cmpps_xmm_xmm_imm8_139
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_139/cmpps_xmm_xmm_imm8_139.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 141 start: cmpps_xmm_xmm_imm8_140
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_140/cmpps_xmm_xmm_imm8_140.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 142 start: cmpps_xmm_xmm_imm8_141
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_141/cmpps_xmm_xmm_imm8_141.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 143 start: cmpps_xmm_xmm_imm8_142
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_142/cmpps_xmm_xmm_imm8_142.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 144 start: cmpps_xmm_xmm_imm8_143
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_143/cmpps_xmm_xmm_imm8_143.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 145 start: cmpps_xmm_xmm_imm8_144
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_144/cmpps_xmm_xmm_imm8_144.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 146 start: cmpps_xmm_xmm_imm8_145
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_145/cmpps_xmm_xmm_imm8_145.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 147 start: cmpps_xmm_xmm_imm8_146
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_146/cmpps_xmm_xmm_imm8_146.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 148 start: cmpps_xmm_xmm_imm8_147
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_147/cmpps_xmm_xmm_imm8_147.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 149 start: cmpps_xmm_xmm_imm8_148
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_148/cmpps_xmm_xmm_imm8_148.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 150 start: cmpps_xmm_xmm_imm8_149
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_149/cmpps_xmm_xmm_imm8_149.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 151 start: cmpps_xmm_xmm_imm8_150
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_150/cmpps_xmm_xmm_imm8_150.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 152 start: cmpps_xmm_xmm_imm8_151
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_151/cmpps_xmm_xmm_imm8_151.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 153 start: cmpps_xmm_xmm_imm8_152
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_152/cmpps_xmm_xmm_imm8_152.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 154 start: cmpps_xmm_xmm_imm8_153
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_153/cmpps_xmm_xmm_imm8_153.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 155 start: cmpps_xmm_xmm_imm8_154
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_154/cmpps_xmm_xmm_imm8_154.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 156 start: cmpps_xmm_xmm_imm8_155
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_155/cmpps_xmm_xmm_imm8_155.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 157 start: cmpps_xmm_xmm_imm8_156
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_156/cmpps_xmm_xmm_imm8_156.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 158 start: cmpps_xmm_xmm_imm8_157
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_157/cmpps_xmm_xmm_imm8_157.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 159 start: cmpps_xmm_xmm_imm8_158
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_158/cmpps_xmm_xmm_imm8_158.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 160 start: cmpps_xmm_xmm_imm8_159
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_159/cmpps_xmm_xmm_imm8_159.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 161 start: cmpps_xmm_xmm_imm8_160
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_160/cmpps_xmm_xmm_imm8_160.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 162 start: cmpps_xmm_xmm_imm8_161
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_161/cmpps_xmm_xmm_imm8_161.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 163 start: cmpps_xmm_xmm_imm8_162
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_162/cmpps_xmm_xmm_imm8_162.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 164 start: cmpps_xmm_xmm_imm8_163
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_163/cmpps_xmm_xmm_imm8_163.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 165 start: cmpps_xmm_xmm_imm8_164
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_164/cmpps_xmm_xmm_imm8_164.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 166 start: cmpps_xmm_xmm_imm8_165
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_165/cmpps_xmm_xmm_imm8_165.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 167 start: cmpps_xmm_xmm_imm8_166
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_166/cmpps_xmm_xmm_imm8_166.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 168 start: cmpps_xmm_xmm_imm8_167
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_167/cmpps_xmm_xmm_imm8_167.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 169 start: cmpps_xmm_xmm_imm8_168
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_168/cmpps_xmm_xmm_imm8_168.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 170 start: cmpps_xmm_xmm_imm8_169
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_169/cmpps_xmm_xmm_imm8_169.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 172 start: cmpps_xmm_xmm_imm8_171
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_171/cmpps_xmm_xmm_imm8_171.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 173 start: cmpps_xmm_xmm_imm8_172
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_172/cmpps_xmm_xmm_imm8_172.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 171 start: cmpps_xmm_xmm_imm8_170
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_170/cmpps_xmm_xmm_imm8_170.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 174 start: cmpps_xmm_xmm_imm8_173
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_173/cmpps_xmm_xmm_imm8_173.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 175 start: cmpps_xmm_xmm_imm8_174
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_174/cmpps_xmm_xmm_imm8_174.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 176 start: cmpps_xmm_xmm_imm8_175
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_175/cmpps_xmm_xmm_imm8_175.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 177 start: cmpps_xmm_xmm_imm8_176
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_176/cmpps_xmm_xmm_imm8_176.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 178 start: cmpps_xmm_xmm_imm8_177
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_177/cmpps_xmm_xmm_imm8_177.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 179 start: cmpps_xmm_xmm_imm8_178
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_178/cmpps_xmm_xmm_imm8_178.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 180 start: cmpps_xmm_xmm_imm8_179
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_179/cmpps_xmm_xmm_imm8_179.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 181 start: cmpps_xmm_xmm_imm8_180
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_180/cmpps_xmm_xmm_imm8_180.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 182 start: cmpps_xmm_xmm_imm8_181
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_181/cmpps_xmm_xmm_imm8_181.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 183 start: cmpps_xmm_xmm_imm8_182
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_182/cmpps_xmm_xmm_imm8_182.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 184 start: cmpps_xmm_xmm_imm8_183
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_183/cmpps_xmm_xmm_imm8_183.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 185 start: cmpps_xmm_xmm_imm8_184
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_184/cmpps_xmm_xmm_imm8_184.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 186 start: cmpps_xmm_xmm_imm8_185
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_185/cmpps_xmm_xmm_imm8_185.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 187 start: cmpps_xmm_xmm_imm8_186
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_186/cmpps_xmm_xmm_imm8_186.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 188 start: cmpps_xmm_xmm_imm8_187
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_187/cmpps_xmm_xmm_imm8_187.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 189 start: cmpps_xmm_xmm_imm8_188
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_188/cmpps_xmm_xmm_imm8_188.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 190 start: cmpps_xmm_xmm_imm8_189
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_189/cmpps_xmm_xmm_imm8_189.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 191 start: cmpps_xmm_xmm_imm8_190
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_190/cmpps_xmm_xmm_imm8_190.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 192 start: cmpps_xmm_xmm_imm8_191
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_191/cmpps_xmm_xmm_imm8_191.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 193 start: cmpps_xmm_xmm_imm8_192
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_192/cmpps_xmm_xmm_imm8_192.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 194 start: cmpps_xmm_xmm_imm8_193
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_193/cmpps_xmm_xmm_imm8_193.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 195 start: cmpps_xmm_xmm_imm8_194
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_194/cmpps_xmm_xmm_imm8_194.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 196 start: cmpps_xmm_xmm_imm8_195
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_195/cmpps_xmm_xmm_imm8_195.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 197 start: cmpps_xmm_xmm_imm8_196
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_196/cmpps_xmm_xmm_imm8_196.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 198 start: cmpps_xmm_xmm_imm8_197
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_197/cmpps_xmm_xmm_imm8_197.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 199 start: cmpps_xmm_xmm_imm8_198
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_198/cmpps_xmm_xmm_imm8_198.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 200 start: cmpps_xmm_xmm_imm8_199
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_199/cmpps_xmm_xmm_imm8_199.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 201 start: cmpps_xmm_xmm_imm8_200
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_200/cmpps_xmm_xmm_imm8_200.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 202 start: cmpps_xmm_xmm_imm8_201
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_201/cmpps_xmm_xmm_imm8_201.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 203 start: cmpps_xmm_xmm_imm8_202
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_202/cmpps_xmm_xmm_imm8_202.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 204 start: cmpps_xmm_xmm_imm8_203
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_203/cmpps_xmm_xmm_imm8_203.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 205 start: cmpps_xmm_xmm_imm8_204
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_204/cmpps_xmm_xmm_imm8_204.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 206 start: cmpps_xmm_xmm_imm8_205
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_205/cmpps_xmm_xmm_imm8_205.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 207 start: cmpps_xmm_xmm_imm8_206
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_206/cmpps_xmm_xmm_imm8_206.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 208 start: cmpps_xmm_xmm_imm8_207
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_207/cmpps_xmm_xmm_imm8_207.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 209 start: cmpps_xmm_xmm_imm8_208
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_208/cmpps_xmm_xmm_imm8_208.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 210 start: cmpps_xmm_xmm_imm8_209
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_209/cmpps_xmm_xmm_imm8_209.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 211 start: cmpps_xmm_xmm_imm8_210
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_210/cmpps_xmm_xmm_imm8_210.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 212 start: cmpps_xmm_xmm_imm8_211
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_211/cmpps_xmm_xmm_imm8_211.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 213 start: cmpps_xmm_xmm_imm8_212
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_212/cmpps_xmm_xmm_imm8_212.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 214 start: cmpps_xmm_xmm_imm8_213
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_213/cmpps_xmm_xmm_imm8_213.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 215 start: cmpps_xmm_xmm_imm8_214
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_214/cmpps_xmm_xmm_imm8_214.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 216 start: cmpps_xmm_xmm_imm8_215
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_215/cmpps_xmm_xmm_imm8_215.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 217 start: cmpps_xmm_xmm_imm8_216
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_216/cmpps_xmm_xmm_imm8_216.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 218 start: cmpps_xmm_xmm_imm8_217
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_217/cmpps_xmm_xmm_imm8_217.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 219 start: cmpps_xmm_xmm_imm8_218
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_218/cmpps_xmm_xmm_imm8_218.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 220 start: cmpps_xmm_xmm_imm8_219
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_219/cmpps_xmm_xmm_imm8_219.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 221 start: cmpps_xmm_xmm_imm8_220
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_220/cmpps_xmm_xmm_imm8_220.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 222 start: cmpps_xmm_xmm_imm8_221
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_221/cmpps_xmm_xmm_imm8_221.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 223 start: cmpps_xmm_xmm_imm8_222
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_222/cmpps_xmm_xmm_imm8_222.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 224 start: cmpps_xmm_xmm_imm8_223
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_223/cmpps_xmm_xmm_imm8_223.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 225 start: cmpps_xmm_xmm_imm8_224
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_224/cmpps_xmm_xmm_imm8_224.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 226 start: cmpps_xmm_xmm_imm8_225
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_225/cmpps_xmm_xmm_imm8_225.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 227 start: cmpps_xmm_xmm_imm8_226
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_226/cmpps_xmm_xmm_imm8_226.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 228 start: cmpps_xmm_xmm_imm8_227
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_227/cmpps_xmm_xmm_imm8_227.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 229 start: cmpps_xmm_xmm_imm8_228
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_228/cmpps_xmm_xmm_imm8_228.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 230 start: cmpps_xmm_xmm_imm8_229
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_229/cmpps_xmm_xmm_imm8_229.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 231 start: cmpps_xmm_xmm_imm8_230
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_230/cmpps_xmm_xmm_imm8_230.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 232 start: cmpps_xmm_xmm_imm8_231
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_231/cmpps_xmm_xmm_imm8_231.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 233 start: cmpps_xmm_xmm_imm8_232
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_232/cmpps_xmm_xmm_imm8_232.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 234 start: cmpps_xmm_xmm_imm8_233
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_233/cmpps_xmm_xmm_imm8_233.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 235 start: cmpps_xmm_xmm_imm8_234
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_234/cmpps_xmm_xmm_imm8_234.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 236 start: cmpps_xmm_xmm_imm8_235
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_235/cmpps_xmm_xmm_imm8_235.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 237 start: cmpps_xmm_xmm_imm8_236
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_236/cmpps_xmm_xmm_imm8_236.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 238 start: cmpps_xmm_xmm_imm8_237
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_237/cmpps_xmm_xmm_imm8_237.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 239 start: cmpps_xmm_xmm_imm8_238
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_238/cmpps_xmm_xmm_imm8_238.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 240 start: cmpps_xmm_xmm_imm8_239
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_239/cmpps_xmm_xmm_imm8_239.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 241 start: cmpps_xmm_xmm_imm8_240
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_240/cmpps_xmm_xmm_imm8_240.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 242 start: cmpps_xmm_xmm_imm8_241
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_241/cmpps_xmm_xmm_imm8_241.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 243 start: cmpps_xmm_xmm_imm8_242
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_242/cmpps_xmm_xmm_imm8_242.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 244 start: cmpps_xmm_xmm_imm8_243
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_243/cmpps_xmm_xmm_imm8_243.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 245 start: cmpps_xmm_xmm_imm8_244
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_244/cmpps_xmm_xmm_imm8_244.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 246 start: cmpps_xmm_xmm_imm8_245
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_245/cmpps_xmm_xmm_imm8_245.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 247 start: cmpps_xmm_xmm_imm8_246
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_246/cmpps_xmm_xmm_imm8_246.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 248 start: cmpps_xmm_xmm_imm8_247
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_247/cmpps_xmm_xmm_imm8_247.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 249 start: cmpps_xmm_xmm_imm8_248
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_248/cmpps_xmm_xmm_imm8_248.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 250 start: cmpps_xmm_xmm_imm8_249
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_249/cmpps_xmm_xmm_imm8_249.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 251 start: cmpps_xmm_xmm_imm8_250
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_250/cmpps_xmm_xmm_imm8_250.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 252 start: cmpps_xmm_xmm_imm8_251
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_251/cmpps_xmm_xmm_imm8_251.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 253 start: cmpps_xmm_xmm_imm8_252
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_252/cmpps_xmm_xmm_imm8_252.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 254 start: cmpps_xmm_xmm_imm8_253
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_253/cmpps_xmm_xmm_imm8_253.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 255 start: cmpps_xmm_xmm_imm8_254
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_254/cmpps_xmm_xmm_imm8_254.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 256 start: cmpps_xmm_xmm_imm8_255
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/cmpps_xmm_xmm_imm8/instructions/cmpps_xmm_xmm_imm8_255/cmpps_xmm_xmm_imm8_255.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 47 done!: cmpps_xmm_xmm_imm8_46
+Thread 67 done!: cmpps_xmm_xmm_imm8_66
+Thread 52 done!: cmpps_xmm_xmm_imm8_51
+Thread 80 done!: cmpps_xmm_xmm_imm8_79
+Thread 71 done!: cmpps_xmm_xmm_imm8_70
+Thread 94 done!: cmpps_xmm_xmm_imm8_93
+Thread 68 done!: cmpps_xmm_xmm_imm8_67
+Thread 57 done!: cmpps_xmm_xmm_imm8_56
+Thread 88 done!: cmpps_xmm_xmm_imm8_87
+Thread 76 done!: cmpps_xmm_xmm_imm8_75
+Thread 59 done!: cmpps_xmm_xmm_imm8_58
+Thread 91 done!: cmpps_xmm_xmm_imm8_90
+Thread 78 done!: cmpps_xmm_xmm_imm8_77
+Thread 51 done!: cmpps_xmm_xmm_imm8_50
+Thread 79 done!: cmpps_xmm_xmm_imm8_78
+Thread 64 done!: cmpps_xmm_xmm_imm8_63
+Thread 89 done!: cmpps_xmm_xmm_imm8_88
+Thread 116 done!: cmpps_xmm_xmm_imm8_115
+Thread 69 done!: cmpps_xmm_xmm_imm8_68
+Thread 73 done!: cmpps_xmm_xmm_imm8_72
+Thread 74 done!: cmpps_xmm_xmm_imm8_73
+Thread 81 done!: cmpps_xmm_xmm_imm8_80
+Thread 66 done!: cmpps_xmm_xmm_imm8_65
+Thread 121 done!: cmpps_xmm_xmm_imm8_120
+Thread 61 done!: cmpps_xmm_xmm_imm8_60
+Thread 46 done!: cmpps_xmm_xmm_imm8_45
+Thread 96 done!: cmpps_xmm_xmm_imm8_95
+Thread 77 done!: cmpps_xmm_xmm_imm8_76
+Thread 112 done!: cmpps_xmm_xmm_imm8_111
+Thread 131 done!: cmpps_xmm_xmm_imm8_130
+Thread 99 done!: cmpps_xmm_xmm_imm8_98
+Thread 62 done!: cmpps_xmm_xmm_imm8_61
+Thread 85 done!: cmpps_xmm_xmm_imm8_84
+Thread 101 done!: cmpps_xmm_xmm_imm8_100
+Thread 56 done!: cmpps_xmm_xmm_imm8_55
+Thread 92 done!: cmpps_xmm_xmm_imm8_91
+Thread 109 done!: cmpps_xmm_xmm_imm8_108
+Thread 75 done!: cmpps_xmm_xmm_imm8_74
+Thread 124 done!: cmpps_xmm_xmm_imm8_123
+Thread 100 done!: cmpps_xmm_xmm_imm8_99
+Thread 38 done!: cmpps_xmm_xmm_imm8_37
+Thread 154 done!: cmpps_xmm_xmm_imm8_153
+Thread 35 done!: cmpps_xmm_xmm_imm8_34
+Thread 97 done!: cmpps_xmm_xmm_imm8_96
+Thread 86 done!: cmpps_xmm_xmm_imm8_85
+Thread 185 done!: cmpps_xmm_xmm_imm8_184
+Thread 102 done!: cmpps_xmm_xmm_imm8_101
+Thread 54 done!: cmpps_xmm_xmm_imm8_53
+Thread 114 done!: cmpps_xmm_xmm_imm8_113
+Thread 98 done!: cmpps_xmm_xmm_imm8_97
+Thread 39 done!: cmpps_xmm_xmm_imm8_38
+Thread 106 done!: cmpps_xmm_xmm_imm8_105
+Thread 87 done!: cmpps_xmm_xmm_imm8_86
+Thread 192 done!: cmpps_xmm_xmm_imm8_191
+Thread 48 done!: cmpps_xmm_xmm_imm8_47
+Thread 65 done!: cmpps_xmm_xmm_imm8_64
+Thread 157 done!: cmpps_xmm_xmm_imm8_156
+Thread 53 done!: cmpps_xmm_xmm_imm8_52
+Thread 31 done!: cmpps_xmm_xmm_imm8_30
+Thread 145 done!: cmpps_xmm_xmm_imm8_144
+Thread 167 done!: cmpps_xmm_xmm_imm8_166
+Thread 108 done!: cmpps_xmm_xmm_imm8_107
+Thread 42 done!: cmpps_xmm_xmm_imm8_41
+Thread 37 done!: cmpps_xmm_xmm_imm8_36
+Thread 93 done!: cmpps_xmm_xmm_imm8_92
+Thread 163 done!: cmpps_xmm_xmm_imm8_162
+Thread 177 done!: cmpps_xmm_xmm_imm8_176
+Thread 132 done!: cmpps_xmm_xmm_imm8_131
+Thread 231 done!: cmpps_xmm_xmm_imm8_230
+Thread 206 done!: cmpps_xmm_xmm_imm8_205
+Thread 187 done!: cmpps_xmm_xmm_imm8_186
+Thread 23 done!: cmpps_xmm_xmm_imm8_22
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Thread 152 done!: cmpps_xmm_xmm_imm8_151
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Thread 243 done!: cmpps_xmm_xmm_imm8_242
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Thread 113 done!: cmpps_xmm_xmm_imm8_112
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Thread 151 done!: cmpps_xmm_xmm_imm8_150
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Thread 193 done!: cmpps_xmm_xmm_imm8_192
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Thread 141 done!: cmpps_xmm_xmm_imm8_140
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Thread 181 done!: cmpps_xmm_xmm_imm8_180
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Thread 136 done!: cmpps_xmm_xmm_imm8_135
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Thread 142 done!: cmpps_xmm_xmm_imm8_141
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Thread 103 done!: cmpps_xmm_xmm_imm8_102
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Thread 29 done!: cmpps_xmm_xmm_imm8_28
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Thread 118 done!: cmpps_xmm_xmm_imm8_117
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Thread 239 done!: cmpps_xmm_xmm_imm8_238
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Thread 150 done!: cmpps_xmm_xmm_imm8_149
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Thread 246 done!: cmpps_xmm_xmm_imm8_245
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Thread 172 done!: cmpps_xmm_xmm_imm8_171
+Thread 173 done!: cmpps_xmm_xmm_imm8_172
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Thread 126 done!: cmpps_xmm_xmm_imm8_125
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Thread 205 done!: cmpps_xmm_xmm_imm8_204
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Thread 202 done!: cmpps_xmm_xmm_imm8_201
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Thread 147 done!: cmpps_xmm_xmm_imm8_146
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Thread 5 done!: cmpps_xmm_xmm_imm8_4
+Thread 137 done!: cmpps_xmm_xmm_imm8_136
+Thread 144 done!: cmpps_xmm_xmm_imm8_143
+Thread 247 done!: cmpps_xmm_xmm_imm8_246
+Thread 178 done!: cmpps_xmm_xmm_imm8_177
+Thread 245 done!: cmpps_xmm_xmm_imm8_244
+Thread 254 done!: cmpps_xmm_xmm_imm8_253
+Thread 153 done!: cmpps_xmm_xmm_imm8_152
+Thread 148 done!: cmpps_xmm_xmm_imm8_147
+Thread 30 done!: cmpps_xmm_xmm_imm8_29
+Thread 33 done!: cmpps_xmm_xmm_imm8_32
+Thread 238 done!: cmpps_xmm_xmm_imm8_237
+Thread 161 done!: cmpps_xmm_xmm_imm8_160
+Thread 211 done!: cmpps_xmm_xmm_imm8_210
+Thread 7 done!: cmpps_xmm_xmm_imm8_6
+Thread 226 done!: cmpps_xmm_xmm_imm8_225
+Thread 216 done!: cmpps_xmm_xmm_imm8_215
+Thread 110 done!: cmpps_xmm_xmm_imm8_109
+Thread 169 done!: cmpps_xmm_xmm_imm8_168
+Completed 2000cases
+Completed 2000cases
+Thread 34 done!: cmpps_xmm_xmm_imm8_33
+Completed 2000cases
+Completed 2000cases
+Thread 45 done!: cmpps_xmm_xmm_imm8_44
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Thread 159 done!: cmpps_xmm_xmm_imm8_158
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Thread 208 done!: cmpps_xmm_xmm_imm8_207
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Thread 165 done!: cmpps_xmm_xmm_imm8_164
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Thread 129 done!: cmpps_xmm_xmm_imm8_128
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Thread 43 done!: cmpps_xmm_xmm_imm8_42
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Thread 127 done!: cmpps_xmm_xmm_imm8_126
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Thread 195 done!: cmpps_xmm_xmm_imm8_194
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Thread 21 done!: cmpps_xmm_xmm_imm8_20
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Thread 184 done!: cmpps_xmm_xmm_imm8_183
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Thread 215 done!: cmpps_xmm_xmm_imm8_214
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Thread 41 done!: cmpps_xmm_xmm_imm8_40
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Thread 119 done!: cmpps_xmm_xmm_imm8_118
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Thread 218 done!: cmpps_xmm_xmm_imm8_217
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Thread 200 done!: cmpps_xmm_xmm_imm8_199
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Thread 179 done!: cmpps_xmm_xmm_imm8_178
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Thread 90 done!: cmpps_xmm_xmm_imm8_89
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Thread 149 done!: cmpps_xmm_xmm_imm8_148
+Thread 250 done!: cmpps_xmm_xmm_imm8_249
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Thread 191 done!: cmpps_xmm_xmm_imm8_190
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Thread 186 done!: cmpps_xmm_xmm_imm8_185
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Thread 255 done!: cmpps_xmm_xmm_imm8_254
+Completed 2000cases
+Completed 2000cases
+Thread 20 done!: cmpps_xmm_xmm_imm8_19
+Completed 2000cases
+Completed 2000cases
+Thread 9 done!: cmpps_xmm_xmm_imm8_8
+Completed 2000cases
+Thread 252 done!: cmpps_xmm_xmm_imm8_251
+Thread 242 done!: cmpps_xmm_xmm_imm8_241
+Thread 143 done!: cmpps_xmm_xmm_imm8_142
+Thread 17 done!: cmpps_xmm_xmm_imm8_16
+Thread 138 done!: cmpps_xmm_xmm_imm8_137
+Thread 188 done!: cmpps_xmm_xmm_imm8_187
+Thread 19 done!: cmpps_xmm_xmm_imm8_18
+Thread 60 done!: cmpps_xmm_xmm_imm8_59
+Thread 204 done!: cmpps_xmm_xmm_imm8_203
+Thread 22 done!: cmpps_xmm_xmm_imm8_21
+Thread 212 done!: cmpps_xmm_xmm_imm8_211
+Thread 170 done!: cmpps_xmm_xmm_imm8_169
+Completed 3000cases
+Completed 3000cases
+Thread 50 done!: cmpps_xmm_xmm_imm8_49
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Thread 183 done!: cmpps_xmm_xmm_imm8_182
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Thread 229 done!: cmpps_xmm_xmm_imm8_228
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Thread 128 done!: cmpps_xmm_xmm_imm8_127
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Thread 10 done!: cmpps_xmm_xmm_imm8_9
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Thread 139 done!: cmpps_xmm_xmm_imm8_138
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Thread 1 done!: cmpps_xmm_xmm_imm8_0
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Thread 63 done!: cmpps_xmm_xmm_imm8_62
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Thread 18 done!: cmpps_xmm_xmm_imm8_17
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Thread 95 done!: cmpps_xmm_xmm_imm8_94
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Thread 140 done!: cmpps_xmm_xmm_imm8_139
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Thread 220 done!: cmpps_xmm_xmm_imm8_219
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Thread 36 done!: cmpps_xmm_xmm_imm8_35
+Completed 3000cases
+Thread 203 done!: cmpps_xmm_xmm_imm8_202
+Thread 15 done!: cmpps_xmm_xmm_imm8_14
+Thread 256 done!: cmpps_xmm_xmm_imm8_255
+Thread 120 done!: cmpps_xmm_xmm_imm8_119
+Thread 171 done!: cmpps_xmm_xmm_imm8_170
+Thread 12 done!: cmpps_xmm_xmm_imm8_11
+Thread 162 done!: cmpps_xmm_xmm_imm8_161
+Thread 196 done!: cmpps_xmm_xmm_imm8_195
+Completed 4000cases
+Thread 214 done!: cmpps_xmm_xmm_imm8_213
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Thread 133 done!: cmpps_xmm_xmm_imm8_132
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Thread 84 done!: cmpps_xmm_xmm_imm8_83
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Thread 164 done!: cmpps_xmm_xmm_imm8_163
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Thread 115 done!: cmpps_xmm_xmm_imm8_114
+Thread 135 done!: cmpps_xmm_xmm_imm8_134
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Thread 160 done!: cmpps_xmm_xmm_imm8_159
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Thread 221 done!: cmpps_xmm_xmm_imm8_220
+Completed 4000cases
+Thread 240 done!: cmpps_xmm_xmm_imm8_239
+Thread 248 done!: cmpps_xmm_xmm_imm8_247
+Thread 40 done!: cmpps_xmm_xmm_imm8_39
+Thread 166 done!: cmpps_xmm_xmm_imm8_165
+Thread 234 done!: cmpps_xmm_xmm_imm8_233
+Thread 2 done!: cmpps_xmm_xmm_imm8_1
+Completed 5000cases
+Thread 134 done!: cmpps_xmm_xmm_imm8_133
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Thread 232 done!: cmpps_xmm_xmm_imm8_231
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Thread 58 done!: cmpps_xmm_xmm_imm8_57
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Thread 189 done!: cmpps_xmm_xmm_imm8_188
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Thread 198 done!: cmpps_xmm_xmm_imm8_197
+Completed 5000cases
+Completed 5000cases
+Thread 83 done!: cmpps_xmm_xmm_imm8_82
+Completed 5000cases
+Thread 168 done!: cmpps_xmm_xmm_imm8_167
+Thread 13 done!: cmpps_xmm_xmm_imm8_12
+Thread 82 done!: cmpps_xmm_xmm_imm8_81
+Thread 122 done!: cmpps_xmm_xmm_imm8_121
+Thread 174 done!: cmpps_xmm_xmm_imm8_173
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Thread 24 done!: cmpps_xmm_xmm_imm8_23
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Thread 237 done!: cmpps_xmm_xmm_imm8_236
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Thread 8 done!: cmpps_xmm_xmm_imm8_7
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Thread 233 done!: cmpps_xmm_xmm_imm8_232
+Completed 6000cases
+Thread 11 done!: cmpps_xmm_xmm_imm8_10
+Thread 230 done!: cmpps_xmm_xmm_imm8_229
+Thread 156 done!: cmpps_xmm_xmm_imm8_155
+Thread 222 done!: cmpps_xmm_xmm_imm8_221
+Thread 130 done!: cmpps_xmm_xmm_imm8_129
+Thread 107 done!: cmpps_xmm_xmm_imm8_106
+Thread 209 done!: cmpps_xmm_xmm_imm8_208
+Thread 224 done!: cmpps_xmm_xmm_imm8_223
+Thread 219 done!: cmpps_xmm_xmm_imm8_218
+Thread 197 done!: cmpps_xmm_xmm_imm8_196
+Thread 249 done!: cmpps_xmm_xmm_imm8_248
+Thread 27 done!: cmpps_xmm_xmm_imm8_26
+Thread 180 done!: cmpps_xmm_xmm_imm8_179
+Thread 251 done!: cmpps_xmm_xmm_imm8_250
+Thread 199 done!: cmpps_xmm_xmm_imm8_198
+Thread 72 done!: cmpps_xmm_xmm_imm8_71
+Thread 4 done!: cmpps_xmm_xmm_imm8_3
+Thread 227 done!: cmpps_xmm_xmm_imm8_226
+Thread 228 done!: cmpps_xmm_xmm_imm8_227
+Thread 235 done!: cmpps_xmm_xmm_imm8_234
+Thread 25 done!: cmpps_xmm_xmm_imm8_24
+Thread 14 done!: cmpps_xmm_xmm_imm8_13
+Thread 210 done!: cmpps_xmm_xmm_imm8_209
+Thread 32 done!: cmpps_xmm_xmm_imm8_31
+Thread 176 done!: cmpps_xmm_xmm_imm8_175
+Thread 44 done!: cmpps_xmm_xmm_imm8_43
+Thread 125 done!: cmpps_xmm_xmm_imm8_124
+Thread 217 done!: cmpps_xmm_xmm_imm8_216
+Thread 241 done!: cmpps_xmm_xmm_imm8_240
+Thread 16 done!: cmpps_xmm_xmm_imm8_15
+Thread 111 done!: cmpps_xmm_xmm_imm8_110
+Thread 236 done!: cmpps_xmm_xmm_imm8_235
+Thread 175 done!: cmpps_xmm_xmm_imm8_174
+Thread 6 done!: cmpps_xmm_xmm_imm8_5
+Thread 104 done!: cmpps_xmm_xmm_imm8_103
+Thread 223 done!: cmpps_xmm_xmm_imm8_222
+Thread 207 done!: cmpps_xmm_xmm_imm8_206
+Thread 55 done!: cmpps_xmm_xmm_imm8_54
+Thread 70 done!: cmpps_xmm_xmm_imm8_69
+Thread 158 done!: cmpps_xmm_xmm_imm8_157
+Thread 213 done!: cmpps_xmm_xmm_imm8_212
+Thread 155 done!: cmpps_xmm_xmm_imm8_154
+Thread 190 done!: cmpps_xmm_xmm_imm8_189
+Thread 26 done!: cmpps_xmm_xmm_imm8_25
+Thread 182 done!: cmpps_xmm_xmm_imm8_181
+Thread 146 done!: cmpps_xmm_xmm_imm8_145
+Thread 253 done!: cmpps_xmm_xmm_imm8_252
+Thread 105 done!: cmpps_xmm_xmm_imm8_104
+Thread 201 done!: cmpps_xmm_xmm_imm8_200
+Thread 194 done!: cmpps_xmm_xmm_imm8_193
+Thread 123 done!: cmpps_xmm_xmm_imm8_122
+Thread 225 done!: cmpps_xmm_xmm_imm8_224
+Thread 28 done!: cmpps_xmm_xmm_imm8_27
+Thread 3 done!: cmpps_xmm_xmm_imm8_2
+Thread 117 done!: cmpps_xmm_xmm_imm8_116
+Thread 49 done!: cmpps_xmm_xmm_imm8_48
+Thread 244 done!: cmpps_xmm_xmm_imm8_243

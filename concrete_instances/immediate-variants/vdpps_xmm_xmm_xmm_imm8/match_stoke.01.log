@@ -1,0 +1,726 @@
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_0 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_1 
+Circuit for 'vdpps $0x1, %xmm3, %xmm2, %xmm1' (opcode vdpps_xmm_xmm_xmm_imm8_1)
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ ((0x1₈[3:3] = 0x1₁ ? add_double(add_double(0x1₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x1₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x1₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x1₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x1₈[2:2] = 0x1₁ ? add_double(add_double(0x1₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x1₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x1₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x1₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x1₈[1:1] = 0x1₁ ? add_double(add_double(0x1₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x1₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x1₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x1₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x1₈[0:0] = 0x1₁ ? add_double(add_double(0x1₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x1₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x1₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x1₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂))[127:0]
+
+But Equivalent after simplification
+
+
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₃₂ ∘ 0x0₃₂)
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_2 
+Circuit for 'vdpps $0x2, %xmm3, %xmm2, %xmm1' (opcode vdpps_xmm_xmm_xmm_imm8_2)
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ ((0x2₈[3:3] = 0x1₁ ? add_double(add_double(0x2₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x2₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x2₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x2₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x2₈[2:2] = 0x1₁ ? add_double(add_double(0x2₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x2₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x2₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x2₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x2₈[1:1] = 0x1₁ ? add_double(add_double(0x2₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x2₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x2₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x2₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x2₈[0:0] = 0x1₁ ? add_double(add_double(0x2₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x2₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x2₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x2₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂))[127:0]
+
+But Equivalent after simplification
+
+
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₃₂ ∘ 0x0₃₂)
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_3 
+Circuit for 'vdpps $0x3, %xmm3, %xmm2, %xmm1' (opcode vdpps_xmm_xmm_xmm_imm8_3)
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ ((0x3₈[3:3] = 0x1₁ ? add_double(add_double(0x3₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x3₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x3₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x3₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x3₈[2:2] = 0x1₁ ? add_double(add_double(0x3₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x3₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x3₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x3₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x3₈[1:1] = 0x1₁ ? add_double(add_double(0x3₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x3₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x3₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x3₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x3₈[0:0] = 0x1₁ ? add_double(add_double(0x3₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x3₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x3₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x3₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂))[127:0]
+
+But Equivalent after simplification
+
+
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₃₂ ∘ 0x0₃₂)
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_4 
+Circuit for 'vdpps $0x4, %xmm3, %xmm2, %xmm1' (opcode vdpps_xmm_xmm_xmm_imm8_4)
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ ((0x4₈[3:3] = 0x1₁ ? add_double(add_double(0x4₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x4₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x4₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x4₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x4₈[2:2] = 0x1₁ ? add_double(add_double(0x4₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x4₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x4₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x4₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x4₈[1:1] = 0x1₁ ? add_double(add_double(0x4₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x4₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x4₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x4₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x4₈[0:0] = 0x1₁ ? add_double(add_double(0x4₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x4₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x4₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x4₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂))[127:0]
+
+But Equivalent after simplification
+
+
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₃₂ ∘ 0x0₃₂)
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_5 
+Circuit for 'vdpps $0x5, %xmm3, %xmm2, %xmm1' (opcode vdpps_xmm_xmm_xmm_imm8_5)
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ ((0x5₈[3:3] = 0x1₁ ? add_double(add_double(0x5₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x5₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x5₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x5₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x5₈[2:2] = 0x1₁ ? add_double(add_double(0x5₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x5₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x5₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x5₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x5₈[1:1] = 0x1₁ ? add_double(add_double(0x5₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x5₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x5₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x5₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x5₈[0:0] = 0x1₁ ? add_double(add_double(0x5₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x5₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x5₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x5₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂))[127:0]
+
+But Equivalent after simplification
+
+
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₃₂ ∘ 0x0₃₂)
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_6 
+Circuit for 'vdpps $0x6, %xmm3, %xmm2, %xmm1' (opcode vdpps_xmm_xmm_xmm_imm8_6)
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ ((0x6₈[3:3] = 0x1₁ ? add_double(add_double(0x6₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x6₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x6₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x6₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x6₈[2:2] = 0x1₁ ? add_double(add_double(0x6₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x6₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x6₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x6₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x6₈[1:1] = 0x1₁ ? add_double(add_double(0x6₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x6₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x6₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x6₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x6₈[0:0] = 0x1₁ ? add_double(add_double(0x6₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x6₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x6₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x6₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂))[127:0]
+
+But Equivalent after simplification
+
+
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₃₂ ∘ 0x0₃₂)
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_7 
+Circuit for 'vdpps $0x7, %xmm3, %xmm2, %xmm1' (opcode vdpps_xmm_xmm_xmm_imm8_7)
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ ((0x7₈[3:3] = 0x1₁ ? add_double(add_double(0x7₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x7₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x7₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x7₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x7₈[2:2] = 0x1₁ ? add_double(add_double(0x7₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x7₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x7₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x7₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x7₈[1:1] = 0x1₁ ? add_double(add_double(0x7₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x7₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x7₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x7₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x7₈[0:0] = 0x1₁ ? add_double(add_double(0x7₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x7₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x7₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x7₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂))[127:0]
+
+But Equivalent after simplification
+
+
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₃₂ ∘ 0x0₃₂)
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_8 
+Circuit for 'vdpps $0x8, %xmm3, %xmm2, %xmm1' (opcode vdpps_xmm_xmm_xmm_imm8_8)
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ ((0x8₈[3:3] = 0x1₁ ? add_double(add_double(0x8₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x8₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x8₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x8₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x8₈[2:2] = 0x1₁ ? add_double(add_double(0x8₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x8₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x8₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x8₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x8₈[1:1] = 0x1₁ ? add_double(add_double(0x8₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x8₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x8₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x8₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x8₈[0:0] = 0x1₁ ? add_double(add_double(0x8₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x8₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x8₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x8₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂))[127:0]
+
+But Equivalent after simplification
+
+
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₃₂ ∘ 0x0₃₂)
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_9 
+Circuit for 'vdpps $0x9, %xmm3, %xmm2, %xmm1' (opcode vdpps_xmm_xmm_xmm_imm8_9)
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ ((0x9₈[3:3] = 0x1₁ ? add_double(add_double(0x9₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x9₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x9₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x9₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x9₈[2:2] = 0x1₁ ? add_double(add_double(0x9₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x9₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x9₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x9₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x9₈[1:1] = 0x1₁ ? add_double(add_double(0x9₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x9₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x9₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x9₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x9₈[0:0] = 0x1₁ ? add_double(add_double(0x9₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x9₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x9₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x9₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂))[127:0]
+
+But Equivalent after simplification
+
+
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₃₂ ∘ 0x0₃₂)
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_10 
+Circuit for 'vdpps $0xa, %xmm3, %xmm2, %xmm1' (opcode vdpps_xmm_xmm_xmm_imm8_10)
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ ((0xa₈[3:3] = 0x1₁ ? add_double(add_double(0xa₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0xa₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0xa₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0xa₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0xa₈[2:2] = 0x1₁ ? add_double(add_double(0xa₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0xa₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0xa₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0xa₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0xa₈[1:1] = 0x1₁ ? add_double(add_double(0xa₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0xa₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0xa₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0xa₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0xa₈[0:0] = 0x1₁ ? add_double(add_double(0xa₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0xa₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0xa₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0xa₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂))[127:0]
+
+But Equivalent after simplification
+
+
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₃₂ ∘ 0x0₃₂)
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_11 
+Circuit for 'vdpps $0xb, %xmm3, %xmm2, %xmm1' (opcode vdpps_xmm_xmm_xmm_imm8_11)
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ ((0xb₈[3:3] = 0x1₁ ? add_double(add_double(0xb₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0xb₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0xb₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0xb₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0xb₈[2:2] = 0x1₁ ? add_double(add_double(0xb₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0xb₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0xb₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0xb₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0xb₈[1:1] = 0x1₁ ? add_double(add_double(0xb₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0xb₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0xb₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0xb₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0xb₈[0:0] = 0x1₁ ? add_double(add_double(0xb₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0xb₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0xb₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0xb₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂))[127:0]
+
+But Equivalent after simplification
+
+
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₃₂ ∘ 0x0₃₂)
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_12 
+Circuit for 'vdpps $0xc, %xmm3, %xmm2, %xmm1' (opcode vdpps_xmm_xmm_xmm_imm8_12)
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ ((0xc₈[3:3] = 0x1₁ ? add_double(add_double(0xc₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0xc₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0xc₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0xc₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0xc₈[2:2] = 0x1₁ ? add_double(add_double(0xc₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0xc₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0xc₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0xc₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0xc₈[1:1] = 0x1₁ ? add_double(add_double(0xc₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0xc₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0xc₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0xc₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0xc₈[0:0] = 0x1₁ ? add_double(add_double(0xc₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0xc₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0xc₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0xc₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂))[127:0]
+
+But Equivalent after simplification
+
+
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₃₂ ∘ 0x0₃₂)
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_13 
+Circuit for 'vdpps $0xd, %xmm3, %xmm2, %xmm1' (opcode vdpps_xmm_xmm_xmm_imm8_13)
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ ((0xd₈[3:3] = 0x1₁ ? add_double(add_double(0xd₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0xd₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0xd₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0xd₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0xd₈[2:2] = 0x1₁ ? add_double(add_double(0xd₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0xd₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0xd₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0xd₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0xd₈[1:1] = 0x1₁ ? add_double(add_double(0xd₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0xd₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0xd₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0xd₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0xd₈[0:0] = 0x1₁ ? add_double(add_double(0xd₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0xd₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0xd₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0xd₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂))[127:0]
+
+But Equivalent after simplification
+
+
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₃₂ ∘ 0x0₃₂)
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_14 
+Circuit for 'vdpps $0xe, %xmm3, %xmm2, %xmm1' (opcode vdpps_xmm_xmm_xmm_imm8_14)
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ ((0xe₈[3:3] = 0x1₁ ? add_double(add_double(0xe₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0xe₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0xe₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0xe₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0xe₈[2:2] = 0x1₁ ? add_double(add_double(0xe₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0xe₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0xe₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0xe₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0xe₈[1:1] = 0x1₁ ? add_double(add_double(0xe₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0xe₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0xe₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0xe₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0xe₈[0:0] = 0x1₁ ? add_double(add_double(0xe₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0xe₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0xe₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0xe₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂))[127:0]
+
+But Equivalent after simplification
+
+
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₃₂ ∘ 0x0₃₂)
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_15 
+Circuit for 'vdpps $0xf, %xmm3, %xmm2, %xmm1' (opcode vdpps_xmm_xmm_xmm_imm8_15)
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ ((0xf₈[3:3] = 0x1₁ ? add_double(add_double(0xf₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0xf₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0xf₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0xf₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0xf₈[2:2] = 0x1₁ ? add_double(add_double(0xf₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0xf₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0xf₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0xf₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0xf₈[1:1] = 0x1₁ ? add_double(add_double(0xf₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0xf₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0xf₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0xf₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0xf₈[0:0] = 0x1₁ ? add_double(add_double(0xf₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0xf₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0xf₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0xf₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂))[127:0]
+
+But Equivalent after simplification
+
+
+    strata:        0x0₂₅₆
+    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₃₂ ∘ 0x0₃₂)
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_16 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_17 
+Circuit for 'vdpps $0x11, %xmm3, %xmm2, %xmm1' (opcode vdpps_xmm_xmm_xmm_imm8_17)
+    strata:        0x0₁₂₈ ∘ (0x0₃₂ ∘ (0x0₃₂ ∘ (0x0₃₂ ∘ mul_single(%ymm2[31:0], %ymm3[31:0]))))
+    hand-written:  0x0₁₂₈ ∘ ((0x11₈[3:3] = 0x1₁ ? add_double(add_double(0x11₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x11₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x11₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x11₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x11₈[2:2] = 0x1₁ ? add_double(add_double(0x11₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x11₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x11₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x11₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x11₈[1:1] = 0x1₁ ? add_double(add_double(0x11₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x11₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x11₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x11₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x11₈[0:0] = 0x1₁ ? add_double(add_double(0x11₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x11₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x11₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x11₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂))[127:0]
+
+But Equivalent after simplification
+
+
+    strata:        0x0₁₂₈ ∘ (0x0₃₂ ∘ (0x0₃₂ ∘ (0x0₃₂ ∘ mul_single(%ymm2[31:0], %ymm3[31:0]))))
+    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₃₂ ∘ mul_single(%ymm2[31:0], %ymm3[31:0]))
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_18 
+strata does not support 'vdpps $0x12, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_19 
+strata does not support 'vdpps $0x13, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_20 
+Circuit for 'vdpps $0x14, %xmm3, %xmm2, %xmm1' (opcode vdpps_xmm_xmm_xmm_imm8_20)
+    strata:        0x0₆₄ ∘ 0x0₃₂ ∘ 0x0₃₂ ∘ (0x0₃₂ ∘ mul_single(%ymm2[31:0], %ymm3[31:0]) ∘ 0x0₃₂ ∘ 0x0₃₂)
+    hand-written:  0x0₁₂₈ ∘ ((0x14₈[3:3] = 0x1₁ ? add_double(add_double(0x14₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x14₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x14₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x14₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x14₈[2:2] = 0x1₁ ? add_double(add_double(0x14₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x14₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x14₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x14₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x14₈[1:1] = 0x1₁ ? add_double(add_double(0x14₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x14₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x14₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x14₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x14₈[0:0] = 0x1₁ ? add_double(add_double(0x14₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x14₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x14₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x14₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂))[127:0]
+
+But Equivalent after simplification
+
+
+    strata:        0x0₆₄ ∘ 0x0₃₂ ∘ 0x0₃₂ ∘ (0x0₃₂ ∘ mul_single(%ymm2[31:0], %ymm3[31:0]) ∘ 0x0₃₂ ∘ 0x0₃₂)
+    hand-written:  0x0₁₂₈ ∘ (0x0₃₂ ∘ mul_single(%ymm2[31:0], %ymm3[31:0]) ∘ 0x0₃₂ ∘ 0x0₃₂)
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_21 
+Circuit for 'vdpps $0x15, %xmm3, %xmm2, %xmm1' (opcode vdpps_xmm_xmm_xmm_imm8_21)
+  not equivalent for '%ymm1':
+    strata:        vfmadd132_single(0x0₃₂, 0x0₃₂, 0x0₃₂) ∘ vfmadd132_single(0x0₃₂, 0x0₃₂, 0x0₃₂) ∘ (vfmadd132_single(0x0₃₂, 0x0₃₂, 0x0₃₂) ∘ (vfmadd132_single(0x0₃₂, 0x0₃₂, 0x0₃₂) ∘ (vfmadd132_single(0x0₃₂, 0x0₃₂, 0x0₃₂) ∘ (vfmadd132_single(0x0₃₂, mul_single(%ymm2[31:0], %ymm3[31:0]), 0x0₃₂) ∘ (vfmadd132_single(0x0₃₂, 0x0₃₂, 0x0₃₂) ∘ vfmadd132_single(0x0₃₂, mul_single(%ymm2[31:0], %ymm3[31:0]), 0x0₃₂))))))
+    hand-written:  0x0₁₂₈ ∘ (0x0₃₂ ∘ mul_single(%ymm2[31:0], %ymm3[31:0]) ∘ 0x0₃₂ ∘ mul_single(%ymm2[31:0], %ymm3[31:0]))
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_22 
+strata does not support 'vdpps $0x16, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_23 
+strata does not support 'vdpps $0x17, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_24 
+strata does not support 'vdpps $0x18, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_25 
+strata does not support 'vdpps $0x19, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_26 
+strata does not support 'vdpps $0x1a, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_27 
+strata does not support 'vdpps $0x1b, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_28 
+strata does not support 'vdpps $0x1c, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_29 
+strata does not support 'vdpps $0x1d, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_30 
+strata does not support 'vdpps $0x1e, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_31 
+strata does not support 'vdpps $0x1f, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_32 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_33 
+strata does not support 'vdpps $0x21, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_34 
+strata does not support 'vdpps $0x22, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_35 
+strata does not support 'vdpps $0x23, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_36 
+strata does not support 'vdpps $0x24, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_37 
+Circuit for 'vdpps $0x25, %xmm3, %xmm2, %xmm1' (opcode vdpps_xmm_xmm_xmm_imm8_37)
+    strata:        0x0₃₂ ∘ (0x0₃₂ ∘ 0x0₆₄) ∘ (0x0₃₂ ∘ mul_single(%ymm2[63:32], %ymm3[63:32]) ∘ 0x0₃₂ ∘ mul_single(%ymm2[63:32], %ymm3[63:32]))
+    hand-written:  0x0₁₂₈ ∘ ((0x25₈[3:3] = 0x1₁ ? add_double(add_double(0x25₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x25₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x25₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x25₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x25₈[2:2] = 0x1₁ ? add_double(add_double(0x25₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x25₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x25₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x25₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x25₈[1:1] = 0x1₁ ? add_double(add_double(0x25₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x25₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x25₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x25₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x25₈[0:0] = 0x1₁ ? add_double(add_double(0x25₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x25₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x25₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x25₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂))[127:0]
+
+But Equivalent after simplification
+
+
+    strata:        0x0₃₂ ∘ (0x0₃₂ ∘ 0x0₆₄) ∘ (0x0₃₂ ∘ mul_single(%ymm2[63:32], %ymm3[63:32]) ∘ 0x0₃₂ ∘ mul_single(%ymm2[63:32], %ymm3[63:32]))
+    hand-written:  0x0₁₂₈ ∘ (0x0₃₂ ∘ mul_single(%ymm2[63:32], %ymm3[63:32]) ∘ 0x0₃₂ ∘ mul_single(%ymm2[63:32], %ymm3[63:32]))
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_38 
+strata does not support 'vdpps $0x26, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_39 
+strata does not support 'vdpps $0x27, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_40 
+strata does not support 'vdpps $0x28, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_41 
+strata does not support 'vdpps $0x29, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_42 
+strata does not support 'vdpps $0x2a, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_43 
+strata does not support 'vdpps $0x2b, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_44 
+strata does not support 'vdpps $0x2c, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_45 
+strata does not support 'vdpps $0x2d, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_46 
+strata does not support 'vdpps $0x2e, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_47 
+strata does not support 'vdpps $0x2f, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_48 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_49 
+strata does not support 'vdpps $0x31, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_50 
+strata does not support 'vdpps $0x32, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_51 
+strata does not support 'vdpps $0x33, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_52 
+strata does not support 'vdpps $0x34, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_53 
+strata does not support 'vdpps $0x35, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_54 
+strata does not support 'vdpps $0x36, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_55 
+strata does not support 'vdpps $0x37, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_56 
+strata does not support 'vdpps $0x38, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_57 
+strata does not support 'vdpps $0x39, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_58 
+strata does not support 'vdpps $0x3a, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_59 
+strata does not support 'vdpps $0x3b, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_60 
+strata does not support 'vdpps $0x3c, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_61 
+strata does not support 'vdpps $0x3d, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_62 
+strata does not support 'vdpps $0x3e, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_63 
+strata does not support 'vdpps $0x3f, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_64 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_65 
+Circuit for 'vdpps $0x41, %xmm3, %xmm2, %xmm1' (opcode vdpps_xmm_xmm_xmm_imm8_65)
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₃₂ ∘ ((vfmsub132_single(%ymm2[95:64], vfnmsub132_single(0x0₃₂ ⊕ sub_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ %ymm2[23:16], 0x0₃₂, 0x0₃₂)) ⊕ (0x0₃₂ | 0x0₃₂ ⊕ sub_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ %ymm2[23:16], 0x0₃₂, 0x0₃₂))), sub_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ %ymm2[23:16], 0x0₃₂, 0x0₃₂)), sub_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ %ymm2[23:16], 0x0₃₂, 0x0₃₂))), %ymm3[95:64]) | 0x0₃₂ ⊕ sub_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ %ymm2[23:16], 0x0₃₂, 0x0₃₂)) ⊕ (0x0₃₂ | 0x0₃₂ ⊕ sub_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ %ymm2[23:16], 0x0₃₂, 0x0₃₂)))) ⊕ 0x0₃₂))
+    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₃₂ ∘ mul_single(%ymm2[95:64], %ymm3[95:64]))
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_66 
+strata does not support 'vdpps $0x42, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_67 
+strata does not support 'vdpps $0x43, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_68 
+strata does not support 'vdpps $0x44, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_69 
+Circuit for 'vdpps $0x45, %xmm3, %xmm2, %xmm1' (opcode vdpps_xmm_xmm_xmm_imm8_69)
+    strata:        0x0₆₄ ∘ 0x0₃₂ ∘ 0x0₃₂ ∘ (0x0₃₂ ∘ mul_single(%ymm2[95:64], %ymm3[95:64]) ∘ 0x0₃₂ ∘ mul_single(%ymm2[95:64], %ymm3[95:64]))
+    hand-written:  0x0₁₂₈ ∘ ((0x45₈[3:3] = 0x1₁ ? add_double(add_double(0x45₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x45₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x45₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x45₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x45₈[2:2] = 0x1₁ ? add_double(add_double(0x45₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x45₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x45₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x45₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x45₈[1:1] = 0x1₁ ? add_double(add_double(0x45₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x45₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x45₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x45₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x45₈[0:0] = 0x1₁ ? add_double(add_double(0x45₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x45₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x45₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x45₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂))[127:0]
+
+But Equivalent after simplification
+
+
+    strata:        0x0₆₄ ∘ 0x0₃₂ ∘ 0x0₃₂ ∘ (0x0₃₂ ∘ mul_single(%ymm2[95:64], %ymm3[95:64]) ∘ 0x0₃₂ ∘ mul_single(%ymm2[95:64], %ymm3[95:64]))
+    hand-written:  0x0₁₂₈ ∘ (0x0₃₂ ∘ mul_single(%ymm2[95:64], %ymm3[95:64]) ∘ 0x0₃₂ ∘ mul_single(%ymm2[95:64], %ymm3[95:64]))
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_70 
+strata does not support 'vdpps $0x46, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_71 
+strata does not support 'vdpps $0x47, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_72 
+strata does not support 'vdpps $0x48, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_73 
+strata does not support 'vdpps $0x49, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_74 
+strata does not support 'vdpps $0x4a, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_75 
+strata does not support 'vdpps $0x4b, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_76 
+strata does not support 'vdpps $0x4c, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_77 
+Circuit for 'vdpps $0x4d, %xmm3, %xmm2, %xmm1' (opcode vdpps_xmm_xmm_xmm_imm8_77)
+    strata:        0x0₆₄ ∘ 0x0₃₂ ∘ 0x0₃₂ ∘ (mul_single(%ymm2[95:64], %ymm3[95:64]) ∘ mul_single(%ymm2[95:64], %ymm3[95:64]) ∘ 0x0₃₂ ∘ mul_single(%ymm2[95:64], %ymm3[95:64]))
+    hand-written:  0x0₁₂₈ ∘ ((0x4d₈[3:3] = 0x1₁ ? add_double(add_double(0x4d₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x4d₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x4d₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x4d₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x4d₈[2:2] = 0x1₁ ? add_double(add_double(0x4d₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x4d₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x4d₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x4d₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x4d₈[1:1] = 0x1₁ ? add_double(add_double(0x4d₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x4d₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x4d₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x4d₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x4d₈[0:0] = 0x1₁ ? add_double(add_double(0x4d₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x4d₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x4d₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x4d₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂))[127:0]
+
+But Equivalent after simplification
+
+
+    strata:        0x0₆₄ ∘ 0x0₃₂ ∘ 0x0₃₂ ∘ (mul_single(%ymm2[95:64], %ymm3[95:64]) ∘ mul_single(%ymm2[95:64], %ymm3[95:64]) ∘ 0x0₃₂ ∘ mul_single(%ymm2[95:64], %ymm3[95:64]))
+    hand-written:  0x0₁₂₈ ∘ (mul_single(%ymm2[95:64], %ymm3[95:64]) ∘ mul_single(%ymm2[95:64], %ymm3[95:64]) ∘ 0x0₃₂ ∘ mul_single(%ymm2[95:64], %ymm3[95:64]))
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_78 
+strata does not support 'vdpps $0x4e, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_79 
+Circuit for 'vdpps $0x4f, %xmm3, %xmm2, %xmm1' (opcode vdpps_xmm_xmm_xmm_imm8_79)
+  not equivalent for '%ymm1':
+    strata:        vfmadd132_single(0x0₃₂, 0x0₃₂, 0x0₃₂) ∘ vfmadd132_single(0x0₃₂, 0x0₃₂, 0x0₃₂) ∘ (vfmadd132_single(0x0₃₂, 0x0₃₂, 0x0₃₂) ∘ vfmadd132_single(0x0₃₂, 0x0₃₂, 0x0₃₂)) ∘ (vfmadd132_single(0x0₃₂, vfmsub132_single(%ymm2[95:64], vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), %ymm3[95:64]) | 0x0₃₂, 0x0₃₂) ∘ vfmadd132_single(0x0₃₂, vfmsub132_single(%ymm2[95:64], vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), %ymm3[95:64]) | 0x0₃₂, 0x0₃₂) ∘ (vfmadd132_single(0x0₃₂, vfmsub132_single(%ymm2[95:64], vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), %ymm3[95:64]) | 0x0₃₂, 0x0₃₂) ∘ vfmadd132_single(0x0₃₂, vfmsub132_single(%ymm2[95:64], vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), %ymm3[95:64]) | 0x0₃₂, 0x0₃₂)))
+    hand-written:  0x0₁₂₈ ∘ (mul_single(%ymm2[95:64], %ymm3[95:64]) ∘ mul_single(%ymm2[95:64], %ymm3[95:64]) ∘ mul_single(%ymm2[95:64], %ymm3[95:64]) ∘ mul_single(%ymm2[95:64], %ymm3[95:64]))
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_80 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_81 
+strata does not support 'vdpps $0x51, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_82 
+strata does not support 'vdpps $0x52, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_83 
+strata does not support 'vdpps $0x53, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_84 
+strata does not support 'vdpps $0x54, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_85 
+strata does not support 'vdpps $0x55, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_86 
+strata does not support 'vdpps $0x56, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_87 
+strata does not support 'vdpps $0x57, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_88 
+strata does not support 'vdpps $0x58, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_89 
+strata does not support 'vdpps $0x59, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_90 
+strata does not support 'vdpps $0x5a, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_91 
+strata does not support 'vdpps $0x5b, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_92 
+strata does not support 'vdpps $0x5c, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_93 
+strata does not support 'vdpps $0x5d, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_94 
+strata does not support 'vdpps $0x5e, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_95 
+strata does not support 'vdpps $0x5f, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_96 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_97 
+strata does not support 'vdpps $0x61, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_98 
+strata does not support 'vdpps $0x62, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_99 
+strata does not support 'vdpps $0x63, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_100 
+strata does not support 'vdpps $0x64, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_101 
+strata does not support 'vdpps $0x65, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_102 
+strata does not support 'vdpps $0x66, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_103 
+strata does not support 'vdpps $0x67, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_104 
+strata does not support 'vdpps $0x68, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_105 
+strata does not support 'vdpps $0x69, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_106 
+strata does not support 'vdpps $0x6a, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_107 
+strata does not support 'vdpps $0x6b, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_108 
+strata does not support 'vdpps $0x6c, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_109 
+strata does not support 'vdpps $0x6d, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_110 
+strata does not support 'vdpps $0x6e, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_111 
+strata does not support 'vdpps $0x6f, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_112 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_113 
+strata does not support 'vdpps $0x71, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_114 
+strata does not support 'vdpps $0x72, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_115 
+strata does not support 'vdpps $0x73, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_116 
+strata does not support 'vdpps $0x74, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_117 
+strata does not support 'vdpps $0x75, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_118 
+strata does not support 'vdpps $0x76, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_119 
+strata does not support 'vdpps $0x77, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_120 
+strata does not support 'vdpps $0x78, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_121 
+strata does not support 'vdpps $0x79, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_122 
+strata does not support 'vdpps $0x7a, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_123 
+strata does not support 'vdpps $0x7b, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_124 
+strata does not support 'vdpps $0x7c, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_125 
+strata does not support 'vdpps $0x7d, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_126 
+strata does not support 'vdpps $0x7e, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_127 
+strata does not support 'vdpps $0x7f, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_128 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_129 
+Circuit for 'vdpps $0x81, %xmm3, %xmm2, %xmm1' (opcode vdpps_xmm_xmm_xmm_imm8_129)
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ (0x0₉₆ ∘ vfmadd132_single(0x0₃₂, 0x0₃₂ | (vfmsub132_single(%ymm2[127:96], vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), %ymm3[127:96]) | 0x0₃₂), 0x0₃₂))
+    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₃₂ ∘ mul_single(%ymm2[127:96], %ymm3[127:96]))
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_130 
+strata does not support 'vdpps $0x82, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_131 
+strata does not support 'vdpps $0x83, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_132 
+strata does not support 'vdpps $0x84, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_133 
+strata does not support 'vdpps $0x85, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_134 
+strata does not support 'vdpps $0x86, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_135 
+strata does not support 'vdpps $0x87, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_136 
+strata does not support 'vdpps $0x88, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_137 
+strata does not support 'vdpps $0x89, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_138 
+strata does not support 'vdpps $0x8a, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_139 
+strata does not support 'vdpps $0x8b, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_140 
+strata does not support 'vdpps $0x8c, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_141 
+strata does not support 'vdpps $0x8d, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_142 
+strata does not support 'vdpps $0x8e, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_143 
+Circuit for 'vdpps $0x8f, %xmm3, %xmm2, %xmm1' (opcode vdpps_xmm_xmm_xmm_imm8_143)
+    strata:        0x0₁₂₈ ∘ (mul_single(%ymm2[127:96], %ymm3[127:96]) ∘ mul_single(%ymm2[127:96], %ymm3[127:96]) ∘ (mul_single(%ymm2[127:96], %ymm3[127:96]) ∘ mul_single(%ymm2[127:96], %ymm3[127:96])))
+    hand-written:  0x0₁₂₈ ∘ ((0x8f₈[3:3] = 0x1₁ ? add_double(add_double(0x8f₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x8f₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x8f₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x8f₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x8f₈[2:2] = 0x1₁ ? add_double(add_double(0x8f₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x8f₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x8f₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x8f₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x8f₈[1:1] = 0x1₁ ? add_double(add_double(0x8f₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x8f₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x8f₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x8f₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x8f₈[0:0] = 0x1₁ ? add_double(add_double(0x8f₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x8f₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x8f₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x8f₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂))[127:0]
+
+But Equivalent after simplification
+
+
+    strata:        0x0₁₂₈ ∘ (mul_single(%ymm2[127:96], %ymm3[127:96]) ∘ mul_single(%ymm2[127:96], %ymm3[127:96]) ∘ (mul_single(%ymm2[127:96], %ymm3[127:96]) ∘ mul_single(%ymm2[127:96], %ymm3[127:96])))
+    hand-written:  0x0₁₂₈ ∘ (mul_single(%ymm2[127:96], %ymm3[127:96]) ∘ mul_single(%ymm2[127:96], %ymm3[127:96]) ∘ mul_single(%ymm2[127:96], %ymm3[127:96]) ∘ mul_single(%ymm2[127:96], %ymm3[127:96]))
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_144 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_145 
+strata does not support 'vdpps $0x91, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_146 
+strata does not support 'vdpps $0x92, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_147 
+strata does not support 'vdpps $0x93, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_148 
+strata does not support 'vdpps $0x94, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_149 
+strata does not support 'vdpps $0x95, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_150 
+strata does not support 'vdpps $0x96, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_151 
+strata does not support 'vdpps $0x97, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_152 
+strata does not support 'vdpps $0x98, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_153 
+strata does not support 'vdpps $0x99, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_154 
+strata does not support 'vdpps $0x9a, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_155 
+strata does not support 'vdpps $0x9b, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_156 
+strata does not support 'vdpps $0x9c, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_157 
+strata does not support 'vdpps $0x9d, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_158 
+strata does not support 'vdpps $0x9e, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_159 
+strata does not support 'vdpps $0x9f, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_160 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_161 
+strata does not support 'vdpps $0xa1, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_162 
+strata does not support 'vdpps $0xa2, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_163 
+strata does not support 'vdpps $0xa3, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_164 
+strata does not support 'vdpps $0xa4, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_165 
+strata does not support 'vdpps $0xa5, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_166 
+strata does not support 'vdpps $0xa6, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_167 
+strata does not support 'vdpps $0xa7, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_168 
+strata does not support 'vdpps $0xa8, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_169 
+strata does not support 'vdpps $0xa9, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_170 
+strata does not support 'vdpps $0xaa, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_171 
+strata does not support 'vdpps $0xab, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_172 
+strata does not support 'vdpps $0xac, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_173 
+strata does not support 'vdpps $0xad, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_174 
+strata does not support 'vdpps $0xae, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_175 
+strata does not support 'vdpps $0xaf, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_176 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_177 
+strata does not support 'vdpps $0xb1, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_178 
+strata does not support 'vdpps $0xb2, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_179 
+strata does not support 'vdpps $0xb3, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_180 
+strata does not support 'vdpps $0xb4, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_181 
+strata does not support 'vdpps $0xb5, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_182 
+strata does not support 'vdpps $0xb6, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_183 
+strata does not support 'vdpps $0xb7, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_184 
+strata does not support 'vdpps $0xb8, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_185 
+strata does not support 'vdpps $0xb9, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_186 
+strata does not support 'vdpps $0xba, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_187 
+strata does not support 'vdpps $0xbb, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_188 
+strata does not support 'vdpps $0xbc, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_189 
+strata does not support 'vdpps $0xbd, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_190 
+strata does not support 'vdpps $0xbe, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_191 
+strata does not support 'vdpps $0xbf, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_192 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_193 
+Circuit for 'vdpps $0xc1, %xmm3, %xmm2, %xmm1' (opcode vdpps_xmm_xmm_xmm_imm8_193)
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ (0x0₉₆ ∘ add_single(mul_single(%ymm2[127:96], %ymm3[127:96]), mul_single(%ymm2[95:64], %ymm3[95:64])))
+    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₃₂ ∘ add_double(mul_single(%ymm2[95:64], %ymm3[95:64]), mul_single(%ymm2[127:96], %ymm3[127:96])))
+
+
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_194 
+strata does not support 'vdpps $0xc2, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_195 
+strata does not support 'vdpps $0xc3, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_196 
+strata does not support 'vdpps $0xc4, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_197 
+strata does not support 'vdpps $0xc5, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_198 
+strata does not support 'vdpps $0xc6, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_199 
+strata does not support 'vdpps $0xc7, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_200 
+strata does not support 'vdpps $0xc8, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_201 
+strata does not support 'vdpps $0xc9, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_202 
+strata does not support 'vdpps $0xca, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_203 
+strata does not support 'vdpps $0xcb, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_204 
+strata does not support 'vdpps $0xcc, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_205 
+strata does not support 'vdpps $0xcd, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_206 
+strata does not support 'vdpps $0xce, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_207 
+strata does not support 'vdpps $0xcf, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_208 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_209 
+strata does not support 'vdpps $0xd1, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_210 
+strata does not support 'vdpps $0xd2, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_211 
+strata does not support 'vdpps $0xd3, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_212 
+strata does not support 'vdpps $0xd4, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_213 
+strata does not support 'vdpps $0xd5, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_214 
+strata does not support 'vdpps $0xd6, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_215 
+strata does not support 'vdpps $0xd7, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_216 
+strata does not support 'vdpps $0xd8, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_217 
+strata does not support 'vdpps $0xd9, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_218 
+strata does not support 'vdpps $0xda, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_219 
+strata does not support 'vdpps $0xdb, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_220 
+strata does not support 'vdpps $0xdc, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_221 
+strata does not support 'vdpps $0xdd, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_222 
+strata does not support 'vdpps $0xde, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_223 
+strata does not support 'vdpps $0xdf, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_224 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_225 
+strata does not support 'vdpps $0xe1, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_226 
+strata does not support 'vdpps $0xe2, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_227 
+strata does not support 'vdpps $0xe3, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_228 
+strata does not support 'vdpps $0xe4, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_229 
+strata does not support 'vdpps $0xe5, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_230 
+strata does not support 'vdpps $0xe6, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_231 
+strata does not support 'vdpps $0xe7, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_232 
+strata does not support 'vdpps $0xe8, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_233 
+strata does not support 'vdpps $0xe9, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_234 
+strata does not support 'vdpps $0xea, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_235 
+strata does not support 'vdpps $0xeb, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_236 
+strata does not support 'vdpps $0xec, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_237 
+strata does not support 'vdpps $0xed, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_238 
+strata does not support 'vdpps $0xee, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_239 
+strata does not support 'vdpps $0xef, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_240 
+Equivalent.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_241 
+strata does not support 'vdpps $0xf1, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_242 
+strata does not support 'vdpps $0xf2, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_243 
+strata does not support 'vdpps $0xf3, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_244 
+strata does not support 'vdpps $0xf4, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_245 
+strata does not support 'vdpps $0xf5, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_246 
+strata does not support 'vdpps $0xf6, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_247 
+strata does not support 'vdpps $0xf7, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_248 
+strata does not support 'vdpps $0xf8, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_249 
+strata does not support 'vdpps $0xf9, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_250 
+strata does not support 'vdpps $0xfa, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_251 
+strata does not support 'vdpps $0xfb, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_252 
+strata does not support 'vdpps $0xfc, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_253 
+strata does not support 'vdpps $0xfd, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_254 
+strata does not support 'vdpps $0xfe, %xmm3, %xmm2, %xmm1'.
+/home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_255 
+strata does not support 'vdpps $0xff, %xmm3, %xmm2, %xmm1'.

@@ -1,0 +1,3 @@
+.target:
+  btcw $0xd5, %bx
+  retq

@@ -1,0 +1,3 @@
+.target:
+  pextrd $0x4, %xmm1, %ebx
+  retq

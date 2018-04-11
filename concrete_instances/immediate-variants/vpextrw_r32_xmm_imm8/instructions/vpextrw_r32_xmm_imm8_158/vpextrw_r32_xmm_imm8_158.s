@@ -1,0 +1,3 @@
+.target:
+  vpextrw $0x9e, %xmm1, %ebx
+  retq
