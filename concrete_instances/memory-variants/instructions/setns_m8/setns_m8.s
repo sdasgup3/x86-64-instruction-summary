@@ -1,0 +1,3 @@
+.target:
+  setns (%rax)
+  retq

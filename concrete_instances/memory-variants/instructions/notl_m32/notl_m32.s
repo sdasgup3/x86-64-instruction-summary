@@ -1,0 +1,3 @@
+.target:
+  notl (%rax)
+  retq

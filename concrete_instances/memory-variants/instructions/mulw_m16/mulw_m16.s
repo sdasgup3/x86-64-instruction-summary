@@ -1,0 +1,3 @@
+.target:
+  mulw (%rax)
+  retq

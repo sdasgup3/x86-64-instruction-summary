@@ -1,0 +1,3 @@
+.target:
+  decl (%rax)
+  retq

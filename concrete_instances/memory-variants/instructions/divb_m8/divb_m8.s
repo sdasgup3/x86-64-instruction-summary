@@ -1,0 +1,3 @@
+.target:
+  divb (%rax)
+  retq

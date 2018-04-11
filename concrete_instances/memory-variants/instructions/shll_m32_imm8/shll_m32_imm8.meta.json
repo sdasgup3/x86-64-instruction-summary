@@ -1,0 +1,8 @@
+{
+  "def_in": "{ %rax %cf %pf %zf %sf %of }",
+  "live_out": "{ %pf %zf %sf }",
+  "def_in_formal": "{ %rax %cf %pf %zf %sf %of }",
+  "live_out_formal": "{ %pf %zf %sf }",
+  "search_without_uif": false,
+  "delim": 0
+}

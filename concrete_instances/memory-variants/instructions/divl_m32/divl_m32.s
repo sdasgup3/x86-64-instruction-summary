@@ -1,0 +1,3 @@
+.target:
+  divl (%rax)
+  retq
