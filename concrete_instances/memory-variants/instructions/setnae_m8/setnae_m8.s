@@ -1,0 +1,3 @@
+.target:
+  setnae (%rax)
+  retq

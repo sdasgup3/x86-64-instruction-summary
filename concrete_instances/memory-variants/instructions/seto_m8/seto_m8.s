@@ -1,0 +1,3 @@
+.target:
+  seto (%rax)
+  retq
