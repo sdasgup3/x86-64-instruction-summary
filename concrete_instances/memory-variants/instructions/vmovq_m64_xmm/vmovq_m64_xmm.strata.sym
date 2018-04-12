@@ -8,8 +8,20 @@ code: vmovq %xmm1, (%rax)
   must undef:      { }
   required flags:  { avx }
 
-FATAL ERROR: Symbolic execution failed: StrataHandler encountered an error: Instruction not supported
-stoke_debug_circuit: ./src/ext/cpputil/include/io/abort.h:35: void cpputil::Abort::operator()(std::streambuf*, char): Assertion `false' failed.
+Opcode: vmovq_r64_xmm Reason: 1
+Opcode: vmovq_m64_xmm Reason: 2
 vmovq %xmm1, (%rax): Hindex0(10)
+Opcode: vmovq_r64_xmm Reason: 1
+Opcode: vmovq_m64_xmm Reason: 2
 vmovq %xmm1, (%rax): Hindex0(10)
-vmovq %xmm1, %rbx: Hindex-1(9)
+callq .move_128_032_xmm1_r10d_r11d_r12d_r13d: Hindex8(9)
+callq .move_032_064_r10d_r11d_rbx: Hindex8(9)
+Formula:
+
+Information about memory writes:
+  Address %rax was updated to
+    %ymm1[63:0] (8 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

@@ -8,8 +8,24 @@ code: movsd (%rax), %xmm1
   must undef:      { }
   required flags:  { sse2 }
 
+Opcode: movsd_xmm_xmm Reason: 1
+Opcode: movsd_xmm_m64 Reason: 4
 movsd (%rax), %xmm1: Hindex0(10)
+Opcode: movsd_xmm_xmm Reason: 1
+Opcode: movsd_xmm_m64 Reason: 4
 movsd (%rax), %xmm1: Hindex0(10)
-INTERNAL STOKE ERROR, please report
-Failed to parse ../circuits/movsd_xmm_m64.s
-Message: 
+callq .move_128_64_xmm1_xmm8_xmm9: Hindex8(9)
+callq .move_128_032_xmm2_xmm4_xmm5_xmm6_xmm7: Hindex8(9)
+callq .move_032_128_xmm4_xmm5_xmm6_xmm7_xmm1: Hindex8(9)
+callq .move_64_128_xmm8_xmm9_xmm1: Hindex8(9)
+Formula:
+
+%ymm1  : %ymm1[255:128] ∘ (%ymm1[127:64] ∘ TMP_BV_64_0)
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

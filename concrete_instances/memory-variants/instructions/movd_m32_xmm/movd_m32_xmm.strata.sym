@@ -8,8 +8,22 @@ code: movd %xmm1, (%rax)
   must undef:      { }
   required flags:  { sse2 }
 
-FATAL ERROR: Symbolic execution failed: StrataHandler encountered an error: Instruction not supported
-stoke_debug_circuit: ./src/ext/cpputil/include/io/abort.h:35: void cpputil::Abort::operator()(std::streambuf*, char): Assertion `false' failed.
+Opcode: movd_r32_xmm Reason: 1
+Opcode: movd_m32_xmm Reason: 2
 movd %xmm1, (%rax): Hindex0(10)
+Opcode: movd_r32_xmm Reason: 1
+Opcode: movd_m32_xmm Reason: 2
 movd %xmm1, (%rax): Hindex0(10)
-movd %xmm1, %ebx: Hindex-1(9)
+callq .move_128_032_xmm1_xmm8_xmm9_xmm10_xmm11: Hindex8(9)
+callq .move_128_256_xmm8_xmm9_ymm1: Hindex8(9)
+callq .move_128_064_xmm1_r10_r11: Hindex8(9)
+callq .move_032_064_r10d_r11d_rbx: Hindex8(9)
+Formula:
+
+Information about memory writes:
+  Address %rax was updated to
+    %ymm1[31:0] (4 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

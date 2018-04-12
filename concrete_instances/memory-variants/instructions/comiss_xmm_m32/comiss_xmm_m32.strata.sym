@@ -8,8 +8,24 @@ code: comiss (%rax), %xmm1
   must undef:      { }
   required flags:  { sse }
 
+Opcode: comiss_xmm_m32 Reason: 4
 comiss (%rax), %xmm1: Hindex0(10)
+Opcode: comiss_xmm_m32 Reason: 4
 comiss (%rax), %xmm1: Hindex0(10)
-INTERNAL STOKE ERROR, please report
-Failed to parse ../circuits/comiss_xmm_m32.s
-Message: 
+comiss %xmm2, %xmm1: Hindex1(9)
+Formula:
+
+%cf    : comiss(%ymm1[31:0], TMP_BV_32_0) = 0x0₂ ∨ comiss(%ymm1[31:0], TMP_BV_32_0) = 0x2₂
+%pf    : comiss(%ymm1[31:0], TMP_BV_32_0) = 0x0₂
+%af    : false
+%zf    : comiss(%ymm1[31:0], TMP_BV_32_0) = 0x0₂ ∨ comiss(%ymm1[31:0], TMP_BV_32_0) = 0x3₂
+%sf    : false
+%of    : false
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

@@ -8,8 +8,25 @@ code: cvtps2pd (%rax), %xmm1
   must undef:      { }
   required flags:  { sse2 }
 
+Opcode: cvtps2pd_xmm_xmm Reason: 1
+Opcode: cvtps2pd_xmm_m64 Reason: 4
 cvtps2pd (%rax), %xmm1: Hindex0(10)
+Opcode: cvtps2pd_xmm_xmm Reason: 1
+Opcode: cvtps2pd_xmm_m64 Reason: 4
 cvtps2pd (%rax), %xmm1: Hindex0(10)
-INTERNAL STOKE ERROR, please report
-Failed to parse ../circuits/cvtps2pd_xmm_m64.s
-Message: 
+vcvtps2pd %xmm2, %ymm13: Hindex0(9)
+callq .move_128_032_xmm2_xmm4_xmm5_xmm6_xmm7: Hindex8(9)
+callq .move_032_128_xmm4_xmm5_xmm6_xmm7_xmm1: Hindex8(9)
+Formula:
+
+%ymm1  : %ymm1[255:128] ∘ (cvt_single_to_double(TMP_BV_64_0[63:32]) ∘ cvt_single_to_double(TMP_BV_64_1[31:0]))
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_1 (8 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

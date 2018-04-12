@@ -8,8 +8,23 @@ code: vmovdqa (%rax), %xmm1
   must undef:      { }
   required flags:  { avx }
 
-FATAL ERROR: Symbolic execution failed: StrataHandler encountered an error: Instruction not supported
-stoke_debug_circuit: ./src/ext/cpputil/include/io/abort.h:35: void cpputil::Abort::operator()(std::streambuf*, char): Assertion `false' failed.
+Opcode: vmovdqa_xmm_xmm Reason: 1
+Opcode: vmovdqa_xmm_m128 Reason: 2
 vmovdqa (%rax), %xmm1: Hindex0(10)
+Opcode: vmovdqa_xmm_xmm Reason: 1
+Opcode: vmovdqa_xmm_m128 Reason: 2
 vmovdqa (%rax), %xmm1: Hindex0(10)
-vmovdqa %xmm2, %xmm1: Hindex-1(9)
+callq .move_128_064_xmm2_r12_r13: Hindex8(9)
+vzeroall : Hindex1(9)
+callq .move_064_128_r12_r13_xmm1: Hindex8(9)
+Formula:
+
+%ymm1  : 0x0₁₂₈ ∘ TMP_BV_128_0
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

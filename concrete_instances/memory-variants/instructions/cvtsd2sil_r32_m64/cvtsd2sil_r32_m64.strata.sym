@@ -8,8 +8,34 @@ code: cvtsd2sil (%rax), %ebx
   must undef:      { }
   required flags:  { sse2 }
 
+Opcode: cvtsd2sil_r32_xmm Reason: 1
+Opcode: cvtsd2sil_r32_m64 Reason: 4
 cvtsd2sil (%rax), %ebx: Hindex0(10)
+Opcode: cvtsd2sil_r32_xmm Reason: 1
+Opcode: cvtsd2sil_r32_m64 Reason: 4
 cvtsd2sil (%rax), %ebx: Hindex0(10)
-INTERNAL STOKE ERROR, please report
-Failed to parse ../circuits/cvtsd2sil_r32_m64.s
-Message: 
+callq .move_128_064_xmm2_r10_r11: Hindex8(9)
+vzeroall : Hindex1(9)
+callq .move_064_128_r10_r11_xmm3: Hindex8(9)
+callq .move_256_128_ymm3_xmm12_xmm13: Hindex8(9)
+callq .move_128_256_xmm12_xmm13_ymm1: Hindex8(9)
+callq .move_128_064_xmm2_r10_r11: Hindex8(9)
+vzeroall : Hindex1(9)
+movq %r10, %r11: Hindex5(9)
+callq .move_064_128_r10_r11_xmm1: Hindex8(9)
+vcvtpd2dq %ymm14, %xmm0: Hindex1(9)
+callq .move_128_032_xmm1_xmm8_xmm9_xmm10_xmm11: Hindex8(9)
+callq .move_128_256_xmm8_xmm9_ymm1: Hindex8(9)
+callq .move_128_064_xmm1_r10_r11: Hindex8(9)
+callq .move_032_064_r10d_r11d_rbx: Hindex8(9)
+Formula:
+
+%rbx   : 0x0₃₂ ∘ cvt_double_to_int32(TMP_BV_64_0)
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

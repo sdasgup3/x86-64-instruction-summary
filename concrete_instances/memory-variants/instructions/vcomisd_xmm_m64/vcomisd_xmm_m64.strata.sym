@@ -8,8 +8,24 @@ code: vcomisd (%rax), %xmm1
   must undef:      { }
   required flags:  { avx }
 
+Opcode: vcomisd_xmm_m64 Reason: 4
 vcomisd (%rax), %xmm1: Hindex0(10)
+Opcode: vcomisd_xmm_m64 Reason: 4
 vcomisd (%rax), %xmm1: Hindex0(10)
-INTERNAL STOKE ERROR, please report
-Failed to parse ../circuits/vcomisd_xmm_m64.s
-Message: 
+vcomisd %xmm2, %xmm1: Hindex1(9)
+Formula:
+
+%cf    : comisd(%ymm1[63:0], TMP_BV_64_0) = 0x0₂ ∨ comisd(%ymm1[63:0], TMP_BV_64_0) = 0x2₂
+%pf    : comisd(%ymm1[63:0], TMP_BV_64_0) = 0x0₂
+%af    : false
+%zf    : comisd(%ymm1[63:0], TMP_BV_64_0) = 0x0₂ ∨ comisd(%ymm1[63:0], TMP_BV_64_0) = 0x3₂
+%sf    : false
+%of    : false
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

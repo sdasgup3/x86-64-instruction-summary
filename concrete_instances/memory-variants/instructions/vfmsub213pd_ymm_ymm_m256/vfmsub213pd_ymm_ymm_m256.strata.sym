@@ -8,8 +8,28 @@ code: vfmsub213pd (%rax), %ymm2, %ymm1
   must undef:      { }
   required flags:  { fma }
 
-FATAL ERROR: Symbolic execution failed: StrataHandler encountered an error: Instruction not supported
-stoke_debug_circuit: ./src/ext/cpputil/include/io/abort.h:35: void cpputil::Abort::operator()(std::streambuf*, char): Assertion `false' failed.
+Opcode: vfmsub213pd_ymm_ymm_ymm Reason: 1
+Opcode: vfmsub213pd_ymm_ymm_m256 Reason: 2
 vfmsub213pd (%rax), %ymm2, %ymm1: Hindex0(10)
+Opcode: vfmsub213pd_ymm_ymm_ymm Reason: 1
+Opcode: vfmsub213pd_ymm_ymm_m256 Reason: 2
 vfmsub213pd (%rax), %ymm2, %ymm1: Hindex0(10)
-vfmsub213pd %ymm3, %ymm2, %ymm1: Hindex-1(9)
+vfmsub132pd %ymm1, %ymm3, %ymm2: Hindex1(9)
+vminpd %ymm2, %ymm2, %ymm1: Hindex0(9)
+Formula:
+
+%ymm1  : vfmsub132_double(%ymm2[255:192], TMP_BV_256_0[255:192], %ymm1[255:192]) ∘ (vfmsub132_double(%ymm2[191:128], TMP_BV_256_1[191:128], %ymm1[191:128]) ∘ (vfmsub132_double(%ymm2[127:64], TMP_BV_256_2[127:64], %ymm1[127:64]) ∘ vfmsub132_double(%ymm2[63:0], TMP_BV_256_3[63:0], %ymm1[63:0])))
+
+Information about memory reads:
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_1 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_2 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_3 (32 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

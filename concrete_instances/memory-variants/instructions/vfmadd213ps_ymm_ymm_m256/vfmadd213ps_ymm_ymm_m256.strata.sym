@@ -8,8 +8,36 @@ code: vfmadd213ps (%rax), %ymm2, %ymm1
   must undef:      { }
   required flags:  { fma }
 
-FATAL ERROR: Symbolic execution failed: StrataHandler encountered an error: Instruction not supported
-stoke_debug_circuit: ./src/ext/cpputil/include/io/abort.h:35: void cpputil::Abort::operator()(std::streambuf*, char): Assertion `false' failed.
+Opcode: vfmadd213ps_ymm_ymm_ymm Reason: 1
+Opcode: vfmadd213ps_ymm_ymm_m256 Reason: 2
 vfmadd213ps (%rax), %ymm2, %ymm1: Hindex0(10)
+Opcode: vfmadd213ps_ymm_ymm_ymm Reason: 1
+Opcode: vfmadd213ps_ymm_ymm_m256 Reason: 2
 vfmadd213ps (%rax), %ymm2, %ymm1: Hindex0(10)
-vfmadd213ps %ymm3, %ymm2, %ymm1: Hindex-1(9)
+vfmadd132ps %ymm1, %ymm3, %ymm2: Hindex1(9)
+vmaxpd %ymm2, %ymm2, %ymm1: Hindex0(9)
+Formula:
+
+%ymm1  : vfmadd132_single(%ymm2[255:224], TMP_BV_256_0[255:224], %ymm1[255:224]) ∘ vfmadd132_single(%ymm2[223:192], TMP_BV_256_1[223:192], %ymm1[223:192]) ∘ (vfmadd132_single(%ymm2[191:160], TMP_BV_256_2[191:160], %ymm1[191:160]) ∘ (vfmadd132_single(%ymm2[159:128], TMP_BV_256_3[159:128], %ymm1[159:128]) ∘ (vfmadd132_single(%ymm2[127:96], TMP_BV_256_4[127:96], %ymm1[127:96]) ∘ (vfmadd132_single(%ymm2[95:64], TMP_BV_256_5[95:64], %ymm1[95:64]) ∘ (vfmadd132_single(%ymm2[63:32], TMP_BV_256_6[63:32], %ymm1[63:32]) ∘ vfmadd132_single(%ymm2[31:0], TMP_BV_256_7[31:0], %ymm1[31:0]))))))
+
+Information about memory reads:
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_1 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_2 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_3 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_4 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_5 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_6 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_7 (32 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv
