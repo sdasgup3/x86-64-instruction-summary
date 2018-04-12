@@ -10,18 +10,18 @@ code: vmovsldup (%rax), %ymm1
 
 Formula:
 
-%ymm1  : TMP_BV_256_0[223:192] ∘ TMP_BV_256_0[223:192] ∘ (TMP_BV_256_1[159:128] ∘ TMP_BV_256_1[159:128]) ∘ (TMP_BV_256_2[95:64] ∘ TMP_BV_256_2[95:64] ∘ (TMP_BV_256_3[31:0] ∘ TMP_BV_256_3[31:0]))
+%ymm1  : (concat (concat (concat <TMP_BV_256_0|256>[223:192] <TMP_BV_256_0|256>[223:192]) (concat <TMP_BV_256_1|256>[159:128] <TMP_BV_256_1|256>[159:128])) (concat (concat <TMP_BV_256_2|256>[95:64] <TMP_BV_256_2|256>[95:64]) (concat <TMP_BV_256_3|256>[31:0] <TMP_BV_256_3|256>[31:0])))
 
 Information about memory reads:
-  Value TMP_BV_256_0 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_1 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_2 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_3 (32 bytes)
-    was read at address %rax.
+  Value <TMP_BV_256_0|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_1|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_2|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_3|256> (32 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

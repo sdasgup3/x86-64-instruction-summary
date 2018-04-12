@@ -10,12 +10,12 @@ code: rorxq $0x0, (%rax), %rbx
 
 Formula:
 
-%rbx   : TMP_BV_64_0 >> 0x0₆₄ | TMP_BV_64_0 << 0x40₆₄
+%rbx   : (or (>> <TMP_BV_64_0|64> <0x0|64>) (<< <TMP_BV_64_0|64> <0x40|64>))
 
 Information about memory reads:
-  Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+  Value <TMP_BV_64_0|64> (8 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

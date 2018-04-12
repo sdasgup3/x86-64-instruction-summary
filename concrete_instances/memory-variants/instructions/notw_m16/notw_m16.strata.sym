@@ -11,15 +11,15 @@ code: notw (%rax)
 Formula:
 
 Information about memory reads:
-  Value TMP_BV_16_0 (2 bytes)
-    was read at address %rax.
-  Value TMP_BV_16_1 (2 bytes)
-    was read at address %rax.
+  Value <TMP_BV_16_0|16> (2 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_16_1|16> (2 bytes)
+    was read at address <%rax|64>.
 
 Information about memory writes:
-  Address %rax was updated to
-    TMP_BV_16_1 ⊕ 0xffff₁₆ (2 bytes).
+  Address <%rax|64> was updated to
+    (xor <TMP_BV_16_1|16> <0xffff|16>) (2 bytes).
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

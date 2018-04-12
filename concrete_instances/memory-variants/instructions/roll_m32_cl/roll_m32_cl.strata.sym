@@ -10,17 +10,17 @@ code: roll %cl, (%rax)
 
 Formula:
 
-%cf    : !((%rcx[7:0] & 0x1f₈) = 0x0₈) ∧ (TMP_BV_32_0 rot_left 0x0₂₄ ∘ (%rcx[7:0] & 0x1f₈))[0:0] = 0x1₁ ∨ !(!((%rcx[7:0] & 0x1f₈) = 0x0₈)) ∧ %cf
-%of    : (%rcx[7:0] & 0x1f₈) = 0x1₈ ∧ ((TMP_BV_32_0 rot_left 0x0₂₄ ∘ (%rcx[7:0] & 0x1f₈))[31:31] = 0x1₁ ⊕ (TMP_BV_32_0 rot_left 0x0₂₄ ∘ (%rcx[7:0] & 0x1f₈))[0:0] = 0x1₁) ∨ !((%rcx[7:0] & 0x1f₈) = 0x1₈) ∧ TMP_BOOL_0
+%cf    : (or (and (not (== (and <%rcx|64>[7:0] <0x1f|8>) <0x0|8>)) (== (rol <TMP_BV_32_0|32> (concat <0x0|24> (and <%rcx|64>[7:0] <0x1f|8>)))[0:0] <0x1|1>)) (and (not (not (== (and <%rcx|64>[7:0] <0x1f|8>) <0x0|8>))) <%cf>))
+%of    : (or (and (== (and <%rcx|64>[7:0] <0x1f|8>) <0x1|8>) (xor (== (rol <TMP_BV_32_0|32> (concat <0x0|24> (and <%rcx|64>[7:0] <0x1f|8>)))[31:31] <0x1|1>) (== (rol <TMP_BV_32_0|32> (concat <0x0|24> (and <%rcx|64>[7:0] <0x1f|8>)))[0:0] <0x1|1>))) (and (not (== (and <%rcx|64>[7:0] <0x1f|8>) <0x1|8>)) <TMP_BOOL_0>))
 
 Information about memory reads:
-  Value TMP_BV_32_0 (4 bytes)
-    was read at address %rax.
+  Value <TMP_BV_32_0|32> (4 bytes)
+    was read at address <%rax|64>.
 
 Information about memory writes:
-  Address %rax was updated to
-    TMP_BV_32_0 rot_left 0x0₂₄ ∘ (%rcx[7:0] & 0x1f₈) (4 bytes).
+  Address <%rax|64> was updated to
+    (rol <TMP_BV_32_0|32> (concat <0x0|24> (and <%rcx|64>[7:0] <0x1f|8>))) (4 bytes).
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE)) (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

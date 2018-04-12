@@ -10,8 +10,8 @@ code: leaw (%rax), %bx
 
 Formula:
 
-%rbx   : %rbx[63:16] ∘ %rax[15:0]
+%rbx   : (concat <%rbx|64>[63:16] <%rax|64>[15:0])
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

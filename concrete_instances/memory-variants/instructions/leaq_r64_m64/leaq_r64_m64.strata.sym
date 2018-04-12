@@ -10,8 +10,8 @@ code: leaq (%rax), %rbx
 
 Formula:
 
-%rbx   : %rax
+%rbx   : <%rax|64>
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

@@ -10,21 +10,21 @@ code: shrw $0x1, (%rax)
 
 Formula:
 
-%cf    : false ∧ TMP_BOOL_0 ∨ true ∧ (true ∧ (TMP_BV_16_0 ∘ 0x0₁ >> 0x1₁₇)[0:0] = 0x1₁ ∨ false ∧ %cf)
-%pf    : true ∧ !((TMP_BV_16_0 ∘ 0x0₁ >> 0x1₁₇)[1:1] = 0x1₁ ⊕ (TMP_BV_16_0 ∘ 0x0₁ >> 0x1₁₇)[2:2] = 0x1₁ ⊕ (TMP_BV_16_0 ∘ 0x0₁ >> 0x1₁₇)[3:3] = 0x1₁ ⊕ (TMP_BV_16_0 ∘ 0x0₁ >> 0x1₁₇)[4:4] = 0x1₁ ⊕ (TMP_BV_16_0 ∘ 0x0₁ >> 0x1₁₇)[5:5] = 0x1₁ ⊕ (TMP_BV_16_0 ∘ 0x0₁ >> 0x1₁₇)[6:6] = 0x1₁ ⊕ (TMP_BV_16_0 ∘ 0x0₁ >> 0x1₁₇)[7:7] = 0x1₁ ⊕ (TMP_BV_16_0 ∘ 0x0₁ >> 0x1₁₇)[8:8] = 0x1₁) ∨ false ∧ %pf
-%af    : true ∧ TMP_BOOL_1 ∨ false ∧ %af
-%zf    : true ∧ (TMP_BV_16_0 ∘ 0x0₁ >> 0x1₁₇)[16:1] = 0x0₁₆ ∨ false ∧ %zf
-%sf    : true ∧ (TMP_BV_16_0 ∘ 0x0₁ >> 0x1₁₇)[16:16] = 0x1₁ ∨ false ∧ %sf
-%of    : true ∧ TMP_BV_16_0[15:15] = 0x1₁ ∨ false ∧ %of
+%cf    : (or (and FALSE <TMP_BOOL_0>) (and TRUE (or (and TRUE (== (>> (concat <TMP_BV_16_0|16> <0x0|1>) <0x1|17>)[0:0] <0x1|1>)) (and FALSE <%cf>))))
+%pf    : (or (and TRUE (not (xor (xor (xor (xor (xor (xor (xor (== (>> (concat <TMP_BV_16_0|16> <0x0|1>) <0x1|17>)[1:1] <0x1|1>) (== (>> (concat <TMP_BV_16_0|16> <0x0|1>) <0x1|17>)[2:2] <0x1|1>)) (== (>> (concat <TMP_BV_16_0|16> <0x0|1>) <0x1|17>)[3:3] <0x1|1>)) (== (>> (concat <TMP_BV_16_0|16> <0x0|1>) <0x1|17>)[4:4] <0x1|1>)) (== (>> (concat <TMP_BV_16_0|16> <0x0|1>) <0x1|17>)[5:5] <0x1|1>)) (== (>> (concat <TMP_BV_16_0|16> <0x0|1>) <0x1|17>)[6:6] <0x1|1>)) (== (>> (concat <TMP_BV_16_0|16> <0x0|1>) <0x1|17>)[7:7] <0x1|1>)) (== (>> (concat <TMP_BV_16_0|16> <0x0|1>) <0x1|17>)[8:8] <0x1|1>)))) (and FALSE <%pf>))
+%af    : (or (and TRUE <TMP_BOOL_1>) (and FALSE <%af>))
+%zf    : (or (and TRUE (== (>> (concat <TMP_BV_16_0|16> <0x0|1>) <0x1|17>)[16:1] <0x0|16>)) (and FALSE <%zf>))
+%sf    : (or (and TRUE (== (>> (concat <TMP_BV_16_0|16> <0x0|1>) <0x1|17>)[16:16] <0x1|1>)) (and FALSE <%sf>))
+%of    : (or (and TRUE (== <TMP_BV_16_0|16>[15:15] <0x1|1>)) (and FALSE <%of>))
 
 Information about memory reads:
-  Value TMP_BV_16_0 (2 bytes)
-    was read at address %rax.
+  Value <TMP_BV_16_0|16> (2 bytes)
+    was read at address <%rax|64>.
 
 Information about memory writes:
-  Address %rax was updated to
-    (TMP_BV_16_0 ∘ 0x0₁ >> 0x1₁₇)[16:1] (2 bytes).
+  Address <%rax|64> was updated to
+    (>> (concat <TMP_BV_16_0|16> <0x0|1>) <0x1|17>)[16:1] (2 bytes).
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE)) (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

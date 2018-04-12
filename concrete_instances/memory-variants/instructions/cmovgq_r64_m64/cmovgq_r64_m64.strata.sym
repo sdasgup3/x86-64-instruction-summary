@@ -10,12 +10,12 @@ code: cmovgq (%rax), %rbx
 
 Formula:
 
-%rbx   : (((true ∧ (sign-extend-64(%zf ? 0x0₈ : 0x1₈ ⊕ ((%of ? 0x1₈ : 0x0₈) ⊕ (%sf ? 0x1₈ : 0x0₈))) ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[0:0] = 0x1₁ ∨ false ? 0x100₃₂ : 0x0₃₂) = 0x0₃₂ ? 0x1₉ : 0x0₉) + ((true ∧ (sign-extend-64(%zf ? 0x0₈ : 0x1₈ ⊕ ((%of ? 0x1₈ : 0x0₈) ⊕ (%sf ? 0x1₈ : 0x0₈))) ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[0:0] = 0x1₁ ∨ false ? 0x100₃₂ : 0x0₃₂) = 0x0₃₂ ? 0x1₉ : 0x0₉))[7:0] = 0x0₈ ? TMP_BV_64_0 : %rbx
+%rbx   : (if (== (plus (if (== (if (or (and TRUE (== (s_shr (concat (sign-extend-64 (if <%zf> then <0x0|8> else (xor <0x1|8> (xor (if <%of> then <0x1|8> else <0x0|8>) (if <%sf> then <0x1|8> else <0x0|8>))))) <0x0|1>) (concat <0x0|57> <0x1|8>))[0:0] <0x1|1>)) FALSE) then <0x100|32> else <0x0|32>) <0x0|32>) then <0x1|9> else <0x0|9>) (if (== (if (or (and TRUE (== (s_shr (concat (sign-extend-64 (if <%zf> then <0x0|8> else (xor <0x1|8> (xor (if <%of> then <0x1|8> else <0x0|8>) (if <%sf> then <0x1|8> else <0x0|8>))))) <0x0|1>) (concat <0x0|57> <0x1|8>))[0:0] <0x1|1>)) FALSE) then <0x100|32> else <0x0|32>) <0x0|32>) then <0x1|9> else <0x0|9>))[7:0] <0x0|8>) then <TMP_BV_64_0|64> else <%rbx|64>)
 
 Information about memory reads:
-  Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+  Value <TMP_BV_64_0|64> (8 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

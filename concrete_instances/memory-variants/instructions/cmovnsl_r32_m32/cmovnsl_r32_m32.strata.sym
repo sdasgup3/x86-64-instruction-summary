@@ -10,12 +10,12 @@ code: cmovnsl (%rax), %ebx
 
 Formula:
 
-%rbx   : 0x0₃₂ ∘ ((%sf ? 0x0₃₂ : 0xffffffff₃₂) = 0x0₃₂ ? %rbx[31:0] : TMP_BV_32_0)
+%rbx   : (concat <0x0|32> (if (== (if <%sf> then <0x0|32> else <0xffffffff|32>) <0x0|32>) then <%rbx|64>[31:0] else <TMP_BV_32_0|32>))
 
 Information about memory reads:
-  Value TMP_BV_32_0 (4 bytes)
-    was read at address %rax.
+  Value <TMP_BV_32_0|32> (4 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

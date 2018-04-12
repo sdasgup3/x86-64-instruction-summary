@@ -10,12 +10,12 @@ code: vmovsd (%rax), %xmm1
 
 Formula:
 
-%ymm1  : 0x0₁₂₈ ∘ (0x0₆₄ ∘ TMP_BV_64_0)
+%ymm1  : (concat <0x0|128> (concat <0x0|64> <TMP_BV_64_0|64>))
 
 Information about memory reads:
-  Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+  Value <TMP_BV_64_0|64> (8 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

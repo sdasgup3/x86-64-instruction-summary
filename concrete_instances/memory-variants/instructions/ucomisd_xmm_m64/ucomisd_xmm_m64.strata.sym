@@ -10,17 +10,17 @@ code: ucomisd (%rax), %xmm1
 
 Formula:
 
-%cf    : comisd(%ymm1[63:0], TMP_BV_64_0) = 0x0₂ ∨ comisd(%ymm1[63:0], TMP_BV_64_0) = 0x2₂
-%pf    : comisd(%ymm1[63:0], TMP_BV_64_0) = 0x0₂
-%af    : false
-%zf    : comisd(%ymm1[63:0], TMP_BV_64_0) = 0x0₂ ∨ comisd(%ymm1[63:0], TMP_BV_64_0) = 0x3₂
-%sf    : false
-%of    : false
+%cf    : (or (== comisd(<%ymm1|256>[63:0], <TMP_BV_64_0|64>) <0x0|2>) (== comisd(<%ymm1|256>[63:0], <TMP_BV_64_0|64>) <0x2|2>))
+%pf    : (== comisd(<%ymm1|256>[63:0], <TMP_BV_64_0|64>) <0x0|2>)
+%af    : FALSE
+%zf    : (or (== comisd(<%ymm1|256>[63:0], <TMP_BV_64_0|64>) <0x0|2>) (== comisd(<%ymm1|256>[63:0], <TMP_BV_64_0|64>) <0x3|2>))
+%sf    : FALSE
+%of    : FALSE
 
 Information about memory reads:
-  Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+  Value <TMP_BV_64_0|64> (8 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

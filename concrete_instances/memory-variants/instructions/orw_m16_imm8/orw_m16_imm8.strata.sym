@@ -10,39 +10,39 @@ code: orw $0x0, (%rax)
 
 Formula:
 
-%cf    : false
-%pf    : !((0x0₁ | TMP_BV_16_2[0:0]) = 0x1₁ ⊕ (0x0₁ | TMP_BV_16_3[1:1]) = 0x1₁ ⊕ (0x0₁ | TMP_BV_16_4[2:2]) = 0x1₁ ⊕ (0x0₁ | TMP_BV_16_5[3:3]) = 0x1₁ ⊕ (0x0₁ | TMP_BV_16_6[4:4]) = 0x1₁ ⊕ (0x0₁ | TMP_BV_16_7[5:5]) = 0x1₁ ⊕ (0x0₁ | TMP_BV_16_8[6:6]) = 0x1₁ ⊕ (0x0₁ | TMP_BV_16_9[7:7]) = 0x1₁)
-%af    : TMP_BOOL_2
-%zf    : (0x0₆₄ | sign-extend-64(TMP_BV_16_1)) = 0x0₆₄
-%sf    : (0x0₁ | sign-extend-64(TMP_BV_16_1)[63:63]) = 0x1₁
-%of    : false
+%cf    : FALSE
+%pf    : (not (xor (xor (xor (xor (xor (xor (xor (== (or <0x0|1> <TMP_BV_16_2|16>[0:0]) <0x1|1>) (== (or <0x0|1> <TMP_BV_16_3|16>[1:1]) <0x1|1>)) (== (or <0x0|1> <TMP_BV_16_4|16>[2:2]) <0x1|1>)) (== (or <0x0|1> <TMP_BV_16_5|16>[3:3]) <0x1|1>)) (== (or <0x0|1> <TMP_BV_16_6|16>[4:4]) <0x1|1>)) (== (or <0x0|1> <TMP_BV_16_7|16>[5:5]) <0x1|1>)) (== (or <0x0|1> <TMP_BV_16_8|16>[6:6]) <0x1|1>)) (== (or <0x0|1> <TMP_BV_16_9|16>[7:7]) <0x1|1>)))
+%af    : <TMP_BOOL_2>
+%zf    : (== (or <0x0|64> (sign-extend-64 <TMP_BV_16_1|16>)) <0x0|64>)
+%sf    : (== (or <0x0|1> (sign-extend-64 <TMP_BV_16_1|16>)[63:63]) <0x1|1>)
+%of    : FALSE
 
 Information about memory reads:
-  Value TMP_BV_16_0 (2 bytes)
-    was read at address %rax.
-  Value TMP_BV_16_1 (2 bytes)
-    was read at address %rax.
-  Value TMP_BV_16_2 (2 bytes)
-    was read at address %rax.
-  Value TMP_BV_16_3 (2 bytes)
-    was read at address %rax.
-  Value TMP_BV_16_4 (2 bytes)
-    was read at address %rax.
-  Value TMP_BV_16_5 (2 bytes)
-    was read at address %rax.
-  Value TMP_BV_16_6 (2 bytes)
-    was read at address %rax.
-  Value TMP_BV_16_7 (2 bytes)
-    was read at address %rax.
-  Value TMP_BV_16_8 (2 bytes)
-    was read at address %rax.
-  Value TMP_BV_16_9 (2 bytes)
-    was read at address %rax.
+  Value <TMP_BV_16_0|16> (2 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_16_1|16> (2 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_16_2|16> (2 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_16_3|16> (2 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_16_4|16> (2 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_16_5|16> (2 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_16_6|16> (2 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_16_7|16> (2 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_16_8|16> (2 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_16_9|16> (2 bytes)
+    was read at address <%rax|64>.
 
 Information about memory writes:
-  Address %rax was updated to
-    0x0₁₆ | TMP_BV_16_1 (2 bytes).
+  Address <%rax|64> was updated to
+    (or <0x0|16> <TMP_BV_16_1|16>) (2 bytes).
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

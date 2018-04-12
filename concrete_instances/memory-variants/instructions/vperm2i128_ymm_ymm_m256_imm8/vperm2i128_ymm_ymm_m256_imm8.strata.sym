@@ -10,12 +10,12 @@ code: vperm2i128 $0x0, (%rax), %ymm2, %ymm1
 
 Formula:
 
-%ymm1  : %ymm2[127:0] ∘ %ymm2[127:0]
+%ymm1  : (concat <%ymm2|256>[127:0] <%ymm2|256>[127:0])
 
 Information about memory reads:
-  Value TMP_BV_256_0 (32 bytes)
-    was read at address %rax.
+  Value <TMP_BV_256_0|256> (32 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

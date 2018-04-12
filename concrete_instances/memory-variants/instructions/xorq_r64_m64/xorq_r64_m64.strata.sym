@@ -10,21 +10,21 @@ code: xorq (%rax), %rbx
 
 Formula:
 
-%rbx   : %rbx ⊕ TMP_BV_64_0
+%rbx   : (xor <%rbx|64> <TMP_BV_64_0|64>)
 
-%cf    : false
-%pf    : !((%rbx[0:0] ⊕ TMP_BV_64_1[0:0]) = 0x1₁ ⊕ (%rbx[1:1] ⊕ TMP_BV_64_1[1:1]) = 0x1₁ ⊕ (%rbx[2:2] ⊕ TMP_BV_64_1[2:2]) = 0x1₁ ⊕ (%rbx[3:3] ⊕ TMP_BV_64_1[3:3]) = 0x1₁ ⊕ (%rbx[4:4] ⊕ TMP_BV_64_1[4:4]) = 0x1₁ ⊕ (%rbx[5:5] ⊕ TMP_BV_64_1[5:5]) = 0x1₁ ⊕ (%rbx[6:6] ⊕ TMP_BV_64_1[6:6]) = 0x1₁ ⊕ (%rbx[7:7] ⊕ TMP_BV_64_1[7:7]) = 0x1₁)
-%af    : TMP_BOOL_1
-%zf    : (%rbx ⊕ TMP_BV_64_1) = 0x0₆₄
-%sf    : (%rbx[63:63] ⊕ TMP_BV_64_1[63:63]) = 0x1₁
-%of    : false
+%cf    : FALSE
+%pf    : (not (xor (xor (xor (xor (xor (xor (xor (== (xor <%rbx|64>[0:0] <TMP_BV_64_1|64>[0:0]) <0x1|1>) (== (xor <%rbx|64>[1:1] <TMP_BV_64_1|64>[1:1]) <0x1|1>)) (== (xor <%rbx|64>[2:2] <TMP_BV_64_1|64>[2:2]) <0x1|1>)) (== (xor <%rbx|64>[3:3] <TMP_BV_64_1|64>[3:3]) <0x1|1>)) (== (xor <%rbx|64>[4:4] <TMP_BV_64_1|64>[4:4]) <0x1|1>)) (== (xor <%rbx|64>[5:5] <TMP_BV_64_1|64>[5:5]) <0x1|1>)) (== (xor <%rbx|64>[6:6] <TMP_BV_64_1|64>[6:6]) <0x1|1>)) (== (xor <%rbx|64>[7:7] <TMP_BV_64_1|64>[7:7]) <0x1|1>)))
+%af    : <TMP_BOOL_1>
+%zf    : (== (xor <%rbx|64> <TMP_BV_64_1|64>) <0x0|64>)
+%sf    : (== (xor <%rbx|64>[63:63] <TMP_BV_64_1|64>[63:63]) <0x1|1>)
+%of    : FALSE
 
 Information about memory reads:
-  Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
-  Value TMP_BV_64_1 (8 bytes)
-    was read at address %rax.
+  Value <TMP_BV_64_0|64> (8 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_64_1|64> (8 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

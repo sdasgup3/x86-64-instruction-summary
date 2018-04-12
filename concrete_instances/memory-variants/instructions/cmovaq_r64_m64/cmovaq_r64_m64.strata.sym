@@ -10,12 +10,12 @@ code: cmovaq (%rax), %rbx
 
 Formula:
 
-%rbx   : (0x0₁ ∘ (%zf ? %zf ? 0x1₈ : 0x0₈ : %cf ? 0x1₈ : 0x0₈) + 0x0₁ ∘ (%zf ? %zf ? 0x1₈ : 0x0₈ : %cf ? 0x1₈ : 0x0₈))[7:0] = 0x0₈ ? TMP_BV_64_0 : %rbx
+%rbx   : (if (== (plus (concat <0x0|1> (if <%zf> then (if <%zf> then <0x1|8> else <0x0|8>) else (if <%cf> then <0x1|8> else <0x0|8>))) (concat <0x0|1> (if <%zf> then (if <%zf> then <0x1|8> else <0x0|8>) else (if <%cf> then <0x1|8> else <0x0|8>))))[7:0] <0x0|8>) then <TMP_BV_64_0|64> else <%rbx|64>)
 
 Information about memory reads:
-  Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+  Value <TMP_BV_64_0|64> (8 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

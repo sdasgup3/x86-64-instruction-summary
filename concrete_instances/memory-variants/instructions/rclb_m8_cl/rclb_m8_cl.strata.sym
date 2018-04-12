@@ -10,17 +10,17 @@ code: rclb %cl, (%rax)
 
 Formula:
 
-%cf    : ((%cf ? 0x1₁ : 0x0₁) ∘ TMP_BV_8_0 rot_left 0x0₁ ∘ (%rcx[7:0] & 0x1f₈) % 0x9₉)[8:8] = 0x1₁
-%of    : (0x0₁ ∘ (%rcx[7:0] & 0x1f₈) % 0x9₉)[7:0] = 0x1₈ ∧ (((%cf ? 0x1₁ : 0x0₁) ∘ TMP_BV_8_0 rot_left 0x0₁ ∘ (%rcx[7:0] & 0x1f₈) % 0x9₉)[8:8] = 0x1₁ ⊕ ((%cf ? 0x1₁ : 0x0₁) ∘ TMP_BV_8_0 rot_left 0x0₁ ∘ (%rcx[7:0] & 0x1f₈) % 0x9₉)[7:7] = 0x1₁) ∨ !((0x0₁ ∘ (%rcx[7:0] & 0x1f₈) % 0x9₉)[7:0] = 0x1₈) ∧ (!((0x0₁ ∘ (%rcx[7:0] & 0x1f₈) % 0x9₉)[7:0] = 0x0₈) ∧ %of ∨ !(!((0x0₁ ∘ (%rcx[7:0] & 0x1f₈) % 0x9₉)[7:0] = 0x0₈)) ∧ TMP_BOOL_0)
+%cf    : (== (rol (concat (if <%cf> then <0x1|1> else <0x0|1>) <TMP_BV_8_0|8>) (mod (concat <0x0|1> (and <%rcx|64>[7:0] <0x1f|8>)) <0x9|9>))[8:8] <0x1|1>)
+%of    : (or (and (== (mod (concat <0x0|1> (and <%rcx|64>[7:0] <0x1f|8>)) <0x9|9>)[7:0] <0x1|8>) (xor (== (rol (concat (if <%cf> then <0x1|1> else <0x0|1>) <TMP_BV_8_0|8>) (mod (concat <0x0|1> (and <%rcx|64>[7:0] <0x1f|8>)) <0x9|9>))[8:8] <0x1|1>) (== (rol (concat (if <%cf> then <0x1|1> else <0x0|1>) <TMP_BV_8_0|8>) (mod (concat <0x0|1> (and <%rcx|64>[7:0] <0x1f|8>)) <0x9|9>))[7:7] <0x1|1>))) (and (not (== (mod (concat <0x0|1> (and <%rcx|64>[7:0] <0x1f|8>)) <0x9|9>)[7:0] <0x1|8>)) (or (and (not (== (mod (concat <0x0|1> (and <%rcx|64>[7:0] <0x1f|8>)) <0x9|9>)[7:0] <0x0|8>)) <%of>) (and (not (not (== (mod (concat <0x0|1> (and <%rcx|64>[7:0] <0x1f|8>)) <0x9|9>)[7:0] <0x0|8>))) <TMP_BOOL_0>))))
 
 Information about memory reads:
-  Value TMP_BV_8_0 (1 bytes)
-    was read at address %rax.
+  Value <TMP_BV_8_0|8> (1 bytes)
+    was read at address <%rax|64>.
 
 Information about memory writes:
-  Address %rax was updated to
-    ((%cf ? 0x1₁ : 0x0₁) ∘ TMP_BV_8_0 rot_left 0x0₁ ∘ (%rcx[7:0] & 0x1f₈) % 0x9₉)[7:0] (1 bytes).
+  Address <%rax|64> was updated to
+    (rol (concat (if <%cf> then <0x1|1> else <0x0|1>) <TMP_BV_8_0|8>) (mod (concat <0x0|1> (and <%rcx|64>[7:0] <0x1f|8>)) <0x9|9>))[7:0] (1 bytes).
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE)) (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

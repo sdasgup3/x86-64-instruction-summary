@@ -10,27 +10,27 @@ code: sbbw $0x0, (%rax)
 
 Formula:
 
-%cf    : ((((((%cf ? 0x0₉ : 0xff₉) + (%cf ? 0x0₉ : 0xff₉))[8:8] = 0x1₁ ? 0x0₁ ∘ TMP_BV_16_1 + 0x1₁₇ : 0x0₁ ∘ TMP_BV_16_1) + 0xffff₁₇)[16:16] = 0x1₁ ? 0x0₉ : 0xff₉) + (((((%cf ? 0x0₉ : 0xff₉) + (%cf ? 0x0₉ : 0xff₉))[8:8] = 0x1₁ ? 0x0₁ ∘ TMP_BV_16_1 + 0x1₁₇ : 0x0₁ ∘ TMP_BV_16_1) + 0xffff₁₇)[16:16] = 0x1₁ ? 0x0₉ : 0xff₉))[8:8] = 0x1₁
-%pf    : !(((((%cf ? 0x0₉ : 0xff₉) + (%cf ? 0x0₉ : 0xff₉))[8:8] = 0x1₁ ? 0x0₁ ∘ TMP_BV_16_1 + 0x1₁₇ : 0x0₁ ∘ TMP_BV_16_1) + 0xffff₁₇)[0:0] = 0x1₁ ⊕ ((((%cf ? 0x0₉ : 0xff₉) + (%cf ? 0x0₉ : 0xff₉))[8:8] = 0x1₁ ? 0x0₁ ∘ TMP_BV_16_1 + 0x1₁₇ : 0x0₁ ∘ TMP_BV_16_1) + 0xffff₁₇)[1:1] = 0x1₁ ⊕ ((((%cf ? 0x0₉ : 0xff₉) + (%cf ? 0x0₉ : 0xff₉))[8:8] = 0x1₁ ? 0x0₁ ∘ TMP_BV_16_1 + 0x1₁₇ : 0x0₁ ∘ TMP_BV_16_1) + 0xffff₁₇)[2:2] = 0x1₁ ⊕ ((((%cf ? 0x0₉ : 0xff₉) + (%cf ? 0x0₉ : 0xff₉))[8:8] = 0x1₁ ? 0x0₁ ∘ TMP_BV_16_1 + 0x1₁₇ : 0x0₁ ∘ TMP_BV_16_1) + 0xffff₁₇)[3:3] = 0x1₁ ⊕ ((((%cf ? 0x0₉ : 0xff₉) + (%cf ? 0x0₉ : 0xff₉))[8:8] = 0x1₁ ? 0x0₁ ∘ TMP_BV_16_1 + 0x1₁₇ : 0x0₁ ∘ TMP_BV_16_1) + 0xffff₁₇)[4:4] = 0x1₁ ⊕ ((((%cf ? 0x0₉ : 0xff₉) + (%cf ? 0x0₉ : 0xff₉))[8:8] = 0x1₁ ? 0x0₁ ∘ TMP_BV_16_1 + 0x1₁₇ : 0x0₁ ∘ TMP_BV_16_1) + 0xffff₁₇)[5:5] = 0x1₁ ⊕ ((((%cf ? 0x0₉ : 0xff₉) + (%cf ? 0x0₉ : 0xff₉))[8:8] = 0x1₁ ? 0x0₁ ∘ TMP_BV_16_1 + 0x1₁₇ : 0x0₁ ∘ TMP_BV_16_1) + 0xffff₁₇)[6:6] = 0x1₁ ⊕ ((((%cf ? 0x0₉ : 0xff₉) + (%cf ? 0x0₉ : 0xff₉))[8:8] = 0x1₁ ? 0x0₁ ∘ TMP_BV_16_1 + 0x1₁₇ : 0x0₁ ∘ TMP_BV_16_1) + 0xffff₁₇)[7:7] = 0x1₁)
-%af    : (0x0₁ ∘ TMP_BV_16_2[3:0] + 0xf₅)[4:4] = 0x1₁
-%zf    : ((((%cf ? 0x0₉ : 0xff₉) + (%cf ? 0x0₉ : 0xff₉))[8:8] = 0x1₁ ? 0x0₁ ∘ TMP_BV_16_1 + 0x1₁₇ : 0x0₁ ∘ TMP_BV_16_1) + 0xffff₁₇)[15:0] = 0x0₁₆
-%sf    : ((((%cf ? 0x0₉ : 0xff₉) + (%cf ? 0x0₉ : 0xff₉))[8:8] = 0x1₁ ? 0x0₁ ∘ TMP_BV_16_1 + 0x1₁₇ : 0x0₁ ∘ TMP_BV_16_1) + 0xffff₁₇)[15:15] = 0x1₁
-%of    : (TMP_BV_16_3[15:15] = 0x1₁ ↔ true) ∧ !(TMP_BV_16_3[15:15] = 0x1₁ ↔ ((((%cf ? 0x0₉ : 0xff₉) + (%cf ? 0x0₉ : 0xff₉))[8:8] = 0x1₁ ? 0x0₁ ∘ TMP_BV_16_1 + 0x1₁₇ : 0x0₁ ∘ TMP_BV_16_1) + 0xffff₁₇)[15:15] = 0x1₁)
+%cf    : (== (plus (if (== (plus (if (== (plus (if <%cf> then <0x0|9> else <0xff|9>) (if <%cf> then <0x0|9> else <0xff|9>))[8:8] <0x1|1>) then (plus (concat <0x0|1> <TMP_BV_16_1|16>) <0x1|17>) else (concat <0x0|1> <TMP_BV_16_1|16>)) <0xffff|17>)[16:16] <0x1|1>) then <0x0|9> else <0xff|9>) (if (== (plus (if (== (plus (if <%cf> then <0x0|9> else <0xff|9>) (if <%cf> then <0x0|9> else <0xff|9>))[8:8] <0x1|1>) then (plus (concat <0x0|1> <TMP_BV_16_1|16>) <0x1|17>) else (concat <0x0|1> <TMP_BV_16_1|16>)) <0xffff|17>)[16:16] <0x1|1>) then <0x0|9> else <0xff|9>))[8:8] <0x1|1>)
+%pf    : (not (xor (xor (xor (xor (xor (xor (xor (== (plus (if (== (plus (if <%cf> then <0x0|9> else <0xff|9>) (if <%cf> then <0x0|9> else <0xff|9>))[8:8] <0x1|1>) then (plus (concat <0x0|1> <TMP_BV_16_1|16>) <0x1|17>) else (concat <0x0|1> <TMP_BV_16_1|16>)) <0xffff|17>)[0:0] <0x1|1>) (== (plus (if (== (plus (if <%cf> then <0x0|9> else <0xff|9>) (if <%cf> then <0x0|9> else <0xff|9>))[8:8] <0x1|1>) then (plus (concat <0x0|1> <TMP_BV_16_1|16>) <0x1|17>) else (concat <0x0|1> <TMP_BV_16_1|16>)) <0xffff|17>)[1:1] <0x1|1>)) (== (plus (if (== (plus (if <%cf> then <0x0|9> else <0xff|9>) (if <%cf> then <0x0|9> else <0xff|9>))[8:8] <0x1|1>) then (plus (concat <0x0|1> <TMP_BV_16_1|16>) <0x1|17>) else (concat <0x0|1> <TMP_BV_16_1|16>)) <0xffff|17>)[2:2] <0x1|1>)) (== (plus (if (== (plus (if <%cf> then <0x0|9> else <0xff|9>) (if <%cf> then <0x0|9> else <0xff|9>))[8:8] <0x1|1>) then (plus (concat <0x0|1> <TMP_BV_16_1|16>) <0x1|17>) else (concat <0x0|1> <TMP_BV_16_1|16>)) <0xffff|17>)[3:3] <0x1|1>)) (== (plus (if (== (plus (if <%cf> then <0x0|9> else <0xff|9>) (if <%cf> then <0x0|9> else <0xff|9>))[8:8] <0x1|1>) then (plus (concat <0x0|1> <TMP_BV_16_1|16>) <0x1|17>) else (concat <0x0|1> <TMP_BV_16_1|16>)) <0xffff|17>)[4:4] <0x1|1>)) (== (plus (if (== (plus (if <%cf> then <0x0|9> else <0xff|9>) (if <%cf> then <0x0|9> else <0xff|9>))[8:8] <0x1|1>) then (plus (concat <0x0|1> <TMP_BV_16_1|16>) <0x1|17>) else (concat <0x0|1> <TMP_BV_16_1|16>)) <0xffff|17>)[5:5] <0x1|1>)) (== (plus (if (== (plus (if <%cf> then <0x0|9> else <0xff|9>) (if <%cf> then <0x0|9> else <0xff|9>))[8:8] <0x1|1>) then (plus (concat <0x0|1> <TMP_BV_16_1|16>) <0x1|17>) else (concat <0x0|1> <TMP_BV_16_1|16>)) <0xffff|17>)[6:6] <0x1|1>)) (== (plus (if (== (plus (if <%cf> then <0x0|9> else <0xff|9>) (if <%cf> then <0x0|9> else <0xff|9>))[8:8] <0x1|1>) then (plus (concat <0x0|1> <TMP_BV_16_1|16>) <0x1|17>) else (concat <0x0|1> <TMP_BV_16_1|16>)) <0xffff|17>)[7:7] <0x1|1>)))
+%af    : (== (plus (concat <0x0|1> <TMP_BV_16_2|16>[3:0]) <0xf|5>)[4:4] <0x1|1>)
+%zf    : (== (plus (if (== (plus (if <%cf> then <0x0|9> else <0xff|9>) (if <%cf> then <0x0|9> else <0xff|9>))[8:8] <0x1|1>) then (plus (concat <0x0|1> <TMP_BV_16_1|16>) <0x1|17>) else (concat <0x0|1> <TMP_BV_16_1|16>)) <0xffff|17>)[15:0] <0x0|16>)
+%sf    : (== (plus (if (== (plus (if <%cf> then <0x0|9> else <0xff|9>) (if <%cf> then <0x0|9> else <0xff|9>))[8:8] <0x1|1>) then (plus (concat <0x0|1> <TMP_BV_16_1|16>) <0x1|17>) else (concat <0x0|1> <TMP_BV_16_1|16>)) <0xffff|17>)[15:15] <0x1|1>)
+%of    : (and (== (== <TMP_BV_16_3|16>[15:15] <0x1|1>) TRUE) (not (== (== <TMP_BV_16_3|16>[15:15] <0x1|1>) (== (plus (if (== (plus (if <%cf> then <0x0|9> else <0xff|9>) (if <%cf> then <0x0|9> else <0xff|9>))[8:8] <0x1|1>) then (plus (concat <0x0|1> <TMP_BV_16_1|16>) <0x1|17>) else (concat <0x0|1> <TMP_BV_16_1|16>)) <0xffff|17>)[15:15] <0x1|1>))))
 
 Information about memory reads:
-  Value TMP_BV_16_0 (2 bytes)
-    was read at address %rax.
-  Value TMP_BV_16_1 (2 bytes)
-    was read at address %rax.
-  Value TMP_BV_16_2 (2 bytes)
-    was read at address %rax.
-  Value TMP_BV_16_3 (2 bytes)
-    was read at address %rax.
+  Value <TMP_BV_16_0|16> (2 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_16_1|16> (2 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_16_2|16> (2 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_16_3|16> (2 bytes)
+    was read at address <%rax|64>.
 
 Information about memory writes:
-  Address %rax was updated to
-    ((((%cf ? 0x0₉ : 0xff₉) + (%cf ? 0x0₉ : 0xff₉))[8:8] = 0x1₁ ? 0x0₁ ∘ TMP_BV_16_1 + 0x1₁₇ : 0x0₁ ∘ TMP_BV_16_1) + 0xffff₁₇)[15:0] (2 bytes).
+  Address <%rax|64> was updated to
+    (plus (if (== (plus (if <%cf> then <0x0|9> else <0xff|9>) (if <%cf> then <0x0|9> else <0xff|9>))[8:8] <0x1|1>) then (plus (concat <0x0|1> <TMP_BV_16_1|16>) <0x1|17>) else (concat <0x0|1> <TMP_BV_16_1|16>)) <0xffff|17>)[15:0] (2 bytes).
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

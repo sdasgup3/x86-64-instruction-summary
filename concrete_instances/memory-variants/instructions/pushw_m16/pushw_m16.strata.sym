@@ -10,16 +10,16 @@ code: pushw (%rax)
 
 Formula:
 
-%rsp   : %rsp - 0x2₆₄
+%rsp   : (minus <%rsp|64> <0x2|64>)
 
 Information about memory reads:
-  Value TMP_BV_16_0 (2 bytes)
-    was read at address %rax.
+  Value <TMP_BV_16_0|16> (2 bytes)
+    was read at address <%rax|64>.
 
 Information about memory writes:
-  Address %rsp - 0x2₆₄ was updated to
-    sign-extend-16(TMP_BV_16_0) (2 bytes).
+  Address (minus <%rsp|64> <0x2|64>) was updated to
+    (sign-extend-16 <TMP_BV_16_0|16>) (2 bytes).
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE)) (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

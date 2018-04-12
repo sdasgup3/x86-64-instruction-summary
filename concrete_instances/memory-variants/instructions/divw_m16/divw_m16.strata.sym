@@ -10,20 +10,20 @@ code: divw (%rax)
 
 Formula:
 
-%rax   : %rax[63:16] ∘ div_quotient_int16(%rdx[15:0] ∘ %rax[15:0], TMP_BV_16_0)
-%rdx   : %rdx[63:16] ∘ div_remainder_int16(%rdx[15:0] ∘ %rax[15:0], TMP_BV_16_0)
+%rax   : (concat <%rax|64>[63:16] div_quotient_int16((concat <%rdx|64>[15:0] <%rax|64>[15:0]), <TMP_BV_16_0|16>))
+%rdx   : (concat <%rdx|64>[63:16] div_remainder_int16((concat <%rdx|64>[15:0] <%rax|64>[15:0]), <TMP_BV_16_0|16>))
 
-%cf    : TMP_BOOL_5
-%pf    : TMP_BOOL_2
-%af    : TMP_BOOL_1
-%zf    : TMP_BOOL_0
-%sf    : TMP_BOOL_3
-%of    : TMP_BOOL_4
+%cf    : <TMP_BOOL_5>
+%pf    : <TMP_BOOL_2>
+%af    : <TMP_BOOL_1>
+%zf    : <TMP_BOOL_0>
+%sf    : <TMP_BOOL_3>
+%of    : <TMP_BOOL_4>
 
 Information about memory reads:
-  Value TMP_BV_16_0 (2 bytes)
-    was read at address %rax.
+  Value <TMP_BV_16_0|16> (2 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

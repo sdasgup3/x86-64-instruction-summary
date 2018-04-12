@@ -10,17 +10,17 @@ code: rcrq $0x1, (%rax)
 
 Formula:
 
-%cf    : ((%cf ? 0x1₁ : 0x0₁) ∘ TMP_BV_64_0 rot_right 0x0₅₇ ∘ 0x1₈ % 0x41₆₅)[64:64] = 0x1₁
-%of    : (0x0₅₇ ∘ 0x1₈ % 0x41₆₅)[7:0] = 0x1₈ ∧ (((%cf ? 0x1₁ : 0x0₁) ∘ TMP_BV_64_0 rot_right 0x0₅₇ ∘ 0x1₈ % 0x41₆₅)[63:63] = 0x1₁ ⊕ ((%cf ? 0x1₁ : 0x0₁) ∘ TMP_BV_64_0 rot_right 0x0₅₇ ∘ 0x1₈ % 0x41₆₅)[62:62] = 0x1₁) ∨ !((0x0₅₇ ∘ 0x1₈ % 0x41₆₅)[7:0] = 0x1₈) ∧ (!((0x0₅₇ ∘ 0x1₈ % 0x41₆₅)[7:0] = 0x0₈) ∧ %of ∨ !(!((0x0₅₇ ∘ 0x1₈ % 0x41₆₅)[7:0] = 0x0₈)) ∧ TMP_BOOL_0)
+%cf    : (== (ror (concat (if <%cf> then <0x1|1> else <0x0|1>) <TMP_BV_64_0|64>) (mod (concat <0x0|57> <0x1|8>) <0x41|65>))[64:64] <0x1|1>)
+%of    : (or (and (== (mod (concat <0x0|57> <0x1|8>) <0x41|65>)[7:0] <0x1|8>) (xor (== (ror (concat (if <%cf> then <0x1|1> else <0x0|1>) <TMP_BV_64_0|64>) (mod (concat <0x0|57> <0x1|8>) <0x41|65>))[63:63] <0x1|1>) (== (ror (concat (if <%cf> then <0x1|1> else <0x0|1>) <TMP_BV_64_0|64>) (mod (concat <0x0|57> <0x1|8>) <0x41|65>))[62:62] <0x1|1>))) (and (not (== (mod (concat <0x0|57> <0x1|8>) <0x41|65>)[7:0] <0x1|8>)) (or (and (not (== (mod (concat <0x0|57> <0x1|8>) <0x41|65>)[7:0] <0x0|8>)) <%of>) (and (not (not (== (mod (concat <0x0|57> <0x1|8>) <0x41|65>)[7:0] <0x0|8>))) <TMP_BOOL_0>))))
 
 Information about memory reads:
-  Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+  Value <TMP_BV_64_0|64> (8 bytes)
+    was read at address <%rax|64>.
 
 Information about memory writes:
-  Address %rax was updated to
-    ((%cf ? 0x1₁ : 0x0₁) ∘ TMP_BV_64_0 rot_right 0x0₅₇ ∘ 0x1₈ % 0x41₆₅)[63:0] (8 bytes).
+  Address <%rax|64> was updated to
+    (ror (concat (if <%cf> then <0x1|1> else <0x0|1>) <TMP_BV_64_0|64>) (mod (concat <0x0|57> <0x1|8>) <0x41|65>))[63:0] (8 bytes).
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE)) (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

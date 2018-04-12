@@ -10,12 +10,12 @@ code: vpsubq (%rax), %ymm2, %ymm1
 
 Formula:
 
-%ymm1  : (%ymm2[255:192] - TMP_BV_256_0[255:192]) ∘ ((%ymm2[191:128] - TMP_BV_256_0[191:128]) ∘ ((%ymm2[127:64] - TMP_BV_256_0[127:64]) ∘ (%ymm2[63:0] - TMP_BV_256_0[63:0])))
+%ymm1  : (concat (minus <%ymm2|256>[255:192] <TMP_BV_256_0|256>[255:192]) (concat (minus <%ymm2|256>[191:128] <TMP_BV_256_0|256>[191:128]) (concat (minus <%ymm2|256>[127:64] <TMP_BV_256_0|256>[127:64]) (minus <%ymm2|256>[63:0] <TMP_BV_256_0|256>[63:0]))))
 
 Information about memory reads:
-  Value TMP_BV_256_0 (32 bytes)
-    was read at address %rax.
+  Value <TMP_BV_256_0|256> (32 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

@@ -10,12 +10,12 @@ code: movq (%rax), %rbx
 
 Formula:
 
-%rbx   : TMP_BV_64_0
+%rbx   : <TMP_BV_64_0|64>
 
 Information about memory reads:
-  Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+  Value <TMP_BV_64_0|64> (8 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

@@ -10,23 +10,23 @@ code: xorq $0x0, (%rax)
 
 Formula:
 
-%cf    : false
-%pf    : !((TMP_BV_64_1[0:0] ⊕ 0x0₁) = 0x1₁ ⊕ (TMP_BV_64_1[1:1] ⊕ 0x0₁) = 0x1₁ ⊕ (TMP_BV_64_1[2:2] ⊕ 0x0₁) = 0x1₁ ⊕ (TMP_BV_64_1[3:3] ⊕ 0x0₁) = 0x1₁ ⊕ (TMP_BV_64_1[4:4] ⊕ 0x0₁) = 0x1₁ ⊕ (TMP_BV_64_1[5:5] ⊕ 0x0₁) = 0x1₁ ⊕ (TMP_BV_64_1[6:6] ⊕ 0x0₁) = 0x1₁ ⊕ (TMP_BV_64_1[7:7] ⊕ 0x0₁) = 0x1₁)
-%af    : TMP_BOOL_1
-%zf    : (TMP_BV_64_1 ⊕ 0x0₆₄) = 0x0₆₄
-%sf    : (TMP_BV_64_1[63:63] ⊕ 0x0₁) = 0x1₁
-%of    : false
+%cf    : FALSE
+%pf    : (not (xor (xor (xor (xor (xor (xor (xor (== (xor <TMP_BV_64_1|64>[0:0] <0x0|1>) <0x1|1>) (== (xor <TMP_BV_64_1|64>[1:1] <0x0|1>) <0x1|1>)) (== (xor <TMP_BV_64_1|64>[2:2] <0x0|1>) <0x1|1>)) (== (xor <TMP_BV_64_1|64>[3:3] <0x0|1>) <0x1|1>)) (== (xor <TMP_BV_64_1|64>[4:4] <0x0|1>) <0x1|1>)) (== (xor <TMP_BV_64_1|64>[5:5] <0x0|1>) <0x1|1>)) (== (xor <TMP_BV_64_1|64>[6:6] <0x0|1>) <0x1|1>)) (== (xor <TMP_BV_64_1|64>[7:7] <0x0|1>) <0x1|1>)))
+%af    : <TMP_BOOL_1>
+%zf    : (== (xor <TMP_BV_64_1|64> <0x0|64>) <0x0|64>)
+%sf    : (== (xor <TMP_BV_64_1|64>[63:63] <0x0|1>) <0x1|1>)
+%of    : FALSE
 
 Information about memory reads:
-  Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
-  Value TMP_BV_64_1 (8 bytes)
-    was read at address %rax.
+  Value <TMP_BV_64_0|64> (8 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_64_1|64> (8 bytes)
+    was read at address <%rax|64>.
 
 Information about memory writes:
-  Address %rax was updated to
-    TMP_BV_64_0 ⊕ 0x0₆₄ (8 bytes).
+  Address <%rax|64> was updated to
+    (xor <TMP_BV_64_0|64> <0x0|64>) (8 bytes).
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

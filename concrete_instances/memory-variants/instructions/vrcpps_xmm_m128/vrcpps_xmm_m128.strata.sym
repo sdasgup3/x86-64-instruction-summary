@@ -10,18 +10,18 @@ code: vrcpps (%rax), %xmm1
 
 Formula:
 
-%ymm1  : 0x0₁₂₈ ∘ (approx_reciprocal_single(TMP_BV_128_0[127:96]) ∘ (approx_reciprocal_single(TMP_BV_128_1[95:64]) ∘ (approx_reciprocal_single(TMP_BV_128_2[63:32]) ∘ approx_reciprocal_single(TMP_BV_128_3[31:0]))))
+%ymm1  : (concat <0x0|128> (concat approx_reciprocal_single(<TMP_BV_128_0|128>[127:96]) (concat approx_reciprocal_single(<TMP_BV_128_1|128>[95:64]) (concat approx_reciprocal_single(<TMP_BV_128_2|128>[63:32]) approx_reciprocal_single(<TMP_BV_128_3|128>[31:0])))))
 
 Information about memory reads:
-  Value TMP_BV_128_0 (16 bytes)
-    was read at address %rax.
-  Value TMP_BV_128_1 (16 bytes)
-    was read at address %rax.
-  Value TMP_BV_128_2 (16 bytes)
-    was read at address %rax.
-  Value TMP_BV_128_3 (16 bytes)
-    was read at address %rax.
+  Value <TMP_BV_128_0|128> (16 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_128_1|128> (16 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_128_2|128> (16 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_128_3|128> (16 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

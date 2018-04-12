@@ -10,14 +10,14 @@ code: cmovnpq (%rax), %rbx
 
 Formula:
 
-%rbx   : (((((((%pf ? 0x0₁ : 0x1₁) = 0x1₁ ? 0x0₉ : 0xff₉) + ((%pf ? 0x0₁ : 0x1₁) = 0x1₁ ? 0x0₉ : 0x1₉))[8:8] = 0x1₁ ? 0x0₉ : 0xff₉) + ((((%pf ? 0x0₁ : 0x1₁) = 0x1₁ ? 0x0₉ : 0xff₉) + ((%pf ? 0x0₁ : 0x1₁) = 0x1₁ ? 0x0₉ : 0x1₉))[8:8] = 0x1₁ ? 0x0₉ : 0xff₉))[8:8] = 0x1₁ ? 0x0₁ ∘ TMP_BV_64_0[15:0] + 0x1₁₇ : 0x0₁ ∘ TMP_BV_64_0[15:0]) + 0x0₁ ∘ (TMP_BV_64_0[15:0] ⊕ 0xffff₁₆))[15:0] = 0x0₁₆ ? TMP_BV_64_1 : %rbx
+%rbx   : (if (== (plus (if (== (plus (if (== (plus (if (== (if <%pf> then <0x0|1> else <0x1|1>) <0x1|1>) then <0x0|9> else <0xff|9>) (if (== (if <%pf> then <0x0|1> else <0x1|1>) <0x1|1>) then <0x0|9> else <0x1|9>))[8:8] <0x1|1>) then <0x0|9> else <0xff|9>) (if (== (plus (if (== (if <%pf> then <0x0|1> else <0x1|1>) <0x1|1>) then <0x0|9> else <0xff|9>) (if (== (if <%pf> then <0x0|1> else <0x1|1>) <0x1|1>) then <0x0|9> else <0x1|9>))[8:8] <0x1|1>) then <0x0|9> else <0xff|9>))[8:8] <0x1|1>) then (plus (concat <0x0|1> <TMP_BV_64_0|64>[15:0]) <0x1|17>) else (concat <0x0|1> <TMP_BV_64_0|64>[15:0])) (concat <0x0|1> (xor <TMP_BV_64_0|64>[15:0] <0xffff|16>)))[15:0] <0x0|16>) then <TMP_BV_64_1|64> else <%rbx|64>)
 
 Information about memory reads:
-  Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
-  Value TMP_BV_64_1 (8 bytes)
-    was read at address %rax.
+  Value <TMP_BV_64_0|64> (8 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_64_1|64> (8 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

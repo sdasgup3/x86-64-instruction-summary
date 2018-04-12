@@ -10,12 +10,12 @@ code: vpinsrw $0x0, (%rax), %xmm2, %xmm1
 
 Formula:
 
-%ymm1  : 0x0₁₂₈ ∘ (%ymm2[127:0] & !(0xffff₁₂₈ << 0x0₁₂₈) | 0x0₁₁₂ ∘ TMP_BV_16_0 << 0x0₁₂₈ & 0xffff₁₂₈ << 0x0₁₂₈)
+%ymm1  : (concat <0x0|128> (or (and <%ymm2|256>[127:0] !(<< <0xffff|128> <0x0|128>)) (and (<< (concat <0x0|112> <TMP_BV_16_0|16>) <0x0|128>) (<< <0xffff|128> <0x0|128>))))
 
 Information about memory reads:
-  Value TMP_BV_16_0 (2 bytes)
-    was read at address %rax.
+  Value <TMP_BV_16_0|16> (2 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

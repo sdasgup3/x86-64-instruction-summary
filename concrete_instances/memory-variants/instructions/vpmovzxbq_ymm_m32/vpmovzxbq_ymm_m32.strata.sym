@@ -10,18 +10,18 @@ code: vpmovzxbq (%rax), %ymm1
 
 Formula:
 
-%ymm1  : 0x0₅₆ ∘ TMP_BV_32_0[31:24] ∘ 0x0₅₆ ∘ TMP_BV_32_1[23:16] ∘ (0x0₅₆ ∘ TMP_BV_32_2[15:8] ∘ (0x0₅₆ ∘ TMP_BV_32_3[7:0]))
+%ymm1  : (concat (concat (concat (concat <0x0|56> <TMP_BV_32_0|32>[31:24]) <0x0|56>) <TMP_BV_32_1|32>[23:16]) (concat (concat <0x0|56> <TMP_BV_32_2|32>[15:8]) (concat <0x0|56> <TMP_BV_32_3|32>[7:0])))
 
 Information about memory reads:
-  Value TMP_BV_32_0 (4 bytes)
-    was read at address %rax.
-  Value TMP_BV_32_1 (4 bytes)
-    was read at address %rax.
-  Value TMP_BV_32_2 (4 bytes)
-    was read at address %rax.
-  Value TMP_BV_32_3 (4 bytes)
-    was read at address %rax.
+  Value <TMP_BV_32_0|32> (4 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_32_1|32> (4 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_32_2|32> (4 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_32_3|32> (4 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

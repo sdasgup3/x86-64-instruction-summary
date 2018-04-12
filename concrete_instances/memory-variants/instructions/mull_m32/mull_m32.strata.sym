@@ -10,20 +10,20 @@ code: mull (%rax)
 
 Formula:
 
-%rax   : 0x0₃₂ ∘ (0x0₃₂ ∘ TMP_BV_32_0 * 0x0₃₂ ∘ %rax[31:0])[31:0]
-%rdx   : 0x0₃₂ ∘ (0x0₃₂ ∘ TMP_BV_32_0 * 0x0₃₂ ∘ %rax[31:0])[63:32]
+%rax   : (concat <0x0|32> (mult (concat <0x0|32> <TMP_BV_32_0|32>) (concat <0x0|32> <%rax|64>[31:0]))[31:0])
+%rdx   : (concat <0x0|32> (mult (concat <0x0|32> <TMP_BV_32_0|32>) (concat <0x0|32> <%rax|64>[31:0]))[63:32])
 
-%cf    : !((0x0₃₂ ∘ TMP_BV_32_0 * 0x0₃₂ ∘ %rax[31:0])[63:32] = 0x0₃₂)
-%pf    : TMP_BOOL_2
-%af    : TMP_BOOL_1
-%zf    : TMP_BOOL_0
-%sf    : TMP_BOOL_3
-%of    : !((0x0₃₂ ∘ TMP_BV_32_0 * 0x0₃₂ ∘ %rax[31:0])[63:32] = 0x0₃₂)
+%cf    : (not (== (mult (concat <0x0|32> <TMP_BV_32_0|32>) (concat <0x0|32> <%rax|64>[31:0]))[63:32] <0x0|32>))
+%pf    : <TMP_BOOL_2>
+%af    : <TMP_BOOL_1>
+%zf    : <TMP_BOOL_0>
+%sf    : <TMP_BOOL_3>
+%of    : (not (== (mult (concat <0x0|32> <TMP_BV_32_0|32>) (concat <0x0|32> <%rax|64>[31:0]))[63:32] <0x0|32>))
 
 Information about memory reads:
-  Value TMP_BV_32_0 (4 bytes)
-    was read at address %rax.
+  Value <TMP_BV_32_0|32> (4 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

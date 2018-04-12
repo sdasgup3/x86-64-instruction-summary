@@ -10,12 +10,12 @@ code: vcvtph2ps (%rax), %ymm1
 
 Formula:
 
-%ymm1  : cvt_half_to_single(TMP_BV_128_0[127:112]) ∘ (cvt_half_to_single(TMP_BV_128_0[111:96]) ∘ (cvt_half_to_single(TMP_BV_128_0[95:80]) ∘ (cvt_half_to_single(TMP_BV_128_0[79:64]) ∘ (cvt_half_to_single(TMP_BV_128_0[63:48]) ∘ (cvt_half_to_single(TMP_BV_128_0[47:32]) ∘ (cvt_half_to_single(TMP_BV_128_0[31:16]) ∘ cvt_half_to_single(TMP_BV_128_0[15:0])))))))
+%ymm1  : (concat cvt_half_to_single(<TMP_BV_128_0|128>[127:112]) (concat cvt_half_to_single(<TMP_BV_128_0|128>[111:96]) (concat cvt_half_to_single(<TMP_BV_128_0|128>[95:80]) (concat cvt_half_to_single(<TMP_BV_128_0|128>[79:64]) (concat cvt_half_to_single(<TMP_BV_128_0|128>[63:48]) (concat cvt_half_to_single(<TMP_BV_128_0|128>[47:32]) (concat cvt_half_to_single(<TMP_BV_128_0|128>[31:16]) cvt_half_to_single(<TMP_BV_128_0|128>[15:0]))))))))
 
 Information about memory reads:
-  Value TMP_BV_128_0 (16 bytes)
-    was read at address %rax.
+  Value <TMP_BV_128_0|128> (16 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

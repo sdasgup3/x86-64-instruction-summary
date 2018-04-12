@@ -10,8 +10,8 @@ code: vcvtpd2dq (%rax), %xmm1
 
 Formula:
 
-%ymm1  : 0x0₁₂₈ ∘ (cvt_double_to_int32(%ymm1[255:192]) ∘ (cvt_double_to_int32(%ymm1[191:128]) ∘ (cvt_double_to_int32(%ymm1[127:64]) ∘ cvt_double_to_int32(%ymm1[63:0]))))
+%ymm1  : (concat <0x0|128> (concat cvt_double_to_int32(<%ymm1|256>[255:192]) (concat cvt_double_to_int32(<%ymm1|256>[191:128]) (concat cvt_double_to_int32(<%ymm1|256>[127:64]) cvt_double_to_int32(<%ymm1|256>[63:0])))))
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

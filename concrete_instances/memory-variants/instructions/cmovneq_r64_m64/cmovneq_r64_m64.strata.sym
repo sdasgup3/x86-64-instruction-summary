@@ -10,12 +10,12 @@ code: cmovneq (%rax), %rbx
 
 Formula:
 
-%rbx   : ((%zf ? 0x1₉ : 0x0₉) + (%zf ? 0x1₉ : 0x0₉))[7:0] = 0x0₈ ? TMP_BV_64_0 : %rbx
+%rbx   : (if (== (plus (if <%zf> then <0x1|9> else <0x0|9>) (if <%zf> then <0x1|9> else <0x0|9>))[7:0] <0x0|8>) then <TMP_BV_64_0|64> else <%rbx|64>)
 
 Information about memory reads:
-  Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+  Value <TMP_BV_64_0|64> (8 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

@@ -10,74 +10,74 @@ code: vpaddsb (%rax), %ymm2, %ymm1
 
 Formula:
 
-%ymm1  : (sign-extend-16(TMP_BV_256_0[255:248]) + sign-extend-16(%ymm2[255:248]) > 0x7f₁₆ ? 0x7f₈ : sign-extend-16(TMP_BV_256_0[255:248]) + sign-extend-16(%ymm2[255:248]) < 0xffffffffffffff80₁₆ ? 0xffffffffffffff80₈ : (sign-extend-16(TMP_BV_256_0[255:248]) + sign-extend-16(%ymm2[255:248]))[7:0]) ∘ ((sign-extend-16(TMP_BV_256_1[247:240]) + sign-extend-16(%ymm2[247:240]) > 0x7f₁₆ ? 0x7f₈ : sign-extend-16(TMP_BV_256_1[247:240]) + sign-extend-16(%ymm2[247:240]) < 0xffffffffffffff80₁₆ ? 0xffffffffffffff80₈ : (sign-extend-16(TMP_BV_256_1[247:240]) + sign-extend-16(%ymm2[247:240]))[7:0]) ∘ ((sign-extend-16(TMP_BV_256_2[239:232]) + sign-extend-16(%ymm2[239:232]) > 0x7f₁₆ ? 0x7f₈ : sign-extend-16(TMP_BV_256_2[239:232]) + sign-extend-16(%ymm2[239:232]) < 0xffffffffffffff80₁₆ ? 0xffffffffffffff80₈ : (sign-extend-16(TMP_BV_256_2[239:232]) + sign-extend-16(%ymm2[239:232]))[7:0]) ∘ ((sign-extend-16(TMP_BV_256_3[231:224]) + sign-extend-16(%ymm2[231:224]) > 0x7f₁₆ ? 0x7f₈ : sign-extend-16(TMP_BV_256_3[231:224]) + sign-extend-16(%ymm2[231:224]) < 0xffffffffffffff80₁₆ ? 0xffffffffffffff80₈ : (sign-extend-16(TMP_BV_256_3[231:224]) + sign-extend-16(%ymm2[231:224]))[7:0]) ∘ ((sign-extend-16(TMP_BV_256_4[223:216]) + sign-extend-16(%ymm2[223:216]) > 0x7f₁₆ ? 0x7f₈ : sign-extend-16(TMP_BV_256_4[223:216]) + sign-extend-16(%ymm2[223:216]) < 0xffffffffffffff80₁₆ ? 0xffffffffffffff80₈ : (sign-extend-16(TMP_BV_256_4[223:216]) + sign-extend-16(%ymm2[223:216]))[7:0]) ∘ ((sign-extend-16(TMP_BV_256_5[215:208]) + sign-extend-16(%ymm2[215:208]) > 0x7f₁₆ ? 0x7f₈ : sign-extend-16(TMP_BV_256_5[215:208]) + sign-extend-16(%ymm2[215:208]) < 0xffffffffffffff80₁₆ ? 0xffffffffffffff80₈ : (sign-extend-16(TMP_BV_256_5[215:208]) + sign-extend-16(%ymm2[215:208]))[7:0]) ∘ ((sign-extend-16(TMP_BV_256_6[207:200]) + sign-extend-16(%ymm2[207:200]) > 0x7f₁₆ ? 0x7f₈ : sign-extend-16(TMP_BV_256_6[207:200]) + sign-extend-16(%ymm2[207:200]) < 0xffffffffffffff80₁₆ ? 0xffffffffffffff80₈ : (sign-extend-16(TMP_BV_256_6[207:200]) + sign-extend-16(%ymm2[207:200]))[7:0]) ∘ ((sign-extend-16(TMP_BV_256_7[199:192]) + sign-extend-16(%ymm2[199:192]) > 0x7f₁₆ ? 0x7f₈ : sign-extend-16(TMP_BV_256_7[199:192]) + sign-extend-16(%ymm2[199:192]) < 0xffffffffffffff80₁₆ ? 0xffffffffffffff80₈ : (sign-extend-16(TMP_BV_256_7[199:192]) + sign-extend-16(%ymm2[199:192]))[7:0]) ∘ ((sign-extend-16(TMP_BV_256_8[191:184]) + sign-extend-16(%ymm2[191:184]) > 0x7f₁₆ ? 0x7f₈ : sign-extend-16(TMP_BV_256_8[191:184]) + sign-extend-16(%ymm2[191:184]) < 0xffffffffffffff80₁₆ ? 0xffffffffffffff80₈ : (sign-extend-16(TMP_BV_256_8[191:184]) + sign-extend-16(%ymm2[191:184]))[7:0]) ∘ ((sign-extend-16(TMP_BV_256_9[183:176]) + sign-extend-16(%ymm2[183:176]) > 0x7f₁₆ ? 0x7f₈ : sign-extend-16(TMP_BV_256_9[183:176]) + sign-extend-16(%ymm2[183:176]) < 0xffffffffffffff80₁₆ ? 0xffffffffffffff80₈ : (sign-extend-16(TMP_BV_256_9[183:176]) + sign-extend-16(%ymm2[183:176]))[7:0]) ∘ ((sign-extend-16(TMP_BV_256_10[175:168]) + sign-extend-16(%ymm2[175:168]) > 0x7f₁₆ ? 0x7f₈ : sign-extend-16(TMP_BV_256_10[175:168]) + sign-extend-16(%ymm2[175:168]) < 0xffffffffffffff80₁₆ ? 0xffffffffffffff80₈ : (sign-extend-16(TMP_BV_256_10[175:168]) + sign-extend-16(%ymm2[175:168]))[7:0]) ∘ ((sign-extend-16(TMP_BV_256_11[167:160]) + sign-extend-16(%ymm2[167:160]) > 0x7f₁₆ ? 0x7f₈ : sign-extend-16(TMP_BV_256_11[167:160]) + sign-extend-16(%ymm2[167:160]) < 0xffffffffffffff80₁₆ ? 0xffffffffffffff80₈ : (sign-extend-16(TMP_BV_256_11[167:160]) + sign-extend-16(%ymm2[167:160]))[7:0]) ∘ ((sign-extend-16(TMP_BV_256_12[159:152]) + sign-extend-16(%ymm2[159:152]) > 0x7f₁₆ ? 0x7f₈ : sign-extend-16(TMP_BV_256_12[159:152]) + sign-extend-16(%ymm2[159:152]) < 0xffffffffffffff80₁₆ ? 0xffffffffffffff80₈ : (sign-extend-16(TMP_BV_256_12[159:152]) + sign-extend-16(%ymm2[159:152]))[7:0]) ∘ ((sign-extend-16(TMP_BV_256_13[151:144]) + sign-extend-16(%ymm2[151:144]) > 0x7f₁₆ ? 0x7f₈ : sign-extend-16(TMP_BV_256_13[151:144]) + sign-extend-16(%ymm2[151:144]) < 0xffffffffffffff80₁₆ ? 0xffffffffffffff80₈ : (sign-extend-16(TMP_BV_256_13[151:144]) + sign-extend-16(%ymm2[151:144]))[7:0]) ∘ ((sign-extend-16(TMP_BV_256_14[143:136]) + sign-extend-16(%ymm2[143:136]) > 0x7f₁₆ ? 0x7f₈ : sign-extend-16(TMP_BV_256_14[143:136]) + sign-extend-16(%ymm2[143:136]) < 0xffffffffffffff80₁₆ ? 0xffffffffffffff80₈ : (sign-extend-16(TMP_BV_256_14[143:136]) + sign-extend-16(%ymm2[143:136]))[7:0]) ∘ (sign-extend-16(TMP_BV_256_15[135:128]) + sign-extend-16(%ymm2[135:128]) > 0x7f₁₆ ? 0x7f₈ : sign-extend-16(TMP_BV_256_15[135:128]) + sign-extend-16(%ymm2[135:128]) < 0xffffffffffffff80₁₆ ? 0xffffffffffffff80₈ : (sign-extend-16(TMP_BV_256_15[135:128]) + sign-extend-16(%ymm2[135:128]))[7:0]))))))))))))))) ∘ ((sign-extend-16(%ymm2[127:120]) + sign-extend-16(TMP_BV_256_16[127:120]) > 0x7f₁₆ ? 0x7f₈ : sign-extend-16(%ymm2[127:120]) + sign-extend-16(TMP_BV_256_16[127:120]) < 0xffffffffffffff80₁₆ ? 0xffffffffffffff80₈ : (sign-extend-16(%ymm2[127:120]) + sign-extend-16(TMP_BV_256_16[127:120]))[7:0]) ∘ ((sign-extend-16(%ymm2[119:112]) + sign-extend-16(TMP_BV_256_17[119:112]) > 0x7f₁₆ ? 0x7f₈ : sign-extend-16(%ymm2[119:112]) + sign-extend-16(TMP_BV_256_17[119:112]) < 0xffffffffffffff80₁₆ ? 0xffffffffffffff80₈ : (sign-extend-16(%ymm2[119:112]) + sign-extend-16(TMP_BV_256_17[119:112]))[7:0]) ∘ ((sign-extend-16(%ymm2[111:104]) + sign-extend-16(TMP_BV_256_18[111:104]) > 0x7f₁₆ ? 0x7f₈ : sign-extend-16(%ymm2[111:104]) + sign-extend-16(TMP_BV_256_18[111:104]) < 0xffffffffffffff80₁₆ ? 0xffffffffffffff80₈ : (sign-extend-16(%ymm2[111:104]) + sign-extend-16(TMP_BV_256_18[111:104]))[7:0]) ∘ ((sign-extend-16(%ymm2[103:96]) + sign-extend-16(TMP_BV_256_19[103:96]) > 0x7f₁₆ ? 0x7f₈ : sign-extend-16(%ymm2[103:96]) + sign-extend-16(TMP_BV_256_19[103:96]) < 0xffffffffffffff80₁₆ ? 0xffffffffffffff80₈ : (sign-extend-16(%ymm2[103:96]) + sign-extend-16(TMP_BV_256_19[103:96]))[7:0]) ∘ ((sign-extend-16(%ymm2[95:88]) + sign-extend-16(TMP_BV_256_20[95:88]) > 0x7f₁₆ ? 0x7f₈ : sign-extend-16(%ymm2[95:88]) + sign-extend-16(TMP_BV_256_20[95:88]) < 0xffffffffffffff80₁₆ ? 0xffffffffffffff80₈ : (sign-extend-16(%ymm2[95:88]) + sign-extend-16(TMP_BV_256_20[95:88]))[7:0]) ∘ ((sign-extend-16(%ymm2[87:80]) + sign-extend-16(TMP_BV_256_21[87:80]) > 0x7f₁₆ ? 0x7f₈ : sign-extend-16(%ymm2[87:80]) + sign-extend-16(TMP_BV_256_21[87:80]) < 0xffffffffffffff80₁₆ ? 0xffffffffffffff80₈ : (sign-extend-16(%ymm2[87:80]) + sign-extend-16(TMP_BV_256_21[87:80]))[7:0]) ∘ ((sign-extend-16(%ymm2[79:72]) + sign-extend-16(TMP_BV_256_22[79:72]) > 0x7f₁₆ ? 0x7f₈ : sign-extend-16(%ymm2[79:72]) + sign-extend-16(TMP_BV_256_22[79:72]) < 0xffffffffffffff80₁₆ ? 0xffffffffffffff80₈ : (sign-extend-16(%ymm2[79:72]) + sign-extend-16(TMP_BV_256_22[79:72]))[7:0]) ∘ ((sign-extend-16(%ymm2[71:64]) + sign-extend-16(TMP_BV_256_23[71:64]) > 0x7f₁₆ ? 0x7f₈ : sign-extend-16(%ymm2[71:64]) + sign-extend-16(TMP_BV_256_23[71:64]) < 0xffffffffffffff80₁₆ ? 0xffffffffffffff80₈ : (sign-extend-16(%ymm2[71:64]) + sign-extend-16(TMP_BV_256_23[71:64]))[7:0]) ∘ ((sign-extend-16(%ymm2[63:56]) + sign-extend-16(TMP_BV_256_24[63:56]) > 0x7f₁₆ ? 0x7f₈ : sign-extend-16(%ymm2[63:56]) + sign-extend-16(TMP_BV_256_24[63:56]) < 0xffffffffffffff80₁₆ ? 0xffffffffffffff80₈ : (sign-extend-16(%ymm2[63:56]) + sign-extend-16(TMP_BV_256_24[63:56]))[7:0]) ∘ ((sign-extend-16(%ymm2[55:48]) + sign-extend-16(TMP_BV_256_25[55:48]) > 0x7f₁₆ ? 0x7f₈ : sign-extend-16(%ymm2[55:48]) + sign-extend-16(TMP_BV_256_25[55:48]) < 0xffffffffffffff80₁₆ ? 0xffffffffffffff80₈ : (sign-extend-16(%ymm2[55:48]) + sign-extend-16(TMP_BV_256_25[55:48]))[7:0]) ∘ ((sign-extend-16(%ymm2[47:40]) + sign-extend-16(TMP_BV_256_26[47:40]) > 0x7f₁₆ ? 0x7f₈ : sign-extend-16(%ymm2[47:40]) + sign-extend-16(TMP_BV_256_26[47:40]) < 0xffffffffffffff80₁₆ ? 0xffffffffffffff80₈ : (sign-extend-16(%ymm2[47:40]) + sign-extend-16(TMP_BV_256_26[47:40]))[7:0]) ∘ ((sign-extend-16(%ymm2[39:32]) + sign-extend-16(TMP_BV_256_27[39:32]) > 0x7f₁₆ ? 0x7f₈ : sign-extend-16(%ymm2[39:32]) + sign-extend-16(TMP_BV_256_27[39:32]) < 0xffffffffffffff80₁₆ ? 0xffffffffffffff80₈ : (sign-extend-16(%ymm2[39:32]) + sign-extend-16(TMP_BV_256_27[39:32]))[7:0]) ∘ ((sign-extend-16(%ymm2[31:24]) + sign-extend-16(TMP_BV_256_28[31:24]) > 0x7f₁₆ ? 0x7f₈ : sign-extend-16(%ymm2[31:24]) + sign-extend-16(TMP_BV_256_28[31:24]) < 0xffffffffffffff80₁₆ ? 0xffffffffffffff80₈ : (sign-extend-16(%ymm2[31:24]) + sign-extend-16(TMP_BV_256_28[31:24]))[7:0]) ∘ ((sign-extend-16(%ymm2[23:16]) + sign-extend-16(TMP_BV_256_29[23:16]) > 0x7f₁₆ ? 0x7f₈ : sign-extend-16(%ymm2[23:16]) + sign-extend-16(TMP_BV_256_29[23:16]) < 0xffffffffffffff80₁₆ ? 0xffffffffffffff80₈ : (sign-extend-16(%ymm2[23:16]) + sign-extend-16(TMP_BV_256_29[23:16]))[7:0]) ∘ ((sign-extend-16(%ymm2[15:8]) + sign-extend-16(TMP_BV_256_30[15:8]) > 0x7f₁₆ ? 0x7f₈ : sign-extend-16(%ymm2[15:8]) + sign-extend-16(TMP_BV_256_30[15:8]) < 0xffffffffffffff80₁₆ ? 0xffffffffffffff80₈ : (sign-extend-16(%ymm2[15:8]) + sign-extend-16(TMP_BV_256_30[15:8]))[7:0]) ∘ (sign-extend-16(%ymm2[7:0]) + sign-extend-16(TMP_BV_256_31[7:0]) > 0x7f₁₆ ? 0x7f₈ : sign-extend-16(%ymm2[7:0]) + sign-extend-16(TMP_BV_256_31[7:0]) < 0xffffffffffffff80₁₆ ? 0xffffffffffffff80₈ : (sign-extend-16(%ymm2[7:0]) + sign-extend-16(TMP_BV_256_31[7:0]))[7:0]))))))))))))))))
+%ymm1  : (concat (concat (if (> (plus (sign-extend-16 <TMP_BV_256_0|256>[255:248]) (sign-extend-16 <%ymm2|256>[255:248])) <0x7f|16>) then <0x7f|8> else (if (< (plus (sign-extend-16 <TMP_BV_256_0|256>[255:248]) (sign-extend-16 <%ymm2|256>[255:248])) <0xffffffffffffff80|16>) then <0xffffffffffffff80|8> else (plus (sign-extend-16 <TMP_BV_256_0|256>[255:248]) (sign-extend-16 <%ymm2|256>[255:248]))[7:0])) (concat (if (> (plus (sign-extend-16 <TMP_BV_256_1|256>[247:240]) (sign-extend-16 <%ymm2|256>[247:240])) <0x7f|16>) then <0x7f|8> else (if (< (plus (sign-extend-16 <TMP_BV_256_1|256>[247:240]) (sign-extend-16 <%ymm2|256>[247:240])) <0xffffffffffffff80|16>) then <0xffffffffffffff80|8> else (plus (sign-extend-16 <TMP_BV_256_1|256>[247:240]) (sign-extend-16 <%ymm2|256>[247:240]))[7:0])) (concat (if (> (plus (sign-extend-16 <TMP_BV_256_2|256>[239:232]) (sign-extend-16 <%ymm2|256>[239:232])) <0x7f|16>) then <0x7f|8> else (if (< (plus (sign-extend-16 <TMP_BV_256_2|256>[239:232]) (sign-extend-16 <%ymm2|256>[239:232])) <0xffffffffffffff80|16>) then <0xffffffffffffff80|8> else (plus (sign-extend-16 <TMP_BV_256_2|256>[239:232]) (sign-extend-16 <%ymm2|256>[239:232]))[7:0])) (concat (if (> (plus (sign-extend-16 <TMP_BV_256_3|256>[231:224]) (sign-extend-16 <%ymm2|256>[231:224])) <0x7f|16>) then <0x7f|8> else (if (< (plus (sign-extend-16 <TMP_BV_256_3|256>[231:224]) (sign-extend-16 <%ymm2|256>[231:224])) <0xffffffffffffff80|16>) then <0xffffffffffffff80|8> else (plus (sign-extend-16 <TMP_BV_256_3|256>[231:224]) (sign-extend-16 <%ymm2|256>[231:224]))[7:0])) (concat (if (> (plus (sign-extend-16 <TMP_BV_256_4|256>[223:216]) (sign-extend-16 <%ymm2|256>[223:216])) <0x7f|16>) then <0x7f|8> else (if (< (plus (sign-extend-16 <TMP_BV_256_4|256>[223:216]) (sign-extend-16 <%ymm2|256>[223:216])) <0xffffffffffffff80|16>) then <0xffffffffffffff80|8> else (plus (sign-extend-16 <TMP_BV_256_4|256>[223:216]) (sign-extend-16 <%ymm2|256>[223:216]))[7:0])) (concat (if (> (plus (sign-extend-16 <TMP_BV_256_5|256>[215:208]) (sign-extend-16 <%ymm2|256>[215:208])) <0x7f|16>) then <0x7f|8> else (if (< (plus (sign-extend-16 <TMP_BV_256_5|256>[215:208]) (sign-extend-16 <%ymm2|256>[215:208])) <0xffffffffffffff80|16>) then <0xffffffffffffff80|8> else (plus (sign-extend-16 <TMP_BV_256_5|256>[215:208]) (sign-extend-16 <%ymm2|256>[215:208]))[7:0])) (concat (if (> (plus (sign-extend-16 <TMP_BV_256_6|256>[207:200]) (sign-extend-16 <%ymm2|256>[207:200])) <0x7f|16>) then <0x7f|8> else (if (< (plus (sign-extend-16 <TMP_BV_256_6|256>[207:200]) (sign-extend-16 <%ymm2|256>[207:200])) <0xffffffffffffff80|16>) then <0xffffffffffffff80|8> else (plus (sign-extend-16 <TMP_BV_256_6|256>[207:200]) (sign-extend-16 <%ymm2|256>[207:200]))[7:0])) (concat (if (> (plus (sign-extend-16 <TMP_BV_256_7|256>[199:192]) (sign-extend-16 <%ymm2|256>[199:192])) <0x7f|16>) then <0x7f|8> else (if (< (plus (sign-extend-16 <TMP_BV_256_7|256>[199:192]) (sign-extend-16 <%ymm2|256>[199:192])) <0xffffffffffffff80|16>) then <0xffffffffffffff80|8> else (plus (sign-extend-16 <TMP_BV_256_7|256>[199:192]) (sign-extend-16 <%ymm2|256>[199:192]))[7:0])) (concat (if (> (plus (sign-extend-16 <TMP_BV_256_8|256>[191:184]) (sign-extend-16 <%ymm2|256>[191:184])) <0x7f|16>) then <0x7f|8> else (if (< (plus (sign-extend-16 <TMP_BV_256_8|256>[191:184]) (sign-extend-16 <%ymm2|256>[191:184])) <0xffffffffffffff80|16>) then <0xffffffffffffff80|8> else (plus (sign-extend-16 <TMP_BV_256_8|256>[191:184]) (sign-extend-16 <%ymm2|256>[191:184]))[7:0])) (concat (if (> (plus (sign-extend-16 <TMP_BV_256_9|256>[183:176]) (sign-extend-16 <%ymm2|256>[183:176])) <0x7f|16>) then <0x7f|8> else (if (< (plus (sign-extend-16 <TMP_BV_256_9|256>[183:176]) (sign-extend-16 <%ymm2|256>[183:176])) <0xffffffffffffff80|16>) then <0xffffffffffffff80|8> else (plus (sign-extend-16 <TMP_BV_256_9|256>[183:176]) (sign-extend-16 <%ymm2|256>[183:176]))[7:0])) (concat (if (> (plus (sign-extend-16 <TMP_BV_256_10|256>[175:168]) (sign-extend-16 <%ymm2|256>[175:168])) <0x7f|16>) then <0x7f|8> else (if (< (plus (sign-extend-16 <TMP_BV_256_10|256>[175:168]) (sign-extend-16 <%ymm2|256>[175:168])) <0xffffffffffffff80|16>) then <0xffffffffffffff80|8> else (plus (sign-extend-16 <TMP_BV_256_10|256>[175:168]) (sign-extend-16 <%ymm2|256>[175:168]))[7:0])) (concat (if (> (plus (sign-extend-16 <TMP_BV_256_11|256>[167:160]) (sign-extend-16 <%ymm2|256>[167:160])) <0x7f|16>) then <0x7f|8> else (if (< (plus (sign-extend-16 <TMP_BV_256_11|256>[167:160]) (sign-extend-16 <%ymm2|256>[167:160])) <0xffffffffffffff80|16>) then <0xffffffffffffff80|8> else (plus (sign-extend-16 <TMP_BV_256_11|256>[167:160]) (sign-extend-16 <%ymm2|256>[167:160]))[7:0])) (concat (if (> (plus (sign-extend-16 <TMP_BV_256_12|256>[159:152]) (sign-extend-16 <%ymm2|256>[159:152])) <0x7f|16>) then <0x7f|8> else (if (< (plus (sign-extend-16 <TMP_BV_256_12|256>[159:152]) (sign-extend-16 <%ymm2|256>[159:152])) <0xffffffffffffff80|16>) then <0xffffffffffffff80|8> else (plus (sign-extend-16 <TMP_BV_256_12|256>[159:152]) (sign-extend-16 <%ymm2|256>[159:152]))[7:0])) (concat (if (> (plus (sign-extend-16 <TMP_BV_256_13|256>[151:144]) (sign-extend-16 <%ymm2|256>[151:144])) <0x7f|16>) then <0x7f|8> else (if (< (plus (sign-extend-16 <TMP_BV_256_13|256>[151:144]) (sign-extend-16 <%ymm2|256>[151:144])) <0xffffffffffffff80|16>) then <0xffffffffffffff80|8> else (plus (sign-extend-16 <TMP_BV_256_13|256>[151:144]) (sign-extend-16 <%ymm2|256>[151:144]))[7:0])) (concat (if (> (plus (sign-extend-16 <TMP_BV_256_14|256>[143:136]) (sign-extend-16 <%ymm2|256>[143:136])) <0x7f|16>) then <0x7f|8> else (if (< (plus (sign-extend-16 <TMP_BV_256_14|256>[143:136]) (sign-extend-16 <%ymm2|256>[143:136])) <0xffffffffffffff80|16>) then <0xffffffffffffff80|8> else (plus (sign-extend-16 <TMP_BV_256_14|256>[143:136]) (sign-extend-16 <%ymm2|256>[143:136]))[7:0])) (if (> (plus (sign-extend-16 <TMP_BV_256_15|256>[135:128]) (sign-extend-16 <%ymm2|256>[135:128])) <0x7f|16>) then <0x7f|8> else (if (< (plus (sign-extend-16 <TMP_BV_256_15|256>[135:128]) (sign-extend-16 <%ymm2|256>[135:128])) <0xffffffffffffff80|16>) then <0xffffffffffffff80|8> else (plus (sign-extend-16 <TMP_BV_256_15|256>[135:128]) (sign-extend-16 <%ymm2|256>[135:128]))[7:0]))))))))))))))))) (concat (if (> (plus (sign-extend-16 <%ymm2|256>[127:120]) (sign-extend-16 <TMP_BV_256_16|256>[127:120])) <0x7f|16>) then <0x7f|8> else (if (< (plus (sign-extend-16 <%ymm2|256>[127:120]) (sign-extend-16 <TMP_BV_256_16|256>[127:120])) <0xffffffffffffff80|16>) then <0xffffffffffffff80|8> else (plus (sign-extend-16 <%ymm2|256>[127:120]) (sign-extend-16 <TMP_BV_256_16|256>[127:120]))[7:0])) (concat (if (> (plus (sign-extend-16 <%ymm2|256>[119:112]) (sign-extend-16 <TMP_BV_256_17|256>[119:112])) <0x7f|16>) then <0x7f|8> else (if (< (plus (sign-extend-16 <%ymm2|256>[119:112]) (sign-extend-16 <TMP_BV_256_17|256>[119:112])) <0xffffffffffffff80|16>) then <0xffffffffffffff80|8> else (plus (sign-extend-16 <%ymm2|256>[119:112]) (sign-extend-16 <TMP_BV_256_17|256>[119:112]))[7:0])) (concat (if (> (plus (sign-extend-16 <%ymm2|256>[111:104]) (sign-extend-16 <TMP_BV_256_18|256>[111:104])) <0x7f|16>) then <0x7f|8> else (if (< (plus (sign-extend-16 <%ymm2|256>[111:104]) (sign-extend-16 <TMP_BV_256_18|256>[111:104])) <0xffffffffffffff80|16>) then <0xffffffffffffff80|8> else (plus (sign-extend-16 <%ymm2|256>[111:104]) (sign-extend-16 <TMP_BV_256_18|256>[111:104]))[7:0])) (concat (if (> (plus (sign-extend-16 <%ymm2|256>[103:96]) (sign-extend-16 <TMP_BV_256_19|256>[103:96])) <0x7f|16>) then <0x7f|8> else (if (< (plus (sign-extend-16 <%ymm2|256>[103:96]) (sign-extend-16 <TMP_BV_256_19|256>[103:96])) <0xffffffffffffff80|16>) then <0xffffffffffffff80|8> else (plus (sign-extend-16 <%ymm2|256>[103:96]) (sign-extend-16 <TMP_BV_256_19|256>[103:96]))[7:0])) (concat (if (> (plus (sign-extend-16 <%ymm2|256>[95:88]) (sign-extend-16 <TMP_BV_256_20|256>[95:88])) <0x7f|16>) then <0x7f|8> else (if (< (plus (sign-extend-16 <%ymm2|256>[95:88]) (sign-extend-16 <TMP_BV_256_20|256>[95:88])) <0xffffffffffffff80|16>) then <0xffffffffffffff80|8> else (plus (sign-extend-16 <%ymm2|256>[95:88]) (sign-extend-16 <TMP_BV_256_20|256>[95:88]))[7:0])) (concat (if (> (plus (sign-extend-16 <%ymm2|256>[87:80]) (sign-extend-16 <TMP_BV_256_21|256>[87:80])) <0x7f|16>) then <0x7f|8> else (if (< (plus (sign-extend-16 <%ymm2|256>[87:80]) (sign-extend-16 <TMP_BV_256_21|256>[87:80])) <0xffffffffffffff80|16>) then <0xffffffffffffff80|8> else (plus (sign-extend-16 <%ymm2|256>[87:80]) (sign-extend-16 <TMP_BV_256_21|256>[87:80]))[7:0])) (concat (if (> (plus (sign-extend-16 <%ymm2|256>[79:72]) (sign-extend-16 <TMP_BV_256_22|256>[79:72])) <0x7f|16>) then <0x7f|8> else (if (< (plus (sign-extend-16 <%ymm2|256>[79:72]) (sign-extend-16 <TMP_BV_256_22|256>[79:72])) <0xffffffffffffff80|16>) then <0xffffffffffffff80|8> else (plus (sign-extend-16 <%ymm2|256>[79:72]) (sign-extend-16 <TMP_BV_256_22|256>[79:72]))[7:0])) (concat (if (> (plus (sign-extend-16 <%ymm2|256>[71:64]) (sign-extend-16 <TMP_BV_256_23|256>[71:64])) <0x7f|16>) then <0x7f|8> else (if (< (plus (sign-extend-16 <%ymm2|256>[71:64]) (sign-extend-16 <TMP_BV_256_23|256>[71:64])) <0xffffffffffffff80|16>) then <0xffffffffffffff80|8> else (plus (sign-extend-16 <%ymm2|256>[71:64]) (sign-extend-16 <TMP_BV_256_23|256>[71:64]))[7:0])) (concat (if (> (plus (sign-extend-16 <%ymm2|256>[63:56]) (sign-extend-16 <TMP_BV_256_24|256>[63:56])) <0x7f|16>) then <0x7f|8> else (if (< (plus (sign-extend-16 <%ymm2|256>[63:56]) (sign-extend-16 <TMP_BV_256_24|256>[63:56])) <0xffffffffffffff80|16>) then <0xffffffffffffff80|8> else (plus (sign-extend-16 <%ymm2|256>[63:56]) (sign-extend-16 <TMP_BV_256_24|256>[63:56]))[7:0])) (concat (if (> (plus (sign-extend-16 <%ymm2|256>[55:48]) (sign-extend-16 <TMP_BV_256_25|256>[55:48])) <0x7f|16>) then <0x7f|8> else (if (< (plus (sign-extend-16 <%ymm2|256>[55:48]) (sign-extend-16 <TMP_BV_256_25|256>[55:48])) <0xffffffffffffff80|16>) then <0xffffffffffffff80|8> else (plus (sign-extend-16 <%ymm2|256>[55:48]) (sign-extend-16 <TMP_BV_256_25|256>[55:48]))[7:0])) (concat (if (> (plus (sign-extend-16 <%ymm2|256>[47:40]) (sign-extend-16 <TMP_BV_256_26|256>[47:40])) <0x7f|16>) then <0x7f|8> else (if (< (plus (sign-extend-16 <%ymm2|256>[47:40]) (sign-extend-16 <TMP_BV_256_26|256>[47:40])) <0xffffffffffffff80|16>) then <0xffffffffffffff80|8> else (plus (sign-extend-16 <%ymm2|256>[47:40]) (sign-extend-16 <TMP_BV_256_26|256>[47:40]))[7:0])) (concat (if (> (plus (sign-extend-16 <%ymm2|256>[39:32]) (sign-extend-16 <TMP_BV_256_27|256>[39:32])) <0x7f|16>) then <0x7f|8> else (if (< (plus (sign-extend-16 <%ymm2|256>[39:32]) (sign-extend-16 <TMP_BV_256_27|256>[39:32])) <0xffffffffffffff80|16>) then <0xffffffffffffff80|8> else (plus (sign-extend-16 <%ymm2|256>[39:32]) (sign-extend-16 <TMP_BV_256_27|256>[39:32]))[7:0])) (concat (if (> (plus (sign-extend-16 <%ymm2|256>[31:24]) (sign-extend-16 <TMP_BV_256_28|256>[31:24])) <0x7f|16>) then <0x7f|8> else (if (< (plus (sign-extend-16 <%ymm2|256>[31:24]) (sign-extend-16 <TMP_BV_256_28|256>[31:24])) <0xffffffffffffff80|16>) then <0xffffffffffffff80|8> else (plus (sign-extend-16 <%ymm2|256>[31:24]) (sign-extend-16 <TMP_BV_256_28|256>[31:24]))[7:0])) (concat (if (> (plus (sign-extend-16 <%ymm2|256>[23:16]) (sign-extend-16 <TMP_BV_256_29|256>[23:16])) <0x7f|16>) then <0x7f|8> else (if (< (plus (sign-extend-16 <%ymm2|256>[23:16]) (sign-extend-16 <TMP_BV_256_29|256>[23:16])) <0xffffffffffffff80|16>) then <0xffffffffffffff80|8> else (plus (sign-extend-16 <%ymm2|256>[23:16]) (sign-extend-16 <TMP_BV_256_29|256>[23:16]))[7:0])) (concat (if (> (plus (sign-extend-16 <%ymm2|256>[15:8]) (sign-extend-16 <TMP_BV_256_30|256>[15:8])) <0x7f|16>) then <0x7f|8> else (if (< (plus (sign-extend-16 <%ymm2|256>[15:8]) (sign-extend-16 <TMP_BV_256_30|256>[15:8])) <0xffffffffffffff80|16>) then <0xffffffffffffff80|8> else (plus (sign-extend-16 <%ymm2|256>[15:8]) (sign-extend-16 <TMP_BV_256_30|256>[15:8]))[7:0])) (if (> (plus (sign-extend-16 <%ymm2|256>[7:0]) (sign-extend-16 <TMP_BV_256_31|256>[7:0])) <0x7f|16>) then <0x7f|8> else (if (< (plus (sign-extend-16 <%ymm2|256>[7:0]) (sign-extend-16 <TMP_BV_256_31|256>[7:0])) <0xffffffffffffff80|16>) then <0xffffffffffffff80|8> else (plus (sign-extend-16 <%ymm2|256>[7:0]) (sign-extend-16 <TMP_BV_256_31|256>[7:0]))[7:0]))))))))))))))))))
 
 Information about memory reads:
-  Value TMP_BV_256_0 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_1 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_2 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_3 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_4 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_5 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_6 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_7 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_8 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_9 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_10 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_11 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_12 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_13 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_14 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_15 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_16 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_17 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_18 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_19 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_20 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_21 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_22 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_23 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_24 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_25 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_26 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_27 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_28 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_29 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_30 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_31 (32 bytes)
-    was read at address %rax.
+  Value <TMP_BV_256_0|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_1|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_2|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_3|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_4|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_5|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_6|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_7|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_8|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_9|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_10|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_11|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_12|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_13|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_14|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_15|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_16|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_17|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_18|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_19|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_20|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_21|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_22|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_23|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_24|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_25|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_26|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_27|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_28|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_29|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_30|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_31|256> (32 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

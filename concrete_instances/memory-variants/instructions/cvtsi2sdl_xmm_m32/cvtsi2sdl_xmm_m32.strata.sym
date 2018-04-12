@@ -10,12 +10,12 @@ code: cvtsi2sdl (%rax), %xmm1
 
 Formula:
 
-%ymm1  : %ymm1[255:128] ∘ (%ymm1[127:64] ∘ cvt_int32_to_double(TMP_BV_32_0))
+%ymm1  : (concat <%ymm1|256>[255:128] (concat <%ymm1|256>[127:64] cvt_int32_to_double(<TMP_BV_32_0|32>)))
 
 Information about memory reads:
-  Value TMP_BV_32_0 (4 bytes)
-    was read at address %rax.
+  Value <TMP_BV_32_0|32> (4 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

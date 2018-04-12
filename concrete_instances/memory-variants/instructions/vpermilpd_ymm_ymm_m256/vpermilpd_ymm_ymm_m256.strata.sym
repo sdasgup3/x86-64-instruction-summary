@@ -10,12 +10,12 @@ code: vpermilpd (%rax), %ymm2, %ymm1
 
 Formula:
 
-%ymm1  : (TMP_BV_256_0[193:193] = 0x0₁ ? %ymm2[191:128] : %ymm2[255:192]) ∘ ((TMP_BV_256_0[129:129] = 0x0₁ ? %ymm2[191:128] : %ymm2[255:192]) ∘ ((TMP_BV_256_0[65:65] = 0x0₁ ? %ymm2[63:0] : %ymm2[127:64]) ∘ (TMP_BV_256_0[1:1] = 0x0₁ ? %ymm2[63:0] : %ymm2[127:64])))
+%ymm1  : (concat (if (== <TMP_BV_256_0|256>[193:193] <0x0|1>) then <%ymm2|256>[191:128] else <%ymm2|256>[255:192]) (concat (if (== <TMP_BV_256_0|256>[129:129] <0x0|1>) then <%ymm2|256>[191:128] else <%ymm2|256>[255:192]) (concat (if (== <TMP_BV_256_0|256>[65:65] <0x0|1>) then <%ymm2|256>[63:0] else <%ymm2|256>[127:64]) (if (== <TMP_BV_256_0|256>[1:1] <0x0|1>) then <%ymm2|256>[63:0] else <%ymm2|256>[127:64]))))
 
 Information about memory reads:
-  Value TMP_BV_256_0 (32 bytes)
-    was read at address %rax.
+  Value <TMP_BV_256_0|256> (32 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

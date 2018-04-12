@@ -10,12 +10,12 @@ code: vroundss $0x0, (%rax), %xmm2, %xmm1
 
 Formula:
 
-%ymm1  : 0x0₁₂₈ ∘ (%ymm2[127:64] ∘ cvt_single_to_int32_rm(TMP_BV_32_0[63:0], 0x0₈))
+%ymm1  : (concat <0x0|128> (concat <%ymm2|256>[127:64] cvt_single_to_int32_rm(<TMP_BV_32_0|32>[63:0], <0x0|8>)))
 
 Information about memory reads:
-  Value TMP_BV_32_0 (4 bytes)
-    was read at address %rax.
+  Value <TMP_BV_32_0|32> (4 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

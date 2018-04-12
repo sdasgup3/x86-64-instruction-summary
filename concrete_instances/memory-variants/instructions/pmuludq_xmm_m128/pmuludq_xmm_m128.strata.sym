@@ -10,12 +10,12 @@ code: pmuludq (%rax), %xmm1
 
 Formula:
 
-%ymm1  : %ymm1[255:128] ∘ ((0x0₃₂ ∘ %ymm1[95:64] * 0x0₃₂ ∘ TMP_BV_128_0[95:64]) ∘ (0x0₃₂ ∘ %ymm1[31:0] * 0x0₃₂ ∘ TMP_BV_128_0[31:0]))
+%ymm1  : (concat <%ymm1|256>[255:128] (concat (mult (concat <0x0|32> <%ymm1|256>[95:64]) (concat <0x0|32> <TMP_BV_128_0|128>[95:64])) (mult (concat <0x0|32> <%ymm1|256>[31:0]) (concat <0x0|32> <TMP_BV_128_0|128>[31:0]))))
 
 Information about memory reads:
-  Value TMP_BV_128_0 (16 bytes)
-    was read at address %rax.
+  Value <TMP_BV_128_0|128> (16 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

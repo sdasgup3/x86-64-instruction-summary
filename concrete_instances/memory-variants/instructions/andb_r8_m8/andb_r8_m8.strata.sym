@@ -10,51 +10,51 @@ code: andb (%rax), %bl
 
 Formula:
 
-%rbx   : %rbx[63:8] ∘ ((%rbx[7:0] | TMP_BV_8_0) ⊕ TMP_BV_8_0 ⊕ %rbx[7:0])
+%rbx   : (concat <%rbx|64>[63:8] (xor (xor (or <%rbx|64>[7:0] <TMP_BV_8_0|8>) <TMP_BV_8_0|8>) <%rbx|64>[7:0]))
 
-%cf    : false
-%pf    : !(((%rbx[0:0] | TMP_BV_8_1[0:0]) ⊕ TMP_BV_8_2[0:0] ⊕ %rbx[0:0]) = 0x1₁ ⊕ ((%rbx[1:1] | TMP_BV_8_3[1:1]) ⊕ TMP_BV_8_4[1:1] ⊕ %rbx[1:1]) = 0x1₁ ⊕ ((%rbx[2:2] | TMP_BV_8_5[2:2]) ⊕ TMP_BV_8_6[2:2] ⊕ %rbx[2:2]) = 0x1₁ ⊕ ((%rbx[3:3] | TMP_BV_8_7[3:3]) ⊕ TMP_BV_8_8[3:3] ⊕ %rbx[3:3]) = 0x1₁ ⊕ ((%rbx[4:4] | TMP_BV_8_9[4:4]) ⊕ TMP_BV_8_10[4:4] ⊕ %rbx[4:4]) = 0x1₁ ⊕ ((%rbx[5:5] | TMP_BV_8_11[5:5]) ⊕ TMP_BV_8_12[5:5] ⊕ %rbx[5:5]) = 0x1₁ ⊕ ((%rbx[6:6] | TMP_BV_8_13[6:6]) ⊕ TMP_BV_8_14[6:6] ⊕ %rbx[6:6]) = 0x1₁ ⊕ ((%rbx[7:7] | TMP_BV_8_15[7:7]) ⊕ TMP_BV_8_16[7:7] ⊕ %rbx[7:7]) = 0x1₁)
-%af    : TMP_BOOL_10
-%zf    : ((sign-extend-64(%rbx[7:0])[31:0] | sign-extend-64(TMP_BV_8_0)[31:0]) ⊕ sign-extend-64(TMP_BV_8_0)[31:0] ⊕ sign-extend-64(%rbx[7:0])[31:0]) = 0x0₃₂
-%sf    : ((sign-extend-64(%rbx[7:0])[31:31] | sign-extend-64(TMP_BV_8_0)[31:31]) ⊕ sign-extend-64(TMP_BV_8_0)[31:31] ⊕ sign-extend-64(%rbx[7:0])[31:31]) = 0x1₁
-%of    : false
+%cf    : FALSE
+%pf    : (not (xor (xor (xor (xor (xor (xor (xor (== (xor (xor (or <%rbx|64>[0:0] <TMP_BV_8_1|8>[0:0]) <TMP_BV_8_2|8>[0:0]) <%rbx|64>[0:0]) <0x1|1>) (== (xor (xor (or <%rbx|64>[1:1] <TMP_BV_8_3|8>[1:1]) <TMP_BV_8_4|8>[1:1]) <%rbx|64>[1:1]) <0x1|1>)) (== (xor (xor (or <%rbx|64>[2:2] <TMP_BV_8_5|8>[2:2]) <TMP_BV_8_6|8>[2:2]) <%rbx|64>[2:2]) <0x1|1>)) (== (xor (xor (or <%rbx|64>[3:3] <TMP_BV_8_7|8>[3:3]) <TMP_BV_8_8|8>[3:3]) <%rbx|64>[3:3]) <0x1|1>)) (== (xor (xor (or <%rbx|64>[4:4] <TMP_BV_8_9|8>[4:4]) <TMP_BV_8_10|8>[4:4]) <%rbx|64>[4:4]) <0x1|1>)) (== (xor (xor (or <%rbx|64>[5:5] <TMP_BV_8_11|8>[5:5]) <TMP_BV_8_12|8>[5:5]) <%rbx|64>[5:5]) <0x1|1>)) (== (xor (xor (or <%rbx|64>[6:6] <TMP_BV_8_13|8>[6:6]) <TMP_BV_8_14|8>[6:6]) <%rbx|64>[6:6]) <0x1|1>)) (== (xor (xor (or <%rbx|64>[7:7] <TMP_BV_8_15|8>[7:7]) <TMP_BV_8_16|8>[7:7]) <%rbx|64>[7:7]) <0x1|1>)))
+%af    : <TMP_BOOL_10>
+%zf    : (== (xor (xor (or (sign-extend-64 <%rbx|64>[7:0])[31:0] (sign-extend-64 <TMP_BV_8_0|8>)[31:0]) (sign-extend-64 <TMP_BV_8_0|8>)[31:0]) (sign-extend-64 <%rbx|64>[7:0])[31:0]) <0x0|32>)
+%sf    : (== (xor (xor (or (sign-extend-64 <%rbx|64>[7:0])[31:31] (sign-extend-64 <TMP_BV_8_0|8>)[31:31]) (sign-extend-64 <TMP_BV_8_0|8>)[31:31]) (sign-extend-64 <%rbx|64>[7:0])[31:31]) <0x1|1>)
+%of    : FALSE
 
 Information about memory reads:
-  Value TMP_BV_8_0 (1 bytes)
-    was read at address %rax.
-  Value TMP_BV_8_1 (1 bytes)
-    was read at address %rax.
-  Value TMP_BV_8_2 (1 bytes)
-    was read at address %rax.
-  Value TMP_BV_8_3 (1 bytes)
-    was read at address %rax.
-  Value TMP_BV_8_4 (1 bytes)
-    was read at address %rax.
-  Value TMP_BV_8_5 (1 bytes)
-    was read at address %rax.
-  Value TMP_BV_8_6 (1 bytes)
-    was read at address %rax.
-  Value TMP_BV_8_7 (1 bytes)
-    was read at address %rax.
-  Value TMP_BV_8_8 (1 bytes)
-    was read at address %rax.
-  Value TMP_BV_8_9 (1 bytes)
-    was read at address %rax.
-  Value TMP_BV_8_10 (1 bytes)
-    was read at address %rax.
-  Value TMP_BV_8_11 (1 bytes)
-    was read at address %rax.
-  Value TMP_BV_8_12 (1 bytes)
-    was read at address %rax.
-  Value TMP_BV_8_13 (1 bytes)
-    was read at address %rax.
-  Value TMP_BV_8_14 (1 bytes)
-    was read at address %rax.
-  Value TMP_BV_8_15 (1 bytes)
-    was read at address %rax.
-  Value TMP_BV_8_16 (1 bytes)
-    was read at address %rax.
+  Value <TMP_BV_8_0|8> (1 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_8_1|8> (1 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_8_2|8> (1 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_8_3|8> (1 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_8_4|8> (1 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_8_5|8> (1 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_8_6|8> (1 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_8_7|8> (1 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_8_8|8> (1 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_8_9|8> (1 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_8_10|8> (1 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_8_11|8> (1 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_8_12|8> (1 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_8_13|8> (1 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_8_14|8> (1 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_8_15|8> (1 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_8_16|8> (1 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

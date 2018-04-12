@@ -10,12 +10,12 @@ code: cmoveq (%rax), %rbx
 
 Formula:
 
-%rbx   : %zf ? TMP_BV_64_0 : %rbx
+%rbx   : (if <%zf> then <TMP_BV_64_0|64> else <%rbx|64>)
 
 Information about memory reads:
-  Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+  Value <TMP_BV_64_0|64> (8 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

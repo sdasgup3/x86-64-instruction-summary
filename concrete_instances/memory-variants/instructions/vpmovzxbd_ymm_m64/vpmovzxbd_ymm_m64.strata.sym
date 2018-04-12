@@ -10,26 +10,26 @@ code: vpmovzxbd (%rax), %ymm1
 
 Formula:
 
-%ymm1  : 0x0₂₄ ∘ TMP_BV_64_0[63:56] ∘ (0x0₂₄ ∘ TMP_BV_64_1[55:48]) ∘ (0x0₂₄ ∘ TMP_BV_64_2[47:40] ∘ (0x0₂₄ ∘ TMP_BV_64_3[39:32])) ∘ (0x0₂₄ ∘ TMP_BV_64_4[31:24] ∘ (0x0₂₄ ∘ TMP_BV_64_5[23:16]) ∘ (0x0₂₄ ∘ TMP_BV_64_6[15:8] ∘ (0x0₂₄ ∘ TMP_BV_64_7[7:0])))
+%ymm1  : (concat (concat (concat (concat <0x0|24> <TMP_BV_64_0|64>[63:56]) (concat <0x0|24> <TMP_BV_64_1|64>[55:48])) (concat (concat <0x0|24> <TMP_BV_64_2|64>[47:40]) (concat <0x0|24> <TMP_BV_64_3|64>[39:32]))) (concat (concat (concat <0x0|24> <TMP_BV_64_4|64>[31:24]) (concat <0x0|24> <TMP_BV_64_5|64>[23:16])) (concat (concat <0x0|24> <TMP_BV_64_6|64>[15:8]) (concat <0x0|24> <TMP_BV_64_7|64>[7:0]))))
 
 Information about memory reads:
-  Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
-  Value TMP_BV_64_1 (8 bytes)
-    was read at address %rax.
-  Value TMP_BV_64_2 (8 bytes)
-    was read at address %rax.
-  Value TMP_BV_64_3 (8 bytes)
-    was read at address %rax.
-  Value TMP_BV_64_4 (8 bytes)
-    was read at address %rax.
-  Value TMP_BV_64_5 (8 bytes)
-    was read at address %rax.
-  Value TMP_BV_64_6 (8 bytes)
-    was read at address %rax.
-  Value TMP_BV_64_7 (8 bytes)
-    was read at address %rax.
+  Value <TMP_BV_64_0|64> (8 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_64_1|64> (8 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_64_2|64> (8 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_64_3|64> (8 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_64_4|64> (8 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_64_5|64> (8 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_64_6|64> (8 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_64_7|64> (8 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

@@ -10,17 +10,17 @@ code: vptest (%rax), %ymm1
 
 Formula:
 
-%cf    : (!%ymm1 & TMP_BV_256_0) = 0x0₂₅₆
-%pf    : false
-%af    : false
-%zf    : (%ymm1 & TMP_BV_256_0) = 0x0₂₅₆
-%sf    : false
-%of    : false
+%cf    : (== (and !<%ymm1|256> <TMP_BV_256_0|256>) <0x0|256>)
+%pf    : FALSE
+%af    : FALSE
+%zf    : (== (and <%ymm1|256> <TMP_BV_256_0|256>) <0x0|256>)
+%sf    : FALSE
+%of    : FALSE
 
 Information about memory reads:
-  Value TMP_BV_256_0 (32 bytes)
-    was read at address %rax.
+  Value <TMP_BV_256_0|256> (32 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

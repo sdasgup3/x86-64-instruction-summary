@@ -10,21 +10,21 @@ code: adcl (%rax), %ebx
 
 Formula:
 
-%rbx   : 0x0₃₂ ∘ ((%cf ? 0x0₁ ∘ TMP_BV_32_0 + 0x1₃₃ : 0x0₁ ∘ TMP_BV_32_0) + 0x0₁ ∘ %rbx[31:0])[31:0]
+%rbx   : (concat <0x0|32> (plus (if <%cf> then (plus (concat <0x0|1> <TMP_BV_32_0|32>) <0x1|33>) else (concat <0x0|1> <TMP_BV_32_0|32>)) (concat <0x0|1> <%rbx|64>[31:0]))[31:0])
 
-%cf    : ((%cf ? 0x0₁ ∘ TMP_BV_32_0 + 0x1₃₃ : 0x0₁ ∘ TMP_BV_32_0) + 0x0₁ ∘ %rbx[31:0])[32:32] = 0x1₁
-%pf    : !(((%cf ? 0x0₁ ∘ TMP_BV_32_0 + 0x1₃₃ : 0x0₁ ∘ TMP_BV_32_0) + 0x0₁ ∘ %rbx[31:0])[0:0] = 0x1₁ ⊕ ((%cf ? 0x0₁ ∘ TMP_BV_32_0 + 0x1₃₃ : 0x0₁ ∘ TMP_BV_32_0) + 0x0₁ ∘ %rbx[31:0])[1:1] = 0x1₁ ⊕ ((%cf ? 0x0₁ ∘ TMP_BV_32_0 + 0x1₃₃ : 0x0₁ ∘ TMP_BV_32_0) + 0x0₁ ∘ %rbx[31:0])[2:2] = 0x1₁ ⊕ ((%cf ? 0x0₁ ∘ TMP_BV_32_0 + 0x1₃₃ : 0x0₁ ∘ TMP_BV_32_0) + 0x0₁ ∘ %rbx[31:0])[3:3] = 0x1₁ ⊕ ((%cf ? 0x0₁ ∘ TMP_BV_32_0 + 0x1₃₃ : 0x0₁ ∘ TMP_BV_32_0) + 0x0₁ ∘ %rbx[31:0])[4:4] = 0x1₁ ⊕ ((%cf ? 0x0₁ ∘ TMP_BV_32_0 + 0x1₃₃ : 0x0₁ ∘ TMP_BV_32_0) + 0x0₁ ∘ %rbx[31:0])[5:5] = 0x1₁ ⊕ ((%cf ? 0x0₁ ∘ TMP_BV_32_0 + 0x1₃₃ : 0x0₁ ∘ TMP_BV_32_0) + 0x0₁ ∘ %rbx[31:0])[6:6] = 0x1₁ ⊕ ((%cf ? 0x0₁ ∘ TMP_BV_32_0 + 0x1₃₃ : 0x0₁ ∘ TMP_BV_32_0) + 0x0₁ ∘ %rbx[31:0])[7:7] = 0x1₁)
-%af    : (0x0₁ ∘ TMP_BV_32_1[3:0] + 0x0₁ ∘ %rbx[3:0])[4:4] = 0x1₁
-%zf    : ((%cf ? 0x0₁ ∘ TMP_BV_32_0 + 0x1₃₃ : 0x0₁ ∘ TMP_BV_32_0) + 0x0₁ ∘ %rbx[31:0])[31:0] = 0x0₃₂
-%sf    : ((%cf ? 0x0₁ ∘ TMP_BV_32_0 + 0x1₃₃ : 0x0₁ ∘ TMP_BV_32_0) + 0x0₁ ∘ %rbx[31:0])[31:31] = 0x1₁
-%of    : (TMP_BV_32_0[31:31] = 0x1₁ ↔ %rbx[31:31] = 0x1₁) ∧ !(TMP_BV_32_0[31:31] = 0x1₁ ↔ ((%cf ? 0x0₁ ∘ TMP_BV_32_0 + 0x1₃₃ : 0x0₁ ∘ TMP_BV_32_0) + 0x0₁ ∘ %rbx[31:0])[31:31] = 0x1₁)
+%cf    : (== (plus (if <%cf> then (plus (concat <0x0|1> <TMP_BV_32_0|32>) <0x1|33>) else (concat <0x0|1> <TMP_BV_32_0|32>)) (concat <0x0|1> <%rbx|64>[31:0]))[32:32] <0x1|1>)
+%pf    : (not (xor (xor (xor (xor (xor (xor (xor (== (plus (if <%cf> then (plus (concat <0x0|1> <TMP_BV_32_0|32>) <0x1|33>) else (concat <0x0|1> <TMP_BV_32_0|32>)) (concat <0x0|1> <%rbx|64>[31:0]))[0:0] <0x1|1>) (== (plus (if <%cf> then (plus (concat <0x0|1> <TMP_BV_32_0|32>) <0x1|33>) else (concat <0x0|1> <TMP_BV_32_0|32>)) (concat <0x0|1> <%rbx|64>[31:0]))[1:1] <0x1|1>)) (== (plus (if <%cf> then (plus (concat <0x0|1> <TMP_BV_32_0|32>) <0x1|33>) else (concat <0x0|1> <TMP_BV_32_0|32>)) (concat <0x0|1> <%rbx|64>[31:0]))[2:2] <0x1|1>)) (== (plus (if <%cf> then (plus (concat <0x0|1> <TMP_BV_32_0|32>) <0x1|33>) else (concat <0x0|1> <TMP_BV_32_0|32>)) (concat <0x0|1> <%rbx|64>[31:0]))[3:3] <0x1|1>)) (== (plus (if <%cf> then (plus (concat <0x0|1> <TMP_BV_32_0|32>) <0x1|33>) else (concat <0x0|1> <TMP_BV_32_0|32>)) (concat <0x0|1> <%rbx|64>[31:0]))[4:4] <0x1|1>)) (== (plus (if <%cf> then (plus (concat <0x0|1> <TMP_BV_32_0|32>) <0x1|33>) else (concat <0x0|1> <TMP_BV_32_0|32>)) (concat <0x0|1> <%rbx|64>[31:0]))[5:5] <0x1|1>)) (== (plus (if <%cf> then (plus (concat <0x0|1> <TMP_BV_32_0|32>) <0x1|33>) else (concat <0x0|1> <TMP_BV_32_0|32>)) (concat <0x0|1> <%rbx|64>[31:0]))[6:6] <0x1|1>)) (== (plus (if <%cf> then (plus (concat <0x0|1> <TMP_BV_32_0|32>) <0x1|33>) else (concat <0x0|1> <TMP_BV_32_0|32>)) (concat <0x0|1> <%rbx|64>[31:0]))[7:7] <0x1|1>)))
+%af    : (== (plus (concat <0x0|1> <TMP_BV_32_1|32>[3:0]) (concat <0x0|1> <%rbx|64>[3:0]))[4:4] <0x1|1>)
+%zf    : (== (plus (if <%cf> then (plus (concat <0x0|1> <TMP_BV_32_0|32>) <0x1|33>) else (concat <0x0|1> <TMP_BV_32_0|32>)) (concat <0x0|1> <%rbx|64>[31:0]))[31:0] <0x0|32>)
+%sf    : (== (plus (if <%cf> then (plus (concat <0x0|1> <TMP_BV_32_0|32>) <0x1|33>) else (concat <0x0|1> <TMP_BV_32_0|32>)) (concat <0x0|1> <%rbx|64>[31:0]))[31:31] <0x1|1>)
+%of    : (and (== (== <TMP_BV_32_0|32>[31:31] <0x1|1>) (== <%rbx|64>[31:31] <0x1|1>)) (not (== (== <TMP_BV_32_0|32>[31:31] <0x1|1>) (== (plus (if <%cf> then (plus (concat <0x0|1> <TMP_BV_32_0|32>) <0x1|33>) else (concat <0x0|1> <TMP_BV_32_0|32>)) (concat <0x0|1> <%rbx|64>[31:0]))[31:31] <0x1|1>))))
 
 Information about memory reads:
-  Value TMP_BV_32_0 (4 bytes)
-    was read at address %rax.
-  Value TMP_BV_32_1 (4 bytes)
-    was read at address %rax.
+  Value <TMP_BV_32_0|32> (4 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_32_1|32> (4 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

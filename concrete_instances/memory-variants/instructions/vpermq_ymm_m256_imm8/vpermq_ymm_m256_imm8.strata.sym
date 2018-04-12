@@ -10,12 +10,12 @@ code: vpermq $0x0, (%rax), %ymm1
 
 Formula:
 
-%ymm1  : (TMP_BV_256_0 >> (0x0₂₅₄ ∘ 0x0₂ << 0x6₂₅₆))[63:0] ∘ ((TMP_BV_256_0 >> (0x0₂₅₄ ∘ 0x0₂ << 0x6₂₅₆))[63:0] ∘ ((TMP_BV_256_0 >> (0x0₂₅₄ ∘ 0x0₂ << 0x6₂₅₆))[63:0] ∘ (TMP_BV_256_0 >> (0x0₂₅₄ ∘ 0x0₂ << 0x6₂₅₆))[63:0]))
+%ymm1  : (concat (>> <TMP_BV_256_0|256> (<< (concat <0x0|254> <0x0|2>) <0x6|256>))[63:0] (concat (>> <TMP_BV_256_0|256> (<< (concat <0x0|254> <0x0|2>) <0x6|256>))[63:0] (concat (>> <TMP_BV_256_0|256> (<< (concat <0x0|254> <0x0|2>) <0x6|256>))[63:0] (>> <TMP_BV_256_0|256> (<< (concat <0x0|254> <0x0|2>) <0x6|256>))[63:0])))
 
 Information about memory reads:
-  Value TMP_BV_256_0 (32 bytes)
-    was read at address %rax.
+  Value <TMP_BV_256_0|256> (32 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

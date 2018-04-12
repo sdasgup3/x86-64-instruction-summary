@@ -10,27 +10,27 @@ code: addw %bx, (%rax)
 
 Formula:
 
-%cf    : (0x0₁ ∘ %rbx[15:0] + 0x0₁ ∘ TMP_BV_16_1)[16:16] = 0x1₁
-%pf    : !((0x0₁ ∘ %rbx[15:0] + 0x0₁ ∘ TMP_BV_16_1)[0:0] = 0x1₁ ⊕ (0x0₁ ∘ %rbx[15:0] + 0x0₁ ∘ TMP_BV_16_1)[1:1] = 0x1₁ ⊕ (0x0₁ ∘ %rbx[15:0] + 0x0₁ ∘ TMP_BV_16_1)[2:2] = 0x1₁ ⊕ (0x0₁ ∘ %rbx[15:0] + 0x0₁ ∘ TMP_BV_16_1)[3:3] = 0x1₁ ⊕ (0x0₁ ∘ %rbx[15:0] + 0x0₁ ∘ TMP_BV_16_1)[4:4] = 0x1₁ ⊕ (0x0₁ ∘ %rbx[15:0] + 0x0₁ ∘ TMP_BV_16_1)[5:5] = 0x1₁ ⊕ (0x0₁ ∘ %rbx[15:0] + 0x0₁ ∘ TMP_BV_16_1)[6:6] = 0x1₁ ⊕ (0x0₁ ∘ %rbx[15:0] + 0x0₁ ∘ TMP_BV_16_1)[7:7] = 0x1₁)
-%af    : (0x0₁ ∘ %rbx[3:0] + 0x0₁ ∘ TMP_BV_16_2[3:0])[4:4] = 0x1₁
-%zf    : (0x0₁ ∘ %rbx[15:0] + 0x0₁ ∘ TMP_BV_16_1)[15:0] = 0x0₁₆
-%sf    : (0x0₁ ∘ %rbx[15:0] + 0x0₁ ∘ TMP_BV_16_1)[15:15] = 0x1₁
-%of    : (%rbx[15:15] = 0x1₁ ↔ TMP_BV_16_3[15:15] = 0x1₁) ∧ !(%rbx[15:15] = 0x1₁ ↔ (0x0₁ ∘ %rbx[15:0] + 0x0₁ ∘ TMP_BV_16_1)[15:15] = 0x1₁)
+%cf    : (== (plus (concat <0x0|1> <%rbx|64>[15:0]) (concat <0x0|1> <TMP_BV_16_1|16>))[16:16] <0x1|1>)
+%pf    : (not (xor (xor (xor (xor (xor (xor (xor (== (plus (concat <0x0|1> <%rbx|64>[15:0]) (concat <0x0|1> <TMP_BV_16_1|16>))[0:0] <0x1|1>) (== (plus (concat <0x0|1> <%rbx|64>[15:0]) (concat <0x0|1> <TMP_BV_16_1|16>))[1:1] <0x1|1>)) (== (plus (concat <0x0|1> <%rbx|64>[15:0]) (concat <0x0|1> <TMP_BV_16_1|16>))[2:2] <0x1|1>)) (== (plus (concat <0x0|1> <%rbx|64>[15:0]) (concat <0x0|1> <TMP_BV_16_1|16>))[3:3] <0x1|1>)) (== (plus (concat <0x0|1> <%rbx|64>[15:0]) (concat <0x0|1> <TMP_BV_16_1|16>))[4:4] <0x1|1>)) (== (plus (concat <0x0|1> <%rbx|64>[15:0]) (concat <0x0|1> <TMP_BV_16_1|16>))[5:5] <0x1|1>)) (== (plus (concat <0x0|1> <%rbx|64>[15:0]) (concat <0x0|1> <TMP_BV_16_1|16>))[6:6] <0x1|1>)) (== (plus (concat <0x0|1> <%rbx|64>[15:0]) (concat <0x0|1> <TMP_BV_16_1|16>))[7:7] <0x1|1>)))
+%af    : (== (plus (concat <0x0|1> <%rbx|64>[3:0]) (concat <0x0|1> <TMP_BV_16_2|16>[3:0]))[4:4] <0x1|1>)
+%zf    : (== (plus (concat <0x0|1> <%rbx|64>[15:0]) (concat <0x0|1> <TMP_BV_16_1|16>))[15:0] <0x0|16>)
+%sf    : (== (plus (concat <0x0|1> <%rbx|64>[15:0]) (concat <0x0|1> <TMP_BV_16_1|16>))[15:15] <0x1|1>)
+%of    : (and (== (== <%rbx|64>[15:15] <0x1|1>) (== <TMP_BV_16_3|16>[15:15] <0x1|1>)) (not (== (== <%rbx|64>[15:15] <0x1|1>) (== (plus (concat <0x0|1> <%rbx|64>[15:0]) (concat <0x0|1> <TMP_BV_16_1|16>))[15:15] <0x1|1>))))
 
 Information about memory reads:
-  Value TMP_BV_16_0 (2 bytes)
-    was read at address %rax.
-  Value TMP_BV_16_1 (2 bytes)
-    was read at address %rax.
-  Value TMP_BV_16_2 (2 bytes)
-    was read at address %rax.
-  Value TMP_BV_16_3 (2 bytes)
-    was read at address %rax.
+  Value <TMP_BV_16_0|16> (2 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_16_1|16> (2 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_16_2|16> (2 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_16_3|16> (2 bytes)
+    was read at address <%rax|64>.
 
 Information about memory writes:
-  Address %rax was updated to
-    (0x0₁ ∘ %rbx[15:0] + 0x0₁ ∘ TMP_BV_16_1)[15:0] (2 bytes).
+  Address <%rax|64> was updated to
+    (plus (concat <0x0|1> <%rbx|64>[15:0]) (concat <0x0|1> <TMP_BV_16_1|16>))[15:0] (2 bytes).
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

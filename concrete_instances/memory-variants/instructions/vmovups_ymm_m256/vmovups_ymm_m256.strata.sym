@@ -10,12 +10,12 @@ code: vmovups (%rax), %ymm1
 
 Formula:
 
-%ymm1  : TMP_BV_256_0
+%ymm1  : <TMP_BV_256_0|256>
 
 Information about memory reads:
-  Value TMP_BV_256_0 (32 bytes)
-    was read at address %rax.
+  Value <TMP_BV_256_0|256> (32 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

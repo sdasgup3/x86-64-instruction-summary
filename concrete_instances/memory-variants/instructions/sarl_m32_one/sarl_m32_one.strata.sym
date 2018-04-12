@@ -10,21 +10,21 @@ code: sarl $0x1, (%rax)
 
 Formula:
 
-%cf    : true ∧ (sign-extend-64(TMP_BV_32_0) ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[0:0] = 0x1₁ ∨ false
-%pf    : !((sign-extend-64(TMP_BV_32_0) ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[1:1] = 0x1₁ ⊕ (sign-extend-64(TMP_BV_32_0) ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[2:2] = 0x1₁ ⊕ (sign-extend-64(TMP_BV_32_0) ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[3:3] = 0x1₁ ⊕ (sign-extend-64(TMP_BV_32_0) ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[4:4] = 0x1₁ ⊕ (sign-extend-64(TMP_BV_32_0) ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[5:5] = 0x1₁ ⊕ (sign-extend-64(TMP_BV_32_0) ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[6:6] = 0x1₁ ⊕ (sign-extend-64(TMP_BV_32_0) ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[7:7] = 0x1₁ ⊕ (sign-extend-64(TMP_BV_32_0) ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[8:8] = 0x1₁)
-%af    : TMP_BOOL_12
-%zf    : (sign-extend-64(TMP_BV_32_0) ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[64:1] = 0x0₆₄
-%sf    : (sign-extend-64(TMP_BV_32_0) ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[64:64] = 0x1₁
-%of    : false
+%cf    : (or (and TRUE (== (s_shr (concat (sign-extend-64 <TMP_BV_32_0|32>) <0x0|1>) (concat <0x0|57> <0x1|8>))[0:0] <0x1|1>)) FALSE)
+%pf    : (not (xor (xor (xor (xor (xor (xor (xor (== (s_shr (concat (sign-extend-64 <TMP_BV_32_0|32>) <0x0|1>) (concat <0x0|57> <0x1|8>))[1:1] <0x1|1>) (== (s_shr (concat (sign-extend-64 <TMP_BV_32_0|32>) <0x0|1>) (concat <0x0|57> <0x1|8>))[2:2] <0x1|1>)) (== (s_shr (concat (sign-extend-64 <TMP_BV_32_0|32>) <0x0|1>) (concat <0x0|57> <0x1|8>))[3:3] <0x1|1>)) (== (s_shr (concat (sign-extend-64 <TMP_BV_32_0|32>) <0x0|1>) (concat <0x0|57> <0x1|8>))[4:4] <0x1|1>)) (== (s_shr (concat (sign-extend-64 <TMP_BV_32_0|32>) <0x0|1>) (concat <0x0|57> <0x1|8>))[5:5] <0x1|1>)) (== (s_shr (concat (sign-extend-64 <TMP_BV_32_0|32>) <0x0|1>) (concat <0x0|57> <0x1|8>))[6:6] <0x1|1>)) (== (s_shr (concat (sign-extend-64 <TMP_BV_32_0|32>) <0x0|1>) (concat <0x0|57> <0x1|8>))[7:7] <0x1|1>)) (== (s_shr (concat (sign-extend-64 <TMP_BV_32_0|32>) <0x0|1>) (concat <0x0|57> <0x1|8>))[8:8] <0x1|1>)))
+%af    : <TMP_BOOL_12>
+%zf    : (== (s_shr (concat (sign-extend-64 <TMP_BV_32_0|32>) <0x0|1>) (concat <0x0|57> <0x1|8>))[64:1] <0x0|64>)
+%sf    : (== (s_shr (concat (sign-extend-64 <TMP_BV_32_0|32>) <0x0|1>) (concat <0x0|57> <0x1|8>))[64:64] <0x1|1>)
+%of    : FALSE
 
 Information about memory reads:
-  Value TMP_BV_32_0 (4 bytes)
-    was read at address %rax.
+  Value <TMP_BV_32_0|32> (4 bytes)
+    was read at address <%rax|64>.
 
 Information about memory writes:
-  Address %rax was updated to
-    (sign-extend-64(TMP_BV_32_0) ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[32:1] (4 bytes).
+  Address <%rax|64> was updated to
+    (s_shr (concat (sign-extend-64 <TMP_BV_32_0|32>) <0x0|1>) (concat <0x0|57> <0x1|8>))[32:1] (4 bytes).
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

@@ -10,12 +10,12 @@ code: vpshufhw $0x0, (%rax), %ymm1
 
 Formula:
 
-%ymm1  : (TMP_BV_256_0 >> (0x0₂₅₄ ∘ 0x0₂ << 0x4₂₅₆))[207:192] ∘ ((TMP_BV_256_0 >> (0x0₂₅₄ ∘ 0x0₂ << 0x4₂₅₆))[207:192] ∘ ((TMP_BV_256_0 >> (0x0₂₅₄ ∘ 0x0₂ << 0x4₂₅₆))[207:192] ∘ ((TMP_BV_256_0 >> (0x0₂₅₄ ∘ 0x0₂ << 0x4₂₅₆))[207:192] ∘ (TMP_BV_256_0[191:128] ∘ ((TMP_BV_256_0 >> (0x0₂₅₄ ∘ 0x0₂ << 0x4₂₅₆))[79:64] ∘ ((TMP_BV_256_0 >> (0x0₂₅₄ ∘ 0x0₂ << 0x4₂₅₆))[79:64] ∘ ((TMP_BV_256_0 >> (0x0₂₅₄ ∘ 0x0₂ << 0x4₂₅₆))[79:64] ∘ ((TMP_BV_256_0 >> (0x0₂₅₄ ∘ 0x0₂ << 0x4₂₅₆))[79:64] ∘ TMP_BV_256_0[63:0]))))))))
+%ymm1  : (concat (>> <TMP_BV_256_0|256> (<< (concat <0x0|254> <0x0|2>) <0x4|256>))[207:192] (concat (>> <TMP_BV_256_0|256> (<< (concat <0x0|254> <0x0|2>) <0x4|256>))[207:192] (concat (>> <TMP_BV_256_0|256> (<< (concat <0x0|254> <0x0|2>) <0x4|256>))[207:192] (concat (>> <TMP_BV_256_0|256> (<< (concat <0x0|254> <0x0|2>) <0x4|256>))[207:192] (concat <TMP_BV_256_0|256>[191:128] (concat (>> <TMP_BV_256_0|256> (<< (concat <0x0|254> <0x0|2>) <0x4|256>))[79:64] (concat (>> <TMP_BV_256_0|256> (<< (concat <0x0|254> <0x0|2>) <0x4|256>))[79:64] (concat (>> <TMP_BV_256_0|256> (<< (concat <0x0|254> <0x0|2>) <0x4|256>))[79:64] (concat (>> <TMP_BV_256_0|256> (<< (concat <0x0|254> <0x0|2>) <0x4|256>))[79:64] <TMP_BV_256_0|256>[63:0])))))))))
 
 Information about memory reads:
-  Value TMP_BV_256_0 (32 bytes)
-    was read at address %rax.
+  Value <TMP_BV_256_0|256> (32 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

@@ -11,13 +11,13 @@ code: setg (%rax)
 Formula:
 
 Information about memory reads:
-  Value TMP_BV_8_0 (1 bytes)
-    was read at address %rax.
+  Value <TMP_BV_8_0|8> (1 bytes)
+    was read at address <%rax|64>.
 
 Information about memory writes:
-  Address %rax was updated to
-    %zf ? 0x0₈ : 0x1₈ ⊕ ((%of ? 0x1₈ : 0x0₈) ⊕ (%sf ? 0x1₈ : 0x0₈)) (1 bytes).
+  Address <%rax|64> was updated to
+    (if <%zf> then <0x0|8> else (xor <0x1|8> (xor (if <%of> then <0x1|8> else <0x0|8>) (if <%sf> then <0x1|8> else <0x0|8>)))) (1 bytes).
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

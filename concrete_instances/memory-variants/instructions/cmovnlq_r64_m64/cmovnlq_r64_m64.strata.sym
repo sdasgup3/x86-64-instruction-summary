@@ -10,12 +10,12 @@ code: cmovnlq (%rax), %rbx
 
 Formula:
 
-%rbx   : ((((true ∧ (sign-extend-64(0x1₈ ⊕ ((%of ? 0x1₈ : 0x0₈) ⊕ (%sf ? 0x1₈ : 0x0₈))) ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[0:0] = 0x1₁ ∨ false ? 0x0₉ : 0xff₉) + (true ∧ (sign-extend-64(0x1₈ ⊕ ((%of ? 0x1₈ : 0x0₈) ⊕ (%sf ? 0x1₈ : 0x0₈))) ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[0:0] = 0x1₁ ∨ false ? 0x0₉ : 0xff₉))[8:8] = 0x1₁ ? 0x0₁ ∘ %rbx[15:0] + 0x1₁₇ : 0x0₁ ∘ %rbx[15:0]) + 0x0₁ ∘ (%rbx[15:0] ⊕ 0xffff₁₆))[15:0] = 0x0₁₆ ? %rbx : TMP_BV_64_0
+%rbx   : (if (== (plus (if (== (plus (if (or (and TRUE (== (s_shr (concat (sign-extend-64 (xor <0x1|8> (xor (if <%of> then <0x1|8> else <0x0|8>) (if <%sf> then <0x1|8> else <0x0|8>)))) <0x0|1>) (concat <0x0|57> <0x1|8>))[0:0] <0x1|1>)) FALSE) then <0x0|9> else <0xff|9>) (if (or (and TRUE (== (s_shr (concat (sign-extend-64 (xor <0x1|8> (xor (if <%of> then <0x1|8> else <0x0|8>) (if <%sf> then <0x1|8> else <0x0|8>)))) <0x0|1>) (concat <0x0|57> <0x1|8>))[0:0] <0x1|1>)) FALSE) then <0x0|9> else <0xff|9>))[8:8] <0x1|1>) then (plus (concat <0x0|1> <%rbx|64>[15:0]) <0x1|17>) else (concat <0x0|1> <%rbx|64>[15:0])) (concat <0x0|1> (xor <%rbx|64>[15:0] <0xffff|16>)))[15:0] <0x0|16>) then <%rbx|64> else <TMP_BV_64_0|64>)
 
 Information about memory reads:
-  Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+  Value <TMP_BV_64_0|64> (8 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

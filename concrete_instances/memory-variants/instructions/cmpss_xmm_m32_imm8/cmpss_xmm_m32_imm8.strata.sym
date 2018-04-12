@@ -10,12 +10,12 @@ code: cmpss $0x0, (%rax), %xmm1
 
 Formula:
 
-%ymm1  : %ymm1[255:128] ∘ (%ymm1[127:32] ∘ (cmp_single_pred(%ymm1[31:0], TMP_BV_32_0, 0x0₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))
+%ymm1  : (concat <%ymm1|256>[255:128] (concat <%ymm1|256>[127:32] (if (== cmp_single_pred(<%ymm1|256>[31:0], <TMP_BV_32_0|32>, <0x0|8>) <0x1|1>) then <0xffffffff|32> else <0x0|32>)))
 
 Information about memory reads:
-  Value TMP_BV_32_0 (4 bytes)
-    was read at address %rax.
+  Value <TMP_BV_32_0|32> (4 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

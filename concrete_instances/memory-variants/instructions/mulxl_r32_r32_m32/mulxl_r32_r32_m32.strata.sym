@@ -10,13 +10,13 @@ code: mulxl (%rax), %ecx, %ebx
 
 Formula:
 
-%rcx   : 0x0₃₂ ∘ (0x0₃₂ ∘ %rdx[31:0] * 0x0₃₂ ∘ TMP_BV_32_0)[31:0]
-%rbx   : 0x0₃₂ ∘ (0x0₃₂ ∘ %rdx[31:0] * 0x0₃₂ ∘ TMP_BV_32_0)[63:32]
+%rcx   : (concat <0x0|32> (mult (concat <0x0|32> <%rdx|64>[31:0]) (concat <0x0|32> <TMP_BV_32_0|32>))[31:0])
+%rbx   : (concat <0x0|32> (mult (concat <0x0|32> <%rdx|64>[31:0]) (concat <0x0|32> <TMP_BV_32_0|32>))[63:32])
 
 Information about memory reads:
-  Value TMP_BV_32_0 (4 bytes)
-    was read at address %rax.
+  Value <TMP_BV_32_0|32> (4 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

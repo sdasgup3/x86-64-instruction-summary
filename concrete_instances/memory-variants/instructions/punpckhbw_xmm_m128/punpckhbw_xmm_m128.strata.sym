@@ -10,12 +10,12 @@ code: punpckhbw (%rax), %xmm1
 
 Formula:
 
-%ymm1  : %ymm1[255:128] ∘ (TMP_BV_128_0[127:120] ∘ %ymm1[127:120] ∘ (TMP_BV_128_0[119:112] ∘ %ymm1[119:112] ∘ (TMP_BV_128_0[111:104] ∘ %ymm1[111:104] ∘ (TMP_BV_128_0[103:96] ∘ %ymm1[103:96] ∘ (TMP_BV_128_0[95:88] ∘ %ymm1[95:88] ∘ (TMP_BV_128_0[87:80] ∘ %ymm1[87:80] ∘ (TMP_BV_128_0[79:72] ∘ %ymm1[79:72] ∘ (TMP_BV_128_0[71:64] ∘ %ymm1[71:64]))))))))
+%ymm1  : (concat <%ymm1|256>[255:128] (concat (concat <TMP_BV_128_0|128>[127:120] <%ymm1|256>[127:120]) (concat (concat <TMP_BV_128_0|128>[119:112] <%ymm1|256>[119:112]) (concat (concat <TMP_BV_128_0|128>[111:104] <%ymm1|256>[111:104]) (concat (concat <TMP_BV_128_0|128>[103:96] <%ymm1|256>[103:96]) (concat (concat <TMP_BV_128_0|128>[95:88] <%ymm1|256>[95:88]) (concat (concat <TMP_BV_128_0|128>[87:80] <%ymm1|256>[87:80]) (concat (concat <TMP_BV_128_0|128>[79:72] <%ymm1|256>[79:72]) (concat <TMP_BV_128_0|128>[71:64] <%ymm1|256>[71:64])))))))))
 
 Information about memory reads:
-  Value TMP_BV_128_0 (16 bytes)
-    was read at address %rax.
+  Value <TMP_BV_128_0|128> (16 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

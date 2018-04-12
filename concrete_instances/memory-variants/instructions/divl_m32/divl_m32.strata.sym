@@ -10,20 +10,20 @@ code: divl (%rax)
 
 Formula:
 
-%rax   : 0x0₃₂ ∘ div_quotient_int32(%rdx[31:0] ∘ %rax[31:0], TMP_BV_32_0)
-%rdx   : 0x0₃₂ ∘ div_remainder_int32(%rdx[31:0] ∘ %rax[31:0], TMP_BV_32_0)
+%rax   : (concat <0x0|32> div_quotient_int32((concat <%rdx|64>[31:0] <%rax|64>[31:0]), <TMP_BV_32_0|32>))
+%rdx   : (concat <0x0|32> div_remainder_int32((concat <%rdx|64>[31:0] <%rax|64>[31:0]), <TMP_BV_32_0|32>))
 
-%cf    : TMP_BOOL_5
-%pf    : TMP_BOOL_2
-%af    : TMP_BOOL_1
-%zf    : TMP_BOOL_0
-%sf    : TMP_BOOL_3
-%of    : TMP_BOOL_4
+%cf    : <TMP_BOOL_5>
+%pf    : <TMP_BOOL_2>
+%af    : <TMP_BOOL_1>
+%zf    : <TMP_BOOL_0>
+%sf    : <TMP_BOOL_3>
+%of    : <TMP_BOOL_4>
 
 Information about memory reads:
-  Value TMP_BV_32_0 (4 bytes)
-    was read at address %rax.
+  Value <TMP_BV_32_0|32> (4 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

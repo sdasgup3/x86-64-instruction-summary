@@ -10,12 +10,12 @@ code: shlxl %ecx, (%rax), %ebx
 
 Formula:
 
-%rbx   : 0x0₃₂ ∘ (TMP_BV_32_0 << (%rcx[31:0] & 0x1f₃₂))
+%rbx   : (concat <0x0|32> (<< <TMP_BV_32_0|32> (and <%rcx|64>[31:0] <0x1f|32>)))
 
 Information about memory reads:
-  Value TMP_BV_32_0 (4 bytes)
-    was read at address %rax.
+  Value <TMP_BV_32_0|32> (4 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

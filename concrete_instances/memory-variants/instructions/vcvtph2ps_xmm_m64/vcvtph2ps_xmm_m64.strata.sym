@@ -10,12 +10,12 @@ code: vcvtph2ps (%rax), %xmm1
 
 Formula:
 
-%ymm1  : 0x0₁₂₈ ∘ (cvt_half_to_single(TMP_BV_64_0[63:48]) ∘ (cvt_half_to_single(TMP_BV_64_0[47:32]) ∘ (cvt_half_to_single(TMP_BV_64_0[31:16]) ∘ cvt_half_to_single(TMP_BV_64_0[15:0]))))
+%ymm1  : (concat <0x0|128> (concat cvt_half_to_single(<TMP_BV_64_0|64>[63:48]) (concat cvt_half_to_single(<TMP_BV_64_0|64>[47:32]) (concat cvt_half_to_single(<TMP_BV_64_0|64>[31:16]) cvt_half_to_single(<TMP_BV_64_0|64>[15:0])))))
 
 Information about memory reads:
-  Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+  Value <TMP_BV_64_0|64> (8 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

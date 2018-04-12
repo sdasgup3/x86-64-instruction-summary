@@ -10,38 +10,38 @@ code: vfmaddsub213pd (%rax), %xmm2, %xmm1
 
 Formula:
 
-%ymm1  : 0x0₁₂₈ ∘ (vfmsub132_double(%ymm2[127:64], vfnmsub132_double((maxcmp_single(0x0₃₂, 0x0₃₂ ⊕ (TMP_BV_128_0[127:96] | 0x0₃₂) ⊕ (TMP_BV_128_1[127:96] | 0x0₃₂ ⊕ (TMP_BV_128_2[127:96] | 0x0₃₂))) = 0x1₁ ? 0x0₃₂ : 0x0₃₂ ⊕ (TMP_BV_128_0[127:96] | 0x0₃₂) ⊕ (TMP_BV_128_1[127:96] | 0x0₃₂ ⊕ (TMP_BV_128_2[127:96] | 0x0₃₂))) ∘ (maxcmp_single(0x0₃₂, 0x0₃₂ ⊕ (TMP_BV_128_3[95:64] | 0x0₃₂) ⊕ (TMP_BV_128_4[95:64] | 0x0₃₂ ⊕ (TMP_BV_128_5[95:64] | 0x0₃₂))) = 0x1₁ ? 0x0₃₂ : 0x0₃₂ ⊕ (TMP_BV_128_3[95:64] | 0x0₃₂) ⊕ (TMP_BV_128_4[95:64] | 0x0₃₂ ⊕ (TMP_BV_128_5[95:64] | 0x0₃₂))), TMP_BV_128_6[127:64], 0x0₆₄), %ymm1[127:64]) ∘ vfmsub132_double(%ymm2[63:0], vfnmsub132_double(vfnmsub132_double((maxcmp_single(%ymm1[63:32], 0x0₃₂ ⊕ (TMP_BV_128_7[63:32] | 0x0₃₂) ⊕ (TMP_BV_128_8[63:32] | 0x0₃₂ ⊕ (TMP_BV_128_9[63:32] | 0x0₃₂))) = 0x1₁ ? %ymm1[63:32] : 0x0₃₂ ⊕ (TMP_BV_128_7[63:32] | 0x0₃₂) ⊕ (TMP_BV_128_8[63:32] | 0x0₃₂ ⊕ (TMP_BV_128_9[63:32] | 0x0₃₂))) ∘ (maxcmp_single(%ymm1[31:0], 0x0₃₂ ⊕ (TMP_BV_128_10[31:0] | 0x0₃₂) ⊕ (TMP_BV_128_11[31:0] | 0x0₃₂ ⊕ (TMP_BV_128_12[31:0] | 0x0₃₂))) = 0x1₁ ? %ymm1[31:0] : 0x0₃₂ ⊕ (TMP_BV_128_10[31:0] | 0x0₃₂) ⊕ (TMP_BV_128_11[31:0] | 0x0₃₂ ⊕ (TMP_BV_128_12[31:0] | 0x0₃₂))), TMP_BV_128_13[63:0], 0x0₆₄), vfnmsub132_double((maxcmp_single(%ymm1[63:32], 0x0₃₂ ⊕ (TMP_BV_128_7[63:32] | 0x0₃₂) ⊕ (TMP_BV_128_8[63:32] | 0x0₃₂ ⊕ (TMP_BV_128_9[63:32] | 0x0₃₂))) = 0x1₁ ? %ymm1[63:32] : 0x0₃₂ ⊕ (TMP_BV_128_7[63:32] | 0x0₃₂) ⊕ (TMP_BV_128_8[63:32] | 0x0₃₂ ⊕ (TMP_BV_128_9[63:32] | 0x0₃₂))) ∘ (maxcmp_single(%ymm1[31:0], 0x0₃₂ ⊕ (TMP_BV_128_10[31:0] | 0x0₃₂) ⊕ (TMP_BV_128_11[31:0] | 0x0₃₂ ⊕ (TMP_BV_128_12[31:0] | 0x0₃₂))) = 0x1₁ ? %ymm1[31:0] : 0x0₃₂ ⊕ (TMP_BV_128_10[31:0] | 0x0₃₂) ⊕ (TMP_BV_128_11[31:0] | 0x0₃₂ ⊕ (TMP_BV_128_12[31:0] | 0x0₃₂))), TMP_BV_128_13[63:0], 0x0₆₄), 0x0₃₂ ∘ vfnmsub132_double((maxcmp_single(0x0₃₂, 0x0₃₂ ⊕ (TMP_BV_128_0[127:96] | 0x0₃₂) ⊕ (TMP_BV_128_1[127:96] | 0x0₃₂ ⊕ (TMP_BV_128_2[127:96] | 0x0₃₂))) = 0x1₁ ? 0x0₃₂ : 0x0₃₂ ⊕ (TMP_BV_128_0[127:96] | 0x0₃₂) ⊕ (TMP_BV_128_1[127:96] | 0x0₃₂ ⊕ (TMP_BV_128_2[127:96] | 0x0₃₂))) ∘ (maxcmp_single(0x0₃₂, 0x0₃₂ ⊕ (TMP_BV_128_3[95:64] | 0x0₃₂) ⊕ (TMP_BV_128_4[95:64] | 0x0₃₂ ⊕ (TMP_BV_128_5[95:64] | 0x0₃₂))) = 0x1₁ ? 0x0₃₂ : 0x0₃₂ ⊕ (TMP_BV_128_3[95:64] | 0x0₃₂) ⊕ (TMP_BV_128_4[95:64] | 0x0₃₂ ⊕ (TMP_BV_128_5[95:64] | 0x0₃₂))), TMP_BV_128_6[127:64], 0x0₆₄)[63:32]), %ymm1[63:0]))
+%ymm1  : (concat <0x0|128> (concat vfmsub132_double(<%ymm2|256>[127:64], vfnmsub132_double((concat (if (== maxcmp_single(<0x0|32>, (xor (xor <0x0|32> (or <TMP_BV_128_0|128>[127:96] <0x0|32>)) (or <TMP_BV_128_1|128>[127:96] (xor <0x0|32> (or <TMP_BV_128_2|128>[127:96] <0x0|32>))))) <0x1|1>) then <0x0|32> else (xor (xor <0x0|32> (or <TMP_BV_128_0|128>[127:96] <0x0|32>)) (or <TMP_BV_128_1|128>[127:96] (xor <0x0|32> (or <TMP_BV_128_2|128>[127:96] <0x0|32>))))) (if (== maxcmp_single(<0x0|32>, (xor (xor <0x0|32> (or <TMP_BV_128_3|128>[95:64] <0x0|32>)) (or <TMP_BV_128_4|128>[95:64] (xor <0x0|32> (or <TMP_BV_128_5|128>[95:64] <0x0|32>))))) <0x1|1>) then <0x0|32> else (xor (xor <0x0|32> (or <TMP_BV_128_3|128>[95:64] <0x0|32>)) (or <TMP_BV_128_4|128>[95:64] (xor <0x0|32> (or <TMP_BV_128_5|128>[95:64] <0x0|32>)))))), <TMP_BV_128_6|128>[127:64], <0x0|64>), <%ymm1|256>[127:64]) vfmsub132_double(<%ymm2|256>[63:0], vfnmsub132_double(vfnmsub132_double((concat (if (== maxcmp_single(<%ymm1|256>[63:32], (xor (xor <0x0|32> (or <TMP_BV_128_7|128>[63:32] <0x0|32>)) (or <TMP_BV_128_8|128>[63:32] (xor <0x0|32> (or <TMP_BV_128_9|128>[63:32] <0x0|32>))))) <0x1|1>) then <%ymm1|256>[63:32] else (xor (xor <0x0|32> (or <TMP_BV_128_7|128>[63:32] <0x0|32>)) (or <TMP_BV_128_8|128>[63:32] (xor <0x0|32> (or <TMP_BV_128_9|128>[63:32] <0x0|32>))))) (if (== maxcmp_single(<%ymm1|256>[31:0], (xor (xor <0x0|32> (or <TMP_BV_128_10|128>[31:0] <0x0|32>)) (or <TMP_BV_128_11|128>[31:0] (xor <0x0|32> (or <TMP_BV_128_12|128>[31:0] <0x0|32>))))) <0x1|1>) then <%ymm1|256>[31:0] else (xor (xor <0x0|32> (or <TMP_BV_128_10|128>[31:0] <0x0|32>)) (or <TMP_BV_128_11|128>[31:0] (xor <0x0|32> (or <TMP_BV_128_12|128>[31:0] <0x0|32>)))))), <TMP_BV_128_13|128>[63:0], <0x0|64>), vfnmsub132_double((concat (if (== maxcmp_single(<%ymm1|256>[63:32], (xor (xor <0x0|32> (or <TMP_BV_128_7|128>[63:32] <0x0|32>)) (or <TMP_BV_128_8|128>[63:32] (xor <0x0|32> (or <TMP_BV_128_9|128>[63:32] <0x0|32>))))) <0x1|1>) then <%ymm1|256>[63:32] else (xor (xor <0x0|32> (or <TMP_BV_128_7|128>[63:32] <0x0|32>)) (or <TMP_BV_128_8|128>[63:32] (xor <0x0|32> (or <TMP_BV_128_9|128>[63:32] <0x0|32>))))) (if (== maxcmp_single(<%ymm1|256>[31:0], (xor (xor <0x0|32> (or <TMP_BV_128_10|128>[31:0] <0x0|32>)) (or <TMP_BV_128_11|128>[31:0] (xor <0x0|32> (or <TMP_BV_128_12|128>[31:0] <0x0|32>))))) <0x1|1>) then <%ymm1|256>[31:0] else (xor (xor <0x0|32> (or <TMP_BV_128_10|128>[31:0] <0x0|32>)) (or <TMP_BV_128_11|128>[31:0] (xor <0x0|32> (or <TMP_BV_128_12|128>[31:0] <0x0|32>)))))), <TMP_BV_128_13|128>[63:0], <0x0|64>), (concat <0x0|32> vfnmsub132_double((concat (if (== maxcmp_single(<0x0|32>, (xor (xor <0x0|32> (or <TMP_BV_128_0|128>[127:96] <0x0|32>)) (or <TMP_BV_128_1|128>[127:96] (xor <0x0|32> (or <TMP_BV_128_2|128>[127:96] <0x0|32>))))) <0x1|1>) then <0x0|32> else (xor (xor <0x0|32> (or <TMP_BV_128_0|128>[127:96] <0x0|32>)) (or <TMP_BV_128_1|128>[127:96] (xor <0x0|32> (or <TMP_BV_128_2|128>[127:96] <0x0|32>))))) (if (== maxcmp_single(<0x0|32>, (xor (xor <0x0|32> (or <TMP_BV_128_3|128>[95:64] <0x0|32>)) (or <TMP_BV_128_4|128>[95:64] (xor <0x0|32> (or <TMP_BV_128_5|128>[95:64] <0x0|32>))))) <0x1|1>) then <0x0|32> else (xor (xor <0x0|32> (or <TMP_BV_128_3|128>[95:64] <0x0|32>)) (or <TMP_BV_128_4|128>[95:64] (xor <0x0|32> (or <TMP_BV_128_5|128>[95:64] <0x0|32>)))))), <TMP_BV_128_6|128>[127:64], <0x0|64>)[63:32])), <%ymm1|256>[63:0])))
 
 Information about memory reads:
-  Value TMP_BV_128_0 (16 bytes)
-    was read at address %rax.
-  Value TMP_BV_128_1 (16 bytes)
-    was read at address %rax.
-  Value TMP_BV_128_2 (16 bytes)
-    was read at address %rax.
-  Value TMP_BV_128_3 (16 bytes)
-    was read at address %rax.
-  Value TMP_BV_128_4 (16 bytes)
-    was read at address %rax.
-  Value TMP_BV_128_5 (16 bytes)
-    was read at address %rax.
-  Value TMP_BV_128_6 (16 bytes)
-    was read at address %rax.
-  Value TMP_BV_128_7 (16 bytes)
-    was read at address %rax.
-  Value TMP_BV_128_8 (16 bytes)
-    was read at address %rax.
-  Value TMP_BV_128_9 (16 bytes)
-    was read at address %rax.
-  Value TMP_BV_128_10 (16 bytes)
-    was read at address %rax.
-  Value TMP_BV_128_11 (16 bytes)
-    was read at address %rax.
-  Value TMP_BV_128_12 (16 bytes)
-    was read at address %rax.
-  Value TMP_BV_128_13 (16 bytes)
-    was read at address %rax.
+  Value <TMP_BV_128_0|128> (16 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_128_1|128> (16 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_128_2|128> (16 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_128_3|128> (16 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_128_4|128> (16 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_128_5|128> (16 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_128_6|128> (16 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_128_7|128> (16 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_128_8|128> (16 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_128_9|128> (16 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_128_10|128> (16 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_128_11|128> (16 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_128_12|128> (16 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_128_13|128> (16 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

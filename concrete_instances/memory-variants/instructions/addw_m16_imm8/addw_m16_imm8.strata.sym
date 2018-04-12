@@ -10,27 +10,27 @@ code: addw $0x0, (%rax)
 
 Formula:
 
-%cf    : false
-%pf    : !(TMP_BV_16_1[0:0] = 0x1₁ ⊕ TMP_BV_16_1[1:1] = 0x1₁ ⊕ TMP_BV_16_1[2:2] = 0x1₁ ⊕ TMP_BV_16_1[3:3] = 0x1₁ ⊕ TMP_BV_16_1[4:4] = 0x1₁ ⊕ TMP_BV_16_1[5:5] = 0x1₁ ⊕ TMP_BV_16_1[6:6] = 0x1₁ ⊕ TMP_BV_16_1[7:7] = 0x1₁)
-%af    : false
-%zf    : TMP_BV_16_1 = 0x0₁₆
-%sf    : TMP_BV_16_1[15:15] = 0x1₁
-%of    : (false ↔ TMP_BV_16_3[15:15] = 0x1₁) ∧ !(false ↔ TMP_BV_16_1[15:15] = 0x1₁)
+%cf    : FALSE
+%pf    : (not (xor (xor (xor (xor (xor (xor (xor (== <TMP_BV_16_1|16>[0:0] <0x1|1>) (== <TMP_BV_16_1|16>[1:1] <0x1|1>)) (== <TMP_BV_16_1|16>[2:2] <0x1|1>)) (== <TMP_BV_16_1|16>[3:3] <0x1|1>)) (== <TMP_BV_16_1|16>[4:4] <0x1|1>)) (== <TMP_BV_16_1|16>[5:5] <0x1|1>)) (== <TMP_BV_16_1|16>[6:6] <0x1|1>)) (== <TMP_BV_16_1|16>[7:7] <0x1|1>)))
+%af    : FALSE
+%zf    : (== <TMP_BV_16_1|16> <0x0|16>)
+%sf    : (== <TMP_BV_16_1|16>[15:15] <0x1|1>)
+%of    : (and (== FALSE (== <TMP_BV_16_3|16>[15:15] <0x1|1>)) (not (== FALSE (== <TMP_BV_16_1|16>[15:15] <0x1|1>))))
 
 Information about memory reads:
-  Value TMP_BV_16_0 (2 bytes)
-    was read at address %rax.
-  Value TMP_BV_16_1 (2 bytes)
-    was read at address %rax.
-  Value TMP_BV_16_2 (2 bytes)
-    was read at address %rax.
-  Value TMP_BV_16_3 (2 bytes)
-    was read at address %rax.
+  Value <TMP_BV_16_0|16> (2 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_16_1|16> (2 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_16_2|16> (2 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_16_3|16> (2 bytes)
+    was read at address <%rax|64>.
 
 Information about memory writes:
-  Address %rax was updated to
-    TMP_BV_16_1 (2 bytes).
+  Address <%rax|64> was updated to
+    <TMP_BV_16_1|16> (2 bytes).
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

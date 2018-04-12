@@ -10,14 +10,14 @@ code: vunpckhpd (%rax), %ymm2, %ymm1
 
 Formula:
 
-%ymm1  : TMP_BV_256_0[255:192] ∘ %ymm2[255:192] ∘ (TMP_BV_256_1[127:64] ∘ %ymm2[127:64])
+%ymm1  : (concat (concat <TMP_BV_256_0|256>[255:192] <%ymm2|256>[255:192]) (concat <TMP_BV_256_1|256>[127:64] <%ymm2|256>[127:64]))
 
 Information about memory reads:
-  Value TMP_BV_256_0 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_1 (32 bytes)
-    was read at address %rax.
+  Value <TMP_BV_256_0|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_1|256> (32 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

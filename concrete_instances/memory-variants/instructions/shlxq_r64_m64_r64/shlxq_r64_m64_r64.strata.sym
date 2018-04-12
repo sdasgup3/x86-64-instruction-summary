@@ -10,12 +10,12 @@ code: shlxq %rcx, (%rax), %rbx
 
 Formula:
 
-%rbx   : (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ (%rcx[7:0] & 0x3f₈))[63:0]
+%rbx   : (<< (concat <0x0|1> <TMP_BV_64_0|64>) (concat <0x0|57> (and <%rcx|64>[7:0] <0x3f|8>)))[63:0]
 
 Information about memory reads:
-  Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+  Value <TMP_BV_64_0|64> (8 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

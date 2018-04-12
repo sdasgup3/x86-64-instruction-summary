@@ -10,12 +10,12 @@ code: vpermps (%rax), %ymm2, %ymm1
 
 Formula:
 
-%ymm1  : (TMP_BV_256_0 >> 0x0₂₅₃ ∘ %ymm2[226:224] * 0x20₂₅₆)[31:0] ∘ ((TMP_BV_256_0 >> 0x0₂₅₃ ∘ %ymm2[194:192] * 0x20₂₅₆)[31:0] ∘ ((TMP_BV_256_0 >> 0x0₂₅₃ ∘ %ymm2[162:160] * 0x20₂₅₆)[31:0] ∘ ((TMP_BV_256_0 >> 0x0₂₅₃ ∘ %ymm2[130:128] * 0x20₂₅₆)[31:0] ∘ ((TMP_BV_256_0 >> 0x0₂₅₃ ∘ %ymm2[98:96] * 0x20₂₅₆)[31:0] ∘ ((TMP_BV_256_0 >> 0x0₂₅₃ ∘ %ymm2[66:64] * 0x20₂₅₆)[31:0] ∘ ((TMP_BV_256_0 >> 0x0₂₅₃ ∘ %ymm2[34:32] * 0x20₂₅₆)[31:0] ∘ (TMP_BV_256_0 >> 0x0₂₅₃ ∘ %ymm2[2:0] * 0x20₂₅₆)[31:0]))))))
+%ymm1  : (concat (>> <TMP_BV_256_0|256> (mult (concat <0x0|253> <%ymm2|256>[226:224]) <0x20|256>))[31:0] (concat (>> <TMP_BV_256_0|256> (mult (concat <0x0|253> <%ymm2|256>[194:192]) <0x20|256>))[31:0] (concat (>> <TMP_BV_256_0|256> (mult (concat <0x0|253> <%ymm2|256>[162:160]) <0x20|256>))[31:0] (concat (>> <TMP_BV_256_0|256> (mult (concat <0x0|253> <%ymm2|256>[130:128]) <0x20|256>))[31:0] (concat (>> <TMP_BV_256_0|256> (mult (concat <0x0|253> <%ymm2|256>[98:96]) <0x20|256>))[31:0] (concat (>> <TMP_BV_256_0|256> (mult (concat <0x0|253> <%ymm2|256>[66:64]) <0x20|256>))[31:0] (concat (>> <TMP_BV_256_0|256> (mult (concat <0x0|253> <%ymm2|256>[34:32]) <0x20|256>))[31:0] (>> <TMP_BV_256_0|256> (mult (concat <0x0|253> <%ymm2|256>[2:0]) <0x20|256>))[31:0])))))))
 
 Information about memory reads:
-  Value TMP_BV_256_0 (32 bytes)
-    was read at address %rax.
+  Value <TMP_BV_256_0|256> (32 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

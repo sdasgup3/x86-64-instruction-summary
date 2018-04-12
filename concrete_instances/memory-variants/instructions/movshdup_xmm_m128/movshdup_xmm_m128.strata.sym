@@ -10,14 +10,14 @@ code: movshdup (%rax), %xmm1
 
 Formula:
 
-%ymm1  : %ymm1[255:128] ∘ (TMP_BV_128_0[127:96] ∘ TMP_BV_128_0[127:96] ∘ TMP_BV_128_1[63:32] ∘ TMP_BV_128_1[63:32])
+%ymm1  : (concat <%ymm1|256>[255:128] (concat (concat (concat <TMP_BV_128_0|128>[127:96] <TMP_BV_128_0|128>[127:96]) <TMP_BV_128_1|128>[63:32]) <TMP_BV_128_1|128>[63:32]))
 
 Information about memory reads:
-  Value TMP_BV_128_0 (16 bytes)
-    was read at address %rax.
-  Value TMP_BV_128_1 (16 bytes)
-    was read at address %rax.
+  Value <TMP_BV_128_0|128> (16 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_128_1|128> (16 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

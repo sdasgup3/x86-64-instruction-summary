@@ -10,12 +10,12 @@ code: movb (%rax), %ah
 
 Formula:
 
-%rax   : %rax[63:16] ∘ TMP_BV_8_0 ∘ %rax[7:0]
+%rax   : (concat (concat <%rax|64>[63:16] <TMP_BV_8_0|8>) <%rax|64>[7:0])
 
 Information about memory reads:
-  Value TMP_BV_8_0 (1 bytes)
-    was read at address %rax.
+  Value <TMP_BV_8_0|8> (1 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

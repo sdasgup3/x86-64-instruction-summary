@@ -10,21 +10,21 @@ code: shrw %cl, (%rax)
 
 Formula:
 
-%cf    : (%rcx[7:0] & 0x1f₈) ≥ 0x10₈ ∧ TMP_BOOL_0 ∨ !((%rcx[7:0] & 0x1f₈) ≥ 0x10₈) ∧ (!((%rcx[7:0] & 0x1f₈) = 0x0₈) ∧ (TMP_BV_16_0 ∘ 0x0₁ >> 0x0₉ ∘ (%rcx[7:0] & 0x1f₈))[0:0] = 0x1₁ ∨ !(!((%rcx[7:0] & 0x1f₈) = 0x0₈)) ∧ %cf)
-%pf    : !((%rcx[7:0] & 0x1f₈) = 0x0₈) ∧ !((TMP_BV_16_0 ∘ 0x0₁ >> 0x0₉ ∘ (%rcx[7:0] & 0x1f₈))[1:1] = 0x1₁ ⊕ (TMP_BV_16_0 ∘ 0x0₁ >> 0x0₉ ∘ (%rcx[7:0] & 0x1f₈))[2:2] = 0x1₁ ⊕ (TMP_BV_16_0 ∘ 0x0₁ >> 0x0₉ ∘ (%rcx[7:0] & 0x1f₈))[3:3] = 0x1₁ ⊕ (TMP_BV_16_0 ∘ 0x0₁ >> 0x0₉ ∘ (%rcx[7:0] & 0x1f₈))[4:4] = 0x1₁ ⊕ (TMP_BV_16_0 ∘ 0x0₁ >> 0x0₉ ∘ (%rcx[7:0] & 0x1f₈))[5:5] = 0x1₁ ⊕ (TMP_BV_16_0 ∘ 0x0₁ >> 0x0₉ ∘ (%rcx[7:0] & 0x1f₈))[6:6] = 0x1₁ ⊕ (TMP_BV_16_0 ∘ 0x0₁ >> 0x0₉ ∘ (%rcx[7:0] & 0x1f₈))[7:7] = 0x1₁ ⊕ (TMP_BV_16_0 ∘ 0x0₁ >> 0x0₉ ∘ (%rcx[7:0] & 0x1f₈))[8:8] = 0x1₁) ∨ !(!((%rcx[7:0] & 0x1f₈) = 0x0₈)) ∧ %pf
-%af    : !((%rcx[7:0] & 0x1f₈) = 0x0₈) ∧ TMP_BOOL_1 ∨ !(!((%rcx[7:0] & 0x1f₈) = 0x0₈)) ∧ %af
-%zf    : !((%rcx[7:0] & 0x1f₈) = 0x0₈) ∧ (TMP_BV_16_0 ∘ 0x0₁ >> 0x0₉ ∘ (%rcx[7:0] & 0x1f₈))[16:1] = 0x0₁₆ ∨ !(!((%rcx[7:0] & 0x1f₈) = 0x0₈)) ∧ %zf
-%sf    : !((%rcx[7:0] & 0x1f₈) = 0x0₈) ∧ (TMP_BV_16_0 ∘ 0x0₁ >> 0x0₉ ∘ (%rcx[7:0] & 0x1f₈))[16:16] = 0x1₁ ∨ !(!((%rcx[7:0] & 0x1f₈) = 0x0₈)) ∧ %sf
-%of    : (%rcx[7:0] & 0x1f₈) = 0x1₈ ∧ TMP_BV_16_0[15:15] = 0x1₁ ∨ !((%rcx[7:0] & 0x1f₈) = 0x1₈) ∧ %of
+%cf    : (or (and (>= (and <%rcx|64>[7:0] <0x1f|8>) <0x10|8>) <TMP_BOOL_0>) (and (not (>= (and <%rcx|64>[7:0] <0x1f|8>) <0x10|8>)) (or (and (not (== (and <%rcx|64>[7:0] <0x1f|8>) <0x0|8>)) (== (>> (concat <TMP_BV_16_0|16> <0x0|1>) (concat <0x0|9> (and <%rcx|64>[7:0] <0x1f|8>)))[0:0] <0x1|1>)) (and (not (not (== (and <%rcx|64>[7:0] <0x1f|8>) <0x0|8>))) <%cf>))))
+%pf    : (or (and (not (== (and <%rcx|64>[7:0] <0x1f|8>) <0x0|8>)) (not (xor (xor (xor (xor (xor (xor (xor (== (>> (concat <TMP_BV_16_0|16> <0x0|1>) (concat <0x0|9> (and <%rcx|64>[7:0] <0x1f|8>)))[1:1] <0x1|1>) (== (>> (concat <TMP_BV_16_0|16> <0x0|1>) (concat <0x0|9> (and <%rcx|64>[7:0] <0x1f|8>)))[2:2] <0x1|1>)) (== (>> (concat <TMP_BV_16_0|16> <0x0|1>) (concat <0x0|9> (and <%rcx|64>[7:0] <0x1f|8>)))[3:3] <0x1|1>)) (== (>> (concat <TMP_BV_16_0|16> <0x0|1>) (concat <0x0|9> (and <%rcx|64>[7:0] <0x1f|8>)))[4:4] <0x1|1>)) (== (>> (concat <TMP_BV_16_0|16> <0x0|1>) (concat <0x0|9> (and <%rcx|64>[7:0] <0x1f|8>)))[5:5] <0x1|1>)) (== (>> (concat <TMP_BV_16_0|16> <0x0|1>) (concat <0x0|9> (and <%rcx|64>[7:0] <0x1f|8>)))[6:6] <0x1|1>)) (== (>> (concat <TMP_BV_16_0|16> <0x0|1>) (concat <0x0|9> (and <%rcx|64>[7:0] <0x1f|8>)))[7:7] <0x1|1>)) (== (>> (concat <TMP_BV_16_0|16> <0x0|1>) (concat <0x0|9> (and <%rcx|64>[7:0] <0x1f|8>)))[8:8] <0x1|1>)))) (and (not (not (== (and <%rcx|64>[7:0] <0x1f|8>) <0x0|8>))) <%pf>))
+%af    : (or (and (not (== (and <%rcx|64>[7:0] <0x1f|8>) <0x0|8>)) <TMP_BOOL_1>) (and (not (not (== (and <%rcx|64>[7:0] <0x1f|8>) <0x0|8>))) <%af>))
+%zf    : (or (and (not (== (and <%rcx|64>[7:0] <0x1f|8>) <0x0|8>)) (== (>> (concat <TMP_BV_16_0|16> <0x0|1>) (concat <0x0|9> (and <%rcx|64>[7:0] <0x1f|8>)))[16:1] <0x0|16>)) (and (not (not (== (and <%rcx|64>[7:0] <0x1f|8>) <0x0|8>))) <%zf>))
+%sf    : (or (and (not (== (and <%rcx|64>[7:0] <0x1f|8>) <0x0|8>)) (== (>> (concat <TMP_BV_16_0|16> <0x0|1>) (concat <0x0|9> (and <%rcx|64>[7:0] <0x1f|8>)))[16:16] <0x1|1>)) (and (not (not (== (and <%rcx|64>[7:0] <0x1f|8>) <0x0|8>))) <%sf>))
+%of    : (or (and (== (and <%rcx|64>[7:0] <0x1f|8>) <0x1|8>) (== <TMP_BV_16_0|16>[15:15] <0x1|1>)) (and (not (== (and <%rcx|64>[7:0] <0x1f|8>) <0x1|8>)) <%of>))
 
 Information about memory reads:
-  Value TMP_BV_16_0 (2 bytes)
-    was read at address %rax.
+  Value <TMP_BV_16_0|16> (2 bytes)
+    was read at address <%rax|64>.
 
 Information about memory writes:
-  Address %rax was updated to
-    (TMP_BV_16_0 ∘ 0x0₁ >> 0x0₉ ∘ (%rcx[7:0] & 0x1f₈))[16:1] (2 bytes).
+  Address <%rax|64> was updated to
+    (>> (concat <TMP_BV_16_0|16> <0x0|1>) (concat <0x0|9> (and <%rcx|64>[7:0] <0x1f|8>)))[16:1] (2 bytes).
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE)) (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

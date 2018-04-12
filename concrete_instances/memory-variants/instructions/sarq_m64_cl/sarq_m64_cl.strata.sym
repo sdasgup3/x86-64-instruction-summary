@@ -10,20 +10,20 @@ code: sarq %cl, (%rax)
 
 Formula:
 
-%cf    : !((%rcx[7:0] & 0x3f₈) = 0x0₈) ∧ (TMP_BV_64_0 ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ (%rcx[7:0] & 0x3f₈))[0:0] = 0x1₁ ∨ !(!((%rcx[7:0] & 0x3f₈) = 0x0₈)) ∧ %cf
-%pf    : !((%rcx[7:0] & 0x3f₈) = 0x0₈) ∧ !((TMP_BV_64_0 ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ (%rcx[7:0] & 0x3f₈))[1:1] = 0x1₁ ⊕ (TMP_BV_64_0 ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ (%rcx[7:0] & 0x3f₈))[2:2] = 0x1₁ ⊕ (TMP_BV_64_0 ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ (%rcx[7:0] & 0x3f₈))[3:3] = 0x1₁ ⊕ (TMP_BV_64_0 ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ (%rcx[7:0] & 0x3f₈))[4:4] = 0x1₁ ⊕ (TMP_BV_64_0 ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ (%rcx[7:0] & 0x3f₈))[5:5] = 0x1₁ ⊕ (TMP_BV_64_0 ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ (%rcx[7:0] & 0x3f₈))[6:6] = 0x1₁ ⊕ (TMP_BV_64_0 ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ (%rcx[7:0] & 0x3f₈))[7:7] = 0x1₁ ⊕ (TMP_BV_64_0 ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ (%rcx[7:0] & 0x3f₈))[8:8] = 0x1₁) ∨ !(!((%rcx[7:0] & 0x3f₈) = 0x0₈)) ∧ %pf
-%zf    : !((%rcx[7:0] & 0x3f₈) = 0x0₈) ∧ (TMP_BV_64_0 ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ (%rcx[7:0] & 0x3f₈))[64:1] = 0x0₆₄ ∨ !(!((%rcx[7:0] & 0x3f₈) = 0x0₈)) ∧ %zf
-%sf    : !((%rcx[7:0] & 0x3f₈) = 0x0₈) ∧ (TMP_BV_64_0 ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ (%rcx[7:0] & 0x3f₈))[64:64] = 0x1₁ ∨ !(!((%rcx[7:0] & 0x3f₈) = 0x0₈)) ∧ %sf
-%of    : (%rcx[7:0] & 0x3f₈) = 0x1₈ ∧ false ∨ !((%rcx[7:0] & 0x3f₈) = 0x1₈) ∧ %of
+%cf    : (or (and (not (== (and <%rcx|64>[7:0] <0x3f|8>) <0x0|8>)) (== (s_shr (concat <TMP_BV_64_0|64> <0x0|1>) (concat <0x0|57> (and <%rcx|64>[7:0] <0x3f|8>)))[0:0] <0x1|1>)) (and (not (not (== (and <%rcx|64>[7:0] <0x3f|8>) <0x0|8>))) <%cf>))
+%pf    : (or (and (not (== (and <%rcx|64>[7:0] <0x3f|8>) <0x0|8>)) (not (xor (xor (xor (xor (xor (xor (xor (== (s_shr (concat <TMP_BV_64_0|64> <0x0|1>) (concat <0x0|57> (and <%rcx|64>[7:0] <0x3f|8>)))[1:1] <0x1|1>) (== (s_shr (concat <TMP_BV_64_0|64> <0x0|1>) (concat <0x0|57> (and <%rcx|64>[7:0] <0x3f|8>)))[2:2] <0x1|1>)) (== (s_shr (concat <TMP_BV_64_0|64> <0x0|1>) (concat <0x0|57> (and <%rcx|64>[7:0] <0x3f|8>)))[3:3] <0x1|1>)) (== (s_shr (concat <TMP_BV_64_0|64> <0x0|1>) (concat <0x0|57> (and <%rcx|64>[7:0] <0x3f|8>)))[4:4] <0x1|1>)) (== (s_shr (concat <TMP_BV_64_0|64> <0x0|1>) (concat <0x0|57> (and <%rcx|64>[7:0] <0x3f|8>)))[5:5] <0x1|1>)) (== (s_shr (concat <TMP_BV_64_0|64> <0x0|1>) (concat <0x0|57> (and <%rcx|64>[7:0] <0x3f|8>)))[6:6] <0x1|1>)) (== (s_shr (concat <TMP_BV_64_0|64> <0x0|1>) (concat <0x0|57> (and <%rcx|64>[7:0] <0x3f|8>)))[7:7] <0x1|1>)) (== (s_shr (concat <TMP_BV_64_0|64> <0x0|1>) (concat <0x0|57> (and <%rcx|64>[7:0] <0x3f|8>)))[8:8] <0x1|1>)))) (and (not (not (== (and <%rcx|64>[7:0] <0x3f|8>) <0x0|8>))) <%pf>))
+%zf    : (or (and (not (== (and <%rcx|64>[7:0] <0x3f|8>) <0x0|8>)) (== (s_shr (concat <TMP_BV_64_0|64> <0x0|1>) (concat <0x0|57> (and <%rcx|64>[7:0] <0x3f|8>)))[64:1] <0x0|64>)) (and (not (not (== (and <%rcx|64>[7:0] <0x3f|8>) <0x0|8>))) <%zf>))
+%sf    : (or (and (not (== (and <%rcx|64>[7:0] <0x3f|8>) <0x0|8>)) (== (s_shr (concat <TMP_BV_64_0|64> <0x0|1>) (concat <0x0|57> (and <%rcx|64>[7:0] <0x3f|8>)))[64:64] <0x1|1>)) (and (not (not (== (and <%rcx|64>[7:0] <0x3f|8>) <0x0|8>))) <%sf>))
+%of    : (or (and (== (and <%rcx|64>[7:0] <0x3f|8>) <0x1|8>) FALSE) (and (not (== (and <%rcx|64>[7:0] <0x3f|8>) <0x1|8>)) <%of>))
 
 Information about memory reads:
-  Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+  Value <TMP_BV_64_0|64> (8 bytes)
+    was read at address <%rax|64>.
 
 Information about memory writes:
-  Address %rax was updated to
-    (TMP_BV_64_0 ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ (%rcx[7:0] & 0x3f₈))[64:1] (8 bytes).
+  Address <%rax|64> was updated to
+    (s_shr (concat <TMP_BV_64_0|64> <0x0|1>) (concat <0x0|57> (and <%rcx|64>[7:0] <0x3f|8>)))[64:1] (8 bytes).
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

@@ -10,17 +10,17 @@ code: rcrl $0x0, (%rax)
 
 Formula:
 
-%cf    : ((%cf ? 0x1₁ : 0x0₁) ∘ TMP_BV_32_0 rot_right 0x0₃₃)[32:32] = 0x1₁
-%of    : false ∧ (((%cf ? 0x1₁ : 0x0₁) ∘ TMP_BV_32_0 rot_right 0x0₃₃)[31:31] = 0x1₁ ⊕ ((%cf ? 0x1₁ : 0x0₁) ∘ TMP_BV_32_0 rot_right 0x0₃₃)[30:30] = 0x1₁) ∨ true ∧ (false ∧ %of ∨ true ∧ TMP_BOOL_0)
+%cf    : (== (ror (concat (if <%cf> then <0x1|1> else <0x0|1>) <TMP_BV_32_0|32>) <0x0|33>)[32:32] <0x1|1>)
+%of    : (or (and FALSE (xor (== (ror (concat (if <%cf> then <0x1|1> else <0x0|1>) <TMP_BV_32_0|32>) <0x0|33>)[31:31] <0x1|1>) (== (ror (concat (if <%cf> then <0x1|1> else <0x0|1>) <TMP_BV_32_0|32>) <0x0|33>)[30:30] <0x1|1>))) (and TRUE (or (and FALSE <%of>) (and TRUE <TMP_BOOL_0>))))
 
 Information about memory reads:
-  Value TMP_BV_32_0 (4 bytes)
-    was read at address %rax.
+  Value <TMP_BV_32_0|32> (4 bytes)
+    was read at address <%rax|64>.
 
 Information about memory writes:
-  Address %rax was updated to
-    ((%cf ? 0x1₁ : 0x0₁) ∘ TMP_BV_32_0 rot_right 0x0₃₃)[31:0] (4 bytes).
+  Address <%rax|64> was updated to
+    (ror (concat (if <%cf> then <0x1|1> else <0x0|1>) <TMP_BV_32_0|32>) <0x0|33>)[31:0] (4 bytes).
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE)) (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

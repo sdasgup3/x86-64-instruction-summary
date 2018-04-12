@@ -10,20 +10,20 @@ code: mulq (%rax)
 
 Formula:
 
-%rax   : (0x0₆₄ ∘ TMP_BV_64_0 * 0x0₆₄ ∘ %rax)[63:0]
-%rdx   : (0x0₆₄ ∘ TMP_BV_64_0 * 0x0₆₄ ∘ %rax)[127:64]
+%rax   : (mult (concat <0x0|64> <TMP_BV_64_0|64>) (concat <0x0|64> <%rax|64>))[63:0]
+%rdx   : (mult (concat <0x0|64> <TMP_BV_64_0|64>) (concat <0x0|64> <%rax|64>))[127:64]
 
-%cf    : !((0x0₆₄ ∘ TMP_BV_64_0 * 0x0₆₄ ∘ %rax)[127:64] = 0x0₆₄)
-%pf    : TMP_BOOL_2
-%af    : TMP_BOOL_1
-%zf    : TMP_BOOL_0
-%sf    : TMP_BOOL_3
-%of    : !((0x0₆₄ ∘ TMP_BV_64_0 * 0x0₆₄ ∘ %rax)[127:64] = 0x0₆₄)
+%cf    : (not (== (mult (concat <0x0|64> <TMP_BV_64_0|64>) (concat <0x0|64> <%rax|64>))[127:64] <0x0|64>))
+%pf    : <TMP_BOOL_2>
+%af    : <TMP_BOOL_1>
+%zf    : <TMP_BOOL_0>
+%sf    : <TMP_BOOL_3>
+%of    : (not (== (mult (concat <0x0|64> <TMP_BV_64_0|64>) (concat <0x0|64> <%rax|64>))[127:64] <0x0|64>))
 
 Information about memory reads:
-  Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+  Value <TMP_BV_64_0|64> (8 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

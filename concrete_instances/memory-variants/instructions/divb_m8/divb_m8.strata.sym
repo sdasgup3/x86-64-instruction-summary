@@ -10,19 +10,19 @@ code: divb (%rax)
 
 Formula:
 
-%rax   : %rax[63:16] ∘ div_remainder_int8(%rax[15:0], TMP_BV_8_0) ∘ div_quotient_int8(%rax[15:0], TMP_BV_8_0)
+%rax   : (concat (concat <%rax|64>[63:16] div_remainder_int8(<%rax|64>[15:0], <TMP_BV_8_0|8>)) div_quotient_int8(<%rax|64>[15:0], <TMP_BV_8_0|8>))
 
-%cf    : TMP_BOOL_5
-%pf    : TMP_BOOL_2
-%af    : TMP_BOOL_1
-%zf    : TMP_BOOL_0
-%sf    : TMP_BOOL_3
-%of    : TMP_BOOL_4
+%cf    : <TMP_BOOL_5>
+%pf    : <TMP_BOOL_2>
+%af    : <TMP_BOOL_1>
+%zf    : <TMP_BOOL_0>
+%sf    : <TMP_BOOL_3>
+%of    : <TMP_BOOL_4>
 
 Information about memory reads:
-  Value TMP_BV_8_0 (1 bytes)
-    was read at address %rax.
+  Value <TMP_BV_8_0|8> (1 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

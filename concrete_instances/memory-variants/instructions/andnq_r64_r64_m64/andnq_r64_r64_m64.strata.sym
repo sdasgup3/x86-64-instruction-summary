@@ -10,21 +10,21 @@ code: andnq (%rax), %rcx, %rbx
 
 Formula:
 
-%rbx   : (TMP_BV_64_0 | %rcx) ⊕ %rcx
+%rbx   : (xor (or <TMP_BV_64_0|64> <%rcx|64>) <%rcx|64>)
 
-%cf    : false
-%pf    : TMP_BOOL_4
-%af    : TMP_BOOL_5
-%zf    : ((TMP_BV_64_0 | %rcx) ⊕ %rcx) = 0x0₆₄
-%sf    : ((TMP_BV_64_1[63:63] | %rcx[63:63]) ⊕ %rcx[63:63]) = 0x1₁
-%of    : false
+%cf    : FALSE
+%pf    : <TMP_BOOL_4>
+%af    : <TMP_BOOL_5>
+%zf    : (== (xor (or <TMP_BV_64_0|64> <%rcx|64>) <%rcx|64>) <0x0|64>)
+%sf    : (== (xor (or <TMP_BV_64_1|64>[63:63] <%rcx|64>[63:63]) <%rcx|64>[63:63]) <0x1|1>)
+%of    : FALSE
 
 Information about memory reads:
-  Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
-  Value TMP_BV_64_1 (8 bytes)
-    was read at address %rax.
+  Value <TMP_BV_64_0|64> (8 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_64_1|64> (8 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

@@ -10,12 +10,12 @@ code: cmovnpl (%rax), %ebx
 
 Formula:
 
-%rbx   : 0x0₃₂ ∘ ((%pf ? 0x1₆₄ : 0x0₆₄) = 0x0₆₄ ? TMP_BV_32_0 : %rbx[31:0])
+%rbx   : (concat <0x0|32> (if (== (if <%pf> then <0x1|64> else <0x0|64>) <0x0|64>) then <TMP_BV_32_0|32> else <%rbx|64>[31:0]))
 
 Information about memory reads:
-  Value TMP_BV_32_0 (4 bytes)
-    was read at address %rax.
+  Value <TMP_BV_32_0|32> (4 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

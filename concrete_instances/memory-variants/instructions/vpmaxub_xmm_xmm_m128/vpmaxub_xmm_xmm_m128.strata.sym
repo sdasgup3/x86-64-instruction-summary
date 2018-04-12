@@ -10,12 +10,12 @@ code: vpmaxub (%rax), %xmm2, %xmm1
 
 Formula:
 
-%ymm1  : 0x0₁₂₈ ∘ ((%ymm2[127:120] > TMP_BV_128_0[127:120] ? %ymm2[127:120] : TMP_BV_128_0[127:120]) ∘ ((%ymm2[119:112] > TMP_BV_128_0[119:112] ? %ymm2[119:112] : TMP_BV_128_0[119:112]) ∘ ((%ymm2[111:104] > TMP_BV_128_0[111:104] ? %ymm2[111:104] : TMP_BV_128_0[111:104]) ∘ ((%ymm2[103:96] > TMP_BV_128_0[103:96] ? %ymm2[103:96] : TMP_BV_128_0[103:96]) ∘ ((%ymm2[95:88] > TMP_BV_128_0[95:88] ? %ymm2[95:88] : TMP_BV_128_0[95:88]) ∘ ((%ymm2[87:80] > TMP_BV_128_0[87:80] ? %ymm2[87:80] : TMP_BV_128_0[87:80]) ∘ ((%ymm2[79:72] > TMP_BV_128_0[79:72] ? %ymm2[79:72] : TMP_BV_128_0[79:72]) ∘ ((%ymm2[71:64] > TMP_BV_128_0[71:64] ? %ymm2[71:64] : TMP_BV_128_0[71:64]) ∘ ((%ymm2[63:56] > TMP_BV_128_0[63:56] ? %ymm2[63:56] : TMP_BV_128_0[63:56]) ∘ ((%ymm2[55:48] > TMP_BV_128_0[55:48] ? %ymm2[55:48] : TMP_BV_128_0[55:48]) ∘ ((%ymm2[47:40] > TMP_BV_128_0[47:40] ? %ymm2[47:40] : TMP_BV_128_0[47:40]) ∘ ((%ymm2[39:32] > TMP_BV_128_0[39:32] ? %ymm2[39:32] : TMP_BV_128_0[39:32]) ∘ ((%ymm2[31:24] > TMP_BV_128_0[31:24] ? %ymm2[31:24] : TMP_BV_128_0[31:24]) ∘ ((%ymm2[23:16] > TMP_BV_128_0[23:16] ? %ymm2[23:16] : TMP_BV_128_0[23:16]) ∘ ((%ymm2[15:8] > TMP_BV_128_0[15:8] ? %ymm2[15:8] : TMP_BV_128_0[15:8]) ∘ (%ymm2[7:0] > TMP_BV_128_0[7:0] ? %ymm2[7:0] : TMP_BV_128_0[7:0]))))))))))))))))
+%ymm1  : (concat <0x0|128> (concat (if (> <%ymm2|256>[127:120] <TMP_BV_128_0|128>[127:120]) then <%ymm2|256>[127:120] else <TMP_BV_128_0|128>[127:120]) (concat (if (> <%ymm2|256>[119:112] <TMP_BV_128_0|128>[119:112]) then <%ymm2|256>[119:112] else <TMP_BV_128_0|128>[119:112]) (concat (if (> <%ymm2|256>[111:104] <TMP_BV_128_0|128>[111:104]) then <%ymm2|256>[111:104] else <TMP_BV_128_0|128>[111:104]) (concat (if (> <%ymm2|256>[103:96] <TMP_BV_128_0|128>[103:96]) then <%ymm2|256>[103:96] else <TMP_BV_128_0|128>[103:96]) (concat (if (> <%ymm2|256>[95:88] <TMP_BV_128_0|128>[95:88]) then <%ymm2|256>[95:88] else <TMP_BV_128_0|128>[95:88]) (concat (if (> <%ymm2|256>[87:80] <TMP_BV_128_0|128>[87:80]) then <%ymm2|256>[87:80] else <TMP_BV_128_0|128>[87:80]) (concat (if (> <%ymm2|256>[79:72] <TMP_BV_128_0|128>[79:72]) then <%ymm2|256>[79:72] else <TMP_BV_128_0|128>[79:72]) (concat (if (> <%ymm2|256>[71:64] <TMP_BV_128_0|128>[71:64]) then <%ymm2|256>[71:64] else <TMP_BV_128_0|128>[71:64]) (concat (if (> <%ymm2|256>[63:56] <TMP_BV_128_0|128>[63:56]) then <%ymm2|256>[63:56] else <TMP_BV_128_0|128>[63:56]) (concat (if (> <%ymm2|256>[55:48] <TMP_BV_128_0|128>[55:48]) then <%ymm2|256>[55:48] else <TMP_BV_128_0|128>[55:48]) (concat (if (> <%ymm2|256>[47:40] <TMP_BV_128_0|128>[47:40]) then <%ymm2|256>[47:40] else <TMP_BV_128_0|128>[47:40]) (concat (if (> <%ymm2|256>[39:32] <TMP_BV_128_0|128>[39:32]) then <%ymm2|256>[39:32] else <TMP_BV_128_0|128>[39:32]) (concat (if (> <%ymm2|256>[31:24] <TMP_BV_128_0|128>[31:24]) then <%ymm2|256>[31:24] else <TMP_BV_128_0|128>[31:24]) (concat (if (> <%ymm2|256>[23:16] <TMP_BV_128_0|128>[23:16]) then <%ymm2|256>[23:16] else <TMP_BV_128_0|128>[23:16]) (concat (if (> <%ymm2|256>[15:8] <TMP_BV_128_0|128>[15:8]) then <%ymm2|256>[15:8] else <TMP_BV_128_0|128>[15:8]) (if (> <%ymm2|256>[7:0] <TMP_BV_128_0|128>[7:0]) then <%ymm2|256>[7:0] else <TMP_BV_128_0|128>[7:0])))))))))))))))))
 
 Information about memory reads:
-  Value TMP_BV_128_0 (16 bytes)
-    was read at address %rax.
+  Value <TMP_BV_128_0|128> (16 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

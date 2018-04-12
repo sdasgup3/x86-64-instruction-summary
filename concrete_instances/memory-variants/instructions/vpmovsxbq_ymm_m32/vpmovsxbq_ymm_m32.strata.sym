@@ -10,18 +10,18 @@ code: vpmovsxbq (%rax), %ymm1
 
 Formula:
 
-%ymm1  : sign-extend-64((0x0₁ ∘ (0x0₃₂ ∘ (0x0₂₄ ∘ TMP_BV_32_0[31:24])) + 0x0₁ ∘ 0xffffff80₆₄)[31:0] ⊕ 0xffffff80₃₂) ∘ sign-extend-64((0x0₁ ∘ (0x0₂₄ ∘ TMP_BV_32_1[23:16] ∘ 0xffffff80₃₂) + 0x0₁ ∘ (0x0₃₂ ∘ (0x0₂₄ ∘ TMP_BV_32_1[23:16])))[31:0] ⊕ 0xffffff80₃₂) ∘ sign-extend-64((0x0₁ ∘ 0xffffff80ffffff80₆₄ + 0x0₁ ∘ (0xffffff80₃₂ ∘ (0x0₂₄ ∘ TMP_BV_32_2[15:8])))[31:0] ⊕ 0xffffff80₃₂)[63:40] ∘ sign-extend-64((0x0₁ ∘ 0xffffff80ffffff80₆₄ + 0x0₁ ∘ (0xffffff80₃₂ ∘ (0x0₂₄ ∘ TMP_BV_32_2[15:8])))[31:0] ⊕ 0xffffff80₃₂)[39:32] ∘ (((0x0₁ ∘ 0xffffff80ffffff80₆₄ + 0x0₁ ∘ (0xffffff80₃₂ ∘ (0x0₂₄ ∘ TMP_BV_32_2[15:8])))[31:0] ⊕ 0xffffff80₃₂) ∘ sign-extend-64((0x0₁ ∘ 0xffffff80ffffff80₆₄ + 0x0₁ ∘ (0xffffff80₃₂ ∘ (0x0₂₄ ∘ TMP_BV_32_3[7:0])))[31:0] ⊕ 0xffffff80₃₂))
+%ymm1  : (concat (concat (concat (concat (sign-extend-64 (xor (plus (concat <0x0|1> (concat <0x0|32> (concat <0x0|24> <TMP_BV_32_0|32>[31:24]))) (concat <0x0|1> <0xffffff80|64>))[31:0] <0xffffff80|32>)) (sign-extend-64 (xor (plus (concat <0x0|1> (concat (concat <0x0|24> <TMP_BV_32_1|32>[23:16]) <0xffffff80|32>)) (concat <0x0|1> (concat <0x0|32> (concat <0x0|24> <TMP_BV_32_1|32>[23:16]))))[31:0] <0xffffff80|32>))) (sign-extend-64 (xor (plus (concat <0x0|1> <0xffffff80ffffff80|64>) (concat <0x0|1> (concat <0xffffff80|32> (concat <0x0|24> <TMP_BV_32_2|32>[15:8]))))[31:0] <0xffffff80|32>))[63:40]) (sign-extend-64 (xor (plus (concat <0x0|1> <0xffffff80ffffff80|64>) (concat <0x0|1> (concat <0xffffff80|32> (concat <0x0|24> <TMP_BV_32_2|32>[15:8]))))[31:0] <0xffffff80|32>))[39:32]) (concat (xor (plus (concat <0x0|1> <0xffffff80ffffff80|64>) (concat <0x0|1> (concat <0xffffff80|32> (concat <0x0|24> <TMP_BV_32_2|32>[15:8]))))[31:0] <0xffffff80|32>) (sign-extend-64 (xor (plus (concat <0x0|1> <0xffffff80ffffff80|64>) (concat <0x0|1> (concat <0xffffff80|32> (concat <0x0|24> <TMP_BV_32_3|32>[7:0]))))[31:0] <0xffffff80|32>))))
 
 Information about memory reads:
-  Value TMP_BV_32_0 (4 bytes)
-    was read at address %rax.
-  Value TMP_BV_32_1 (4 bytes)
-    was read at address %rax.
-  Value TMP_BV_32_2 (4 bytes)
-    was read at address %rax.
-  Value TMP_BV_32_3 (4 bytes)
-    was read at address %rax.
+  Value <TMP_BV_32_0|32> (4 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_32_1|32> (4 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_32_2|32> (4 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_32_3|32> (4 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

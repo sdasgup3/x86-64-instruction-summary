@@ -10,26 +10,26 @@ code: vrsqrtps (%rax), %ymm1
 
 Formula:
 
-%ymm1  : approx_reciprocal_sqrt_single(TMP_BV_256_0[255:224]) ∘ (approx_reciprocal_sqrt_single(TMP_BV_256_1[223:192]) ∘ (approx_reciprocal_sqrt_single(TMP_BV_256_2[191:160]) ∘ (approx_reciprocal_sqrt_single(TMP_BV_256_3[159:128]) ∘ (approx_reciprocal_sqrt_single(TMP_BV_256_4[127:96]) ∘ (approx_reciprocal_sqrt_single(TMP_BV_256_5[95:64]) ∘ (approx_reciprocal_sqrt_single(TMP_BV_256_6[63:32]) ∘ approx_reciprocal_sqrt_single(TMP_BV_256_7[31:0])))))))
+%ymm1  : (concat approx_reciprocal_sqrt_single(<TMP_BV_256_0|256>[255:224]) (concat approx_reciprocal_sqrt_single(<TMP_BV_256_1|256>[223:192]) (concat approx_reciprocal_sqrt_single(<TMP_BV_256_2|256>[191:160]) (concat approx_reciprocal_sqrt_single(<TMP_BV_256_3|256>[159:128]) (concat approx_reciprocal_sqrt_single(<TMP_BV_256_4|256>[127:96]) (concat approx_reciprocal_sqrt_single(<TMP_BV_256_5|256>[95:64]) (concat approx_reciprocal_sqrt_single(<TMP_BV_256_6|256>[63:32]) approx_reciprocal_sqrt_single(<TMP_BV_256_7|256>[31:0]))))))))
 
 Information about memory reads:
-  Value TMP_BV_256_0 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_1 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_2 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_3 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_4 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_5 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_6 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_7 (32 bytes)
-    was read at address %rax.
+  Value <TMP_BV_256_0|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_1|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_2|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_3|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_4|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_5|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_6|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_7|256> (32 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

@@ -10,17 +10,17 @@ code: comiss (%rax), %xmm1
 
 Formula:
 
-%cf    : comiss(%ymm1[31:0], TMP_BV_32_0) = 0x0₂ ∨ comiss(%ymm1[31:0], TMP_BV_32_0) = 0x2₂
-%pf    : comiss(%ymm1[31:0], TMP_BV_32_0) = 0x0₂
-%af    : false
-%zf    : comiss(%ymm1[31:0], TMP_BV_32_0) = 0x0₂ ∨ comiss(%ymm1[31:0], TMP_BV_32_0) = 0x3₂
-%sf    : false
-%of    : false
+%cf    : (or (== comiss(<%ymm1|256>[31:0], <TMP_BV_32_0|32>) <0x0|2>) (== comiss(<%ymm1|256>[31:0], <TMP_BV_32_0|32>) <0x2|2>))
+%pf    : (== comiss(<%ymm1|256>[31:0], <TMP_BV_32_0|32>) <0x0|2>)
+%af    : FALSE
+%zf    : (or (== comiss(<%ymm1|256>[31:0], <TMP_BV_32_0|32>) <0x0|2>) (== comiss(<%ymm1|256>[31:0], <TMP_BV_32_0|32>) <0x3|2>))
+%sf    : FALSE
+%of    : FALSE
 
 Information about memory reads:
-  Value TMP_BV_32_0 (4 bytes)
-    was read at address %rax.
+  Value <TMP_BV_32_0|32> (4 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

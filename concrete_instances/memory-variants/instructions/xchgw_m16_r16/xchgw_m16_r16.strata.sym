@@ -10,18 +10,18 @@ code: xchgw %bx, (%rax)
 
 Formula:
 
-%rbx   : %rbx[63:16] ∘ TMP_BV_16_1
+%rbx   : (concat <%rbx|64>[63:16] <TMP_BV_16_1|16>)
 
 Information about memory reads:
-  Value TMP_BV_16_0 (2 bytes)
-    was read at address %rax.
-  Value TMP_BV_16_1 (2 bytes)
-    was read at address %rax.
+  Value <TMP_BV_16_0|16> (2 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_16_1|16> (2 bytes)
+    was read at address <%rax|64>.
 
 Information about memory writes:
-  Address %rax was updated to
-    %rbx[15:0] (2 bytes).
+  Address <%rax|64> was updated to
+    <%rbx|64>[15:0] (2 bytes).
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

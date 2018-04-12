@@ -10,34 +10,34 @@ code: vpunpcklwd (%rax), %ymm2, %ymm1
 
 Formula:
 
-%ymm1  : (0x0₁₆ ∘ %ymm2[191:176] ∘ (0x0₁₆ ∘ %ymm2[175:160]) ⊕ (0x0₁₆ ∘ TMP_BV_256_0[175:160] ∘ (0x0₁₆ ∘ TMP_BV_256_0[175:160]) ⊕ (TMP_BV_256_1[191:160] ∘ (TMP_BV_256_2[175:160] ∘ TMP_BV_256_3[175:160]) | 0x0₁₆ ∘ TMP_BV_256_0[175:160] ∘ (0x0₁₆ ∘ TMP_BV_256_0[175:160])))) ∘ (0x0₁₆ ∘ %ymm2[159:144] ∘ (0x0₁₆ ∘ %ymm2[143:128]) ⊕ (0x0₁₆ ∘ TMP_BV_256_4[143:128] ∘ (0x0₁₆ ∘ TMP_BV_256_4[143:128]) ⊕ (TMP_BV_256_5[159:128] ∘ (TMP_BV_256_4[143:128] ∘ TMP_BV_256_4[143:128]) | 0x0₁₆ ∘ TMP_BV_256_4[143:128] ∘ (0x0₁₆ ∘ TMP_BV_256_4[143:128])))) ∘ ((0x0₁₆ ∘ %ymm2[63:48] ∘ (0x0₁₆ ∘ %ymm2[47:32]) ⊕ (0x0₁₆ ∘ TMP_BV_256_6[47:32] ∘ (0x0₁₆ ∘ TMP_BV_256_6[47:32]) ⊕ (TMP_BV_256_7[63:32] ∘ (TMP_BV_256_8[47:32] ∘ TMP_BV_256_9[47:32]) | 0x0₁₆ ∘ TMP_BV_256_6[47:32] ∘ (0x0₁₆ ∘ TMP_BV_256_6[47:32])))) ∘ (0x0₁₆ ∘ %ymm2[31:16] ∘ (0x0₁₆ ∘ %ymm2[15:0]) ⊕ (0x0₁₆ ∘ TMP_BV_256_10[15:0] ∘ (0x0₁₆ ∘ TMP_BV_256_10[15:0]) ⊕ (TMP_BV_256_11[31:0] ∘ (TMP_BV_256_10[15:0] ∘ TMP_BV_256_10[15:0]) | 0x0₁₆ ∘ TMP_BV_256_10[15:0] ∘ (0x0₁₆ ∘ TMP_BV_256_10[15:0])))))
+%ymm1  : (concat (concat (xor (concat (concat <0x0|16> <%ymm2|256>[191:176]) (concat <0x0|16> <%ymm2|256>[175:160])) (xor (concat (concat <0x0|16> <TMP_BV_256_0|256>[175:160]) (concat <0x0|16> <TMP_BV_256_0|256>[175:160])) (or (concat <TMP_BV_256_1|256>[191:160] (concat <TMP_BV_256_2|256>[175:160] <TMP_BV_256_3|256>[175:160])) (concat (concat <0x0|16> <TMP_BV_256_0|256>[175:160]) (concat <0x0|16> <TMP_BV_256_0|256>[175:160]))))) (xor (concat (concat <0x0|16> <%ymm2|256>[159:144]) (concat <0x0|16> <%ymm2|256>[143:128])) (xor (concat (concat <0x0|16> <TMP_BV_256_4|256>[143:128]) (concat <0x0|16> <TMP_BV_256_4|256>[143:128])) (or (concat <TMP_BV_256_5|256>[159:128] (concat <TMP_BV_256_4|256>[143:128] <TMP_BV_256_4|256>[143:128])) (concat (concat <0x0|16> <TMP_BV_256_4|256>[143:128]) (concat <0x0|16> <TMP_BV_256_4|256>[143:128])))))) (concat (xor (concat (concat <0x0|16> <%ymm2|256>[63:48]) (concat <0x0|16> <%ymm2|256>[47:32])) (xor (concat (concat <0x0|16> <TMP_BV_256_6|256>[47:32]) (concat <0x0|16> <TMP_BV_256_6|256>[47:32])) (or (concat <TMP_BV_256_7|256>[63:32] (concat <TMP_BV_256_8|256>[47:32] <TMP_BV_256_9|256>[47:32])) (concat (concat <0x0|16> <TMP_BV_256_6|256>[47:32]) (concat <0x0|16> <TMP_BV_256_6|256>[47:32]))))) (xor (concat (concat <0x0|16> <%ymm2|256>[31:16]) (concat <0x0|16> <%ymm2|256>[15:0])) (xor (concat (concat <0x0|16> <TMP_BV_256_10|256>[15:0]) (concat <0x0|16> <TMP_BV_256_10|256>[15:0])) (or (concat <TMP_BV_256_11|256>[31:0] (concat <TMP_BV_256_10|256>[15:0] <TMP_BV_256_10|256>[15:0])) (concat (concat <0x0|16> <TMP_BV_256_10|256>[15:0]) (concat <0x0|16> <TMP_BV_256_10|256>[15:0])))))))
 
 Information about memory reads:
-  Value TMP_BV_256_0 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_1 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_2 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_3 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_4 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_5 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_6 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_7 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_8 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_9 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_10 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_11 (32 bytes)
-    was read at address %rax.
+  Value <TMP_BV_256_0|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_1|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_2|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_3|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_4|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_5|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_6|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_7|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_8|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_9|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_10|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_11|256> (32 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

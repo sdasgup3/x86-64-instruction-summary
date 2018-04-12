@@ -10,17 +10,17 @@ code: blsrq (%rax), %rbx
 
 Formula:
 
-%rbx   : TMP_BV_64_0 - 0x1₆₄ & TMP_BV_64_0
+%rbx   : (and (minus <TMP_BV_64_0|64> <0x1|64>) <TMP_BV_64_0|64>)
 
-%cf    : TMP_BV_64_0 = 0x0₆₄
-%zf    : (TMP_BV_64_0 - 0x1₆₄ & TMP_BV_64_0) = 0x0₆₄
-%sf    : ((TMP_BV_64_0 - 0x1₆₄)[63:63] & TMP_BV_64_0[63:63]) = 0x1₁
-%of    : false
+%cf    : (== <TMP_BV_64_0|64> <0x0|64>)
+%zf    : (== (and (minus <TMP_BV_64_0|64> <0x1|64>) <TMP_BV_64_0|64>) <0x0|64>)
+%sf    : (== (and (minus <TMP_BV_64_0|64> <0x1|64>)[63:63] <TMP_BV_64_0|64>[63:63]) <0x1|1>)
+%of    : FALSE
 
 Information about memory reads:
-  Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+  Value <TMP_BV_64_0|64> (8 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

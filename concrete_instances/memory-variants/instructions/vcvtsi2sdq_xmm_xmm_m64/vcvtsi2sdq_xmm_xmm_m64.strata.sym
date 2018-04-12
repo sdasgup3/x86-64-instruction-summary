@@ -10,12 +10,12 @@ code: vcvtsi2sdq (%rax), %xmm2, %xmm1
 
 Formula:
 
-%ymm1  : 0x0₁₂₈ ∘ (%ymm2[127:64] ∘ cvt_int64_to_double(TMP_BV_64_0))
+%ymm1  : (concat <0x0|128> (concat <%ymm2|256>[127:64] cvt_int64_to_double(<TMP_BV_64_0|64>)))
 
 Information about memory reads:
-  Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+  Value <TMP_BV_64_0|64> (8 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

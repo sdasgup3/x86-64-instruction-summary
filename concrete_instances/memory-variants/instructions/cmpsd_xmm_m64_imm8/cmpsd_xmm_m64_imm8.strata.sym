@@ -10,12 +10,12 @@ code: cmpsd $0x0, (%rax), %xmm1
 
 Formula:
 
-%ymm1  : %ymm1[255:128] ∘ (%ymm1[127:64] ∘ (cmp_double_pred(%ymm1[63:0], TMP_BV_64_0, 0x0₈) = 0x1₁ ? 0xffffffffffffffff₆₄ : 0x0₆₄))
+%ymm1  : (concat <%ymm1|256>[255:128] (concat <%ymm1|256>[127:64] (if (== cmp_double_pred(<%ymm1|256>[63:0], <TMP_BV_64_0|64>, <0x0|8>) <0x1|1>) then <0xffffffffffffffff|64> else <0x0|64>)))
 
 Information about memory reads:
-  Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+  Value <TMP_BV_64_0|64> (8 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

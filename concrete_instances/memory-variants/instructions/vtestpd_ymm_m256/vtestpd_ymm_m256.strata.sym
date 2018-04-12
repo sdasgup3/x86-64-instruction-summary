@@ -10,17 +10,17 @@ code: vtestpd (%rax), %ymm1
 
 Formula:
 
-%cf    : (!%ymm1[63:63] & TMP_BV_256_0[63:63]) = 0x0₁ ∧ (!%ymm1[127:127] & TMP_BV_256_0[127:127]) = 0x0₁ ∧ (!%ymm1[191:191] & TMP_BV_256_0[191:191]) = 0x0₁ ∧ (!%ymm1[255:255] & TMP_BV_256_0[255:255]) = 0x0₁
-%pf    : false
-%af    : false
-%zf    : (%ymm1[63:63] & TMP_BV_256_0[63:63]) = 0x0₁ ∧ (%ymm1[127:127] & TMP_BV_256_0[127:127]) = 0x0₁ ∧ (%ymm1[191:191] & TMP_BV_256_0[191:191]) = 0x0₁ ∧ (%ymm1[255:255] & TMP_BV_256_0[255:255]) = 0x0₁
-%sf    : false
-%of    : false
+%cf    : (and (and (and (== (and !<%ymm1|256>[63:63] <TMP_BV_256_0|256>[63:63]) <0x0|1>) (== (and !<%ymm1|256>[127:127] <TMP_BV_256_0|256>[127:127]) <0x0|1>)) (== (and !<%ymm1|256>[191:191] <TMP_BV_256_0|256>[191:191]) <0x0|1>)) (== (and !<%ymm1|256>[255:255] <TMP_BV_256_0|256>[255:255]) <0x0|1>))
+%pf    : FALSE
+%af    : FALSE
+%zf    : (and (and (and (== (and <%ymm1|256>[63:63] <TMP_BV_256_0|256>[63:63]) <0x0|1>) (== (and <%ymm1|256>[127:127] <TMP_BV_256_0|256>[127:127]) <0x0|1>)) (== (and <%ymm1|256>[191:191] <TMP_BV_256_0|256>[191:191]) <0x0|1>)) (== (and <%ymm1|256>[255:255] <TMP_BV_256_0|256>[255:255]) <0x0|1>))
+%sf    : FALSE
+%of    : FALSE
 
 Information about memory reads:
-  Value TMP_BV_256_0 (32 bytes)
-    was read at address %rax.
+  Value <TMP_BV_256_0|256> (32 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

@@ -10,18 +10,18 @@ code: vpsrad (%rax), %ymm2, %ymm1
 
 Formula:
 
-%ymm1  : (%ymm2[255:224] sign_shift_right (TMP_BV_128_0[63:0] > 0x1f₆₄ ? 0x20₃₂ : TMP_BV_128_1[31:0])) ∘ ((%ymm2[223:192] sign_shift_right (TMP_BV_128_0[63:0] > 0x1f₆₄ ? 0x20₃₂ : TMP_BV_128_1[31:0])) ∘ ((%ymm2[191:160] sign_shift_right (TMP_BV_128_0[63:0] > 0x1f₆₄ ? 0x20₃₂ : TMP_BV_128_1[31:0])) ∘ (%ymm2[159:128] sign_shift_right (TMP_BV_128_0[63:0] > 0x1f₆₄ ? 0x20₃₂ : TMP_BV_128_1[31:0])))) ∘ ((%ymm2[127:96] sign_shift_right (TMP_BV_128_2[63:0] > 0x1f₆₄ ? 0x20₃₂ : TMP_BV_128_3[31:0])) ∘ ((%ymm2[95:64] sign_shift_right (TMP_BV_128_2[63:0] > 0x1f₆₄ ? 0x20₃₂ : TMP_BV_128_3[31:0])) ∘ ((%ymm2[63:32] sign_shift_right (TMP_BV_128_2[63:0] > 0x1f₆₄ ? 0x20₃₂ : TMP_BV_128_3[31:0])) ∘ (%ymm2[31:0] sign_shift_right (TMP_BV_128_2[63:0] > 0x1f₆₄ ? 0x20₃₂ : TMP_BV_128_3[31:0])))))
+%ymm1  : (concat (concat (s_shr <%ymm2|256>[255:224] (if (> <TMP_BV_128_0|128>[63:0] <0x1f|64>) then <0x20|32> else <TMP_BV_128_1|128>[31:0])) (concat (s_shr <%ymm2|256>[223:192] (if (> <TMP_BV_128_0|128>[63:0] <0x1f|64>) then <0x20|32> else <TMP_BV_128_1|128>[31:0])) (concat (s_shr <%ymm2|256>[191:160] (if (> <TMP_BV_128_0|128>[63:0] <0x1f|64>) then <0x20|32> else <TMP_BV_128_1|128>[31:0])) (s_shr <%ymm2|256>[159:128] (if (> <TMP_BV_128_0|128>[63:0] <0x1f|64>) then <0x20|32> else <TMP_BV_128_1|128>[31:0]))))) (concat (s_shr <%ymm2|256>[127:96] (if (> <TMP_BV_128_2|128>[63:0] <0x1f|64>) then <0x20|32> else <TMP_BV_128_3|128>[31:0])) (concat (s_shr <%ymm2|256>[95:64] (if (> <TMP_BV_128_2|128>[63:0] <0x1f|64>) then <0x20|32> else <TMP_BV_128_3|128>[31:0])) (concat (s_shr <%ymm2|256>[63:32] (if (> <TMP_BV_128_2|128>[63:0] <0x1f|64>) then <0x20|32> else <TMP_BV_128_3|128>[31:0])) (s_shr <%ymm2|256>[31:0] (if (> <TMP_BV_128_2|128>[63:0] <0x1f|64>) then <0x20|32> else <TMP_BV_128_3|128>[31:0]))))))
 
 Information about memory reads:
-  Value TMP_BV_128_0 (16 bytes)
-    was read at address %rax.
-  Value TMP_BV_128_1 (16 bytes)
-    was read at address %rax.
-  Value TMP_BV_128_2 (16 bytes)
-    was read at address %rax.
-  Value TMP_BV_128_3 (16 bytes)
-    was read at address %rax.
+  Value <TMP_BV_128_0|128> (16 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_128_1|128> (16 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_128_2|128> (16 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_128_3|128> (16 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

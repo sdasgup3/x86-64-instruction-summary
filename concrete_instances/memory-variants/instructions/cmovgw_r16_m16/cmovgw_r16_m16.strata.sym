@@ -10,12 +10,12 @@ code: cmovgw (%rax), %bx
 
 Formula:
 
-%rbx   : %rbx[63:16] ∘ (%zf ? %rbx[15:0] : ((%of ? 0x1₁ : 0x0₁) ⊕ (%sf ? 0x1₁ : 0x0₁)) = 0x1₁ ? %rbx[15:0] : TMP_BV_16_0)
+%rbx   : (concat <%rbx|64>[63:16] (if <%zf> then <%rbx|64>[15:0] else (if (== (xor (if <%of> then <0x1|1> else <0x0|1>) (if <%sf> then <0x1|1> else <0x0|1>)) <0x1|1>) then <%rbx|64>[15:0] else <TMP_BV_16_0|16>)))
 
 Information about memory reads:
-  Value TMP_BV_16_0 (2 bytes)
-    was read at address %rax.
+  Value <TMP_BV_16_0|16> (2 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

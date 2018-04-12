@@ -10,16 +10,16 @@ code: pushq (%rax)
 
 Formula:
 
-%rsp   : %rsp - 0x8₆₄
+%rsp   : (minus <%rsp|64> <0x8|64>)
 
 Information about memory reads:
-  Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+  Value <TMP_BV_64_0|64> (8 bytes)
+    was read at address <%rax|64>.
 
 Information about memory writes:
-  Address %rsp - 0x8₆₄ was updated to
-    sign-extend-64(TMP_BV_64_0) (8 bytes).
+  Address (minus <%rsp|64> <0x8|64>) was updated to
+    (sign-extend-64 <TMP_BV_64_0|64>) (8 bytes).
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE)) (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

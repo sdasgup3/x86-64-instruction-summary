@@ -10,12 +10,12 @@ code: cmovnbw (%rax), %bx
 
 Formula:
 
-%rbx   : %rbx[63:16] ∘ ((%cf ? 0x100₁₆ : 0x0₁₆) = 0x0₁₆ ? TMP_BV_16_0 : %rbx[15:0])
+%rbx   : (concat <%rbx|64>[63:16] (if (== (if <%cf> then <0x100|16> else <0x0|16>) <0x0|16>) then <TMP_BV_16_0|16> else <%rbx|64>[15:0]))
 
 Information about memory reads:
-  Value TMP_BV_16_0 (2 bytes)
-    was read at address %rax.
+  Value <TMP_BV_16_0|16> (2 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

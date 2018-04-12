@@ -10,12 +10,12 @@ code: vpermilps (%rax), %xmm2, %xmm1
 
 Formula:
 
-%ymm1  : 0x0₁₂₈ ∘ ((TMP_BV_128_0[97:96] = 0x0₂ ? %ymm2[31:0] : TMP_BV_128_0[97:96] = 0x1₂ ? %ymm2[63:32] : TMP_BV_128_0[97:96] = 0x2₂ ? %ymm2[95:64] : %ymm2[127:96]) ∘ ((TMP_BV_128_0[65:64] = 0x0₂ ? %ymm2[31:0] : TMP_BV_128_0[65:64] = 0x1₂ ? %ymm2[63:32] : TMP_BV_128_0[65:64] = 0x2₂ ? %ymm2[95:64] : %ymm2[127:96]) ∘ ((TMP_BV_128_0[33:32] = 0x0₂ ? %ymm2[31:0] : TMP_BV_128_0[33:32] = 0x1₂ ? %ymm2[63:32] : TMP_BV_128_0[33:32] = 0x2₂ ? %ymm2[95:64] : %ymm2[127:96]) ∘ (TMP_BV_128_0[1:0] = 0x0₂ ? %ymm2[31:0] : TMP_BV_128_0[1:0] = 0x1₂ ? %ymm2[63:32] : TMP_BV_128_0[1:0] = 0x2₂ ? %ymm2[95:64] : %ymm2[127:96]))))
+%ymm1  : (concat <0x0|128> (concat (if (== <TMP_BV_128_0|128>[97:96] <0x0|2>) then <%ymm2|256>[31:0] else (if (== <TMP_BV_128_0|128>[97:96] <0x1|2>) then <%ymm2|256>[63:32] else (if (== <TMP_BV_128_0|128>[97:96] <0x2|2>) then <%ymm2|256>[95:64] else <%ymm2|256>[127:96]))) (concat (if (== <TMP_BV_128_0|128>[65:64] <0x0|2>) then <%ymm2|256>[31:0] else (if (== <TMP_BV_128_0|128>[65:64] <0x1|2>) then <%ymm2|256>[63:32] else (if (== <TMP_BV_128_0|128>[65:64] <0x2|2>) then <%ymm2|256>[95:64] else <%ymm2|256>[127:96]))) (concat (if (== <TMP_BV_128_0|128>[33:32] <0x0|2>) then <%ymm2|256>[31:0] else (if (== <TMP_BV_128_0|128>[33:32] <0x1|2>) then <%ymm2|256>[63:32] else (if (== <TMP_BV_128_0|128>[33:32] <0x2|2>) then <%ymm2|256>[95:64] else <%ymm2|256>[127:96]))) (if (== <TMP_BV_128_0|128>[1:0] <0x0|2>) then <%ymm2|256>[31:0] else (if (== <TMP_BV_128_0|128>[1:0] <0x1|2>) then <%ymm2|256>[63:32] else (if (== <TMP_BV_128_0|128>[1:0] <0x2|2>) then <%ymm2|256>[95:64] else <%ymm2|256>[127:96])))))))
 
 Information about memory reads:
-  Value TMP_BV_128_0 (16 bytes)
-    was read at address %rax.
+  Value <TMP_BV_128_0|128> (16 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

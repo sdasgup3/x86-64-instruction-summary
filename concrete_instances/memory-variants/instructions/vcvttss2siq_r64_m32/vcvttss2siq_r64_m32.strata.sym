@@ -10,12 +10,12 @@ code: vcvttss2siq (%rax), %rbx
 
 Formula:
 
-%rbx   : cvt_single_to_int64_truncate(TMP_BV_32_0)
+%rbx   : cvt_single_to_int64_truncate(<TMP_BV_32_0|32>)
 
 Information about memory reads:
-  Value TMP_BV_32_0 (4 bytes)
-    was read at address %rax.
+  Value <TMP_BV_32_0|32> (4 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

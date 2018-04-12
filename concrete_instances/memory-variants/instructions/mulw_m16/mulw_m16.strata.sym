@@ -10,20 +10,20 @@ code: mulw (%rax)
 
 Formula:
 
-%rax   : %rax[63:16] ∘ (0x0₁₆ ∘ TMP_BV_16_0 * 0x0₁₆ ∘ %rax[15:0])[15:0]
-%rdx   : %rdx[63:16] ∘ (0x0₁₆ ∘ TMP_BV_16_0 * 0x0₁₆ ∘ %rax[15:0])[31:16]
+%rax   : (concat <%rax|64>[63:16] (mult (concat <0x0|16> <TMP_BV_16_0|16>) (concat <0x0|16> <%rax|64>[15:0]))[15:0])
+%rdx   : (concat <%rdx|64>[63:16] (mult (concat <0x0|16> <TMP_BV_16_0|16>) (concat <0x0|16> <%rax|64>[15:0]))[31:16])
 
-%cf    : !((0x0₁₆ ∘ TMP_BV_16_0 * 0x0₁₆ ∘ %rax[15:0])[31:16] = 0x0₁₆)
-%pf    : TMP_BOOL_2
-%af    : TMP_BOOL_1
-%zf    : TMP_BOOL_0
-%sf    : TMP_BOOL_3
-%of    : !((0x0₁₆ ∘ TMP_BV_16_0 * 0x0₁₆ ∘ %rax[15:0])[31:16] = 0x0₁₆)
+%cf    : (not (== (mult (concat <0x0|16> <TMP_BV_16_0|16>) (concat <0x0|16> <%rax|64>[15:0]))[31:16] <0x0|16>))
+%pf    : <TMP_BOOL_2>
+%af    : <TMP_BOOL_1>
+%zf    : <TMP_BOOL_0>
+%sf    : <TMP_BOOL_3>
+%of    : (not (== (mult (concat <0x0|16> <TMP_BV_16_0|16>) (concat <0x0|16> <%rax|64>[15:0]))[31:16] <0x0|16>))
 
 Information about memory reads:
-  Value TMP_BV_16_0 (2 bytes)
-    was read at address %rax.
+  Value <TMP_BV_16_0|16> (2 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

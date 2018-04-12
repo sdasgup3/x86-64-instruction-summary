@@ -10,26 +10,26 @@ code: vpsubd (%rax), %ymm2, %ymm1
 
 Formula:
 
-%ymm1  : (0x0₁ ∘ (0x0₃₂ ∘ (0x0₁ ∘ (TMP_BV_256_0[255:224] ∘ %ymm2[255:224] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm2[255:224] ∘ %ymm2[255:224]))[63:32]) + 0x0₁ ∘ (0x0₃₂ ∘ (0x0₁ ∘ (TMP_BV_256_0[255:224] ∘ %ymm2[255:224] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm2[255:224] ∘ %ymm2[255:224]))[31:0]))[31:0] ∘ (0x0₁ ∘ (0x0₁ ∘ (TMP_BV_256_1[223:192] ∘ %ymm2[223:192] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm2[223:192] ∘ %ymm2[223:192]))[63:0] + 0x0₁ ∘ (0x0₃₂ ∘ (0x0₁ ∘ (TMP_BV_256_1[223:192] ∘ %ymm2[223:192] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm2[223:192] ∘ %ymm2[223:192]))[63:32]))[31:0] ∘ (0x0₁ ∘ ((0x0₁ ∘ (TMP_BV_256_2[191:160] ∘ %ymm2[191:160] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm2[191:160] ∘ %ymm2[191:160]))[63:32] ∘ (0x0₁ ∘ (TMP_BV_256_2[191:160] ∘ %ymm2[191:160] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm2[191:160] ∘ %ymm2[191:160]))[63:32]) + 0x0₁ ∘ (0x0₁ ∘ (TMP_BV_256_2[191:160] ∘ %ymm2[191:160] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm2[191:160] ∘ %ymm2[191:160]))[63:0])[31:0] ∘ (0x0₁ ∘ ((0x0₁ ∘ (TMP_BV_256_3[159:128] ∘ %ymm2[159:128] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm2[159:128] ∘ %ymm2[159:128]))[63:32] ∘ (0x0₁ ∘ (TMP_BV_256_3[159:128] ∘ %ymm2[159:128] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm2[159:128] ∘ %ymm2[159:128]))[63:32]) + 0x0₁ ∘ (0x0₁ ∘ (TMP_BV_256_3[159:128] ∘ %ymm2[159:128] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm2[159:128] ∘ %ymm2[159:128]))[63:0])[31:0] ∘ ((0x0₁ ∘ (0x0₃₂ ∘ (0x0₁ ∘ (TMP_BV_256_4[127:96] ∘ %ymm2[127:96] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm2[127:96] ∘ %ymm2[127:96]))[63:32]) + 0x0₁ ∘ (0x0₃₂ ∘ (0x0₁ ∘ (TMP_BV_256_4[127:96] ∘ %ymm2[127:96] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm2[127:96] ∘ %ymm2[127:96]))[31:0]))[31:0] ∘ (0x0₁ ∘ (0x0₁ ∘ (TMP_BV_256_5[95:64] ∘ %ymm2[95:64] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm2[95:64] ∘ %ymm2[95:64]))[63:0] + 0x0₁ ∘ (0x0₃₂ ∘ (0x0₁ ∘ (TMP_BV_256_5[95:64] ∘ %ymm2[95:64] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm2[95:64] ∘ %ymm2[95:64]))[63:32]))[31:0] ∘ (0x0₁ ∘ ((0x0₁ ∘ (TMP_BV_256_6[63:32] ∘ %ymm2[63:32] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm2[63:32] ∘ %ymm2[63:32]))[63:32] ∘ (0x0₁ ∘ (TMP_BV_256_6[63:32] ∘ %ymm2[63:32] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm2[63:32] ∘ %ymm2[63:32]))[63:32]) + 0x0₁ ∘ (0x0₁ ∘ (TMP_BV_256_6[63:32] ∘ %ymm2[63:32] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm2[63:32] ∘ %ymm2[63:32]))[63:0])[31:0] ∘ (0x0₁ ∘ ((0x0₁ ∘ (TMP_BV_256_7[31:0] ∘ %ymm2[31:0] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm2[31:0] ∘ %ymm2[31:0]))[63:32] ∘ (0x0₁ ∘ (TMP_BV_256_7[31:0] ∘ %ymm2[31:0] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm2[31:0] ∘ %ymm2[31:0]))[63:32]) + 0x0₁ ∘ (0x0₁ ∘ (TMP_BV_256_7[31:0] ∘ %ymm2[31:0] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm2[31:0] ∘ %ymm2[31:0]))[63:0])[31:0])
+%ymm1  : (concat (concat (concat (concat (plus (concat <0x0|1> (concat <0x0|32> (plus (plus (concat <0x0|1> (xor (concat <TMP_BV_256_0|256>[255:224] <%ymm2|256>[255:224]) <0xffffffffffffffff|64>)) <0x1|65>) (concat <0x0|1> (concat <%ymm2|256>[255:224] <%ymm2|256>[255:224])))[63:32])) (concat <0x0|1> (concat <0x0|32> (plus (plus (concat <0x0|1> (xor (concat <TMP_BV_256_0|256>[255:224] <%ymm2|256>[255:224]) <0xffffffffffffffff|64>)) <0x1|65>) (concat <0x0|1> (concat <%ymm2|256>[255:224] <%ymm2|256>[255:224])))[31:0])))[31:0] (plus (concat <0x0|1> (plus (plus (concat <0x0|1> (xor (concat <TMP_BV_256_1|256>[223:192] <%ymm2|256>[223:192]) <0xffffffffffffffff|64>)) <0x1|65>) (concat <0x0|1> (concat <%ymm2|256>[223:192] <%ymm2|256>[223:192])))[63:0]) (concat <0x0|1> (concat <0x0|32> (plus (plus (concat <0x0|1> (xor (concat <TMP_BV_256_1|256>[223:192] <%ymm2|256>[223:192]) <0xffffffffffffffff|64>)) <0x1|65>) (concat <0x0|1> (concat <%ymm2|256>[223:192] <%ymm2|256>[223:192])))[63:32])))[31:0]) (plus (concat <0x0|1> (concat (plus (plus (concat <0x0|1> (xor (concat <TMP_BV_256_2|256>[191:160] <%ymm2|256>[191:160]) <0xffffffffffffffff|64>)) <0x1|65>) (concat <0x0|1> (concat <%ymm2|256>[191:160] <%ymm2|256>[191:160])))[63:32] (plus (plus (concat <0x0|1> (xor (concat <TMP_BV_256_2|256>[191:160] <%ymm2|256>[191:160]) <0xffffffffffffffff|64>)) <0x1|65>) (concat <0x0|1> (concat <%ymm2|256>[191:160] <%ymm2|256>[191:160])))[63:32])) (concat <0x0|1> (plus (plus (concat <0x0|1> (xor (concat <TMP_BV_256_2|256>[191:160] <%ymm2|256>[191:160]) <0xffffffffffffffff|64>)) <0x1|65>) (concat <0x0|1> (concat <%ymm2|256>[191:160] <%ymm2|256>[191:160])))[63:0]))[31:0]) (plus (concat <0x0|1> (concat (plus (plus (concat <0x0|1> (xor (concat <TMP_BV_256_3|256>[159:128] <%ymm2|256>[159:128]) <0xffffffffffffffff|64>)) <0x1|65>) (concat <0x0|1> (concat <%ymm2|256>[159:128] <%ymm2|256>[159:128])))[63:32] (plus (plus (concat <0x0|1> (xor (concat <TMP_BV_256_3|256>[159:128] <%ymm2|256>[159:128]) <0xffffffffffffffff|64>)) <0x1|65>) (concat <0x0|1> (concat <%ymm2|256>[159:128] <%ymm2|256>[159:128])))[63:32])) (concat <0x0|1> (plus (plus (concat <0x0|1> (xor (concat <TMP_BV_256_3|256>[159:128] <%ymm2|256>[159:128]) <0xffffffffffffffff|64>)) <0x1|65>) (concat <0x0|1> (concat <%ymm2|256>[159:128] <%ymm2|256>[159:128])))[63:0]))[31:0]) (concat (concat (concat (plus (concat <0x0|1> (concat <0x0|32> (plus (plus (concat <0x0|1> (xor (concat <TMP_BV_256_4|256>[127:96] <%ymm2|256>[127:96]) <0xffffffffffffffff|64>)) <0x1|65>) (concat <0x0|1> (concat <%ymm2|256>[127:96] <%ymm2|256>[127:96])))[63:32])) (concat <0x0|1> (concat <0x0|32> (plus (plus (concat <0x0|1> (xor (concat <TMP_BV_256_4|256>[127:96] <%ymm2|256>[127:96]) <0xffffffffffffffff|64>)) <0x1|65>) (concat <0x0|1> (concat <%ymm2|256>[127:96] <%ymm2|256>[127:96])))[31:0])))[31:0] (plus (concat <0x0|1> (plus (plus (concat <0x0|1> (xor (concat <TMP_BV_256_5|256>[95:64] <%ymm2|256>[95:64]) <0xffffffffffffffff|64>)) <0x1|65>) (concat <0x0|1> (concat <%ymm2|256>[95:64] <%ymm2|256>[95:64])))[63:0]) (concat <0x0|1> (concat <0x0|32> (plus (plus (concat <0x0|1> (xor (concat <TMP_BV_256_5|256>[95:64] <%ymm2|256>[95:64]) <0xffffffffffffffff|64>)) <0x1|65>) (concat <0x0|1> (concat <%ymm2|256>[95:64] <%ymm2|256>[95:64])))[63:32])))[31:0]) (plus (concat <0x0|1> (concat (plus (plus (concat <0x0|1> (xor (concat <TMP_BV_256_6|256>[63:32] <%ymm2|256>[63:32]) <0xffffffffffffffff|64>)) <0x1|65>) (concat <0x0|1> (concat <%ymm2|256>[63:32] <%ymm2|256>[63:32])))[63:32] (plus (plus (concat <0x0|1> (xor (concat <TMP_BV_256_6|256>[63:32] <%ymm2|256>[63:32]) <0xffffffffffffffff|64>)) <0x1|65>) (concat <0x0|1> (concat <%ymm2|256>[63:32] <%ymm2|256>[63:32])))[63:32])) (concat <0x0|1> (plus (plus (concat <0x0|1> (xor (concat <TMP_BV_256_6|256>[63:32] <%ymm2|256>[63:32]) <0xffffffffffffffff|64>)) <0x1|65>) (concat <0x0|1> (concat <%ymm2|256>[63:32] <%ymm2|256>[63:32])))[63:0]))[31:0]) (plus (concat <0x0|1> (concat (plus (plus (concat <0x0|1> (xor (concat <TMP_BV_256_7|256>[31:0] <%ymm2|256>[31:0]) <0xffffffffffffffff|64>)) <0x1|65>) (concat <0x0|1> (concat <%ymm2|256>[31:0] <%ymm2|256>[31:0])))[63:32] (plus (plus (concat <0x0|1> (xor (concat <TMP_BV_256_7|256>[31:0] <%ymm2|256>[31:0]) <0xffffffffffffffff|64>)) <0x1|65>) (concat <0x0|1> (concat <%ymm2|256>[31:0] <%ymm2|256>[31:0])))[63:32])) (concat <0x0|1> (plus (plus (concat <0x0|1> (xor (concat <TMP_BV_256_7|256>[31:0] <%ymm2|256>[31:0]) <0xffffffffffffffff|64>)) <0x1|65>) (concat <0x0|1> (concat <%ymm2|256>[31:0] <%ymm2|256>[31:0])))[63:0]))[31:0]))
 
 Information about memory reads:
-  Value TMP_BV_256_0 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_1 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_2 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_3 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_4 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_5 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_6 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_7 (32 bytes)
-    was read at address %rax.
+  Value <TMP_BV_256_0|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_1|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_2|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_3|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_4|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_5|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_6|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_7|256> (32 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

@@ -10,20 +10,20 @@ code: divq (%rax)
 
 Formula:
 
-%rax   : div_quotient_int64(%rdx ∘ %rax, TMP_BV_64_0)
-%rdx   : div_remainder_int64(%rdx ∘ %rax, TMP_BV_64_0)
+%rax   : div_quotient_int64((concat <%rdx|64> <%rax|64>), <TMP_BV_64_0|64>)
+%rdx   : div_remainder_int64((concat <%rdx|64> <%rax|64>), <TMP_BV_64_0|64>)
 
-%cf    : TMP_BOOL_5
-%pf    : TMP_BOOL_2
-%af    : TMP_BOOL_1
-%zf    : TMP_BOOL_0
-%sf    : TMP_BOOL_3
-%of    : TMP_BOOL_4
+%cf    : <TMP_BOOL_5>
+%pf    : <TMP_BOOL_2>
+%af    : <TMP_BOOL_1>
+%zf    : <TMP_BOOL_0>
+%sf    : <TMP_BOOL_3>
+%of    : <TMP_BOOL_4>
 
 Information about memory reads:
-  Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+  Value <TMP_BV_64_0|64> (8 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

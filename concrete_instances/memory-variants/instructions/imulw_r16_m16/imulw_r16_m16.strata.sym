@@ -10,19 +10,19 @@ code: imulw (%rax), %bx
 
 Formula:
 
-%rbx   : %rbx[63:16] ∘ (sign-extend-32(%rbx[15:0]) * sign-extend-32(TMP_BV_16_0))[15:0]
+%rbx   : (concat <%rbx|64>[63:16] (mult (sign-extend-32 <%rbx|64>[15:0]) (sign-extend-32 <TMP_BV_16_0|16>))[15:0])
 
-%cf    : !(sign-extend-32(%rbx[15:0]) * sign-extend-32(TMP_BV_16_0) = sign-extend-32((sign-extend-32(%rbx[15:0]) * sign-extend-32(TMP_BV_16_0))[15:0]))
-%pf    : TMP_BOOL_2
-%af    : TMP_BOOL_1
-%zf    : TMP_BOOL_0
-%sf    : (sign-extend-32(%rbx[15:0]) * sign-extend-32(TMP_BV_16_0))[15:15] = 0x1₁
-%of    : !(sign-extend-32(%rbx[15:0]) * sign-extend-32(TMP_BV_16_0) = sign-extend-32((sign-extend-32(%rbx[15:0]) * sign-extend-32(TMP_BV_16_0))[15:0]))
+%cf    : (not (== (mult (sign-extend-32 <%rbx|64>[15:0]) (sign-extend-32 <TMP_BV_16_0|16>)) (sign-extend-32 (mult (sign-extend-32 <%rbx|64>[15:0]) (sign-extend-32 <TMP_BV_16_0|16>))[15:0])))
+%pf    : <TMP_BOOL_2>
+%af    : <TMP_BOOL_1>
+%zf    : <TMP_BOOL_0>
+%sf    : (== (mult (sign-extend-32 <%rbx|64>[15:0]) (sign-extend-32 <TMP_BV_16_0|16>))[15:15] <0x1|1>)
+%of    : (not (== (mult (sign-extend-32 <%rbx|64>[15:0]) (sign-extend-32 <TMP_BV_16_0|16>)) (sign-extend-32 (mult (sign-extend-32 <%rbx|64>[15:0]) (sign-extend-32 <TMP_BV_16_0|16>))[15:0])))
 
 Information about memory reads:
-  Value TMP_BV_16_0 (2 bytes)
-    was read at address %rax.
+  Value <TMP_BV_16_0|16> (2 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

@@ -10,8 +10,8 @@ code: leal (%rax), %ebx
 
 Formula:
 
-%rbx   : 0x0₃₂ ∘ %rax[31:0]
+%rbx   : (concat <0x0|32> <%rax|64>[31:0])
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

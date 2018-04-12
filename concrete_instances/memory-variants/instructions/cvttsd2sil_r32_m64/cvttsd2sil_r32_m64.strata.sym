@@ -10,12 +10,12 @@ code: cvttsd2sil (%rax), %ebx
 
 Formula:
 
-%rbx   : 0x0₃₂ ∘ cvt_double_to_int32_truncate(TMP_BV_64_0)
+%rbx   : (concat <0x0|32> cvt_double_to_int32_truncate(<TMP_BV_64_0|64>))
 
 Information about memory reads:
-  Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+  Value <TMP_BV_64_0|64> (8 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

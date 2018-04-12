@@ -10,21 +10,21 @@ code: rorb $0x1, (%rax)
 
 Formula:
 
-%cf    : (0x0₁ ∘ (sign-extend-64(TMP_BV_8_1 ∘ TMP_BV_8_2) ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[8:1] + 0x0₁ ∘ (sign-extend-64(TMP_BV_8_1 ∘ TMP_BV_8_2) ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[8:1])[8:8] = 0x1₁
-%of    : ((sign-extend-64(TMP_BV_8_1 ∘ TMP_BV_8_2) ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[8:8] = 0x1₁ ↔ (sign-extend-64(TMP_BV_8_1 ∘ TMP_BV_8_2) ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[8:8] = 0x1₁) ∧ !((sign-extend-64(TMP_BV_8_1 ∘ TMP_BV_8_2) ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[8:8] = 0x1₁ ↔ (0x0₁ ∘ (sign-extend-64(TMP_BV_8_1 ∘ TMP_BV_8_2) ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[8:1] + 0x0₁ ∘ (sign-extend-64(TMP_BV_8_1 ∘ TMP_BV_8_2) ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[8:1])[7:7] = 0x1₁)
+%cf    : (== (plus (concat <0x0|1> (s_shr (concat (sign-extend-64 (concat <TMP_BV_8_1|8> <TMP_BV_8_2|8>)) <0x0|1>) (concat <0x0|57> <0x1|8>))[8:1]) (concat <0x0|1> (s_shr (concat (sign-extend-64 (concat <TMP_BV_8_1|8> <TMP_BV_8_2|8>)) <0x0|1>) (concat <0x0|57> <0x1|8>))[8:1]))[8:8] <0x1|1>)
+%of    : (and (== (== (s_shr (concat (sign-extend-64 (concat <TMP_BV_8_1|8> <TMP_BV_8_2|8>)) <0x0|1>) (concat <0x0|57> <0x1|8>))[8:8] <0x1|1>) (== (s_shr (concat (sign-extend-64 (concat <TMP_BV_8_1|8> <TMP_BV_8_2|8>)) <0x0|1>) (concat <0x0|57> <0x1|8>))[8:8] <0x1|1>)) (not (== (== (s_shr (concat (sign-extend-64 (concat <TMP_BV_8_1|8> <TMP_BV_8_2|8>)) <0x0|1>) (concat <0x0|57> <0x1|8>))[8:8] <0x1|1>) (== (plus (concat <0x0|1> (s_shr (concat (sign-extend-64 (concat <TMP_BV_8_1|8> <TMP_BV_8_2|8>)) <0x0|1>) (concat <0x0|57> <0x1|8>))[8:1]) (concat <0x0|1> (s_shr (concat (sign-extend-64 (concat <TMP_BV_8_1|8> <TMP_BV_8_2|8>)) <0x0|1>) (concat <0x0|57> <0x1|8>))[8:1]))[7:7] <0x1|1>))))
 
 Information about memory reads:
-  Value TMP_BV_8_0 (1 bytes)
-    was read at address %rax.
-  Value TMP_BV_8_1 (1 bytes)
-    was read at address %rax.
-  Value TMP_BV_8_2 (1 bytes)
-    was read at address %rax.
+  Value <TMP_BV_8_0|8> (1 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_8_1|8> (1 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_8_2|8> (1 bytes)
+    was read at address <%rax|64>.
 
 Information about memory writes:
-  Address %rax was updated to
-    (sign-extend-64(TMP_BV_8_1 ∘ TMP_BV_8_2) ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[8:1] (1 bytes).
+  Address <%rax|64> was updated to
+    (s_shr (concat (sign-extend-64 (concat <TMP_BV_8_1|8> <TMP_BV_8_2|8>)) <0x0|1>) (concat <0x0|57> <0x1|8>))[8:1] (1 bytes).
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

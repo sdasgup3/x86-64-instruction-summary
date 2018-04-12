@@ -10,12 +10,12 @@ code: roundpd $0x0, (%rax), %xmm1
 
 Formula:
 
-%ymm1  : %ymm1[255:128] ∘ (cvt_double_to_int64_rm(TMP_BV_128_0[127:64], 0x0₈) ∘ cvt_double_to_int64_rm(TMP_BV_128_0[63:0], 0x0₈))
+%ymm1  : (concat <%ymm1|256>[255:128] (concat cvt_double_to_int64_rm(<TMP_BV_128_0|128>[127:64], <0x0|8>) cvt_double_to_int64_rm(<TMP_BV_128_0|128>[63:0], <0x0|8>)))
 
 Information about memory reads:
-  Value TMP_BV_128_0 (16 bytes)
-    was read at address %rax.
+  Value <TMP_BV_128_0|128> (16 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

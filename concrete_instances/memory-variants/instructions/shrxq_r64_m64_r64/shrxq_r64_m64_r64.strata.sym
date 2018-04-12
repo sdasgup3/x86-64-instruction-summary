@@ -10,12 +10,12 @@ code: shrxq %rcx, (%rax), %rbx
 
 Formula:
 
-%rbx   : (TMP_BV_64_0 ∘ 0x0₁ >> 0x0₅₇ ∘ (%rcx[7:0] & 0x3f₈))[64:1]
+%rbx   : (>> (concat <TMP_BV_64_0|64> <0x0|1>) (concat <0x0|57> (and <%rcx|64>[7:0] <0x3f|8>)))[64:1]
 
 Information about memory reads:
-  Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+  Value <TMP_BV_64_0|64> (8 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

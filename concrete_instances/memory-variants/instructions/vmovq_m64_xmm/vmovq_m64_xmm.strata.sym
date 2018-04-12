@@ -11,9 +11,9 @@ code: vmovq %xmm1, (%rax)
 Formula:
 
 Information about memory writes:
-  Address %rax was updated to
-    %ymm1[63:0] (8 bytes).
+  Address <%rax|64> was updated to
+    <%ymm1|256>[63:0] (8 bytes).
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

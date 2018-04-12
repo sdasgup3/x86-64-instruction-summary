@@ -10,12 +10,12 @@ code: vfnmadd213sd (%rax), %xmm2, %xmm1
 
 Formula:
 
-%ymm1  : 0x0₁₂₈ ∘ ((%ymm1[127:64] ⊕ 0x0₆₄) ∘ vfmsub132_double(vfnmsub132_double(mincmp_double(0x0₃₂ ∘ %ymm2[95:64], 0x0₃₂ ∘ %ymm2[31:0]) = 0x1₁ ? 0x0₃₂ ∘ %ymm2[95:64] : 0x0₃₂ ∘ %ymm2[31:0], %ymm2[63:0], mincmp_double(0x0₃₂ ∘ %ymm2[95:64], 0x0₃₂ ∘ %ymm2[31:0]) = 0x1₁ ? 0x0₃₂ ∘ %ymm2[95:64] : 0x0₃₂ ∘ %ymm2[31:0]), vfmsub132_double(vfnmsub132_double(0x0₆₄, 0x0₆₄, 0x0₆₄), TMP_BV_64_0, 0x0₆₄), %ymm1[63:0]))
+%ymm1  : (concat <0x0|128> (concat (xor <%ymm1|256>[127:64] <0x0|64>) vfmsub132_double(vfnmsub132_double((if (== mincmp_double((concat <0x0|32> <%ymm2|256>[95:64]), (concat <0x0|32> <%ymm2|256>[31:0])) <0x1|1>) then (concat <0x0|32> <%ymm2|256>[95:64]) else (concat <0x0|32> <%ymm2|256>[31:0])), <%ymm2|256>[63:0], (if (== mincmp_double((concat <0x0|32> <%ymm2|256>[95:64]), (concat <0x0|32> <%ymm2|256>[31:0])) <0x1|1>) then (concat <0x0|32> <%ymm2|256>[95:64]) else (concat <0x0|32> <%ymm2|256>[31:0]))), vfmsub132_double(vfnmsub132_double(<0x0|64>, <0x0|64>, <0x0|64>), <TMP_BV_64_0|64>, <0x0|64>), <%ymm1|256>[63:0])))
 
 Information about memory reads:
-  Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+  Value <TMP_BV_64_0|64> (8 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

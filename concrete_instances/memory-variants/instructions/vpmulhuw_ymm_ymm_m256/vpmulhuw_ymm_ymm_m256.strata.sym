@@ -10,12 +10,12 @@ code: vpmulhuw (%rax), %ymm2, %ymm1
 
 Formula:
 
-%ymm1  : (0x0₁₆ ∘ %ymm2[255:240] * 0x0₁₆ ∘ TMP_BV_256_0[255:240])[31:16] ∘ ((0x0₁₆ ∘ %ymm2[239:224] * 0x0₁₆ ∘ TMP_BV_256_0[239:224])[31:16] ∘ ((0x0₁₆ ∘ %ymm2[223:208] * 0x0₁₆ ∘ TMP_BV_256_0[223:208])[31:16] ∘ ((0x0₁₆ ∘ %ymm2[207:192] * 0x0₁₆ ∘ TMP_BV_256_0[207:192])[31:16] ∘ ((0x0₁₆ ∘ %ymm2[191:176] * 0x0₁₆ ∘ TMP_BV_256_0[191:176])[31:16] ∘ ((0x0₁₆ ∘ %ymm2[175:160] * 0x0₁₆ ∘ TMP_BV_256_0[175:160])[31:16] ∘ ((0x0₁₆ ∘ %ymm2[159:144] * 0x0₁₆ ∘ TMP_BV_256_0[159:144])[31:16] ∘ ((0x0₁₆ ∘ %ymm2[143:128] * 0x0₁₆ ∘ TMP_BV_256_0[143:128])[31:16] ∘ ((0x0₁₆ ∘ %ymm2[127:112] * 0x0₁₆ ∘ TMP_BV_256_0[127:112])[31:16] ∘ ((0x0₁₆ ∘ %ymm2[111:96] * 0x0₁₆ ∘ TMP_BV_256_0[111:96])[31:16] ∘ ((0x0₁₆ ∘ %ymm2[95:80] * 0x0₁₆ ∘ TMP_BV_256_0[95:80])[31:16] ∘ ((0x0₁₆ ∘ %ymm2[79:64] * 0x0₁₆ ∘ TMP_BV_256_0[79:64])[31:16] ∘ ((0x0₁₆ ∘ %ymm2[63:48] * 0x0₁₆ ∘ TMP_BV_256_0[63:48])[31:16] ∘ ((0x0₁₆ ∘ %ymm2[47:32] * 0x0₁₆ ∘ TMP_BV_256_0[47:32])[31:16] ∘ ((0x0₁₆ ∘ %ymm2[31:16] * 0x0₁₆ ∘ TMP_BV_256_0[31:16])[31:16] ∘ (0x0₁₆ ∘ %ymm2[15:0] * 0x0₁₆ ∘ TMP_BV_256_0[15:0])[31:16]))))))))))))))
+%ymm1  : (concat (mult (concat <0x0|16> <%ymm2|256>[255:240]) (concat <0x0|16> <TMP_BV_256_0|256>[255:240]))[31:16] (concat (mult (concat <0x0|16> <%ymm2|256>[239:224]) (concat <0x0|16> <TMP_BV_256_0|256>[239:224]))[31:16] (concat (mult (concat <0x0|16> <%ymm2|256>[223:208]) (concat <0x0|16> <TMP_BV_256_0|256>[223:208]))[31:16] (concat (mult (concat <0x0|16> <%ymm2|256>[207:192]) (concat <0x0|16> <TMP_BV_256_0|256>[207:192]))[31:16] (concat (mult (concat <0x0|16> <%ymm2|256>[191:176]) (concat <0x0|16> <TMP_BV_256_0|256>[191:176]))[31:16] (concat (mult (concat <0x0|16> <%ymm2|256>[175:160]) (concat <0x0|16> <TMP_BV_256_0|256>[175:160]))[31:16] (concat (mult (concat <0x0|16> <%ymm2|256>[159:144]) (concat <0x0|16> <TMP_BV_256_0|256>[159:144]))[31:16] (concat (mult (concat <0x0|16> <%ymm2|256>[143:128]) (concat <0x0|16> <TMP_BV_256_0|256>[143:128]))[31:16] (concat (mult (concat <0x0|16> <%ymm2|256>[127:112]) (concat <0x0|16> <TMP_BV_256_0|256>[127:112]))[31:16] (concat (mult (concat <0x0|16> <%ymm2|256>[111:96]) (concat <0x0|16> <TMP_BV_256_0|256>[111:96]))[31:16] (concat (mult (concat <0x0|16> <%ymm2|256>[95:80]) (concat <0x0|16> <TMP_BV_256_0|256>[95:80]))[31:16] (concat (mult (concat <0x0|16> <%ymm2|256>[79:64]) (concat <0x0|16> <TMP_BV_256_0|256>[79:64]))[31:16] (concat (mult (concat <0x0|16> <%ymm2|256>[63:48]) (concat <0x0|16> <TMP_BV_256_0|256>[63:48]))[31:16] (concat (mult (concat <0x0|16> <%ymm2|256>[47:32]) (concat <0x0|16> <TMP_BV_256_0|256>[47:32]))[31:16] (concat (mult (concat <0x0|16> <%ymm2|256>[31:16]) (concat <0x0|16> <TMP_BV_256_0|256>[31:16]))[31:16] (mult (concat <0x0|16> <%ymm2|256>[15:0]) (concat <0x0|16> <TMP_BV_256_0|256>[15:0]))[31:16])))))))))))))))
 
 Information about memory reads:
-  Value TMP_BV_256_0 (32 bytes)
-    was read at address %rax.
+  Value <TMP_BV_256_0|256> (32 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

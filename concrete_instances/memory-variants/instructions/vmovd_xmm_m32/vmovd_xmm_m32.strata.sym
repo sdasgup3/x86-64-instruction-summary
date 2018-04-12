@@ -10,14 +10,14 @@ code: vmovd (%rax), %xmm1
 
 Formula:
 
-%ymm1  : 0x0₂₂₄ ∘ TMP_BV_32_0[31:24] ∘ TMP_BV_32_1[23:0]
+%ymm1  : (concat (concat <0x0|224> <TMP_BV_32_0|32>[31:24]) <TMP_BV_32_1|32>[23:0])
 
 Information about memory reads:
-  Value TMP_BV_32_0 (4 bytes)
-    was read at address %rax.
-  Value TMP_BV_32_1 (4 bytes)
-    was read at address %rax.
+  Value <TMP_BV_32_0|32> (4 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_32_1|32> (4 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

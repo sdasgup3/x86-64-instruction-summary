@@ -10,12 +10,12 @@ code: cmovnlel (%rax), %ebx
 
 Formula:
 
-%rbx   : 0x0₃₂ ∘ (%zf ? %rbx[31:0] : ((%of ? 0x1₁ : 0x0₁) ⊕ (%sf ? 0x1₁ : 0x0₁)) = 0x1₁ ? %rbx[31:0] : TMP_BV_32_0)
+%rbx   : (concat <0x0|32> (if <%zf> then <%rbx|64>[31:0] else (if (== (xor (if <%of> then <0x1|1> else <0x0|1>) (if <%sf> then <0x1|1> else <0x0|1>)) <0x1|1>) then <%rbx|64>[31:0] else <TMP_BV_32_0|32>)))
 
 Information about memory reads:
-  Value TMP_BV_32_0 (4 bytes)
-    was read at address %rax.
+  Value <TMP_BV_32_0|32> (4 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

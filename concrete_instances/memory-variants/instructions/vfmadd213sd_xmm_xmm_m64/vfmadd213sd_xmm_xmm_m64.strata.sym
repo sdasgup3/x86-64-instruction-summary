@@ -10,12 +10,12 @@ code: vfmadd213sd (%rax), %xmm2, %xmm1
 
 Formula:
 
-%ymm1  : 0x0₁₂₈ ∘ (%ymm1[127:64] ∘ vfmsub132_double(%ymm2[63:0], vfnmsub132_double(0x0₆₄, TMP_BV_64_0, 0x0₆₄), %ymm1[63:0]))
+%ymm1  : (concat <0x0|128> (concat <%ymm1|256>[127:64] vfmsub132_double(<%ymm2|256>[63:0], vfnmsub132_double(<0x0|64>, <TMP_BV_64_0|64>, <0x0|64>), <%ymm1|256>[63:0])))
 
 Information about memory reads:
-  Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+  Value <TMP_BV_64_0|64> (8 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

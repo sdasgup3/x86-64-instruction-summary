@@ -10,19 +10,19 @@ code: ptest (%rax), %xmm1
 
 Formula:
 
-%cf    : (!(0x0₆₄ ∘ %ymm1[127:64] ∘ (0x0₆₄ ∘ %ymm1[63:0])) & 0x0₆₄ ∘ TMP_BV_128_0[127:64] ∘ (0x0₆₄ ∘ TMP_BV_128_1[63:0])) = 0x0₂₅₆
-%pf    : false
-%af    : false
-%zf    : (0x0₆₄ ∘ %ymm1[127:64] ∘ (0x0₆₄ ∘ %ymm1[63:0]) & 0x0₆₄ ∘ TMP_BV_128_0[127:64] ∘ (0x0₆₄ ∘ TMP_BV_128_1[63:0])) = 0x0₂₅₆
-%sf    : false
-%of    : false
+%cf    : (== (and !(concat (concat <0x0|64> <%ymm1|256>[127:64]) (concat <0x0|64> <%ymm1|256>[63:0])) (concat (concat <0x0|64> <TMP_BV_128_0|128>[127:64]) (concat <0x0|64> <TMP_BV_128_1|128>[63:0]))) <0x0|256>)
+%pf    : FALSE
+%af    : FALSE
+%zf    : (== (and (concat (concat <0x0|64> <%ymm1|256>[127:64]) (concat <0x0|64> <%ymm1|256>[63:0])) (concat (concat <0x0|64> <TMP_BV_128_0|128>[127:64]) (concat <0x0|64> <TMP_BV_128_1|128>[63:0]))) <0x0|256>)
+%sf    : FALSE
+%of    : FALSE
 
 Information about memory reads:
-  Value TMP_BV_128_0 (16 bytes)
-    was read at address %rax.
-  Value TMP_BV_128_1 (16 bytes)
-    was read at address %rax.
+  Value <TMP_BV_128_0|128> (16 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_128_1|128> (16 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

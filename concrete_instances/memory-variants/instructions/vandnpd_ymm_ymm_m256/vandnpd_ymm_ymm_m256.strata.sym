@@ -10,18 +10,18 @@ code: vandnpd (%rax), %ymm2, %ymm1
 
 Formula:
 
-%ymm1  : (%ymm2[255:192] ⊕ (%ymm2[255:192] | TMP_BV_256_0[255:192]) | 0x0₆₄) ∘ (%ymm2[191:128] ⊕ (%ymm2[191:128] | TMP_BV_256_1[191:128]) | 0x0₆₄) ∘ ((%ymm2[127:64] ⊕ (TMP_BV_256_2[127:64] | %ymm2[127:64])) ∘ (%ymm2[63:0] ⊕ (TMP_BV_256_3[63:0] | %ymm2[63:0])))
+%ymm1  : (concat (concat (or (xor <%ymm2|256>[255:192] (or <%ymm2|256>[255:192] <TMP_BV_256_0|256>[255:192])) <0x0|64>) (or (xor <%ymm2|256>[191:128] (or <%ymm2|256>[191:128] <TMP_BV_256_1|256>[191:128])) <0x0|64>)) (concat (xor <%ymm2|256>[127:64] (or <TMP_BV_256_2|256>[127:64] <%ymm2|256>[127:64])) (xor <%ymm2|256>[63:0] (or <TMP_BV_256_3|256>[63:0] <%ymm2|256>[63:0]))))
 
 Information about memory reads:
-  Value TMP_BV_256_0 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_1 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_2 (32 bytes)
-    was read at address %rax.
-  Value TMP_BV_256_3 (32 bytes)
-    was read at address %rax.
+  Value <TMP_BV_256_0|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_1|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_2|256> (32 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_256_3|256> (32 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

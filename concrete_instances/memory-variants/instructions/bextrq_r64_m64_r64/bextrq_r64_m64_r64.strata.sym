@@ -10,19 +10,19 @@ code: bextrq %rcx, (%rax), %rbx
 
 Formula:
 
-%rbx   : (0x0₄₄₈ ∘ TMP_BV_64_0 >> 0x0₅₀₄ ∘ %rcx[7:0])[63:0] & !(0xffffffffffffffff₅₁₂ >> 0x0₅₀₄ ∘ %rcx[15:8] << 0x0₅₀₄ ∘ %rcx[15:8])[63:0]
+%rbx   : (and (>> (concat <0x0|448> <TMP_BV_64_0|64>) (concat <0x0|504> <%rcx|64>[7:0]))[63:0] !(<< (>> <0xffffffffffffffff|512> (concat <0x0|504> <%rcx|64>[15:8])) (concat <0x0|504> <%rcx|64>[15:8]))[63:0])
 
-%cf    : false
-%pf    : TMP_BOOL_2
-%af    : TMP_BOOL_0
-%zf    : ((0x0₄₄₈ ∘ TMP_BV_64_0 >> 0x0₅₀₄ ∘ %rcx[7:0])[63:0] & !(0xffffffffffffffff₅₁₂ >> 0x0₅₀₄ ∘ %rcx[15:8] << 0x0₅₀₄ ∘ %rcx[15:8])[63:0]) = 0x0₆₄
-%sf    : TMP_BOOL_1
-%of    : false
+%cf    : FALSE
+%pf    : <TMP_BOOL_2>
+%af    : <TMP_BOOL_0>
+%zf    : (== (and (>> (concat <0x0|448> <TMP_BV_64_0|64>) (concat <0x0|504> <%rcx|64>[7:0]))[63:0] !(<< (>> <0xffffffffffffffff|512> (concat <0x0|504> <%rcx|64>[15:8])) (concat <0x0|504> <%rcx|64>[15:8]))[63:0]) <0x0|64>)
+%sf    : <TMP_BOOL_1>
+%of    : FALSE
 
 Information about memory reads:
-  Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+  Value <TMP_BV_64_0|64> (8 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

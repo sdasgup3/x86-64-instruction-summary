@@ -10,12 +10,12 @@ code: pinsrb $0x0, (%rax), %xmm1
 
 Formula:
 
-%ymm1  : %ymm1[255:128] ∘ (%ymm1[127:0] & !(0xff₁₂₈ << 0x0₁₂₈) | 0x0₁₂₀ ∘ TMP_BV_8_0 << 0x0₁₂₈ & 0xff₁₂₈ << 0x0₁₂₈)
+%ymm1  : (concat <%ymm1|256>[255:128] (or (and <%ymm1|256>[127:0] !(<< <0xff|128> <0x0|128>)) (and (<< (concat <0x0|120> <TMP_BV_8_0|8>) <0x0|128>) (<< <0xff|128> <0x0|128>))))
 
 Information about memory reads:
-  Value TMP_BV_8_0 (1 bytes)
-    was read at address %rax.
+  Value <TMP_BV_8_0|8> (1 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

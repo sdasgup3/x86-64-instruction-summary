@@ -10,17 +10,17 @@ code: rorq $0x0, (%rax)
 
 Formula:
 
-%cf    : false ∧ (TMP_BV_64_0 rot_right 0x0₆₄)[63:63] = 0x1₁ ∨ true ∧ %cf
-%of    : false ∧ ((TMP_BV_64_0 rot_right 0x0₆₄)[63:63] = 0x1₁ ⊕ (TMP_BV_64_0 rot_right 0x0₆₄)[62:62] = 0x1₁) ∨ true ∧ TMP_BOOL_0
+%cf    : (or (and FALSE (== (ror <TMP_BV_64_0|64> <0x0|64>)[63:63] <0x1|1>)) (and TRUE <%cf>))
+%of    : (or (and FALSE (xor (== (ror <TMP_BV_64_0|64> <0x0|64>)[63:63] <0x1|1>) (== (ror <TMP_BV_64_0|64> <0x0|64>)[62:62] <0x1|1>))) (and TRUE <TMP_BOOL_0>))
 
 Information about memory reads:
-  Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+  Value <TMP_BV_64_0|64> (8 bytes)
+    was read at address <%rax|64>.
 
 Information about memory writes:
-  Address %rax was updated to
-    TMP_BV_64_0 rot_right 0x0₆₄ (8 bytes).
+  Address <%rax|64> was updated to
+    (ror <TMP_BV_64_0|64> <0x0|64>) (8 bytes).
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE)) (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

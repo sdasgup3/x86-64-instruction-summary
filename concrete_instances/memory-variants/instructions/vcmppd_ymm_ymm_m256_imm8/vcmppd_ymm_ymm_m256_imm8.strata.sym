@@ -10,12 +10,12 @@ code: vcmppd $0x0, (%rax), %ymm2, %ymm1
 
 Formula:
 
-%ymm1  : (cmp_double_pred(%ymm2[255:192], TMP_BV_256_0[255:192], 0x0₈) = 0x1₁ ? 0xffffffffffffffff₆₄ : 0x0₆₄) ∘ ((cmp_double_pred(%ymm2[191:128], TMP_BV_256_0[191:128], 0x0₈) = 0x1₁ ? 0xffffffffffffffff₆₄ : 0x0₆₄) ∘ ((cmp_double_pred(%ymm2[127:64], TMP_BV_256_0[127:64], 0x0₈) = 0x1₁ ? 0xffffffffffffffff₆₄ : 0x0₆₄) ∘ (cmp_double_pred(%ymm2[63:0], TMP_BV_256_0[63:0], 0x0₈) = 0x1₁ ? 0xffffffffffffffff₆₄ : 0x0₆₄)))
+%ymm1  : (concat (if (== cmp_double_pred(<%ymm2|256>[255:192], <TMP_BV_256_0|256>[255:192], <0x0|8>) <0x1|1>) then <0xffffffffffffffff|64> else <0x0|64>) (concat (if (== cmp_double_pred(<%ymm2|256>[191:128], <TMP_BV_256_0|256>[191:128], <0x0|8>) <0x1|1>) then <0xffffffffffffffff|64> else <0x0|64>) (concat (if (== cmp_double_pred(<%ymm2|256>[127:64], <TMP_BV_256_0|256>[127:64], <0x0|8>) <0x1|1>) then <0xffffffffffffffff|64> else <0x0|64>) (if (== cmp_double_pred(<%ymm2|256>[63:0], <TMP_BV_256_0|256>[63:0], <0x0|8>) <0x1|1>) then <0xffffffffffffffff|64> else <0x0|64>))))
 
 Information about memory reads:
-  Value TMP_BV_256_0 (32 bytes)
-    was read at address %rax.
+  Value <TMP_BV_256_0|256> (32 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

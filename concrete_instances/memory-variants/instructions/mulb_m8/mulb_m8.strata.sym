@@ -10,19 +10,19 @@ code: mulb (%rax)
 
 Formula:
 
-%rax   : %rax[63:16] ∘ (0x0₈ ∘ TMP_BV_8_0 * 0x0₈ ∘ %rax[7:0])
+%rax   : (concat <%rax|64>[63:16] (mult (concat <0x0|8> <TMP_BV_8_0|8>) (concat <0x0|8> <%rax|64>[7:0])))
 
-%cf    : !((0x0₈ ∘ TMP_BV_8_0 * 0x0₈ ∘ %rax[7:0])[15:8] = 0x0₈)
-%pf    : TMP_BOOL_2
-%af    : TMP_BOOL_1
-%zf    : TMP_BOOL_0
-%sf    : TMP_BOOL_3
-%of    : !((0x0₈ ∘ TMP_BV_8_0 * 0x0₈ ∘ %rax[7:0])[15:8] = 0x0₈)
+%cf    : (not (== (mult (concat <0x0|8> <TMP_BV_8_0|8>) (concat <0x0|8> <%rax|64>[7:0]))[15:8] <0x0|8>))
+%pf    : <TMP_BOOL_2>
+%af    : <TMP_BOOL_1>
+%zf    : <TMP_BOOL_0>
+%sf    : <TMP_BOOL_3>
+%of    : (not (== (mult (concat <0x0|8> <TMP_BV_8_0|8>) (concat <0x0|8> <%rax|64>[7:0]))[15:8] <0x0|8>))
 
 Information about memory reads:
-  Value TMP_BV_8_0 (1 bytes)
-    was read at address %rax.
+  Value <TMP_BV_8_0|8> (1 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

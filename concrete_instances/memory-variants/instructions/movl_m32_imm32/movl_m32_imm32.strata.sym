@@ -11,9 +11,9 @@ code: movl $0x0, (%rax)
 Formula:
 
 Information about memory writes:
-  Address %rax was updated to
-    0x0₃₂ (4 bytes).
+  Address <%rax|64> was updated to
+    <0x0|32> (4 bytes).
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

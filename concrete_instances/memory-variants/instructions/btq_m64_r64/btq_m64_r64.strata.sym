@@ -10,16 +10,16 @@ code: btq %rbx, (%rax)
 
 Formula:
 
-%cf    : true ∧ ((TMP_BV_64_0 ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ (%rbx[7:0] & 0x3f₈))[64:1] ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[0:0] = 0x1₁ ∨ false
-%pf    : TMP_BOOL_16
-%af    : TMP_BOOL_17
-%sf    : TMP_BOOL_18
-%of    : TMP_BOOL_19
+%cf    : (or (and TRUE (== (s_shr (concat (s_shr (concat <TMP_BV_64_0|64> <0x0|1>) (concat <0x0|57> (and <%rbx|64>[7:0] <0x3f|8>)))[64:1] <0x0|1>) (concat <0x0|57> <0x1|8>))[0:0] <0x1|1>)) FALSE)
+%pf    : <TMP_BOOL_16>
+%af    : <TMP_BOOL_17>
+%sf    : <TMP_BOOL_18>
+%of    : <TMP_BOOL_19>
 
 Information about memory reads:
-  Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+  Value <TMP_BV_64_0|64> (8 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

@@ -10,29 +10,29 @@ code: blsrl (%rax), %ebx
 
 Formula:
 
-%rbx   : 0x0₃₂ ∘ ((TMP_BV_32_0 | (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ (0x0₃₂ ∘ TMP_BV_32_1))[31:0]) ⊕ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ (0x0₃₂ ∘ TMP_BV_32_1))[31:0] ⊕ TMP_BV_32_2)
+%rbx   : (concat <0x0|32> (xor (xor (or <TMP_BV_32_0|32> (plus (concat <0x0|1> <0xffffffffffffffff|64>) (concat <0x0|1> (concat <0x0|32> <TMP_BV_32_1|32>)))[31:0]) (plus (concat <0x0|1> <0xffffffffffffffff|64>) (concat <0x0|1> (concat <0x0|32> <TMP_BV_32_1|32>)))[31:0]) <TMP_BV_32_2|32>))
 
-%cf    : (0x0₁ ∘ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ (0x0₃₂ ∘ TMP_BV_32_3))[47:40] + 0x0₁ ∘ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ (0x0₃₂ ∘ TMP_BV_32_3))[47:40])[8:8] = 0x1₁
-%pf    : TMP_BOOL_18
-%af    : TMP_BOOL_19
-%zf    : ((TMP_BV_32_0 | (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ (0x0₃₂ ∘ TMP_BV_32_1))[31:0]) ⊕ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ (0x0₃₂ ∘ TMP_BV_32_1))[31:0] ⊕ TMP_BV_32_2) = 0x0₃₂
-%sf    : ((TMP_BV_32_4[31:31] | (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ (0x0₃₂ ∘ TMP_BV_32_1))[31:31]) ⊕ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ (0x0₃₂ ∘ TMP_BV_32_1))[31:31] ⊕ TMP_BV_32_5[31:31]) = 0x1₁
-%of    : ((0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ (0x0₃₂ ∘ TMP_BV_32_3))[47:47] = 0x1₁ ↔ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ (0x0₃₂ ∘ TMP_BV_32_3))[47:47] = 0x1₁) ∧ !((0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ (0x0₃₂ ∘ TMP_BV_32_3))[47:47] = 0x1₁ ↔ (0x0₁ ∘ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ (0x0₃₂ ∘ TMP_BV_32_3))[47:40] + 0x0₁ ∘ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ (0x0₃₂ ∘ TMP_BV_32_3))[47:40])[7:7] = 0x1₁)
+%cf    : (== (plus (concat <0x0|1> (plus (concat <0x0|1> <0xffffffffffffffff|64>) (concat <0x0|1> (concat <0x0|32> <TMP_BV_32_3|32>)))[47:40]) (concat <0x0|1> (plus (concat <0x0|1> <0xffffffffffffffff|64>) (concat <0x0|1> (concat <0x0|32> <TMP_BV_32_3|32>)))[47:40]))[8:8] <0x1|1>)
+%pf    : <TMP_BOOL_18>
+%af    : <TMP_BOOL_19>
+%zf    : (== (xor (xor (or <TMP_BV_32_0|32> (plus (concat <0x0|1> <0xffffffffffffffff|64>) (concat <0x0|1> (concat <0x0|32> <TMP_BV_32_1|32>)))[31:0]) (plus (concat <0x0|1> <0xffffffffffffffff|64>) (concat <0x0|1> (concat <0x0|32> <TMP_BV_32_1|32>)))[31:0]) <TMP_BV_32_2|32>) <0x0|32>)
+%sf    : (== (xor (xor (or <TMP_BV_32_4|32>[31:31] (plus (concat <0x0|1> <0xffffffffffffffff|64>) (concat <0x0|1> (concat <0x0|32> <TMP_BV_32_1|32>)))[31:31]) (plus (concat <0x0|1> <0xffffffffffffffff|64>) (concat <0x0|1> (concat <0x0|32> <TMP_BV_32_1|32>)))[31:31]) <TMP_BV_32_5|32>[31:31]) <0x1|1>)
+%of    : (and (== (== (plus (concat <0x0|1> <0xffffffffffffffff|64>) (concat <0x0|1> (concat <0x0|32> <TMP_BV_32_3|32>)))[47:47] <0x1|1>) (== (plus (concat <0x0|1> <0xffffffffffffffff|64>) (concat <0x0|1> (concat <0x0|32> <TMP_BV_32_3|32>)))[47:47] <0x1|1>)) (not (== (== (plus (concat <0x0|1> <0xffffffffffffffff|64>) (concat <0x0|1> (concat <0x0|32> <TMP_BV_32_3|32>)))[47:47] <0x1|1>) (== (plus (concat <0x0|1> (plus (concat <0x0|1> <0xffffffffffffffff|64>) (concat <0x0|1> (concat <0x0|32> <TMP_BV_32_3|32>)))[47:40]) (concat <0x0|1> (plus (concat <0x0|1> <0xffffffffffffffff|64>) (concat <0x0|1> (concat <0x0|32> <TMP_BV_32_3|32>)))[47:40]))[7:7] <0x1|1>))))
 
 Information about memory reads:
-  Value TMP_BV_32_0 (4 bytes)
-    was read at address %rax.
-  Value TMP_BV_32_1 (4 bytes)
-    was read at address %rax.
-  Value TMP_BV_32_2 (4 bytes)
-    was read at address %rax.
-  Value TMP_BV_32_3 (4 bytes)
-    was read at address %rax.
-  Value TMP_BV_32_4 (4 bytes)
-    was read at address %rax.
-  Value TMP_BV_32_5 (4 bytes)
-    was read at address %rax.
+  Value <TMP_BV_32_0|32> (4 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_32_1|32> (4 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_32_2|32> (4 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_32_3|32> (4 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_32_4|32> (4 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_32_5|32> (4 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

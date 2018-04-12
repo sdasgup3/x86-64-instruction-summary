@@ -10,19 +10,19 @@ code: lzcntw (%rax), %bx
 
 Formula:
 
-%rbx   : %rbx[63:16] ∘ (TMP_BV_16_0[15:15] = 0x1₁ ? 0x0₁₆ : TMP_BV_16_0[14:14] = 0x1₁ ? 0x1₁₆ : TMP_BV_16_0[13:13] = 0x1₁ ? 0x2₁₆ : TMP_BV_16_0[12:12] = 0x1₁ ? 0x3₁₆ : TMP_BV_16_0[11:11] = 0x1₁ ? 0x4₁₆ : TMP_BV_16_0[10:10] = 0x1₁ ? 0x5₁₆ : TMP_BV_16_0[9:9] = 0x1₁ ? 0x6₁₆ : TMP_BV_16_0[8:8] = 0x1₁ ? 0x7₁₆ : TMP_BV_16_0[7:7] = 0x1₁ ? 0x8₁₆ : TMP_BV_16_0[6:6] = 0x1₁ ? 0x9₁₆ : TMP_BV_16_0[5:5] = 0x1₁ ? 0xa₁₆ : TMP_BV_16_0[4:4] = 0x1₁ ? 0xb₁₆ : TMP_BV_16_0[3:3] = 0x1₁ ? 0xc₁₆ : TMP_BV_16_0[2:2] = 0x1₁ ? 0xd₁₆ : TMP_BV_16_0[1:1] = 0x1₁ ? 0xe₁₆ : TMP_BV_16_0[0:0] = 0x1₁ ? 0xf₁₆ : 0x10₁₆)
+%rbx   : (concat <%rbx|64>[63:16] (if (== <TMP_BV_16_0|16>[15:15] <0x1|1>) then <0x0|16> else (if (== <TMP_BV_16_0|16>[14:14] <0x1|1>) then <0x1|16> else (if (== <TMP_BV_16_0|16>[13:13] <0x1|1>) then <0x2|16> else (if (== <TMP_BV_16_0|16>[12:12] <0x1|1>) then <0x3|16> else (if (== <TMP_BV_16_0|16>[11:11] <0x1|1>) then <0x4|16> else (if (== <TMP_BV_16_0|16>[10:10] <0x1|1>) then <0x5|16> else (if (== <TMP_BV_16_0|16>[9:9] <0x1|1>) then <0x6|16> else (if (== <TMP_BV_16_0|16>[8:8] <0x1|1>) then <0x7|16> else (if (== <TMP_BV_16_0|16>[7:7] <0x1|1>) then <0x8|16> else (if (== <TMP_BV_16_0|16>[6:6] <0x1|1>) then <0x9|16> else (if (== <TMP_BV_16_0|16>[5:5] <0x1|1>) then <0xa|16> else (if (== <TMP_BV_16_0|16>[4:4] <0x1|1>) then <0xb|16> else (if (== <TMP_BV_16_0|16>[3:3] <0x1|1>) then <0xc|16> else (if (== <TMP_BV_16_0|16>[2:2] <0x1|1>) then <0xd|16> else (if (== <TMP_BV_16_0|16>[1:1] <0x1|1>) then <0xe|16> else (if (== <TMP_BV_16_0|16>[0:0] <0x1|1>) then <0xf|16> else <0x10|16>)))))))))))))))))
 
-%cf    : (TMP_BV_16_0[15:15] = 0x1₁ ? 0x0₁₆ : TMP_BV_16_0[14:14] = 0x1₁ ? 0x1₁₆ : TMP_BV_16_0[13:13] = 0x1₁ ? 0x2₁₆ : TMP_BV_16_0[12:12] = 0x1₁ ? 0x3₁₆ : TMP_BV_16_0[11:11] = 0x1₁ ? 0x4₁₆ : TMP_BV_16_0[10:10] = 0x1₁ ? 0x5₁₆ : TMP_BV_16_0[9:9] = 0x1₁ ? 0x6₁₆ : TMP_BV_16_0[8:8] = 0x1₁ ? 0x7₁₆ : TMP_BV_16_0[7:7] = 0x1₁ ? 0x8₁₆ : TMP_BV_16_0[6:6] = 0x1₁ ? 0x9₁₆ : TMP_BV_16_0[5:5] = 0x1₁ ? 0xa₁₆ : TMP_BV_16_0[4:4] = 0x1₁ ? 0xb₁₆ : TMP_BV_16_0[3:3] = 0x1₁ ? 0xc₁₆ : TMP_BV_16_0[2:2] = 0x1₁ ? 0xd₁₆ : TMP_BV_16_0[1:1] = 0x1₁ ? 0xe₁₆ : TMP_BV_16_0[0:0] = 0x1₁ ? 0xf₁₆ : 0x10₁₆) = 0x10₁₆
-%pf    : TMP_BOOL_2
-%af    : TMP_BOOL_3
-%zf    : (TMP_BV_16_0[15:15] = 0x1₁ ? 0x0₁₆ : TMP_BV_16_0[14:14] = 0x1₁ ? 0x1₁₆ : TMP_BV_16_0[13:13] = 0x1₁ ? 0x2₁₆ : TMP_BV_16_0[12:12] = 0x1₁ ? 0x3₁₆ : TMP_BV_16_0[11:11] = 0x1₁ ? 0x4₁₆ : TMP_BV_16_0[10:10] = 0x1₁ ? 0x5₁₆ : TMP_BV_16_0[9:9] = 0x1₁ ? 0x6₁₆ : TMP_BV_16_0[8:8] = 0x1₁ ? 0x7₁₆ : TMP_BV_16_0[7:7] = 0x1₁ ? 0x8₁₆ : TMP_BV_16_0[6:6] = 0x1₁ ? 0x9₁₆ : TMP_BV_16_0[5:5] = 0x1₁ ? 0xa₁₆ : TMP_BV_16_0[4:4] = 0x1₁ ? 0xb₁₆ : TMP_BV_16_0[3:3] = 0x1₁ ? 0xc₁₆ : TMP_BV_16_0[2:2] = 0x1₁ ? 0xd₁₆ : TMP_BV_16_0[1:1] = 0x1₁ ? 0xe₁₆ : TMP_BV_16_0[0:0] = 0x1₁ ? 0xf₁₆ : 0x10₁₆) = 0x0₁₆
-%sf    : TMP_BOOL_1
-%of    : TMP_BOOL_0
+%cf    : (== (if (== <TMP_BV_16_0|16>[15:15] <0x1|1>) then <0x0|16> else (if (== <TMP_BV_16_0|16>[14:14] <0x1|1>) then <0x1|16> else (if (== <TMP_BV_16_0|16>[13:13] <0x1|1>) then <0x2|16> else (if (== <TMP_BV_16_0|16>[12:12] <0x1|1>) then <0x3|16> else (if (== <TMP_BV_16_0|16>[11:11] <0x1|1>) then <0x4|16> else (if (== <TMP_BV_16_0|16>[10:10] <0x1|1>) then <0x5|16> else (if (== <TMP_BV_16_0|16>[9:9] <0x1|1>) then <0x6|16> else (if (== <TMP_BV_16_0|16>[8:8] <0x1|1>) then <0x7|16> else (if (== <TMP_BV_16_0|16>[7:7] <0x1|1>) then <0x8|16> else (if (== <TMP_BV_16_0|16>[6:6] <0x1|1>) then <0x9|16> else (if (== <TMP_BV_16_0|16>[5:5] <0x1|1>) then <0xa|16> else (if (== <TMP_BV_16_0|16>[4:4] <0x1|1>) then <0xb|16> else (if (== <TMP_BV_16_0|16>[3:3] <0x1|1>) then <0xc|16> else (if (== <TMP_BV_16_0|16>[2:2] <0x1|1>) then <0xd|16> else (if (== <TMP_BV_16_0|16>[1:1] <0x1|1>) then <0xe|16> else (if (== <TMP_BV_16_0|16>[0:0] <0x1|1>) then <0xf|16> else <0x10|16>)))))))))))))))) <0x10|16>)
+%pf    : <TMP_BOOL_2>
+%af    : <TMP_BOOL_3>
+%zf    : (== (if (== <TMP_BV_16_0|16>[15:15] <0x1|1>) then <0x0|16> else (if (== <TMP_BV_16_0|16>[14:14] <0x1|1>) then <0x1|16> else (if (== <TMP_BV_16_0|16>[13:13] <0x1|1>) then <0x2|16> else (if (== <TMP_BV_16_0|16>[12:12] <0x1|1>) then <0x3|16> else (if (== <TMP_BV_16_0|16>[11:11] <0x1|1>) then <0x4|16> else (if (== <TMP_BV_16_0|16>[10:10] <0x1|1>) then <0x5|16> else (if (== <TMP_BV_16_0|16>[9:9] <0x1|1>) then <0x6|16> else (if (== <TMP_BV_16_0|16>[8:8] <0x1|1>) then <0x7|16> else (if (== <TMP_BV_16_0|16>[7:7] <0x1|1>) then <0x8|16> else (if (== <TMP_BV_16_0|16>[6:6] <0x1|1>) then <0x9|16> else (if (== <TMP_BV_16_0|16>[5:5] <0x1|1>) then <0xa|16> else (if (== <TMP_BV_16_0|16>[4:4] <0x1|1>) then <0xb|16> else (if (== <TMP_BV_16_0|16>[3:3] <0x1|1>) then <0xc|16> else (if (== <TMP_BV_16_0|16>[2:2] <0x1|1>) then <0xd|16> else (if (== <TMP_BV_16_0|16>[1:1] <0x1|1>) then <0xe|16> else (if (== <TMP_BV_16_0|16>[0:0] <0x1|1>) then <0xf|16> else <0x10|16>)))))))))))))))) <0x0|16>)
+%sf    : <TMP_BOOL_1>
+%of    : <TMP_BOOL_0>
 
 Information about memory reads:
-  Value TMP_BV_16_0 (2 bytes)
-    was read at address %rax.
+  Value <TMP_BV_16_0|16> (2 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

@@ -10,18 +10,18 @@ code: vpsllvd (%rax), %xmm2, %xmm1
 
 Formula:
 
-%ymm1  : 0x0₁₂₈ ∘ ((%ymm2[127:96] << TMP_BV_128_0[127:96]) ∘ ((%ymm2[95:64] << TMP_BV_128_1[95:64]) ∘ ((%ymm2[63:32] << TMP_BV_128_2[63:32]) ∘ (%ymm2[31:0] << TMP_BV_128_3[31:0]))))
+%ymm1  : (concat <0x0|128> (concat (<< <%ymm2|256>[127:96] <TMP_BV_128_0|128>[127:96]) (concat (<< <%ymm2|256>[95:64] <TMP_BV_128_1|128>[95:64]) (concat (<< <%ymm2|256>[63:32] <TMP_BV_128_2|128>[63:32]) (<< <%ymm2|256>[31:0] <TMP_BV_128_3|128>[31:0])))))
 
 Information about memory reads:
-  Value TMP_BV_128_0 (16 bytes)
-    was read at address %rax.
-  Value TMP_BV_128_1 (16 bytes)
-    was read at address %rax.
-  Value TMP_BV_128_2 (16 bytes)
-    was read at address %rax.
-  Value TMP_BV_128_3 (16 bytes)
-    was read at address %rax.
+  Value <TMP_BV_128_0|128> (16 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_128_1|128> (16 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_128_2|128> (16 bytes)
+    was read at address <%rax|64>.
+  Value <TMP_BV_128_3|128> (16 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>

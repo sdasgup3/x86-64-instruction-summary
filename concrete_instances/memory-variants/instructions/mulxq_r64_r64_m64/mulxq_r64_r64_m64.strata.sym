@@ -10,13 +10,13 @@ code: mulxq (%rax), %rcx, %rbx
 
 Formula:
 
-%rcx   : (0x0₆₄ ∘ %rdx * 0x0₆₄ ∘ TMP_BV_64_0)[63:0]
-%rbx   : (0x0₆₄ ∘ %rdx * 0x0₆₄ ∘ TMP_BV_64_0)[127:64]
+%rcx   : (mult (concat <0x0|64> <%rdx|64>) (concat <0x0|64> <TMP_BV_64_0|64>))[63:0]
+%rbx   : (mult (concat <0x0|64> <%rdx|64>) (concat <0x0|64> <TMP_BV_64_0|64>))[127:64]
 
 Information about memory reads:
-  Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+  Value <TMP_BV_64_0|64> (8 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))

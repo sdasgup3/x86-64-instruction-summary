@@ -10,12 +10,12 @@ code: movzwl (%rax), %ebx
 
 Formula:
 
-%rbx   : 0x0₄₈ ∘ TMP_BV_16_0
+%rbx   : (concat <0x0|48> <TMP_BV_16_0|16>)
 
 Information about memory reads:
-  Value TMP_BV_16_0 (2 bytes)
-    was read at address %rax.
+  Value <TMP_BV_16_0|16> (2 bytes)
+    was read at address <%rax|64>.
 
-sigfpe  : sigfpe
-sigbus  : sigbus
-sigsegv : sigsegv
+sigfpe  : <sigfpe>
+sigbus  : <sigbus>
+sigsegv : <sigsegv>
