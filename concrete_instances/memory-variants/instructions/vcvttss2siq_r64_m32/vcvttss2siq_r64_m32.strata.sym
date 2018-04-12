@@ -1,0 +1,23 @@
+code: vcvttss2siq (%rax), %rbx
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+vcvttss2siq (%rax), %rbx: Hindex1(10)
+vcvttss2siq (%rax), %rbx: Hindex1(10)
+Formula:
+
+%rbx   : cvt_single_to_int64_truncate(TMP_BV_32_0)
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

@@ -1,0 +1,27 @@
+code: pushq (%rax)
+
+  maybe read:      { %rax %rsp }
+  must read:       { %rax %rsp }
+  maybe write:     { %rsp }
+  must write:      { %rsp }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+pushq (%rax): Hindex2(10)
+pushq (%rax): Hindex2(10)
+Formula:
+
+%rsp   : %rsp - 0x8₆₄
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
+
+Information about memory writes:
+  Address %rsp - 0x8₆₄ was updated to
+    sign-extend-64(TMP_BV_64_0) (8 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false ∨ !sigfpe ∧ !sigbus ∧ false

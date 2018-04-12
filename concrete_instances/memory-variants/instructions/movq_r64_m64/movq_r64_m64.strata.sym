@@ -1,0 +1,24 @@
+code: movq (%rax), %rbx
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+movq (%rax), %rbx: Hindex0(10)
+movq (%rax), %rbx: Hindex0(10)
+movq %rcx, %rbx: Hindex5(9)
+Formula:
+
+%rbx   : TMP_BV_64_0
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

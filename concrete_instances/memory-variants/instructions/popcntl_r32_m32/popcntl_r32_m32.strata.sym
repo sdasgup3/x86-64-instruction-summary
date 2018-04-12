@@ -1,0 +1,31 @@
+code: popcntl (%rax), %ebx
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %rbx %cf %pf %af %zf %sf %of }
+  must write:      { %rbx %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { popcnt }
+
+popcntl (%rax), %ebx: Hindex0(10)
+popcntl (%rax), %ebx: Hindex0(10)
+popcntl %ecx, %ebx: Hindex1(9)
+Formula:
+
+%rbx   : 0x0₃₂ ∘ (0x0₁₆ ∘ (0x0₈ ∘ (0x0₄ ∘ (0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_0[31:31] + 0x0₁ ∘ TMP_BV_32_0[30:30]) + 0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_0[29:29] + 0x0₁ ∘ TMP_BV_32_0[28:28])) + 0x0₄ ∘ (0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_0[27:27] + 0x0₁ ∘ TMP_BV_32_0[26:26]) + 0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_0[25:25] + 0x0₁ ∘ TMP_BV_32_0[24:24]))) + 0x0₈ ∘ (0x0₄ ∘ (0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_0[23:23] + 0x0₁ ∘ TMP_BV_32_0[22:22]) + 0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_0[21:21] + 0x0₁ ∘ TMP_BV_32_0[20:20])) + 0x0₄ ∘ (0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_0[19:19] + 0x0₁ ∘ TMP_BV_32_0[18:18]) + 0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_0[17:17] + 0x0₁ ∘ TMP_BV_32_0[16:16])))) + 0x0₁₆ ∘ (0x0₈ ∘ (0x0₄ ∘ (0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_0[15:15] + 0x0₁ ∘ TMP_BV_32_0[14:14]) + 0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_0[13:13] + 0x0₁ ∘ TMP_BV_32_0[12:12])) + 0x0₄ ∘ (0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_0[11:11] + 0x0₁ ∘ TMP_BV_32_0[10:10]) + 0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_0[9:9] + 0x0₁ ∘ TMP_BV_32_0[8:8]))) + 0x0₈ ∘ (0x0₄ ∘ (0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_0[7:7] + 0x0₁ ∘ TMP_BV_32_0[6:6]) + 0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_0[5:5] + 0x0₁ ∘ TMP_BV_32_0[4:4])) + 0x0₄ ∘ (0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_0[3:3] + 0x0₁ ∘ TMP_BV_32_0[2:2]) + 0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_0[1:1] + 0x0₁ ∘ TMP_BV_32_0[0:0])))))
+
+%cf    : false
+%pf    : false
+%af    : false
+%zf    : TMP_BV_32_0 = 0x0₃₂
+%sf    : false
+%of    : false
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

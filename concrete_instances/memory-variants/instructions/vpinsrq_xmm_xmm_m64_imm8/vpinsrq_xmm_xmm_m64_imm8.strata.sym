@@ -1,0 +1,23 @@
+code: vpinsrq $0x0, (%rax), %xmm2, %xmm1
+
+  maybe read:      { %rax %xmm2 }
+  must read:       { %rax %xmm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+vpinsrq $0x0, (%rax), %xmm2, %xmm1: Hindex2(10)
+vpinsrq $0x0, (%rax), %xmm2, %xmm1: Hindex2(10)
+Formula:
+
+%ymm1  : 0x0₁₂₈ ∘ (%ymm2[127:0] & !(0xffffffffffffffff₁₂₈ << 0x0₁₂₈) | 0x0₆₄ ∘ TMP_BV_64_0 << 0x0₁₂₈ & 0xffffffffffffffff₁₂₈ << 0x0₁₂₈)
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

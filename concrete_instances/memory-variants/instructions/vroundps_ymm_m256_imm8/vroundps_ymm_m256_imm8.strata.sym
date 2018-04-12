@@ -1,0 +1,23 @@
+code: vroundps $0x0, (%rax), %ymm1
+
+  maybe read:      { %rax %mxcsr::rc[0] }
+  must read:       { %rax %mxcsr::rc[0] }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+vroundps $0x0, (%rax), %ymm1: Hindex1(10)
+vroundps $0x0, (%rax), %ymm1: Hindex1(10)
+Formula:
+
+%ymm1  : cvt_single_to_int32_rm(TMP_BV_256_0[255:224], 0x0₈) ∘ (cvt_single_to_int32_rm(TMP_BV_256_0[223:192], 0x0₈) ∘ (cvt_single_to_int32_rm(TMP_BV_256_0[191:160], 0x0₈) ∘ (cvt_single_to_int32_rm(TMP_BV_256_0[159:128], 0x0₈) ∘ (cvt_single_to_int32_rm(TMP_BV_256_0[127:96], 0x0₈) ∘ (cvt_single_to_int32_rm(TMP_BV_256_0[95:64], 0x0₈) ∘ (cvt_single_to_int32_rm(TMP_BV_256_0[63:32], 0x0₈) ∘ cvt_single_to_int32_rm(TMP_BV_256_0[31:0], 0x0₈)))))))
+
+Information about memory reads:
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

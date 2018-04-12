@@ -1,0 +1,31 @@
+code: xorw (%rax), %bx
+
+  maybe read:      { %rax %bx }
+  must read:       { %rax %bx }
+  maybe write:     { %bx %cf %pf %zf %sf %of }
+  must write:      { %bx %cf %pf %zf %sf %of }
+  maybe undef:     { %af }
+  must undef:      { %af }
+  required flags:  { }
+
+xorw (%rax), %bx: Hindex0(10)
+xorw (%rax), %bx: Hindex0(10)
+xorw %cx, %bx: Hindex1(9)
+Formula:
+
+%rbx   : %rbx[63:16] ∘ (%rbx[15:0] ⊕ TMP_BV_16_0)
+
+%cf    : false
+%pf    : !((%rbx[0:0] ⊕ TMP_BV_16_0[0:0]) = 0x1₁ ⊕ (%rbx[1:1] ⊕ TMP_BV_16_0[1:1]) = 0x1₁ ⊕ (%rbx[2:2] ⊕ TMP_BV_16_0[2:2]) = 0x1₁ ⊕ (%rbx[3:3] ⊕ TMP_BV_16_0[3:3]) = 0x1₁ ⊕ (%rbx[4:4] ⊕ TMP_BV_16_0[4:4]) = 0x1₁ ⊕ (%rbx[5:5] ⊕ TMP_BV_16_0[5:5]) = 0x1₁ ⊕ (%rbx[6:6] ⊕ TMP_BV_16_0[6:6]) = 0x1₁ ⊕ (%rbx[7:7] ⊕ TMP_BV_16_0[7:7]) = 0x1₁)
+%af    : TMP_BOOL_1
+%zf    : (%rbx[15:0] ⊕ TMP_BV_16_0) = 0x0₁₆
+%sf    : (%rbx[15:15] ⊕ TMP_BV_16_0[15:15]) = 0x1₁
+%of    : false
+
+Information about memory reads:
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

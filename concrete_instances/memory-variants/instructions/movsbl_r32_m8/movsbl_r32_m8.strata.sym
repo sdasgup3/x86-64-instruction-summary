@@ -1,0 +1,24 @@
+code: movsbl (%rax), %ebx
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+movsbl (%rax), %ebx: Hindex0(10)
+movsbl (%rax), %ebx: Hindex0(10)
+movsbl %cl, %ebx: Hindex5(9)
+Formula:
+
+%rbx   : 0x0₃₂ ∘ sign-extend-32(TMP_BV_8_0)
+
+Information about memory reads:
+  Value TMP_BV_8_0 (1 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

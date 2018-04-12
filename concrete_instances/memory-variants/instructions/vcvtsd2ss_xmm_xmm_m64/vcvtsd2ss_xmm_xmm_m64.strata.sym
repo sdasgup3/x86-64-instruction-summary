@@ -1,0 +1,15 @@
+code: vcvtsd2ss (%rax), %xmm2, %xmm1
+
+  maybe read:      { %rax %xmm2 %mxcsr::rc[0] }
+  must read:       { %rax %xmm2 %mxcsr::rc[0] }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+vcvtsd2ss (%rax), %xmm2, %xmm1: Hindex0(10)
+vcvtsd2ss (%rax), %xmm2, %xmm1: Hindex0(10)
+INTERNAL STOKE ERROR, please report
+Failed to parse ../circuits/vcvtsd2ss_xmm_xmm_m64.s
+Message: 

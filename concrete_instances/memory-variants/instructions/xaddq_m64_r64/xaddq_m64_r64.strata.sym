@@ -1,0 +1,41 @@
+code: xaddq %rbx, (%rax)
+
+  maybe read:      { %rax %rbx }
+  must read:       { %rax %rbx }
+  maybe write:     { %rbx %cf %pf %af %zf %sf %of }
+  must write:      { %rbx %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+xaddq %rbx, (%rax): Hindex0(10)
+xaddq %rbx, (%rax): Hindex0(10)
+xaddq %rcx, %rbx: Hindex2(9)
+Formula:
+
+%rbx   : TMP_BV_64_0
+
+%cf    : (0x0₁ ∘ TMP_BV_64_1 + 0x0₁ ∘ %rbx)[64:64] = 0x1₁
+%pf    : !((0x0₁ ∘ TMP_BV_64_1 + 0x0₁ ∘ %rbx)[0:0] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_64_1 + 0x0₁ ∘ %rbx)[1:1] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_64_1 + 0x0₁ ∘ %rbx)[2:2] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_64_1 + 0x0₁ ∘ %rbx)[3:3] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_64_1 + 0x0₁ ∘ %rbx)[4:4] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_64_1 + 0x0₁ ∘ %rbx)[5:5] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_64_1 + 0x0₁ ∘ %rbx)[6:6] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_64_1 + 0x0₁ ∘ %rbx)[7:7] = 0x1₁)
+%af    : (0x0₁ ∘ TMP_BV_64_2[3:0] + 0x0₁ ∘ %rbx[3:0])[4:4] = 0x1₁
+%zf    : (0x0₁ ∘ TMP_BV_64_1 + 0x0₁ ∘ %rbx)[63:0] = 0x0₆₄
+%sf    : (0x0₁ ∘ TMP_BV_64_1 + 0x0₁ ∘ %rbx)[63:63] = 0x1₁
+%of    : (TMP_BV_64_3[63:63] = 0x1₁ ↔ %rbx[63:63] = 0x1₁) ∧ !(TMP_BV_64_3[63:63] = 0x1₁ ↔ (0x0₁ ∘ TMP_BV_64_1 + 0x0₁ ∘ %rbx)[63:63] = 0x1₁)
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_1 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_2 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_3 (8 bytes)
+    was read at address %rax.
+
+Information about memory writes:
+  Address %rax was updated to
+    (0x0₁ ∘ TMP_BV_64_1 + 0x0₁ ∘ %rbx)[63:0] (8 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

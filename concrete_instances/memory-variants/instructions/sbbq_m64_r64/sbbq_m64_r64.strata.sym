@@ -1,0 +1,37 @@
+code: sbbq %rbx, (%rax)
+
+  maybe read:      { %rax %rbx %cf }
+  must read:       { %rax %rbx %cf }
+  maybe write:     { %cf %pf %af %zf %sf %of }
+  must write:      { %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+sbbq %rbx, (%rax): Hindex0(10)
+sbbq %rbx, (%rax): Hindex0(10)
+sbbq %rcx, %rbx: Hindex2(9)
+Formula:
+
+%cf    : !(((%cf ? 0x0₁ ∘ !%rbx : 0x0₁ ∘ !%rbx + 0x1₆₅) + 0x0₁ ∘ TMP_BV_64_0)[64:64] = 0x1₁)
+%pf    : !(((%cf ? 0x0₁ ∘ !%rbx : 0x0₁ ∘ !%rbx + 0x1₆₅) + 0x0₁ ∘ TMP_BV_64_0)[0:0] = 0x1₁ ⊕ ((%cf ? 0x0₁ ∘ !%rbx : 0x0₁ ∘ !%rbx + 0x1₆₅) + 0x0₁ ∘ TMP_BV_64_0)[1:1] = 0x1₁ ⊕ ((%cf ? 0x0₁ ∘ !%rbx : 0x0₁ ∘ !%rbx + 0x1₆₅) + 0x0₁ ∘ TMP_BV_64_0)[2:2] = 0x1₁ ⊕ ((%cf ? 0x0₁ ∘ !%rbx : 0x0₁ ∘ !%rbx + 0x1₆₅) + 0x0₁ ∘ TMP_BV_64_0)[3:3] = 0x1₁ ⊕ ((%cf ? 0x0₁ ∘ !%rbx : 0x0₁ ∘ !%rbx + 0x1₆₅) + 0x0₁ ∘ TMP_BV_64_0)[4:4] = 0x1₁ ⊕ ((%cf ? 0x0₁ ∘ !%rbx : 0x0₁ ∘ !%rbx + 0x1₆₅) + 0x0₁ ∘ TMP_BV_64_0)[5:5] = 0x1₁ ⊕ ((%cf ? 0x0₁ ∘ !%rbx : 0x0₁ ∘ !%rbx + 0x1₆₅) + 0x0₁ ∘ TMP_BV_64_0)[6:6] = 0x1₁ ⊕ ((%cf ? 0x0₁ ∘ !%rbx : 0x0₁ ∘ !%rbx + 0x1₆₅) + 0x0₁ ∘ TMP_BV_64_0)[7:7] = 0x1₁)
+%af    : (0x0₁ ∘ %rbx[3:0] + 0x0₁ ∘ TMP_BV_64_1[3:0])[4:4] = 0x1₁
+%zf    : ((%cf ? 0x0₁ ∘ !%rbx : 0x0₁ ∘ !%rbx + 0x1₆₅) + 0x0₁ ∘ TMP_BV_64_0)[63:0] = 0x0₆₄
+%sf    : ((%cf ? 0x0₁ ∘ !%rbx : 0x0₁ ∘ !%rbx + 0x1₆₅) + 0x0₁ ∘ TMP_BV_64_0)[63:63] = 0x1₁
+%of    : (!%rbx[63:63] = 0x1₁ ↔ TMP_BV_64_2[63:63] = 0x1₁) ∧ !(!%rbx[63:63] = 0x1₁ ↔ ((%cf ? 0x0₁ ∘ !%rbx : 0x0₁ ∘ !%rbx + 0x1₆₅) + 0x0₁ ∘ TMP_BV_64_0)[63:63] = 0x1₁)
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_1 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_2 (8 bytes)
+    was read at address %rax.
+
+Information about memory writes:
+  Address %rax was updated to
+    ((%cf ? 0x0₁ ∘ !%rbx : 0x0₁ ∘ !%rbx + 0x1₆₅) + 0x0₁ ∘ TMP_BV_64_0)[63:0] (8 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

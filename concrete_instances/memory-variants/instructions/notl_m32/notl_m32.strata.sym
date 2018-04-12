@@ -1,0 +1,26 @@
+code: notl (%rax)
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+notl (%rax): Hindex0(10)
+notl (%rax): Hindex0(10)
+notl %ebx: Hindex1(9)
+Formula:
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
+
+Information about memory writes:
+  Address %rax was updated to
+    !TMP_BV_32_0 (4 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

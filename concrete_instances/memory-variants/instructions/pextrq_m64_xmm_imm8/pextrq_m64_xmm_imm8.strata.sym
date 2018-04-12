@@ -1,0 +1,25 @@
+code: pextrq $0x0, %xmm1, (%rax)
+
+  maybe read:      { %rax %xmm1 }
+  must read:       { %rax %xmm1 }
+  maybe write:     { }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse4_1 }
+
+pextrq $0x0, %xmm1, (%rax): Hindex2(10)
+pextrq $0x0, %xmm1, (%rax): Hindex2(10)
+Formula:
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
+
+Information about memory writes:
+  Address %rax was updated to
+    (%ymm1[127:0] >> 0x0₁₂₈)[63:0] (8 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false ∨ !sigfpe ∧ !sigbus ∧ false

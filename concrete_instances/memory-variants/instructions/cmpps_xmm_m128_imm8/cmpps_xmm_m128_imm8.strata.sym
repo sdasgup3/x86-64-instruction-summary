@@ -1,0 +1,23 @@
+code: cmpps $0x0, (%rax), %xmm1
+
+  maybe read:      { %rax %xmm1 }
+  must read:       { %rax %xmm1 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse }
+
+cmpps $0x0, (%rax), %xmm1: Hindex2(10)
+cmpps $0x0, (%rax), %xmm1: Hindex2(10)
+Formula:
+
+%ymm1  : %ymm1[255:128] ∘ ((cmp_single_pred(%ymm1[127:96], TMP_BV_128_0[127:96], 0x0₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm1[95:64], TMP_BV_128_0[95:64], 0x0₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((cmp_single_pred(%ymm1[63:32], TMP_BV_128_0[63:32], 0x0₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂) ∘ (cmp_single_pred(%ymm1[31:0], TMP_BV_128_0[31:0], 0x0₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

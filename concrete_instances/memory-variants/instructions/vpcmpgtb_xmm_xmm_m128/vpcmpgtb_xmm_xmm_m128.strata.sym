@@ -1,0 +1,23 @@
+code: vpcmpgtb (%rax), %xmm2, %xmm1
+
+  maybe read:      { %rax %xmm2 }
+  must read:       { %rax %xmm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+vpcmpgtb (%rax), %xmm2, %xmm1: Hindex1(10)
+vpcmpgtb (%rax), %xmm2, %xmm1: Hindex1(10)
+Formula:
+
+%ymm1  : 0x0₁₂₈ ∘ ((%ymm2[127:120] > TMP_BV_128_0[127:120] ? 0xff₈ : 0x0₈) ∘ ((%ymm2[119:112] > TMP_BV_128_0[119:112] ? 0xff₈ : 0x0₈) ∘ ((%ymm2[111:104] > TMP_BV_128_0[111:104] ? 0xff₈ : 0x0₈) ∘ ((%ymm2[103:96] > TMP_BV_128_0[103:96] ? 0xff₈ : 0x0₈) ∘ ((%ymm2[95:88] > TMP_BV_128_0[95:88] ? 0xff₈ : 0x0₈) ∘ ((%ymm2[87:80] > TMP_BV_128_0[87:80] ? 0xff₈ : 0x0₈) ∘ ((%ymm2[79:72] > TMP_BV_128_0[79:72] ? 0xff₈ : 0x0₈) ∘ ((%ymm2[71:64] > TMP_BV_128_0[71:64] ? 0xff₈ : 0x0₈) ∘ ((%ymm2[63:56] > TMP_BV_128_0[63:56] ? 0xff₈ : 0x0₈) ∘ ((%ymm2[55:48] > TMP_BV_128_0[55:48] ? 0xff₈ : 0x0₈) ∘ ((%ymm2[47:40] > TMP_BV_128_0[47:40] ? 0xff₈ : 0x0₈) ∘ ((%ymm2[39:32] > TMP_BV_128_0[39:32] ? 0xff₈ : 0x0₈) ∘ ((%ymm2[31:24] > TMP_BV_128_0[31:24] ? 0xff₈ : 0x0₈) ∘ ((%ymm2[23:16] > TMP_BV_128_0[23:16] ? 0xff₈ : 0x0₈) ∘ ((%ymm2[15:8] > TMP_BV_128_0[15:8] ? 0xff₈ : 0x0₈) ∘ (%ymm2[7:0] > TMP_BV_128_0[7:0] ? 0xff₈ : 0x0₈))))))))))))))))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

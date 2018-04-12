@@ -1,0 +1,29 @@
+code: rclq $0x1, (%rax)
+
+  maybe read:      { %rax %cf }
+  must read:       { %rax %cf }
+  maybe write:     { %cf %of }
+  must write:      { %cf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+rclq $0x1, (%rax): Hindex0(10)
+rclq $0x1, (%rax): Hindex0(10)
+rclq $0x1, %rbx: Hindex7(9)
+Formula:
+
+%cf    : ((%cf ? 0x1₁ : 0x0₁) ∘ TMP_BV_64_0 rot_left 0x0₅₇ ∘ 0x1₈ % 0x41₆₅)[64:64] = 0x1₁
+%of    : (0x0₅₇ ∘ 0x1₈ % 0x41₆₅)[7:0] = 0x1₈ ∧ (((%cf ? 0x1₁ : 0x0₁) ∘ TMP_BV_64_0 rot_left 0x0₅₇ ∘ 0x1₈ % 0x41₆₅)[64:64] = 0x1₁ ⊕ ((%cf ? 0x1₁ : 0x0₁) ∘ TMP_BV_64_0 rot_left 0x0₅₇ ∘ 0x1₈ % 0x41₆₅)[63:63] = 0x1₁) ∨ !((0x0₅₇ ∘ 0x1₈ % 0x41₆₅)[7:0] = 0x1₈) ∧ (!((0x0₅₇ ∘ 0x1₈ % 0x41₆₅)[7:0] = 0x0₈) ∧ %of ∨ !(!((0x0₅₇ ∘ 0x1₈ % 0x41₆₅)[7:0] = 0x0₈)) ∧ TMP_BOOL_0)
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
+
+Information about memory writes:
+  Address %rax was updated to
+    ((%cf ? 0x1₁ : 0x0₁) ∘ TMP_BV_64_0 rot_left 0x0₅₇ ∘ 0x1₈ % 0x41₆₅)[63:0] (8 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

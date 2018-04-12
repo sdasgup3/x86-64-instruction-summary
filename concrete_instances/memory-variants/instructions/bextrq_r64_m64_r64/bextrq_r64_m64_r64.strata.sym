@@ -1,0 +1,30 @@
+code: bextrq %rcx, (%rax), %rbx
+
+  maybe read:      { %rax %rcx }
+  must read:       { %rax %rcx }
+  maybe write:     { %rbx %cf %zf %of }
+  must write:      { %rbx %cf %zf %of }
+  maybe undef:     { %pf %af %sf }
+  must undef:      { %pf %af %sf }
+  required flags:  { bmi1 }
+
+bextrq %rcx, (%rax), %rbx: Hindex2(10)
+bextrq %rcx, (%rax), %rbx: Hindex2(10)
+Formula:
+
+%rbx   : (0x0₄₄₈ ∘ TMP_BV_64_0 >> 0x0₅₀₄ ∘ %rcx[7:0])[63:0] & !(0xffffffffffffffff₅₁₂ >> 0x0₅₀₄ ∘ %rcx[15:8] << 0x0₅₀₄ ∘ %rcx[15:8])[63:0]
+
+%cf    : false
+%pf    : TMP_BOOL_2
+%af    : TMP_BOOL_0
+%zf    : ((0x0₄₄₈ ∘ TMP_BV_64_0 >> 0x0₅₀₄ ∘ %rcx[7:0])[63:0] & !(0xffffffffffffffff₅₁₂ >> 0x0₅₀₄ ∘ %rcx[15:8] << 0x0₅₀₄ ∘ %rcx[15:8])[63:0]) = 0x0₆₄
+%sf    : TMP_BOOL_1
+%of    : false
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

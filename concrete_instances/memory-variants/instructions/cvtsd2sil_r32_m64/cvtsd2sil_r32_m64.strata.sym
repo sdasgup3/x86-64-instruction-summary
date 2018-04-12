@@ -1,0 +1,15 @@
+code: cvtsd2sil (%rax), %ebx
+
+  maybe read:      { %rax %mxcsr::rc[0] }
+  must read:       { %rax %mxcsr::rc[0] }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+cvtsd2sil (%rax), %ebx: Hindex0(10)
+cvtsd2sil (%rax), %ebx: Hindex0(10)
+INTERNAL STOKE ERROR, please report
+Failed to parse ../circuits/cvtsd2sil_r32_m64.s
+Message: 

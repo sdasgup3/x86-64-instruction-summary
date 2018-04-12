@@ -1,0 +1,28 @@
+code: rcrb %cl, (%rax)
+
+  maybe read:      { %rax %cl %cf }
+  must read:       { %rax %cl %cf }
+  maybe write:     { %cf %of }
+  must write:      { }
+  maybe undef:     { %of }
+  must undef:      { }
+  required flags:  { }
+
+rcrb %cl, (%rax): Hindex8(10)
+rcrb %cl, (%rax): Hindex8(10)
+Formula:
+
+%cf    : ((%cf ? 0x1₁ : 0x0₁) ∘ TMP_BV_8_0 rot_right 0x0₁ ∘ (%rcx[7:0] & 0x1f₈) % 0x9₉)[8:8] = 0x1₁
+%of    : (0x0₁ ∘ (%rcx[7:0] & 0x1f₈) % 0x9₉)[7:0] = 0x1₈ ∧ (((%cf ? 0x1₁ : 0x0₁) ∘ TMP_BV_8_0 rot_right 0x0₁ ∘ (%rcx[7:0] & 0x1f₈) % 0x9₉)[7:7] = 0x1₁ ⊕ ((%cf ? 0x1₁ : 0x0₁) ∘ TMP_BV_8_0 rot_right 0x0₁ ∘ (%rcx[7:0] & 0x1f₈) % 0x9₉)[6:6] = 0x1₁) ∨ !((0x0₁ ∘ (%rcx[7:0] & 0x1f₈) % 0x9₉)[7:0] = 0x1₈) ∧ (!((0x0₁ ∘ (%rcx[7:0] & 0x1f₈) % 0x9₉)[7:0] = 0x0₈) ∧ %of ∨ !(!((0x0₁ ∘ (%rcx[7:0] & 0x1f₈) % 0x9₉)[7:0] = 0x0₈)) ∧ TMP_BOOL_0)
+
+Information about memory reads:
+  Value TMP_BV_8_0 (1 bytes)
+    was read at address %rax.
+
+Information about memory writes:
+  Address %rax was updated to
+    ((%cf ? 0x1₁ : 0x0₁) ∘ TMP_BV_8_0 rot_right 0x0₁ ∘ (%rcx[7:0] & 0x1f₈) % 0x9₉)[7:0] (1 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false ∨ !sigfpe ∧ !sigbus ∧ false

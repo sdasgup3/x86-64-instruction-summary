@@ -1,0 +1,23 @@
+code: vdppd $0x0, (%rax), %xmm2, %xmm1
+
+  maybe read:      { %rax %xmm2 }
+  must read:       { %rax %xmm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+vdppd $0x0, (%rax), %xmm2, %xmm1: Hindex1(10)
+vdppd $0x0, (%rax), %xmm2, %xmm1: Hindex1(10)
+Formula:
+
+%ymm1  : 0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

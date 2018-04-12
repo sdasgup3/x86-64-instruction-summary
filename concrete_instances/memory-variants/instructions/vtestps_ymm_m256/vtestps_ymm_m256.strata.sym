@@ -1,0 +1,29 @@
+code: vtestps (%rax), %ymm1
+
+  maybe read:      { %rax %ymm1 }
+  must read:       { %rax %ymm1 }
+  maybe write:     { %cf %pf %af %zf %sf %of }
+  must write:      { %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+vtestps (%rax), %ymm1: Hindex0(10)
+vtestps (%rax), %ymm1: Hindex0(10)
+vtestps %ymm2, %ymm1: Hindex1(9)
+Formula:
+
+%cf    : (!%ymm1[31:31] & TMP_BV_256_0[31:31]) = 0x0₁ ∧ (!%ymm1[63:63] & TMP_BV_256_0[63:63]) = 0x0₁ ∧ (!%ymm1[95:95] & TMP_BV_256_0[95:95]) = 0x0₁ ∧ (!%ymm1[127:127] & TMP_BV_256_0[127:127]) = 0x0₁ ∧ (!%ymm1[159:159] & TMP_BV_256_0[159:159]) = 0x0₁ ∧ (!%ymm1[191:191] & TMP_BV_256_0[191:191]) = 0x0₁ ∧ (!%ymm1[223:223] & TMP_BV_256_0[223:223]) = 0x0₁ ∧ (!%ymm1[255:255] & TMP_BV_256_0[255:255]) = 0x0₁
+%pf    : false
+%af    : false
+%zf    : (%ymm1[31:31] & TMP_BV_256_0[31:31]) = 0x0₁ ∧ (%ymm1[63:63] & TMP_BV_256_0[63:63]) = 0x0₁ ∧ (%ymm1[95:95] & TMP_BV_256_0[95:95]) = 0x0₁ ∧ (%ymm1[127:127] & TMP_BV_256_0[127:127]) = 0x0₁ ∧ (%ymm1[159:159] & TMP_BV_256_0[159:159]) = 0x0₁ ∧ (%ymm1[191:191] & TMP_BV_256_0[191:191]) = 0x0₁ ∧ (%ymm1[223:223] & TMP_BV_256_0[223:223]) = 0x0₁ ∧ (%ymm1[255:255] & TMP_BV_256_0[255:255]) = 0x0₁
+%sf    : false
+%of    : false
+
+Information about memory reads:
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

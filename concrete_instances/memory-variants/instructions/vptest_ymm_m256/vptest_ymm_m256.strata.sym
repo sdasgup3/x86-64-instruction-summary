@@ -1,0 +1,29 @@
+code: vptest (%rax), %ymm1
+
+  maybe read:      { %rax %ymm1 }
+  must read:       { %rax %ymm1 }
+  maybe write:     { %cf %pf %af %zf %sf %of }
+  must write:      { %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+vptest (%rax), %ymm1: Hindex0(10)
+vptest (%rax), %ymm1: Hindex0(10)
+vptest %ymm2, %ymm1: Hindex1(9)
+Formula:
+
+%cf    : (!%ymm1 & TMP_BV_256_0) = 0x0₂₅₆
+%pf    : false
+%af    : false
+%zf    : (%ymm1 & TMP_BV_256_0) = 0x0₂₅₆
+%sf    : false
+%of    : false
+
+Information about memory reads:
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

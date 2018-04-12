@@ -1,0 +1,26 @@
+code: movdqu %xmm1, (%rax)
+
+  maybe read:      { %rax %xmm1 }
+  must read:       { %rax %xmm1 }
+  maybe write:     { }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+movdqu %xmm1, (%rax): Hindex0(10)
+movdqu %xmm1, (%rax): Hindex0(10)
+movdqu %xmm2, %xmm1: Hindex0(9)
+Formula:
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rax.
+
+Information about memory writes:
+  Address %rax was updated to
+    %ymm1[127:0] (16 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

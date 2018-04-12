@@ -1,0 +1,23 @@
+code: cmppd $0x0, (%rax), %xmm1
+
+  maybe read:      { %rax %xmm1 }
+  must read:       { %rax %xmm1 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+cmppd $0x0, (%rax), %xmm1: Hindex2(10)
+cmppd $0x0, (%rax), %xmm1: Hindex2(10)
+Formula:
+
+%ymm1  : %ymm1[255:128] ∘ ((cmp_double_pred(%ymm1[127:64], TMP_BV_128_0[127:64], 0x0₈) = 0x1₁ ? 0xffffffffffffffff₆₄ : 0x0₆₄) ∘ (cmp_double_pred(%ymm1[63:0], TMP_BV_128_0[63:0], 0x0₈) = 0x1₁ ? 0xffffffffffffffff₆₄ : 0x0₆₄))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

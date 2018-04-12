@@ -1,0 +1,23 @@
+code: vpsubusw (%rax), %xmm2, %xmm1
+
+  maybe read:      { %rax %xmm2 }
+  must read:       { %rax %xmm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+vpsubusw (%rax), %xmm2, %xmm1: Hindex1(10)
+vpsubusw (%rax), %xmm2, %xmm1: Hindex1(10)
+Formula:
+
+%ymm1  : 0x0₁₂₈ ∘ ((0x0₂ ∘ %ymm2[127:112] - 0x0₂ ∘ TMP_BV_128_0[127:112] > 0xffff₁₈ ? 0xffff₁₆ : 0x0₂ ∘ %ymm2[127:112] - 0x0₂ ∘ TMP_BV_128_0[127:112] < 0x0₁₈ ? 0x0₁₆ : (0x0₂ ∘ %ymm2[127:112] - 0x0₂ ∘ TMP_BV_128_0[127:112])[15:0]) ∘ ((0x0₂ ∘ %ymm2[111:96] - 0x0₂ ∘ TMP_BV_128_0[111:96] > 0xffff₁₈ ? 0xffff₁₆ : 0x0₂ ∘ %ymm2[111:96] - 0x0₂ ∘ TMP_BV_128_0[111:96] < 0x0₁₈ ? 0x0₁₆ : (0x0₂ ∘ %ymm2[111:96] - 0x0₂ ∘ TMP_BV_128_0[111:96])[15:0]) ∘ ((0x0₂ ∘ %ymm2[95:80] - 0x0₂ ∘ TMP_BV_128_0[95:80] > 0xffff₁₈ ? 0xffff₁₆ : 0x0₂ ∘ %ymm2[95:80] - 0x0₂ ∘ TMP_BV_128_0[95:80] < 0x0₁₈ ? 0x0₁₆ : (0x0₂ ∘ %ymm2[95:80] - 0x0₂ ∘ TMP_BV_128_0[95:80])[15:0]) ∘ ((0x0₂ ∘ %ymm2[79:64] - 0x0₂ ∘ TMP_BV_128_0[79:64] > 0xffff₁₈ ? 0xffff₁₆ : 0x0₂ ∘ %ymm2[79:64] - 0x0₂ ∘ TMP_BV_128_0[79:64] < 0x0₁₈ ? 0x0₁₆ : (0x0₂ ∘ %ymm2[79:64] - 0x0₂ ∘ TMP_BV_128_0[79:64])[15:0]) ∘ ((0x0₂ ∘ %ymm2[63:48] - 0x0₂ ∘ TMP_BV_128_0[63:48] > 0xffff₁₈ ? 0xffff₁₆ : 0x0₂ ∘ %ymm2[63:48] - 0x0₂ ∘ TMP_BV_128_0[63:48] < 0x0₁₈ ? 0x0₁₆ : (0x0₂ ∘ %ymm2[63:48] - 0x0₂ ∘ TMP_BV_128_0[63:48])[15:0]) ∘ ((0x0₂ ∘ %ymm2[47:32] - 0x0₂ ∘ TMP_BV_128_0[47:32] > 0xffff₁₈ ? 0xffff₁₆ : 0x0₂ ∘ %ymm2[47:32] - 0x0₂ ∘ TMP_BV_128_0[47:32] < 0x0₁₈ ? 0x0₁₆ : (0x0₂ ∘ %ymm2[47:32] - 0x0₂ ∘ TMP_BV_128_0[47:32])[15:0]) ∘ ((0x0₂ ∘ %ymm2[31:16] - 0x0₂ ∘ TMP_BV_128_0[31:16] > 0xffff₁₈ ? 0xffff₁₆ : 0x0₂ ∘ %ymm2[31:16] - 0x0₂ ∘ TMP_BV_128_0[31:16] < 0x0₁₈ ? 0x0₁₆ : (0x0₂ ∘ %ymm2[31:16] - 0x0₂ ∘ TMP_BV_128_0[31:16])[15:0]) ∘ (0x0₂ ∘ %ymm2[15:0] - 0x0₂ ∘ TMP_BV_128_0[15:0] > 0xffff₁₈ ? 0xffff₁₆ : 0x0₂ ∘ %ymm2[15:0] - 0x0₂ ∘ TMP_BV_128_0[15:0] < 0x0₁₈ ? 0x0₁₆ : (0x0₂ ∘ %ymm2[15:0] - 0x0₂ ∘ TMP_BV_128_0[15:0])[15:0]))))))))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

@@ -1,0 +1,25 @@
+code: vcvtps2ph $0x0, %ymm1, (%rax)
+
+  maybe read:      { %rax %ymm1 %mxcsr::rc[0] }
+  must read:       { %rax %ymm1 %mxcsr::rc[0] }
+  maybe write:     { }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { f16c }
+
+vcvtps2ph $0x0, %ymm1, (%rax): Hindex2(10)
+vcvtps2ph $0x0, %ymm1, (%rax): Hindex2(10)
+Formula:
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rax.
+
+Information about memory writes:
+  Address %rax was updated to
+    cvt_single_to_fp16_rm(%ymm1[255:224], 0x0₈) ∘ (cvt_single_to_fp16_rm(%ymm1[223:192], 0x0₈) ∘ (cvt_single_to_fp16_rm(%ymm1[191:160], 0x0₈) ∘ (cvt_single_to_fp16_rm(%ymm1[159:128], 0x0₈) ∘ (cvt_single_to_fp16_rm(%ymm1[127:96], 0x0₈) ∘ (cvt_single_to_fp16_rm(%ymm1[95:64], 0x0₈) ∘ (cvt_single_to_fp16_rm(%ymm1[63:32], 0x0₈) ∘ cvt_single_to_fp16_rm(%ymm1[31:0], 0x0₈))))))) (16 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false ∨ !sigfpe ∧ !sigbus ∧ false

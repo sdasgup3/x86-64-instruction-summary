@@ -1,0 +1,28 @@
+code: btq $0x0, (%rax)
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %cf }
+  must write:      { %cf }
+  maybe undef:     { %pf %af %sf %of }
+  must undef:      { %pf %af %sf %of }
+  required flags:  { }
+
+btq $0x0, (%rax): Hindex0(10)
+btq $0x0, (%rax): Hindex0(10)
+btq %rcx, %rbx: Hindex1(9)
+Formula:
+
+%cf    : (TMP_BV_64_0 >> 0x0₆₄)[0:0] = 0x1₁
+%pf    : TMP_BOOL_4
+%af    : TMP_BOOL_5
+%sf    : TMP_BOOL_6
+%of    : TMP_BOOL_7
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

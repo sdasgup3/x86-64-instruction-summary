@@ -1,0 +1,31 @@
+code: blsrl (%rax), %ebx
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %rbx %cf %zf %sf %of }
+  must write:      { %rbx %cf %zf %sf %of }
+  maybe undef:     { %pf %af }
+  must undef:      { %pf %af }
+  required flags:  { bmi1 }
+
+blsrl (%rax), %ebx: Hindex0(10)
+blsrl (%rax), %ebx: Hindex0(10)
+blsrl %ecx, %ebx: Hindex1(9)
+Formula:
+
+%rbx   : 0x0₃₂ ∘ (TMP_BV_32_0 - 0x1₃₂ & TMP_BV_32_0)
+
+%cf    : TMP_BV_32_0 = 0x0₃₂
+%pf    : TMP_BOOL_0
+%af    : TMP_BOOL_1
+%zf    : (TMP_BV_32_0 - 0x1₃₂ & TMP_BV_32_0) = 0x0₃₂
+%sf    : ((TMP_BV_32_0 - 0x1₃₂)[31:31] & TMP_BV_32_0[31:31]) = 0x1₁
+%of    : false
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

@@ -1,0 +1,28 @@
+code: xchgq (%rax), %rbx
+
+  maybe read:      { %rax %rbx }
+  must read:       { %rax %rbx }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+xchgq (%rax), %rbx: Hindex0(10)
+xchgq (%rax), %rbx: Hindex0(10)
+xchgq %rcx, %rbx: Hindex1(9)
+Formula:
+
+%rbx   : TMP_BV_64_0
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
+
+Information about memory writes:
+  Address %rax was updated to
+    %rbx (8 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

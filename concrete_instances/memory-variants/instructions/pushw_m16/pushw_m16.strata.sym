@@ -1,0 +1,27 @@
+code: pushw (%rax)
+
+  maybe read:      { %rax %rsp }
+  must read:       { %rax %rsp }
+  maybe write:     { %rsp }
+  must write:      { %rsp }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+pushw (%rax): Hindex2(10)
+pushw (%rax): Hindex2(10)
+Formula:
+
+%rsp   : %rsp - 0x2₆₄
+
+Information about memory reads:
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rax.
+
+Information about memory writes:
+  Address %rsp - 0x2₆₄ was updated to
+    sign-extend-16(TMP_BV_16_0) (2 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false ∨ !sigfpe ∧ !sigbus ∧ false

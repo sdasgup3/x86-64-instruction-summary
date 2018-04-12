@@ -1,0 +1,35 @@
+code: andb $0x0, (%rax)
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %cf %pf %zf %sf %of }
+  must write:      { %cf %pf %zf %sf %of }
+  maybe undef:     { %af }
+  must undef:      { %af }
+  required flags:  { }
+
+andb $0x0, (%rax): Hindex0(10)
+andb $0x0, (%rax): Hindex0(10)
+andb %cl, %bl: Hindex1(9)
+Formula:
+
+%cf    : false
+%pf    : !((TMP_BV_8_1[0:0] & 0x0₁) = 0x1₁ ⊕ (TMP_BV_8_1[1:1] & 0x0₁) = 0x1₁ ⊕ (TMP_BV_8_1[2:2] & 0x0₁) = 0x1₁ ⊕ (TMP_BV_8_1[3:3] & 0x0₁) = 0x1₁ ⊕ (TMP_BV_8_1[4:4] & 0x0₁) = 0x1₁ ⊕ (TMP_BV_8_1[5:5] & 0x0₁) = 0x1₁ ⊕ (TMP_BV_8_1[6:6] & 0x0₁) = 0x1₁ ⊕ (TMP_BV_8_1[7:7] & 0x0₁) = 0x1₁)
+%af    : TMP_BOOL_1
+%zf    : (TMP_BV_8_1 & 0x0₈) = 0x0₈
+%sf    : (TMP_BV_8_1[7:7] & 0x0₁) = 0x1₁
+%of    : false
+
+Information about memory reads:
+  Value TMP_BV_8_0 (1 bytes)
+    was read at address %rax.
+  Value TMP_BV_8_1 (1 bytes)
+    was read at address %rax.
+
+Information about memory writes:
+  Address %rax was updated to
+    TMP_BV_8_1 & 0x0₈ (1 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

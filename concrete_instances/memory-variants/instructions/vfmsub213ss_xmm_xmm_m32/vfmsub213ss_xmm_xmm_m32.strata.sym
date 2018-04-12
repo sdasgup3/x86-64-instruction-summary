@@ -1,0 +1,15 @@
+code: vfmsub213ss (%rax), %xmm2, %xmm1
+
+  maybe read:      { %rax %xmm1 %xmm2 }
+  must read:       { %rax %xmm1 %xmm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { fma }
+
+vfmsub213ss (%rax), %xmm2, %xmm1: Hindex0(10)
+vfmsub213ss (%rax), %xmm2, %xmm1: Hindex0(10)
+INTERNAL STOKE ERROR, please report
+Failed to parse ../circuits/vfmsub213ss_xmm_xmm_m32.s
+Message: 

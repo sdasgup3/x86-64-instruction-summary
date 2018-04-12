@@ -1,0 +1,15 @@
+code: vfmsub132sd (%rax), %xmm2, %xmm1
+
+  maybe read:      { %rax %xmm1 %xmm2 }
+  must read:       { %rax %xmm1 %xmm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { fma }
+
+vfmsub132sd (%rax), %xmm2, %xmm1: Hindex0(10)
+vfmsub132sd (%rax), %xmm2, %xmm1: Hindex0(10)
+INTERNAL STOKE ERROR, please report
+Failed to parse ../circuits/vfmsub132sd_xmm_xmm_m64.s
+Message: 

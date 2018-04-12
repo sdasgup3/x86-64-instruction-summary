@@ -1,0 +1,15 @@
+code: vrsqrtss (%rax), %xmm2, %xmm1
+
+  maybe read:      { %rax %xmm2 }
+  must read:       { %rax %xmm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+vrsqrtss (%rax), %xmm2, %xmm1: Hindex0(10)
+vrsqrtss (%rax), %xmm2, %xmm1: Hindex0(10)
+INTERNAL STOKE ERROR, please report
+Failed to parse ../circuits/vrsqrtss_xmm_xmm_m32.s
+Message: 

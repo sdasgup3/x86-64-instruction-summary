@@ -1,0 +1,24 @@
+code: cmovncw (%rax), %bx
+
+  maybe read:      { %rax %cf }
+  must read:       { %rax %cf }
+  maybe write:     { %bx }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { cmov }
+
+cmovncw (%rax), %bx: Hindex0(10)
+cmovncw (%rax), %bx: Hindex0(10)
+cmovncw %cx, %bx: Hindex3(9)
+Formula:
+
+%rbx   : %rbx[63:16] ∘ (!%cf ? TMP_BV_16_0 : %rbx[15:0])
+
+Information about memory reads:
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

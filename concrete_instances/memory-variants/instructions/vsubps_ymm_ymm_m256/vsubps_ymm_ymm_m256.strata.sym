@@ -1,0 +1,38 @@
+code: vsubps (%rax), %ymm2, %ymm1
+
+  maybe read:      { %rax %ymm2 }
+  must read:       { %rax %ymm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+vsubps (%rax), %ymm2, %ymm1: Hindex0(10)
+vsubps (%rax), %ymm2, %ymm1: Hindex0(10)
+vsubps %ymm3, %ymm2, %ymm1: Hindex0(9)
+Formula:
+
+%ymm1  : sub_single(%ymm2[255:224], TMP_BV_256_0[255:224]) ∘ (sub_single(%ymm2[223:192], TMP_BV_256_1[223:192]) ∘ (sub_single(%ymm2[191:160], TMP_BV_256_2[191:160]) ∘ (sub_single(%ymm2[159:128], TMP_BV_256_3[159:128]) ∘ (sub_single(%ymm2[127:96], TMP_BV_256_4[127:96]) ∘ (sub_single(%ymm2[95:64], TMP_BV_256_5[95:64]) ∘ (sub_single(%ymm2[63:32], TMP_BV_256_6[63:32]) ∘ sub_single(%ymm2[31:0], TMP_BV_256_7[31:0])))))))
+
+Information about memory reads:
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_1 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_2 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_3 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_4 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_5 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_6 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_7 (32 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

@@ -1,0 +1,23 @@
+code: pblendvb %xmm0, (%rax), %xmm1
+
+  maybe read:      { %rax %xmm0 %xmm1 }
+  must read:       { %rax %xmm0 %xmm1 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse4_1 }
+
+pblendvb %xmm0, (%rax), %xmm1: Hindex2(10)
+pblendvb %xmm0, (%rax), %xmm1: Hindex2(10)
+Formula:
+
+%ymm1  : %ymm1[255:128] ∘ ((%ymm0[127:127] = 0x1₁ ? TMP_BV_128_0[127:120] : %ymm1[127:120]) ∘ ((%ymm0[119:119] = 0x1₁ ? TMP_BV_128_0[119:112] : %ymm1[119:112]) ∘ ((%ymm0[111:111] = 0x1₁ ? TMP_BV_128_0[111:104] : %ymm1[111:104]) ∘ ((%ymm0[103:103] = 0x1₁ ? TMP_BV_128_0[103:96] : %ymm1[103:96]) ∘ ((%ymm0[95:95] = 0x1₁ ? TMP_BV_128_0[95:88] : %ymm1[95:88]) ∘ ((%ymm0[87:87] = 0x1₁ ? TMP_BV_128_0[87:80] : %ymm1[87:80]) ∘ ((%ymm0[79:79] = 0x1₁ ? TMP_BV_128_0[79:72] : %ymm1[79:72]) ∘ ((%ymm0[71:71] = 0x1₁ ? TMP_BV_128_0[71:64] : %ymm1[71:64]) ∘ ((%ymm0[63:63] = 0x1₁ ? TMP_BV_128_0[63:56] : %ymm1[63:56]) ∘ ((%ymm0[55:55] = 0x1₁ ? TMP_BV_128_0[55:48] : %ymm1[55:48]) ∘ ((%ymm0[47:47] = 0x1₁ ? TMP_BV_128_0[47:40] : %ymm1[47:40]) ∘ ((%ymm0[39:39] = 0x1₁ ? TMP_BV_128_0[39:32] : %ymm1[39:32]) ∘ ((%ymm0[31:31] = 0x1₁ ? TMP_BV_128_0[31:24] : %ymm1[31:24]) ∘ ((%ymm0[23:23] = 0x1₁ ? TMP_BV_128_0[23:16] : %ymm1[23:16]) ∘ ((%ymm0[15:15] = 0x1₁ ? TMP_BV_128_0[15:8] : %ymm1[15:8]) ∘ (%ymm0[7:7] = 0x1₁ ? TMP_BV_128_0[7:0] : %ymm1[7:0]))))))))))))))))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

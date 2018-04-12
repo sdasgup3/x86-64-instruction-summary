@@ -1,0 +1,24 @@
+code: movb (%rax), %ah
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %ah }
+  must write:      { %ah }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+movb (%rax), %ah: Hindex0(10)
+movb (%rax), %ah: Hindex0(10)
+movb %bl, %ah: Hindex5(9)
+Formula:
+
+%rax   : %rax[63:16] ∘ TMP_BV_8_0 ∘ %rax[7:0]
+
+Information about memory reads:
+  Value TMP_BV_8_0 (1 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

@@ -1,0 +1,24 @@
+code: unpcklps (%rax), %xmm1
+
+  maybe read:      { %rax %xmm1 }
+  must read:       { %rax %xmm1 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse }
+
+unpcklps (%rax), %xmm1: Hindex0(10)
+unpcklps (%rax), %xmm1: Hindex0(10)
+unpcklps %xmm2, %xmm1: Hindex0(9)
+Formula:
+
+%ymm1  : %ymm1[255:128] ∘ (TMP_BV_128_0[63:32] ∘ %ymm1[63:32] ∘ TMP_BV_128_0[31:0] ∘ %ymm1[31:0])
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

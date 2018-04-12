@@ -1,0 +1,28 @@
+code: blsrq (%rax), %rbx
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %rbx %cf %zf %sf %of }
+  must write:      { %rbx %cf %zf %sf %of }
+  maybe undef:     { %pf %af }
+  must undef:      { %pf %af }
+  required flags:  { bmi1 }
+
+blsrq (%rax), %rbx: Hindex2(10)
+blsrq (%rax), %rbx: Hindex2(10)
+Formula:
+
+%rbx   : TMP_BV_64_0 - 0x1₆₄ & TMP_BV_64_0
+
+%cf    : TMP_BV_64_0 = 0x0₆₄
+%zf    : (TMP_BV_64_0 - 0x1₆₄ & TMP_BV_64_0) = 0x0₆₄
+%sf    : ((TMP_BV_64_0 - 0x1₆₄)[63:63] & TMP_BV_64_0[63:63]) = 0x1₁
+%of    : false
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

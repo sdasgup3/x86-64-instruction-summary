@@ -1,0 +1,29 @@
+code: testb %bl, (%rax)
+
+  maybe read:      { %rax %bl }
+  must read:       { %rax %bl }
+  maybe write:     { %cf %pf %zf %sf %of }
+  must write:      { %cf %pf %zf %sf %of }
+  maybe undef:     { %af }
+  must undef:      { %af }
+  required flags:  { }
+
+testb %bl, (%rax): Hindex0(10)
+testb %bl, (%rax): Hindex0(10)
+testb %cl, %bl: Hindex1(9)
+Formula:
+
+%cf    : false
+%pf    : !((TMP_BV_8_0[0:0] & %rbx[0:0]) = 0x1₁ ⊕ (TMP_BV_8_0[1:1] & %rbx[1:1]) = 0x1₁ ⊕ (TMP_BV_8_0[2:2] & %rbx[2:2]) = 0x1₁ ⊕ (TMP_BV_8_0[3:3] & %rbx[3:3]) = 0x1₁ ⊕ (TMP_BV_8_0[4:4] & %rbx[4:4]) = 0x1₁ ⊕ (TMP_BV_8_0[5:5] & %rbx[5:5]) = 0x1₁ ⊕ (TMP_BV_8_0[6:6] & %rbx[6:6]) = 0x1₁ ⊕ (TMP_BV_8_0[7:7] & %rbx[7:7]) = 0x1₁)
+%af    : TMP_BOOL_1
+%zf    : (TMP_BV_8_0 & %rbx[7:0]) = 0x0₈
+%sf    : (TMP_BV_8_0[7:7] & %rbx[7:7]) = 0x1₁
+%of    : false
+
+Information about memory reads:
+  Value TMP_BV_8_0 (1 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

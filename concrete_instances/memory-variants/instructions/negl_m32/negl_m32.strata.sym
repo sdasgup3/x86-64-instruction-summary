@@ -1,0 +1,33 @@
+code: negl (%rax)
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %cf %pf %af %zf %sf %of }
+  must write:      { %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+negl (%rax): Hindex0(10)
+negl (%rax): Hindex0(10)
+negl %ebx: Hindex1(9)
+Formula:
+
+%cf    : !(TMP_BV_32_0 = 0x0₃₂)
+%pf    : !((-TMP_BV_32_0)[0:0] = 0x1₁ ⊕ (-TMP_BV_32_0)[1:1] = 0x1₁ ⊕ (-TMP_BV_32_0)[2:2] = 0x1₁ ⊕ (-TMP_BV_32_0)[3:3] = 0x1₁ ⊕ (-TMP_BV_32_0)[4:4] = 0x1₁ ⊕ (-TMP_BV_32_0)[5:5] = 0x1₁ ⊕ (-TMP_BV_32_0)[6:6] = 0x1₁ ⊕ (-TMP_BV_32_0)[7:7] = 0x1₁)
+%af    : TMP_BV_32_0[3:3] = 0x1₁ ∧ (-TMP_BV_32_0)[3:3] = 0x1₁
+%zf    : -TMP_BV_32_0 = 0x0₃₂
+%sf    : (-TMP_BV_32_0)[31:31] = 0x1₁
+%of    : TMP_BV_32_0[31:31] = 0x1₁ ∧ (-TMP_BV_32_0)[31:31] = 0x1₁
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
+
+Information about memory writes:
+  Address %rax was updated to
+    -TMP_BV_32_0 (4 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

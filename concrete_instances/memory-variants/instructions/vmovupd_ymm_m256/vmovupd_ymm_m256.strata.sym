@@ -1,0 +1,24 @@
+code: vmovupd (%rax), %ymm1
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+vmovupd (%rax), %ymm1: Hindex0(10)
+vmovupd (%rax), %ymm1: Hindex0(10)
+vmovupd %ymm2, %ymm1: Hindex0(9)
+Formula:
+
+%ymm1  : TMP_BV_256_0
+
+Information about memory reads:
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

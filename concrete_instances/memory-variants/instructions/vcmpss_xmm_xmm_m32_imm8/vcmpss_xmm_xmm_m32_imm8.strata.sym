@@ -1,0 +1,23 @@
+code: vcmpss $0x0, (%rax), %xmm2, %xmm1
+
+  maybe read:      { %rax %xmm2 }
+  must read:       { %rax %xmm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+vcmpss $0x0, (%rax), %xmm2, %xmm1: Hindex2(10)
+vcmpss $0x0, (%rax), %xmm2, %xmm1: Hindex2(10)
+Formula:
+
+%ymm1  : 0x0₁₂₈ ∘ (%ymm2[127:32] ∘ (cmp_single_pred(%ymm2[31:0], TMP_BV_32_0, 0x0₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

@@ -1,0 +1,15 @@
+code: vfnmsub213pd (%rax), %ymm2, %ymm1
+
+  maybe read:      { %rax %ymm1 %ymm2 }
+  must read:       { %rax %ymm1 %ymm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { fma }
+
+FATAL ERROR: Symbolic execution failed: StrataHandler encountered an error: Instruction not supported
+stoke_debug_circuit: ./src/ext/cpputil/include/io/abort.h:35: void cpputil::Abort::operator()(std::streambuf*, char): Assertion `false' failed.
+vfnmsub213pd (%rax), %ymm2, %ymm1: Hindex0(10)
+vfnmsub213pd (%rax), %ymm2, %ymm1: Hindex0(10)
+vfnmsub213pd %ymm3, %ymm2, %ymm1: Hindex-1(9)

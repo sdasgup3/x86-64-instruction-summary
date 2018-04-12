@@ -1,0 +1,23 @@
+code: pmovzxbw (%rax), %xmm1
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse4_1 }
+
+pmovzxbw (%rax), %xmm1: Hindex1(10)
+pmovzxbw (%rax), %xmm1: Hindex1(10)
+Formula:
+
+%ymm1  : %ymm1[255:128] ∘ (0x0₈ ∘ TMP_BV_64_0[63:56] ∘ (0x0₈ ∘ TMP_BV_64_0[55:48] ∘ (0x0₈ ∘ TMP_BV_64_0[47:40] ∘ (0x0₈ ∘ TMP_BV_64_0[39:32] ∘ (0x0₈ ∘ TMP_BV_64_0[31:24] ∘ (0x0₈ ∘ TMP_BV_64_0[23:16] ∘ (0x0₈ ∘ TMP_BV_64_0[15:8] ∘ (0x0₈ ∘ TMP_BV_64_0[7:0]))))))))
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

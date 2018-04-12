@@ -1,0 +1,24 @@
+code: mulxq (%rax), %rcx, %rbx
+
+  maybe read:      { %rax %rdx }
+  must read:       { %rax %rdx }
+  maybe write:     { %rcx %rbx }
+  must write:      { %rcx %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { bmi2 }
+
+mulxq (%rax), %rcx, %rbx: Hindex2(10)
+mulxq (%rax), %rcx, %rbx: Hindex2(10)
+Formula:
+
+%rcx   : (0x0₆₄ ∘ %rdx * 0x0₆₄ ∘ TMP_BV_64_0)[63:0]
+%rbx   : (0x0₆₄ ∘ %rdx * 0x0₆₄ ∘ TMP_BV_64_0)[127:64]
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

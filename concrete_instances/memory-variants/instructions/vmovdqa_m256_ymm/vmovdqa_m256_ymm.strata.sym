@@ -1,0 +1,15 @@
+code: vmovdqa %ymm1, (%rax)
+
+  maybe read:      { %rax %ymm1 }
+  must read:       { %rax %ymm1 }
+  maybe write:     { }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+FATAL ERROR: Symbolic execution failed: StrataHandler encountered an error: Instruction not supported
+stoke_debug_circuit: ./src/ext/cpputil/include/io/abort.h:35: void cpputil::Abort::operator()(std::streambuf*, char): Assertion `false' failed.
+vmovdqa %ymm1, (%rax): Hindex0(10)
+vmovdqa %ymm1, (%rax): Hindex0(10)
+vmovdqa %ymm2, %ymm1: Hindex-1(9)

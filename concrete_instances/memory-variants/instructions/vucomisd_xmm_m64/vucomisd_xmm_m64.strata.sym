@@ -1,0 +1,28 @@
+code: vucomisd (%rax), %xmm1
+
+  maybe read:      { %rax %xmm1 }
+  must read:       { %rax %xmm1 }
+  maybe write:     { %cf %pf %af %zf %sf %of }
+  must write:      { %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+vucomisd (%rax), %xmm1: Hindex2(10)
+vucomisd (%rax), %xmm1: Hindex2(10)
+Formula:
+
+%cf    : comisd(%ymm1[63:0], TMP_BV_64_0) = 0x0₂ ∨ comisd(%ymm1[63:0], TMP_BV_64_0) = 0x2₂
+%pf    : comisd(%ymm1[63:0], TMP_BV_64_0) = 0x0₂
+%af    : false
+%zf    : comisd(%ymm1[63:0], TMP_BV_64_0) = 0x0₂ ∨ comisd(%ymm1[63:0], TMP_BV_64_0) = 0x3₂
+%sf    : false
+%of    : false
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

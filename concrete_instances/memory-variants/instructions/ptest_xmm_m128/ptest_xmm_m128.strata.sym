@@ -1,0 +1,28 @@
+code: ptest (%rax), %xmm1
+
+  maybe read:      { %rax %xmm1 }
+  must read:       { %rax %xmm1 }
+  maybe write:     { %cf %pf %af %zf %sf %of }
+  must write:      { %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse4_1 }
+
+ptest (%rax), %xmm1: Hindex2(10)
+ptest (%rax), %xmm1: Hindex2(10)
+Formula:
+
+%cf    : (!%ymm1[127:0] & TMP_BV_128_0) = 0x0₁₂₈
+%pf    : false
+%af    : false
+%zf    : (%ymm1[127:0] & TMP_BV_128_0) = 0x0₁₂₈
+%sf    : false
+%of    : false
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

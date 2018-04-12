@@ -1,0 +1,86 @@
+code: vpblendvb %ymm3, (%rax), %ymm2, %ymm1
+
+  maybe read:      { %rax %ymm2 %ymm3 }
+  must read:       { %rax %ymm2 %ymm3 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+vpblendvb %ymm3, (%rax), %ymm2, %ymm1: Hindex0(10)
+vpblendvb %ymm3, (%rax), %ymm2, %ymm1: Hindex0(10)
+vpblendvb %ymm4, %ymm3, %ymm2, %ymm1: Hindex1(9)
+Formula:
+
+%ymm1  : (%ymm3[255:255] = 0x1₁ ? TMP_BV_256_0[255:248] : %ymm2[255:248]) ∘ ((%ymm3[247:247] = 0x1₁ ? TMP_BV_256_1[247:240] : %ymm2[247:240]) ∘ ((%ymm3[239:239] = 0x1₁ ? TMP_BV_256_2[239:232] : %ymm2[239:232]) ∘ ((%ymm3[231:231] = 0x1₁ ? TMP_BV_256_3[231:224] : %ymm2[231:224]) ∘ ((%ymm3[223:223] = 0x1₁ ? TMP_BV_256_4[223:216] : %ymm2[223:216]) ∘ ((%ymm3[215:215] = 0x1₁ ? TMP_BV_256_5[215:208] : %ymm2[215:208]) ∘ ((%ymm3[207:207] = 0x1₁ ? TMP_BV_256_6[207:200] : %ymm2[207:200]) ∘ ((%ymm3[199:199] = 0x1₁ ? TMP_BV_256_7[199:192] : %ymm2[199:192]) ∘ ((%ymm3[191:191] = 0x1₁ ? TMP_BV_256_8[191:184] : %ymm2[191:184]) ∘ ((%ymm3[183:183] = 0x1₁ ? TMP_BV_256_9[183:176] : %ymm2[183:176]) ∘ ((%ymm3[175:175] = 0x1₁ ? TMP_BV_256_10[175:168] : %ymm2[175:168]) ∘ ((%ymm3[167:167] = 0x1₁ ? TMP_BV_256_11[167:160] : %ymm2[167:160]) ∘ ((%ymm3[159:159] = 0x1₁ ? TMP_BV_256_12[159:152] : %ymm2[159:152]) ∘ ((%ymm3[151:151] = 0x1₁ ? TMP_BV_256_13[151:144] : %ymm2[151:144]) ∘ ((%ymm3[143:143] = 0x1₁ ? TMP_BV_256_14[143:136] : %ymm2[143:136]) ∘ ((%ymm3[135:135] = 0x1₁ ? TMP_BV_256_15[135:128] : %ymm2[135:128]) ∘ ((%ymm3[127:127] = 0x1₁ ? TMP_BV_256_16[127:120] : %ymm2[127:120]) ∘ ((%ymm3[119:119] = 0x1₁ ? TMP_BV_256_17[119:112] : %ymm2[119:112]) ∘ ((%ymm3[111:111] = 0x1₁ ? TMP_BV_256_18[111:104] : %ymm2[111:104]) ∘ ((%ymm3[103:103] = 0x1₁ ? TMP_BV_256_19[103:96] : %ymm2[103:96]) ∘ ((%ymm3[95:95] = 0x1₁ ? TMP_BV_256_20[95:88] : %ymm2[95:88]) ∘ ((%ymm3[87:87] = 0x1₁ ? TMP_BV_256_21[87:80] : %ymm2[87:80]) ∘ ((%ymm3[79:79] = 0x1₁ ? TMP_BV_256_22[79:72] : %ymm2[79:72]) ∘ ((%ymm3[71:71] = 0x1₁ ? TMP_BV_256_23[71:64] : %ymm2[71:64]) ∘ ((%ymm3[63:63] = 0x1₁ ? TMP_BV_256_24[63:56] : %ymm2[63:56]) ∘ ((%ymm3[55:55] = 0x1₁ ? TMP_BV_256_25[55:48] : %ymm2[55:48]) ∘ ((%ymm3[47:47] = 0x1₁ ? TMP_BV_256_26[47:40] : %ymm2[47:40]) ∘ ((%ymm3[39:39] = 0x1₁ ? TMP_BV_256_27[39:32] : %ymm2[39:32]) ∘ ((%ymm3[31:31] = 0x1₁ ? TMP_BV_256_28[31:24] : %ymm2[31:24]) ∘ ((%ymm3[23:23] = 0x1₁ ? TMP_BV_256_29[23:16] : %ymm2[23:16]) ∘ ((%ymm3[15:15] = 0x1₁ ? TMP_BV_256_30[15:8] : %ymm2[15:8]) ∘ (%ymm3[7:7] = 0x1₁ ? TMP_BV_256_31[7:0] : %ymm2[7:0])))))))))))))))))))))))))))))))
+
+Information about memory reads:
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_1 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_2 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_3 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_4 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_5 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_6 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_7 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_8 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_9 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_10 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_11 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_12 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_13 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_14 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_15 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_16 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_17 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_18 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_19 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_20 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_21 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_22 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_23 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_24 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_25 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_26 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_27 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_28 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_29 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_30 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_31 (32 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

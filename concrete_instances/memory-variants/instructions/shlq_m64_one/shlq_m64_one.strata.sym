@@ -1,0 +1,33 @@
+code: shlq $0x1, (%rax)
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %cf %pf %zf %sf %of }
+  must write:      { %cf %pf %zf %sf %of }
+  maybe undef:     { %af }
+  must undef:      { %af }
+  required flags:  { }
+
+shlq $0x1, (%rax): Hindex0(10)
+shlq $0x1, (%rax): Hindex0(10)
+shlq $0x1, %rbx: Hindex7(9)
+Formula:
+
+%cf    : false ∧ TMP_BOOL_0 ∨ true ∧ (true ∧ (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ 0x1₈)[64:64] = 0x1₁ ∨ false ∧ %cf)
+%pf    : true ∧ !((0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ 0x1₈)[0:0] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ 0x1₈)[1:1] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ 0x1₈)[2:2] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ 0x1₈)[3:3] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ 0x1₈)[4:4] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ 0x1₈)[5:5] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ 0x1₈)[6:6] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ 0x1₈)[7:7] = 0x1₁) ∨ false ∧ %pf
+%af    : TMP_BOOL_2
+%zf    : true ∧ (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ 0x1₈)[63:0] = 0x0₆₄ ∨ false ∧ %zf
+%sf    : true ∧ (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ 0x1₈)[63:63] = 0x1₁ ∨ false ∧ %sf
+%of    : true ∧ !(false ∧ TMP_BOOL_0 ∨ true ∧ (true ∧ (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ 0x1₈)[64:64] = 0x1₁ ∨ false ∧ %cf) ↔ (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ 0x1₈)[63:63] = 0x1₁) ∨ false ∧ %of
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
+
+Information about memory writes:
+  Address %rax was updated to
+    (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ 0x1₈)[63:0] (8 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

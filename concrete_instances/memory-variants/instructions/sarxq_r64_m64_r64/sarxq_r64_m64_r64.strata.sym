@@ -1,0 +1,24 @@
+code: sarxq %rcx, (%rax), %rbx
+
+  maybe read:      { %rax %rcx }
+  must read:       { %rax %rcx }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { bmi2 }
+
+sarxq %rcx, (%rax), %rbx: Hindex0(10)
+sarxq %rcx, (%rax), %rbx: Hindex0(10)
+sarxq %rdx, %rcx, %rbx: Hindex1(9)
+Formula:
+
+%rbx   : TMP_BV_64_0 sign_shift_right (%rcx & 0x3f₆₄)
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

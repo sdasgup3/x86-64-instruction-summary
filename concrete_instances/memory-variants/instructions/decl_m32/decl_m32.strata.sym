@@ -1,0 +1,32 @@
+code: decl (%rax)
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %pf %af %zf %sf %of }
+  must write:      { %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+decl (%rax): Hindex0(10)
+decl (%rax): Hindex0(10)
+decl %ebx: Hindex1(9)
+Formula:
+
+%pf    : !((TMP_BV_32_0 - 0x1₃₂)[0:0] = 0x1₁ ⊕ (TMP_BV_32_0 - 0x1₃₂)[1:1] = 0x1₁ ⊕ (TMP_BV_32_0 - 0x1₃₂)[2:2] = 0x1₁ ⊕ (TMP_BV_32_0 - 0x1₃₂)[3:3] = 0x1₁ ⊕ (TMP_BV_32_0 - 0x1₃₂)[4:4] = 0x1₁ ⊕ (TMP_BV_32_0 - 0x1₃₂)[5:5] = 0x1₁ ⊕ (TMP_BV_32_0 - 0x1₃₂)[6:6] = 0x1₁ ⊕ (TMP_BV_32_0 - 0x1₃₂)[7:7] = 0x1₁)
+%af    : TMP_BV_32_0[3:0] = 0x0₄
+%zf    : TMP_BV_32_0 - 0x1₃₂ = 0x0₃₂
+%sf    : (TMP_BV_32_0 - 0x1₃₂)[31:31] = 0x1₁
+%of    : TMP_BV_32_0[31:31] = 0x1₁ ∧ TMP_BV_32_0[30:0] = 0x0₃₁
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
+
+Information about memory writes:
+  Address %rax was updated to
+    TMP_BV_32_0 - 0x1₃₂ (4 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

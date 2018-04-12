@@ -1,0 +1,34 @@
+code: decw (%rax)
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %pf %af %zf %sf %of }
+  must write:      { %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+decw (%rax): Hindex0(10)
+decw (%rax): Hindex0(10)
+decw %bx: Hindex1(9)
+Formula:
+
+%pf    : !((TMP_BV_16_1 - 0x1₁₆)[0:0] = 0x1₁ ⊕ (TMP_BV_16_1 - 0x1₁₆)[1:1] = 0x1₁ ⊕ (TMP_BV_16_1 - 0x1₁₆)[2:2] = 0x1₁ ⊕ (TMP_BV_16_1 - 0x1₁₆)[3:3] = 0x1₁ ⊕ (TMP_BV_16_1 - 0x1₁₆)[4:4] = 0x1₁ ⊕ (TMP_BV_16_1 - 0x1₁₆)[5:5] = 0x1₁ ⊕ (TMP_BV_16_1 - 0x1₁₆)[6:6] = 0x1₁ ⊕ (TMP_BV_16_1 - 0x1₁₆)[7:7] = 0x1₁)
+%af    : TMP_BV_16_1[3:0] = 0x0₄
+%zf    : TMP_BV_16_1 - 0x1₁₆ = 0x0₁₆
+%sf    : (TMP_BV_16_1 - 0x1₁₆)[15:15] = 0x1₁
+%of    : TMP_BV_16_1[15:15] = 0x1₁ ∧ TMP_BV_16_1[14:0] = 0x0₁₅
+
+Information about memory reads:
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_1 (2 bytes)
+    was read at address %rax.
+
+Information about memory writes:
+  Address %rax was updated to
+    TMP_BV_16_1 - 0x1₁₆ (2 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

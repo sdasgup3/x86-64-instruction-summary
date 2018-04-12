@@ -1,0 +1,23 @@
+code: insertps $0x0, (%rax), %xmm1
+
+  maybe read:      { %rax %xmm1 }
+  must read:       { %rax %xmm1 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse4_1 }
+
+insertps $0x0, (%rax), %xmm1: Hindex1(10)
+insertps $0x0, (%rax), %xmm1: Hindex1(10)
+Formula:
+
+%ymm1  : %ymm1[255:128] ∘ (%ymm1[127:32] ∘ TMP_BV_32_0)
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

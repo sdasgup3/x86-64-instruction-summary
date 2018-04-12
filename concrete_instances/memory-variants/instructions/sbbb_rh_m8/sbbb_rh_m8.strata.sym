@@ -1,0 +1,33 @@
+code: sbbb (%rax), %ah
+
+  maybe read:      { %rax %cf }
+  must read:       { %rax %cf }
+  maybe write:     { %ah %cf %pf %af %zf %sf %of }
+  must write:      { %ah %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+sbbb (%rax), %ah: Hindex0(10)
+sbbb (%rax), %ah: Hindex0(10)
+sbbb %bl, %ah: Hindex2(9)
+Formula:
+
+%rax   : %rax[63:16] ∘ ((%cf ? 0x0₁ ∘ !TMP_BV_8_0 : 0x0₁ ∘ !TMP_BV_8_0 + 0x1₉) + 0x0₁ ∘ %rax[15:8])[7:0] ∘ %rax[7:0]
+
+%cf    : !(((%cf ? 0x0₁ ∘ !TMP_BV_8_0 : 0x0₁ ∘ !TMP_BV_8_0 + 0x1₉) + 0x0₁ ∘ %rax[15:8])[8:8] = 0x1₁)
+%pf    : !(((%cf ? 0x0₁ ∘ !TMP_BV_8_0 : 0x0₁ ∘ !TMP_BV_8_0 + 0x1₉) + 0x0₁ ∘ %rax[15:8])[0:0] = 0x1₁ ⊕ ((%cf ? 0x0₁ ∘ !TMP_BV_8_0 : 0x0₁ ∘ !TMP_BV_8_0 + 0x1₉) + 0x0₁ ∘ %rax[15:8])[1:1] = 0x1₁ ⊕ ((%cf ? 0x0₁ ∘ !TMP_BV_8_0 : 0x0₁ ∘ !TMP_BV_8_0 + 0x1₉) + 0x0₁ ∘ %rax[15:8])[2:2] = 0x1₁ ⊕ ((%cf ? 0x0₁ ∘ !TMP_BV_8_0 : 0x0₁ ∘ !TMP_BV_8_0 + 0x1₉) + 0x0₁ ∘ %rax[15:8])[3:3] = 0x1₁ ⊕ ((%cf ? 0x0₁ ∘ !TMP_BV_8_0 : 0x0₁ ∘ !TMP_BV_8_0 + 0x1₉) + 0x0₁ ∘ %rax[15:8])[4:4] = 0x1₁ ⊕ ((%cf ? 0x0₁ ∘ !TMP_BV_8_0 : 0x0₁ ∘ !TMP_BV_8_0 + 0x1₉) + 0x0₁ ∘ %rax[15:8])[5:5] = 0x1₁ ⊕ ((%cf ? 0x0₁ ∘ !TMP_BV_8_0 : 0x0₁ ∘ !TMP_BV_8_0 + 0x1₉) + 0x0₁ ∘ %rax[15:8])[6:6] = 0x1₁ ⊕ ((%cf ? 0x0₁ ∘ !TMP_BV_8_0 : 0x0₁ ∘ !TMP_BV_8_0 + 0x1₉) + 0x0₁ ∘ %rax[15:8])[7:7] = 0x1₁)
+%af    : (0x0₁ ∘ TMP_BV_8_1[3:0] + 0x0₁ ∘ %rax[11:8])[4:4] = 0x1₁
+%zf    : ((%cf ? 0x0₁ ∘ !TMP_BV_8_0 : 0x0₁ ∘ !TMP_BV_8_0 + 0x1₉) + 0x0₁ ∘ %rax[15:8])[7:0] = 0x0₈
+%sf    : ((%cf ? 0x0₁ ∘ !TMP_BV_8_0 : 0x0₁ ∘ !TMP_BV_8_0 + 0x1₉) + 0x0₁ ∘ %rax[15:8])[7:7] = 0x1₁
+%of    : (!TMP_BV_8_0[7:7] = 0x1₁ ↔ %rax[15:15] = 0x1₁) ∧ !(!TMP_BV_8_0[7:7] = 0x1₁ ↔ ((%cf ? 0x0₁ ∘ !TMP_BV_8_0 : 0x0₁ ∘ !TMP_BV_8_0 + 0x1₉) + 0x0₁ ∘ %rax[15:8])[7:7] = 0x1₁)
+
+Information about memory reads:
+  Value TMP_BV_8_0 (1 bytes)
+    was read at address %rax.
+  Value TMP_BV_8_1 (1 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

@@ -1,0 +1,24 @@
+code: mulxl (%rax), %ecx, %ebx
+
+  maybe read:      { %rax %edx }
+  must read:       { %rax %edx }
+  maybe write:     { %rcx %rbx }
+  must write:      { %rcx %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { bmi2 }
+
+mulxl (%rax), %ecx, %ebx: Hindex2(10)
+mulxl (%rax), %ecx, %ebx: Hindex2(10)
+Formula:
+
+%rcx   : 0x0₃₂ ∘ (0x0₃₂ ∘ %rdx[31:0] * 0x0₃₂ ∘ TMP_BV_32_0)[31:0]
+%rbx   : 0x0₃₂ ∘ (0x0₃₂ ∘ %rdx[31:0] * 0x0₃₂ ∘ TMP_BV_32_0)[63:32]
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

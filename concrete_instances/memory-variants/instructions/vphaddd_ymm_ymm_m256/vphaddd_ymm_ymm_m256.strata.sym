@@ -1,0 +1,26 @@
+code: vphaddd (%rax), %ymm2, %ymm1
+
+  maybe read:      { %rax %ymm2 }
+  must read:       { %rax %ymm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+vphaddd (%rax), %ymm2, %ymm1: Hindex0(10)
+vphaddd (%rax), %ymm2, %ymm1: Hindex0(10)
+vphaddd %ymm3, %ymm2, %ymm1: Hindex0(9)
+Formula:
+
+%ymm1  : (TMP_BV_256_0[255:224] + TMP_BV_256_0[223:192]) ∘ (TMP_BV_256_0[191:160] + TMP_BV_256_0[159:128]) ∘ (%ymm2[255:224] + %ymm2[223:192]) ∘ (%ymm2[191:160] + %ymm2[159:128]) ∘ ((TMP_BV_256_1[127:96] + TMP_BV_256_1[95:64]) ∘ (TMP_BV_256_1[63:32] + TMP_BV_256_1[31:0]) ∘ (%ymm2[127:96] + %ymm2[95:64]) ∘ (%ymm2[63:32] + %ymm2[31:0]))
+
+Information about memory reads:
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_1 (32 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

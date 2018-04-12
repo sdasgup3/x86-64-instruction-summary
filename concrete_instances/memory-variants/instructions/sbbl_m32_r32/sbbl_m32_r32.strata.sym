@@ -1,0 +1,33 @@
+code: sbbl %ebx, (%rax)
+
+  maybe read:      { %rax %ebx %cf }
+  must read:       { %rax %ebx %cf }
+  maybe write:     { %cf %pf %af %zf %sf %of }
+  must write:      { %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+sbbl %ebx, (%rax): Hindex0(10)
+sbbl %ebx, (%rax): Hindex0(10)
+sbbl %ecx, %ebx: Hindex2(9)
+Formula:
+
+%cf    : !(((%cf ? 0x0₁ ∘ !%rbx[31:0] : 0x0₁ ∘ !%rbx[31:0] + 0x1₃₃) + 0x0₁ ∘ TMP_BV_32_0)[32:32] = 0x1₁)
+%pf    : !(((%cf ? 0x0₁ ∘ !%rbx[31:0] : 0x0₁ ∘ !%rbx[31:0] + 0x1₃₃) + 0x0₁ ∘ TMP_BV_32_0)[0:0] = 0x1₁ ⊕ ((%cf ? 0x0₁ ∘ !%rbx[31:0] : 0x0₁ ∘ !%rbx[31:0] + 0x1₃₃) + 0x0₁ ∘ TMP_BV_32_0)[1:1] = 0x1₁ ⊕ ((%cf ? 0x0₁ ∘ !%rbx[31:0] : 0x0₁ ∘ !%rbx[31:0] + 0x1₃₃) + 0x0₁ ∘ TMP_BV_32_0)[2:2] = 0x1₁ ⊕ ((%cf ? 0x0₁ ∘ !%rbx[31:0] : 0x0₁ ∘ !%rbx[31:0] + 0x1₃₃) + 0x0₁ ∘ TMP_BV_32_0)[3:3] = 0x1₁ ⊕ ((%cf ? 0x0₁ ∘ !%rbx[31:0] : 0x0₁ ∘ !%rbx[31:0] + 0x1₃₃) + 0x0₁ ∘ TMP_BV_32_0)[4:4] = 0x1₁ ⊕ ((%cf ? 0x0₁ ∘ !%rbx[31:0] : 0x0₁ ∘ !%rbx[31:0] + 0x1₃₃) + 0x0₁ ∘ TMP_BV_32_0)[5:5] = 0x1₁ ⊕ ((%cf ? 0x0₁ ∘ !%rbx[31:0] : 0x0₁ ∘ !%rbx[31:0] + 0x1₃₃) + 0x0₁ ∘ TMP_BV_32_0)[6:6] = 0x1₁ ⊕ ((%cf ? 0x0₁ ∘ !%rbx[31:0] : 0x0₁ ∘ !%rbx[31:0] + 0x1₃₃) + 0x0₁ ∘ TMP_BV_32_0)[7:7] = 0x1₁)
+%af    : (0x0₁ ∘ %rbx[3:0] + 0x0₁ ∘ TMP_BV_32_0[3:0])[4:4] = 0x1₁
+%zf    : ((%cf ? 0x0₁ ∘ !%rbx[31:0] : 0x0₁ ∘ !%rbx[31:0] + 0x1₃₃) + 0x0₁ ∘ TMP_BV_32_0)[31:0] = 0x0₃₂
+%sf    : ((%cf ? 0x0₁ ∘ !%rbx[31:0] : 0x0₁ ∘ !%rbx[31:0] + 0x1₃₃) + 0x0₁ ∘ TMP_BV_32_0)[31:31] = 0x1₁
+%of    : (!%rbx[31:31] = 0x1₁ ↔ TMP_BV_32_0[31:31] = 0x1₁) ∧ !(!%rbx[31:31] = 0x1₁ ↔ ((%cf ? 0x0₁ ∘ !%rbx[31:0] : 0x0₁ ∘ !%rbx[31:0] + 0x1₃₃) + 0x0₁ ∘ TMP_BV_32_0)[31:31] = 0x1₁)
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
+
+Information about memory writes:
+  Address %rax was updated to
+    ((%cf ? 0x0₁ ∘ !%rbx[31:0] : 0x0₁ ∘ !%rbx[31:0] + 0x1₃₃) + 0x0₁ ∘ TMP_BV_32_0)[31:0] (4 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

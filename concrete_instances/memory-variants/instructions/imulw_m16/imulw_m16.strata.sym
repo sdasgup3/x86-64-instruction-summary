@@ -1,0 +1,31 @@
+code: imulw (%rax)
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %ax %dx %cf %of }
+  must write:      { %ax %dx %cf %of }
+  maybe undef:     { %pf %af %zf %sf }
+  must undef:      { %pf %af %zf %sf }
+  required flags:  { }
+
+imulw (%rax): Hindex2(10)
+imulw (%rax): Hindex2(10)
+Formula:
+
+%rax   : %rax[63:16] ∘ (sign-extend-32(TMP_BV_16_0) * sign-extend-32(%rax[15:0]))[15:0]
+%rdx   : %rdx[63:16] ∘ (sign-extend-32(TMP_BV_16_0) * sign-extend-32(%rax[15:0]))[31:16]
+
+%cf    : !(sign-extend-32(TMP_BV_16_0) * sign-extend-32(%rax[15:0]) = sign-extend-32((sign-extend-32(TMP_BV_16_0) * sign-extend-32(%rax[15:0]))[15:0]))
+%pf    : TMP_BOOL_2
+%af    : TMP_BOOL_1
+%zf    : TMP_BOOL_0
+%sf    : (sign-extend-32(TMP_BV_16_0) * sign-extend-32(%rax[15:0]))[15:15] = 0x1₁
+%of    : !(sign-extend-32(TMP_BV_16_0) * sign-extend-32(%rax[15:0]) = sign-extend-32((sign-extend-32(TMP_BV_16_0) * sign-extend-32(%rax[15:0]))[15:0]))
+
+Information about memory reads:
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

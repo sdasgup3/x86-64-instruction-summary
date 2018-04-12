@@ -1,0 +1,23 @@
+code: vphsubsw (%rax), %xmm2, %xmm1
+
+  maybe read:      { %rax %xmm2 }
+  must read:       { %rax %xmm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+vphsubsw (%rax), %xmm2, %xmm1: Hindex1(10)
+vphsubsw (%rax), %xmm2, %xmm1: Hindex1(10)
+Formula:
+
+%ymm1  : 0x0₁₂₈ ∘ ((sign-extend-32(TMP_BV_128_0[111:96]) - sign-extend-32(TMP_BV_128_0[127:112]) > 0x7fff₃₂ ? 0x7fff₁₆ : sign-extend-32(TMP_BV_128_0[111:96]) - sign-extend-32(TMP_BV_128_0[127:112]) < 0xffffffffffff8000₃₂ ? 0xffffffffffff8000₁₆ : (sign-extend-32(TMP_BV_128_0[111:96]) - sign-extend-32(TMP_BV_128_0[127:112]))[15:0]) ∘ ((sign-extend-32(TMP_BV_128_0[79:64]) - sign-extend-32(TMP_BV_128_0[95:80]) > 0x7fff₃₂ ? 0x7fff₁₆ : sign-extend-32(TMP_BV_128_0[79:64]) - sign-extend-32(TMP_BV_128_0[95:80]) < 0xffffffffffff8000₃₂ ? 0xffffffffffff8000₁₆ : (sign-extend-32(TMP_BV_128_0[79:64]) - sign-extend-32(TMP_BV_128_0[95:80]))[15:0]) ∘ ((sign-extend-32(TMP_BV_128_0[47:32]) - sign-extend-32(TMP_BV_128_0[63:48]) > 0x7fff₃₂ ? 0x7fff₁₆ : sign-extend-32(TMP_BV_128_0[47:32]) - sign-extend-32(TMP_BV_128_0[63:48]) < 0xffffffffffff8000₃₂ ? 0xffffffffffff8000₁₆ : (sign-extend-32(TMP_BV_128_0[47:32]) - sign-extend-32(TMP_BV_128_0[63:48]))[15:0]) ∘ ((sign-extend-32(TMP_BV_128_0[15:0]) - sign-extend-32(TMP_BV_128_0[31:16]) > 0x7fff₃₂ ? 0x7fff₁₆ : sign-extend-32(TMP_BV_128_0[15:0]) - sign-extend-32(TMP_BV_128_0[31:16]) < 0xffffffffffff8000₃₂ ? 0xffffffffffff8000₁₆ : (sign-extend-32(TMP_BV_128_0[15:0]) - sign-extend-32(TMP_BV_128_0[31:16]))[15:0]) ∘ ((sign-extend-32(%ymm2[111:96]) - sign-extend-32(%ymm2[127:112]) > 0x7fff₃₂ ? 0x7fff₁₆ : sign-extend-32(%ymm2[111:96]) - sign-extend-32(%ymm2[127:112]) < 0xffffffffffff8000₃₂ ? 0xffffffffffff8000₁₆ : (sign-extend-32(%ymm2[111:96]) - sign-extend-32(%ymm2[127:112]))[15:0]) ∘ ((sign-extend-32(%ymm2[79:64]) - sign-extend-32(%ymm2[95:80]) > 0x7fff₃₂ ? 0x7fff₁₆ : sign-extend-32(%ymm2[79:64]) - sign-extend-32(%ymm2[95:80]) < 0xffffffffffff8000₃₂ ? 0xffffffffffff8000₁₆ : (sign-extend-32(%ymm2[79:64]) - sign-extend-32(%ymm2[95:80]))[15:0]) ∘ ((sign-extend-32(%ymm2[47:32]) - sign-extend-32(%ymm2[63:48]) > 0x7fff₃₂ ? 0x7fff₁₆ : sign-extend-32(%ymm2[47:32]) - sign-extend-32(%ymm2[63:48]) < 0xffffffffffff8000₃₂ ? 0xffffffffffff8000₁₆ : (sign-extend-32(%ymm2[47:32]) - sign-extend-32(%ymm2[63:48]))[15:0]) ∘ (sign-extend-32(%ymm2[15:0]) - sign-extend-32(%ymm2[31:16]) > 0x7fff₃₂ ? 0x7fff₁₆ : sign-extend-32(%ymm2[15:0]) - sign-extend-32(%ymm2[31:16]) < 0xffffffffffff8000₃₂ ? 0xffffffffffff8000₁₆ : (sign-extend-32(%ymm2[15:0]) - sign-extend-32(%ymm2[31:16]))[15:0]))))))))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

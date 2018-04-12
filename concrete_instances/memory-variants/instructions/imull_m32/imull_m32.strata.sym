@@ -1,0 +1,31 @@
+code: imull (%rax)
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %rax %rdx %cf %of }
+  must write:      { %rax %rdx %cf %of }
+  maybe undef:     { %pf %af %zf %sf }
+  must undef:      { %pf %af %zf %sf }
+  required flags:  { }
+
+imull (%rax): Hindex2(10)
+imull (%rax): Hindex2(10)
+Formula:
+
+%rax   : 0x0₃₂ ∘ (sign-extend-64(TMP_BV_32_0) * sign-extend-64(%rax[31:0]))[31:0]
+%rdx   : 0x0₃₂ ∘ (sign-extend-64(TMP_BV_32_0) * sign-extend-64(%rax[31:0]))[63:32]
+
+%cf    : !(sign-extend-64(TMP_BV_32_0) * sign-extend-64(%rax[31:0]) = sign-extend-64((sign-extend-64(TMP_BV_32_0) * sign-extend-64(%rax[31:0]))[31:0]))
+%pf    : TMP_BOOL_2
+%af    : TMP_BOOL_1
+%zf    : TMP_BOOL_0
+%sf    : (sign-extend-64(TMP_BV_32_0) * sign-extend-64(%rax[31:0]))[31:31] = 0x1₁
+%of    : !(sign-extend-64(TMP_BV_32_0) * sign-extend-64(%rax[31:0]) = sign-extend-64((sign-extend-64(TMP_BV_32_0) * sign-extend-64(%rax[31:0]))[31:0]))
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

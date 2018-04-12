@@ -1,0 +1,38 @@
+code: vfnmsub132ps (%rax), %ymm2, %ymm1
+
+  maybe read:      { %rax %ymm1 %ymm2 }
+  must read:       { %rax %ymm1 %ymm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { fma }
+
+vfnmsub132ps (%rax), %ymm2, %ymm1: Hindex0(10)
+vfnmsub132ps (%rax), %ymm2, %ymm1: Hindex0(10)
+vfnmsub132ps %ymm3, %ymm2, %ymm1: Hindex1(9)
+Formula:
+
+%ymm1  : vfnmsub132_single(%ymm1[255:224], %ymm2[255:224], TMP_BV_256_0[255:224]) ∘ (vfnmsub132_single(%ymm1[223:192], %ymm2[223:192], TMP_BV_256_1[223:192]) ∘ (vfnmsub132_single(%ymm1[191:160], %ymm2[191:160], TMP_BV_256_2[191:160]) ∘ (vfnmsub132_single(%ymm1[159:128], %ymm2[159:128], TMP_BV_256_3[159:128]) ∘ (vfnmsub132_single(%ymm1[127:96], %ymm2[127:96], TMP_BV_256_4[127:96]) ∘ (vfnmsub132_single(%ymm1[95:64], %ymm2[95:64], TMP_BV_256_5[95:64]) ∘ (vfnmsub132_single(%ymm1[63:32], %ymm2[63:32], TMP_BV_256_6[63:32]) ∘ vfnmsub132_single(%ymm1[31:0], %ymm2[31:0], TMP_BV_256_7[31:0])))))))
+
+Information about memory reads:
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_1 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_2 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_3 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_4 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_5 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_6 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_7 (32 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

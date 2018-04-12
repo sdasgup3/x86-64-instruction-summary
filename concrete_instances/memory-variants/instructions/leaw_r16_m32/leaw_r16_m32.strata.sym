@@ -1,0 +1,19 @@
+code: leaw (%rax), %bx
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %bx }
+  must write:      { %bx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+leaw (%rax), %bx: Hindex5(10)
+leaw (%rax), %bx: Hindex5(10)
+Formula:
+
+%rbx   : %rbx[63:16] ∘ %rax[15:0]
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

@@ -1,0 +1,31 @@
+code: popcntw (%rax), %bx
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %bx %cf %pf %af %zf %sf %of }
+  must write:      { %bx %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { popcnt }
+
+popcntw (%rax), %bx: Hindex0(10)
+popcntw (%rax), %bx: Hindex0(10)
+popcntw %cx, %bx: Hindex1(9)
+Formula:
+
+%rbx   : %rbx[63:16] ∘ (0x0₈ ∘ (0x0₄ ∘ (0x0₂ ∘ (0x0₁ ∘ TMP_BV_16_0[15:15] + 0x0₁ ∘ TMP_BV_16_0[14:14]) + 0x0₂ ∘ (0x0₁ ∘ TMP_BV_16_0[13:13] + 0x0₁ ∘ TMP_BV_16_0[12:12])) + 0x0₄ ∘ (0x0₂ ∘ (0x0₁ ∘ TMP_BV_16_0[11:11] + 0x0₁ ∘ TMP_BV_16_0[10:10]) + 0x0₂ ∘ (0x0₁ ∘ TMP_BV_16_0[9:9] + 0x0₁ ∘ TMP_BV_16_0[8:8]))) + 0x0₈ ∘ (0x0₄ ∘ (0x0₂ ∘ (0x0₁ ∘ TMP_BV_16_0[7:7] + 0x0₁ ∘ TMP_BV_16_0[6:6]) + 0x0₂ ∘ (0x0₁ ∘ TMP_BV_16_0[5:5] + 0x0₁ ∘ TMP_BV_16_0[4:4])) + 0x0₄ ∘ (0x0₂ ∘ (0x0₁ ∘ TMP_BV_16_0[3:3] + 0x0₁ ∘ TMP_BV_16_0[2:2]) + 0x0₂ ∘ (0x0₁ ∘ TMP_BV_16_0[1:1] + 0x0₁ ∘ TMP_BV_16_0[0:0]))))
+
+%cf    : false
+%pf    : false
+%af    : false
+%zf    : TMP_BV_16_0 = 0x0₁₆
+%sf    : false
+%of    : false
+
+Information about memory reads:
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

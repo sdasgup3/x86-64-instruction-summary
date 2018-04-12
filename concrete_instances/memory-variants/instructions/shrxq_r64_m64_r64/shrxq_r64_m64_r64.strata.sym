@@ -1,0 +1,15 @@
+code: shrxq %rcx, (%rax), %rbx
+
+  maybe read:      { %rax %rcx }
+  must read:       { %rax %rcx }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { bmi2 }
+
+FATAL ERROR: Symbolic execution failed: StrataHandler encountered an error: Instruction not supported
+stoke_debug_circuit: ./src/ext/cpputil/include/io/abort.h:35: void cpputil::Abort::operator()(std::streambuf*, char): Assertion `false' failed.
+shrxq %rcx, (%rax), %rbx: Hindex0(10)
+shrxq %rcx, (%rax), %rbx: Hindex0(10)
+shrxq %rdx, %rcx, %rbx: Hindex-1(9)

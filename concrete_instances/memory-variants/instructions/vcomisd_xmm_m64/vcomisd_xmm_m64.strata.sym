@@ -1,0 +1,15 @@
+code: vcomisd (%rax), %xmm1
+
+  maybe read:      { %rax %xmm1 }
+  must read:       { %rax %xmm1 }
+  maybe write:     { %cf %pf %af %zf %sf %of }
+  must write:      { %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+vcomisd (%rax), %xmm1: Hindex0(10)
+vcomisd (%rax), %xmm1: Hindex0(10)
+INTERNAL STOKE ERROR, please report
+Failed to parse ../circuits/vcomisd_xmm_m64.s
+Message: 

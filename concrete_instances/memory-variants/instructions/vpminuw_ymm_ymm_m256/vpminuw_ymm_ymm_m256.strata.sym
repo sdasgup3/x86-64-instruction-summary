@@ -1,0 +1,23 @@
+code: vpminuw (%rax), %ymm2, %ymm1
+
+  maybe read:      { %rax %ymm2 }
+  must read:       { %rax %ymm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+vpminuw (%rax), %ymm2, %ymm1: Hindex1(10)
+vpminuw (%rax), %ymm2, %ymm1: Hindex1(10)
+Formula:
+
+%ymm1  : (%ymm2[255:240] < TMP_BV_256_0[255:240] ? %ymm2[255:240] : TMP_BV_256_0[255:240]) ∘ ((%ymm2[239:224] < TMP_BV_256_0[239:224] ? %ymm2[239:224] : TMP_BV_256_0[239:224]) ∘ ((%ymm2[223:208] < TMP_BV_256_0[223:208] ? %ymm2[223:208] : TMP_BV_256_0[223:208]) ∘ ((%ymm2[207:192] < TMP_BV_256_0[207:192] ? %ymm2[207:192] : TMP_BV_256_0[207:192]) ∘ ((%ymm2[191:176] < TMP_BV_256_0[191:176] ? %ymm2[191:176] : TMP_BV_256_0[191:176]) ∘ ((%ymm2[175:160] < TMP_BV_256_0[175:160] ? %ymm2[175:160] : TMP_BV_256_0[175:160]) ∘ ((%ymm2[159:144] < TMP_BV_256_0[159:144] ? %ymm2[159:144] : TMP_BV_256_0[159:144]) ∘ ((%ymm2[143:128] < TMP_BV_256_0[143:128] ? %ymm2[143:128] : TMP_BV_256_0[143:128]) ∘ ((%ymm2[127:112] < TMP_BV_256_0[127:112] ? %ymm2[127:112] : TMP_BV_256_0[127:112]) ∘ ((%ymm2[111:96] < TMP_BV_256_0[111:96] ? %ymm2[111:96] : TMP_BV_256_0[111:96]) ∘ ((%ymm2[95:80] < TMP_BV_256_0[95:80] ? %ymm2[95:80] : TMP_BV_256_0[95:80]) ∘ ((%ymm2[79:64] < TMP_BV_256_0[79:64] ? %ymm2[79:64] : TMP_BV_256_0[79:64]) ∘ ((%ymm2[63:48] < TMP_BV_256_0[63:48] ? %ymm2[63:48] : TMP_BV_256_0[63:48]) ∘ ((%ymm2[47:32] < TMP_BV_256_0[47:32] ? %ymm2[47:32] : TMP_BV_256_0[47:32]) ∘ ((%ymm2[31:16] < TMP_BV_256_0[31:16] ? %ymm2[31:16] : TMP_BV_256_0[31:16]) ∘ (%ymm2[15:0] < TMP_BV_256_0[15:0] ? %ymm2[15:0] : TMP_BV_256_0[15:0])))))))))))))))
+
+Information about memory reads:
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

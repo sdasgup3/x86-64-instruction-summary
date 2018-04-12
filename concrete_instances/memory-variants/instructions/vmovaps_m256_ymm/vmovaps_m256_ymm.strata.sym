@@ -1,0 +1,22 @@
+code: vmovaps %ymm1, (%rax)
+
+  maybe read:      { %rax %ymm1 }
+  must read:       { %rax %ymm1 }
+  maybe write:     { }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+vmovaps %ymm1, (%rax): Hindex0(10)
+vmovaps %ymm1, (%rax): Hindex0(10)
+vmovaps %ymm2, %ymm1: Hindex0(9)
+Formula:
+
+Information about memory writes:
+  Address %rax was updated to
+    %ymm1 (32 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

@@ -1,0 +1,15 @@
+code: vpmovsxwd (%rax), %xmm1
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+vpmovsxwd (%rax), %xmm1: Hindex0(10)
+vpmovsxwd (%rax), %xmm1: Hindex0(10)
+INTERNAL STOKE ERROR, please report
+Failed to parse ../circuits/vpmovsxwd_xmm_m64.s
+Message: 

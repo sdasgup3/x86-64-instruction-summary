@@ -1,0 +1,23 @@
+code: pcmpeqb (%rax), %xmm1
+
+  maybe read:      { %rax %xmm1 }
+  must read:       { %rax %xmm1 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+pcmpeqb (%rax), %xmm1: Hindex1(10)
+pcmpeqb (%rax), %xmm1: Hindex1(10)
+Formula:
+
+%ymm1  : %ymm1[255:128] ∘ ((%ymm1[127:120] = TMP_BV_128_0[127:120] ? 0xff₈ : 0x0₈) ∘ ((%ymm1[119:112] = TMP_BV_128_0[119:112] ? 0xff₈ : 0x0₈) ∘ ((%ymm1[111:104] = TMP_BV_128_0[111:104] ? 0xff₈ : 0x0₈) ∘ ((%ymm1[103:96] = TMP_BV_128_0[103:96] ? 0xff₈ : 0x0₈) ∘ ((%ymm1[95:88] = TMP_BV_128_0[95:88] ? 0xff₈ : 0x0₈) ∘ ((%ymm1[87:80] = TMP_BV_128_0[87:80] ? 0xff₈ : 0x0₈) ∘ ((%ymm1[79:72] = TMP_BV_128_0[79:72] ? 0xff₈ : 0x0₈) ∘ ((%ymm1[71:64] = TMP_BV_128_0[71:64] ? 0xff₈ : 0x0₈) ∘ ((%ymm1[63:56] = TMP_BV_128_0[63:56] ? 0xff₈ : 0x0₈) ∘ ((%ymm1[55:48] = TMP_BV_128_0[55:48] ? 0xff₈ : 0x0₈) ∘ ((%ymm1[47:40] = TMP_BV_128_0[47:40] ? 0xff₈ : 0x0₈) ∘ ((%ymm1[39:32] = TMP_BV_128_0[39:32] ? 0xff₈ : 0x0₈) ∘ ((%ymm1[31:24] = TMP_BV_128_0[31:24] ? 0xff₈ : 0x0₈) ∘ ((%ymm1[23:16] = TMP_BV_128_0[23:16] ? 0xff₈ : 0x0₈) ∘ ((%ymm1[15:8] = TMP_BV_128_0[15:8] ? 0xff₈ : 0x0₈) ∘ (%ymm1[7:0] = TMP_BV_128_0[7:0] ? 0xff₈ : 0x0₈))))))))))))))))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

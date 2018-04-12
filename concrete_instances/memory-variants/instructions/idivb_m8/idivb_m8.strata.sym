@@ -1,0 +1,30 @@
+code: idivb (%rax)
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %ax }
+  must write:      { %ax }
+  maybe undef:     { %cf %pf %af %zf %sf %of }
+  must undef:      { %cf %pf %af %zf %sf %of }
+  required flags:  { }
+
+idivb (%rax): Hindex2(10)
+idivb (%rax): Hindex2(10)
+Formula:
+
+%rax   : %rax[63:16] ∘ idiv_remainder_int8(%rax[15:0], TMP_BV_8_0) ∘ idiv_quotient_int8(%rax[15:0], TMP_BV_8_0)
+
+%cf    : TMP_BOOL_5
+%pf    : TMP_BOOL_2
+%af    : TMP_BOOL_1
+%zf    : TMP_BOOL_0
+%sf    : TMP_BOOL_3
+%of    : TMP_BOOL_4
+
+Information about memory reads:
+  Value TMP_BV_8_0 (1 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

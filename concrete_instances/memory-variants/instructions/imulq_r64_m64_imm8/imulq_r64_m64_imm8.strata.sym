@@ -1,0 +1,30 @@
+code: imulq $0x0, (%rax), %rbx
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %rbx %cf %of }
+  must write:      { %rbx %cf %of }
+  maybe undef:     { %pf %af %zf %sf }
+  must undef:      { %pf %af %zf %sf }
+  required flags:  { }
+
+imulq $0x0, (%rax), %rbx: Hindex2(10)
+imulq $0x0, (%rax), %rbx: Hindex2(10)
+Formula:
+
+%rbx   : (sign-extend-128(TMP_BV_64_0) * sign-extend-128(0x0₈))[63:0]
+
+%cf    : !(sign-extend-128(TMP_BV_64_0) * sign-extend-128(0x0₈) = sign-extend-128((sign-extend-128(TMP_BV_64_0) * sign-extend-128(0x0₈))[63:0]))
+%pf    : TMP_BOOL_2
+%af    : TMP_BOOL_1
+%zf    : TMP_BOOL_0
+%sf    : (sign-extend-128(TMP_BV_64_0) * sign-extend-128(0x0₈))[63:63] = 0x1₁
+%of    : !(sign-extend-128(TMP_BV_64_0) * sign-extend-128(0x0₈) = sign-extend-128((sign-extend-128(TMP_BV_64_0) * sign-extend-128(0x0₈))[63:0]))
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

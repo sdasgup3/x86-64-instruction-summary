@@ -1,0 +1,23 @@
+code: roundsd $0x0, (%rax), %xmm1
+
+  maybe read:      { %rax %xmm1 %mxcsr::rc[0] }
+  must read:       { %rax %xmm1 %mxcsr::rc[0] }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse4_1 }
+
+roundsd $0x0, (%rax), %xmm1: Hindex2(10)
+roundsd $0x0, (%rax), %xmm1: Hindex2(10)
+Formula:
+
+%ymm1  : %ymm1[255:128] ∘ (%ymm1[127:64] ∘ cvt_double_to_int64_rm(TMP_BV_64_0, 0x0₈))
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

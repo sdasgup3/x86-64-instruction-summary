@@ -1,0 +1,15 @@
+code: vaddsd (%rax), %xmm2, %xmm1
+
+  maybe read:      { %rax %xmm2 }
+  must read:       { %rax %xmm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+vaddsd (%rax), %xmm2, %xmm1: Hindex0(10)
+vaddsd (%rax), %xmm2, %xmm1: Hindex0(10)
+INTERNAL STOKE ERROR, please report
+Failed to parse ../circuits/vaddsd_xmm_xmm_m64.s
+Message: 

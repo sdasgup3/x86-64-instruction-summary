@@ -1,0 +1,23 @@
+code: vpermilps (%rax), %xmm2, %xmm1
+
+  maybe read:      { %rax %xmm2 }
+  must read:       { %rax %xmm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+vpermilps (%rax), %xmm2, %xmm1: Hindex2(10)
+vpermilps (%rax), %xmm2, %xmm1: Hindex2(10)
+Formula:
+
+%ymm1  : 0x0₁₂₈ ∘ ((TMP_BV_128_0[97:96] = 0x0₂ ? %ymm2[31:0] : TMP_BV_128_0[97:96] = 0x1₂ ? %ymm2[63:32] : TMP_BV_128_0[97:96] = 0x2₂ ? %ymm2[95:64] : %ymm2[127:96]) ∘ ((TMP_BV_128_0[65:64] = 0x0₂ ? %ymm2[31:0] : TMP_BV_128_0[65:64] = 0x1₂ ? %ymm2[63:32] : TMP_BV_128_0[65:64] = 0x2₂ ? %ymm2[95:64] : %ymm2[127:96]) ∘ ((TMP_BV_128_0[33:32] = 0x0₂ ? %ymm2[31:0] : TMP_BV_128_0[33:32] = 0x1₂ ? %ymm2[63:32] : TMP_BV_128_0[33:32] = 0x2₂ ? %ymm2[95:64] : %ymm2[127:96]) ∘ (TMP_BV_128_0[1:0] = 0x0₂ ? %ymm2[31:0] : TMP_BV_128_0[1:0] = 0x1₂ ? %ymm2[63:32] : TMP_BV_128_0[1:0] = 0x2₂ ? %ymm2[95:64] : %ymm2[127:96]))))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

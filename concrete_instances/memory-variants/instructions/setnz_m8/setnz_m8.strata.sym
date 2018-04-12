@@ -1,0 +1,26 @@
+code: setnz (%rax)
+
+  maybe read:      { %rax %zf }
+  must read:       { %rax %zf }
+  maybe write:     { }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+setnz (%rax): Hindex0(10)
+setnz (%rax): Hindex0(10)
+setnz %bl: Hindex3(9)
+Formula:
+
+Information about memory reads:
+  Value TMP_BV_8_0 (1 bytes)
+    was read at address %rax.
+
+Information about memory writes:
+  Address %rax was updated to
+    !%zf ? 0x1₈ : 0x0₈ (1 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

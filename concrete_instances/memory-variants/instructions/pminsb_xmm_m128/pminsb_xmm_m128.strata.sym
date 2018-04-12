@@ -1,0 +1,23 @@
+code: pminsb (%rax), %xmm1
+
+  maybe read:      { %rax %xmm1 }
+  must read:       { %rax %xmm1 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse4_1 }
+
+pminsb (%rax), %xmm1: Hindex1(10)
+pminsb (%rax), %xmm1: Hindex1(10)
+Formula:
+
+%ymm1  : %ymm1[255:128] ∘ ((%ymm1[127:120] < TMP_BV_128_0[127:120] ? %ymm1[127:120] : TMP_BV_128_0[127:120]) ∘ ((%ymm1[119:112] < TMP_BV_128_0[119:112] ? %ymm1[119:112] : TMP_BV_128_0[119:112]) ∘ ((%ymm1[111:104] < TMP_BV_128_0[111:104] ? %ymm1[111:104] : TMP_BV_128_0[111:104]) ∘ ((%ymm1[103:96] < TMP_BV_128_0[103:96] ? %ymm1[103:96] : TMP_BV_128_0[103:96]) ∘ ((%ymm1[95:88] < TMP_BV_128_0[95:88] ? %ymm1[95:88] : TMP_BV_128_0[95:88]) ∘ ((%ymm1[87:80] < TMP_BV_128_0[87:80] ? %ymm1[87:80] : TMP_BV_128_0[87:80]) ∘ ((%ymm1[79:72] < TMP_BV_128_0[79:72] ? %ymm1[79:72] : TMP_BV_128_0[79:72]) ∘ ((%ymm1[71:64] < TMP_BV_128_0[71:64] ? %ymm1[71:64] : TMP_BV_128_0[71:64]) ∘ ((%ymm1[63:56] < TMP_BV_128_0[63:56] ? %ymm1[63:56] : TMP_BV_128_0[63:56]) ∘ ((%ymm1[55:48] < TMP_BV_128_0[55:48] ? %ymm1[55:48] : TMP_BV_128_0[55:48]) ∘ ((%ymm1[47:40] < TMP_BV_128_0[47:40] ? %ymm1[47:40] : TMP_BV_128_0[47:40]) ∘ ((%ymm1[39:32] < TMP_BV_128_0[39:32] ? %ymm1[39:32] : TMP_BV_128_0[39:32]) ∘ ((%ymm1[31:24] < TMP_BV_128_0[31:24] ? %ymm1[31:24] : TMP_BV_128_0[31:24]) ∘ ((%ymm1[23:16] < TMP_BV_128_0[23:16] ? %ymm1[23:16] : TMP_BV_128_0[23:16]) ∘ ((%ymm1[15:8] < TMP_BV_128_0[15:8] ? %ymm1[15:8] : TMP_BV_128_0[15:8]) ∘ (%ymm1[7:0] < TMP_BV_128_0[7:0] ? %ymm1[7:0] : TMP_BV_128_0[7:0]))))))))))))))))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

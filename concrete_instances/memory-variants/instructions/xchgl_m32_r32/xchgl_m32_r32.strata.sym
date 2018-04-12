@@ -1,0 +1,28 @@
+code: xchgl %ebx, (%rax)
+
+  maybe read:      { %rax %ebx }
+  must read:       { %rax %ebx }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+xchgl %ebx, (%rax): Hindex0(10)
+xchgl %ebx, (%rax): Hindex0(10)
+xchgl %ebx, %eax: Hindex1(9)
+Formula:
+
+%rbx   : 0x0₃₂ ∘ TMP_BV_32_0
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
+
+Information about memory writes:
+  Address %rax was updated to
+    %rbx[31:0] (4 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

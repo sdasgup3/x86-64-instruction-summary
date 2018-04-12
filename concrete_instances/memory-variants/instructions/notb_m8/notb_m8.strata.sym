@@ -1,0 +1,28 @@
+code: notb (%rax)
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+notb (%rax): Hindex0(10)
+notb (%rax): Hindex0(10)
+notb %bl: Hindex1(9)
+Formula:
+
+Information about memory reads:
+  Value TMP_BV_8_0 (1 bytes)
+    was read at address %rax.
+  Value TMP_BV_8_1 (1 bytes)
+    was read at address %rax.
+
+Information about memory writes:
+  Address %rax was updated to
+    !TMP_BV_8_1 (1 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

@@ -1,0 +1,15 @@
+code: vcvttss2sil (%rax), %ebx
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+vcvttss2sil (%rax), %ebx: Hindex0(10)
+vcvttss2sil (%rax), %ebx: Hindex0(10)
+INTERNAL STOKE ERROR, please report
+Failed to parse ../circuits/vcvttss2sil_r32_m32.s
+Message: 

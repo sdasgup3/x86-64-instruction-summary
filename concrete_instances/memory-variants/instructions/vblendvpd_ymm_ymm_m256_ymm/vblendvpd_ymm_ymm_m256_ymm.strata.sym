@@ -1,0 +1,23 @@
+code: vblendvpd %ymm3, (%rax), %ymm2, %ymm1
+
+  maybe read:      { %rax %ymm2 %ymm3 }
+  must read:       { %rax %ymm2 %ymm3 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+vblendvpd %ymm3, (%rax), %ymm2, %ymm1: Hindex2(10)
+vblendvpd %ymm3, (%rax), %ymm2, %ymm1: Hindex2(10)
+Formula:
+
+%ymm1  : (%ymm3[255:255] = 0x0₁ ? %ymm2[255:192] : TMP_BV_256_0[255:192]) ∘ ((%ymm3[191:191] = 0x0₁ ? %ymm2[191:128] : TMP_BV_256_0[191:128]) ∘ ((%ymm3[127:127] = 0x0₁ ? %ymm2[127:64] : TMP_BV_256_0[127:64]) ∘ (%ymm3[63:63] = 0x0₁ ? %ymm2[63:0] : TMP_BV_256_0[63:0])))
+
+Information about memory reads:
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

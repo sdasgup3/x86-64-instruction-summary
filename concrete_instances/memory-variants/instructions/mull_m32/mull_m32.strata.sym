@@ -1,0 +1,31 @@
+code: mull (%rax)
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %rax %rdx %cf %of }
+  must write:      { %rax %rdx %cf %of }
+  maybe undef:     { %pf %af %zf %sf }
+  must undef:      { %pf %af %zf %sf }
+  required flags:  { }
+
+mull (%rax): Hindex2(10)
+mull (%rax): Hindex2(10)
+Formula:
+
+%rax   : 0x0₃₂ ∘ (0x0₃₂ ∘ TMP_BV_32_0 * 0x0₃₂ ∘ %rax[31:0])[31:0]
+%rdx   : 0x0₃₂ ∘ (0x0₃₂ ∘ TMP_BV_32_0 * 0x0₃₂ ∘ %rax[31:0])[63:32]
+
+%cf    : !((0x0₃₂ ∘ TMP_BV_32_0 * 0x0₃₂ ∘ %rax[31:0])[63:32] = 0x0₃₂)
+%pf    : TMP_BOOL_2
+%af    : TMP_BOOL_1
+%zf    : TMP_BOOL_0
+%sf    : TMP_BOOL_3
+%of    : !((0x0₃₂ ∘ TMP_BV_32_0 * 0x0₃₂ ∘ %rax[31:0])[63:32] = 0x0₃₂)
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

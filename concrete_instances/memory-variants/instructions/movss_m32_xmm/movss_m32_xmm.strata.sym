@@ -1,0 +1,15 @@
+code: movss %xmm1, (%rax)
+
+  maybe read:      { %rax %xmm1 }
+  must read:       { %rax %xmm1 }
+  maybe write:     { }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse }
+
+movss %xmm1, (%rax): Hindex0(10)
+movss %xmm1, (%rax): Hindex0(10)
+INTERNAL STOKE ERROR, please report
+Failed to parse ../circuits/movss_m32_xmm.s
+Message: 

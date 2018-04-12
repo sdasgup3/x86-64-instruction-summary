@@ -1,0 +1,29 @@
+code: popq (%rax)
+
+  maybe read:      { %rax %rsp }
+  must read:       { %rax %rsp }
+  maybe write:     { %rsp }
+  must write:      { %rsp }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+popq (%rax): Hindex2(10)
+popq (%rax): Hindex2(10)
+Formula:
+
+%rsp   : %rsp + 0x8₆₄
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_1 (8 bytes)
+    was read at address %rsp.
+
+Information about memory writes:
+  Address %rax was updated to
+    TMP_BV_64_1 (8 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false ∨ !sigfpe ∧ !sigbus ∧ false ∨ !sigfpe ∧ !sigbus ∧ false

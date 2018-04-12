@@ -1,0 +1,30 @@
+code: mulb (%rax)
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %ax %cf %of }
+  must write:      { %ax %cf %of }
+  maybe undef:     { %pf %af %zf %sf }
+  must undef:      { %pf %af %zf %sf }
+  required flags:  { }
+
+mulb (%rax): Hindex2(10)
+mulb (%rax): Hindex2(10)
+Formula:
+
+%rax   : %rax[63:16] ∘ (0x0₈ ∘ TMP_BV_8_0 * 0x0₈ ∘ %rax[7:0])
+
+%cf    : !((0x0₈ ∘ TMP_BV_8_0 * 0x0₈ ∘ %rax[7:0])[15:8] = 0x0₈)
+%pf    : TMP_BOOL_2
+%af    : TMP_BOOL_1
+%zf    : TMP_BOOL_0
+%sf    : TMP_BOOL_3
+%of    : !((0x0₈ ∘ TMP_BV_8_0 * 0x0₈ ∘ %rax[7:0])[15:8] = 0x0₈)
+
+Information about memory reads:
+  Value TMP_BV_8_0 (1 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

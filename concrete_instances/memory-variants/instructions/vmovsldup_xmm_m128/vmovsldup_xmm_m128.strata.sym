@@ -1,0 +1,15 @@
+code: vmovsldup (%rax), %xmm1
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+FATAL ERROR: Symbolic execution failed: StrataHandler encountered an error: Instruction not supported
+stoke_debug_circuit: ./src/ext/cpputil/include/io/abort.h:35: void cpputil::Abort::operator()(std::streambuf*, char): Assertion `false' failed.
+vmovsldup (%rax), %xmm1: Hindex0(10)
+vmovsldup (%rax), %xmm1: Hindex0(10)
+vmovsldup %xmm2, %xmm1: Hindex-1(9)

@@ -1,0 +1,32 @@
+code: sarb $0x0, (%rax)
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %cf %pf %zf %sf %of }
+  must write:      { }
+  maybe undef:     { %af %of }
+  must undef:      { }
+  required flags:  { }
+
+sarb $0x0, (%rax): Hindex8(10)
+sarb $0x0, (%rax): Hindex8(10)
+Formula:
+
+%cf    : false ∧ (TMP_BV_8_0 ∘ 0x0₁ sign_shift_right 0x0₉)[0:0] = 0x1₁ ∨ true ∧ %cf
+%pf    : false ∧ !((TMP_BV_8_0 ∘ 0x0₁ sign_shift_right 0x0₉)[1:1] = 0x1₁ ⊕ (TMP_BV_8_0 ∘ 0x0₁ sign_shift_right 0x0₉)[2:2] = 0x1₁ ⊕ (TMP_BV_8_0 ∘ 0x0₁ sign_shift_right 0x0₉)[3:3] = 0x1₁ ⊕ (TMP_BV_8_0 ∘ 0x0₁ sign_shift_right 0x0₉)[4:4] = 0x1₁ ⊕ (TMP_BV_8_0 ∘ 0x0₁ sign_shift_right 0x0₉)[5:5] = 0x1₁ ⊕ (TMP_BV_8_0 ∘ 0x0₁ sign_shift_right 0x0₉)[6:6] = 0x1₁ ⊕ (TMP_BV_8_0 ∘ 0x0₁ sign_shift_right 0x0₉)[7:7] = 0x1₁ ⊕ (TMP_BV_8_0 ∘ 0x0₁ sign_shift_right 0x0₉)[8:8] = 0x1₁) ∨ true ∧ %pf
+%af    : false ∧ TMP_BOOL_0 ∨ true ∧ %af
+%zf    : false ∧ (TMP_BV_8_0 ∘ 0x0₁ sign_shift_right 0x0₉)[8:1] = 0x0₈ ∨ true ∧ %zf
+%sf    : false ∧ (TMP_BV_8_0 ∘ 0x0₁ sign_shift_right 0x0₉)[8:8] = 0x1₁ ∨ true ∧ %sf
+%of    : false ∨ true ∧ %of
+
+Information about memory reads:
+  Value TMP_BV_8_0 (1 bytes)
+    was read at address %rax.
+
+Information about memory writes:
+  Address %rax was updated to
+    (TMP_BV_8_0 ∘ 0x0₁ sign_shift_right 0x0₉)[8:1] (1 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false ∨ !sigfpe ∧ !sigbus ∧ false

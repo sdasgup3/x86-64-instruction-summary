@@ -1,0 +1,15 @@
+code: cvtdq2pd (%rax), %xmm1
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+cvtdq2pd (%rax), %xmm1: Hindex0(10)
+cvtdq2pd (%rax), %xmm1: Hindex0(10)
+INTERNAL STOKE ERROR, please report
+Failed to parse ../circuits/cvtdq2pd_xmm_m64.s
+Message: 

@@ -1,0 +1,23 @@
+code: rorxl $0x0, (%rax), %ebx
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { bmi2 }
+
+rorxl $0x0, (%rax), %ebx: Hindex2(10)
+rorxl $0x0, (%rax), %ebx: Hindex2(10)
+Formula:
+
+%rbx   : 0x0₃₂ ∘ (TMP_BV_32_0 >> 0x0₃₂ | TMP_BV_32_0 << 0x20₃₂)
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

@@ -1,0 +1,26 @@
+code: notq (%rax)
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+notq (%rax): Hindex0(10)
+notq (%rax): Hindex0(10)
+notq %rbx: Hindex1(9)
+Formula:
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
+
+Information about memory writes:
+  Address %rax was updated to
+    !TMP_BV_64_0 (8 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

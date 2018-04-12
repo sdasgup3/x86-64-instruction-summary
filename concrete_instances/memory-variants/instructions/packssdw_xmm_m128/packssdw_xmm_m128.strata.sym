@@ -1,0 +1,23 @@
+code: packssdw (%rax), %xmm1
+
+  maybe read:      { %rax %xmm1 }
+  must read:       { %rax %xmm1 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+packssdw (%rax), %xmm1: Hindex1(10)
+packssdw (%rax), %xmm1: Hindex1(10)
+Formula:
+
+%ymm1  : %ymm1[255:128] ∘ ((TMP_BV_128_0[127:96] > 0x7fff₃₂ ? 0x7fff₁₆ : TMP_BV_128_0[127:96] < 0xffffffffffff8000₃₂ ? 0xffffffffffff8000₁₆ : TMP_BV_128_0[111:96]) ∘ ((TMP_BV_128_0[95:64] > 0x7fff₃₂ ? 0x7fff₁₆ : TMP_BV_128_0[95:64] < 0xffffffffffff8000₃₂ ? 0xffffffffffff8000₁₆ : TMP_BV_128_0[79:64]) ∘ ((TMP_BV_128_0[63:32] > 0x7fff₃₂ ? 0x7fff₁₆ : TMP_BV_128_0[63:32] < 0xffffffffffff8000₃₂ ? 0xffffffffffff8000₁₆ : TMP_BV_128_0[47:32]) ∘ ((TMP_BV_128_0[31:0] > 0x7fff₃₂ ? 0x7fff₁₆ : TMP_BV_128_0[31:0] < 0xffffffffffff8000₃₂ ? 0xffffffffffff8000₁₆ : TMP_BV_128_0[15:0]) ∘ ((%ymm1[127:96] > 0x7fff₃₂ ? 0x7fff₁₆ : %ymm1[127:96] < 0xffffffffffff8000₃₂ ? 0xffffffffffff8000₁₆ : %ymm1[111:96]) ∘ ((%ymm1[95:64] > 0x7fff₃₂ ? 0x7fff₁₆ : %ymm1[95:64] < 0xffffffffffff8000₃₂ ? 0xffffffffffff8000₁₆ : %ymm1[79:64]) ∘ ((%ymm1[63:32] > 0x7fff₃₂ ? 0x7fff₁₆ : %ymm1[63:32] < 0xffffffffffff8000₃₂ ? 0xffffffffffff8000₁₆ : %ymm1[47:32]) ∘ (%ymm1[31:0] > 0x7fff₃₂ ? 0x7fff₁₆ : %ymm1[31:0] < 0xffffffffffff8000₃₂ ? 0xffffffffffff8000₁₆ : %ymm1[15:0]))))))))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

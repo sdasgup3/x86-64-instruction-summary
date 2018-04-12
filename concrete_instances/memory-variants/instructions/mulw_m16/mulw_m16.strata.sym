@@ -1,0 +1,31 @@
+code: mulw (%rax)
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %ax %dx %cf %of }
+  must write:      { %ax %dx %cf %of }
+  maybe undef:     { %pf %af %zf %sf }
+  must undef:      { %pf %af %zf %sf }
+  required flags:  { }
+
+mulw (%rax): Hindex2(10)
+mulw (%rax): Hindex2(10)
+Formula:
+
+%rax   : %rax[63:16] ∘ (0x0₁₆ ∘ TMP_BV_16_0 * 0x0₁₆ ∘ %rax[15:0])[15:0]
+%rdx   : %rdx[63:16] ∘ (0x0₁₆ ∘ TMP_BV_16_0 * 0x0₁₆ ∘ %rax[15:0])[31:16]
+
+%cf    : !((0x0₁₆ ∘ TMP_BV_16_0 * 0x0₁₆ ∘ %rax[15:0])[31:16] = 0x0₁₆)
+%pf    : TMP_BOOL_2
+%af    : TMP_BOOL_1
+%zf    : TMP_BOOL_0
+%sf    : TMP_BOOL_3
+%of    : !((0x0₁₆ ∘ TMP_BV_16_0 * 0x0₁₆ ∘ %rax[15:0])[31:16] = 0x0₁₆)
+
+Information about memory reads:
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

@@ -1,0 +1,15 @@
+code: movd (%rax), %xmm1
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+FATAL ERROR: Symbolic execution failed: StrataHandler encountered an error: Instruction not supported
+stoke_debug_circuit: ./src/ext/cpputil/include/io/abort.h:35: void cpputil::Abort::operator()(std::streambuf*, char): Assertion `false' failed.
+movd (%rax), %xmm1: Hindex0(10)
+movd (%rax), %xmm1: Hindex0(10)
+movd %ebx, %xmm1: Hindex-1(9)

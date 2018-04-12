@@ -1,0 +1,15 @@
+code: cmpxchgw %bx, (%rax)
+
+  maybe read:      { %rax %bx }
+  must read:       { %rax %bx }
+  maybe write:     { %ax %cf %pf %af %zf %sf %of }
+  must write:      { %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+FATAL ERROR: Symbolic execution failed: StrataHandler encountered an error: Instruction not supported
+stoke_debug_circuit: ./src/ext/cpputil/include/io/abort.h:35: void cpputil::Abort::operator()(std::streambuf*, char): Assertion `false' failed.
+cmpxchgw %bx, (%rax): Hindex0(10)
+cmpxchgw %bx, (%rax): Hindex0(10)
+cmpxchgw %cx, %bx: Hindex-1(9)

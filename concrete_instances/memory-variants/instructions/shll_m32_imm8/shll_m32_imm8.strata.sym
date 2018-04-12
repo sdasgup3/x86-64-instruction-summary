@@ -1,0 +1,32 @@
+code: shll $0x0, (%rax)
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %cf %pf %zf %sf %of }
+  must write:      { }
+  maybe undef:     { %cf %af %of }
+  must undef:      { }
+  required flags:  { }
+
+shll $0x0, (%rax): Hindex8(10)
+shll $0x0, (%rax): Hindex8(10)
+Formula:
+
+%cf    : false ∧ TMP_BOOL_0 ∨ true ∧ (false ∧ (0x0₁ ∘ TMP_BV_32_0 << 0x0₃₃)[32:32] = 0x1₁ ∨ true ∧ %cf)
+%pf    : false ∧ !((0x0₁ ∘ TMP_BV_32_0 << 0x0₃₃)[0:0] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_32_0 << 0x0₃₃)[1:1] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_32_0 << 0x0₃₃)[2:2] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_32_0 << 0x0₃₃)[3:3] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_32_0 << 0x0₃₃)[4:4] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_32_0 << 0x0₃₃)[5:5] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_32_0 << 0x0₃₃)[6:6] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_32_0 << 0x0₃₃)[7:7] = 0x1₁) ∨ true ∧ %pf
+%af    : false ∧ TMP_BOOL_1 ∨ true ∧ %af
+%zf    : false ∧ (0x0₁ ∘ TMP_BV_32_0 << 0x0₃₃)[31:0] = 0x0₃₂ ∨ true ∧ %zf
+%sf    : false ∧ (0x0₁ ∘ TMP_BV_32_0 << 0x0₃₃)[31:31] = 0x1₁ ∨ true ∧ %sf
+%of    : false ∧ !(false ∧ TMP_BOOL_0 ∨ true ∧ (false ∧ (0x0₁ ∘ TMP_BV_32_0 << 0x0₃₃)[32:32] = 0x1₁ ∨ true ∧ %cf) ↔ (0x0₁ ∘ TMP_BV_32_0 << 0x0₃₃)[31:31] = 0x1₁) ∨ true ∧ %of
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
+
+Information about memory writes:
+  Address %rax was updated to
+    (0x0₁ ∘ TMP_BV_32_0 << 0x0₃₃)[31:0] (4 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false ∨ !sigfpe ∧ !sigbus ∧ false

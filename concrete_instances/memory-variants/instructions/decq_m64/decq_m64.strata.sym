@@ -1,0 +1,40 @@
+code: decq (%rax)
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %pf %af %zf %sf %of }
+  must write:      { %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+decq (%rax): Hindex0(10)
+decq (%rax): Hindex0(10)
+decq %rbx: Hindex1(9)
+Formula:
+
+%pf    : !((TMP_BV_64_1 - 0x1₆₄)[0:0] = 0x1₁ ⊕ (TMP_BV_64_1 - 0x1₆₄)[1:1] = 0x1₁ ⊕ (TMP_BV_64_1 - 0x1₆₄)[2:2] = 0x1₁ ⊕ (TMP_BV_64_1 - 0x1₆₄)[3:3] = 0x1₁ ⊕ (TMP_BV_64_1 - 0x1₆₄)[4:4] = 0x1₁ ⊕ (TMP_BV_64_1 - 0x1₆₄)[5:5] = 0x1₁ ⊕ (TMP_BV_64_1 - 0x1₆₄)[6:6] = 0x1₁ ⊕ (TMP_BV_64_1 - 0x1₆₄)[7:7] = 0x1₁)
+%af    : TMP_BV_64_2[3:0] = 0x0₄
+%zf    : TMP_BV_64_1 - 0x1₆₄ = 0x0₆₄
+%sf    : (TMP_BV_64_1 - 0x1₆₄)[63:63] = 0x1₁
+%of    : TMP_BV_64_3[63:63] = 0x1₁ ∧ TMP_BV_64_4[62:0] = 0x0₆₃
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_1 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_2 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_3 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_4 (8 bytes)
+    was read at address %rax.
+
+Information about memory writes:
+  Address %rax was updated to
+    TMP_BV_64_0 - 0x1₆₄ (8 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

@@ -1,0 +1,38 @@
+code: vpunpcklwd (%rax), %ymm2, %ymm1
+
+  maybe read:      { %rax %ymm2 }
+  must read:       { %rax %ymm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+vpunpcklwd (%rax), %ymm2, %ymm1: Hindex0(10)
+vpunpcklwd (%rax), %ymm2, %ymm1: Hindex0(10)
+vpunpcklwd %ymm3, %ymm2, %ymm1: Hindex6(9)
+Formula:
+
+%ymm1  : TMP_BV_256_0[191:176] ∘ %ymm2[191:176] ∘ (TMP_BV_256_1[175:160] ∘ %ymm2[175:160] ∘ (TMP_BV_256_2[159:144] ∘ %ymm2[159:144] ∘ (TMP_BV_256_3[143:128] ∘ %ymm2[143:128] ∘ (TMP_BV_256_4[63:48] ∘ %ymm2[63:48] ∘ (TMP_BV_256_5[47:32] ∘ %ymm2[47:32] ∘ (TMP_BV_256_6[31:16] ∘ %ymm2[31:16] ∘ (TMP_BV_256_7[15:0] ∘ %ymm2[15:0])))))))
+
+Information about memory reads:
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_1 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_2 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_3 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_4 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_5 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_6 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_7 (32 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

@@ -1,0 +1,15 @@
+code: cvtss2sd (%rax), %xmm1
+
+  maybe read:      { %rax %xmm1 %mxcsr::rc[0] }
+  must read:       { %rax %xmm1 %mxcsr::rc[0] }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+cvtss2sd (%rax), %xmm1: Hindex0(10)
+cvtss2sd (%rax), %xmm1: Hindex0(10)
+INTERNAL STOKE ERROR, please report
+Failed to parse ../circuits/cvtss2sd_xmm_m32.s
+Message: 

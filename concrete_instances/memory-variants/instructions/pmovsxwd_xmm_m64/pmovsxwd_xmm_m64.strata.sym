@@ -1,0 +1,15 @@
+code: pmovsxwd (%rax), %xmm1
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse4_1 }
+
+pmovsxwd (%rax), %xmm1: Hindex0(10)
+pmovsxwd (%rax), %xmm1: Hindex0(10)
+INTERNAL STOKE ERROR, please report
+Failed to parse ../circuits/pmovsxwd_xmm_m64.s
+Message: 

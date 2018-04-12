@@ -1,0 +1,23 @@
+code: rorxq $0x0, (%rax), %rbx
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { bmi2 }
+
+rorxq $0x0, (%rax), %rbx: Hindex2(10)
+rorxq $0x0, (%rax), %rbx: Hindex2(10)
+Formula:
+
+%rbx   : TMP_BV_64_0 >> 0x0₆₄ | TMP_BV_64_0 << 0x40₆₄
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

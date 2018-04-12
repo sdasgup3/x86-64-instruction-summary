@@ -1,0 +1,35 @@
+code: subw $0x0, (%rax)
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %cf %pf %af %zf %sf %of }
+  must write:      { %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+subw $0x0, (%rax): Hindex0(10)
+subw $0x0, (%rax): Hindex0(10)
+subw %cx, %bx: Hindex2(9)
+Formula:
+
+%cf    : !((0x10000₁₇ + 0x0₁ ∘ TMP_BV_16_1)[16:16] = 0x1₁)
+%pf    : !((0x10000₁₇ + 0x0₁ ∘ TMP_BV_16_1)[0:0] = 0x1₁ ⊕ (0x10000₁₇ + 0x0₁ ∘ TMP_BV_16_1)[1:1] = 0x1₁ ⊕ (0x10000₁₇ + 0x0₁ ∘ TMP_BV_16_1)[2:2] = 0x1₁ ⊕ (0x10000₁₇ + 0x0₁ ∘ TMP_BV_16_1)[3:3] = 0x1₁ ⊕ (0x10000₁₇ + 0x0₁ ∘ TMP_BV_16_1)[4:4] = 0x1₁ ⊕ (0x10000₁₇ + 0x0₁ ∘ TMP_BV_16_1)[5:5] = 0x1₁ ⊕ (0x10000₁₇ + 0x0₁ ∘ TMP_BV_16_1)[6:6] = 0x1₁ ⊕ (0x10000₁₇ + 0x0₁ ∘ TMP_BV_16_1)[7:7] = 0x1₁)
+%af    : false
+%zf    : (0x10000₁₇ + 0x0₁ ∘ TMP_BV_16_1)[15:0] = 0x0₁₆
+%sf    : (0x10000₁₇ + 0x0₁ ∘ TMP_BV_16_1)[15:15] = 0x1₁
+%of    : (true ↔ TMP_BV_16_1[15:15] = 0x1₁) ∧ !(true ↔ (0x10000₁₇ + 0x0₁ ∘ TMP_BV_16_1)[15:15] = 0x1₁)
+
+Information about memory reads:
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_1 (2 bytes)
+    was read at address %rax.
+
+Information about memory writes:
+  Address %rax was updated to
+    (0x10000₁₇ + 0x0₁ ∘ TMP_BV_16_1)[15:0] (2 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

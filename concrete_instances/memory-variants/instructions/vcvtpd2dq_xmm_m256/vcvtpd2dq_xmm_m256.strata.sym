@@ -1,0 +1,20 @@
+code: vcvtpd2dq (%rax), %xmm1
+
+  maybe read:      { %rax %mxcsr::rc[0] }
+  must read:       { %rax %mxcsr::rc[0] }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+vcvtpd2dq (%rax), %xmm1: Hindex0(10)
+vcvtpd2dq (%rax), %xmm1: Hindex0(10)
+vcvtpd2dq %ymm1, %xmm1: Hindex1(9)
+Formula:
+
+%ymm1  : 0x0₁₂₈ ∘ (cvt_double_to_int32(%ymm1[255:192]) ∘ (cvt_double_to_int32(%ymm1[191:128]) ∘ (cvt_double_to_int32(%ymm1[127:64]) ∘ cvt_double_to_int32(%ymm1[63:0]))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

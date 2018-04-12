@@ -1,0 +1,23 @@
+code: vcmppd $0x0, (%rax), %ymm2, %ymm1
+
+  maybe read:      { %rax %ymm2 }
+  must read:       { %rax %ymm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+vcmppd $0x0, (%rax), %ymm2, %ymm1: Hindex2(10)
+vcmppd $0x0, (%rax), %ymm2, %ymm1: Hindex2(10)
+Formula:
+
+%ymm1  : (cmp_double_pred(%ymm2[255:192], TMP_BV_256_0[255:192], 0x0₈) = 0x1₁ ? 0xffffffffffffffff₆₄ : 0x0₆₄) ∘ ((cmp_double_pred(%ymm2[191:128], TMP_BV_256_0[191:128], 0x0₈) = 0x1₁ ? 0xffffffffffffffff₆₄ : 0x0₆₄) ∘ ((cmp_double_pred(%ymm2[127:64], TMP_BV_256_0[127:64], 0x0₈) = 0x1₁ ? 0xffffffffffffffff₆₄ : 0x0₆₄) ∘ (cmp_double_pred(%ymm2[63:0], TMP_BV_256_0[63:0], 0x0₈) = 0x1₁ ? 0xffffffffffffffff₆₄ : 0x0₆₄)))
+
+Information about memory reads:
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

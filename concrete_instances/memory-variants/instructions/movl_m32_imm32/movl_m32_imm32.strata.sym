@@ -1,0 +1,22 @@
+code: movl $0x0, (%rax)
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+movl $0x0, (%rax): Hindex0(10)
+movl $0x0, (%rax): Hindex0(10)
+movl %ecx, %ebx: Hindex5(9)
+Formula:
+
+Information about memory writes:
+  Address %rax was updated to
+    0x0₃₂ (4 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

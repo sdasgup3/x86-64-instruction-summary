@@ -1,0 +1,15 @@
+code: maxss (%rax), %xmm1
+
+  maybe read:      { %rax %xmm1 }
+  must read:       { %rax %xmm1 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse }
+
+maxss (%rax), %xmm1: Hindex0(10)
+maxss (%rax), %xmm1: Hindex0(10)
+INTERNAL STOKE ERROR, please report
+Failed to parse ../circuits/maxss_xmm_m32.s
+Message: 

@@ -1,0 +1,30 @@
+code: lzcntl (%rax), %ebx
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %rbx %cf %zf }
+  must write:      { %rbx %cf %zf }
+  maybe undef:     { %pf %af %sf %of }
+  must undef:      { %pf %af %sf %of }
+  required flags:  { bmi1 }
+
+lzcntl (%rax), %ebx: Hindex2(10)
+lzcntl (%rax), %ebx: Hindex2(10)
+Formula:
+
+%rbx   : TMP_BV_32_0[31:31] = 0x1₁ ? 0x0₆₄ : TMP_BV_32_0[30:30] = 0x1₁ ? 0x1₆₄ : TMP_BV_32_0[29:29] = 0x1₁ ? 0x2₆₄ : TMP_BV_32_0[28:28] = 0x1₁ ? 0x3₆₄ : TMP_BV_32_0[27:27] = 0x1₁ ? 0x4₆₄ : TMP_BV_32_0[26:26] = 0x1₁ ? 0x5₆₄ : TMP_BV_32_0[25:25] = 0x1₁ ? 0x6₆₄ : TMP_BV_32_0[24:24] = 0x1₁ ? 0x7₆₄ : TMP_BV_32_0[23:23] = 0x1₁ ? 0x8₆₄ : TMP_BV_32_0[22:22] = 0x1₁ ? 0x9₆₄ : TMP_BV_32_0[21:21] = 0x1₁ ? 0xa₆₄ : TMP_BV_32_0[20:20] = 0x1₁ ? 0xb₆₄ : TMP_BV_32_0[19:19] = 0x1₁ ? 0xc₆₄ : TMP_BV_32_0[18:18] = 0x1₁ ? 0xd₆₄ : TMP_BV_32_0[17:17] = 0x1₁ ? 0xe₆₄ : TMP_BV_32_0[16:16] = 0x1₁ ? 0xf₆₄ : TMP_BV_32_0[15:15] = 0x1₁ ? 0x10₆₄ : TMP_BV_32_0[14:14] = 0x1₁ ? 0x11₆₄ : TMP_BV_32_0[13:13] = 0x1₁ ? 0x12₆₄ : TMP_BV_32_0[12:12] = 0x1₁ ? 0x13₆₄ : TMP_BV_32_0[11:11] = 0x1₁ ? 0x14₆₄ : TMP_BV_32_0[10:10] = 0x1₁ ? 0x15₆₄ : TMP_BV_32_0[9:9] = 0x1₁ ? 0x16₆₄ : TMP_BV_32_0[8:8] = 0x1₁ ? 0x17₆₄ : TMP_BV_32_0[7:7] = 0x1₁ ? 0x18₆₄ : TMP_BV_32_0[6:6] = 0x1₁ ? 0x19₆₄ : TMP_BV_32_0[5:5] = 0x1₁ ? 0x1a₆₄ : TMP_BV_32_0[4:4] = 0x1₁ ? 0x1b₆₄ : TMP_BV_32_0[3:3] = 0x1₁ ? 0x1c₆₄ : TMP_BV_32_0[2:2] = 0x1₁ ? 0x1d₆₄ : TMP_BV_32_0[1:1] = 0x1₁ ? 0x1e₆₄ : TMP_BV_32_0[0:0] = 0x1₁ ? 0x1f₆₄ : 0x20₆₄
+
+%cf    : (TMP_BV_32_0[31:31] = 0x1₁ ? 0x0₃₂ : TMP_BV_32_0[30:30] = 0x1₁ ? 0x1₃₂ : TMP_BV_32_0[29:29] = 0x1₁ ? 0x2₃₂ : TMP_BV_32_0[28:28] = 0x1₁ ? 0x3₃₂ : TMP_BV_32_0[27:27] = 0x1₁ ? 0x4₃₂ : TMP_BV_32_0[26:26] = 0x1₁ ? 0x5₃₂ : TMP_BV_32_0[25:25] = 0x1₁ ? 0x6₃₂ : TMP_BV_32_0[24:24] = 0x1₁ ? 0x7₃₂ : TMP_BV_32_0[23:23] = 0x1₁ ? 0x8₃₂ : TMP_BV_32_0[22:22] = 0x1₁ ? 0x9₃₂ : TMP_BV_32_0[21:21] = 0x1₁ ? 0xa₃₂ : TMP_BV_32_0[20:20] = 0x1₁ ? 0xb₃₂ : TMP_BV_32_0[19:19] = 0x1₁ ? 0xc₃₂ : TMP_BV_32_0[18:18] = 0x1₁ ? 0xd₃₂ : TMP_BV_32_0[17:17] = 0x1₁ ? 0xe₃₂ : TMP_BV_32_0[16:16] = 0x1₁ ? 0xf₃₂ : TMP_BV_32_0[15:15] = 0x1₁ ? 0x10₃₂ : TMP_BV_32_0[14:14] = 0x1₁ ? 0x11₃₂ : TMP_BV_32_0[13:13] = 0x1₁ ? 0x12₃₂ : TMP_BV_32_0[12:12] = 0x1₁ ? 0x13₃₂ : TMP_BV_32_0[11:11] = 0x1₁ ? 0x14₃₂ : TMP_BV_32_0[10:10] = 0x1₁ ? 0x15₃₂ : TMP_BV_32_0[9:9] = 0x1₁ ? 0x16₃₂ : TMP_BV_32_0[8:8] = 0x1₁ ? 0x17₃₂ : TMP_BV_32_0[7:7] = 0x1₁ ? 0x18₃₂ : TMP_BV_32_0[6:6] = 0x1₁ ? 0x19₃₂ : TMP_BV_32_0[5:5] = 0x1₁ ? 0x1a₃₂ : TMP_BV_32_0[4:4] = 0x1₁ ? 0x1b₃₂ : TMP_BV_32_0[3:3] = 0x1₁ ? 0x1c₃₂ : TMP_BV_32_0[2:2] = 0x1₁ ? 0x1d₃₂ : TMP_BV_32_0[1:1] = 0x1₁ ? 0x1e₃₂ : TMP_BV_32_0[0:0] = 0x1₁ ? 0x1f₃₂ : 0x20₃₂) = 0x20₃₂
+%pf    : TMP_BOOL_2
+%af    : TMP_BOOL_3
+%zf    : (TMP_BV_32_0[31:31] = 0x1₁ ? 0x0₃₂ : TMP_BV_32_0[30:30] = 0x1₁ ? 0x1₃₂ : TMP_BV_32_0[29:29] = 0x1₁ ? 0x2₃₂ : TMP_BV_32_0[28:28] = 0x1₁ ? 0x3₃₂ : TMP_BV_32_0[27:27] = 0x1₁ ? 0x4₃₂ : TMP_BV_32_0[26:26] = 0x1₁ ? 0x5₃₂ : TMP_BV_32_0[25:25] = 0x1₁ ? 0x6₃₂ : TMP_BV_32_0[24:24] = 0x1₁ ? 0x7₃₂ : TMP_BV_32_0[23:23] = 0x1₁ ? 0x8₃₂ : TMP_BV_32_0[22:22] = 0x1₁ ? 0x9₃₂ : TMP_BV_32_0[21:21] = 0x1₁ ? 0xa₃₂ : TMP_BV_32_0[20:20] = 0x1₁ ? 0xb₃₂ : TMP_BV_32_0[19:19] = 0x1₁ ? 0xc₃₂ : TMP_BV_32_0[18:18] = 0x1₁ ? 0xd₃₂ : TMP_BV_32_0[17:17] = 0x1₁ ? 0xe₃₂ : TMP_BV_32_0[16:16] = 0x1₁ ? 0xf₃₂ : TMP_BV_32_0[15:15] = 0x1₁ ? 0x10₃₂ : TMP_BV_32_0[14:14] = 0x1₁ ? 0x11₃₂ : TMP_BV_32_0[13:13] = 0x1₁ ? 0x12₃₂ : TMP_BV_32_0[12:12] = 0x1₁ ? 0x13₃₂ : TMP_BV_32_0[11:11] = 0x1₁ ? 0x14₃₂ : TMP_BV_32_0[10:10] = 0x1₁ ? 0x15₃₂ : TMP_BV_32_0[9:9] = 0x1₁ ? 0x16₃₂ : TMP_BV_32_0[8:8] = 0x1₁ ? 0x17₃₂ : TMP_BV_32_0[7:7] = 0x1₁ ? 0x18₃₂ : TMP_BV_32_0[6:6] = 0x1₁ ? 0x19₃₂ : TMP_BV_32_0[5:5] = 0x1₁ ? 0x1a₃₂ : TMP_BV_32_0[4:4] = 0x1₁ ? 0x1b₃₂ : TMP_BV_32_0[3:3] = 0x1₁ ? 0x1c₃₂ : TMP_BV_32_0[2:2] = 0x1₁ ? 0x1d₃₂ : TMP_BV_32_0[1:1] = 0x1₁ ? 0x1e₃₂ : TMP_BV_32_0[0:0] = 0x1₁ ? 0x1f₃₂ : 0x20₃₂) = 0x0₃₂
+%sf    : TMP_BOOL_1
+%of    : TMP_BOOL_0
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

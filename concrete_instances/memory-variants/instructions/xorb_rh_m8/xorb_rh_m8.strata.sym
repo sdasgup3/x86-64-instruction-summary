@@ -1,0 +1,31 @@
+code: xorb (%rax), %ah
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %ah %cf %pf %zf %sf %of }
+  must write:      { %ah %cf %pf %zf %sf %of }
+  maybe undef:     { %af }
+  must undef:      { %af }
+  required flags:  { }
+
+xorb (%rax), %ah: Hindex0(10)
+xorb (%rax), %ah: Hindex0(10)
+xorb %bl, %ah: Hindex1(9)
+Formula:
+
+%rax   : %rax[63:16] ∘ (%rax[15:8] ⊕ TMP_BV_8_0) ∘ %rax[7:0]
+
+%cf    : false
+%pf    : !((%rax[8:8] ⊕ TMP_BV_8_0[0:0]) = 0x1₁ ⊕ (%rax[9:9] ⊕ TMP_BV_8_0[1:1]) = 0x1₁ ⊕ (%rax[10:10] ⊕ TMP_BV_8_0[2:2]) = 0x1₁ ⊕ (%rax[11:11] ⊕ TMP_BV_8_0[3:3]) = 0x1₁ ⊕ (%rax[12:12] ⊕ TMP_BV_8_0[4:4]) = 0x1₁ ⊕ (%rax[13:13] ⊕ TMP_BV_8_0[5:5]) = 0x1₁ ⊕ (%rax[14:14] ⊕ TMP_BV_8_0[6:6]) = 0x1₁ ⊕ (%rax[15:15] ⊕ TMP_BV_8_0[7:7]) = 0x1₁)
+%af    : TMP_BOOL_1
+%zf    : (%rax[15:8] ⊕ TMP_BV_8_0) = 0x0₈
+%sf    : (%rax[15:15] ⊕ TMP_BV_8_0[7:7]) = 0x1₁
+%of    : false
+
+Information about memory reads:
+  Value TMP_BV_8_0 (1 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

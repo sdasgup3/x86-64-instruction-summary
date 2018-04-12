@@ -1,0 +1,24 @@
+code: cmoval (%rax), %ebx
+
+  maybe read:      { %rax %cf %zf }
+  must read:       { %rax %cf %zf }
+  maybe write:     { %rbx }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { cmov }
+
+cmoval (%rax), %ebx: Hindex0(10)
+cmoval (%rax), %ebx: Hindex0(10)
+cmoval %ecx, %ebx: Hindex3(9)
+Formula:
+
+%rbx   : 0x0₃₂ ∘ (!%cf ∧ !%zf ? TMP_BV_32_0 : %rbx[31:0])
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

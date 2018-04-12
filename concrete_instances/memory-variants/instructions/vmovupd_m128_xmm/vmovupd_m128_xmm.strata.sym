@@ -1,0 +1,22 @@
+code: vmovupd %xmm1, (%rax)
+
+  maybe read:      { %rax %xmm1 }
+  must read:       { %rax %xmm1 }
+  maybe write:     { }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+vmovupd %xmm1, (%rax): Hindex0(10)
+vmovupd %xmm1, (%rax): Hindex0(10)
+vmovupd %xmm2, %xmm1: Hindex0(9)
+Formula:
+
+Information about memory writes:
+  Address %rax was updated to
+    %ymm1[127:0] (16 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

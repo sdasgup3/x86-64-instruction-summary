@@ -1,0 +1,29 @@
+code: rolq $0x1, (%rax)
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %cf %of }
+  must write:      { %cf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+rolq $0x1, (%rax): Hindex0(10)
+rolq $0x1, (%rax): Hindex0(10)
+rolq $0x1, %rbx: Hindex7(9)
+Formula:
+
+%cf    : true ∧ (TMP_BV_64_0 rot_left 0x1₆₄)[0:0] = 0x1₁ ∨ false ∧ %cf
+%of    : true ∧ ((TMP_BV_64_0 rot_left 0x1₆₄)[63:63] = 0x1₁ ⊕ (TMP_BV_64_0 rot_left 0x1₆₄)[0:0] = 0x1₁) ∨ false ∧ TMP_BOOL_0
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
+
+Information about memory writes:
+  Address %rax was updated to
+    TMP_BV_64_0 rot_left 0x1₆₄ (8 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false

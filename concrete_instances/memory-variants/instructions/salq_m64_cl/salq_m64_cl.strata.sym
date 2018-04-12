@@ -1,0 +1,32 @@
+code: salq %cl, (%rax)
+
+  maybe read:      { %rax %cl }
+  must read:       { %rax %cl }
+  maybe write:     { %cf %pf %zf %sf %of }
+  must write:      { }
+  maybe undef:     { %cf %af %of }
+  must undef:      { }
+  required flags:  { }
+
+salq %cl, (%rax): Hindex0(10)
+salq %cl, (%rax): Hindex0(10)
+salq %cl, %rbx: Hindex7(9)
+Formula:
+
+%cf    : (%rcx[7:0] & 0x3f₈) ≥ 0x40₈ ∧ TMP_BOOL_0 ∨ !((%rcx[7:0] & 0x3f₈) ≥ 0x40₈) ∧ (!((%rcx[7:0] & 0x3f₈) = 0x0₈) ∧ (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ (%rcx[7:0] & 0x3f₈))[64:64] = 0x1₁ ∨ !(!((%rcx[7:0] & 0x3f₈) = 0x0₈)) ∧ %cf)
+%pf    : !((%rcx[7:0] & 0x3f₈) = 0x0₈) ∧ !((0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ (%rcx[7:0] & 0x3f₈))[0:0] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ (%rcx[7:0] & 0x3f₈))[1:1] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ (%rcx[7:0] & 0x3f₈))[2:2] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ (%rcx[7:0] & 0x3f₈))[3:3] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ (%rcx[7:0] & 0x3f₈))[4:4] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ (%rcx[7:0] & 0x3f₈))[5:5] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ (%rcx[7:0] & 0x3f₈))[6:6] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ (%rcx[7:0] & 0x3f₈))[7:7] = 0x1₁) ∨ !(!((%rcx[7:0] & 0x3f₈) = 0x0₈)) ∧ %pf
+%zf    : !((%rcx[7:0] & 0x3f₈) = 0x0₈) ∧ (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ (%rcx[7:0] & 0x3f₈))[63:0] = 0x0₆₄ ∨ !(!((%rcx[7:0] & 0x3f₈) = 0x0₈)) ∧ %zf
+%sf    : !((%rcx[7:0] & 0x3f₈) = 0x0₈) ∧ (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ (%rcx[7:0] & 0x3f₈))[63:63] = 0x1₁ ∨ !(!((%rcx[7:0] & 0x3f₈) = 0x0₈)) ∧ %sf
+%of    : (%rcx[7:0] & 0x3f₈) = 0x1₈ ∧ !((%rcx[7:0] & 0x3f₈) ≥ 0x40₈ ∧ TMP_BOOL_0 ∨ !((%rcx[7:0] & 0x3f₈) ≥ 0x40₈) ∧ (!((%rcx[7:0] & 0x3f₈) = 0x0₈) ∧ (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ (%rcx[7:0] & 0x3f₈))[64:64] = 0x1₁ ∨ !(!((%rcx[7:0] & 0x3f₈) = 0x0₈)) ∧ %cf) ↔ (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ (%rcx[7:0] & 0x3f₈))[63:63] = 0x1₁) ∨ !((%rcx[7:0] & 0x3f₈) = 0x1₈) ∧ %of
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
+
+Information about memory writes:
+  Address %rax was updated to
+    (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ (%rcx[7:0] & 0x3f₈))[63:0] (8 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
