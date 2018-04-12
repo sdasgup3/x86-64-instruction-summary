@@ -8,9 +8,6 @@ code: pslld (%rax), %xmm1
   must undef:      { }
   required flags:  { sse2 }
 
-pslld (%rax), %xmm1: Hindex0(10)
-pslld (%rax), %xmm1: Hindex0(10)
-pslld %xmm2, %xmm1: Hindex1(9)
 Formula:
 
 %ymm1  : %ymm1[255:128] ∘ (TMP_BV_128_0[63:0] > 0x1f₆₄ ? 0x0₁₂₈ : (%ymm1[127:96] << TMP_BV_128_0[31:0]) ∘ ((%ymm1[95:64] << TMP_BV_128_0[31:0]) ∘ ((%ymm1[63:32] << TMP_BV_128_0[31:0]) ∘ (%ymm1[31:0] << TMP_BV_128_0[31:0]))))

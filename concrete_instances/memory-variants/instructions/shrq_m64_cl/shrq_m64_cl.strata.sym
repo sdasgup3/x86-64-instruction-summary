@@ -8,9 +8,6 @@ code: shrq %cl, (%rax)
   must undef:      { }
   required flags:  { }
 
-shrq %cl, (%rax): Hindex0(10)
-shrq %cl, (%rax): Hindex0(10)
-shrq %cl, %rbx: Hindex7(9)
 Formula:
 
 %cf    : (%rcx[7:0] & 0x3f₈) ≥ 0x40₈ ∧ TMP_BOOL_0 ∨ !((%rcx[7:0] & 0x3f₈) ≥ 0x40₈) ∧ (!((%rcx[7:0] & 0x3f₈) = 0x0₈) ∧ (TMP_BV_64_0 ∘ 0x0₁ >> 0x0₅₇ ∘ (%rcx[7:0] & 0x3f₈))[0:0] = 0x1₁ ∨ !(!((%rcx[7:0] & 0x3f₈) = 0x0₈)) ∧ %cf)

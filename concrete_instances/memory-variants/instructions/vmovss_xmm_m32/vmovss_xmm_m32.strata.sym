@@ -8,8 +8,6 @@ code: vmovss (%rax), %xmm1
   must undef:      { }
   required flags:  { avx }
 
-vmovss (%rax), %xmm1: Hindex2(10)
-vmovss (%rax), %xmm1: Hindex2(10)
 Formula:
 
 %ymm1  : 0x0₁₂₈ ∘ (0x0₉₆ ∘ TMP_BV_32_0)

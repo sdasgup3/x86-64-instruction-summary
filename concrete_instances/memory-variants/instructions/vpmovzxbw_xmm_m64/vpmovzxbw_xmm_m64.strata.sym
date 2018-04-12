@@ -8,8 +8,6 @@ code: vpmovzxbw (%rax), %xmm1
   must undef:      { }
   required flags:  { avx }
 
-vpmovzxbw (%rax), %xmm1: Hindex1(10)
-vpmovzxbw (%rax), %xmm1: Hindex1(10)
 Formula:
 
 %ymm1  : 0x0₁₂₈ ∘ (0x0₈ ∘ TMP_BV_64_0[63:56] ∘ (0x0₈ ∘ TMP_BV_64_0[55:48] ∘ (0x0₈ ∘ TMP_BV_64_0[47:40] ∘ (0x0₈ ∘ TMP_BV_64_0[39:32] ∘ (0x0₈ ∘ TMP_BV_64_0[31:24] ∘ (0x0₈ ∘ TMP_BV_64_0[23:16] ∘ (0x0₈ ∘ TMP_BV_64_0[15:8] ∘ (0x0₈ ∘ TMP_BV_64_0[7:0]))))))))

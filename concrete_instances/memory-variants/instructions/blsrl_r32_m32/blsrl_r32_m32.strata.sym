@@ -8,22 +8,29 @@ code: blsrl (%rax), %ebx
   must undef:      { %pf %af }
   required flags:  { bmi1 }
 
-blsrl (%rax), %ebx: Hindex0(10)
-blsrl (%rax), %ebx: Hindex0(10)
-blsrl %ecx, %ebx: Hindex1(9)
 Formula:
 
-%rbx   : 0x0₃₂ ∘ (TMP_BV_32_0 - 0x1₃₂ & TMP_BV_32_0)
+%rbx   : 0x0₃₂ ∘ ((TMP_BV_32_0 | (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ (0x0₃₂ ∘ TMP_BV_32_1))[31:0]) ⊕ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ (0x0₃₂ ∘ TMP_BV_32_1))[31:0] ⊕ TMP_BV_32_2)
 
-%cf    : TMP_BV_32_0 = 0x0₃₂
-%pf    : TMP_BOOL_0
-%af    : TMP_BOOL_1
-%zf    : (TMP_BV_32_0 - 0x1₃₂ & TMP_BV_32_0) = 0x0₃₂
-%sf    : ((TMP_BV_32_0 - 0x1₃₂)[31:31] & TMP_BV_32_0[31:31]) = 0x1₁
-%of    : false
+%cf    : (0x0₁ ∘ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ (0x0₃₂ ∘ TMP_BV_32_3))[47:40] + 0x0₁ ∘ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ (0x0₃₂ ∘ TMP_BV_32_3))[47:40])[8:8] = 0x1₁
+%pf    : TMP_BOOL_18
+%af    : TMP_BOOL_19
+%zf    : ((TMP_BV_32_0 | (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ (0x0₃₂ ∘ TMP_BV_32_1))[31:0]) ⊕ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ (0x0₃₂ ∘ TMP_BV_32_1))[31:0] ⊕ TMP_BV_32_2) = 0x0₃₂
+%sf    : ((TMP_BV_32_4[31:31] | (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ (0x0₃₂ ∘ TMP_BV_32_1))[31:31]) ⊕ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ (0x0₃₂ ∘ TMP_BV_32_1))[31:31] ⊕ TMP_BV_32_5[31:31]) = 0x1₁
+%of    : ((0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ (0x0₃₂ ∘ TMP_BV_32_3))[47:47] = 0x1₁ ↔ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ (0x0₃₂ ∘ TMP_BV_32_3))[47:47] = 0x1₁) ∧ !((0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ (0x0₃₂ ∘ TMP_BV_32_3))[47:47] = 0x1₁ ↔ (0x0₁ ∘ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ (0x0₃₂ ∘ TMP_BV_32_3))[47:40] + 0x0₁ ∘ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x0₁ ∘ (0x0₃₂ ∘ TMP_BV_32_3))[47:40])[7:7] = 0x1₁)
 
 Information about memory reads:
   Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_1 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_2 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_3 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_4 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_5 (4 bytes)
     was read at address %rax.
 
 sigfpe  : sigfpe

@@ -8,9 +8,6 @@ code: vcvttpd2dq (%rax), %xmm1
   must undef:      { }
   required flags:  { avx }
 
-vcvttpd2dq (%rax), %xmm1: Hindex0(10)
-vcvttpd2dq (%rax), %xmm1: Hindex0(10)
-vcvttpd2dq %ymm1, %xmm1: Hindex1(9)
 Formula:
 
 %ymm1  : 0x0₁₂₈ ∘ (cvt_double_to_int32_truncate(%ymm1[255:192]) ∘ (cvt_double_to_int32_truncate(%ymm1[191:128]) ∘ (cvt_double_to_int32_truncate(%ymm1[127:64]) ∘ cvt_double_to_int32_truncate(%ymm1[63:0]))))

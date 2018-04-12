@@ -8,22 +8,83 @@ code: popcntl (%rax), %ebx
   must undef:      { }
   required flags:  { popcnt }
 
-popcntl (%rax), %ebx: Hindex0(10)
-popcntl (%rax), %ebx: Hindex0(10)
-popcntl %ecx, %ebx: Hindex1(9)
 Formula:
 
-%rbx   : 0x0₃₂ ∘ (0x0₁₆ ∘ (0x0₈ ∘ (0x0₄ ∘ (0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_0[31:31] + 0x0₁ ∘ TMP_BV_32_0[30:30]) + 0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_0[29:29] + 0x0₁ ∘ TMP_BV_32_0[28:28])) + 0x0₄ ∘ (0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_0[27:27] + 0x0₁ ∘ TMP_BV_32_0[26:26]) + 0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_0[25:25] + 0x0₁ ∘ TMP_BV_32_0[24:24]))) + 0x0₈ ∘ (0x0₄ ∘ (0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_0[23:23] + 0x0₁ ∘ TMP_BV_32_0[22:22]) + 0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_0[21:21] + 0x0₁ ∘ TMP_BV_32_0[20:20])) + 0x0₄ ∘ (0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_0[19:19] + 0x0₁ ∘ TMP_BV_32_0[18:18]) + 0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_0[17:17] + 0x0₁ ∘ TMP_BV_32_0[16:16])))) + 0x0₁₆ ∘ (0x0₈ ∘ (0x0₄ ∘ (0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_0[15:15] + 0x0₁ ∘ TMP_BV_32_0[14:14]) + 0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_0[13:13] + 0x0₁ ∘ TMP_BV_32_0[12:12])) + 0x0₄ ∘ (0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_0[11:11] + 0x0₁ ∘ TMP_BV_32_0[10:10]) + 0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_0[9:9] + 0x0₁ ∘ TMP_BV_32_0[8:8]))) + 0x0₈ ∘ (0x0₄ ∘ (0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_0[7:7] + 0x0₁ ∘ TMP_BV_32_0[6:6]) + 0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_0[5:5] + 0x0₁ ∘ TMP_BV_32_0[4:4])) + 0x0₄ ∘ (0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_0[3:3] + 0x0₁ ∘ TMP_BV_32_0[2:2]) + 0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_0[1:1] + 0x0₁ ∘ TMP_BV_32_0[0:0])))))
+%rbx   : 0x0₃₂ ∘ (0x0₁₆ ∘ (0x0₈ ∘ (0x0₄ ∘ (0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_0[31:31] + 0x0₁ ∘ TMP_BV_32_1[30:30]) + 0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_2[29:29] + 0x0₁ ∘ TMP_BV_32_3[28:28])) + 0x0₄ ∘ (0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_4[27:27] + 0x0₁ ∘ TMP_BV_32_5[26:26]) + 0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_6[25:25] + 0x0₁ ∘ TMP_BV_32_7[24:24]))) + 0x0₈ ∘ (0x0₄ ∘ (0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_8[23:23] + 0x0₁ ∘ TMP_BV_32_9[22:22]) + 0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_10[21:21] + 0x0₁ ∘ TMP_BV_32_11[20:20])) + 0x0₄ ∘ (0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_12[19:19] + 0x0₁ ∘ TMP_BV_32_13[18:18]) + 0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_14[17:17] + 0x0₁ ∘ TMP_BV_32_15[16:16])))) + 0x0₁₆ ∘ (0x0₈ ∘ (0x0₄ ∘ (0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_16[15:15] + 0x0₁ ∘ TMP_BV_32_17[14:14]) + 0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_18[13:13] + 0x0₁ ∘ TMP_BV_32_19[12:12])) + 0x0₄ ∘ (0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_20[11:11] + 0x0₁ ∘ TMP_BV_32_21[10:10]) + 0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_22[9:9] + 0x0₁ ∘ TMP_BV_32_23[8:8]))) + 0x0₈ ∘ (0x0₄ ∘ (0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_24[7:7] + 0x0₁ ∘ TMP_BV_32_25[6:6]) + 0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_26[5:5] + 0x0₁ ∘ TMP_BV_32_27[4:4])) + 0x0₄ ∘ (0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_28[3:3] + 0x0₁ ∘ TMP_BV_32_29[2:2]) + 0x0₂ ∘ (0x0₁ ∘ TMP_BV_32_30[1:1] + 0x0₁ ∘ TMP_BV_32_31[0:0])))))
 
 %cf    : false
 %pf    : false
 %af    : false
-%zf    : TMP_BV_32_0 = 0x0₃₂
+%zf    : 0x0₃₂ ∘ TMP_BV_32_32 = 0x0₆₄
 %sf    : false
 %of    : false
 
 Information about memory reads:
   Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_1 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_2 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_3 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_4 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_5 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_6 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_7 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_8 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_9 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_10 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_11 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_12 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_13 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_14 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_15 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_16 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_17 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_18 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_19 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_20 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_21 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_22 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_23 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_24 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_25 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_26 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_27 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_28 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_29 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_30 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_31 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_32 (4 bytes)
     was read at address %rax.
 
 sigfpe  : sigfpe

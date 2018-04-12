@@ -8,12 +8,9 @@ code: movsbw (%rax), %bx
   must undef:      { }
   required flags:  { }
 
-movsbw (%rax), %bx: Hindex0(10)
-movsbw (%rax), %bx: Hindex0(10)
-movsbw %cl, %bx: Hindex5(9)
 Formula:
 
-%rbx   : %rbx[63:16] ∘ sign-extend-16(TMP_BV_8_0)
+%rbx   : %rbx[63:16] ∘ sign-extend-64(TMP_BV_8_0)[15:0]
 
 Information about memory reads:
   Value TMP_BV_8_0 (1 bytes)

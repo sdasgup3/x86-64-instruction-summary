@@ -8,22 +8,35 @@ code: orw (%rax), %bx
   must undef:      { %af }
   required flags:  { }
 
-orw (%rax), %bx: Hindex0(10)
-orw (%rax), %bx: Hindex0(10)
-orw %cx, %bx: Hindex1(9)
 Formula:
 
-%rbx   : %rbx[63:16] ∘ (%rbx[15:0] | TMP_BV_16_0)
+%rbx   : %rbx[63:16] ∘ (TMP_BV_16_0 | %rbx[15:0])
 
 %cf    : false
-%pf    : !((%rbx[0:0] | TMP_BV_16_0[0:0]) = 0x1₁ ⊕ (%rbx[1:1] | TMP_BV_16_0[1:1]) = 0x1₁ ⊕ (%rbx[2:2] | TMP_BV_16_0[2:2]) = 0x1₁ ⊕ (%rbx[3:3] | TMP_BV_16_0[3:3]) = 0x1₁ ⊕ (%rbx[4:4] | TMP_BV_16_0[4:4]) = 0x1₁ ⊕ (%rbx[5:5] | TMP_BV_16_0[5:5]) = 0x1₁ ⊕ (%rbx[6:6] | TMP_BV_16_0[6:6]) = 0x1₁ ⊕ (%rbx[7:7] | TMP_BV_16_0[7:7]) = 0x1₁)
-%af    : TMP_BOOL_1
-%zf    : (%rbx[15:0] | TMP_BV_16_0) = 0x0₁₆
-%sf    : (%rbx[15:15] | TMP_BV_16_0[15:15]) = 0x1₁
+%pf    : !((TMP_BV_16_1[0:0] | %rbx[0:0]) = 0x1₁ ⊕ (TMP_BV_16_2[1:1] | %rbx[1:1]) = 0x1₁ ⊕ (TMP_BV_16_3[2:2] | %rbx[2:2]) = 0x1₁ ⊕ (TMP_BV_16_4[3:3] | %rbx[3:3]) = 0x1₁ ⊕ (TMP_BV_16_5[4:4] | %rbx[4:4]) = 0x1₁ ⊕ (TMP_BV_16_6[5:5] | %rbx[5:5]) = 0x1₁ ⊕ (TMP_BV_16_7[6:6] | %rbx[6:6]) = 0x1₁ ⊕ (TMP_BV_16_8[7:7] | %rbx[7:7]) = 0x1₁)
+%af    : TMP_BOOL_2
+%zf    : (sign-extend-64(TMP_BV_16_0) | sign-extend-64(%rbx[15:0])) = 0x0₆₄
+%sf    : (sign-extend-64(TMP_BV_16_0)[63:63] | sign-extend-64(%rbx[15:0])[63:63]) = 0x1₁
 %of    : false
 
 Information about memory reads:
   Value TMP_BV_16_0 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_1 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_2 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_3 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_4 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_5 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_6 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_7 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_8 (2 bytes)
     was read at address %rax.
 
 sigfpe  : sigfpe

@@ -8,8 +8,6 @@ code: bextrl %ecx, (%rax), %ebx
   must undef:      { %pf %af %sf }
   required flags:  { bmi1 }
 
-bextrl %ecx, (%rax), %ebx: Hindex2(10)
-bextrl %ecx, (%rax), %ebx: Hindex2(10)
 Formula:
 
 %rbx   : 0x0₃₂ ∘ ((0x0₄₈₀ ∘ TMP_BV_32_0 >> 0x0₅₀₄ ∘ %rcx[7:0])[31:0] & !(0xffffffffffffffff₅₁₂ >> 0x0₅₀₄ ∘ %rcx[15:8] << 0x0₅₀₄ ∘ %rcx[15:8])[31:0])

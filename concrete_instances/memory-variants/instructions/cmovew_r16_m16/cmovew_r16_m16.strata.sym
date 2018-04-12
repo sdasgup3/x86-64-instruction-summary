@@ -8,9 +8,6 @@ code: cmovew (%rax), %bx
   must undef:      { }
   required flags:  { cmov }
 
-cmovew (%rax), %bx: Hindex0(10)
-cmovew (%rax), %bx: Hindex0(10)
-cmovew %cx, %bx: Hindex3(9)
 Formula:
 
 %rbx   : %rbx[63:16] ∘ (%zf ? TMP_BV_16_0 : %rbx[15:0])

@@ -8,8 +8,6 @@ code: vdpps $0x0, (%rax), %ymm2, %ymm1
   must undef:      { }
   required flags:  { avx }
 
-vdpps $0x0, (%rax), %ymm2, %ymm1: Hindex1(10)
-vdpps $0x0, (%rax), %ymm2, %ymm1: Hindex1(10)
 Formula:
 
 %ymm1  : 0x0₆₄ ∘ 0x0₃₂ ∘ 0x0₃₂ ∘ (0x0₆₄ ∘ 0x0₃₂ ∘ 0x0₃₂)

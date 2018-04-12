@@ -8,8 +8,6 @@ code: rolq $0x0, (%rax)
   must undef:      { }
   required flags:  { }
 
-rolq $0x0, (%rax): Hindex8(10)
-rolq $0x0, (%rax): Hindex8(10)
 Formula:
 
 %cf    : false ∧ (TMP_BV_64_0 rot_left 0x0₆₄)[0:0] = 0x1₁ ∨ true ∧ %cf

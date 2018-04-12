@@ -8,8 +8,6 @@ code: rcrw $0x1, (%rax)
   must undef:      { }
   required flags:  { }
 
-rcrw $0x1, (%rax): Hindex8(10)
-rcrw $0x1, (%rax): Hindex8(10)
 Formula:
 
 %cf    : ((%cf ? 0x1₁ : 0x0₁) ∘ TMP_BV_16_0 rot_right 0x1₁₇)[16:16] = 0x1₁

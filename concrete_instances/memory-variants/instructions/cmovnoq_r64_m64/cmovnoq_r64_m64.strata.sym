@@ -8,15 +8,14 @@ code: cmovnoq (%rax), %rbx
   must undef:      { }
   required flags:  { cmov }
 
-cmovnoq (%rax), %rbx: Hindex0(10)
-cmovnoq (%rax), %rbx: Hindex0(10)
-cmovnoq %rcx, %rbx: Hindex3(9)
 Formula:
 
-%rbx   : !%of ? TMP_BV_64_0 : %rbx
+%rbx   : ((((((%of ? 0xff₉ : 0x0₉) + (%of ? 0x1₉ : 0x0₉))[8:8] = 0x1₁ ? 0x0₉ : 0xff₉) + (((%of ? 0xff₉ : 0x0₉) + (%of ? 0x1₉ : 0x0₉))[8:8] = 0x1₁ ? 0x0₉ : 0xff₉))[8:8] = 0x1₁ ? 0x0₁ ∘ TMP_BV_64_0[15:0] + 0x1₁₇ : 0x0₁ ∘ TMP_BV_64_0[15:0]) + 0x0₁ ∘ (TMP_BV_64_0[15:0] ⊕ 0xffff₁₆))[15:0] = 0x0₁₆ ? TMP_BV_64_1 : %rbx
 
 Information about memory reads:
   Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_1 (8 bytes)
     was read at address %rax.
 
 sigfpe  : sigfpe

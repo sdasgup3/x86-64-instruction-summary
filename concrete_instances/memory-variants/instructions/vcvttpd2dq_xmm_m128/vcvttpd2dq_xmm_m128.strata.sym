@@ -8,15 +8,14 @@ code: vcvttpd2dq (%rax), %xmm1
   must undef:      { }
   required flags:  { avx }
 
-vcvttpd2dq (%rax), %xmm1: Hindex0(10)
-vcvttpd2dq (%rax), %xmm1: Hindex0(10)
-vcvttpd2dq %xmm2, %xmm1: Hindex0(9)
 Formula:
 
-%ymm1  : 0x0₁₂₈ ∘ (%ymm1[127:64] ∘ (cvt_double_to_int32_truncate(TMP_BV_128_0[127:64]) ∘ cvt_double_to_int32_truncate(TMP_BV_128_0[63:0])))
+%ymm1  : 0x0₁₂₈ ∘ (0x0₃₂ ∘ (0x0₃₂ ∘ (cvt_double_to_int32_truncate(TMP_BV_128_0[127:64]) ∘ cvt_double_to_int32_truncate(TMP_BV_128_1[63:0]))))
 
 Information about memory reads:
   Value TMP_BV_128_0 (16 bytes)
+    was read at address %rax.
+  Value TMP_BV_128_1 (16 bytes)
     was read at address %rax.
 
 sigfpe  : sigfpe

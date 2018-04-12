@@ -8,8 +8,6 @@ code: vpermilps $0x0, (%rax), %ymm1
   must undef:      { }
   required flags:  { avx }
 
-vpermilps $0x0, (%rax), %ymm1: Hindex2(10)
-vpermilps $0x0, (%rax), %ymm1: Hindex2(10)
 Formula:
 
 %ymm1  : TMP_BV_256_0[159:128] ∘ (TMP_BV_256_0[159:128] ∘ (TMP_BV_256_0[159:128] ∘ (TMP_BV_256_0[159:128] ∘ (TMP_BV_256_0[31:0] ∘ (TMP_BV_256_0[31:0] ∘ (TMP_BV_256_0[31:0] ∘ TMP_BV_256_0[31:0]))))))

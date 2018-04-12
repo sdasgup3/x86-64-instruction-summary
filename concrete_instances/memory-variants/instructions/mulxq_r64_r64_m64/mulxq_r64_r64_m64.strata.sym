@@ -8,8 +8,6 @@ code: mulxq (%rax), %rcx, %rbx
   must undef:      { }
   required flags:  { bmi2 }
 
-mulxq (%rax), %rcx, %rbx: Hindex2(10)
-mulxq (%rax), %rcx, %rbx: Hindex2(10)
 Formula:
 
 %rcx   : (0x0₆₄ ∘ %rdx * 0x0₆₄ ∘ TMP_BV_64_0)[63:0]

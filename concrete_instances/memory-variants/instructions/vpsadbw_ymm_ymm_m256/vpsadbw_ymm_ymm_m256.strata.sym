@@ -8,16 +8,76 @@ code: vpsadbw (%rax), %ymm2, %ymm1
   must undef:      { }
   required flags:  { avx2 }
 
-vpsadbw (%rax), %ymm2, %ymm1: Hindex1(10)
-vpsadbw (%rax), %ymm2, %ymm1: Hindex1(10)
 Formula:
 
-%ymm1  : 0x0₄₈ ∘ (0x0₈ ∘ (%ymm2[255:248] > TMP_BV_256_0[255:248] ? %ymm2[255:248] - TMP_BV_256_0[255:248] : TMP_BV_256_0[255:248] - %ymm2[255:248]) + (0x0₈ ∘ (%ymm2[247:240] > TMP_BV_256_0[247:240] ? %ymm2[247:240] - TMP_BV_256_0[247:240] : TMP_BV_256_0[247:240] - %ymm2[247:240]) + (0x0₈ ∘ (%ymm2[239:232] > TMP_BV_256_0[239:232] ? %ymm2[239:232] - TMP_BV_256_0[239:232] : TMP_BV_256_0[239:232] - %ymm2[239:232]) + (0x0₈ ∘ (%ymm2[231:224] > TMP_BV_256_0[231:224] ? %ymm2[231:224] - TMP_BV_256_0[231:224] : TMP_BV_256_0[231:224] - %ymm2[231:224]) + (0x0₈ ∘ (%ymm2[223:216] > TMP_BV_256_0[223:216] ? %ymm2[223:216] - TMP_BV_256_0[223:216] : TMP_BV_256_0[223:216] - %ymm2[223:216]) + (0x0₈ ∘ (%ymm2[215:208] > TMP_BV_256_0[215:208] ? %ymm2[215:208] - TMP_BV_256_0[215:208] : TMP_BV_256_0[215:208] - %ymm2[215:208]) + (0x0₈ ∘ (%ymm2[207:200] > TMP_BV_256_0[207:200] ? %ymm2[207:200] - TMP_BV_256_0[207:200] : TMP_BV_256_0[207:200] - %ymm2[207:200]) + 0x0₈ ∘ (%ymm2[199:192] > TMP_BV_256_0[199:192] ? %ymm2[199:192] - TMP_BV_256_0[199:192] : TMP_BV_256_0[199:192] - %ymm2[199:192])))))))) ∘ (0x0₄₈ ∘ (0x0₈ ∘ (%ymm2[191:184] > TMP_BV_256_0[191:184] ? %ymm2[191:184] - TMP_BV_256_0[191:184] : TMP_BV_256_0[191:184] - %ymm2[191:184]) + (0x0₈ ∘ (%ymm2[183:176] > TMP_BV_256_0[183:176] ? %ymm2[183:176] - TMP_BV_256_0[183:176] : TMP_BV_256_0[183:176] - %ymm2[183:176]) + (0x0₈ ∘ (%ymm2[175:168] > TMP_BV_256_0[175:168] ? %ymm2[175:168] - TMP_BV_256_0[175:168] : TMP_BV_256_0[175:168] - %ymm2[175:168]) + (0x0₈ ∘ (%ymm2[167:160] > TMP_BV_256_0[167:160] ? %ymm2[167:160] - TMP_BV_256_0[167:160] : TMP_BV_256_0[167:160] - %ymm2[167:160]) + (0x0₈ ∘ (%ymm2[159:152] > TMP_BV_256_0[159:152] ? %ymm2[159:152] - TMP_BV_256_0[159:152] : TMP_BV_256_0[159:152] - %ymm2[159:152]) + (0x0₈ ∘ (%ymm2[151:144] > TMP_BV_256_0[151:144] ? %ymm2[151:144] - TMP_BV_256_0[151:144] : TMP_BV_256_0[151:144] - %ymm2[151:144]) + (0x0₈ ∘ (%ymm2[143:136] > TMP_BV_256_0[143:136] ? %ymm2[143:136] - TMP_BV_256_0[143:136] : TMP_BV_256_0[143:136] - %ymm2[143:136]) + 0x0₈ ∘ (%ymm2[135:128] > TMP_BV_256_0[135:128] ? %ymm2[135:128] - TMP_BV_256_0[135:128] : TMP_BV_256_0[135:128] - %ymm2[135:128])))))))) ∘ (0x0₄₈ ∘ (0x0₈ ∘ (%ymm2[127:120] > TMP_BV_256_0[127:120] ? %ymm2[127:120] - TMP_BV_256_0[127:120] : TMP_BV_256_0[127:120] - %ymm2[127:120]) + (0x0₈ ∘ (%ymm2[119:112] > TMP_BV_256_0[119:112] ? %ymm2[119:112] - TMP_BV_256_0[119:112] : TMP_BV_256_0[119:112] - %ymm2[119:112]) + (0x0₈ ∘ (%ymm2[111:104] > TMP_BV_256_0[111:104] ? %ymm2[111:104] - TMP_BV_256_0[111:104] : TMP_BV_256_0[111:104] - %ymm2[111:104]) + (0x0₈ ∘ (%ymm2[103:96] > TMP_BV_256_0[103:96] ? %ymm2[103:96] - TMP_BV_256_0[103:96] : TMP_BV_256_0[103:96] - %ymm2[103:96]) + (0x0₈ ∘ (%ymm2[95:88] > TMP_BV_256_0[95:88] ? %ymm2[95:88] - TMP_BV_256_0[95:88] : TMP_BV_256_0[95:88] - %ymm2[95:88]) + (0x0₈ ∘ (%ymm2[87:80] > TMP_BV_256_0[87:80] ? %ymm2[87:80] - TMP_BV_256_0[87:80] : TMP_BV_256_0[87:80] - %ymm2[87:80]) + (0x0₈ ∘ (%ymm2[79:72] > TMP_BV_256_0[79:72] ? %ymm2[79:72] - TMP_BV_256_0[79:72] : TMP_BV_256_0[79:72] - %ymm2[79:72]) + 0x0₈ ∘ (%ymm2[71:64] > TMP_BV_256_0[71:64] ? %ymm2[71:64] - TMP_BV_256_0[71:64] : TMP_BV_256_0[71:64] - %ymm2[71:64])))))))) ∘ (0x0₄₈ ∘ (0x0₈ ∘ (%ymm2[63:56] > TMP_BV_256_0[63:56] ? %ymm2[63:56] - TMP_BV_256_0[63:56] : TMP_BV_256_0[63:56] - %ymm2[63:56]) + (0x0₈ ∘ (%ymm2[55:48] > TMP_BV_256_0[55:48] ? %ymm2[55:48] - TMP_BV_256_0[55:48] : TMP_BV_256_0[55:48] - %ymm2[55:48]) + (0x0₈ ∘ (%ymm2[47:40] > TMP_BV_256_0[47:40] ? %ymm2[47:40] - TMP_BV_256_0[47:40] : TMP_BV_256_0[47:40] - %ymm2[47:40]) + (0x0₈ ∘ (%ymm2[39:32] > TMP_BV_256_0[39:32] ? %ymm2[39:32] - TMP_BV_256_0[39:32] : TMP_BV_256_0[39:32] - %ymm2[39:32]) + (0x0₈ ∘ (%ymm2[31:24] > TMP_BV_256_0[31:24] ? %ymm2[31:24] - TMP_BV_256_0[31:24] : TMP_BV_256_0[31:24] - %ymm2[31:24]) + (0x0₈ ∘ (%ymm2[23:16] > TMP_BV_256_0[23:16] ? %ymm2[23:16] - TMP_BV_256_0[23:16] : TMP_BV_256_0[23:16] - %ymm2[23:16]) + (0x0₈ ∘ (%ymm2[15:8] > TMP_BV_256_0[15:8] ? %ymm2[15:8] - TMP_BV_256_0[15:8] : TMP_BV_256_0[15:8] - %ymm2[15:8]) + 0x0₈ ∘ (%ymm2[7:0] > TMP_BV_256_0[7:0] ? %ymm2[7:0] - TMP_BV_256_0[7:0] : TMP_BV_256_0[7:0] - %ymm2[7:0])))))))))))
+%ymm1  : 0x0₄₈ ∘ (0x0₈ ∘ (%ymm2[255:248] > TMP_BV_256_0[255:248] ? %ymm2[255:248] - TMP_BV_256_0[255:248] : TMP_BV_256_0[255:248] - %ymm2[255:248]) + (0x0₈ ∘ (%ymm2[247:240] > TMP_BV_256_1[247:240] ? %ymm2[247:240] - TMP_BV_256_1[247:240] : TMP_BV_256_1[247:240] - %ymm2[247:240]) + (0x0₈ ∘ (%ymm2[239:232] > TMP_BV_256_2[239:232] ? %ymm2[239:232] - TMP_BV_256_2[239:232] : TMP_BV_256_2[239:232] - %ymm2[239:232]) + (0x0₈ ∘ (%ymm2[231:224] > TMP_BV_256_3[231:224] ? %ymm2[231:224] - TMP_BV_256_3[231:224] : TMP_BV_256_3[231:224] - %ymm2[231:224]) + (0x0₈ ∘ (%ymm2[223:216] > TMP_BV_256_4[223:216] ? %ymm2[223:216] - TMP_BV_256_4[223:216] : TMP_BV_256_4[223:216] - %ymm2[223:216]) + (0x0₈ ∘ (%ymm2[215:208] > TMP_BV_256_5[215:208] ? %ymm2[215:208] - TMP_BV_256_5[215:208] : TMP_BV_256_5[215:208] - %ymm2[215:208]) + (0x0₈ ∘ (%ymm2[207:200] > TMP_BV_256_6[207:200] ? %ymm2[207:200] - TMP_BV_256_6[207:200] : TMP_BV_256_6[207:200] - %ymm2[207:200]) + 0x0₈ ∘ (%ymm2[199:192] > TMP_BV_256_7[199:192] ? %ymm2[199:192] - TMP_BV_256_7[199:192] : TMP_BV_256_7[199:192] - %ymm2[199:192])))))))) ∘ (0x0₄₈ ∘ (0x0₈ ∘ (%ymm2[191:184] > TMP_BV_256_8[191:184] ? %ymm2[191:184] - TMP_BV_256_8[191:184] : TMP_BV_256_8[191:184] - %ymm2[191:184]) + (0x0₈ ∘ (%ymm2[183:176] > TMP_BV_256_9[183:176] ? %ymm2[183:176] - TMP_BV_256_9[183:176] : TMP_BV_256_9[183:176] - %ymm2[183:176]) + (0x0₈ ∘ (%ymm2[175:168] > TMP_BV_256_10[175:168] ? %ymm2[175:168] - TMP_BV_256_10[175:168] : TMP_BV_256_10[175:168] - %ymm2[175:168]) + (0x0₈ ∘ (%ymm2[167:160] > TMP_BV_256_11[167:160] ? %ymm2[167:160] - TMP_BV_256_11[167:160] : TMP_BV_256_11[167:160] - %ymm2[167:160]) + (0x0₈ ∘ (%ymm2[159:152] > TMP_BV_256_12[159:152] ? %ymm2[159:152] - TMP_BV_256_12[159:152] : TMP_BV_256_12[159:152] - %ymm2[159:152]) + (0x0₈ ∘ (%ymm2[151:144] > TMP_BV_256_13[151:144] ? %ymm2[151:144] - TMP_BV_256_13[151:144] : TMP_BV_256_13[151:144] - %ymm2[151:144]) + (0x0₈ ∘ (%ymm2[143:136] > TMP_BV_256_14[143:136] ? %ymm2[143:136] - TMP_BV_256_14[143:136] : TMP_BV_256_14[143:136] - %ymm2[143:136]) + 0x0₈ ∘ (%ymm2[135:128] > TMP_BV_256_15[135:128] ? %ymm2[135:128] - TMP_BV_256_15[135:128] : TMP_BV_256_15[135:128] - %ymm2[135:128]))))))))) ∘ (0x0₄₈ ∘ (0x0₈ ∘ (%ymm2[127:120] > TMP_BV_256_16[127:120] ? %ymm2[127:120] - TMP_BV_256_16[127:120] : TMP_BV_256_16[127:120] - %ymm2[127:120]) + (0x0₈ ∘ (%ymm2[119:112] > TMP_BV_256_17[119:112] ? %ymm2[119:112] - TMP_BV_256_17[119:112] : TMP_BV_256_17[119:112] - %ymm2[119:112]) + (0x0₈ ∘ (%ymm2[111:104] > TMP_BV_256_18[111:104] ? %ymm2[111:104] - TMP_BV_256_18[111:104] : TMP_BV_256_18[111:104] - %ymm2[111:104]) + (0x0₈ ∘ (%ymm2[103:96] > TMP_BV_256_19[103:96] ? %ymm2[103:96] - TMP_BV_256_19[103:96] : TMP_BV_256_19[103:96] - %ymm2[103:96]) + (0x0₈ ∘ (%ymm2[95:88] > TMP_BV_256_20[95:88] ? %ymm2[95:88] - TMP_BV_256_20[95:88] : TMP_BV_256_20[95:88] - %ymm2[95:88]) + (0x0₈ ∘ (%ymm2[87:80] > TMP_BV_256_21[87:80] ? %ymm2[87:80] - TMP_BV_256_21[87:80] : TMP_BV_256_21[87:80] - %ymm2[87:80]) + (0x0₈ ∘ (%ymm2[79:72] > TMP_BV_256_22[79:72] ? %ymm2[79:72] - TMP_BV_256_22[79:72] : TMP_BV_256_22[79:72] - %ymm2[79:72]) + 0x0₈ ∘ (%ymm2[71:64] > TMP_BV_256_23[71:64] ? %ymm2[71:64] - TMP_BV_256_23[71:64] : TMP_BV_256_23[71:64] - %ymm2[71:64])))))))) ∘ (0x0₄₈ ∘ (0x0₈ ∘ (%ymm2[63:56] > TMP_BV_256_24[63:56] ? %ymm2[63:56] - TMP_BV_256_24[63:56] : TMP_BV_256_24[63:56] - %ymm2[63:56]) + (0x0₈ ∘ (%ymm2[55:48] > TMP_BV_256_25[55:48] ? %ymm2[55:48] - TMP_BV_256_25[55:48] : TMP_BV_256_25[55:48] - %ymm2[55:48]) + (0x0₈ ∘ (%ymm2[47:40] > TMP_BV_256_26[47:40] ? %ymm2[47:40] - TMP_BV_256_26[47:40] : TMP_BV_256_26[47:40] - %ymm2[47:40]) + (0x0₈ ∘ (%ymm2[39:32] > TMP_BV_256_27[39:32] ? %ymm2[39:32] - TMP_BV_256_27[39:32] : TMP_BV_256_27[39:32] - %ymm2[39:32]) + (0x0₈ ∘ (%ymm2[31:24] > TMP_BV_256_28[31:24] ? %ymm2[31:24] - TMP_BV_256_28[31:24] : TMP_BV_256_28[31:24] - %ymm2[31:24]) + (0x0₈ ∘ (%ymm2[23:16] > TMP_BV_256_29[23:16] ? %ymm2[23:16] - TMP_BV_256_29[23:16] : TMP_BV_256_29[23:16] - %ymm2[23:16]) + (0x0₈ ∘ (%ymm2[15:8] > TMP_BV_256_30[15:8] ? %ymm2[15:8] - TMP_BV_256_30[15:8] : TMP_BV_256_30[15:8] - %ymm2[15:8]) + 0x0₈ ∘ (%ymm2[7:0] > TMP_BV_256_31[7:0] ? %ymm2[7:0] - TMP_BV_256_31[7:0] : TMP_BV_256_31[7:0] - %ymm2[7:0]))))))))))
 
 Information about memory reads:
   Value TMP_BV_256_0 (32 bytes)
     was read at address %rax.
+  Value TMP_BV_256_1 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_2 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_3 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_4 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_5 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_6 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_7 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_8 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_9 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_10 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_11 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_12 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_13 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_14 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_15 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_16 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_17 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_18 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_19 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_20 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_21 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_22 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_23 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_24 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_25 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_26 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_27 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_28 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_29 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_30 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_31 (32 bytes)
+    was read at address %rax.
 
 sigfpe  : sigfpe
 sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigsegv : sigsegv

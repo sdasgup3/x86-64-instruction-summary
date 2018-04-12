@@ -8,9 +8,6 @@ code: xorq %rbx, (%rax)
   must undef:      { %af }
   required flags:  { }
 
-xorq %rbx, (%rax): Hindex0(10)
-xorq %rbx, (%rax): Hindex0(10)
-xorq %rcx, %rbx: Hindex1(9)
 Formula:
 
 %cf    : false

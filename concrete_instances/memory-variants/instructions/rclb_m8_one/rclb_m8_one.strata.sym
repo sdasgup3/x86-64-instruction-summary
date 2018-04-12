@@ -8,23 +8,24 @@ code: rclb $0x1, (%rax)
   must undef:      { }
   required flags:  { }
 
-rclb $0x1, (%rax): Hindex0(10)
-rclb $0x1, (%rax): Hindex0(10)
-rclb $0x1, %bl: Hindex7(9)
 Formula:
 
-%cf    : ((%cf ? 0x1₁ : 0x0₁) ∘ TMP_BV_8_1 rot_left 0x1₉)[8:8] = 0x1₁
-%of    : true ∧ (((%cf ? 0x1₁ : 0x0₁) ∘ TMP_BV_8_1 rot_left 0x1₉)[8:8] = 0x1₁ ⊕ ((%cf ? 0x1₁ : 0x0₁) ∘ TMP_BV_8_1 rot_left 0x1₉)[7:7] = 0x1₁) ∨ false ∧ (true ∧ %of ∨ false ∧ TMP_BOOL_0)
+%cf    : ((%cf ? 0x0₁ ∘ TMP_BV_8_1 + 0x1₉ : 0x0₁ ∘ TMP_BV_8_1) + 0x0₁ ∘ TMP_BV_8_1)[8:8] = 0x1₁
+%of    : (TMP_BV_8_2[7:7] = 0x1₁ ↔ TMP_BV_8_3[7:7] = 0x1₁) ∧ !(TMP_BV_8_2[7:7] = 0x1₁ ↔ ((%cf ? 0x0₁ ∘ TMP_BV_8_1 + 0x1₉ : 0x0₁ ∘ TMP_BV_8_1) + 0x0₁ ∘ TMP_BV_8_1)[7:7] = 0x1₁)
 
 Information about memory reads:
   Value TMP_BV_8_0 (1 bytes)
     was read at address %rax.
   Value TMP_BV_8_1 (1 bytes)
     was read at address %rax.
+  Value TMP_BV_8_2 (1 bytes)
+    was read at address %rax.
+  Value TMP_BV_8_3 (1 bytes)
+    was read at address %rax.
 
 Information about memory writes:
   Address %rax was updated to
-    ((%cf ? 0x1₁ : 0x0₁) ∘ TMP_BV_8_1 rot_left 0x1₉)[7:0] (1 bytes).
+    ((%cf ? 0x0₁ ∘ TMP_BV_8_1 + 0x1₉ : 0x0₁ ∘ TMP_BV_8_1) + 0x0₁ ∘ TMP_BV_8_1)[7:0] (1 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

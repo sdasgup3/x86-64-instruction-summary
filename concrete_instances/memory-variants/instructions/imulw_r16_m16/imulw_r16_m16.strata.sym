@@ -8,8 +8,6 @@ code: imulw (%rax), %bx
   must undef:      { %pf %af %zf %sf }
   required flags:  { }
 
-imulw (%rax), %bx: Hindex2(10)
-imulw (%rax), %bx: Hindex2(10)
 Formula:
 
 %rbx   : %rbx[63:16] ∘ (sign-extend-32(%rbx[15:0]) * sign-extend-32(TMP_BV_16_0))[15:0]

@@ -8,9 +8,6 @@ code: vmovupd (%rax), %xmm1
   must undef:      { }
   required flags:  { avx }
 
-vmovupd (%rax), %xmm1: Hindex0(10)
-vmovupd (%rax), %xmm1: Hindex0(10)
-vmovupd %xmm2, %xmm1: Hindex0(9)
 Formula:
 
 %ymm1  : 0x0₁₂₈ ∘ TMP_BV_128_0

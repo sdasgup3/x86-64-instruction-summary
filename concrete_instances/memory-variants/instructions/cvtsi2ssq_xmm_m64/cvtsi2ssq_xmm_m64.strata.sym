@@ -8,8 +8,6 @@ code: cvtsi2ssq (%rax), %xmm1
   must undef:      { }
   required flags:  { sse }
 
-cvtsi2ssq (%rax), %xmm1: Hindex2(10)
-cvtsi2ssq (%rax), %xmm1: Hindex2(10)
 Formula:
 
 %ymm1  : %ymm1[255:128] ∘ (%ymm1[127:32] ∘ cvt_int64_to_single(TMP_BV_64_0))

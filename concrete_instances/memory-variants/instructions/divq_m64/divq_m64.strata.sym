@@ -8,8 +8,6 @@ code: divq (%rax)
   must undef:      { %cf %pf %af %zf %sf %of }
   required flags:  { }
 
-divq (%rax): Hindex2(10)
-divq (%rax): Hindex2(10)
 Formula:
 
 %rax   : div_quotient_int64(%rdx ∘ %rax, TMP_BV_64_0)

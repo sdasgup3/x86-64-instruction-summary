@@ -8,21 +8,22 @@ code: rcll $0x1, (%rax)
   must undef:      { }
   required flags:  { }
 
-rcll $0x1, (%rax): Hindex0(10)
-rcll $0x1, (%rax): Hindex0(10)
-rcll $0x1, %ebx: Hindex7(9)
 Formula:
 
-%cf    : ((%cf ? 0x1₁ : 0x0₁) ∘ TMP_BV_32_0 rot_left 0x1₃₃)[32:32] = 0x1₁
-%of    : true ∧ (((%cf ? 0x1₁ : 0x0₁) ∘ TMP_BV_32_0 rot_left 0x1₃₃)[32:32] = 0x1₁ ⊕ ((%cf ? 0x1₁ : 0x0₁) ∘ TMP_BV_32_0 rot_left 0x1₃₃)[31:31] = 0x1₁) ∨ false ∧ (true ∧ %of ∨ false ∧ TMP_BOOL_0)
+%cf    : ((%cf ? 0x0₁ ∘ TMP_BV_32_0 + 0x1₃₃ : 0x0₁ ∘ TMP_BV_32_0) + 0x0₁ ∘ TMP_BV_32_0)[32:32] = 0x1₁
+%of    : (TMP_BV_32_1[31:31] = 0x1₁ ↔ TMP_BV_32_2[31:31] = 0x1₁) ∧ !(TMP_BV_32_1[31:31] = 0x1₁ ↔ ((%cf ? 0x0₁ ∘ TMP_BV_32_0 + 0x1₃₃ : 0x0₁ ∘ TMP_BV_32_0) + 0x0₁ ∘ TMP_BV_32_0)[31:31] = 0x1₁)
 
 Information about memory reads:
   Value TMP_BV_32_0 (4 bytes)
     was read at address %rax.
+  Value TMP_BV_32_1 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_2 (4 bytes)
+    was read at address %rax.
 
 Information about memory writes:
   Address %rax was updated to
-    ((%cf ? 0x1₁ : 0x0₁) ∘ TMP_BV_32_0 rot_left 0x1₃₃)[31:0] (4 bytes).
+    ((%cf ? 0x0₁ ∘ TMP_BV_32_0 + 0x1₃₃ : 0x0₁ ∘ TMP_BV_32_0) + 0x0₁ ∘ TMP_BV_32_0)[31:0] (4 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

@@ -8,8 +8,6 @@ code: rorxl $0x0, (%rax), %ebx
   must undef:      { }
   required flags:  { bmi2 }
 
-rorxl $0x0, (%rax), %ebx: Hindex2(10)
-rorxl $0x0, (%rax), %ebx: Hindex2(10)
 Formula:
 
 %rbx   : 0x0₃₂ ∘ (TMP_BV_32_0 >> 0x0₃₂ | TMP_BV_32_0 << 0x20₃₂)

@@ -8,8 +8,6 @@ code: rorxq $0x0, (%rax), %rbx
   must undef:      { }
   required flags:  { bmi2 }
 
-rorxq $0x0, (%rax), %rbx: Hindex2(10)
-rorxq $0x0, (%rax), %rbx: Hindex2(10)
 Formula:
 
 %rbx   : TMP_BV_64_0 >> 0x0₆₄ | TMP_BV_64_0 << 0x40₆₄

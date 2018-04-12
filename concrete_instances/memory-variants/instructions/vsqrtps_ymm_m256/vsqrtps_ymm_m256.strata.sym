@@ -8,9 +8,6 @@ code: vsqrtps (%rax), %ymm1
   must undef:      { }
   required flags:  { avx }
 
-vsqrtps (%rax), %ymm1: Hindex0(10)
-vsqrtps (%rax), %ymm1: Hindex0(10)
-vsqrtps %ymm2, %ymm1: Hindex0(9)
 Formula:
 
 %ymm1  : sqrt_single(TMP_BV_256_0[255:224]) ∘ (sqrt_single(TMP_BV_256_1[223:192]) ∘ (sqrt_single(TMP_BV_256_2[191:160]) ∘ (sqrt_single(TMP_BV_256_3[159:128]) ∘ (sqrt_single(TMP_BV_256_4[127:96]) ∘ (sqrt_single(TMP_BV_256_5[95:64]) ∘ (sqrt_single(TMP_BV_256_6[63:32]) ∘ sqrt_single(TMP_BV_256_7[31:0])))))))

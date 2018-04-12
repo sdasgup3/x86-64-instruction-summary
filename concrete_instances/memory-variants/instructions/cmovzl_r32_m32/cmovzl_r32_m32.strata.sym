@@ -8,9 +8,6 @@ code: cmovzl (%rax), %ebx
   must undef:      { }
   required flags:  { cmov }
 
-cmovzl (%rax), %ebx: Hindex0(10)
-cmovzl (%rax), %ebx: Hindex0(10)
-cmovzl %ecx, %ebx: Hindex3(9)
 Formula:
 
 %rbx   : 0x0₃₂ ∘ (%zf ? TMP_BV_32_0 : %rbx[31:0])

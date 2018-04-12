@@ -8,8 +8,6 @@ code: vlddqu (%rax), %xmm1
   must undef:      { }
   required flags:  { avx }
 
-vlddqu (%rax), %xmm1: Hindex1(10)
-vlddqu (%rax), %xmm1: Hindex1(10)
 Formula:
 
 %ymm1  : 0x0₁₂₈ ∘ TMP_BV_128_0

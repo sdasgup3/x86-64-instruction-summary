@@ -8,8 +8,6 @@ code: rorw $0x0, (%rax)
   must undef:      { }
   required flags:  { }
 
-rorw $0x0, (%rax): Hindex8(10)
-rorw $0x0, (%rax): Hindex8(10)
 Formula:
 
 %cf    : false ∧ (TMP_BV_16_0 rot_right 0x0₁₆)[15:15] = 0x1₁ ∨ true ∧ %cf

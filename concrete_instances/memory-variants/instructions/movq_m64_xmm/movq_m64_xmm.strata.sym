@@ -8,9 +8,6 @@ code: movq %xmm1, (%rax)
   must undef:      { }
   required flags:  { sse2 }
 
-movq %xmm1, (%rax): Hindex0(10)
-movq %xmm1, (%rax): Hindex0(10)
-movq %xmm1, %rbx: Hindex5(9)
 Formula:
 
 Information about memory writes:

@@ -8,9 +8,6 @@ code: setnae (%rax)
   must undef:      { }
   required flags:  { }
 
-setnae (%rax): Hindex0(10)
-setnae (%rax): Hindex0(10)
-setnae %bl: Hindex3(9)
 Formula:
 
 Information about memory reads:

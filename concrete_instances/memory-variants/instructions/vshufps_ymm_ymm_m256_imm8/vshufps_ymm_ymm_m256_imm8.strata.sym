@@ -8,8 +8,6 @@ code: vshufps $0x0, (%rax), %ymm2, %ymm1
   must undef:      { }
   required flags:  { avx }
 
-vshufps $0x0, (%rax), %ymm2, %ymm1: Hindex2(10)
-vshufps $0x0, (%rax), %ymm2, %ymm1: Hindex2(10)
 Formula:
 
 %ymm1  : TMP_BV_256_0[159:128] ∘ (TMP_BV_256_0[159:128] ∘ (%ymm2[159:128] ∘ (%ymm2[159:128] ∘ (TMP_BV_256_0[31:0] ∘ (TMP_BV_256_0[31:0] ∘ (%ymm2[31:0] ∘ %ymm2[31:0]))))))

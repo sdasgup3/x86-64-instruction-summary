@@ -8,9 +8,6 @@ code: addq (%rax), %rbx
   must undef:      { }
   required flags:  { }
 
-addq (%rax), %rbx: Hindex0(10)
-addq (%rax), %rbx: Hindex0(10)
-addq %rcx, %rbx: Hindex2(9)
 Formula:
 
 %rbx   : (0x0₁ ∘ TMP_BV_64_0 + 0x0₁ ∘ %rbx)[63:0]

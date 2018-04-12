@@ -8,8 +8,6 @@ code: roundss $0x0, (%rax), %xmm1
   must undef:      { }
   required flags:  { sse4_1 }
 
-roundss $0x0, (%rax), %xmm1: Hindex2(10)
-roundss $0x0, (%rax), %xmm1: Hindex2(10)
 Formula:
 
 %ymm1  : %ymm1[255:128] ∘ (%ymm1[127:64] ∘ cvt_single_to_int32_rm(TMP_BV_32_0[63:0], 0x0₈))

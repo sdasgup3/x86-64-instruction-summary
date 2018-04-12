@@ -8,8 +8,6 @@ code: vblendps $0x0, (%rax), %ymm2, %ymm1
   must undef:      { }
   required flags:  { avx }
 
-vblendps $0x0, (%rax), %ymm2, %ymm1: Hindex1(10)
-vblendps $0x0, (%rax), %ymm2, %ymm1: Hindex1(10)
 Formula:
 
 %ymm1  : %ymm2

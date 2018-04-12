@@ -8,9 +8,6 @@ code: notq (%rax)
   must undef:      { }
   required flags:  { }
 
-notq (%rax): Hindex0(10)
-notq (%rax): Hindex0(10)
-notq %rbx: Hindex1(9)
 Formula:
 
 Information about memory reads:
@@ -19,7 +16,7 @@ Information about memory reads:
 
 Information about memory writes:
   Address %rax was updated to
-    !TMP_BV_64_0 (8 bytes).
+    TMP_BV_64_0 ⊕ 0xffffffffffffffff₆₄ (8 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

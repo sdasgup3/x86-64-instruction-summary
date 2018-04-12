@@ -8,9 +8,6 @@ code: xchgb %ah, (%rax)
   must undef:      { }
   required flags:  { }
 
-xchgb %ah, (%rax): Hindex0(10)
-xchgb %ah, (%rax): Hindex0(10)
-xchgb %ah, %bl: Hindex1(9)
 Formula:
 
 %rax   : %rax[63:16] ∘ TMP_BV_8_0 ∘ %rax[7:0]

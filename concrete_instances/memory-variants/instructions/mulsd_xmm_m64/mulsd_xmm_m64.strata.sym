@@ -8,22 +8,6 @@ code: mulsd (%rax), %xmm1
   must undef:      { }
   required flags:  { sse2 }
 
-Opcode: mulsd_xmm_xmm Reason: 1
-Opcode: mulsd_xmm_m64 Reason: 4
-mulsd (%rax), %xmm1: Hindex0(10)
-Opcode: mulsd_xmm_xmm Reason: 1
-Opcode: mulsd_xmm_m64 Reason: 4
-mulsd (%rax), %xmm1: Hindex0(10)
-callq .move_128_064_xmm2_r8_r9: Hindex8(9)
-vzeroall : Hindex1(9)
-callq .move_064_128_r8_r9_xmm1: Hindex8(9)
-callq .move_128_64_xmm1_xmm12_xmm13: Hindex8(9)
-callq .move_128_064_xmm2_r12_r13: Hindex8(9)
-vzeroall : Hindex1(9)
-callq .move_064_128_r12_r13_xmm1: Hindex8(9)
-callq .move_128_256_xmm12_xmm13_ymm3: Hindex8(9)
-vmulpd %ymm14, %ymm3, %ymm12: Hindex0(9)
-callq .move_64_128_xmm12_xmm13_xmm1: Hindex8(9)
 Formula:
 
 %ymm1  : %ymm1[255:128] ∘ (%ymm1[127:64] ∘ mul_double(%ymm1[63:0], TMP_BV_64_0))

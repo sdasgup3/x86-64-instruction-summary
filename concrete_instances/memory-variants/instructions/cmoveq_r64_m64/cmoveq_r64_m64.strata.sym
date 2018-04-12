@@ -8,9 +8,6 @@ code: cmoveq (%rax), %rbx
   must undef:      { }
   required flags:  { cmov }
 
-cmoveq (%rax), %rbx: Hindex0(10)
-cmoveq (%rax), %rbx: Hindex0(10)
-cmoveq %rcx, %rbx: Hindex3(9)
 Formula:
 
 %rbx   : %zf ? TMP_BV_64_0 : %rbx

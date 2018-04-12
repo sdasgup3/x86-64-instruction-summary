@@ -8,8 +8,6 @@ code: pmovsxbq (%rax), %xmm1
   must undef:      { }
   required flags:  { sse4_1 }
 
-pmovsxbq (%rax), %xmm1: Hindex1(10)
-pmovsxbq (%rax), %xmm1: Hindex1(10)
 Formula:
 
 %ymm1  : %ymm1[255:128] ∘ (sign-extend-64(TMP_BV_16_0[15:8]) ∘ sign-extend-64(TMP_BV_16_0[7:0]))

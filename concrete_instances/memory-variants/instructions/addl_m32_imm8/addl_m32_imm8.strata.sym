@@ -8,9 +8,6 @@ code: addl $0x0, (%rax)
   must undef:      { }
   required flags:  { }
 
-addl $0x0, (%rax): Hindex0(10)
-addl $0x0, (%rax): Hindex0(10)
-addl %ecx, %ebx: Hindex2(9)
 Formula:
 
 %cf    : false
@@ -18,10 +15,14 @@ Formula:
 %af    : false
 %zf    : TMP_BV_32_0 = 0x0₃₂
 %sf    : TMP_BV_32_0[31:31] = 0x1₁
-%of    : (false ↔ TMP_BV_32_0[31:31] = 0x1₁) ∧ !(false ↔ TMP_BV_32_0[31:31] = 0x1₁)
+%of    : (TMP_BV_32_2[31:31] = 0x1₁ ↔ false) ∧ !(TMP_BV_32_2[31:31] = 0x1₁ ↔ TMP_BV_32_0[31:31] = 0x1₁)
 
 Information about memory reads:
   Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_1 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_2 (4 bytes)
     was read at address %rax.
 
 Information about memory writes:

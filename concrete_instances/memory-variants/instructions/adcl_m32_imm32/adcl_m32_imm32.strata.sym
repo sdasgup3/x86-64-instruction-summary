@@ -8,9 +8,6 @@ code: adcl $0x0, (%rax)
   must undef:      { }
   required flags:  { }
 
-adcl $0x0, (%rax): Hindex0(10)
-adcl $0x0, (%rax): Hindex0(10)
-adcl %ecx, %ebx: Hindex2(9)
 Formula:
 
 %cf    : ((%cf ? 0x1₃₃ : 0x0₃₃) + 0x0₁ ∘ TMP_BV_32_0)[32:32] = 0x1₁

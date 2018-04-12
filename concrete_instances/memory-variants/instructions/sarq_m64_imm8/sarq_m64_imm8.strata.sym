@@ -8,9 +8,6 @@ code: sarq $0x0, (%rax)
   must undef:      { }
   required flags:  { }
 
-sarq $0x0, (%rax): Hindex0(10)
-sarq $0x0, (%rax): Hindex0(10)
-sarq %cl, %rbx: Hindex7(9)
 Formula:
 
 %cf    : false ∧ (TMP_BV_64_0 ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x0₈)[0:0] = 0x1₁ ∨ true ∧ %cf

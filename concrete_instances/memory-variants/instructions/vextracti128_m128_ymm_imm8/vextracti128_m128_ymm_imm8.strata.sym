@@ -8,8 +8,6 @@ code: vextracti128 $0x0, %ymm1, (%rax)
   must undef:      { }
   required flags:  { avx2 }
 
-vextracti128 $0x0, %ymm1, (%rax): Hindex2(10)
-vextracti128 $0x0, %ymm1, (%rax): Hindex2(10)
 Formula:
 
 Information about memory reads:

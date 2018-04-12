@@ -8,8 +8,6 @@ code: pinsrd $0x0, (%rax), %xmm1
   must undef:      { }
   required flags:  { sse4_1 }
 
-pinsrd $0x0, (%rax), %xmm1: Hindex2(10)
-pinsrd $0x0, (%rax), %xmm1: Hindex2(10)
 Formula:
 
 %ymm1  : %ymm1[255:128] ∘ (%ymm1[127:0] & !(0xffffffff₁₂₈ << 0x0₁₂₈) | 0x0₉₆ ∘ TMP_BV_32_0 << 0x0₁₂₈ & 0xffffffff₁₂₈ << 0x0₁₂₈)

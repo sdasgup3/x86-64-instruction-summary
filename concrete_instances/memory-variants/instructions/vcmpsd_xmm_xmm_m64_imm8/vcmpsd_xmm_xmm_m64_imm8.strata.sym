@@ -8,8 +8,6 @@ code: vcmpsd $0x0, (%rax), %xmm2, %xmm1
   must undef:      { }
   required flags:  { avx }
 
-vcmpsd $0x0, (%rax), %xmm2, %xmm1: Hindex2(10)
-vcmpsd $0x0, (%rax), %xmm2, %xmm1: Hindex2(10)
 Formula:
 
 %ymm1  : 0x0₁₂₈ ∘ (%ymm2[127:64] ∘ (cmp_double_pred(%ymm2[63:0], TMP_BV_64_0, 0x0₈) = 0x1₁ ? 0xffffffffffffffff₆₄ : 0x0₆₄))

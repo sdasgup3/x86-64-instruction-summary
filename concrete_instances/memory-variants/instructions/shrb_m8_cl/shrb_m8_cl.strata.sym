@@ -8,8 +8,6 @@ code: shrb %cl, (%rax)
   must undef:      { }
   required flags:  { }
 
-shrb %cl, (%rax): Hindex8(10)
-shrb %cl, (%rax): Hindex8(10)
 Formula:
 
 %cf    : (%rcx[7:0] & 0x1f₈) ≥ 0x8₈ ∧ TMP_BOOL_0 ∨ !((%rcx[7:0] & 0x1f₈) ≥ 0x8₈) ∧ (!((%rcx[7:0] & 0x1f₈) = 0x0₈) ∧ (TMP_BV_8_0 ∘ 0x0₁ >> 0x0₁ ∘ (%rcx[7:0] & 0x1f₈))[0:0] = 0x1₁ ∨ !(!((%rcx[7:0] & 0x1f₈) = 0x0₈)) ∧ %cf)

@@ -8,8 +8,6 @@ code: shlxl %ecx, (%rax), %ebx
   must undef:      { }
   required flags:  { bmi2 }
 
-shlxl %ecx, (%rax), %ebx: Hindex2(10)
-shlxl %ecx, (%rax), %ebx: Hindex2(10)
 Formula:
 
 %rbx   : 0x0₃₂ ∘ (TMP_BV_32_0 << (%rcx[31:0] & 0x1f₃₂))

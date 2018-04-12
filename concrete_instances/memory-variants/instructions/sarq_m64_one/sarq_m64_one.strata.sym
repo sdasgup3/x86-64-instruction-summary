@@ -8,17 +8,14 @@ code: sarq $0x1, (%rax)
   must undef:      { %af }
   required flags:  { }
 
-sarq $0x1, (%rax): Hindex0(10)
-sarq $0x1, (%rax): Hindex0(10)
-sarq $0x1, %rbx: Hindex7(9)
 Formula:
 
-%cf    : true ∧ (TMP_BV_64_0 ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[0:0] = 0x1₁ ∨ false ∧ %cf
-%pf    : true ∧ !((TMP_BV_64_0 ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[1:1] = 0x1₁ ⊕ (TMP_BV_64_0 ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[2:2] = 0x1₁ ⊕ (TMP_BV_64_0 ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[3:3] = 0x1₁ ⊕ (TMP_BV_64_0 ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[4:4] = 0x1₁ ⊕ (TMP_BV_64_0 ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[5:5] = 0x1₁ ⊕ (TMP_BV_64_0 ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[6:6] = 0x1₁ ⊕ (TMP_BV_64_0 ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[7:7] = 0x1₁ ⊕ (TMP_BV_64_0 ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[8:8] = 0x1₁) ∨ false ∧ %pf
-%af    : TMP_BOOL_1
-%zf    : true ∧ (TMP_BV_64_0 ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[64:1] = 0x0₆₄ ∨ false ∧ %zf
-%sf    : true ∧ (TMP_BV_64_0 ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[64:64] = 0x1₁ ∨ false ∧ %sf
-%of    : false ∨ false ∧ %of
+%cf    : true ∧ (TMP_BV_64_0 ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[0:0] = 0x1₁ ∨ false
+%pf    : !((TMP_BV_64_0 ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[1:1] = 0x1₁ ⊕ (TMP_BV_64_0 ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[2:2] = 0x1₁ ⊕ (TMP_BV_64_0 ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[3:3] = 0x1₁ ⊕ (TMP_BV_64_0 ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[4:4] = 0x1₁ ⊕ (TMP_BV_64_0 ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[5:5] = 0x1₁ ⊕ (TMP_BV_64_0 ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[6:6] = 0x1₁ ⊕ (TMP_BV_64_0 ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[7:7] = 0x1₁ ⊕ (TMP_BV_64_0 ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[8:8] = 0x1₁)
+%af    : TMP_BOOL_11
+%zf    : (TMP_BV_64_0 ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[64:1] = 0x0₆₄
+%sf    : (TMP_BV_64_0 ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[64:64] = 0x1₁
+%of    : false
 
 Information about memory reads:
   Value TMP_BV_64_0 (8 bytes)

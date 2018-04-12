@@ -8,15 +8,18 @@ code: vmaxps (%rax), %xmm2, %xmm1
   must undef:      { }
   required flags:  { avx }
 
-vmaxps (%rax), %xmm2, %xmm1: Hindex0(10)
-vmaxps (%rax), %xmm2, %xmm1: Hindex0(10)
-vmaxps %xmm3, %xmm2, %xmm1: Hindex0(9)
 Formula:
 
-%ymm1  : 0x0₁₂₈ ∘ ((maxcmp_single(%ymm2[127:96], TMP_BV_128_0[127:96]) = 0x1₁ ? %ymm2[127:96] : TMP_BV_128_0[127:96]) ∘ ((maxcmp_single(%ymm2[95:64], TMP_BV_128_0[95:64]) = 0x1₁ ? %ymm2[95:64] : TMP_BV_128_0[95:64]) ∘ ((maxcmp_single(%ymm2[63:32], TMP_BV_128_0[63:32]) = 0x1₁ ? %ymm2[63:32] : TMP_BV_128_0[63:32]) ∘ (maxcmp_single(%ymm2[31:0], TMP_BV_128_0[31:0]) = 0x1₁ ? %ymm2[31:0] : TMP_BV_128_0[31:0]))))
+%ymm1  : 0x0₃₂ ∘ (0x0₃₂ ∘ (0x0₃₂ ∘ (0x0₃₂ ∘ ((maxcmp_single(%ymm2[127:96], TMP_BV_128_0[127:96]) = 0x1₁ ? %ymm2[127:96] : TMP_BV_128_0[127:96]) ∘ ((maxcmp_single(%ymm2[95:64], TMP_BV_128_1[95:64]) = 0x1₁ ? %ymm2[95:64] : TMP_BV_128_1[95:64]) ∘ ((maxcmp_single(%ymm2[63:32], TMP_BV_128_2[63:32]) = 0x1₁ ? %ymm2[63:32] : TMP_BV_128_2[63:32]) ∘ (maxcmp_single(%ymm2[31:0], TMP_BV_128_3[31:0]) = 0x1₁ ? %ymm2[31:0] : TMP_BV_128_3[31:0])))))))
 
 Information about memory reads:
   Value TMP_BV_128_0 (16 bytes)
+    was read at address %rax.
+  Value TMP_BV_128_1 (16 bytes)
+    was read at address %rax.
+  Value TMP_BV_128_2 (16 bytes)
+    was read at address %rax.
+  Value TMP_BV_128_3 (16 bytes)
     was read at address %rax.
 
 sigfpe  : sigfpe

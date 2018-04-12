@@ -8,8 +8,6 @@ code: cmpss $0x0, (%rax), %xmm1
   must undef:      { }
   required flags:  { sse }
 
-cmpss $0x0, (%rax), %xmm1: Hindex2(10)
-cmpss $0x0, (%rax), %xmm1: Hindex2(10)
 Formula:
 
 %ymm1  : %ymm1[255:128] ∘ (%ymm1[127:32] ∘ (cmp_single_pred(%ymm1[31:0], TMP_BV_32_0, 0x0₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))

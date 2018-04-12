@@ -8,9 +8,6 @@ code: movl %ebx, (%rax)
   must undef:      { }
   required flags:  { }
 
-movl %ebx, (%rax): Hindex0(10)
-movl %ebx, (%rax): Hindex0(10)
-movl %ecx, %ebx: Hindex5(9)
 Formula:
 
 Information about memory writes:

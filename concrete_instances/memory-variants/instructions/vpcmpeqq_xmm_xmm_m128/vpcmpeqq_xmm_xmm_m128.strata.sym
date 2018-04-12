@@ -8,8 +8,6 @@ code: vpcmpeqq (%rax), %xmm2, %xmm1
   must undef:      { }
   required flags:  { avx }
 
-vpcmpeqq (%rax), %xmm2, %xmm1: Hindex1(10)
-vpcmpeqq (%rax), %xmm2, %xmm1: Hindex1(10)
 Formula:
 
 %ymm1  : 0x0₁₂₈ ∘ ((%ymm2[127:64] = TMP_BV_128_0[127:64] ? 0xffffffffffffffff₆₄ : 0x0₆₄) ∘ (%ymm2[63:0] = TMP_BV_128_0[63:0] ? 0xffffffffffffffff₆₄ : 0x0₆₄))

@@ -8,16 +8,13 @@ code: andq %rbx, (%rax)
   must undef:      { %af }
   required flags:  { }
 
-andq %rbx, (%rax): Hindex0(10)
-andq %rbx, (%rax): Hindex0(10)
-andq %rcx, %rbx: Hindex1(9)
 Formula:
 
 %cf    : false
-%pf    : !((TMP_BV_64_1[0:0] & %rbx[0:0]) = 0x1₁ ⊕ (TMP_BV_64_1[1:1] & %rbx[1:1]) = 0x1₁ ⊕ (TMP_BV_64_1[2:2] & %rbx[2:2]) = 0x1₁ ⊕ (TMP_BV_64_1[3:3] & %rbx[3:3]) = 0x1₁ ⊕ (TMP_BV_64_1[4:4] & %rbx[4:4]) = 0x1₁ ⊕ (TMP_BV_64_1[5:5] & %rbx[5:5]) = 0x1₁ ⊕ (TMP_BV_64_1[6:6] & %rbx[6:6]) = 0x1₁ ⊕ (TMP_BV_64_1[7:7] & %rbx[7:7]) = 0x1₁)
-%af    : TMP_BOOL_1
-%zf    : (TMP_BV_64_1 & %rbx) = 0x0₆₄
-%sf    : (TMP_BV_64_1[63:63] & %rbx[63:63]) = 0x1₁
+%pf    : !((0x0₁ ⊕ %rbx[0:0] ⊕ (0x0₁ ⊕ TMP_BV_64_1[0:0]) ⊕ (0x0₁ ⊕ %rbx[0:0] | 0x0₁ ⊕ %rbx[0:0] ⊕ (0x0₁ ⊕ TMP_BV_64_2[0:0]))) = 0x1₁ ⊕ (0x0₁ ⊕ %rbx[1:1] ⊕ (0x0₁ ⊕ TMP_BV_64_3[1:1]) ⊕ (0x0₁ ⊕ %rbx[1:1] | 0x0₁ ⊕ %rbx[1:1] ⊕ (0x0₁ ⊕ TMP_BV_64_4[1:1]))) = 0x1₁ ⊕ (0x0₁ ⊕ %rbx[2:2] ⊕ (0x0₁ ⊕ TMP_BV_64_5[2:2]) ⊕ (0x0₁ ⊕ %rbx[2:2] | 0x0₁ ⊕ %rbx[2:2] ⊕ (0x0₁ ⊕ TMP_BV_64_6[2:2]))) = 0x1₁ ⊕ (0x0₁ ⊕ %rbx[3:3] ⊕ (0x0₁ ⊕ TMP_BV_64_7[3:3]) ⊕ (0x0₁ ⊕ %rbx[3:3] | 0x0₁ ⊕ %rbx[3:3] ⊕ (0x0₁ ⊕ TMP_BV_64_8[3:3]))) = 0x1₁ ⊕ (0x0₁ ⊕ %rbx[4:4] ⊕ (0x0₁ ⊕ TMP_BV_64_9[4:4]) ⊕ (0x0₁ ⊕ %rbx[4:4] | 0x0₁ ⊕ %rbx[4:4] ⊕ (0x0₁ ⊕ TMP_BV_64_10[4:4]))) = 0x1₁ ⊕ (0x0₁ ⊕ %rbx[5:5] ⊕ (0x0₁ ⊕ TMP_BV_64_11[5:5]) ⊕ (0x0₁ ⊕ %rbx[5:5] | 0x0₁ ⊕ %rbx[5:5] ⊕ (0x0₁ ⊕ TMP_BV_64_12[5:5]))) = 0x1₁ ⊕ (0x0₁ ⊕ %rbx[6:6] ⊕ (0x0₁ ⊕ TMP_BV_64_13[6:6]) ⊕ (0x0₁ ⊕ %rbx[6:6] | 0x0₁ ⊕ %rbx[6:6] ⊕ (0x0₁ ⊕ TMP_BV_64_14[6:6]))) = 0x1₁ ⊕ (0x0₁ ⊕ %rbx[7:7] ⊕ (0x0₁ ⊕ TMP_BV_64_15[7:7]) ⊕ (0x0₁ ⊕ %rbx[7:7] | 0x0₁ ⊕ %rbx[7:7] ⊕ (0x0₁ ⊕ TMP_BV_64_16[7:7]))) = 0x1₁)
+%af    : TMP_BOOL_21
+%zf    : (0x0₆₄ ⊕ %rbx ⊕ (0x0₆₄ ⊕ TMP_BV_64_0) ⊕ (0x0₆₄ ⊕ %rbx | 0x0₆₄ ⊕ %rbx ⊕ (0x0₆₄ ⊕ TMP_BV_64_0))) = 0x0₆₄
+%sf    : (0x0₁ ⊕ %rbx[63:63] ⊕ (0x0₁ ⊕ TMP_BV_64_17[63:63]) ⊕ (0x0₁ ⊕ %rbx[63:63] | 0x0₁ ⊕ %rbx[63:63] ⊕ (0x0₁ ⊕ TMP_BV_64_18[63:63]))) = 0x1₁
 %of    : false
 
 Information about memory reads:
@@ -25,10 +22,44 @@ Information about memory reads:
     was read at address %rax.
   Value TMP_BV_64_1 (8 bytes)
     was read at address %rax.
+  Value TMP_BV_64_2 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_3 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_4 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_5 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_6 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_7 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_8 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_9 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_10 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_11 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_12 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_13 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_14 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_15 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_16 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_17 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_18 (8 bytes)
+    was read at address %rax.
 
 Information about memory writes:
   Address %rax was updated to
-    TMP_BV_64_0 & %rbx (8 bytes).
+    0x0₆₄ ⊕ %rbx ⊕ (0x0₆₄ ⊕ TMP_BV_64_0) ⊕ (0x0₆₄ ⊕ %rbx | 0x0₆₄ ⊕ %rbx ⊕ (0x0₆₄ ⊕ TMP_BV_64_0)) (8 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

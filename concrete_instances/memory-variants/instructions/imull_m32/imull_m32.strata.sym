@@ -8,8 +8,6 @@ code: imull (%rax)
   must undef:      { %pf %af %zf %sf }
   required flags:  { }
 
-imull (%rax): Hindex2(10)
-imull (%rax): Hindex2(10)
 Formula:
 
 %rax   : 0x0₃₂ ∘ (sign-extend-64(TMP_BV_32_0) * sign-extend-64(%rax[31:0]))[31:0]

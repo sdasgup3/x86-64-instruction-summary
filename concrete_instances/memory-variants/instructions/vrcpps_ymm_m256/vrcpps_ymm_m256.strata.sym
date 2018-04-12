@@ -8,9 +8,6 @@ code: vrcpps (%rax), %ymm1
   must undef:      { }
   required flags:  { avx }
 
-vrcpps (%rax), %ymm1: Hindex0(10)
-vrcpps (%rax), %ymm1: Hindex0(10)
-vrcpps %ymm2, %ymm1: Hindex0(9)
 Formula:
 
 %ymm1  : approx_reciprocal_single(TMP_BV_256_0[255:224]) ∘ (approx_reciprocal_single(TMP_BV_256_1[223:192]) ∘ (approx_reciprocal_single(TMP_BV_256_2[191:160]) ∘ (approx_reciprocal_single(TMP_BV_256_3[159:128]) ∘ (approx_reciprocal_single(TMP_BV_256_4[127:96]) ∘ (approx_reciprocal_single(TMP_BV_256_5[95:64]) ∘ (approx_reciprocal_single(TMP_BV_256_6[63:32]) ∘ approx_reciprocal_single(TMP_BV_256_7[31:0])))))))

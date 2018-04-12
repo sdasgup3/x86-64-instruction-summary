@@ -8,37 +8,24 @@ code: negq (%rax)
   must undef:      { }
   required flags:  { }
 
-negq (%rax): Hindex0(10)
-negq (%rax): Hindex0(10)
-negq %rbx: Hindex1(9)
 Formula:
 
-%cf    : !(TMP_BV_64_1 = 0x0₆₄)
-%pf    : !((-TMP_BV_64_2)[0:0] = 0x1₁ ⊕ (-TMP_BV_64_2)[1:1] = 0x1₁ ⊕ (-TMP_BV_64_2)[2:2] = 0x1₁ ⊕ (-TMP_BV_64_2)[3:3] = 0x1₁ ⊕ (-TMP_BV_64_2)[4:4] = 0x1₁ ⊕ (-TMP_BV_64_2)[5:5] = 0x1₁ ⊕ (-TMP_BV_64_2)[6:6] = 0x1₁ ⊕ (-TMP_BV_64_2)[7:7] = 0x1₁)
-%af    : TMP_BV_64_3[3:3] = 0x1₁ ∧ (-TMP_BV_64_4)[3:3] = 0x1₁
-%zf    : -TMP_BV_64_2 = 0x0₆₄
-%sf    : (-TMP_BV_64_2)[63:63] = 0x1₁
-%of    : TMP_BV_64_5[63:63] = 0x1₁ ∧ (-TMP_BV_64_6)[63:63] = 0x1₁
+%cf    : (((0x0₁ ∘ (TMP_BV_64_0 ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ 0x0₆₄)[64:64] = 0x1₁ ? 0x0₉ : 0xff₉) + ((0x0₁ ∘ (TMP_BV_64_0 ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ 0x0₆₄)[64:64] = 0x1₁ ? 0x0₉ : 0xff₉))[8:8] = 0x1₁
+%pf    : !((0x0₁ ∘ (TMP_BV_64_0 ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ 0x0₆₄)[0:0] = 0x1₁ ⊕ (0x0₁ ∘ (TMP_BV_64_0 ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ 0x0₆₄)[1:1] = 0x1₁ ⊕ (0x0₁ ∘ (TMP_BV_64_0 ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ 0x0₆₄)[2:2] = 0x1₁ ⊕ (0x0₁ ∘ (TMP_BV_64_0 ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ 0x0₆₄)[3:3] = 0x1₁ ⊕ (0x0₁ ∘ (TMP_BV_64_0 ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ 0x0₆₄)[4:4] = 0x1₁ ⊕ (0x0₁ ∘ (TMP_BV_64_0 ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ 0x0₆₄)[5:5] = 0x1₁ ⊕ (0x0₁ ∘ (TMP_BV_64_0 ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ 0x0₆₄)[6:6] = 0x1₁ ⊕ (0x0₁ ∘ (TMP_BV_64_0 ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ 0x0₆₄)[7:7] = 0x1₁)
+%af    : false
+%zf    : (0x0₁ ∘ (TMP_BV_64_0 ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ 0x0₆₄)[63:0] = 0x0₆₄
+%sf    : (0x0₁ ∘ (TMP_BV_64_0 ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ 0x0₆₄)[63:63] = 0x1₁
+%of    : ((TMP_BV_64_1[63:63] ⊕ 0x1₁) = 0x1₁ ↔ false) ∧ !((TMP_BV_64_1[63:63] ⊕ 0x1₁) = 0x1₁ ↔ (0x0₁ ∘ (TMP_BV_64_0 ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ 0x0₆₄)[63:63] = 0x1₁)
 
 Information about memory reads:
   Value TMP_BV_64_0 (8 bytes)
     was read at address %rax.
   Value TMP_BV_64_1 (8 bytes)
     was read at address %rax.
-  Value TMP_BV_64_2 (8 bytes)
-    was read at address %rax.
-  Value TMP_BV_64_3 (8 bytes)
-    was read at address %rax.
-  Value TMP_BV_64_4 (8 bytes)
-    was read at address %rax.
-  Value TMP_BV_64_5 (8 bytes)
-    was read at address %rax.
-  Value TMP_BV_64_6 (8 bytes)
-    was read at address %rax.
 
 Information about memory writes:
   Address %rax was updated to
-    -TMP_BV_64_0 (8 bytes).
+    (0x0₁ ∘ (TMP_BV_64_0 ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ 0x0₆₄)[63:0] (8 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

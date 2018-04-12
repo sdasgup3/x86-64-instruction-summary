@@ -8,21 +8,21 @@ code: vptest (%rax), %xmm1
   must undef:      { }
   required flags:  { avx }
 
-vptest (%rax), %xmm1: Hindex2(10)
-vptest (%rax), %xmm1: Hindex2(10)
 Formula:
 
-%cf    : (!%ymm1[127:0] & TMP_BV_128_0) = 0x0₁₂₈
+%cf    : (!(0x0₆₄ ∘ %ymm1[127:64] ∘ (0x0₆₄ ∘ %ymm1[63:0])) & 0x0₆₄ ∘ TMP_BV_128_0[127:64] ∘ (0x0₆₄ ∘ TMP_BV_128_1[63:0])) = 0x0₂₅₆
 %pf    : false
 %af    : false
-%zf    : (%ymm1[127:0] & TMP_BV_128_0) = 0x0₁₂₈
+%zf    : (0x0₆₄ ∘ %ymm1[127:64] ∘ (0x0₆₄ ∘ %ymm1[63:0]) & 0x0₆₄ ∘ TMP_BV_128_0[127:64] ∘ (0x0₆₄ ∘ TMP_BV_128_1[63:0])) = 0x0₂₅₆
 %sf    : false
 %of    : false
 
 Information about memory reads:
   Value TMP_BV_128_0 (16 bytes)
     was read at address %rax.
+  Value TMP_BV_128_1 (16 bytes)
+    was read at address %rax.
 
 sigfpe  : sigfpe
 sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigsegv : sigsegv

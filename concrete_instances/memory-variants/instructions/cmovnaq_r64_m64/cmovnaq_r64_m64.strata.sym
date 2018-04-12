@@ -8,12 +8,9 @@ code: cmovnaq (%rax), %rbx
   must undef:      { }
   required flags:  { cmov }
 
-cmovnaq (%rax), %rbx: Hindex0(10)
-cmovnaq (%rax), %rbx: Hindex0(10)
-cmovnaq %rcx, %rbx: Hindex3(9)
 Formula:
 
-%rbx   : %cf ∨ %zf ? TMP_BV_64_0 : %rbx
+%rbx   : (((%cf ? 0x1₂₄ : 0x0₂₄) ∘ (%zf ? 0x1₈ : 0x0₈) = 0x0₃₂ ? 0x1₉ : 0x0₉) + ((%cf ? 0x1₂₄ : 0x0₂₄) ∘ (%zf ? 0x1₈ : 0x0₈) = 0x0₃₂ ? 0x1₉ : 0x0₉))[7:0] = 0x0₈ ? TMP_BV_64_0 : %rbx
 
 Information about memory reads:
   Value TMP_BV_64_0 (8 bytes)

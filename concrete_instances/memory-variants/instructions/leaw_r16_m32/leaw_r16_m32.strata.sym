@@ -8,8 +8,6 @@ code: leaw (%rax), %bx
   must undef:      { }
   required flags:  { }
 
-leaw (%rax), %bx: Hindex5(10)
-leaw (%rax), %bx: Hindex5(10)
 Formula:
 
 %rbx   : %rbx[63:16] ∘ %rax[15:0]

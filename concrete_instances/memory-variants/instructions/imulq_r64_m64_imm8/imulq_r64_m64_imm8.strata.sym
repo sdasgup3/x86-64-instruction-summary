@@ -8,8 +8,6 @@ code: imulq $0x0, (%rax), %rbx
   must undef:      { %pf %af %zf %sf }
   required flags:  { }
 
-imulq $0x0, (%rax), %rbx: Hindex2(10)
-imulq $0x0, (%rax), %rbx: Hindex2(10)
 Formula:
 
 %rbx   : (sign-extend-128(TMP_BV_64_0) * sign-extend-128(0x0₈))[63:0]

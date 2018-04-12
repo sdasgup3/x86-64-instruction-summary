@@ -8,8 +8,6 @@ code: vpmaddwd (%rax), %xmm2, %xmm1
   must undef:      { }
   required flags:  { avx }
 
-vpmaddwd (%rax), %xmm2, %xmm1: Hindex1(10)
-vpmaddwd (%rax), %xmm2, %xmm1: Hindex1(10)
 Formula:
 
 %ymm1  : 0x0₁₂₈ ∘ ((sign-extend-32(TMP_BV_128_0[111:96]) * sign-extend-32(%ymm2[111:96]) + sign-extend-32(TMP_BV_128_0[127:112]) * sign-extend-32(%ymm2[127:112])) ∘ ((sign-extend-32(TMP_BV_128_0[79:64]) * sign-extend-32(%ymm2[79:64]) + sign-extend-32(TMP_BV_128_0[95:80]) * sign-extend-32(%ymm2[95:80])) ∘ ((sign-extend-32(TMP_BV_128_0[47:32]) * sign-extend-32(%ymm2[47:32]) + sign-extend-32(TMP_BV_128_0[63:48]) * sign-extend-32(%ymm2[63:48])) ∘ (sign-extend-32(TMP_BV_128_0[15:0]) * sign-extend-32(%ymm2[15:0]) + sign-extend-32(TMP_BV_128_0[31:16]) * sign-extend-32(%ymm2[31:16])))))

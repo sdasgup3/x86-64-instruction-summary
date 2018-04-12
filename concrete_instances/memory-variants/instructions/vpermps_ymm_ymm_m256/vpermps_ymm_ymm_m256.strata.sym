@@ -8,8 +8,6 @@ code: vpermps (%rax), %ymm2, %ymm1
   must undef:      { }
   required flags:  { avx2 }
 
-vpermps (%rax), %ymm2, %ymm1: Hindex1(10)
-vpermps (%rax), %ymm2, %ymm1: Hindex1(10)
 Formula:
 
 %ymm1  : (TMP_BV_256_0 >> 0x0₂₅₃ ∘ %ymm2[226:224] * 0x20₂₅₆)[31:0] ∘ ((TMP_BV_256_0 >> 0x0₂₅₃ ∘ %ymm2[194:192] * 0x20₂₅₆)[31:0] ∘ ((TMP_BV_256_0 >> 0x0₂₅₃ ∘ %ymm2[162:160] * 0x20₂₅₆)[31:0] ∘ ((TMP_BV_256_0 >> 0x0₂₅₃ ∘ %ymm2[130:128] * 0x20₂₅₆)[31:0] ∘ ((TMP_BV_256_0 >> 0x0₂₅₃ ∘ %ymm2[98:96] * 0x20₂₅₆)[31:0] ∘ ((TMP_BV_256_0 >> 0x0₂₅₃ ∘ %ymm2[66:64] * 0x20₂₅₆)[31:0] ∘ ((TMP_BV_256_0 >> 0x0₂₅₃ ∘ %ymm2[34:32] * 0x20₂₅₆)[31:0] ∘ (TMP_BV_256_0 >> 0x0₂₅₃ ∘ %ymm2[2:0] * 0x20₂₅₆)[31:0]))))))

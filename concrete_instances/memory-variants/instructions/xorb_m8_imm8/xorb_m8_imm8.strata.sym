@@ -8,22 +8,37 @@ code: xorb $0x0, (%rax)
   must undef:      { %af }
   required flags:  { }
 
-xorb $0x0, (%rax): Hindex0(10)
-xorb $0x0, (%rax): Hindex0(10)
-xorb %cl, %bl: Hindex1(9)
 Formula:
 
 %cf    : false
-%pf    : !((TMP_BV_8_1[0:0] ⊕ 0x0₁) = 0x1₁ ⊕ (TMP_BV_8_1[1:1] ⊕ 0x0₁) = 0x1₁ ⊕ (TMP_BV_8_1[2:2] ⊕ 0x0₁) = 0x1₁ ⊕ (TMP_BV_8_1[3:3] ⊕ 0x0₁) = 0x1₁ ⊕ (TMP_BV_8_1[4:4] ⊕ 0x0₁) = 0x1₁ ⊕ (TMP_BV_8_1[5:5] ⊕ 0x0₁) = 0x1₁ ⊕ (TMP_BV_8_1[6:6] ⊕ 0x0₁) = 0x1₁ ⊕ (TMP_BV_8_1[7:7] ⊕ 0x0₁) = 0x1₁)
-%af    : TMP_BOOL_1
+%pf    : !((TMP_BV_8_2[0:0] ⊕ 0x0₁) = 0x1₁ ⊕ (TMP_BV_8_3[1:1] ⊕ 0x0₁) = 0x1₁ ⊕ (TMP_BV_8_4[2:2] ⊕ 0x0₁) = 0x1₁ ⊕ (TMP_BV_8_5[3:3] ⊕ 0x0₁) = 0x1₁ ⊕ (TMP_BV_8_6[4:4] ⊕ 0x0₁) = 0x1₁ ⊕ (TMP_BV_8_7[5:5] ⊕ 0x0₁) = 0x1₁ ⊕ (TMP_BV_8_8[6:6] ⊕ 0x0₁) = 0x1₁ ⊕ (TMP_BV_8_9[7:7] ⊕ 0x0₁) = 0x1₁)
+%af    : TMP_BOOL_4
 %zf    : (TMP_BV_8_1 ⊕ 0x0₈) = 0x0₈
-%sf    : (TMP_BV_8_1[7:7] ⊕ 0x0₁) = 0x1₁
+%sf    : (TMP_BV_8_10[7:7] ⊕ 0x0₁) = 0x1₁
 %of    : false
 
 Information about memory reads:
   Value TMP_BV_8_0 (1 bytes)
     was read at address %rax.
   Value TMP_BV_8_1 (1 bytes)
+    was read at address %rax.
+  Value TMP_BV_8_2 (1 bytes)
+    was read at address %rax.
+  Value TMP_BV_8_3 (1 bytes)
+    was read at address %rax.
+  Value TMP_BV_8_4 (1 bytes)
+    was read at address %rax.
+  Value TMP_BV_8_5 (1 bytes)
+    was read at address %rax.
+  Value TMP_BV_8_6 (1 bytes)
+    was read at address %rax.
+  Value TMP_BV_8_7 (1 bytes)
+    was read at address %rax.
+  Value TMP_BV_8_8 (1 bytes)
+    was read at address %rax.
+  Value TMP_BV_8_9 (1 bytes)
+    was read at address %rax.
+  Value TMP_BV_8_10 (1 bytes)
     was read at address %rax.
 
 Information about memory writes:

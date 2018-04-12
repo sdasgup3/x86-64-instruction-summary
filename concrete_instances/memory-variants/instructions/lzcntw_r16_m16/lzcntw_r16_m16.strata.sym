@@ -8,8 +8,6 @@ code: lzcntw (%rax), %bx
   must undef:      { %pf %af %sf %of }
   required flags:  { bmi1 }
 
-lzcntw (%rax), %bx: Hindex2(10)
-lzcntw (%rax), %bx: Hindex2(10)
 Formula:
 
 %rbx   : %rbx[63:16] ∘ (TMP_BV_16_0[15:15] = 0x1₁ ? 0x0₁₆ : TMP_BV_16_0[14:14] = 0x1₁ ? 0x1₁₆ : TMP_BV_16_0[13:13] = 0x1₁ ? 0x2₁₆ : TMP_BV_16_0[12:12] = 0x1₁ ? 0x3₁₆ : TMP_BV_16_0[11:11] = 0x1₁ ? 0x4₁₆ : TMP_BV_16_0[10:10] = 0x1₁ ? 0x5₁₆ : TMP_BV_16_0[9:9] = 0x1₁ ? 0x6₁₆ : TMP_BV_16_0[8:8] = 0x1₁ ? 0x7₁₆ : TMP_BV_16_0[7:7] = 0x1₁ ? 0x8₁₆ : TMP_BV_16_0[6:6] = 0x1₁ ? 0x9₁₆ : TMP_BV_16_0[5:5] = 0x1₁ ? 0xa₁₆ : TMP_BV_16_0[4:4] = 0x1₁ ? 0xb₁₆ : TMP_BV_16_0[3:3] = 0x1₁ ? 0xc₁₆ : TMP_BV_16_0[2:2] = 0x1₁ ? 0xd₁₆ : TMP_BV_16_0[1:1] = 0x1₁ ? 0xe₁₆ : TMP_BV_16_0[0:0] = 0x1₁ ? 0xf₁₆ : 0x10₁₆)

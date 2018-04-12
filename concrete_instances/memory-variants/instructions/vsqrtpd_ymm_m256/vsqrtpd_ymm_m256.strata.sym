@@ -8,9 +8,6 @@ code: vsqrtpd (%rax), %ymm1
   must undef:      { }
   required flags:  { avx }
 
-vsqrtpd (%rax), %ymm1: Hindex0(10)
-vsqrtpd (%rax), %ymm1: Hindex0(10)
-vsqrtpd %ymm2, %ymm1: Hindex0(9)
 Formula:
 
 %ymm1  : sqrt_double(TMP_BV_256_0[255:192]) ∘ (sqrt_double(TMP_BV_256_1[191:128]) ∘ (sqrt_double(TMP_BV_256_2[127:64]) ∘ sqrt_double(TMP_BV_256_3[63:0])))

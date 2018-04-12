@@ -8,8 +8,6 @@ code: vpinsrw $0x0, (%rax), %xmm2, %xmm1
   must undef:      { }
   required flags:  { avx }
 
-vpinsrw $0x0, (%rax), %xmm2, %xmm1: Hindex2(10)
-vpinsrw $0x0, (%rax), %xmm2, %xmm1: Hindex2(10)
 Formula:
 
 %ymm1  : 0x0₁₂₈ ∘ (%ymm2[127:0] & !(0xffff₁₂₈ << 0x0₁₂₈) | 0x0₁₁₂ ∘ TMP_BV_16_0 << 0x0₁₂₈ & 0xffff₁₂₈ << 0x0₁₂₈)

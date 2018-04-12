@@ -8,9 +8,6 @@ code: xchgl %ebx, (%rax)
   must undef:      { }
   required flags:  { }
 
-xchgl %ebx, (%rax): Hindex0(10)
-xchgl %ebx, (%rax): Hindex0(10)
-xchgl %ebx, %eax: Hindex1(9)
 Formula:
 
 %rbx   : 0x0₃₂ ∘ TMP_BV_32_0

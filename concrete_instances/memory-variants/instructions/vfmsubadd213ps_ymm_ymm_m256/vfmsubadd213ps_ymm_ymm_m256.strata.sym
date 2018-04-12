@@ -8,16 +8,60 @@ code: vfmsubadd213ps (%rax), %ymm2, %ymm1
   must undef:      { }
   required flags:  { fma }
 
-vfmsubadd213ps (%rax), %ymm2, %ymm1: Hindex2(10)
-vfmsubadd213ps (%rax), %ymm2, %ymm1: Hindex2(10)
 Formula:
 
-%ymm1  : vfmsub213_single(%ymm1[255:224], %ymm2[255:224], TMP_BV_256_0[255:224]) ∘ vfmadd213_single(%ymm1[223:192], %ymm2[223:192], TMP_BV_256_0[223:192]) ∘ (vfmsub213_single(%ymm1[191:160], %ymm2[191:160], TMP_BV_256_0[191:160]) ∘ vfmadd213_single(%ymm1[159:128], %ymm2[159:128], TMP_BV_256_0[159:128]) ∘ (vfmsub213_single(%ymm1[127:96], %ymm2[127:96], TMP_BV_256_0[127:96]) ∘ vfmadd213_single(%ymm1[95:64], %ymm2[95:64], TMP_BV_256_0[95:64]) ∘ (vfmsub213_single(%ymm1[63:32], %ymm2[63:32], TMP_BV_256_0[63:32]) ∘ vfmadd213_single(%ymm1[31:0], %ymm2[31:0], TMP_BV_256_0[31:0]))))
+%ymm1  : (vfmsub132_single(%ymm2[255:224], vfnmsub132_single(0x0₃₂ ⊕ add_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_0[159:152], TMP_BV_256_1[255:224], TMP_BV_256_2[255:224])) ⊕ (0x0₃₂ | 0x0₃₂ ⊕ add_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_0[159:152], TMP_BV_256_1[255:224], TMP_BV_256_2[255:224]))), add_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_0[159:152], TMP_BV_256_1[255:224], TMP_BV_256_2[255:224])), add_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_0[159:152], TMP_BV_256_1[255:224], TMP_BV_256_2[255:224]))), %ymm1[255:224]) ∘ vfmsub132_single(%ymm2[223:192], vfnmsub132_single(0x0₃₂ ⊕ sub_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_3[151:144], TMP_BV_256_4[223:192], TMP_BV_256_5[223:192])) ⊕ (0x0₃₂ | 0x0₃₂ ⊕ sub_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_3[151:144], TMP_BV_256_4[223:192], TMP_BV_256_5[223:192]))), sub_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_3[151:144], TMP_BV_256_4[223:192], TMP_BV_256_5[223:192])), sub_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_3[151:144], TMP_BV_256_4[223:192], TMP_BV_256_5[223:192]))), %ymm1[223:192]) | 0x0₆₄ ⊕ add_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_0[159:152], TMP_BV_256_1[255:224], TMP_BV_256_2[255:224])) ∘ sub_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_3[151:144], TMP_BV_256_4[223:192], TMP_BV_256_5[223:192])) ⊕ (0x0₆₄ | 0x0₆₄ ⊕ add_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_0[159:152], TMP_BV_256_1[255:224], TMP_BV_256_2[255:224])) ∘ sub_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_3[151:144], TMP_BV_256_4[223:192], TMP_BV_256_5[223:192])))) ∘ (vfmsub132_single(%ymm2[191:160], vfnmsub132_single(0x0₃₂ ⊕ add_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_6[143:136], TMP_BV_256_7[191:160], TMP_BV_256_8[191:160])) ⊕ (0x0₃₂ | 0x0₃₂ ⊕ add_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_6[143:136], TMP_BV_256_7[191:160], TMP_BV_256_8[191:160]))), add_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_6[143:136], TMP_BV_256_7[191:160], TMP_BV_256_8[191:160])), add_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_6[143:136], TMP_BV_256_7[191:160], TMP_BV_256_8[191:160]))), %ymm1[191:160]) ∘ vfmsub132_single(%ymm2[159:128], vfnmsub132_single(0x0₃₂ ⊕ sub_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_9[135:128], TMP_BV_256_10[159:128], TMP_BV_256_11[159:128])) ⊕ (0x0₃₂ | 0x0₃₂ ⊕ sub_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_9[135:128], TMP_BV_256_10[159:128], TMP_BV_256_11[159:128]))), sub_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_9[135:128], TMP_BV_256_10[159:128], TMP_BV_256_11[159:128])), sub_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_9[135:128], TMP_BV_256_10[159:128], TMP_BV_256_11[159:128]))), %ymm1[159:128]) | 0x0₆₄ ⊕ add_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_6[143:136], TMP_BV_256_7[191:160], TMP_BV_256_8[191:160])) ∘ sub_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_9[135:128], TMP_BV_256_10[159:128], TMP_BV_256_11[159:128])) ⊕ (0x0₆₄ | 0x0₆₄ ⊕ add_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_6[143:136], TMP_BV_256_7[191:160], TMP_BV_256_8[191:160])) ∘ sub_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_9[135:128], TMP_BV_256_10[159:128], TMP_BV_256_11[159:128])))) ∘ ((vfmsub132_single(%ymm2[127:96], vfnmsub132_single(0x0₃₂ ⊕ add_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_12[31:24], TMP_BV_256_13[127:96], TMP_BV_256_14[127:96])) ⊕ (0x0₃₂ | 0x0₃₂ ⊕ add_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_12[31:24], TMP_BV_256_13[127:96], TMP_BV_256_14[127:96]))), add_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_12[31:24], TMP_BV_256_13[127:96], TMP_BV_256_14[127:96])), add_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_12[31:24], TMP_BV_256_13[127:96], TMP_BV_256_14[127:96]))), %ymm1[127:96]) ∘ vfmsub132_single(%ymm2[95:64], vfnmsub132_single(0x0₃₂ ⊕ sub_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_15[23:16], TMP_BV_256_16[95:64], TMP_BV_256_17[95:64])) ⊕ (0x0₃₂ | 0x0₃₂ ⊕ sub_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_15[23:16], TMP_BV_256_16[95:64], TMP_BV_256_17[95:64]))), sub_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_15[23:16], TMP_BV_256_16[95:64], TMP_BV_256_17[95:64])), sub_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_15[23:16], TMP_BV_256_16[95:64], TMP_BV_256_17[95:64]))), %ymm1[95:64]) | 0x0₆₄ ⊕ add_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_12[31:24], TMP_BV_256_13[127:96], TMP_BV_256_14[127:96])) ∘ sub_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_15[23:16], TMP_BV_256_16[95:64], TMP_BV_256_17[95:64])) ⊕ (0x0₆₄ | 0x0₆₄ ⊕ add_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_12[31:24], TMP_BV_256_13[127:96], TMP_BV_256_14[127:96])) ∘ sub_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_15[23:16], TMP_BV_256_16[95:64], TMP_BV_256_17[95:64])))) ∘ (vfmsub132_single(%ymm2[63:32], vfnmsub132_single(0x0₃₂ ⊕ add_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_18[15:8], TMP_BV_256_19[63:32], TMP_BV_256_20[63:32])) ⊕ (0x0₃₂ | 0x0₃₂ ⊕ add_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_18[15:8], TMP_BV_256_19[63:32], TMP_BV_256_20[63:32]))), add_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_18[15:8], TMP_BV_256_19[63:32], TMP_BV_256_20[63:32])), add_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_18[15:8], TMP_BV_256_19[63:32], TMP_BV_256_20[63:32]))), %ymm1[63:32]) ∘ vfmsub132_single(%ymm2[31:0], vfnmsub132_single(0x0₃₂ ⊕ sub_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_21[7:0], TMP_BV_256_22[31:0], TMP_BV_256_23[31:0])) ⊕ (0x0₃₂ | 0x0₃₂ ⊕ sub_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_21[7:0], TMP_BV_256_22[31:0], TMP_BV_256_23[31:0]))), sub_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_21[7:0], TMP_BV_256_22[31:0], TMP_BV_256_23[31:0])), sub_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_21[7:0], TMP_BV_256_22[31:0], TMP_BV_256_23[31:0]))), %ymm1[31:0]) | 0x0₆₄ ⊕ add_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_18[15:8], TMP_BV_256_19[63:32], TMP_BV_256_20[63:32])) ∘ sub_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_21[7:0], TMP_BV_256_22[31:0], TMP_BV_256_23[31:0])) ⊕ (0x0₆₄ | 0x0₆₄ ⊕ add_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_18[15:8], TMP_BV_256_19[63:32], TMP_BV_256_20[63:32])) ∘ sub_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ TMP_BV_256_21[7:0], TMP_BV_256_22[31:0], TMP_BV_256_23[31:0])))))
 
 Information about memory reads:
   Value TMP_BV_256_0 (32 bytes)
     was read at address %rax.
+  Value TMP_BV_256_1 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_2 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_3 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_4 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_5 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_6 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_7 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_8 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_9 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_10 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_11 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_12 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_13 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_14 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_15 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_16 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_17 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_18 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_19 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_20 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_21 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_22 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_23 (32 bytes)
+    was read at address %rax.
 
 sigfpe  : sigfpe
 sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigsegv : sigsegv

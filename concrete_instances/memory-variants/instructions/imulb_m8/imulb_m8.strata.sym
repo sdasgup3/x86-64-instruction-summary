@@ -8,8 +8,6 @@ code: imulb (%rax)
   must undef:      { %pf %af %zf %sf }
   required flags:  { }
 
-imulb (%rax): Hindex2(10)
-imulb (%rax): Hindex2(10)
 Formula:
 
 %rax   : %rax[63:16] ∘ (sign-extend-16(TMP_BV_8_0) * sign-extend-16(%rax[7:0]))

@@ -8,9 +8,6 @@ code: vpsraw (%rax), %xmm2, %xmm1
   must undef:      { }
   required flags:  { avx }
 
-vpsraw (%rax), %xmm2, %xmm1: Hindex0(10)
-vpsraw (%rax), %xmm2, %xmm1: Hindex0(10)
-vpsraw %xmm3, %xmm2, %xmm1: Hindex1(9)
 Formula:
 
 %ymm1  : 0x0₁₂₈ ∘ ((%ymm2[127:112] sign_shift_right (TMP_BV_128_0[63:0] > 0xf₆₄ ? 0x10₁₆ : TMP_BV_128_0[15:0])) ∘ ((%ymm2[111:96] sign_shift_right (TMP_BV_128_0[63:0] > 0xf₆₄ ? 0x10₁₆ : TMP_BV_128_0[15:0])) ∘ ((%ymm2[95:80] sign_shift_right (TMP_BV_128_0[63:0] > 0xf₆₄ ? 0x10₁₆ : TMP_BV_128_0[15:0])) ∘ ((%ymm2[79:64] sign_shift_right (TMP_BV_128_0[63:0] > 0xf₆₄ ? 0x10₁₆ : TMP_BV_128_0[15:0])) ∘ ((%ymm2[63:48] sign_shift_right (TMP_BV_128_0[63:0] > 0xf₆₄ ? 0x10₁₆ : TMP_BV_128_0[15:0])) ∘ ((%ymm2[47:32] sign_shift_right (TMP_BV_128_0[63:0] > 0xf₆₄ ? 0x10₁₆ : TMP_BV_128_0[15:0])) ∘ ((%ymm2[31:16] sign_shift_right (TMP_BV_128_0[63:0] > 0xf₆₄ ? 0x10₁₆ : TMP_BV_128_0[15:0])) ∘ (%ymm2[15:0] sign_shift_right (TMP_BV_128_0[63:0] > 0xf₆₄ ? 0x10₁₆ : TMP_BV_128_0[15:0])))))))))

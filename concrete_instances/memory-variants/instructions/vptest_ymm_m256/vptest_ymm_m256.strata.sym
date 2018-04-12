@@ -8,9 +8,6 @@ code: vptest (%rax), %ymm1
   must undef:      { }
   required flags:  { avx }
 
-vptest (%rax), %ymm1: Hindex0(10)
-vptest (%rax), %ymm1: Hindex0(10)
-vptest %ymm2, %ymm1: Hindex1(9)
 Formula:
 
 %cf    : (!%ymm1 & TMP_BV_256_0) = 0x0₂₅₆

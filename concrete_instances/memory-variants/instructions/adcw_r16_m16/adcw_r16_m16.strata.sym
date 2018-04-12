@@ -8,9 +8,6 @@ code: adcw (%rax), %bx
   must undef:      { }
   required flags:  { }
 
-adcw (%rax), %bx: Hindex0(10)
-adcw (%rax), %bx: Hindex0(10)
-adcw %cx, %bx: Hindex2(9)
 Formula:
 
 %rbx   : %rbx[63:16] ∘ ((%cf ? 0x0₁ ∘ TMP_BV_16_0 + 0x1₁₇ : 0x0₁ ∘ TMP_BV_16_0) + 0x0₁ ∘ %rbx[15:0])[15:0]

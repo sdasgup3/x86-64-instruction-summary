@@ -8,8 +8,6 @@ code: mulb (%rax)
   must undef:      { %pf %af %zf %sf }
   required flags:  { }
 
-mulb (%rax): Hindex2(10)
-mulb (%rax): Hindex2(10)
 Formula:
 
 %rax   : %rax[63:16] ∘ (0x0₈ ∘ TMP_BV_8_0 * 0x0₈ ∘ %rax[7:0])

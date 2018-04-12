@@ -8,16 +8,28 @@ code: vfmaddsub231pd (%rax), %ymm2, %ymm1
   must undef:      { }
   required flags:  { fma }
 
-vfmaddsub231pd (%rax), %ymm2, %ymm1: Hindex2(10)
-vfmaddsub231pd (%rax), %ymm2, %ymm1: Hindex2(10)
 Formula:
 
-%ymm1  : vfmadd231_double(%ymm1[255:192], %ymm2[255:192], TMP_BV_256_0[255:192]) ∘ vfmsub231_double(%ymm1[191:128], %ymm2[191:128], TMP_BV_256_0[191:128]) ∘ (vfmadd231_double(%ymm1[127:64], %ymm2[127:64], TMP_BV_256_0[127:64]) ∘ vfmsub231_double(%ymm1[63:0], %ymm2[63:0], TMP_BV_256_0[63:0]))
+%ymm1  : vfmsub132_double(%ymm2[255:192], vfnmsub132_double((maxcmp_single(0x0₃₂, 0x0₃₂ ⊕ (%ymm1[255:224] | 0x0₃₂) ⊕ (%ymm1[255:224] | 0x0₃₂ ⊕ (%ymm1[255:224] | 0x0₃₂))) = 0x1₁ ? 0x0₃₂ : 0x0₃₂ ⊕ (%ymm1[255:224] | 0x0₃₂) ⊕ (%ymm1[255:224] | 0x0₃₂ ⊕ (%ymm1[255:224] | 0x0₃₂))) ∘ (maxcmp_single(0x0₃₂, 0x0₃₂ ⊕ (%ymm1[223:192] | 0x0₃₂) ⊕ (%ymm1[223:192] | 0x0₃₂ ⊕ (%ymm1[223:192] | 0x0₃₂))) = 0x1₁ ? 0x0₃₂ : 0x0₃₂ ⊕ (%ymm1[223:192] | 0x0₃₂) ⊕ (%ymm1[223:192] | 0x0₃₂ ⊕ (%ymm1[223:192] | 0x0₃₂))), %ymm1[255:192], 0x0₆₄), TMP_BV_256_0[255:192]) ∘ vfmsub132_double(%ymm2[191:128], vfnmsub132_double(vfnmsub132_double((maxcmp_single(TMP_BV_256_1[191:160], 0x0₃₂ ⊕ (%ymm1[191:160] | 0x0₃₂) ⊕ (%ymm1[191:160] | 0x0₃₂ ⊕ (%ymm1[191:160] | 0x0₃₂))) = 0x1₁ ? TMP_BV_256_1[191:160] : 0x0₃₂ ⊕ (%ymm1[191:160] | 0x0₃₂) ⊕ (%ymm1[191:160] | 0x0₃₂ ⊕ (%ymm1[191:160] | 0x0₃₂))) ∘ (maxcmp_single(TMP_BV_256_2[159:128], 0x0₃₂ ⊕ (%ymm1[159:128] | 0x0₃₂) ⊕ (%ymm1[159:128] | 0x0₃₂ ⊕ (%ymm1[159:128] | 0x0₃₂))) = 0x1₁ ? TMP_BV_256_2[159:128] : 0x0₃₂ ⊕ (%ymm1[159:128] | 0x0₃₂) ⊕ (%ymm1[159:128] | 0x0₃₂ ⊕ (%ymm1[159:128] | 0x0₃₂))), %ymm1[191:128], 0x0₆₄), vfnmsub132_double((maxcmp_single(TMP_BV_256_1[191:160], 0x0₃₂ ⊕ (%ymm1[191:160] | 0x0₃₂) ⊕ (%ymm1[191:160] | 0x0₃₂ ⊕ (%ymm1[191:160] | 0x0₃₂))) = 0x1₁ ? TMP_BV_256_1[191:160] : 0x0₃₂ ⊕ (%ymm1[191:160] | 0x0₃₂) ⊕ (%ymm1[191:160] | 0x0₃₂ ⊕ (%ymm1[191:160] | 0x0₃₂))) ∘ (maxcmp_single(TMP_BV_256_2[159:128], 0x0₃₂ ⊕ (%ymm1[159:128] | 0x0₃₂) ⊕ (%ymm1[159:128] | 0x0₃₂ ⊕ (%ymm1[159:128] | 0x0₃₂))) = 0x1₁ ? TMP_BV_256_2[159:128] : 0x0₃₂ ⊕ (%ymm1[159:128] | 0x0₃₂) ⊕ (%ymm1[159:128] | 0x0₃₂ ⊕ (%ymm1[159:128] | 0x0₃₂))), %ymm1[191:128], 0x0₆₄), 0x0₃₂ ∘ vfnmsub132_double((maxcmp_single(0x0₃₂, 0x0₃₂ ⊕ (%ymm1[255:224] | 0x0₃₂) ⊕ (%ymm1[255:224] | 0x0₃₂ ⊕ (%ymm1[255:224] | 0x0₃₂))) = 0x1₁ ? 0x0₃₂ : 0x0₃₂ ⊕ (%ymm1[255:224] | 0x0₃₂) ⊕ (%ymm1[255:224] | 0x0₃₂ ⊕ (%ymm1[255:224] | 0x0₃₂))) ∘ (maxcmp_single(0x0₃₂, 0x0₃₂ ⊕ (%ymm1[223:192] | 0x0₃₂) ⊕ (%ymm1[223:192] | 0x0₃₂ ⊕ (%ymm1[223:192] | 0x0₃₂))) = 0x1₁ ? 0x0₃₂ : 0x0₃₂ ⊕ (%ymm1[223:192] | 0x0₃₂) ⊕ (%ymm1[223:192] | 0x0₃₂ ⊕ (%ymm1[223:192] | 0x0₃₂))), %ymm1[255:192], 0x0₆₄)[63:32]), TMP_BV_256_3[191:128]) ∘ (vfmsub132_double(%ymm2[127:64], vfnmsub132_double((maxcmp_single(0x0₃₂, 0x0₃₂ ⊕ (%ymm1[127:96] | 0x0₃₂) ⊕ (%ymm1[127:96] | 0x0₃₂ ⊕ (%ymm1[127:96] | 0x0₃₂))) = 0x1₁ ? 0x0₃₂ : 0x0₃₂ ⊕ (%ymm1[127:96] | 0x0₃₂) ⊕ (%ymm1[127:96] | 0x0₃₂ ⊕ (%ymm1[127:96] | 0x0₃₂))) ∘ (maxcmp_single(0x0₃₂, 0x0₃₂ ⊕ (%ymm1[95:64] | 0x0₃₂) ⊕ (%ymm1[95:64] | 0x0₃₂ ⊕ (%ymm1[95:64] | 0x0₃₂))) = 0x1₁ ? 0x0₃₂ : 0x0₃₂ ⊕ (%ymm1[95:64] | 0x0₃₂) ⊕ (%ymm1[95:64] | 0x0₃₂ ⊕ (%ymm1[95:64] | 0x0₃₂))), %ymm1[127:64], 0x0₆₄), TMP_BV_256_4[127:64]) ∘ vfmsub132_double(%ymm2[63:0], vfnmsub132_double(vfnmsub132_double((maxcmp_single(TMP_BV_256_5[63:32], 0x0₃₂ ⊕ (%ymm1[63:32] | 0x0₃₂) ⊕ (%ymm1[63:32] | 0x0₃₂ ⊕ (%ymm1[63:32] | 0x0₃₂))) = 0x1₁ ? TMP_BV_256_5[63:32] : 0x0₃₂ ⊕ (%ymm1[63:32] | 0x0₃₂) ⊕ (%ymm1[63:32] | 0x0₃₂ ⊕ (%ymm1[63:32] | 0x0₃₂))) ∘ (maxcmp_single(TMP_BV_256_6[31:0], 0x0₃₂ ⊕ (%ymm1[31:0] | 0x0₃₂) ⊕ (%ymm1[31:0] | 0x0₃₂ ⊕ (%ymm1[31:0] | 0x0₃₂))) = 0x1₁ ? TMP_BV_256_6[31:0] : 0x0₃₂ ⊕ (%ymm1[31:0] | 0x0₃₂) ⊕ (%ymm1[31:0] | 0x0₃₂ ⊕ (%ymm1[31:0] | 0x0₃₂))), %ymm1[63:0], 0x0₆₄), vfnmsub132_double((maxcmp_single(TMP_BV_256_5[63:32], 0x0₃₂ ⊕ (%ymm1[63:32] | 0x0₃₂) ⊕ (%ymm1[63:32] | 0x0₃₂ ⊕ (%ymm1[63:32] | 0x0₃₂))) = 0x1₁ ? TMP_BV_256_5[63:32] : 0x0₃₂ ⊕ (%ymm1[63:32] | 0x0₃₂) ⊕ (%ymm1[63:32] | 0x0₃₂ ⊕ (%ymm1[63:32] | 0x0₃₂))) ∘ (maxcmp_single(TMP_BV_256_6[31:0], 0x0₃₂ ⊕ (%ymm1[31:0] | 0x0₃₂) ⊕ (%ymm1[31:0] | 0x0₃₂ ⊕ (%ymm1[31:0] | 0x0₃₂))) = 0x1₁ ? TMP_BV_256_6[31:0] : 0x0₃₂ ⊕ (%ymm1[31:0] | 0x0₃₂) ⊕ (%ymm1[31:0] | 0x0₃₂ ⊕ (%ymm1[31:0] | 0x0₃₂))), %ymm1[63:0], 0x0₆₄), 0x0₃₂ ∘ vfnmsub132_double((maxcmp_single(0x0₃₂, 0x0₃₂ ⊕ (%ymm1[127:96] | 0x0₃₂) ⊕ (%ymm1[127:96] | 0x0₃₂ ⊕ (%ymm1[127:96] | 0x0₃₂))) = 0x1₁ ? 0x0₃₂ : 0x0₃₂ ⊕ (%ymm1[127:96] | 0x0₃₂) ⊕ (%ymm1[127:96] | 0x0₃₂ ⊕ (%ymm1[127:96] | 0x0₃₂))) ∘ (maxcmp_single(0x0₃₂, 0x0₃₂ ⊕ (%ymm1[95:64] | 0x0₃₂) ⊕ (%ymm1[95:64] | 0x0₃₂ ⊕ (%ymm1[95:64] | 0x0₃₂))) = 0x1₁ ? 0x0₃₂ : 0x0₃₂ ⊕ (%ymm1[95:64] | 0x0₃₂) ⊕ (%ymm1[95:64] | 0x0₃₂ ⊕ (%ymm1[95:64] | 0x0₃₂))), %ymm1[127:64], 0x0₆₄)[63:32]), TMP_BV_256_7[63:0]))
 
 Information about memory reads:
   Value TMP_BV_256_0 (32 bytes)
     was read at address %rax.
+  Value TMP_BV_256_1 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_2 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_3 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_4 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_5 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_6 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_7 (32 bytes)
+    was read at address %rax.
 
 sigfpe  : sigfpe
 sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigsegv : sigsegv

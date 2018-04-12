@@ -8,8 +8,6 @@ code: btw %bx, (%rax)
   must undef:      { %pf %af %sf %of }
   required flags:  { }
 
-btw %bx, (%rax): Hindex2(10)
-btw %bx, (%rax): Hindex2(10)
 Formula:
 
 %pf    : TMP_BOOL_3

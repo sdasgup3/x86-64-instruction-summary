@@ -8,13 +8,6 @@ code: vmovdqa (%rax), %ymm1
   must undef:      { }
   required flags:  { avx }
 
-Opcode: vmovdqa_ymm_ymm Reason: 1
-Opcode: vmovdqa_ymm_m256 Reason: 2
-vmovdqa (%rax), %ymm1: Hindex0(10)
-Opcode: vmovdqa_ymm_ymm Reason: 1
-Opcode: vmovdqa_ymm_m256 Reason: 2
-vmovdqa (%rax), %ymm1: Hindex0(10)
-vminpd %ymm2, %ymm2, %ymm1: Hindex0(9)
 Formula:
 
 %ymm1  : TMP_BV_256_0

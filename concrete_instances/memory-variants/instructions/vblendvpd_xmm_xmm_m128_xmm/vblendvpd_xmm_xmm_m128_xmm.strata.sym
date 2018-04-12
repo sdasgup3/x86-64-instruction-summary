@@ -8,8 +8,6 @@ code: vblendvpd %xmm3, (%rax), %xmm2, %xmm1
   must undef:      { }
   required flags:  { avx }
 
-vblendvpd %xmm3, (%rax), %xmm2, %xmm1: Hindex2(10)
-vblendvpd %xmm3, (%rax), %xmm2, %xmm1: Hindex2(10)
 Formula:
 
 %ymm1  : 0x0₁₂₈ ∘ ((%ymm3[127:127] = 0x0₁ ? %ymm2[127:64] : TMP_BV_128_0[127:64]) ∘ (%ymm3[63:63] = 0x0₁ ? %ymm2[63:0] : TMP_BV_128_0[63:0]))

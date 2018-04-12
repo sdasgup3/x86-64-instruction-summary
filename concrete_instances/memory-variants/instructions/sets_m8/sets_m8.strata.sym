@@ -8,9 +8,6 @@ code: sets (%rax)
   must undef:      { }
   required flags:  { }
 
-sets (%rax): Hindex0(10)
-sets (%rax): Hindex0(10)
-sets %bl: Hindex3(9)
 Formula:
 
 Information about memory reads:

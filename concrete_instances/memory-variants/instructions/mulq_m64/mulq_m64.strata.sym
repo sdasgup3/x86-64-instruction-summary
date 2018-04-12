@@ -8,8 +8,6 @@ code: mulq (%rax)
   must undef:      { %pf %af %zf %sf }
   required flags:  { }
 
-mulq (%rax): Hindex2(10)
-mulq (%rax): Hindex2(10)
 Formula:
 
 %rax   : (0x0₆₄ ∘ TMP_BV_64_0 * 0x0₆₄ ∘ %rax)[63:0]

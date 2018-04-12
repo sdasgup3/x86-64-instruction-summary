@@ -8,8 +8,6 @@ code: divw (%rax)
   must undef:      { %cf %pf %af %zf %sf %of }
   required flags:  { }
 
-divw (%rax): Hindex2(10)
-divw (%rax): Hindex2(10)
 Formula:
 
 %rax   : %rax[63:16] ∘ div_quotient_int16(%rdx[15:0] ∘ %rax[15:0], TMP_BV_16_0)

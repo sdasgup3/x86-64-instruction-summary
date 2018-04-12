@@ -8,8 +8,6 @@ code: idivb (%rax)
   must undef:      { %cf %pf %af %zf %sf %of }
   required flags:  { }
 
-idivb (%rax): Hindex2(10)
-idivb (%rax): Hindex2(10)
 Formula:
 
 %rax   : %rax[63:16] ∘ idiv_remainder_int8(%rax[15:0], TMP_BV_8_0) ∘ idiv_quotient_int8(%rax[15:0], TMP_BV_8_0)

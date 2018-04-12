@@ -8,12 +8,9 @@ code: cmovll (%rax), %ebx
   must undef:      { }
   required flags:  { cmov }
 
-cmovll (%rax), %ebx: Hindex0(10)
-cmovll (%rax), %ebx: Hindex0(10)
-cmovll %ecx, %ebx: Hindex3(9)
 Formula:
 
-%rbx   : 0x0₃₂ ∘ (!(%sf ↔ %of) ? TMP_BV_32_0 : %rbx[31:0])
+%rbx   : 0x0₃₂ ∘ ((0x1₈ ⊕ ((%of ? 0x1₈ : 0x0₈) ⊕ (%sf ? 0x1₈ : 0x0₈))) = 0x0₈ ? TMP_BV_32_0 : %rbx[31:0])
 
 Information about memory reads:
   Value TMP_BV_32_0 (4 bytes)

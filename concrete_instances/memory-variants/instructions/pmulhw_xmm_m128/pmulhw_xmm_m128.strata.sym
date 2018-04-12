@@ -8,8 +8,6 @@ code: pmulhw (%rax), %xmm1
   must undef:      { }
   required flags:  { sse2 }
 
-pmulhw (%rax), %xmm1: Hindex1(10)
-pmulhw (%rax), %xmm1: Hindex1(10)
 Formula:
 
 %ymm1  : %ymm1[255:128] ∘ ((sign-extend-32(%ymm1[127:112]) * sign-extend-32(TMP_BV_128_0[127:112]))[31:16] ∘ ((sign-extend-32(%ymm1[111:96]) * sign-extend-32(TMP_BV_128_0[111:96]))[31:16] ∘ ((sign-extend-32(%ymm1[95:80]) * sign-extend-32(TMP_BV_128_0[95:80]))[31:16] ∘ ((sign-extend-32(%ymm1[79:64]) * sign-extend-32(TMP_BV_128_0[79:64]))[31:16] ∘ ((sign-extend-32(%ymm1[63:48]) * sign-extend-32(TMP_BV_128_0[63:48]))[31:16] ∘ ((sign-extend-32(%ymm1[47:32]) * sign-extend-32(TMP_BV_128_0[47:32]))[31:16] ∘ ((sign-extend-32(%ymm1[31:16]) * sign-extend-32(TMP_BV_128_0[31:16]))[31:16] ∘ (sign-extend-32(%ymm1[15:0]) * sign-extend-32(TMP_BV_128_0[15:0]))[31:16])))))))

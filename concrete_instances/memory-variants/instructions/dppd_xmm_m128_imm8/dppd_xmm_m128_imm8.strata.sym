@@ -8,8 +8,6 @@ code: dppd $0x0, (%rax), %xmm1
   must undef:      { }
   required flags:  { sse4_1 }
 
-dppd $0x0, (%rax), %xmm1: Hindex1(10)
-dppd $0x0, (%rax), %xmm1: Hindex1(10)
 Formula:
 
 %ymm1  : %ymm1[255:128] ∘ (0x0₆₄ ∘ 0x0₆₄)

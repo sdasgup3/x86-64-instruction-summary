@@ -8,9 +8,6 @@ code: vaddpd (%rax), %ymm2, %ymm1
   must undef:      { }
   required flags:  { avx }
 
-vaddpd (%rax), %ymm2, %ymm1: Hindex0(10)
-vaddpd (%rax), %ymm2, %ymm1: Hindex0(10)
-vaddpd %ymm3, %ymm2, %ymm1: Hindex0(9)
 Formula:
 
 %ymm1  : add_double(%ymm2[255:192], TMP_BV_256_0[255:192]) ∘ (add_double(%ymm2[191:128], TMP_BV_256_1[191:128]) ∘ (add_double(%ymm2[127:64], TMP_BV_256_2[127:64]) ∘ add_double(%ymm2[63:0], TMP_BV_256_3[63:0])))

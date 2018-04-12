@@ -8,9 +8,6 @@ code: xchgw (%rax), %bx
   must undef:      { }
   required flags:  { }
 
-xchgw (%rax), %bx: Hindex0(10)
-xchgw (%rax), %bx: Hindex0(10)
-xchgw %bx, %ax: Hindex1(9)
 Formula:
 
 %rbx   : %rbx[63:16] ∘ TMP_BV_16_0

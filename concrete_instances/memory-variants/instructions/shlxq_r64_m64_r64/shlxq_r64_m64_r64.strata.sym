@@ -8,12 +8,9 @@ code: shlxq %rcx, (%rax), %rbx
   must undef:      { }
   required flags:  { bmi2 }
 
-shlxq %rcx, (%rax), %rbx: Hindex0(10)
-shlxq %rcx, (%rax), %rbx: Hindex0(10)
-shlxq %rdx, %rcx, %rbx: Hindex1(9)
 Formula:
 
-%rbx   : TMP_BV_64_0 << (%rcx & 0x3f₆₄)
+%rbx   : (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ (%rcx[7:0] & 0x3f₈))[63:0]
 
 Information about memory reads:
   Value TMP_BV_64_0 (8 bytes)

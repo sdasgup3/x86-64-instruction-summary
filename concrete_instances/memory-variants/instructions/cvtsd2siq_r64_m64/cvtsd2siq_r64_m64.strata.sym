@@ -8,8 +8,6 @@ code: cvtsd2siq (%rax), %rbx
   must undef:      { }
   required flags:  { sse2 }
 
-cvtsd2siq (%rax), %rbx: Hindex1(10)
-cvtsd2siq (%rax), %rbx: Hindex1(10)
 Formula:
 
 %rbx   : cvt_double_to_int64(TMP_BV_64_0)

@@ -8,17 +8,26 @@ code: vhaddps (%rax), %ymm2, %ymm1
   must undef:      { }
   required flags:  { avx }
 
-vhaddps (%rax), %ymm2, %ymm1: Hindex0(10)
-vhaddps (%rax), %ymm2, %ymm1: Hindex0(10)
-vhaddps %ymm3, %ymm2, %ymm1: Hindex0(9)
 Formula:
 
-%ymm1  : add_single(TMP_BV_256_0[223:192], TMP_BV_256_0[255:224]) ∘ add_single(TMP_BV_256_0[159:128], TMP_BV_256_0[191:160]) ∘ add_single(%ymm2[223:192], %ymm2[255:224]) ∘ add_single(%ymm2[159:128], %ymm2[191:160]) ∘ (add_single(TMP_BV_256_1[95:64], TMP_BV_256_1[127:96]) ∘ add_single(TMP_BV_256_1[31:0], TMP_BV_256_1[63:32]) ∘ add_single(%ymm2[95:64], %ymm2[127:96]) ∘ add_single(%ymm2[31:0], %ymm2[63:32]))
+%ymm1  : add_single(TMP_BV_256_0[223:192], TMP_BV_256_1[255:224]) ∘ add_single(TMP_BV_256_2[159:128], TMP_BV_256_3[191:160]) ∘ add_single(%ymm2[223:192], %ymm2[255:224]) ∘ add_single(%ymm2[159:128], %ymm2[191:160]) ∘ (add_single(TMP_BV_256_4[95:64], TMP_BV_256_5[127:96]) ∘ add_single(TMP_BV_256_6[31:0], TMP_BV_256_7[63:32]) ∘ add_single(%ymm2[95:64], %ymm2[127:96]) ∘ add_single(%ymm2[31:0], %ymm2[63:32]))
 
 Information about memory reads:
   Value TMP_BV_256_0 (32 bytes)
     was read at address %rax.
   Value TMP_BV_256_1 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_2 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_3 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_4 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_5 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_6 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_7 (32 bytes)
     was read at address %rax.
 
 sigfpe  : sigfpe

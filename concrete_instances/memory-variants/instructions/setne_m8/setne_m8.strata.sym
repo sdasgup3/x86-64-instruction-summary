@@ -8,9 +8,6 @@ code: setne (%rax)
   must undef:      { }
   required flags:  { }
 
-setne (%rax): Hindex0(10)
-setne (%rax): Hindex0(10)
-setne %bl: Hindex3(9)
 Formula:
 
 Information about memory reads:
@@ -19,7 +16,7 @@ Information about memory reads:
 
 Information about memory writes:
   Address %rax was updated to
-    !%zf ? 0x1₈ : 0x0₈ (1 bytes).
+    %zf ? 0x0₈ : 0x1₈ (1 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

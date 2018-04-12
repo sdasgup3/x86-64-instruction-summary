@@ -8,9 +8,6 @@ code: vfnmsub132pd (%rax), %ymm2, %ymm1
   must undef:      { }
   required flags:  { fma }
 
-vfnmsub132pd (%rax), %ymm2, %ymm1: Hindex0(10)
-vfnmsub132pd (%rax), %ymm2, %ymm1: Hindex0(10)
-vfnmsub132pd %ymm3, %ymm2, %ymm1: Hindex1(9)
 Formula:
 
 %ymm1  : vfnmsub132_double(%ymm1[255:192], %ymm2[255:192], TMP_BV_256_0[255:192]) ∘ (vfnmsub132_double(%ymm1[191:128], %ymm2[191:128], TMP_BV_256_1[191:128]) ∘ (vfnmsub132_double(%ymm1[127:64], %ymm2[127:64], TMP_BV_256_2[127:64]) ∘ vfnmsub132_double(%ymm1[63:0], %ymm2[63:0], TMP_BV_256_3[63:0])))

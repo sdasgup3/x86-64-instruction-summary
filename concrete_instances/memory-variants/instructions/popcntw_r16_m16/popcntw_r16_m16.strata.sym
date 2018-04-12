@@ -8,22 +8,51 @@ code: popcntw (%rax), %bx
   must undef:      { }
   required flags:  { popcnt }
 
-popcntw (%rax), %bx: Hindex0(10)
-popcntw (%rax), %bx: Hindex0(10)
-popcntw %cx, %bx: Hindex1(9)
 Formula:
 
-%rbx   : %rbx[63:16] ∘ (0x0₈ ∘ (0x0₄ ∘ (0x0₂ ∘ (0x0₁ ∘ TMP_BV_16_0[15:15] + 0x0₁ ∘ TMP_BV_16_0[14:14]) + 0x0₂ ∘ (0x0₁ ∘ TMP_BV_16_0[13:13] + 0x0₁ ∘ TMP_BV_16_0[12:12])) + 0x0₄ ∘ (0x0₂ ∘ (0x0₁ ∘ TMP_BV_16_0[11:11] + 0x0₁ ∘ TMP_BV_16_0[10:10]) + 0x0₂ ∘ (0x0₁ ∘ TMP_BV_16_0[9:9] + 0x0₁ ∘ TMP_BV_16_0[8:8]))) + 0x0₈ ∘ (0x0₄ ∘ (0x0₂ ∘ (0x0₁ ∘ TMP_BV_16_0[7:7] + 0x0₁ ∘ TMP_BV_16_0[6:6]) + 0x0₂ ∘ (0x0₁ ∘ TMP_BV_16_0[5:5] + 0x0₁ ∘ TMP_BV_16_0[4:4])) + 0x0₄ ∘ (0x0₂ ∘ (0x0₁ ∘ TMP_BV_16_0[3:3] + 0x0₁ ∘ TMP_BV_16_0[2:2]) + 0x0₂ ∘ (0x0₁ ∘ TMP_BV_16_0[1:1] + 0x0₁ ∘ TMP_BV_16_0[0:0]))))
+%rbx   : %rbx[63:16] ∘ (0x0₈ ∘ (0x0₄ ∘ (0x0₂ ∘ (0x0₁ ∘ TMP_BV_16_0[15:15] + 0x0₁ ∘ TMP_BV_16_1[14:14]) + 0x0₂ ∘ (0x0₁ ∘ TMP_BV_16_2[13:13] + 0x0₁ ∘ TMP_BV_16_3[12:12])) + 0x0₄ ∘ (0x0₂ ∘ (0x0₁ ∘ TMP_BV_16_4[11:11] + 0x0₁ ∘ TMP_BV_16_5[10:10]) + 0x0₂ ∘ (0x0₁ ∘ TMP_BV_16_6[9:9] + 0x0₁ ∘ TMP_BV_16_7[8:8]))) + 0x0₈ ∘ (0x0₄ ∘ (0x0₂ ∘ (0x0₁ ∘ TMP_BV_16_8[7:7] + 0x0₁ ∘ TMP_BV_16_9[6:6]) + 0x0₂ ∘ (0x0₁ ∘ TMP_BV_16_10[5:5] + 0x0₁ ∘ TMP_BV_16_11[4:4])) + 0x0₄ ∘ (0x0₂ ∘ (0x0₁ ∘ TMP_BV_16_12[3:3] + 0x0₁ ∘ TMP_BV_16_13[2:2]) + 0x0₂ ∘ (0x0₁ ∘ TMP_BV_16_14[1:1] + 0x0₁ ∘ TMP_BV_16_15[0:0]))))
 
 %cf    : false
 %pf    : false
 %af    : false
-%zf    : TMP_BV_16_0 = 0x0₁₆
+%zf    : 0x0₄₈ ∘ TMP_BV_16_16 = 0x0₆₄
 %sf    : false
 %of    : false
 
 Information about memory reads:
   Value TMP_BV_16_0 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_1 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_2 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_3 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_4 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_5 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_6 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_7 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_8 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_9 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_10 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_11 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_12 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_13 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_14 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_15 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_16 (2 bytes)
     was read at address %rax.
 
 sigfpe  : sigfpe

@@ -8,9 +8,6 @@ code: salq %cl, (%rax)
   must undef:      { }
   required flags:  { }
 
-salq %cl, (%rax): Hindex0(10)
-salq %cl, (%rax): Hindex0(10)
-salq %cl, %rbx: Hindex7(9)
 Formula:
 
 %cf    : (%rcx[7:0] & 0x3f₈) ≥ 0x40₈ ∧ TMP_BOOL_0 ∨ !((%rcx[7:0] & 0x3f₈) ≥ 0x40₈) ∧ (!((%rcx[7:0] & 0x3f₈) = 0x0₈) ∧ (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ (%rcx[7:0] & 0x3f₈))[64:64] = 0x1₁ ∨ !(!((%rcx[7:0] & 0x3f₈) = 0x0₈)) ∧ %cf)

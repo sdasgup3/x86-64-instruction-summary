@@ -8,22 +8,21 @@ code: andnl (%rax), %ecx, %ebx
   must undef:      { %pf %af }
   required flags:  { bmi1 }
 
-andnl (%rax), %ecx, %ebx: Hindex0(10)
-andnl (%rax), %ecx, %ebx: Hindex0(10)
-andnl %edx, %ecx, %ebx: Hindex1(9)
 Formula:
 
-%rbx   : 0x0₃₂ ∘ (!%rcx[31:0] & TMP_BV_32_0)
+%rbx   : 0x0₃₂ ∘ ((TMP_BV_32_0 | %rcx[31:0]) ⊕ %rcx[31:0])
 
 %cf    : false
-%pf    : TMP_BOOL_2
-%af    : TMP_BOOL_3
-%zf    : (!%rcx[31:0] & TMP_BV_32_0) = 0x0₃₂
-%sf    : (!%rcx[31:31] & TMP_BV_32_0[31:31]) = 0x1₁
+%pf    : TMP_BOOL_6
+%af    : TMP_BOOL_7
+%zf    : ((TMP_BV_32_0 | %rcx[31:0]) ⊕ %rcx[31:0]) = 0x0₃₂
+%sf    : ((TMP_BV_32_1[31:31] | %rcx[31:31]) ⊕ %rcx[31:31]) = 0x1₁
 %of    : false
 
 Information about memory reads:
   Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_1 (4 bytes)
     was read at address %rax.
 
 sigfpe  : sigfpe

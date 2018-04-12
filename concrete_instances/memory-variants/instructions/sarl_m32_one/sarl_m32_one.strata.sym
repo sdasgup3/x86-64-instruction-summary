@@ -8,17 +8,14 @@ code: sarl $0x1, (%rax)
   must undef:      { %af }
   required flags:  { }
 
-sarl $0x1, (%rax): Hindex0(10)
-sarl $0x1, (%rax): Hindex0(10)
-sarl $0x1, %ebx: Hindex7(9)
 Formula:
 
-%cf    : true ∧ (TMP_BV_32_0 ∘ 0x0₁ sign_shift_right 0x1₃₃)[0:0] = 0x1₁ ∨ false ∧ %cf
-%pf    : true ∧ !((TMP_BV_32_0 ∘ 0x0₁ sign_shift_right 0x1₃₃)[1:1] = 0x1₁ ⊕ (TMP_BV_32_0 ∘ 0x0₁ sign_shift_right 0x1₃₃)[2:2] = 0x1₁ ⊕ (TMP_BV_32_0 ∘ 0x0₁ sign_shift_right 0x1₃₃)[3:3] = 0x1₁ ⊕ (TMP_BV_32_0 ∘ 0x0₁ sign_shift_right 0x1₃₃)[4:4] = 0x1₁ ⊕ (TMP_BV_32_0 ∘ 0x0₁ sign_shift_right 0x1₃₃)[5:5] = 0x1₁ ⊕ (TMP_BV_32_0 ∘ 0x0₁ sign_shift_right 0x1₃₃)[6:6] = 0x1₁ ⊕ (TMP_BV_32_0 ∘ 0x0₁ sign_shift_right 0x1₃₃)[7:7] = 0x1₁ ⊕ (TMP_BV_32_0 ∘ 0x0₁ sign_shift_right 0x1₃₃)[8:8] = 0x1₁) ∨ false ∧ %pf
-%af    : TMP_BOOL_1
-%zf    : true ∧ (TMP_BV_32_0 ∘ 0x0₁ sign_shift_right 0x1₃₃)[32:1] = 0x0₃₂ ∨ false ∧ %zf
-%sf    : true ∧ (TMP_BV_32_0 ∘ 0x0₁ sign_shift_right 0x1₃₃)[32:32] = 0x1₁ ∨ false ∧ %sf
-%of    : false ∨ false ∧ %of
+%cf    : true ∧ (sign-extend-64(TMP_BV_32_0) ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[0:0] = 0x1₁ ∨ false
+%pf    : !((sign-extend-64(TMP_BV_32_0) ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[1:1] = 0x1₁ ⊕ (sign-extend-64(TMP_BV_32_0) ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[2:2] = 0x1₁ ⊕ (sign-extend-64(TMP_BV_32_0) ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[3:3] = 0x1₁ ⊕ (sign-extend-64(TMP_BV_32_0) ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[4:4] = 0x1₁ ⊕ (sign-extend-64(TMP_BV_32_0) ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[5:5] = 0x1₁ ⊕ (sign-extend-64(TMP_BV_32_0) ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[6:6] = 0x1₁ ⊕ (sign-extend-64(TMP_BV_32_0) ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[7:7] = 0x1₁ ⊕ (sign-extend-64(TMP_BV_32_0) ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[8:8] = 0x1₁)
+%af    : TMP_BOOL_12
+%zf    : (sign-extend-64(TMP_BV_32_0) ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[64:1] = 0x0₆₄
+%sf    : (sign-extend-64(TMP_BV_32_0) ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[64:64] = 0x1₁
+%of    : false
 
 Information about memory reads:
   Value TMP_BV_32_0 (4 bytes)
@@ -26,7 +23,7 @@ Information about memory reads:
 
 Information about memory writes:
   Address %rax was updated to
-    (TMP_BV_32_0 ∘ 0x0₁ sign_shift_right 0x1₃₃)[32:1] (4 bytes).
+    (sign-extend-64(TMP_BV_32_0) ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[32:1] (4 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

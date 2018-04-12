@@ -8,8 +8,6 @@ code: sarl $0x0, (%rax)
   must undef:      { }
   required flags:  { }
 
-sarl $0x0, (%rax): Hindex8(10)
-sarl $0x0, (%rax): Hindex8(10)
 Formula:
 
 %cf    : false ∧ (TMP_BV_32_0 ∘ 0x0₁ sign_shift_right 0x0₃₃)[0:0] = 0x1₁ ∨ true ∧ %cf

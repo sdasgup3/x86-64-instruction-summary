@@ -8,8 +8,6 @@ code: vpunpcklbw (%rax), %xmm2, %xmm1
   must undef:      { }
   required flags:  { avx }
 
-vpunpcklbw (%rax), %xmm2, %xmm1: Hindex7(10)
-vpunpcklbw (%rax), %xmm2, %xmm1: Hindex7(10)
 Formula:
 
 %ymm1  : 0x0₁₂₈ ∘ (TMP_BV_128_0[63:56] ∘ %ymm2[63:56] ∘ (TMP_BV_128_0[55:48] ∘ %ymm2[55:48] ∘ (TMP_BV_128_0[47:40] ∘ %ymm2[47:40] ∘ (TMP_BV_128_0[39:32] ∘ %ymm2[39:32] ∘ (TMP_BV_128_0[31:24] ∘ %ymm2[31:24] ∘ (TMP_BV_128_0[23:16] ∘ %ymm2[23:16] ∘ (TMP_BV_128_0[15:8] ∘ %ymm2[15:8] ∘ (TMP_BV_128_0[7:0] ∘ %ymm2[7:0]))))))))

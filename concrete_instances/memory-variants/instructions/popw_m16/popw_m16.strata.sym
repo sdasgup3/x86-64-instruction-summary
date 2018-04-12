@@ -8,8 +8,6 @@ code: popw (%rax)
   must undef:      { }
   required flags:  { }
 
-popw (%rax): Hindex2(10)
-popw (%rax): Hindex2(10)
 Formula:
 
 %rsp   : %rsp + 0x2₆₄

@@ -8,8 +8,6 @@ code: vroundpd $0x0, (%rax), %xmm1
   must undef:      { }
   required flags:  { avx }
 
-vroundpd $0x0, (%rax), %xmm1: Hindex1(10)
-vroundpd $0x0, (%rax), %xmm1: Hindex1(10)
 Formula:
 
 %ymm1  : 0x0₁₂₈ ∘ (cvt_double_to_int64_rm(TMP_BV_128_0[127:64], 0x0₈) ∘ cvt_double_to_int64_rm(TMP_BV_128_0[63:0], 0x0₈))

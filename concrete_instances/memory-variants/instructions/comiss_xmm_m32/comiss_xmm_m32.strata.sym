@@ -8,11 +8,6 @@ code: comiss (%rax), %xmm1
   must undef:      { }
   required flags:  { sse }
 
-Opcode: comiss_xmm_m32 Reason: 4
-comiss (%rax), %xmm1: Hindex0(10)
-Opcode: comiss_xmm_m32 Reason: 4
-comiss (%rax), %xmm1: Hindex0(10)
-comiss %xmm2, %xmm1: Hindex1(9)
 Formula:
 
 %cf    : comiss(%ymm1[31:0], TMP_BV_32_0) = 0x0₂ ∨ comiss(%ymm1[31:0], TMP_BV_32_0) = 0x2₂

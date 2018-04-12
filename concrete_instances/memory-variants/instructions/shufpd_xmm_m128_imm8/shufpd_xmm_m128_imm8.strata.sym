@@ -8,8 +8,6 @@ code: shufpd $0x0, (%rax), %xmm1
   must undef:      { }
   required flags:  { sse2 }
 
-shufpd $0x0, (%rax), %xmm1: Hindex2(10)
-shufpd $0x0, (%rax), %xmm1: Hindex2(10)
 Formula:
 
 %ymm1  : %ymm1[255:128] ∘ (TMP_BV_128_0[63:0] ∘ %ymm1[63:0])

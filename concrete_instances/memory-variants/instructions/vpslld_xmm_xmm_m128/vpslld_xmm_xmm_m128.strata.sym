@@ -8,9 +8,6 @@ code: vpslld (%rax), %xmm2, %xmm1
   must undef:      { }
   required flags:  { avx }
 
-vpslld (%rax), %xmm2, %xmm1: Hindex0(10)
-vpslld (%rax), %xmm2, %xmm1: Hindex0(10)
-vpslld %xmm3, %xmm2, %xmm1: Hindex1(9)
 Formula:
 
 %ymm1  : TMP_BV_128_0[63:0] > 0x1f₆₄ ? 0x0₁₂₈ ∘ 0x0₁₂₈ : 0x0₁₂₈ ∘ ((%ymm2[127:96] << TMP_BV_128_0[31:0]) ∘ ((%ymm2[95:64] << TMP_BV_128_0[31:0]) ∘ ((%ymm2[63:32] << TMP_BV_128_0[31:0]) ∘ (%ymm2[31:0] << TMP_BV_128_0[31:0]))))

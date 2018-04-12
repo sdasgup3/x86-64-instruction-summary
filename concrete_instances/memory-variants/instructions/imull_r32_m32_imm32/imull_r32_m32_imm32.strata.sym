@@ -8,8 +8,6 @@ code: imull $0x0, (%rax), %ebx
   must undef:      { %pf %af %zf %sf }
   required flags:  { }
 
-imull $0x0, (%rax), %ebx: Hindex2(10)
-imull $0x0, (%rax), %ebx: Hindex2(10)
 Formula:
 
 %rbx   : 0x0₃₂ ∘ (sign-extend-64(TMP_BV_32_0) * 0x0₆₄)[31:0]

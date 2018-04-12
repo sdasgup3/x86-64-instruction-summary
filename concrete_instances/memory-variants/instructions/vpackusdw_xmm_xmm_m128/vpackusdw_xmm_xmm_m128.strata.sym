@@ -8,8 +8,6 @@ code: vpackusdw (%rax), %xmm2, %xmm1
   must undef:      { }
   required flags:  { avx }
 
-vpackusdw (%rax), %xmm2, %xmm1: Hindex1(10)
-vpackusdw (%rax), %xmm2, %xmm1: Hindex1(10)
 Formula:
 
 %ymm1  : 0x0₁₂₈ ∘ ((TMP_BV_128_0[127:96] > 0xffff₃₂ ? 0xffff₁₆ : TMP_BV_128_0[127:96] < 0x0₃₂ ? 0x0₁₆ : TMP_BV_128_0[111:96]) ∘ ((TMP_BV_128_0[95:64] > 0xffff₃₂ ? 0xffff₁₆ : TMP_BV_128_0[95:64] < 0x0₃₂ ? 0x0₁₆ : TMP_BV_128_0[79:64]) ∘ ((TMP_BV_128_0[63:32] > 0xffff₃₂ ? 0xffff₁₆ : TMP_BV_128_0[63:32] < 0x0₃₂ ? 0x0₁₆ : TMP_BV_128_0[47:32]) ∘ ((TMP_BV_128_0[31:0] > 0xffff₃₂ ? 0xffff₁₆ : TMP_BV_128_0[31:0] < 0x0₃₂ ? 0x0₁₆ : TMP_BV_128_0[15:0]) ∘ ((%ymm2[127:96] > 0xffff₃₂ ? 0xffff₁₆ : %ymm2[127:96] < 0x0₃₂ ? 0x0₁₆ : %ymm2[111:96]) ∘ ((%ymm2[95:64] > 0xffff₃₂ ? 0xffff₁₆ : %ymm2[95:64] < 0x0₃₂ ? 0x0₁₆ : %ymm2[79:64]) ∘ ((%ymm2[63:32] > 0xffff₃₂ ? 0xffff₁₆ : %ymm2[63:32] < 0x0₃₂ ? 0x0₁₆ : %ymm2[47:32]) ∘ (%ymm2[31:0] > 0xffff₃₂ ? 0xffff₁₆ : %ymm2[31:0] < 0x0₃₂ ? 0x0₁₆ : %ymm2[15:0]))))))))

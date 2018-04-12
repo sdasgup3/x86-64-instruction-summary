@@ -8,8 +8,6 @@ code: vaddsubpd (%rax), %ymm2, %ymm1
   must undef:      { }
   required flags:  { avx }
 
-vaddsubpd (%rax), %ymm2, %ymm1: Hindex1(10)
-vaddsubpd (%rax), %ymm2, %ymm1: Hindex1(10)
 Formula:
 
 %ymm1  : add_double(%ymm2[255:192], TMP_BV_256_0[255:192]) ∘ sub_double(%ymm2[191:128], TMP_BV_256_0[191:128]) ∘ (add_double(%ymm2[127:64], TMP_BV_256_0[127:64]) ∘ sub_double(%ymm2[63:0], TMP_BV_256_0[63:0]))

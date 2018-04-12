@@ -8,9 +8,6 @@ code: movdqu %xmm1, (%rax)
   must undef:      { }
   required flags:  { sse2 }
 
-movdqu %xmm1, (%rax): Hindex0(10)
-movdqu %xmm1, (%rax): Hindex0(10)
-movdqu %xmm2, %xmm1: Hindex0(9)
 Formula:
 
 Information about memory reads:

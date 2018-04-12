@@ -8,8 +8,6 @@ code: pmaxud (%rax), %xmm1
   must undef:      { }
   required flags:  { sse4_1 }
 
-pmaxud (%rax), %xmm1: Hindex1(10)
-pmaxud (%rax), %xmm1: Hindex1(10)
 Formula:
 
 %ymm1  : %ymm1[255:128] ∘ ((%ymm1[127:96] > TMP_BV_128_0[127:96] ? %ymm1[127:96] : TMP_BV_128_0[127:96]) ∘ ((%ymm1[95:64] > TMP_BV_128_0[95:64] ? %ymm1[95:64] : TMP_BV_128_0[95:64]) ∘ ((%ymm1[63:32] > TMP_BV_128_0[63:32] ? %ymm1[63:32] : TMP_BV_128_0[63:32]) ∘ (%ymm1[31:0] > TMP_BV_128_0[31:0] ? %ymm1[31:0] : TMP_BV_128_0[31:0]))))

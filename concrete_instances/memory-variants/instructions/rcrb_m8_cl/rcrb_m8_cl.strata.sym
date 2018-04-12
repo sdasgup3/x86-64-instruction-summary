@@ -8,8 +8,6 @@ code: rcrb %cl, (%rax)
   must undef:      { }
   required flags:  { }
 
-rcrb %cl, (%rax): Hindex8(10)
-rcrb %cl, (%rax): Hindex8(10)
 Formula:
 
 %cf    : ((%cf ? 0x1₁ : 0x0₁) ∘ TMP_BV_8_0 rot_right 0x0₁ ∘ (%rcx[7:0] & 0x1f₈) % 0x9₉)[8:8] = 0x1₁

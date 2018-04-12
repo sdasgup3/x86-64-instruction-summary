@@ -8,15 +8,6 @@ code: movddup (%rax), %xmm1
   must undef:      { }
   required flags:  { pni }
 
-Opcode: movddup_xmm_xmm Reason: 1
-Opcode: movddup_xmm_m64 Reason: 4
-movddup (%rax), %xmm1: Hindex0(10)
-Opcode: movddup_xmm_xmm Reason: 1
-Opcode: movddup_xmm_m64 Reason: 4
-movddup (%rax), %xmm1: Hindex0(10)
-callq .move_128_064_xmm2_r12_r13: Hindex8(9)
-movq %r12, %r13: Hindex5(9)
-callq .move_064_128_r12_r13_xmm1: Hindex8(9)
 Formula:
 
 %ymm1  : %ymm1[255:128] ∘ (TMP_BV_64_0 ∘ TMP_BV_64_0)

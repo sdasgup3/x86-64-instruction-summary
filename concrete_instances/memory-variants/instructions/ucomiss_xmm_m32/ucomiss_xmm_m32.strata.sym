@@ -8,8 +8,6 @@ code: ucomiss (%rax), %xmm1
   must undef:      { }
   required flags:  { sse }
 
-ucomiss (%rax), %xmm1: Hindex2(10)
-ucomiss (%rax), %xmm1: Hindex2(10)
 Formula:
 
 %cf    : comiss(%ymm1[31:0], TMP_BV_32_0) = 0x0₂ ∨ comiss(%ymm1[31:0], TMP_BV_32_0) = 0x2₂

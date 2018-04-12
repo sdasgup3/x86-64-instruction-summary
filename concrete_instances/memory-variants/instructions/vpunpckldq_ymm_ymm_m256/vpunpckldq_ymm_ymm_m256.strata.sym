@@ -8,12 +8,9 @@ code: vpunpckldq (%rax), %ymm2, %ymm1
   must undef:      { }
   required flags:  { avx2 }
 
-vpunpckldq (%rax), %ymm2, %ymm1: Hindex0(10)
-vpunpckldq (%rax), %ymm2, %ymm1: Hindex0(10)
-vpunpckldq %ymm3, %ymm2, %ymm1: Hindex6(9)
 Formula:
 
-%ymm1  : TMP_BV_256_0[191:160] ∘ %ymm2[191:160] ∘ (TMP_BV_256_1[159:128] ∘ %ymm2[159:128] ∘ (TMP_BV_256_2[63:32] ∘ %ymm2[63:32] ∘ (TMP_BV_256_3[31:0] ∘ %ymm2[31:0])))
+%ymm1  : TMP_BV_256_0[191:160] ∘ %ymm2[191:160] ∘ (TMP_BV_256_1[159:128] ∘ %ymm2[159:128]) ∘ (TMP_BV_256_2[63:32] ∘ %ymm2[63:32] ∘ (TMP_BV_256_3[31:0] ∘ %ymm2[31:0]))
 
 Information about memory reads:
   Value TMP_BV_256_0 (32 bytes)

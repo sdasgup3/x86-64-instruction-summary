@@ -8,21 +8,24 @@ code: roll $0x1, (%rax)
   must undef:      { }
   required flags:  { }
 
-roll $0x1, (%rax): Hindex0(10)
-roll $0x1, (%rax): Hindex0(10)
-roll $0x1, %ebx: Hindex7(9)
 Formula:
 
-%cf    : true ∧ (TMP_BV_32_0 rot_left 0x1₃₂)[0:0] = 0x1₁ ∨ false ∧ %cf
-%of    : true ∧ ((TMP_BV_32_0 rot_left 0x1₃₂)[31:31] = 0x1₁ ⊕ (TMP_BV_32_0 rot_left 0x1₃₂)[0:0] = 0x1₁) ∨ false ∧ TMP_BOOL_0
+%cf    : (((0x0₁ ∘ TMP_BV_32_0 + 0x0₁ ∘ TMP_BV_32_0)[32:32] = 0x1₁ ? 0x0₁ ∘ TMP_BV_32_1 + 0x1₃₃ : 0x0₁ ∘ TMP_BV_32_1) + 0x0₁ ∘ TMP_BV_32_1)[32:32] = 0x1₁
+%of    : (TMP_BV_32_2[31:31] = 0x1₁ ↔ TMP_BV_32_3[31:31] = 0x1₁) ∧ !(TMP_BV_32_2[31:31] = 0x1₁ ↔ (((0x0₁ ∘ TMP_BV_32_0 + 0x0₁ ∘ TMP_BV_32_0)[32:32] = 0x1₁ ? 0x0₁ ∘ TMP_BV_32_1 + 0x1₃₃ : 0x0₁ ∘ TMP_BV_32_1) + 0x0₁ ∘ TMP_BV_32_1)[31:31] = 0x1₁)
 
 Information about memory reads:
   Value TMP_BV_32_0 (4 bytes)
     was read at address %rax.
+  Value TMP_BV_32_1 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_2 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_3 (4 bytes)
+    was read at address %rax.
 
 Information about memory writes:
   Address %rax was updated to
-    TMP_BV_32_0 rot_left 0x1₃₂ (4 bytes).
+    (((0x0₁ ∘ TMP_BV_32_0 + 0x0₁ ∘ TMP_BV_32_0)[32:32] = 0x1₁ ? 0x0₁ ∘ TMP_BV_32_1 + 0x1₃₃ : 0x0₁ ∘ TMP_BV_32_1) + 0x0₁ ∘ TMP_BV_32_1)[31:0] (4 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

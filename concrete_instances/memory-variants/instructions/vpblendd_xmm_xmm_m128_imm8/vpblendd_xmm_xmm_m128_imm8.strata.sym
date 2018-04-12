@@ -8,8 +8,6 @@ code: vpblendd $0x0, (%rax), %xmm2, %xmm1
   must undef:      { }
   required flags:  { avx2 }
 
-vpblendd $0x0, (%rax), %xmm2, %xmm1: Hindex1(10)
-vpblendd $0x0, (%rax), %xmm2, %xmm1: Hindex1(10)
 Formula:
 
 %ymm1  : 0x0₁₂₈ ∘ %ymm2[127:0]

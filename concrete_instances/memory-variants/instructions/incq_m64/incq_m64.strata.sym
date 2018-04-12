@@ -8,16 +8,13 @@ code: incq (%rax)
   must undef:      { }
   required flags:  { }
 
-incq (%rax): Hindex0(10)
-incq (%rax): Hindex0(10)
-incq %rbx: Hindex1(9)
 Formula:
 
-%pf    : !((TMP_BV_64_1 + 0x1₆₄)[0:0] = 0x1₁ ⊕ (TMP_BV_64_1 + 0x1₆₄)[1:1] = 0x1₁ ⊕ (TMP_BV_64_1 + 0x1₆₄)[2:2] = 0x1₁ ⊕ (TMP_BV_64_1 + 0x1₆₄)[3:3] = 0x1₁ ⊕ (TMP_BV_64_1 + 0x1₆₄)[4:4] = 0x1₁ ⊕ (TMP_BV_64_1 + 0x1₆₄)[5:5] = 0x1₁ ⊕ (TMP_BV_64_1 + 0x1₆₄)[6:6] = 0x1₁ ⊕ (TMP_BV_64_1 + 0x1₆₄)[7:7] = 0x1₁)
-%af    : TMP_BV_64_2[3:0] = 0xf₄
-%zf    : TMP_BV_64_1 + 0x1₆₄ = 0x0₆₄
-%sf    : (TMP_BV_64_1 + 0x1₆₄)[63:63] = 0x1₁
-%of    : !(TMP_BV_64_3[63:63] = 0x1₁) ∧ TMP_BV_64_4[62:0] = 0xffffffffffffffff₆₃
+%pf    : !((0x0₁ ∘ 0x1₆₄ + 0x0₁ ∘ TMP_BV_64_0)[0:0] = 0x1₁ ⊕ (0x0₁ ∘ 0x1₆₄ + 0x0₁ ∘ TMP_BV_64_0)[1:1] = 0x1₁ ⊕ (0x0₁ ∘ 0x1₆₄ + 0x0₁ ∘ TMP_BV_64_0)[2:2] = 0x1₁ ⊕ (0x0₁ ∘ 0x1₆₄ + 0x0₁ ∘ TMP_BV_64_0)[3:3] = 0x1₁ ⊕ (0x0₁ ∘ 0x1₆₄ + 0x0₁ ∘ TMP_BV_64_0)[4:4] = 0x1₁ ⊕ (0x0₁ ∘ 0x1₆₄ + 0x0₁ ∘ TMP_BV_64_0)[5:5] = 0x1₁ ⊕ (0x0₁ ∘ 0x1₆₄ + 0x0₁ ∘ TMP_BV_64_0)[6:6] = 0x1₁ ⊕ (0x0₁ ∘ 0x1₆₄ + 0x0₁ ∘ TMP_BV_64_0)[7:7] = 0x1₁)
+%af    : (0x1₅ + 0x0₁ ∘ TMP_BV_64_1[3:0])[4:4] = 0x1₁
+%zf    : (0x0₁ ∘ 0x1₆₄ + 0x0₁ ∘ TMP_BV_64_0)[63:0] = 0x0₆₄
+%sf    : (0x0₁ ∘ 0x1₆₄ + 0x0₁ ∘ TMP_BV_64_0)[63:63] = 0x1₁
+%of    : (false ↔ TMP_BV_64_2[63:63] = 0x1₁) ∧ !(false ↔ (0x0₁ ∘ 0x1₆₄ + 0x0₁ ∘ TMP_BV_64_0)[63:63] = 0x1₁)
 
 Information about memory reads:
   Value TMP_BV_64_0 (8 bytes)
@@ -26,14 +23,10 @@ Information about memory reads:
     was read at address %rax.
   Value TMP_BV_64_2 (8 bytes)
     was read at address %rax.
-  Value TMP_BV_64_3 (8 bytes)
-    was read at address %rax.
-  Value TMP_BV_64_4 (8 bytes)
-    was read at address %rax.
 
 Information about memory writes:
   Address %rax was updated to
-    TMP_BV_64_0 + 0x1₆₄ (8 bytes).
+    (0x0₁ ∘ 0x1₆₄ + 0x0₁ ∘ TMP_BV_64_0)[63:0] (8 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

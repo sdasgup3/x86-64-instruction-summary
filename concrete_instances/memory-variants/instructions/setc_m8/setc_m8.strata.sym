@@ -8,9 +8,6 @@ code: setc (%rax)
   must undef:      { }
   required flags:  { }
 
-setc (%rax): Hindex0(10)
-setc (%rax): Hindex0(10)
-setc %bl: Hindex3(9)
 Formula:
 
 Information about memory reads:

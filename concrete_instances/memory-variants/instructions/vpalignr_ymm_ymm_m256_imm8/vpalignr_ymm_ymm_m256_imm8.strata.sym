@@ -8,8 +8,6 @@ code: vpalignr $0x0, (%rax), %ymm2, %ymm1
   must undef:      { }
   required flags:  { avx2 }
 
-vpalignr $0x0, (%rax), %ymm2, %ymm1: Hindex2(10)
-vpalignr $0x0, (%rax), %ymm2, %ymm1: Hindex2(10)
 Formula:
 
 %ymm1  : (%ymm2[255:128] ∘ TMP_BV_256_0[255:128] >> 0x0₂₅₆)[127:0] ∘ (%ymm2[127:0] ∘ TMP_BV_256_0[127:0] >> 0x0₂₅₆)[127:0]

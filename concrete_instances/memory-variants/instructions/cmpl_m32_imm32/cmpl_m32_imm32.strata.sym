@@ -8,20 +8,21 @@ code: cmpl $0x0, (%rax)
   must undef:      { }
   required flags:  { }
 
-cmpl $0x0, (%rax): Hindex0(10)
-cmpl $0x0, (%rax): Hindex0(10)
-cmpl %ecx, %ebx: Hindex2(9)
 Formula:
 
-%cf    : !((0x100000000₃₃ + 0x0₁ ∘ TMP_BV_32_0)[32:32] = 0x1₁)
+%cf    : (((0x100000000₃₃ + 0x0₁ ∘ TMP_BV_32_0)[32:32] = 0x1₁ ? 0x0₉ : 0xff₉) + ((0x100000000₃₃ + 0x0₁ ∘ TMP_BV_32_0)[32:32] = 0x1₁ ? 0x0₉ : 0xff₉))[8:8] = 0x1₁
 %pf    : !((0x100000000₃₃ + 0x0₁ ∘ TMP_BV_32_0)[0:0] = 0x1₁ ⊕ (0x100000000₃₃ + 0x0₁ ∘ TMP_BV_32_0)[1:1] = 0x1₁ ⊕ (0x100000000₃₃ + 0x0₁ ∘ TMP_BV_32_0)[2:2] = 0x1₁ ⊕ (0x100000000₃₃ + 0x0₁ ∘ TMP_BV_32_0)[3:3] = 0x1₁ ⊕ (0x100000000₃₃ + 0x0₁ ∘ TMP_BV_32_0)[4:4] = 0x1₁ ⊕ (0x100000000₃₃ + 0x0₁ ∘ TMP_BV_32_0)[5:5] = 0x1₁ ⊕ (0x100000000₃₃ + 0x0₁ ∘ TMP_BV_32_0)[6:6] = 0x1₁ ⊕ (0x100000000₃₃ + 0x0₁ ∘ TMP_BV_32_0)[7:7] = 0x1₁)
-%af    : false
+%af    : (0xf₅ + 0x0₁ ∘ TMP_BV_32_1[3:0])[4:4] = 0x1₁
 %zf    : (0x100000000₃₃ + 0x0₁ ∘ TMP_BV_32_0)[31:0] = 0x0₃₂
 %sf    : (0x100000000₃₃ + 0x0₁ ∘ TMP_BV_32_0)[31:31] = 0x1₁
-%of    : (true ↔ TMP_BV_32_0[31:31] = 0x1₁) ∧ !(true ↔ (0x100000000₃₃ + 0x0₁ ∘ TMP_BV_32_0)[31:31] = 0x1₁)
+%of    : (true ↔ TMP_BV_32_2[31:31] = 0x1₁) ∧ !(true ↔ (0x100000000₃₃ + 0x0₁ ∘ TMP_BV_32_0)[31:31] = 0x1₁)
 
 Information about memory reads:
   Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_1 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_2 (4 bytes)
     was read at address %rax.
 
 sigfpe  : sigfpe

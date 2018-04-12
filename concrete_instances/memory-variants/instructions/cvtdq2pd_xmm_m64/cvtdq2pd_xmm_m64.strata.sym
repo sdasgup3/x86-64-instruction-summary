@@ -8,22 +8,6 @@ code: cvtdq2pd (%rax), %xmm1
   must undef:      { }
   required flags:  { sse2 }
 
-Opcode: cvtdq2pd_xmm_xmm Reason: 1
-Opcode: cvtdq2pd_xmm_m64 Reason: 4
-cvtdq2pd (%rax), %xmm1: Hindex0(10)
-Opcode: cvtdq2pd_xmm_xmm Reason: 1
-Opcode: cvtdq2pd_xmm_m64 Reason: 4
-cvtdq2pd (%rax), %xmm1: Hindex0(10)
-callq .move_128_064_xmm2_r8_r9: Hindex8(9)
-vzeroall : Hindex1(9)
-callq .move_byte_5_of_ymm1_to_r9b: Hindex8(9)
-callq .move_064_128_r8_r9_xmm2: Hindex8(9)
-callq .move_128_032_xmm2_xmm8_xmm9_xmm10_xmm11: Hindex8(9)
-callq .move_64_128_xmm8_xmm9_xmm1: Hindex8(9)
-vminpd %ymm2, %ymm2, %ymm1: Hindex0(9)
-vcvtdq2pd %ymm2, %ymm3: Hindex0(9)
-callq .move_256_128_ymm3_xmm12_xmm13: Hindex8(9)
-callq .move_64_128_xmm12_xmm13_xmm1: Hindex8(9)
 Formula:
 
 %ymm1  : %ymm1[255:128] ∘ (cvt_int32_to_double(TMP_BV_64_0[63:32]) ∘ cvt_int32_to_double(TMP_BV_64_1[31:0]))

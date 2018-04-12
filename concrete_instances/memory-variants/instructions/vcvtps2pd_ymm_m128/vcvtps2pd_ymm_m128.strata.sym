@@ -8,9 +8,6 @@ code: vcvtps2pd (%rax), %ymm1
   must undef:      { }
   required flags:  { avx }
 
-vcvtps2pd (%rax), %ymm1: Hindex0(10)
-vcvtps2pd (%rax), %ymm1: Hindex0(10)
-vcvtps2pd %xmm2, %ymm1: Hindex0(9)
 Formula:
 
 %ymm1  : cvt_single_to_double(TMP_BV_128_0[127:96]) ∘ (cvt_single_to_double(TMP_BV_128_0[95:64]) ∘ (cvt_single_to_double(TMP_BV_128_0[63:32]) ∘ cvt_single_to_double(TMP_BV_128_0[31:0])))

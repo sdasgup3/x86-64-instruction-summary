@@ -8,9 +8,6 @@ code: movb $0x0, (%rax)
   must undef:      { }
   required flags:  { }
 
-movb $0x0, (%rax): Hindex0(10)
-movb $0x0, (%rax): Hindex0(10)
-movb %cl, %bl: Hindex5(9)
 Formula:
 
 Information about memory reads:

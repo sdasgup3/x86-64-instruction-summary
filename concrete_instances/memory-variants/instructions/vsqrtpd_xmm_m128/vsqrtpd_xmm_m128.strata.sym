@@ -8,15 +8,14 @@ code: vsqrtpd (%rax), %xmm1
   must undef:      { }
   required flags:  { avx }
 
-vsqrtpd (%rax), %xmm1: Hindex0(10)
-vsqrtpd (%rax), %xmm1: Hindex0(10)
-vsqrtpd %xmm2, %xmm1: Hindex0(9)
 Formula:
 
-%ymm1  : 0x0₁₂₈ ∘ (sqrt_double(TMP_BV_128_0[127:64]) ∘ sqrt_double(TMP_BV_128_0[63:0]))
+%ymm1  : 0x0₆₄ ∘ (0x0₆₄ ∘ (sqrt_double(TMP_BV_128_0[127:64]) ∘ sqrt_double(TMP_BV_128_1[63:0])))
 
 Information about memory reads:
   Value TMP_BV_128_0 (16 bytes)
+    was read at address %rax.
+  Value TMP_BV_128_1 (16 bytes)
     was read at address %rax.
 
 sigfpe  : sigfpe

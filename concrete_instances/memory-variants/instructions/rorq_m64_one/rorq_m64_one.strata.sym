@@ -8,8 +8,6 @@ code: rorq $0x1, (%rax)
   must undef:      { }
   required flags:  { }
 
-rorq $0x1, (%rax): Hindex8(10)
-rorq $0x1, (%rax): Hindex8(10)
 Formula:
 
 %cf    : true ∧ (TMP_BV_64_0 rot_right 0x1₆₄)[63:63] = 0x1₁ ∨ false ∧ %cf

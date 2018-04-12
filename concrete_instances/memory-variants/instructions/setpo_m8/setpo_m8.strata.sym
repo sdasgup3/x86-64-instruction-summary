@@ -8,9 +8,6 @@ code: setpo (%rax)
   must undef:      { }
   required flags:  { }
 
-setpo (%rax): Hindex0(10)
-setpo (%rax): Hindex0(10)
-setpo %bl: Hindex3(9)
 Formula:
 
 Information about memory reads:
@@ -19,7 +16,7 @@ Information about memory reads:
 
 Information about memory writes:
   Address %rax was updated to
-    !%pf ? 0x1₈ : 0x0₈ (1 bytes).
+    %pf ? 0x0₈ : 0x1₈ (1 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

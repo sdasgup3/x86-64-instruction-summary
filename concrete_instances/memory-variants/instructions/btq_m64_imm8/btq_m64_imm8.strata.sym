@@ -8,16 +8,13 @@ code: btq $0x0, (%rax)
   must undef:      { %pf %af %sf %of }
   required flags:  { }
 
-btq $0x0, (%rax): Hindex0(10)
-btq $0x0, (%rax): Hindex0(10)
-btq %rcx, %rbx: Hindex1(9)
 Formula:
 
-%cf    : (TMP_BV_64_0 >> 0x0₆₄)[0:0] = 0x1₁
-%pf    : TMP_BOOL_4
-%af    : TMP_BOOL_5
-%sf    : TMP_BOOL_6
-%of    : TMP_BOOL_7
+%cf    : true ∧ ((TMP_BV_64_0 ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x0₈)[64:1] ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ 0x1₈)[0:0] = 0x1₁ ∨ false
+%pf    : TMP_BOOL_16
+%af    : TMP_BOOL_17
+%sf    : TMP_BOOL_18
+%of    : TMP_BOOL_19
 
 Information about memory reads:
   Value TMP_BV_64_0 (8 bytes)

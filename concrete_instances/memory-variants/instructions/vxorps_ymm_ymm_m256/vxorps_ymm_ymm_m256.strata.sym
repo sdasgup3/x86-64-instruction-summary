@@ -8,15 +8,26 @@ code: vxorps (%rax), %ymm2, %ymm1
   must undef:      { }
   required flags:  { avx }
 
-vxorps (%rax), %ymm2, %ymm1: Hindex0(10)
-vxorps (%rax), %ymm2, %ymm1: Hindex0(10)
-vxorps %ymm3, %ymm2, %ymm1: Hindex0(9)
 Formula:
 
-%ymm1  : %ymm2 ⊕ TMP_BV_256_0
+%ymm1  : (%ymm2[255:192] ⊕ TMP_BV_256_0[255:192] ⊕ (%ymm2[255:192] | %ymm2[255:192] ⊕ TMP_BV_256_0[255:192]) ⊕ (%ymm2[255:192] ⊕ TMP_BV_256_0[255:192] ⊕ (%ymm2[255:192] | %ymm2[255:192] ⊕ TMP_BV_256_0[255:192]) | (TMP_BV_256_1[255:192] | %ymm2[255:192])) | 0x0₆₄) ∘ (%ymm2[191:128] ⊕ TMP_BV_256_2[191:128] ⊕ (%ymm2[191:128] | %ymm2[191:128] ⊕ TMP_BV_256_2[191:128]) ⊕ (%ymm2[191:128] ⊕ TMP_BV_256_2[191:128] ⊕ (%ymm2[191:128] | %ymm2[191:128] ⊕ TMP_BV_256_2[191:128]) | (TMP_BV_256_3[191:128] | %ymm2[191:128])) | 0x0₆₄) ∘ ((%ymm2[127:64] ⊕ TMP_BV_256_4[127:64] ⊕ (%ymm2[127:64] | %ymm2[127:64] ⊕ TMP_BV_256_4[127:64]) ⊕ (TMP_BV_256_5[127:64] | %ymm2[127:64] | %ymm2[127:64] ⊕ TMP_BV_256_4[127:64] ⊕ (%ymm2[127:64] | %ymm2[127:64] ⊕ TMP_BV_256_4[127:64]))) ∘ (%ymm2[63:0] ⊕ TMP_BV_256_6[63:0] ⊕ (%ymm2[63:0] | %ymm2[63:0] ⊕ TMP_BV_256_6[63:0]) ⊕ (TMP_BV_256_7[63:0] | %ymm2[63:0] | %ymm2[63:0] ⊕ TMP_BV_256_6[63:0] ⊕ (%ymm2[63:0] | %ymm2[63:0] ⊕ TMP_BV_256_6[63:0]))))
 
 Information about memory reads:
   Value TMP_BV_256_0 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_1 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_2 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_3 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_4 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_5 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_6 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_7 (32 bytes)
     was read at address %rax.
 
 sigfpe  : sigfpe

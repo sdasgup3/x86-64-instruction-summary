@@ -8,9 +8,6 @@ code: unpcklpd (%rax), %xmm1
   must undef:      { }
   required flags:  { sse2 }
 
-unpcklpd (%rax), %xmm1: Hindex0(10)
-unpcklpd (%rax), %xmm1: Hindex0(10)
-unpcklpd %xmm2, %xmm1: Hindex0(9)
 Formula:
 
 %ymm1  : %ymm1[255:128] ∘ (TMP_BV_128_0[63:0] ∘ %ymm1[63:0])

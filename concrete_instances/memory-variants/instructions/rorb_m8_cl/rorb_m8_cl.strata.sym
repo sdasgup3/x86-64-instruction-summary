@@ -8,8 +8,6 @@ code: rorb %cl, (%rax)
   must undef:      { }
   required flags:  { }
 
-rorb %cl, (%rax): Hindex8(10)
-rorb %cl, (%rax): Hindex8(10)
 Formula:
 
 %cf    : !((%rcx[7:0] & 0x1f₈) = 0x0₈) ∧ (TMP_BV_8_0 rot_right (%rcx[7:0] & 0x1f₈))[7:7] = 0x1₁ ∨ !(!((%rcx[7:0] & 0x1f₈) = 0x0₈)) ∧ %cf

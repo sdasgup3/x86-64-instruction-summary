@@ -8,9 +8,6 @@ code: vmovapd (%rax), %ymm1
   must undef:      { }
   required flags:  { avx }
 
-vmovapd (%rax), %ymm1: Hindex0(10)
-vmovapd (%rax), %ymm1: Hindex0(10)
-vmovapd %ymm2, %ymm1: Hindex0(9)
 Formula:
 
 %ymm1  : TMP_BV_256_0

@@ -8,8 +8,6 @@ code: popq (%rax)
   must undef:      { }
   required flags:  { }
 
-popq (%rax): Hindex2(10)
-popq (%rax): Hindex2(10)
 Formula:
 
 %rsp   : %rsp + 0x8₆₄

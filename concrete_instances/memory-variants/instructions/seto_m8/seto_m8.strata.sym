@@ -8,9 +8,6 @@ code: seto (%rax)
   must undef:      { }
   required flags:  { }
 
-seto (%rax): Hindex0(10)
-seto (%rax): Hindex0(10)
-seto %bl: Hindex3(9)
 Formula:
 
 Information about memory reads:

@@ -8,13 +8,6 @@ code: vmovdqa %ymm1, (%rax)
   must undef:      { }
   required flags:  { avx }
 
-Opcode: vmovdqa_ymm_ymm Reason: 1
-Opcode: vmovdqa_m256_ymm Reason: 2
-vmovdqa %ymm1, (%rax): Hindex0(10)
-Opcode: vmovdqa_ymm_ymm Reason: 1
-Opcode: vmovdqa_m256_ymm Reason: 2
-vmovdqa %ymm1, (%rax): Hindex0(10)
-vminpd %ymm2, %ymm2, %ymm1: Hindex0(9)
 Formula:
 
 Information about memory writes:

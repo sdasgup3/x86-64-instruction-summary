@@ -8,8 +8,6 @@ code: mull (%rax)
   must undef:      { %pf %af %zf %sf }
   required flags:  { }
 
-mull (%rax): Hindex2(10)
-mull (%rax): Hindex2(10)
 Formula:
 
 %rax   : 0x0₃₂ ∘ (0x0₃₂ ∘ TMP_BV_32_0 * 0x0₃₂ ∘ %rax[31:0])[31:0]

@@ -8,9 +8,6 @@ code: setnp (%rax)
   must undef:      { }
   required flags:  { }
 
-setnp (%rax): Hindex0(10)
-setnp (%rax): Hindex0(10)
-setnp %bl: Hindex3(9)
 Formula:
 
 Information about memory reads:
@@ -19,7 +16,7 @@ Information about memory reads:
 
 Information about memory writes:
   Address %rax was updated to
-    !%pf ? 0x1₈ : 0x0₈ (1 bytes).
+    (%pf ? 0x1₁₆ : 0x0₁₆) = 0x0₁₆ ? 0x1₈ : 0x0₈ (1 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

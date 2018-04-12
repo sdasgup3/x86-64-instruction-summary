@@ -8,8 +8,6 @@ code: pshuflw $0x0, (%rax), %xmm1
   must undef:      { }
   required flags:  { sse2 }
 
-pshuflw $0x0, (%rax), %xmm1: Hindex2(10)
-pshuflw $0x0, (%rax), %xmm1: Hindex2(10)
 Formula:
 
 %ymm1  : %ymm1[255:128] ∘ (TMP_BV_128_0[127:64] ∘ ((TMP_BV_128_0 >> 0x0₁₂₈)[15:0] ∘ ((TMP_BV_128_0 >> 0x0₁₂₈)[15:0] ∘ ((TMP_BV_128_0 >> 0x0₁₂₈)[15:0] ∘ (TMP_BV_128_0 >> 0x0₁₂₈)[15:0]))))

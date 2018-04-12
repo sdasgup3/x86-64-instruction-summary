@@ -8,9 +8,6 @@ code: vpsravd (%rax), %ymm2, %ymm1
   must undef:      { }
   required flags:  { avx2 }
 
-vpsravd (%rax), %ymm2, %ymm1: Hindex0(10)
-vpsravd (%rax), %ymm2, %ymm1: Hindex0(10)
-vpsravd %ymm3, %ymm2, %ymm1: Hindex0(9)
 Formula:
 
 %ymm1  : (%ymm2[255:224] sign_shift_right TMP_BV_256_0[255:224]) ∘ ((%ymm2[223:192] sign_shift_right TMP_BV_256_0[223:192]) ∘ ((%ymm2[191:160] sign_shift_right TMP_BV_256_0[191:160]) ∘ ((%ymm2[159:128] sign_shift_right TMP_BV_256_0[159:128]) ∘ ((%ymm2[127:96] sign_shift_right TMP_BV_256_0[127:96]) ∘ ((%ymm2[95:64] sign_shift_right TMP_BV_256_0[95:64]) ∘ ((%ymm2[63:32] sign_shift_right TMP_BV_256_0[63:32]) ∘ (%ymm2[31:0] sign_shift_right TMP_BV_256_0[31:0])))))))

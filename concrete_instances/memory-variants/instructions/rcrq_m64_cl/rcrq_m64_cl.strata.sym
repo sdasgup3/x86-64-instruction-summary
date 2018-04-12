@@ -8,8 +8,6 @@ code: rcrq %cl, (%rax)
   must undef:      { }
   required flags:  { }
 
-rcrq %cl, (%rax): Hindex8(10)
-rcrq %cl, (%rax): Hindex8(10)
 Formula:
 
 %cf    : ((%cf ? 0x1₁ : 0x0₁) ∘ TMP_BV_64_0 rot_right 0x0₅₇ ∘ (%rcx[7:0] & 0x3f₈) % 0x41₆₅)[64:64] = 0x1₁

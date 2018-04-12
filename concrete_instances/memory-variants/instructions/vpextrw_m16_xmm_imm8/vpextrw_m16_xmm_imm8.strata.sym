@@ -8,8 +8,6 @@ code: vpextrw $0x0, %xmm1, (%rax)
   must undef:      { }
   required flags:  { avx }
 
-vpextrw $0x0, %xmm1, (%rax): Hindex2(10)
-vpextrw $0x0, %xmm1, (%rax): Hindex2(10)
 Formula:
 
 Information about memory reads:

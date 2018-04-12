@@ -8,9 +8,6 @@ code: setl (%rax)
   must undef:      { }
   required flags:  { }
 
-setl (%rax): Hindex0(10)
-setl (%rax): Hindex0(10)
-setl %bl: Hindex3(9)
 Formula:
 
 Information about memory reads:
@@ -19,7 +16,7 @@ Information about memory reads:
 
 Information about memory writes:
   Address %rax was updated to
-    !(%sf ↔ %of) ? 0x1₈ : 0x0₈ (1 bytes).
+    (%of ? 0x1₈ : 0x0₈) ⊕ (%sf ? 0x1₈ : 0x0₈) (1 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

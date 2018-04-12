@@ -8,8 +8,6 @@ code: pushw (%rax)
   must undef:      { }
   required flags:  { }
 
-pushw (%rax): Hindex2(10)
-pushw (%rax): Hindex2(10)
 Formula:
 
 %rsp   : %rsp - 0x2₆₄

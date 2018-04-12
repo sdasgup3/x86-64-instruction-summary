@@ -8,9 +8,6 @@ code: vunpckhpd (%rax), %xmm2, %xmm1
   must undef:      { }
   required flags:  { avx }
 
-vunpckhpd (%rax), %xmm2, %xmm1: Hindex0(10)
-vunpckhpd (%rax), %xmm2, %xmm1: Hindex0(10)
-vunpckhpd %xmm3, %xmm2, %xmm1: Hindex0(9)
 Formula:
 
 %ymm1  : 0x0₁₂₈ ∘ (TMP_BV_128_0[127:64] ∘ %ymm2[127:64])

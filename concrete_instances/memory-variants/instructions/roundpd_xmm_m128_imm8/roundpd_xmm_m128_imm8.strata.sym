@@ -8,8 +8,6 @@ code: roundpd $0x0, (%rax), %xmm1
   must undef:      { }
   required flags:  { sse4_1 }
 
-roundpd $0x0, (%rax), %xmm1: Hindex1(10)
-roundpd $0x0, (%rax), %xmm1: Hindex1(10)
 Formula:
 
 %ymm1  : %ymm1[255:128] ∘ (cvt_double_to_int64_rm(TMP_BV_128_0[127:64], 0x0₈) ∘ cvt_double_to_int64_rm(TMP_BV_128_0[63:0], 0x0₈))

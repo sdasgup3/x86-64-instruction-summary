@@ -8,20 +8,21 @@ code: cmpw $0x0, (%rax)
   must undef:      { }
   required flags:  { }
 
-cmpw $0x0, (%rax): Hindex0(10)
-cmpw $0x0, (%rax): Hindex0(10)
-cmpw %cx, %bx: Hindex2(9)
 Formula:
 
-%cf    : !((0x10000₁₇ + 0x0₁ ∘ TMP_BV_16_0)[16:16] = 0x1₁)
-%pf    : !((0x10000₁₇ + 0x0₁ ∘ TMP_BV_16_0)[0:0] = 0x1₁ ⊕ (0x10000₁₇ + 0x0₁ ∘ TMP_BV_16_0)[1:1] = 0x1₁ ⊕ (0x10000₁₇ + 0x0₁ ∘ TMP_BV_16_0)[2:2] = 0x1₁ ⊕ (0x10000₁₇ + 0x0₁ ∘ TMP_BV_16_0)[3:3] = 0x1₁ ⊕ (0x10000₁₇ + 0x0₁ ∘ TMP_BV_16_0)[4:4] = 0x1₁ ⊕ (0x10000₁₇ + 0x0₁ ∘ TMP_BV_16_0)[5:5] = 0x1₁ ⊕ (0x10000₁₇ + 0x0₁ ∘ TMP_BV_16_0)[6:6] = 0x1₁ ⊕ (0x10000₁₇ + 0x0₁ ∘ TMP_BV_16_0)[7:7] = 0x1₁)
-%af    : false
-%zf    : (0x10000₁₇ + 0x0₁ ∘ TMP_BV_16_0)[15:0] = 0x0₁₆
-%sf    : (0x10000₁₇ + 0x0₁ ∘ TMP_BV_16_0)[15:15] = 0x1₁
-%of    : (true ↔ TMP_BV_16_0[15:15] = 0x1₁) ∧ !(true ↔ (0x10000₁₇ + 0x0₁ ∘ TMP_BV_16_0)[15:15] = 0x1₁)
+%cf    : (((0x0₁ ∘ TMP_BV_16_0 + 0x1₁₇ + 0xffff₁₇)[16:16] = 0x1₁ ? 0x0₉ : 0xff₉) + ((0x0₁ ∘ TMP_BV_16_0 + 0x1₁₇ + 0xffff₁₇)[16:16] = 0x1₁ ? 0x0₉ : 0xff₉))[8:8] = 0x1₁
+%pf    : !((0x0₁ ∘ TMP_BV_16_0 + 0x1₁₇ + 0xffff₁₇)[0:0] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_16_0 + 0x1₁₇ + 0xffff₁₇)[1:1] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_16_0 + 0x1₁₇ + 0xffff₁₇)[2:2] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_16_0 + 0x1₁₇ + 0xffff₁₇)[3:3] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_16_0 + 0x1₁₇ + 0xffff₁₇)[4:4] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_16_0 + 0x1₁₇ + 0xffff₁₇)[5:5] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_16_0 + 0x1₁₇ + 0xffff₁₇)[6:6] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_16_0 + 0x1₁₇ + 0xffff₁₇)[7:7] = 0x1₁)
+%af    : (0x0₁ ∘ TMP_BV_16_1[3:0] + 0xf₅)[4:4] = 0x1₁
+%zf    : (0x0₁ ∘ TMP_BV_16_0 + 0x1₁₇ + 0xffff₁₇)[15:0] = 0x0₁₆
+%sf    : (0x0₁ ∘ TMP_BV_16_0 + 0x1₁₇ + 0xffff₁₇)[15:15] = 0x1₁
+%of    : (TMP_BV_16_2[15:15] = 0x1₁ ↔ true) ∧ !(TMP_BV_16_2[15:15] = 0x1₁ ↔ (0x0₁ ∘ TMP_BV_16_0 + 0x1₁₇ + 0xffff₁₇)[15:15] = 0x1₁)
 
 Information about memory reads:
   Value TMP_BV_16_0 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_1 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_2 (2 bytes)
     was read at address %rax.
 
 sigfpe  : sigfpe

@@ -8,9 +8,6 @@ code: vpsrad (%rax), %xmm2, %xmm1
   must undef:      { }
   required flags:  { avx }
 
-vpsrad (%rax), %xmm2, %xmm1: Hindex0(10)
-vpsrad (%rax), %xmm2, %xmm1: Hindex0(10)
-vpsrad %xmm3, %xmm2, %xmm1: Hindex1(9)
 Formula:
 
 %ymm1  : 0x0₁₂₈ ∘ ((%ymm2[127:96] sign_shift_right (TMP_BV_128_0[63:0] > 0x1f₆₄ ? 0x20₃₂ : TMP_BV_128_0[31:0])) ∘ ((%ymm2[95:64] sign_shift_right (TMP_BV_128_0[63:0] > 0x1f₆₄ ? 0x20₃₂ : TMP_BV_128_0[31:0])) ∘ ((%ymm2[63:32] sign_shift_right (TMP_BV_128_0[63:0] > 0x1f₆₄ ? 0x20₃₂ : TMP_BV_128_0[31:0])) ∘ (%ymm2[31:0] sign_shift_right (TMP_BV_128_0[63:0] > 0x1f₆₄ ? 0x20₃₂ : TMP_BV_128_0[31:0])))))

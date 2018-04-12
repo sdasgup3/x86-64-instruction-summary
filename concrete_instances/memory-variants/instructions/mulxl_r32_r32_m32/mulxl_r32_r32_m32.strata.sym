@@ -8,8 +8,6 @@ code: mulxl (%rax), %ecx, %ebx
   must undef:      { }
   required flags:  { bmi2 }
 
-mulxl (%rax), %ecx, %ebx: Hindex2(10)
-mulxl (%rax), %ecx, %ebx: Hindex2(10)
 Formula:
 
 %rcx   : 0x0₃₂ ∘ (0x0₃₂ ∘ %rdx[31:0] * 0x0₃₂ ∘ TMP_BV_32_0)[31:0]

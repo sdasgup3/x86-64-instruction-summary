@@ -8,8 +8,6 @@ code: vpcmpgtd (%rax), %xmm2, %xmm1
   must undef:      { }
   required flags:  { avx }
 
-vpcmpgtd (%rax), %xmm2, %xmm1: Hindex1(10)
-vpcmpgtd (%rax), %xmm2, %xmm1: Hindex1(10)
 Formula:
 
 %ymm1  : 0x0₁₂₈ ∘ ((%ymm2[127:96] > TMP_BV_128_0[127:96] ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((%ymm2[95:64] > TMP_BV_128_0[95:64] ? 0xffffffff₃₂ : 0x0₃₂) ∘ ((%ymm2[63:32] > TMP_BV_128_0[63:32] ? 0xffffffff₃₂ : 0x0₃₂) ∘ (%ymm2[31:0] > TMP_BV_128_0[31:0] ? 0xffffffff₃₂ : 0x0₃₂))))

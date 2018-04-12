@@ -8,8 +8,6 @@ code: pushq (%rax)
   must undef:      { }
   required flags:  { }
 
-pushq (%rax): Hindex2(10)
-pushq (%rax): Hindex2(10)
 Formula:
 
 %rsp   : %rsp - 0x8₆₄

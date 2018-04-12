@@ -8,9 +8,6 @@ code: seta (%rax)
   must undef:      { }
   required flags:  { }
 
-seta (%rax): Hindex0(10)
-seta (%rax): Hindex0(10)
-seta %bl: Hindex3(9)
 Formula:
 
 Information about memory reads:
@@ -19,7 +16,7 @@ Information about memory reads:
 
 Information about memory writes:
   Address %rax was updated to
-    !%cf ∧ !%zf ? 0x1₈ : 0x0₈ (1 bytes).
+    (%zf ? 0x0₈ : 0xff₈) = 0x0₈ ? 0x0₈ : %cf ? 0x0₈ : 0x1₈ (1 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

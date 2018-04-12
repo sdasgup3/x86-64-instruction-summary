@@ -8,16 +8,20 @@ code: vpsllq (%rax), %ymm2, %ymm1
   must undef:      { }
   required flags:  { avx2 }
 
-vpsllq (%rax), %ymm2, %ymm1: Hindex2(10)
-vpsllq (%rax), %ymm2, %ymm1: Hindex2(10)
 Formula:
 
-%ymm1  : TMP_BV_128_0[63:0] > 0x3f₆₄ ? 0x0₂₅₆ : (%ymm2[255:192] << TMP_BV_128_0[63:0]) ∘ ((%ymm2[191:128] << TMP_BV_128_0[63:0]) ∘ ((%ymm2[127:64] << TMP_BV_128_0[63:0]) ∘ (%ymm2[63:0] << TMP_BV_128_0[63:0])))
+%ymm1  : (TMP_BV_128_0[63:0] > 0x3f₆₄ ? 0x0₁₂₈ : (%ymm2[255:192] << TMP_BV_128_1[63:0]) ∘ (%ymm2[191:128] << TMP_BV_128_1[63:0])) ∘ (TMP_BV_128_2[63:0] > 0x3f₆₄ ? 0x0₁₂₈ : (%ymm2[127:64] << TMP_BV_128_3[63:0]) ∘ (%ymm2[63:0] << TMP_BV_128_3[63:0]))
 
 Information about memory reads:
   Value TMP_BV_128_0 (16 bytes)
     was read at address %rax.
+  Value TMP_BV_128_1 (16 bytes)
+    was read at address %rax.
+  Value TMP_BV_128_2 (16 bytes)
+    was read at address %rax.
+  Value TMP_BV_128_3 (16 bytes)
+    was read at address %rax.
 
 sigfpe  : sigfpe
 sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigsegv : sigsegv

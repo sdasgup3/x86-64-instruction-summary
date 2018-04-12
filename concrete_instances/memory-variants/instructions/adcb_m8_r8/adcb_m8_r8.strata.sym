@@ -8,9 +8,6 @@ code: adcb %bl, (%rax)
   must undef:      { }
   required flags:  { }
 
-adcb %bl, (%rax): Hindex0(10)
-adcb %bl, (%rax): Hindex0(10)
-adcb %cl, %bl: Hindex2(9)
 Formula:
 
 %cf    : ((%cf ? 0x0₁ ∘ %rbx[7:0] + 0x1₉ : 0x0₁ ∘ %rbx[7:0]) + 0x0₁ ∘ TMP_BV_8_1)[8:8] = 0x1₁

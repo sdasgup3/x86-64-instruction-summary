@@ -8,8 +8,6 @@ code: extractps $0x0, %xmm1, (%rax)
   must undef:      { }
   required flags:  { sse4_1 }
 
-extractps $0x0, %xmm1, (%rax): Hindex2(10)
-extractps $0x0, %xmm1, (%rax): Hindex2(10)
 Formula:
 
 Information about memory reads:

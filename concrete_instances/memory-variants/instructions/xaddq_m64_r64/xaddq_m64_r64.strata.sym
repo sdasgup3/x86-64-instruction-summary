@@ -8,9 +8,6 @@ code: xaddq %rbx, (%rax)
   must undef:      { }
   required flags:  { }
 
-xaddq %rbx, (%rax): Hindex0(10)
-xaddq %rbx, (%rax): Hindex0(10)
-xaddq %rcx, %rbx: Hindex2(9)
 Formula:
 
 %rbx   : TMP_BV_64_0

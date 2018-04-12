@@ -8,9 +8,6 @@ code: vminpd (%rax), %ymm2, %ymm1
   must undef:      { }
   required flags:  { avx }
 
-vminpd (%rax), %ymm2, %ymm1: Hindex0(10)
-vminpd (%rax), %ymm2, %ymm1: Hindex0(10)
-vminpd %ymm3, %ymm2, %ymm1: Hindex0(9)
 Formula:
 
 %ymm1  : (mincmp_double(%ymm2[255:192], TMP_BV_256_0[255:192]) = 0x1₁ ? %ymm2[255:192] : TMP_BV_256_0[255:192]) ∘ ((mincmp_double(%ymm2[191:128], TMP_BV_256_1[191:128]) = 0x1₁ ? %ymm2[191:128] : TMP_BV_256_1[191:128]) ∘ ((mincmp_double(%ymm2[127:64], TMP_BV_256_2[127:64]) = 0x1₁ ? %ymm2[127:64] : TMP_BV_256_2[127:64]) ∘ (mincmp_double(%ymm2[63:0], TMP_BV_256_3[63:0]) = 0x1₁ ? %ymm2[63:0] : TMP_BV_256_3[63:0])))

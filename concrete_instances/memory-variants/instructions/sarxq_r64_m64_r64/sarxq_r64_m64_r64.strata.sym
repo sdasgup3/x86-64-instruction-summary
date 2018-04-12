@@ -8,12 +8,9 @@ code: sarxq %rcx, (%rax), %rbx
   must undef:      { }
   required flags:  { bmi2 }
 
-sarxq %rcx, (%rax), %rbx: Hindex0(10)
-sarxq %rcx, (%rax), %rbx: Hindex0(10)
-sarxq %rdx, %rcx, %rbx: Hindex1(9)
 Formula:
 
-%rbx   : TMP_BV_64_0 sign_shift_right (%rcx & 0x3f₆₄)
+%rbx   : (TMP_BV_64_0 ∘ 0x0₁ sign_shift_right 0x0₅₇ ∘ (%rcx[7:0] & 0x3f₈))[64:1]
 
 Information about memory reads:
   Value TMP_BV_64_0 (8 bytes)

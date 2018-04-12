@@ -8,8 +8,6 @@ code: vinsertf128 $0x0, (%rax), %ymm2, %ymm1
   must undef:      { }
   required flags:  { avx }
 
-vinsertf128 $0x0, (%rax), %ymm2, %ymm1: Hindex2(10)
-vinsertf128 $0x0, (%rax), %ymm2, %ymm1: Hindex2(10)
 Formula:
 
 %ymm1  : %ymm2[255:128] ∘ TMP_BV_128_0

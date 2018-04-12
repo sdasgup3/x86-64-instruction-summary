@@ -8,8 +8,6 @@ code: blendvpd %xmm0, (%rax), %xmm1
   must undef:      { }
   required flags:  { sse4_1 }
 
-blendvpd %xmm0, (%rax), %xmm1: Hindex2(10)
-blendvpd %xmm0, (%rax), %xmm1: Hindex2(10)
 Formula:
 
 %ymm1  : %ymm1[255:128] ∘ ((%ymm0[127:127] = 0x0₁ ? %ymm1[127:64] : TMP_BV_128_0[127:64]) ∘ (%ymm0[63:63] = 0x0₁ ? %ymm1[63:0] : TMP_BV_128_0[63:0]))

@@ -8,8 +8,6 @@ code: vcvtps2ph $0x0, %xmm1, (%rax)
   must undef:      { }
   required flags:  { f16c }
 
-vcvtps2ph $0x0, %xmm1, (%rax): Hindex2(10)
-vcvtps2ph $0x0, %xmm1, (%rax): Hindex2(10)
 Formula:
 
 Information about memory reads:

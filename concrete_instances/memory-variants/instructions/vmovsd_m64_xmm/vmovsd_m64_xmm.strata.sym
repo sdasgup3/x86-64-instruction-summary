@@ -8,8 +8,6 @@ code: vmovsd %xmm1, (%rax)
   must undef:      { }
   required flags:  { avx }
 
-vmovsd %xmm1, (%rax): Hindex2(10)
-vmovsd %xmm1, (%rax): Hindex2(10)
 Formula:
 
 Information about memory reads:

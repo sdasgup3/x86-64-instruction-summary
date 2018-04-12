@@ -8,31 +8,6 @@ code: vminss (%rax), %xmm2, %xmm1
   must undef:      { }
   required flags:  { avx }
 
-Opcode: vminss_xmm_xmm_xmm Reason: 1
-Opcode: vminss_xmm_xmm_m32 Reason: 4
-vminss (%rax), %xmm2, %xmm1: Hindex0(10)
-Opcode: vminss_xmm_xmm_xmm Reason: 1
-Opcode: vminss_xmm_xmm_m32 Reason: 4
-vminss (%rax), %xmm2, %xmm1: Hindex0(10)
-callq .move_128_064_xmm2_r10_r11: Hindex8(9)
-vzeroall : Hindex1(9)
-callq .move_064_128_r10_r11_xmm3: Hindex8(9)
-callq .move_256_128_ymm3_xmm12_xmm13: Hindex8(9)
-callq .move_128_256_xmm12_xmm13_ymm1: Hindex8(9)
-callq .move_128_032_xmm1_xmm8_xmm9_xmm10_xmm11: Hindex8(9)
-callq .move_128_032_xmm2_xmm4_xmm5_xmm6_xmm7: Hindex8(9)
-callq .move_128_064_xmm2_r12_r13: Hindex8(9)
-vzeroall : Hindex1(9)
-callq .move_064_128_r12_r13_xmm1: Hindex8(9)
-callq .move_128_064_xmm2_r10_r11: Hindex8(9)
-vzeroall : Hindex1(9)
-callq .move_064_128_r10_r11_xmm3: Hindex8(9)
-callq .move_256_128_ymm3_xmm12_xmm13: Hindex8(9)
-callq .move_128_256_xmm12_xmm13_ymm1: Hindex8(9)
-vminps %ymm1, %ymm14, %ymm1: Hindex0(9)
-callq .move_128_032_xmm2_xmm8_xmm9_xmm10_xmm11: Hindex8(9)
-callq .move_032_128_xmm8_xmm9_xmm10_xmm11_xmm1: Hindex8(9)
-callq .move_032_128_xmm8_xmm9_xmm10_xmm11_xmm1: Hindex8(9)
 Formula:
 
 %ymm1  : 0x0₁₂₈ ∘ (%ymm2[127:32] ∘ (mincmp_single(%ymm2[31:0], TMP_BV_32_0) = 0x1₁ ? %ymm2[31:0] : TMP_BV_32_0))

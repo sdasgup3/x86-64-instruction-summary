@@ -8,12 +8,9 @@ code: cmovow (%rax), %bx
   must undef:      { }
   required flags:  { cmov }
 
-cmovow (%rax), %bx: Hindex0(10)
-cmovow (%rax), %bx: Hindex0(10)
-cmovow %cx, %bx: Hindex3(9)
 Formula:
 
-%rbx   : %rbx[63:16] ∘ (%of ? TMP_BV_16_0 : %rbx[15:0])
+%rbx   : %rbx[63:16] ∘ ((%of ? 0x0₈ : 0xff₈) = 0x0₈ ? TMP_BV_16_0 : %rbx[15:0])
 
 Information about memory reads:
   Value TMP_BV_16_0 (2 bytes)

@@ -8,9 +8,6 @@ code: movb (%rax), %ah
   must undef:      { }
   required flags:  { }
 
-movb (%rax), %ah: Hindex0(10)
-movb (%rax), %ah: Hindex0(10)
-movb %bl, %ah: Hindex5(9)
 Formula:
 
 %rax   : %rax[63:16] ∘ TMP_BV_8_0 ∘ %rax[7:0]

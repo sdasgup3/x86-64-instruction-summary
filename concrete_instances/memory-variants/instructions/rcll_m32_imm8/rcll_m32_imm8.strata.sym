@@ -8,8 +8,6 @@ code: rcll $0x0, (%rax)
   must undef:      { }
   required flags:  { }
 
-rcll $0x0, (%rax): Hindex8(10)
-rcll $0x0, (%rax): Hindex8(10)
 Formula:
 
 %cf    : ((%cf ? 0x1₁ : 0x0₁) ∘ TMP_BV_32_0 rot_left 0x0₃₃)[32:32] = 0x1₁

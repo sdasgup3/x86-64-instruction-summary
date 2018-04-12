@@ -8,9 +8,6 @@ code: vmovdqu %ymm1, (%rax)
   must undef:      { }
   required flags:  { avx }
 
-vmovdqu %ymm1, (%rax): Hindex0(10)
-vmovdqu %ymm1, (%rax): Hindex0(10)
-vmovdqu %ymm2, %ymm1: Hindex0(9)
 Formula:
 
 Information about memory writes:

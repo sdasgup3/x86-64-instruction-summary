@@ -8,8 +8,6 @@ code: cvtpi2ps (%rax), %xmm1
   must undef:      { }
   required flags:  { }
 
-cvtpi2ps (%rax), %xmm1: Hindex1(10)
-cvtpi2ps (%rax), %xmm1: Hindex1(10)
 Formula:
 
 %ymm1  : %ymm1[255:128] ∘ (%ymm1[127:64] ∘ (cvt_int32_to_single(TMP_BV_64_0[63:32]) ∘ cvt_int32_to_single(TMP_BV_64_0[31:0])))

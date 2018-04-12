@@ -8,8 +8,6 @@ code: divl (%rax)
   must undef:      { %cf %pf %af %zf %sf %of }
   required flags:  { }
 
-divl (%rax): Hindex2(10)
-divl (%rax): Hindex2(10)
 Formula:
 
 %rax   : 0x0₃₂ ∘ div_quotient_int32(%rdx[31:0] ∘ %rax[31:0], TMP_BV_32_0)

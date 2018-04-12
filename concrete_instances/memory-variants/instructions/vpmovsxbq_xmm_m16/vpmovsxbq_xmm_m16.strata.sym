@@ -8,8 +8,6 @@ code: vpmovsxbq (%rax), %xmm1
   must undef:      { }
   required flags:  { avx }
 
-vpmovsxbq (%rax), %xmm1: Hindex1(10)
-vpmovsxbq (%rax), %xmm1: Hindex1(10)
 Formula:
 
 %ymm1  : 0x0₁₂₈ ∘ (sign-extend-64(TMP_BV_16_0[15:8]) ∘ sign-extend-64(TMP_BV_16_0[7:0]))

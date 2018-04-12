@@ -8,8 +8,6 @@ code: vpermilpd (%rax), %xmm2, %xmm1
   must undef:      { }
   required flags:  { avx }
 
-vpermilpd (%rax), %xmm2, %xmm1: Hindex2(10)
-vpermilpd (%rax), %xmm2, %xmm1: Hindex2(10)
 Formula:
 
 %ymm1  : 0x0₁₂₈ ∘ ((TMP_BV_128_0[65:65] = 0x0₁ ? %ymm2[63:0] : %ymm2[127:64]) ∘ (TMP_BV_128_0[1:1] = 0x0₁ ? %ymm2[63:0] : %ymm2[127:64]))

@@ -8,15 +8,18 @@ code: psubd (%rax), %xmm1
   must undef:      { }
   required flags:  { sse2 }
 
-psubd (%rax), %xmm1: Hindex0(10)
-psubd (%rax), %xmm1: Hindex0(10)
-psubd %xmm2, %xmm1: Hindex0(9)
 Formula:
 
-%ymm1  : %ymm1[255:128] ∘ ((%ymm1[127:96] - TMP_BV_128_0[127:96]) ∘ ((%ymm1[95:64] - TMP_BV_128_0[95:64]) ∘ ((%ymm1[63:32] - TMP_BV_128_0[63:32]) ∘ (%ymm1[31:0] - TMP_BV_128_0[31:0]))))
+%ymm1  : %ymm1[255:128] ∘ ((0x0₁ ∘ (0x0₃₂ ∘ (0x0₁ ∘ (TMP_BV_128_0[127:96] ∘ %ymm1[127:96] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm1[127:96] ∘ %ymm1[127:96]))[63:32]) + 0x0₁ ∘ (0x0₃₂ ∘ (0x0₁ ∘ (TMP_BV_128_0[127:96] ∘ %ymm1[127:96] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm1[127:96] ∘ %ymm1[127:96]))[31:0]))[31:0] ∘ (0x0₁ ∘ (0x0₁ ∘ (TMP_BV_128_1[95:64] ∘ %ymm1[95:64] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm1[95:64] ∘ %ymm1[95:64]))[63:0] + 0x0₁ ∘ (0x0₃₂ ∘ (0x0₁ ∘ (TMP_BV_128_1[95:64] ∘ %ymm1[95:64] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm1[95:64] ∘ %ymm1[95:64]))[63:32]))[31:0] ∘ (0x0₁ ∘ ((0x0₁ ∘ (TMP_BV_128_2[63:32] ∘ %ymm1[63:32] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm1[63:32] ∘ %ymm1[63:32]))[63:32] ∘ (0x0₁ ∘ (TMP_BV_128_2[63:32] ∘ %ymm1[63:32] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm1[63:32] ∘ %ymm1[63:32]))[63:32]) + 0x0₁ ∘ (0x0₁ ∘ (TMP_BV_128_2[63:32] ∘ %ymm1[63:32] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm1[63:32] ∘ %ymm1[63:32]))[63:0])[31:0] ∘ (0x0₁ ∘ ((0x0₁ ∘ (TMP_BV_128_3[31:0] ∘ %ymm1[31:0] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm1[31:0] ∘ %ymm1[31:0]))[63:32] ∘ (0x0₁ ∘ (TMP_BV_128_3[31:0] ∘ %ymm1[31:0] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm1[31:0] ∘ %ymm1[31:0]))[63:32]) + 0x0₁ ∘ (0x0₁ ∘ (TMP_BV_128_3[31:0] ∘ %ymm1[31:0] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm1[31:0] ∘ %ymm1[31:0]))[63:0])[31:0])
 
 Information about memory reads:
   Value TMP_BV_128_0 (16 bytes)
+    was read at address %rax.
+  Value TMP_BV_128_1 (16 bytes)
+    was read at address %rax.
+  Value TMP_BV_128_2 (16 bytes)
+    was read at address %rax.
+  Value TMP_BV_128_3 (16 bytes)
     was read at address %rax.
 
 sigfpe  : sigfpe

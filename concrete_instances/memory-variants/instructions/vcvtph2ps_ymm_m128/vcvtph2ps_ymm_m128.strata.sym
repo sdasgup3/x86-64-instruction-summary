@@ -8,8 +8,6 @@ code: vcvtph2ps (%rax), %ymm1
   must undef:      { }
   required flags:  { f16c }
 
-vcvtph2ps (%rax), %ymm1: Hindex2(10)
-vcvtph2ps (%rax), %ymm1: Hindex2(10)
 Formula:
 
 %ymm1  : cvt_half_to_single(TMP_BV_128_0[127:112]) ∘ (cvt_half_to_single(TMP_BV_128_0[111:96]) ∘ (cvt_half_to_single(TMP_BV_128_0[95:80]) ∘ (cvt_half_to_single(TMP_BV_128_0[79:64]) ∘ (cvt_half_to_single(TMP_BV_128_0[63:48]) ∘ (cvt_half_to_single(TMP_BV_128_0[47:32]) ∘ (cvt_half_to_single(TMP_BV_128_0[31:16]) ∘ cvt_half_to_single(TMP_BV_128_0[15:0])))))))

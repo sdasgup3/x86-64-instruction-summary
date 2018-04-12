@@ -8,8 +8,6 @@ code: vpermpd $0x0, (%rax), %ymm1
   must undef:      { }
   required flags:  { avx2 }
 
-vpermpd $0x0, (%rax), %ymm1: Hindex2(10)
-vpermpd $0x0, (%rax), %ymm1: Hindex2(10)
 Formula:
 
 %ymm1  : (TMP_BV_256_0 >> (0x0₂₅₄ ∘ 0x0₂ << 0x6₂₅₆))[63:0] ∘ ((TMP_BV_256_0 >> (0x0₂₅₄ ∘ 0x0₂ << 0x6₂₅₆))[63:0] ∘ ((TMP_BV_256_0 >> (0x0₂₅₄ ∘ 0x0₂ << 0x6₂₅₆))[63:0] ∘ (TMP_BV_256_0 >> (0x0₂₅₄ ∘ 0x0₂ << 0x6₂₅₆))[63:0]))

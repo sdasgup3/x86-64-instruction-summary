@@ -8,14 +8,6 @@ code: vfnmsub231pd (%rax), %ymm2, %ymm1
   must undef:      { }
   required flags:  { fma }
 
-Opcode: vfnmsub231pd_ymm_ymm_ymm Reason: 1
-Opcode: vfnmsub231pd_ymm_ymm_m256 Reason: 2
-vfnmsub231pd (%rax), %ymm2, %ymm1: Hindex0(10)
-Opcode: vfnmsub231pd_ymm_ymm_ymm Reason: 1
-Opcode: vfnmsub231pd_ymm_ymm_m256 Reason: 2
-vfnmsub231pd (%rax), %ymm2, %ymm1: Hindex0(10)
-vfnmsub132pd %ymm3, %ymm1, %ymm2: Hindex1(9)
-vmaxpd %ymm2, %ymm2, %ymm1: Hindex0(9)
 Formula:
 
 %ymm1  : vfnmsub132_double(%ymm2[255:192], %ymm1[255:192], TMP_BV_256_0[255:192]) ∘ (vfnmsub132_double(%ymm2[191:128], %ymm1[191:128], TMP_BV_256_1[191:128]) ∘ (vfnmsub132_double(%ymm2[127:64], %ymm1[127:64], TMP_BV_256_2[127:64]) ∘ vfnmsub132_double(%ymm2[63:0], %ymm1[63:0], TMP_BV_256_3[63:0])))

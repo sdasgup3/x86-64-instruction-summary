@@ -8,9 +8,6 @@ code: movups (%rax), %xmm1
   must undef:      { }
   required flags:  { sse }
 
-movups (%rax), %xmm1: Hindex0(10)
-movups (%rax), %xmm1: Hindex0(10)
-movups %xmm2, %xmm1: Hindex0(9)
 Formula:
 
 %ymm1  : %ymm1[255:128] ∘ TMP_BV_128_0

@@ -8,9 +8,6 @@ code: addq %rbx, (%rax)
   must undef:      { }
   required flags:  { }
 
-addq %rbx, (%rax): Hindex0(10)
-addq %rbx, (%rax): Hindex0(10)
-addq %rcx, %rbx: Hindex2(9)
 Formula:
 
 %cf    : (0x0₁ ∘ %rbx + 0x0₁ ∘ TMP_BV_64_0)[64:64] = 0x1₁

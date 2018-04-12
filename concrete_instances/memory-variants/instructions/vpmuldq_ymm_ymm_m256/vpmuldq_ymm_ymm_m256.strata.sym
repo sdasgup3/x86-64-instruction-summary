@@ -8,8 +8,6 @@ code: vpmuldq (%rax), %ymm2, %ymm1
   must undef:      { }
   required flags:  { avx2 }
 
-vpmuldq (%rax), %ymm2, %ymm1: Hindex1(10)
-vpmuldq (%rax), %ymm2, %ymm1: Hindex1(10)
 Formula:
 
 %ymm1  : (sign-extend-64(%ymm2[223:192]) * sign-extend-64(TMP_BV_256_0[223:192])) ∘ ((sign-extend-64(%ymm2[159:128]) * sign-extend-64(TMP_BV_256_0[159:128])) ∘ ((sign-extend-64(%ymm2[95:64]) * sign-extend-64(TMP_BV_256_0[95:64])) ∘ (sign-extend-64(%ymm2[31:0]) * sign-extend-64(TMP_BV_256_0[31:0]))))

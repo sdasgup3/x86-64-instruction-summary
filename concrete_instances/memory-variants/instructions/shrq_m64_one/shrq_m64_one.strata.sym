@@ -8,8 +8,6 @@ code: shrq $0x1, (%rax)
   must undef:      { %af }
   required flags:  { }
 
-shrq $0x1, (%rax): Hindex8(10)
-shrq $0x1, (%rax): Hindex8(10)
 Formula:
 
 %cf    : false ∧ TMP_BOOL_0 ∨ true ∧ (true ∧ (TMP_BV_64_0 ∘ 0x0₁ >> 0x0₅₇ ∘ 0x1₈)[0:0] = 0x1₁ ∨ false ∧ %cf)

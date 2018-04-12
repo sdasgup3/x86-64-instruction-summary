@@ -8,9 +8,6 @@ code: movzwq (%rax), %rbx
   must undef:      { }
   required flags:  { }
 
-movzwq (%rax), %rbx: Hindex0(10)
-movzwq (%rax), %rbx: Hindex0(10)
-movzwq %cx, %rbx: Hindex5(9)
 Formula:
 
 %rbx   : 0x0₄₈ ∘ TMP_BV_16_0

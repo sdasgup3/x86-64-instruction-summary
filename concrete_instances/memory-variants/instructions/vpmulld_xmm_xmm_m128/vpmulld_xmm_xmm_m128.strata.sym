@@ -8,8 +8,6 @@ code: vpmulld (%rax), %xmm2, %xmm1
   must undef:      { }
   required flags:  { avx }
 
-vpmulld (%rax), %xmm2, %xmm1: Hindex1(10)
-vpmulld (%rax), %xmm2, %xmm1: Hindex1(10)
 Formula:
 
 %ymm1  : 0x0₁₂₈ ∘ ((sign-extend-64(%ymm2[127:96]) * sign-extend-64(TMP_BV_128_0[127:96]))[31:0] ∘ ((sign-extend-64(%ymm2[95:64]) * sign-extend-64(TMP_BV_128_0[95:64]))[31:0] ∘ ((sign-extend-64(%ymm2[63:32]) * sign-extend-64(TMP_BV_128_0[63:32]))[31:0] ∘ (sign-extend-64(%ymm2[31:0]) * sign-extend-64(TMP_BV_128_0[31:0]))[31:0])))

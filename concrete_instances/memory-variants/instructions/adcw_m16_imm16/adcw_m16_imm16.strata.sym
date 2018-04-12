@@ -8,9 +8,6 @@ code: adcw $0x0, (%rax)
   must undef:      { }
   required flags:  { }
 
-adcw $0x0, (%rax): Hindex0(10)
-adcw $0x0, (%rax): Hindex0(10)
-adcw %cx, %bx: Hindex2(9)
 Formula:
 
 %cf    : ((%cf ? 0x1₁₇ : 0x0₁₇) + 0x0₁ ∘ TMP_BV_16_1)[16:16] = 0x1₁

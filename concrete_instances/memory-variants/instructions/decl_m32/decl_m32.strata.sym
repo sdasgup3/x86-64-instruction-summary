@@ -8,24 +8,25 @@ code: decl (%rax)
   must undef:      { }
   required flags:  { }
 
-decl (%rax): Hindex0(10)
-decl (%rax): Hindex0(10)
-decl %ebx: Hindex1(9)
 Formula:
 
-%pf    : !((TMP_BV_32_0 - 0x1₃₂)[0:0] = 0x1₁ ⊕ (TMP_BV_32_0 - 0x1₃₂)[1:1] = 0x1₁ ⊕ (TMP_BV_32_0 - 0x1₃₂)[2:2] = 0x1₁ ⊕ (TMP_BV_32_0 - 0x1₃₂)[3:3] = 0x1₁ ⊕ (TMP_BV_32_0 - 0x1₃₂)[4:4] = 0x1₁ ⊕ (TMP_BV_32_0 - 0x1₃₂)[5:5] = 0x1₁ ⊕ (TMP_BV_32_0 - 0x1₃₂)[6:6] = 0x1₁ ⊕ (TMP_BV_32_0 - 0x1₃₂)[7:7] = 0x1₁)
-%af    : TMP_BV_32_0[3:0] = 0x0₄
-%zf    : TMP_BV_32_0 - 0x1₃₂ = 0x0₃₂
-%sf    : (TMP_BV_32_0 - 0x1₃₂)[31:31] = 0x1₁
-%of    : TMP_BV_32_0[31:31] = 0x1₁ ∧ TMP_BV_32_0[30:0] = 0x0₃₁
+%pf    : !((0x0₁ ∘ TMP_BV_32_0 + 0xffffffff₃₃)[0:0] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_32_0 + 0xffffffff₃₃)[1:1] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_32_0 + 0xffffffff₃₃)[2:2] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_32_0 + 0xffffffff₃₃)[3:3] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_32_0 + 0xffffffff₃₃)[4:4] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_32_0 + 0xffffffff₃₃)[5:5] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_32_0 + 0xffffffff₃₃)[6:6] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_32_0 + 0xffffffff₃₃)[7:7] = 0x1₁)
+%af    : (0x0₁ ∘ TMP_BV_32_1[3:0] + 0xf₅)[4:4] = 0x1₁
+%zf    : (0x0₁ ∘ TMP_BV_32_0 + 0xffffffff₃₃)[31:0] = 0x0₃₂
+%sf    : (0x0₁ ∘ TMP_BV_32_0 + 0xffffffff₃₃)[31:31] = 0x1₁
+%of    : (TMP_BV_32_2[31:31] = 0x1₁ ↔ true) ∧ !(TMP_BV_32_2[31:31] = 0x1₁ ↔ (0x0₁ ∘ TMP_BV_32_0 + 0xffffffff₃₃)[31:31] = 0x1₁)
 
 Information about memory reads:
   Value TMP_BV_32_0 (4 bytes)
     was read at address %rax.
+  Value TMP_BV_32_1 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_2 (4 bytes)
+    was read at address %rax.
 
 Information about memory writes:
   Address %rax was updated to
-    TMP_BV_32_0 - 0x1₃₂ (4 bytes).
+    (0x0₁ ∘ TMP_BV_32_0 + 0xffffffff₃₃)[31:0] (4 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

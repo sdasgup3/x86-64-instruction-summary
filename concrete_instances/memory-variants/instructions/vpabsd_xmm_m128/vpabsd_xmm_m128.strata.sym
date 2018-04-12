@@ -8,8 +8,6 @@ code: vpabsd (%rax), %xmm1
   must undef:      { }
   required flags:  { avx }
 
-vpabsd (%rax), %xmm1: Hindex1(10)
-vpabsd (%rax), %xmm1: Hindex1(10)
 Formula:
 
 %ymm1  : 0x0₁₂₈ ∘ ((TMP_BV_128_0[127:96] > 0x7fffffff₃₂ ? -TMP_BV_128_0[127:96] : TMP_BV_128_0[127:96]) ∘ ((TMP_BV_128_0[95:64] > 0x7fffffff₃₂ ? -TMP_BV_128_0[95:64] : TMP_BV_128_0[95:64]) ∘ ((TMP_BV_128_0[63:32] > 0x7fffffff₃₂ ? -TMP_BV_128_0[63:32] : TMP_BV_128_0[63:32]) ∘ (TMP_BV_128_0[31:0] > 0x7fffffff₃₂ ? -TMP_BV_128_0[31:0] : TMP_BV_128_0[31:0]))))

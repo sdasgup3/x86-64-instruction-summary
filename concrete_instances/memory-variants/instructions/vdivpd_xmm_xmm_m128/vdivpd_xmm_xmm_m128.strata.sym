@@ -8,15 +8,14 @@ code: vdivpd (%rax), %xmm2, %xmm1
   must undef:      { }
   required flags:  { avx }
 
-vdivpd (%rax), %xmm2, %xmm1: Hindex0(10)
-vdivpd (%rax), %xmm2, %xmm1: Hindex0(10)
-vdivpd %xmm3, %xmm2, %xmm1: Hindex0(9)
 Formula:
 
-%ymm1  : 0x0₁₂₈ ∘ (div_double(%ymm2[127:64], TMP_BV_128_0[127:64]) ∘ div_double(%ymm2[63:0], TMP_BV_128_0[63:0]))
+%ymm1  : 0x0₁₂₈ ∘ (div_double(%ymm2[127:64], TMP_BV_128_0[127:64]) ∘ div_double(%ymm2[63:0], TMP_BV_128_1[63:0]))
 
 Information about memory reads:
   Value TMP_BV_128_0 (16 bytes)
+    was read at address %rax.
+  Value TMP_BV_128_1 (16 bytes)
     was read at address %rax.
 
 sigfpe  : sigfpe

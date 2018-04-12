@@ -8,14 +8,6 @@ code: vmovq %xmm1, (%rax)
   must undef:      { }
   required flags:  { avx }
 
-Opcode: vmovq_r64_xmm Reason: 1
-Opcode: vmovq_m64_xmm Reason: 2
-vmovq %xmm1, (%rax): Hindex0(10)
-Opcode: vmovq_r64_xmm Reason: 1
-Opcode: vmovq_m64_xmm Reason: 2
-vmovq %xmm1, (%rax): Hindex0(10)
-callq .move_128_032_xmm1_r10d_r11d_r12d_r13d: Hindex8(9)
-callq .move_032_064_r10d_r11d_rbx: Hindex8(9)
 Formula:
 
 Information about memory writes:

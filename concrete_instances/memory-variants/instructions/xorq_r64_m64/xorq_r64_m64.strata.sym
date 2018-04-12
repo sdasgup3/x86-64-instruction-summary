@@ -8,9 +8,6 @@ code: xorq (%rax), %rbx
   must undef:      { %af }
   required flags:  { }
 
-xorq (%rax), %rbx: Hindex0(10)
-xorq (%rax), %rbx: Hindex0(10)
-xorq %rcx, %rbx: Hindex1(9)
 Formula:
 
 %rbx   : %rbx ⊕ TMP_BV_64_0

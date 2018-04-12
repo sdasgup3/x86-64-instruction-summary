@@ -8,25 +8,28 @@ code: salq $0x1, (%rax)
   must undef:      { %af }
   required flags:  { }
 
-salq $0x1, (%rax): Hindex0(10)
-salq $0x1, (%rax): Hindex0(10)
-salq $0x1, %rbx: Hindex7(9)
 Formula:
 
-%cf    : false ∧ TMP_BOOL_0 ∨ true ∧ (true ∧ (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ 0x1₈)[64:64] = 0x1₁ ∨ false ∧ %cf)
-%pf    : true ∧ !((0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ 0x1₈)[0:0] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ 0x1₈)[1:1] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ 0x1₈)[2:2] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ 0x1₈)[3:3] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ 0x1₈)[4:4] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ 0x1₈)[5:5] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ 0x1₈)[6:6] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ 0x1₈)[7:7] = 0x1₁) ∨ false ∧ %pf
-%af    : TMP_BOOL_2
-%zf    : true ∧ (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ 0x1₈)[63:0] = 0x0₆₄ ∨ false ∧ %zf
-%sf    : true ∧ (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ 0x1₈)[63:63] = 0x1₁ ∨ false ∧ %sf
-%of    : true ∧ !(false ∧ TMP_BOOL_0 ∨ true ∧ (true ∧ (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ 0x1₈)[64:64] = 0x1₁ ∨ false ∧ %cf) ↔ (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ 0x1₈)[63:63] = 0x1₁) ∨ false ∧ %of
+%cf    : (0x0₁ ∘ TMP_BV_64_0 + 0x0₁ ∘ TMP_BV_64_1)[64:64] = 0x1₁
+%pf    : !((0x0₁ ∘ TMP_BV_64_0 + 0x0₁ ∘ TMP_BV_64_1)[0:0] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_64_0 + 0x0₁ ∘ TMP_BV_64_1)[1:1] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_64_0 + 0x0₁ ∘ TMP_BV_64_1)[2:2] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_64_0 + 0x0₁ ∘ TMP_BV_64_1)[3:3] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_64_0 + 0x0₁ ∘ TMP_BV_64_1)[4:4] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_64_0 + 0x0₁ ∘ TMP_BV_64_1)[5:5] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_64_0 + 0x0₁ ∘ TMP_BV_64_1)[6:6] = 0x1₁ ⊕ (0x0₁ ∘ TMP_BV_64_0 + 0x0₁ ∘ TMP_BV_64_1)[7:7] = 0x1₁)
+%af    : TMP_BOOL_4
+%zf    : (0x0₁ ∘ TMP_BV_64_0 + 0x0₁ ∘ TMP_BV_64_1)[63:0] = 0x0₆₄
+%sf    : (0x0₁ ∘ TMP_BV_64_0 + 0x0₁ ∘ TMP_BV_64_1)[63:63] = 0x1₁
+%of    : (TMP_BV_64_2[63:63] = 0x1₁ ↔ TMP_BV_64_3[63:63] = 0x1₁) ∧ !(TMP_BV_64_2[63:63] = 0x1₁ ↔ (0x0₁ ∘ TMP_BV_64_0 + 0x0₁ ∘ TMP_BV_64_1)[63:63] = 0x1₁)
 
 Information about memory reads:
   Value TMP_BV_64_0 (8 bytes)
     was read at address %rax.
+  Value TMP_BV_64_1 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_2 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_3 (8 bytes)
+    was read at address %rax.
 
 Information about memory writes:
   Address %rax was updated to
-    (0x0₁ ∘ TMP_BV_64_0 << 0x0₅₇ ∘ 0x1₈)[63:0] (8 bytes).
+    (0x0₁ ∘ TMP_BV_64_0 + 0x0₁ ∘ TMP_BV_64_1)[63:0] (8 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

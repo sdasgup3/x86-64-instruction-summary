@@ -8,8 +8,6 @@ code: pextrd $0x0, %xmm1, (%rax)
   must undef:      { }
   required flags:  { sse4_1 }
 
-pextrd $0x0, %xmm1, (%rax): Hindex2(10)
-pextrd $0x0, %xmm1, (%rax): Hindex2(10)
 Formula:
 
 Information about memory reads:

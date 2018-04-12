@@ -8,9 +8,6 @@ code: vcvtsi2ssl (%rax), %xmm2, %xmm1
   must undef:      { }
   required flags:  { avx }
 
-vcvtsi2ssl (%rax), %xmm2, %xmm1: Hindex0(10)
-vcvtsi2ssl (%rax), %xmm2, %xmm1: Hindex0(10)
-vcvtsi2ssl %ebx, %xmm2, %xmm1: Hindex1(9)
 Formula:
 
 %ymm1  : 0x0₁₂₈ ∘ (%ymm2[127:32] ∘ cvt_int32_to_single(TMP_BV_32_0))

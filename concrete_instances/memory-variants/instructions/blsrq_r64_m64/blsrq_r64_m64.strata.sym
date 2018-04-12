@@ -8,8 +8,6 @@ code: blsrq (%rax), %rbx
   must undef:      { %pf %af }
   required flags:  { bmi1 }
 
-blsrq (%rax), %rbx: Hindex2(10)
-blsrq (%rax), %rbx: Hindex2(10)
 Formula:
 
 %rbx   : TMP_BV_64_0 - 0x1₆₄ & TMP_BV_64_0

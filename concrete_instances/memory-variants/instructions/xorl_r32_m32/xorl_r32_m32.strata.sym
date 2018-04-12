@@ -8,22 +8,37 @@ code: xorl (%rax), %ebx
   must undef:      { %af }
   required flags:  { }
 
-xorl (%rax), %ebx: Hindex0(10)
-xorl (%rax), %ebx: Hindex0(10)
-xorl %ecx, %ebx: Hindex1(9)
 Formula:
 
-%rbx   : 0x0₃₂ ∘ (%rbx[31:0] ⊕ TMP_BV_32_0)
+%rbx   : 0x0₃₂ ∘ TMP_BV_32_0 ⊕ 0x0₃₂ ∘ %rbx[31:0]
 
 %cf    : false
-%pf    : !((%rbx[0:0] ⊕ TMP_BV_32_0[0:0]) = 0x1₁ ⊕ (%rbx[1:1] ⊕ TMP_BV_32_0[1:1]) = 0x1₁ ⊕ (%rbx[2:2] ⊕ TMP_BV_32_0[2:2]) = 0x1₁ ⊕ (%rbx[3:3] ⊕ TMP_BV_32_0[3:3]) = 0x1₁ ⊕ (%rbx[4:4] ⊕ TMP_BV_32_0[4:4]) = 0x1₁ ⊕ (%rbx[5:5] ⊕ TMP_BV_32_0[5:5]) = 0x1₁ ⊕ (%rbx[6:6] ⊕ TMP_BV_32_0[6:6]) = 0x1₁ ⊕ (%rbx[7:7] ⊕ TMP_BV_32_0[7:7]) = 0x1₁)
-%af    : TMP_BOOL_1
-%zf    : (%rbx[31:0] ⊕ TMP_BV_32_0) = 0x0₃₂
-%sf    : (%rbx[31:31] ⊕ TMP_BV_32_0[31:31]) = 0x1₁
+%pf    : !((TMP_BV_32_1[0:0] ⊕ %rbx[0:0]) = 0x1₁ ⊕ (TMP_BV_32_2[1:1] ⊕ %rbx[1:1]) = 0x1₁ ⊕ (TMP_BV_32_3[2:2] ⊕ %rbx[2:2]) = 0x1₁ ⊕ (TMP_BV_32_4[3:3] ⊕ %rbx[3:3]) = 0x1₁ ⊕ (TMP_BV_32_5[4:4] ⊕ %rbx[4:4]) = 0x1₁ ⊕ (TMP_BV_32_6[5:5] ⊕ %rbx[5:5]) = 0x1₁ ⊕ (TMP_BV_32_7[6:6] ⊕ %rbx[6:6]) = 0x1₁ ⊕ (TMP_BV_32_8[7:7] ⊕ %rbx[7:7]) = 0x1₁)
+%af    : TMP_BOOL_2
+%zf    : (TMP_BV_32_0 ⊕ %rbx[31:0]) = 0x0₃₂
+%sf    : (TMP_BV_32_9[31:31] ⊕ %rbx[31:31]) = 0x1₁
 %of    : false
 
 Information about memory reads:
   Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_1 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_2 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_3 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_4 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_5 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_6 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_7 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_8 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_9 (4 bytes)
     was read at address %rax.
 
 sigfpe  : sigfpe

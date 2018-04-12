@@ -8,15 +8,18 @@ code: vpor (%rax), %ymm2, %ymm1
   must undef:      { }
   required flags:  { avx2 }
 
-vpor (%rax), %ymm2, %ymm1: Hindex0(10)
-vpor (%rax), %ymm2, %ymm1: Hindex0(10)
-vpor %ymm3, %ymm2, %ymm1: Hindex0(9)
 Formula:
 
-%ymm1  : %ymm2 | TMP_BV_256_0
+%ymm1  : (%ymm2[255:192] | TMP_BV_256_0[255:192]) ∘ ((%ymm2[191:128] | TMP_BV_256_1[191:128]) ∘ ((%ymm2[127:64] | TMP_BV_256_2[127:64]) ∘ (%ymm2[63:0] | TMP_BV_256_3[63:0])))
 
 Information about memory reads:
   Value TMP_BV_256_0 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_1 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_2 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_3 (32 bytes)
     was read at address %rax.
 
 sigfpe  : sigfpe

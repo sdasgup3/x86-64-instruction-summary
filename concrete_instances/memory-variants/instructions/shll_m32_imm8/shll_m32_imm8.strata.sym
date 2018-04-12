@@ -8,8 +8,6 @@ code: shll $0x0, (%rax)
   must undef:      { }
   required flags:  { }
 
-shll $0x0, (%rax): Hindex8(10)
-shll $0x0, (%rax): Hindex8(10)
 Formula:
 
 %cf    : false ∧ TMP_BOOL_0 ∨ true ∧ (false ∧ (0x0₁ ∘ TMP_BV_32_0 << 0x0₃₃)[32:32] = 0x1₁ ∨ true ∧ %cf)

@@ -8,8 +8,6 @@ code: idivq (%rax)
   must undef:      { %cf %pf %af %zf %sf %of }
   required flags:  { }
 
-idivq (%rax): Hindex2(10)
-idivq (%rax): Hindex2(10)
 Formula:
 
 %rax   : idiv_quotient_int64(%rdx ∘ %rax, TMP_BV_64_0)

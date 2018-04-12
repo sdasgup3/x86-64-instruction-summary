@@ -8,8 +8,6 @@ code: sarxl %ecx, (%rax), %ebx
   must undef:      { }
   required flags:  { bmi2 }
 
-sarxl %ecx, (%rax), %ebx: Hindex2(10)
-sarxl %ecx, (%rax), %ebx: Hindex2(10)
 Formula:
 
 %rbx   : 0x0₃₂ ∘ (TMP_BV_32_0 sign_shift_right (%rcx[31:0] & 0x1f₃₂))

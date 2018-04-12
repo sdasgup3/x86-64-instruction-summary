@@ -8,25 +8,60 @@ code: andl %ebx, (%rax)
   must undef:      { %af }
   required flags:  { }
 
-andl %ebx, (%rax): Hindex0(10)
-andl %ebx, (%rax): Hindex0(10)
-andl %ecx, %ebx: Hindex1(9)
 Formula:
 
 %cf    : false
-%pf    : !((TMP_BV_32_0[0:0] & %rbx[0:0]) = 0x1₁ ⊕ (TMP_BV_32_0[1:1] & %rbx[1:1]) = 0x1₁ ⊕ (TMP_BV_32_0[2:2] & %rbx[2:2]) = 0x1₁ ⊕ (TMP_BV_32_0[3:3] & %rbx[3:3]) = 0x1₁ ⊕ (TMP_BV_32_0[4:4] & %rbx[4:4]) = 0x1₁ ⊕ (TMP_BV_32_0[5:5] & %rbx[5:5]) = 0x1₁ ⊕ (TMP_BV_32_0[6:6] & %rbx[6:6]) = 0x1₁ ⊕ (TMP_BV_32_0[7:7] & %rbx[7:7]) = 0x1₁)
-%af    : TMP_BOOL_1
-%zf    : (TMP_BV_32_0 & %rbx[31:0]) = 0x0₃₂
-%sf    : (TMP_BV_32_0[31:31] & %rbx[31:31]) = 0x1₁
+%pf    : !(((%rbx[0:0] | TMP_BV_32_2[0:0]) ⊕ TMP_BV_32_3[0:0] ⊕ %rbx[0:0]) = 0x1₁ ⊕ ((%rbx[1:1] | TMP_BV_32_4[1:1]) ⊕ TMP_BV_32_5[1:1] ⊕ %rbx[1:1]) = 0x1₁ ⊕ ((%rbx[2:2] | TMP_BV_32_6[2:2]) ⊕ TMP_BV_32_7[2:2] ⊕ %rbx[2:2]) = 0x1₁ ⊕ ((%rbx[3:3] | TMP_BV_32_8[3:3]) ⊕ TMP_BV_32_9[3:3] ⊕ %rbx[3:3]) = 0x1₁ ⊕ ((%rbx[4:4] | TMP_BV_32_10[4:4]) ⊕ TMP_BV_32_11[4:4] ⊕ %rbx[4:4]) = 0x1₁ ⊕ ((%rbx[5:5] | TMP_BV_32_12[5:5]) ⊕ TMP_BV_32_13[5:5] ⊕ %rbx[5:5]) = 0x1₁ ⊕ ((%rbx[6:6] | TMP_BV_32_14[6:6]) ⊕ TMP_BV_32_15[6:6] ⊕ %rbx[6:6]) = 0x1₁ ⊕ ((%rbx[7:7] | TMP_BV_32_16[7:7]) ⊕ TMP_BV_32_17[7:7] ⊕ %rbx[7:7]) = 0x1₁)
+%af    : TMP_BOOL_9
+%zf    : ((%rbx[31:0] | TMP_BV_32_0) ⊕ TMP_BV_32_1 ⊕ %rbx[31:0]) = 0x0₃₂
+%sf    : ((%rbx[31:31] | TMP_BV_32_18[31:31]) ⊕ TMP_BV_32_19[31:31] ⊕ %rbx[31:31]) = 0x1₁
 %of    : false
 
 Information about memory reads:
   Value TMP_BV_32_0 (4 bytes)
     was read at address %rax.
+  Value TMP_BV_32_1 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_2 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_3 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_4 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_5 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_6 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_7 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_8 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_9 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_10 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_11 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_12 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_13 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_14 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_15 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_16 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_17 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_18 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_19 (4 bytes)
+    was read at address %rax.
 
 Information about memory writes:
   Address %rax was updated to
-    TMP_BV_32_0 & %rbx[31:0] (4 bytes).
+    (%rbx[31:0] | TMP_BV_32_0) ⊕ TMP_BV_32_1 ⊕ %rbx[31:0] (4 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

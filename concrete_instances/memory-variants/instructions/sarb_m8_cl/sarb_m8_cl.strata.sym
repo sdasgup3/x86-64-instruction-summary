@@ -8,8 +8,6 @@ code: sarb %cl, (%rax)
   must undef:      { }
   required flags:  { }
 
-sarb %cl, (%rax): Hindex8(10)
-sarb %cl, (%rax): Hindex8(10)
 Formula:
 
 %cf    : !((%rcx[7:0] & 0x1f₈) = 0x0₈) ∧ (TMP_BV_8_0 ∘ 0x0₁ sign_shift_right 0x0₁ ∘ (%rcx[7:0] & 0x1f₈))[0:0] = 0x1₁ ∨ !(!((%rcx[7:0] & 0x1f₈) = 0x0₈)) ∧ %cf

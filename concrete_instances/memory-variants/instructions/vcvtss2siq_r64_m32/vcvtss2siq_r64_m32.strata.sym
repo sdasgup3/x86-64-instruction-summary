@@ -8,8 +8,6 @@ code: vcvtss2siq (%rax), %rbx
   must undef:      { }
   required flags:  { avx }
 
-vcvtss2siq (%rax), %rbx: Hindex1(10)
-vcvtss2siq (%rax), %rbx: Hindex1(10)
 Formula:
 
 %rbx   : cvt_single_to_int64(TMP_BV_32_0)

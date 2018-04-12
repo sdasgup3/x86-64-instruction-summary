@@ -8,9 +8,6 @@ code: movupd %xmm1, (%rax)
   must undef:      { }
   required flags:  { sse2 }
 
-movupd %xmm1, (%rax): Hindex0(10)
-movupd %xmm1, (%rax): Hindex0(10)
-movupd %xmm2, %xmm1: Hindex0(9)
 Formula:
 
 Information about memory reads:

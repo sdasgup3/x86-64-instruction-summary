@@ -8,9 +8,6 @@ code: vtestpd (%rax), %ymm1
   must undef:      { }
   required flags:  { avx }
 
-vtestpd (%rax), %ymm1: Hindex0(10)
-vtestpd (%rax), %ymm1: Hindex0(10)
-vtestpd %ymm2, %ymm1: Hindex1(9)
 Formula:
 
 %cf    : (!%ymm1[63:63] & TMP_BV_256_0[63:63]) = 0x0₁ ∧ (!%ymm1[127:127] & TMP_BV_256_0[127:127]) = 0x0₁ ∧ (!%ymm1[191:191] & TMP_BV_256_0[191:191]) = 0x0₁ ∧ (!%ymm1[255:255] & TMP_BV_256_0[255:255]) = 0x0₁

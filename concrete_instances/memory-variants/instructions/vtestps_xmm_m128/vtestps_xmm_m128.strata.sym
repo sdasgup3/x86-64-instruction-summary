@@ -8,21 +8,33 @@ code: vtestps (%rax), %xmm1
   must undef:      { }
   required flags:  { avx }
 
-vtestps (%rax), %xmm1: Hindex2(10)
-vtestps (%rax), %xmm1: Hindex2(10)
 Formula:
 
-%cf    : (!%ymm1[31:31] & TMP_BV_128_0[31:31]) = 0x0₁ ∧ (!%ymm1[63:63] & TMP_BV_128_0[63:63]) = 0x0₁ ∧ (!%ymm1[95:95] & TMP_BV_128_0[95:95]) = 0x0₁ ∧ (!%ymm1[127:127] & TMP_BV_128_0[127:127]) = 0x0₁
+%cf    : (!%ymm1[31:31] & TMP_BV_128_0[31:31]) = 0x0₁ ∧ (!%ymm1[63:63] & TMP_BV_128_1[63:63]) = 0x0₁ ∧ true ∧ true ∧ (!%ymm1[95:95] & TMP_BV_128_2[95:95]) = 0x0₁ ∧ (!%ymm1[127:127] & TMP_BV_128_3[127:127]) = 0x0₁ ∧ true ∧ true
 %pf    : false
 %af    : false
-%zf    : (%ymm1[31:31] & TMP_BV_128_0[31:31]) = 0x0₁ ∧ (%ymm1[63:63] & TMP_BV_128_0[63:63]) = 0x0₁ ∧ (%ymm1[95:95] & TMP_BV_128_0[95:95]) = 0x0₁ ∧ (%ymm1[127:127] & TMP_BV_128_0[127:127]) = 0x0₁
+%zf    : (%ymm1[31:31] & TMP_BV_128_4[31:31]) = 0x0₁ ∧ (%ymm1[63:63] & TMP_BV_128_5[63:63]) = 0x0₁ ∧ true ∧ true ∧ (%ymm1[95:95] & TMP_BV_128_6[95:95]) = 0x0₁ ∧ (%ymm1[127:127] & TMP_BV_128_7[127:127]) = 0x0₁ ∧ true ∧ true
 %sf    : false
 %of    : false
 
 Information about memory reads:
   Value TMP_BV_128_0 (16 bytes)
     was read at address %rax.
+  Value TMP_BV_128_1 (16 bytes)
+    was read at address %rax.
+  Value TMP_BV_128_2 (16 bytes)
+    was read at address %rax.
+  Value TMP_BV_128_3 (16 bytes)
+    was read at address %rax.
+  Value TMP_BV_128_4 (16 bytes)
+    was read at address %rax.
+  Value TMP_BV_128_5 (16 bytes)
+    was read at address %rax.
+  Value TMP_BV_128_6 (16 bytes)
+    was read at address %rax.
+  Value TMP_BV_128_7 (16 bytes)
+    was read at address %rax.
 
 sigfpe  : sigfpe
 sigbus  : sigbus
-sigsegv : sigsegv ∨ !sigfpe ∧ !sigbus ∧ false
+sigsegv : sigsegv

@@ -8,9 +8,6 @@ code: movsbq (%rax), %rbx
   must undef:      { }
   required flags:  { }
 
-movsbq (%rax), %rbx: Hindex0(10)
-movsbq (%rax), %rbx: Hindex0(10)
-movsbq %cl, %rbx: Hindex5(9)
 Formula:
 
 %rbx   : sign-extend-64(TMP_BV_8_0)

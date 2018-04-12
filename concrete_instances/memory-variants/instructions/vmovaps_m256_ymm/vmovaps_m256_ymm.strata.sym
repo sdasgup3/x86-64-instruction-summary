@@ -8,9 +8,6 @@ code: vmovaps %ymm1, (%rax)
   must undef:      { }
   required flags:  { avx }
 
-vmovaps %ymm1, (%rax): Hindex0(10)
-vmovaps %ymm1, (%rax): Hindex0(10)
-vmovaps %ymm2, %ymm1: Hindex0(9)
 Formula:
 
 Information about memory writes:

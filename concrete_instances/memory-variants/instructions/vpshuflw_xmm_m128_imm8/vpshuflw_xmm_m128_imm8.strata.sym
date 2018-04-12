@@ -8,8 +8,6 @@ code: vpshuflw $0x0, (%rax), %xmm1
   must undef:      { }
   required flags:  { avx }
 
-vpshuflw $0x0, (%rax), %xmm1: Hindex2(10)
-vpshuflw $0x0, (%rax), %xmm1: Hindex2(10)
 Formula:
 
 %ymm1  : 0x0₁₂₈ ∘ (TMP_BV_128_0[127:64] ∘ ((TMP_BV_128_0 >> 0x0₁₂₈)[15:0] ∘ ((TMP_BV_128_0 >> 0x0₁₂₈)[15:0] ∘ ((TMP_BV_128_0 >> 0x0₁₂₈)[15:0] ∘ (TMP_BV_128_0 >> 0x0₁₂₈)[15:0]))))

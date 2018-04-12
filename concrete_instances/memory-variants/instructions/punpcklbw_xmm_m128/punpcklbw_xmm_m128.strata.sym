@@ -8,8 +8,6 @@ code: punpcklbw (%rax), %xmm1
   must undef:      { }
   required flags:  { sse2 }
 
-punpcklbw (%rax), %xmm1: Hindex7(10)
-punpcklbw (%rax), %xmm1: Hindex7(10)
 Formula:
 
 %ymm1  : %ymm1[255:128] ∘ (TMP_BV_128_0[63:56] ∘ %ymm1[63:56] ∘ (TMP_BV_128_0[55:48] ∘ %ymm1[55:48] ∘ (TMP_BV_128_0[47:40] ∘ %ymm1[47:40] ∘ (TMP_BV_128_0[39:32] ∘ %ymm1[39:32] ∘ (TMP_BV_128_0[31:24] ∘ %ymm1[31:24] ∘ (TMP_BV_128_0[23:16] ∘ %ymm1[23:16] ∘ (TMP_BV_128_0[15:8] ∘ %ymm1[15:8] ∘ (TMP_BV_128_0[7:0] ∘ %ymm1[7:0]))))))))

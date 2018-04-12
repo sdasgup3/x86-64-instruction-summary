@@ -8,8 +8,6 @@ code: packusdw (%rax), %xmm1
   must undef:      { }
   required flags:  { sse4_1 }
 
-packusdw (%rax), %xmm1: Hindex1(10)
-packusdw (%rax), %xmm1: Hindex1(10)
 Formula:
 
 %ymm1  : %ymm1[255:128] ∘ ((TMP_BV_128_0[127:96] > 0xffff₃₂ ? 0xffff₁₆ : TMP_BV_128_0[127:96] < 0x0₃₂ ? 0x0₁₆ : TMP_BV_128_0[111:96]) ∘ ((TMP_BV_128_0[95:64] > 0xffff₃₂ ? 0xffff₁₆ : TMP_BV_128_0[95:64] < 0x0₃₂ ? 0x0₁₆ : TMP_BV_128_0[79:64]) ∘ ((TMP_BV_128_0[63:32] > 0xffff₃₂ ? 0xffff₁₆ : TMP_BV_128_0[63:32] < 0x0₃₂ ? 0x0₁₆ : TMP_BV_128_0[47:32]) ∘ ((TMP_BV_128_0[31:0] > 0xffff₃₂ ? 0xffff₁₆ : TMP_BV_128_0[31:0] < 0x0₃₂ ? 0x0₁₆ : TMP_BV_128_0[15:0]) ∘ ((%ymm1[127:96] > 0xffff₃₂ ? 0xffff₁₆ : %ymm1[127:96] < 0x0₃₂ ? 0x0₁₆ : %ymm1[111:96]) ∘ ((%ymm1[95:64] > 0xffff₃₂ ? 0xffff₁₆ : %ymm1[95:64] < 0x0₃₂ ? 0x0₁₆ : %ymm1[79:64]) ∘ ((%ymm1[63:32] > 0xffff₃₂ ? 0xffff₁₆ : %ymm1[63:32] < 0x0₃₂ ? 0x0₁₆ : %ymm1[47:32]) ∘ (%ymm1[31:0] > 0xffff₃₂ ? 0xffff₁₆ : %ymm1[31:0] < 0x0₃₂ ? 0x0₁₆ : %ymm1[15:0]))))))))
