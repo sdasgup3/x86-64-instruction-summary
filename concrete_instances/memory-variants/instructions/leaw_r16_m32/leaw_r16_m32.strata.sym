@@ -8,10 +8,12 @@ code: leaw (%rax), %bx
   must undef:      { }
   required flags:  { }
 
+leaw (%rax), %bx: Hindex5(10)
+leaw (%rax), %bx: Hindex5(10)
 Formula:
 
-%rbx   : (concat <%rbx|64>[63:16] <%rax|64>[15:0])
+%rbx   : (concat ((_ extract 63 16) %rbx) ((_ extract 15 0) %rax))
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

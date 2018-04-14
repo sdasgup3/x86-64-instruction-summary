@@ -8,28 +8,74 @@ code: decw (%rax)
   must undef:      { }
   required flags:  { }
 
+decw (%rax): Hindex0(10)
+decw (%rax): Hindex0(10)
+xorq %rax, %rax: Hindex1(9)
+movq $0xffffffffffffffff, %rsi: Hindex5(9)
+callq .move_016_008_bx_r10b_r11b: Hindex8(9)
+callq .move_016_008_cx_r8b_r9b: Hindex8(9)
+callq .move_008_016_r10b_r11b_cx: Hindex8(9)
+callq .move_008_016_r8b_r9b_bx: Hindex8(9)
+callq .read_cf_into_rbx: Hindex8(9)
+adcw %bx, %ax: Hindex2(9)
+xorq %rax, %rax: Hindex1(9)
+adcb %al, %al: Hindex2(9)
+adcw %cx, %bx: Hindex2(9)
+callq .set_szp_for_bx: Hindex8(9)
+movswq %si, %rbx: Hindex5(9)
 Formula:
 
-%pf    : (not (xor (xor (xor (xor (xor (xor (xor (== (plus (concat <0x0|1> <TMP_BV_16_1|16>) <0xffff|17>)[0:0] <0x1|1>) (== (plus (concat <0x0|1> <TMP_BV_16_1|16>) <0xffff|17>)[1:1] <0x1|1>)) (== (plus (concat <0x0|1> <TMP_BV_16_1|16>) <0xffff|17>)[2:2] <0x1|1>)) (== (plus (concat <0x0|1> <TMP_BV_16_1|16>) <0xffff|17>)[3:3] <0x1|1>)) (== (plus (concat <0x0|1> <TMP_BV_16_1|16>) <0xffff|17>)[4:4] <0x1|1>)) (== (plus (concat <0x0|1> <TMP_BV_16_1|16>) <0xffff|17>)[5:5] <0x1|1>)) (== (plus (concat <0x0|1> <TMP_BV_16_1|16>) <0xffff|17>)[6:6] <0x1|1>)) (== (plus (concat <0x0|1> <TMP_BV_16_1|16>) <0xffff|17>)[7:7] <0x1|1>)))
-%af    : (== (plus (concat <0x0|1> <TMP_BV_16_2|16>[3:0]) <0xf|5>)[4:4] <0x1|1>)
-%zf    : (== (plus (concat <0x0|1> <TMP_BV_16_1|16>) <0xffff|17>)[15:0] <0x0|16>)
-%sf    : (== (plus (concat <0x0|1> <TMP_BV_16_1|16>) <0xffff|17>)[15:15] <0x1|1>)
-%of    : (and (== (== <TMP_BV_16_3|16>[15:15] <0x1|1>) TRUE) (not (== (== <TMP_BV_16_3|16>[15:15] <0x1|1>) (== (plus (concat <0x0|1> <TMP_BV_16_1|16>) <0xffff|17>)[15:15] <0x1|1>))))
+%pf    : (let ((a!1 (= ((_ extract 0 0)
+                (bvadd (concat #b0 TMP_BV_16_1) #b01111111111111111))
+              #b1))
+      (a!2 (= ((_ extract 1 1)
+                (bvadd (concat #b0 TMP_BV_16_1) #b01111111111111111))
+              #b1))
+      (a!3 (= ((_ extract 2 2)
+                (bvadd (concat #b0 TMP_BV_16_1) #b01111111111111111))
+              #b1))
+      (a!4 (= ((_ extract 3 3)
+                (bvadd (concat #b0 TMP_BV_16_1) #b01111111111111111))
+              #b1))
+      (a!5 (= ((_ extract 4 4)
+                (bvadd (concat #b0 TMP_BV_16_1) #b01111111111111111))
+              #b1))
+      (a!6 (= ((_ extract 5 5)
+                (bvadd (concat #b0 TMP_BV_16_1) #b01111111111111111))
+              #b1))
+      (a!7 (= ((_ extract 6 6)
+                (bvadd (concat #b0 TMP_BV_16_1) #b01111111111111111))
+              #b1))
+      (a!8 (= ((_ extract 7 7)
+                (bvadd (concat #b0 TMP_BV_16_1) #b01111111111111111))
+              #b1)))
+  (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)))
+%af    : (let ((a!1 ((_ extract 4 4)
+             (bvadd (concat #b0 ((_ extract 3 0) TMP_BV_16_2)) #b01111))))
+  (= a!1 #b1))
+%zf    : (= ((_ extract 15 0) (bvadd (concat #b0 TMP_BV_16_1) #b01111111111111111))
+   #x0000)
+%sf    : (= ((_ extract 15 15) (bvadd (concat #b0 TMP_BV_16_1) #b01111111111111111)) #b1)
+%of    : (let ((a!1 (= ((_ extract 15 15)
+                (bvadd (concat #b0 TMP_BV_16_1) #b01111111111111111))
+              #b1)))
+(let ((a!2 (not (= (= ((_ extract 15 15) TMP_BV_16_3) #b1) a!1))))
+  (and (= (= ((_ extract 15 15) TMP_BV_16_3) #b1) true) a!2)))
 
 Information about memory reads:
-  Value <TMP_BV_16_0|16> (2 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_16_1|16> (2 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_16_2|16> (2 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_16_3|16> (2 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_1 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_2 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_3 (2 bytes)
+    was read at address %rax.
 
 Information about memory writes:
-  Address <%rax|64> was updated to
-    (plus (concat <0x0|1> <TMP_BV_16_1|16>) <0xffff|17>)[15:0] (2 bytes).
+  Address %rax was updated to
+    ((_ extract 15 0) (bvadd (concat #b0 TMP_BV_16_1) #b01111111111111111)) (2 bytes).
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

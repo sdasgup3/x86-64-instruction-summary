@@ -8,18 +8,115 @@ code: btq $0x0, (%rax)
   must undef:      { %pf %af %sf %of }
   required flags:  { }
 
+btq $0x0, (%rax): Hindex0(10)
+btq $0x0, (%rax): Hindex0(10)
+sarq %cl, %rbx: Hindex7(9)
+movslq %edx, %rbx: Hindex5(9)
+movq $0x0, %rbx: Hindex5(9)
+movswq %bx, %r10: Hindex5(9)
+movslq %ebx, %rbx: Hindex5(9)
+callq .move_032_016_ecx_r8w_r9w: Hindex8(9)
+callq .move_064_032_rbx_r10d_r11d: Hindex8(9)
+movq %r10, %rcx: Hindex5(9)
+callq .move_016_032_r8w_r9w_ebx: Hindex8(9)
+callq .clear_cf: Hindex8(9)
+adcl %ecx, %ebx: Hindex2(9)
+movswq %cx, %r11: Hindex5(9)
+movswq %bx, %r10: Hindex5(9)
+movslq %ebx, %rbx: Hindex5(9)
+callq .move_032_016_ecx_r8w_r9w: Hindex8(9)
+callq .move_064_032_rbx_r10d_r11d: Hindex8(9)
+movq %r10, %rcx: Hindex5(9)
+callq .move_016_032_r8w_r9w_ebx: Hindex8(9)
+callq .clear_cf: Hindex8(9)
+adcl %ecx, %ebx: Hindex2(9)
+orq %r11, %r8: Hindex1(9)
+movswq %bx, %r10: Hindex5(9)
+movslq %ebx, %rbx: Hindex5(9)
+callq .move_032_016_ecx_r8w_r9w: Hindex8(9)
+callq .move_064_032_rbx_r10d_r11d: Hindex8(9)
+movq %r10, %rcx: Hindex5(9)
+callq .move_016_032_r8w_r9w_ebx: Hindex8(9)
+callq .set_szp_for_ebx: Hindex8(9)
+callq .move_032_016_ecx_r12w_r13w: Hindex8(9)
+callq .move_016_032_r12w_r13w_ecx: Hindex8(9)
+movswq %bx, %r10: Hindex5(9)
+movslq %ebx, %rbx: Hindex5(9)
+callq .move_032_016_ecx_r8w_r9w: Hindex8(9)
+callq .move_064_032_rbx_r10d_r11d: Hindex8(9)
+movq %r10, %rcx: Hindex5(9)
+callq .move_016_032_r8w_r9w_ebx: Hindex8(9)
+xorq %rcx, %rbx: Hindex1(9)
+callq .set_szp_for_ebx: Hindex8(9)
+movswq %bx, %r10: Hindex5(9)
+movslq %ebx, %rbx: Hindex5(9)
+callq .move_032_016_ecx_r8w_r9w: Hindex8(9)
+callq .move_064_032_rbx_r10d_r11d: Hindex8(9)
+movq %r10, %rcx: Hindex5(9)
+callq .move_016_032_r8w_r9w_ebx: Hindex8(9)
+movq $0x0, %rbx: Hindex5(9)
+movswq %bx, %r10: Hindex5(9)
+movslq %ebx, %rbx: Hindex5(9)
+callq .move_032_016_ecx_r8w_r9w: Hindex8(9)
+callq .move_064_032_rbx_r10d_r11d: Hindex8(9)
+movq %r10, %rcx: Hindex5(9)
+callq .move_016_032_r8w_r9w_ebx: Hindex8(9)
+callq .clear_cf: Hindex8(9)
+adcl %ecx, %ebx: Hindex2(9)
+callq .read_sf_into_rcx: Hindex8(9)
+callq .move_032_016_ecx_r12w_r13w: Hindex8(9)
+callq .move_016_032_r12w_r13w_edx: Hindex8(9)
+callq .move_032_016_edx_r10w_r11w: Hindex8(9)
+xorq %rax, %rax: Hindex1(9)
+xorq %rax, %rax: Hindex1(9)
+adcb %al, %al: Hindex2(9)
+adcw %cx, %ax: Hindex2(9)
+popcntq %rax, %rbx: Hindex1(9)
+xorq %rax, %rax: Hindex1(9)
+adcb %al, %al: Hindex2(9)
+callq .read_zf_into_rbx: Hindex8(9)
+sarq %cl, %rbx: Hindex7(9)
+movq $0x20, %rbx: Hindex5(9)
+callq .move_016_008_cx_r12b_r13b: Hindex8(9)
+callq .move_008_016_r12b_r13b_bx: Hindex8(9)
+movq $0xffffffffffffffff, %rcx: Hindex5(9)
+movswq %bx, %r10: Hindex5(9)
+movslq %ebx, %rbx: Hindex5(9)
+callq .move_032_016_ecx_r8w_r9w: Hindex8(9)
+callq .move_064_032_rbx_r10d_r11d: Hindex8(9)
+movq %r10, %rcx: Hindex5(9)
+callq .move_016_032_r8w_r9w_ebx: Hindex8(9)
+movswq %bx, %r10: Hindex5(9)
+movslq %ebx, %rbx: Hindex5(9)
+callq .move_032_016_ecx_r8w_r9w: Hindex8(9)
+callq .move_064_032_rbx_r10d_r11d: Hindex8(9)
+movq %r10, %rcx: Hindex5(9)
+callq .move_016_032_r8w_r9w_ebx: Hindex8(9)
+callq .clear_cf: Hindex8(9)
+adcl %ecx, %ebx: Hindex2(9)
+callq .set_szp_for_rbx: Hindex8(9)
 Formula:
 
-%cf    : (or (and TRUE (== (s_shr (concat (s_shr (concat <TMP_BV_64_0|64> <0x0|1>) (concat <0x0|57> <0x0|8>))[64:1] <0x0|1>) (concat <0x0|57> <0x1|8>))[0:0] <0x1|1>)) FALSE)
-%pf    : <TMP_BOOL_16>
-%af    : <TMP_BOOL_17>
-%sf    : <TMP_BOOL_18>
-%of    : <TMP_BOOL_19>
+%cf    : (let ((a!1 (concat ((_ extract 64 1)
+                     (bvashr (concat TMP_BV_64_0 #b0)
+                             (concat #b000000000000000000000000000000000000000000000000000000000
+                                     #x00)))
+                   #b0)))
+(let ((a!2 (= ((_ extract 0 0)
+                (bvashr a!1
+                        (concat #b000000000000000000000000000000000000000000000000000000000
+                                #x01)))
+              #b1)))
+  (or (and true a!2) false)))
+%pf    : TMP_BOOL_16
+%af    : TMP_BOOL_17
+%sf    : TMP_BOOL_18
+%of    : TMP_BOOL_19
 
 Information about memory reads:
-  Value <TMP_BV_64_0|64> (8 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

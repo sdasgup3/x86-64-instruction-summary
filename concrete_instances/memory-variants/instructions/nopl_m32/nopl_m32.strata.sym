@@ -8,8 +8,10 @@ code: nopl (%rax)
   must undef:      { }
   required flags:  { nopl }
 
+nopl (%rax): Hindex0(10)
+nopl (%rax): Hindex0(10)
 Formula:
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

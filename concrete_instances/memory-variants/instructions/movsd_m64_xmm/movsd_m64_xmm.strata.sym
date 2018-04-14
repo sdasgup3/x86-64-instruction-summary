@@ -8,18 +8,24 @@ code: movsd %xmm1, (%rax)
   must undef:      { }
   required flags:  { sse2 }
 
+movsd %xmm1, (%rax): Hindex0(10)
+movsd %xmm1, (%rax): Hindex0(10)
+callq .move_128_64_xmm1_xmm8_xmm9: Hindex8(9)
+callq .move_128_032_xmm2_xmm4_xmm5_xmm6_xmm7: Hindex8(9)
+callq .move_032_128_xmm4_xmm5_xmm6_xmm7_xmm1: Hindex8(9)
+callq .move_64_128_xmm8_xmm9_xmm1: Hindex8(9)
 Formula:
 
 Information about memory reads:
-  Value <TMP_BV_64_0|64> (8 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_64_1|64> (8 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_1 (8 bytes)
+    was read at address %rax.
 
 Information about memory writes:
-  Address <%rax|64> was updated to
-    <%ymm1|256>[63:0] (8 bytes).
+  Address %rax was updated to
+    ((_ extract 63 0) %ymm1) (8 bytes).
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

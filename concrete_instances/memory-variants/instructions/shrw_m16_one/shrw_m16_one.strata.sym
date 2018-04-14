@@ -8,23 +8,60 @@ code: shrw $0x1, (%rax)
   must undef:      { %af }
   required flags:  { }
 
+shrw $0x1, (%rax): Hindex8(10)
+shrw $0x1, (%rax): Hindex8(10)
 Formula:
 
-%cf    : (or (and FALSE <TMP_BOOL_0>) (and TRUE (or (and TRUE (== (>> (concat <TMP_BV_16_0|16> <0x0|1>) <0x1|17>)[0:0] <0x1|1>)) (and FALSE <%cf>))))
-%pf    : (or (and TRUE (not (xor (xor (xor (xor (xor (xor (xor (== (>> (concat <TMP_BV_16_0|16> <0x0|1>) <0x1|17>)[1:1] <0x1|1>) (== (>> (concat <TMP_BV_16_0|16> <0x0|1>) <0x1|17>)[2:2] <0x1|1>)) (== (>> (concat <TMP_BV_16_0|16> <0x0|1>) <0x1|17>)[3:3] <0x1|1>)) (== (>> (concat <TMP_BV_16_0|16> <0x0|1>) <0x1|17>)[4:4] <0x1|1>)) (== (>> (concat <TMP_BV_16_0|16> <0x0|1>) <0x1|17>)[5:5] <0x1|1>)) (== (>> (concat <TMP_BV_16_0|16> <0x0|1>) <0x1|17>)[6:6] <0x1|1>)) (== (>> (concat <TMP_BV_16_0|16> <0x0|1>) <0x1|17>)[7:7] <0x1|1>)) (== (>> (concat <TMP_BV_16_0|16> <0x0|1>) <0x1|17>)[8:8] <0x1|1>)))) (and FALSE <%pf>))
-%af    : (or (and TRUE <TMP_BOOL_1>) (and FALSE <%af>))
-%zf    : (or (and TRUE (== (>> (concat <TMP_BV_16_0|16> <0x0|1>) <0x1|17>)[16:1] <0x0|16>)) (and FALSE <%zf>))
-%sf    : (or (and TRUE (== (>> (concat <TMP_BV_16_0|16> <0x0|1>) <0x1|17>)[16:16] <0x1|1>)) (and FALSE <%sf>))
-%of    : (or (and TRUE (== <TMP_BV_16_0|16>[15:15] <0x1|1>)) (and FALSE <%of>))
+%cf    : (let ((a!1 (= ((_ extract 0 0)
+                (bvlshr (concat TMP_BV_16_0 #b0) #b00000000000000001))
+              #b1)))
+  (or (and false TMP_BOOL_0) (and true (or (and true a!1) (and false %cf)))))
+%pf    : (let ((a!1 (= ((_ extract 1 1)
+                (bvlshr (concat TMP_BV_16_0 #b0) #b00000000000000001))
+              #b1))
+      (a!2 (= ((_ extract 2 2)
+                (bvlshr (concat TMP_BV_16_0 #b0) #b00000000000000001))
+              #b1))
+      (a!3 (= ((_ extract 3 3)
+                (bvlshr (concat TMP_BV_16_0 #b0) #b00000000000000001))
+              #b1))
+      (a!4 (= ((_ extract 4 4)
+                (bvlshr (concat TMP_BV_16_0 #b0) #b00000000000000001))
+              #b1))
+      (a!5 (= ((_ extract 5 5)
+                (bvlshr (concat TMP_BV_16_0 #b0) #b00000000000000001))
+              #b1))
+      (a!6 (= ((_ extract 6 6)
+                (bvlshr (concat TMP_BV_16_0 #b0) #b00000000000000001))
+              #b1))
+      (a!7 (= ((_ extract 7 7)
+                (bvlshr (concat TMP_BV_16_0 #b0) #b00000000000000001))
+              #b1))
+      (a!8 (= ((_ extract 8 8)
+                (bvlshr (concat TMP_BV_16_0 #b0) #b00000000000000001))
+              #b1)))
+  (or (and true (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8))) (and false %pf)))
+%af    : (or (and true TMP_BOOL_1) (and false %af))
+%zf    : (let ((a!1 (= ((_ extract 16 1)
+                (bvlshr (concat TMP_BV_16_0 #b0) #b00000000000000001))
+              #x0000)))
+  (or (and true a!1) (and false %zf)))
+%sf    : (let ((a!1 (= ((_ extract 16 16)
+                (bvlshr (concat TMP_BV_16_0 #b0) #b00000000000000001))
+              #b1)))
+  (or (and true a!1) (and false %sf)))
+%of    : (or (and true (= ((_ extract 15 15) TMP_BV_16_0) #b1)) (and false %of))
 
 Information about memory reads:
-  Value <TMP_BV_16_0|16> (2 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rax.
 
 Information about memory writes:
-  Address <%rax|64> was updated to
-    (>> (concat <TMP_BV_16_0|16> <0x0|1>) <0x1|17>)[16:1] (2 bytes).
+  Address %rax was updated to
+    ((_ extract 16 1) (bvlshr (concat TMP_BV_16_0 #b0) #b00000000000000001)) (2 bytes).
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE)) (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv
+    (and (not sigfpe) (not sigbus) false)
+    (and (not sigfpe) (not sigbus) false))

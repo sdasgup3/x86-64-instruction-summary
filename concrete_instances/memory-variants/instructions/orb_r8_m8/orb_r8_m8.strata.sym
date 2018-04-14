@@ -8,39 +8,138 @@ code: orb (%rax), %bl
   must undef:      { %af }
   required flags:  { }
 
+orb (%rax), %bl: Hindex0(10)
+orb (%rax), %bl: Hindex0(10)
+movswq %bx, %r10: Hindex5(9)
+movslq %ebx, %rbx: Hindex5(9)
+callq .move_032_016_ecx_r8w_r9w: Hindex8(9)
+callq .move_064_032_rbx_r10d_r11d: Hindex8(9)
+movq %r10, %rcx: Hindex5(9)
+callq .move_016_032_r8w_r9w_ebx: Hindex8(9)
+xorq %rcx, %rbx: Hindex1(9)
+callq .set_szp_for_ebx: Hindex8(9)
+callq .read_cf_into_rbx: Hindex8(9)
+movb %bl, %ah: Hindex5(9)
+movq $0x40, %rbx: Hindex5(9)
+movb %ah, %bl: Hindex5(9)
+adcb %dil, %bl: Hindex2(9)
+callq .set_szp_for_bl: Hindex8(9)
+movb %bl, %ah: Hindex5(9)
+movb %cl, %bh: Hindex5(9)
+movq $0x40, %rbx: Hindex5(9)
+movb %ah, %bl: Hindex5(9)
+xorq %rax, %rax: Hindex1(9)
+callq .read_cf_into_rcx: Hindex8(9)
+movb %cl, %ah: Hindex5(9)
+movswq %bx, %rdx: Hindex5(9)
+xorq %rbp, %rdx: Hindex1(9)
+movslq %edx, %rbx: Hindex5(9)
+callq .set_szp_for_bl: Hindex8(9)
+callq .set_szp_for_bl: Hindex8(9)
+movb %bl, %ch: Hindex5(9)
+movb %ch, %cl: Hindex5(9)
+movq $0x40, %rbx: Hindex5(9)
+movb %ah, %bl: Hindex5(9)
+callq .clear_cf: Hindex8(9)
+callq .set_of: Hindex8(9)
+callq .read_of_into_rbx: Hindex8(9)
+callq .move_064_032_rbx_r10d_r11d: Hindex8(9)
+movsbq %cl, %r10: Hindex5(9)
+callq .move_032_064_r10d_r11d_rbx: Hindex8(9)
+callq .set_of: Hindex8(9)
+callq .read_of_into_rbx: Hindex8(9)
+callq .move_064_032_rbx_r10d_r11d: Hindex8(9)
+movsbq %cl, %r10: Hindex5(9)
+callq .move_032_064_r10d_r11d_rbx: Hindex8(9)
+movsbq %r15b, %rcx: Hindex5(9)
+adcb %cl, %r13b: Hindex2(9)
+movslq %r13d, %rbx: Hindex5(9)
+movb %cl, %ah: Hindex5(9)
+movb %ah, %cl: Hindex5(9)
+callq .set_of: Hindex8(9)
+callq .read_of_into_rbx: Hindex8(9)
+callq .move_064_032_rbx_r10d_r11d: Hindex8(9)
+movsbq %cl, %r10: Hindex5(9)
+callq .move_032_064_r10d_r11d_rbx: Hindex8(9)
+adcb %cl, %bl: Hindex2(9)
+movb %bl, %bh: Hindex5(9)
+movswq %cx, %rdx: Hindex5(9)
+callq .move_016_008_bx_r10b_r11b: Hindex8(9)
+callq .move_016_008_cx_r8b_r9b: Hindex8(9)
+callq .move_008_016_r10b_r11b_cx: Hindex8(9)
+callq .move_008_016_r8b_r9b_bx: Hindex8(9)
+movswq %cx, %rax: Hindex5(9)
+orq %rax, %rdx: Hindex1(9)
+movslq %edx, %rbx: Hindex5(9)
+movb %bl, %ch: Hindex5(9)
+movb %ch, %cl: Hindex5(9)
+movq $0x40, %rbx: Hindex5(9)
+movb %ah, %bl: Hindex5(9)
+callq .clear_cf: Hindex8(9)
+callq .set_of: Hindex8(9)
+callq .read_of_into_rbx: Hindex8(9)
+callq .move_064_032_rbx_r10d_r11d: Hindex8(9)
+movsbq %cl, %r10: Hindex5(9)
+callq .move_032_064_r10d_r11d_rbx: Hindex8(9)
+callq .set_of: Hindex8(9)
+callq .read_of_into_rbx: Hindex8(9)
+callq .move_064_032_rbx_r10d_r11d: Hindex8(9)
+movsbq %cl, %r10: Hindex5(9)
+callq .move_032_064_r10d_r11d_rbx: Hindex8(9)
+movsbq %r15b, %rcx: Hindex5(9)
+adcb %cl, %r13b: Hindex2(9)
+movslq %r13d, %rbx: Hindex5(9)
+movb %cl, %ah: Hindex5(9)
+callq .set_szp_for_bl: Hindex8(9)
 Formula:
 
-%rbx   : (concat <%rbx|64>[63:8] (or <TMP_BV_8_0|8> <%rbx|64>[7:0]))
+%rbx   : (concat ((_ extract 63 8) %rbx) (bvor TMP_BV_8_0 ((_ extract 7 0) %rbx)))
 
-%cf    : FALSE
-%pf    : (not (xor (xor (xor (xor (xor (xor (xor (== (or <TMP_BV_8_1|8>[0:0] <%rbx|64>[0:0]) <0x1|1>) (== (or <TMP_BV_8_2|8>[1:1] <%rbx|64>[1:1]) <0x1|1>)) (== (or <TMP_BV_8_3|8>[2:2] <%rbx|64>[2:2]) <0x1|1>)) (== (or <TMP_BV_8_4|8>[3:3] <%rbx|64>[3:3]) <0x1|1>)) (== (or <TMP_BV_8_5|8>[4:4] <%rbx|64>[4:4]) <0x1|1>)) (== (or <TMP_BV_8_6|8>[5:5] <%rbx|64>[5:5]) <0x1|1>)) (== (or <TMP_BV_8_7|8>[6:6] <%rbx|64>[6:6]) <0x1|1>)) (== (or <TMP_BV_8_8|8>[7:7] <%rbx|64>[7:7]) <0x1|1>)))
-%af    : <TMP_BOOL_11>
-%zf    : (== (or <TMP_BV_8_0|8> <%rbx|64>[7:0]) <0x0|8>)
-%sf    : (== (or <TMP_BV_8_9|8>[7:7] <%rbx|64>[7:7]) <0x1|1>)
-%of    : FALSE
+%cf    : false
+%pf    : (let ((a!1 (xor (= (bvor ((_ extract 0 0) TMP_BV_8_1) ((_ extract 0 0) %rbx))
+                   #b1)
+                (= (bvor ((_ extract 1 1) TMP_BV_8_2) ((_ extract 1 1) %rbx))
+                   #b1)
+                (= (bvor ((_ extract 2 2) TMP_BV_8_3) ((_ extract 2 2) %rbx))
+                   #b1)
+                (= (bvor ((_ extract 3 3) TMP_BV_8_4) ((_ extract 3 3) %rbx))
+                   #b1)
+                (= (bvor ((_ extract 4 4) TMP_BV_8_5) ((_ extract 4 4) %rbx))
+                   #b1)
+                (= (bvor ((_ extract 5 5) TMP_BV_8_6) ((_ extract 5 5) %rbx))
+                   #b1)
+                (= (bvor ((_ extract 6 6) TMP_BV_8_7) ((_ extract 6 6) %rbx))
+                   #b1)
+                (= (bvor ((_ extract 7 7) TMP_BV_8_8) ((_ extract 7 7) %rbx))
+                   #b1))))
+  (not a!1))
+%af    : TMP_BOOL_11
+%zf    : (= (bvor TMP_BV_8_0 ((_ extract 7 0) %rbx)) #x00)
+%sf    : (= (bvor ((_ extract 7 7) TMP_BV_8_9) ((_ extract 7 7) %rbx)) #b1)
+%of    : false
 
 Information about memory reads:
-  Value <TMP_BV_8_0|8> (1 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_8_1|8> (1 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_8_2|8> (1 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_8_3|8> (1 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_8_4|8> (1 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_8_5|8> (1 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_8_6|8> (1 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_8_7|8> (1 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_8_8|8> (1 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_8_9|8> (1 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_8_0 (1 bytes)
+    was read at address %rax.
+  Value TMP_BV_8_1 (1 bytes)
+    was read at address %rax.
+  Value TMP_BV_8_2 (1 bytes)
+    was read at address %rax.
+  Value TMP_BV_8_3 (1 bytes)
+    was read at address %rax.
+  Value TMP_BV_8_4 (1 bytes)
+    was read at address %rax.
+  Value TMP_BV_8_5 (1 bytes)
+    was read at address %rax.
+  Value TMP_BV_8_6 (1 bytes)
+    was read at address %rax.
+  Value TMP_BV_8_7 (1 bytes)
+    was read at address %rax.
+  Value TMP_BV_8_8 (1 bytes)
+    was read at address %rax.
+  Value TMP_BV_8_9 (1 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

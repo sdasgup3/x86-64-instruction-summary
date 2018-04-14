@@ -8,14 +8,34 @@ code: pmaxsd (%rax), %xmm1
   must undef:      { }
   required flags:  { sse4_1 }
 
+pmaxsd (%rax), %xmm1: Hindex1(10)
+pmaxsd (%rax), %xmm1: Hindex1(10)
 Formula:
 
-%ymm1  : (concat <%ymm1|256>[255:128] (concat (if (> <%ymm1|256>[127:96] <TMP_BV_128_0|128>[127:96]) then <%ymm1|256>[127:96] else <TMP_BV_128_0|128>[127:96]) (concat (if (> <%ymm1|256>[95:64] <TMP_BV_128_0|128>[95:64]) then <%ymm1|256>[95:64] else <TMP_BV_128_0|128>[95:64]) (concat (if (> <%ymm1|256>[63:32] <TMP_BV_128_0|128>[63:32]) then <%ymm1|256>[63:32] else <TMP_BV_128_0|128>[63:32]) (if (> <%ymm1|256>[31:0] <TMP_BV_128_0|128>[31:0]) then <%ymm1|256>[31:0] else <TMP_BV_128_0|128>[31:0])))))
+%ymm1  : (let ((a!1 (concat (ite (bvsgt ((_ extract 63 32) %ymm1)
+                               ((_ extract 63 32) TMP_BV_128_0))
+                        ((_ extract 63 32) %ymm1)
+                        ((_ extract 63 32) TMP_BV_128_0))
+                   (ite (bvsgt ((_ extract 31 0) %ymm1)
+                               ((_ extract 31 0) TMP_BV_128_0))
+                        ((_ extract 31 0) %ymm1)
+                        ((_ extract 31 0) TMP_BV_128_0)))))
+(let ((a!2 (concat (ite (bvsgt ((_ extract 95 64) %ymm1)
+                               ((_ extract 95 64) TMP_BV_128_0))
+                        ((_ extract 95 64) %ymm1)
+                        ((_ extract 95 64) TMP_BV_128_0))
+                   a!1)))
+(let ((a!3 (concat (ite (bvsgt ((_ extract 127 96) %ymm1)
+                               ((_ extract 127 96) TMP_BV_128_0))
+                        ((_ extract 127 96) %ymm1)
+                        ((_ extract 127 96) TMP_BV_128_0))
+                   a!2)))
+  (concat ((_ extract 255 128) %ymm1) a!3))))
 
 Information about memory reads:
-  Value <TMP_BV_128_0|128> (16 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

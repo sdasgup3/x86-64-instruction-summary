@@ -8,10 +8,22 @@ code: vcvttpd2dq (%rax), %xmm1
   must undef:      { }
   required flags:  { avx }
 
+Base Instruction!!
+vcvttpd2dq (%rax), %xmm1: Hindex0(10)
+Base Instruction!!
+vcvttpd2dq (%rax), %xmm1: Hindex0(10)
+vcvttpd2dq %ymm1, %xmm1: Hindex1(9)
 Formula:
 
-%ymm1  : (concat <0x0|128> (concat cvt_double_to_int32_truncate(<%ymm1|256>[255:192]) (concat cvt_double_to_int32_truncate(<%ymm1|256>[191:128]) (concat cvt_double_to_int32_truncate(<%ymm1|256>[127:64]) cvt_double_to_int32_truncate(<%ymm1|256>[63:0])))))
+%ymm1  : (let ((a!1 (concat (cvt_double_to_int32_truncate ((_ extract 191 128) %ymm1))
+                   (concat (cvt_double_to_int32_truncate
+                             ((_ extract 127 64) %ymm1))
+                           (cvt_double_to_int32_truncate
+                             ((_ extract 63 0) %ymm1))))))
+  (concat #x00000000000000000000000000000000
+          (concat (cvt_double_to_int32_truncate ((_ extract 255 192) %ymm1))
+                  a!1)))
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

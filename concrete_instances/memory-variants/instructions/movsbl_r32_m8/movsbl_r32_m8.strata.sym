@@ -8,14 +8,21 @@ code: movsbl (%rax), %ebx
   must undef:      { }
   required flags:  { }
 
+movsbl (%rax), %ebx: Hindex0(10)
+movsbl (%rax), %ebx: Hindex0(10)
+callq .set_of: Hindex8(9)
+callq .read_of_into_rbx: Hindex8(9)
+callq .move_064_032_rbx_r10d_r11d: Hindex8(9)
+movsbq %cl, %r10: Hindex5(9)
+callq .move_032_064_r10d_r11d_rbx: Hindex8(9)
 Formula:
 
-%rbx   : (concat <0x0|32> (sign-extend-64 <TMP_BV_8_0|8>)[31:0])
+%rbx   : (concat #x00000000 ((_ extract 31 0) ((_ sign_extend 56) TMP_BV_8_0)))
 
 Information about memory reads:
-  Value <TMP_BV_8_0|8> (1 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_8_0 (1 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

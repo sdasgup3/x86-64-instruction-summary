@@ -8,14 +8,24 @@ code: pinsrb $0x0, (%rax), %xmm1
   must undef:      { }
   required flags:  { sse4_1 }
 
+pinsrb $0x0, (%rax), %xmm1: Hindex2(10)
+pinsrb $0x0, (%rax), %xmm1: Hindex2(10)
 Formula:
 
-%ymm1  : (concat <%ymm1|256>[255:128] (or (and <%ymm1|256>[127:0] !(<< <0xff|128> <0x0|128>)) (and (<< (concat <0x0|120> <TMP_BV_8_0|8>) <0x0|128>) (<< <0xff|128> <0x0|128>))))
+%ymm1  : (let ((a!1 (bvor (bvand ((_ extract 127 0) %ymm1)
+                        (bvnot (bvshl #x000000000000000000000000000000ff
+                                      #x00000000000000000000000000000000)))
+                 (bvand (bvshl (concat #x000000000000000000000000000000
+                                       TMP_BV_8_0)
+                               #x00000000000000000000000000000000)
+                        (bvshl #x000000000000000000000000000000ff
+                               #x00000000000000000000000000000000)))))
+  (concat ((_ extract 255 128) %ymm1) a!1))
 
 Information about memory reads:
-  Value <TMP_BV_8_0|8> (1 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_8_0 (1 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

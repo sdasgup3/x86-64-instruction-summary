@@ -8,14 +8,33 @@ code: minss (%rax), %xmm1
   must undef:      { }
   required flags:  { sse }
 
+minss (%rax), %xmm1: Hindex0(10)
+minss (%rax), %xmm1: Hindex0(10)
+callq .move_128_032_xmm1_xmm8_xmm9_xmm10_xmm11: Hindex8(9)
+callq .move_128_032_xmm2_xmm4_xmm5_xmm6_xmm7: Hindex8(9)
+callq .move_128_064_xmm2_r12_r13: Hindex8(9)
+vzeroall : Hindex1(9)
+callq .move_064_128_r12_r13_xmm1: Hindex8(9)
+callq .move_128_064_xmm2_r10_r11: Hindex8(9)
+vzeroall : Hindex1(9)
+callq .move_064_128_r10_r11_xmm3: Hindex8(9)
+callq .move_256_128_ymm3_xmm12_xmm13: Hindex8(9)
+callq .move_128_256_xmm12_xmm13_ymm1: Hindex8(9)
+vminps %ymm1, %ymm14, %ymm1: Hindex0(9)
+callq .move_128_032_xmm2_xmm8_xmm9_xmm10_xmm11: Hindex8(9)
+callq .move_032_128_xmm8_xmm9_xmm10_xmm11_xmm1: Hindex8(9)
+callq .move_032_128_xmm8_xmm9_xmm10_xmm11_xmm1: Hindex8(9)
 Formula:
 
-%ymm1  : (concat <%ymm1|256>[255:128] (concat <%ymm1|256>[127:32] (if (== mincmp_single(<%ymm1|256>[31:0], <TMP_BV_32_0|32>) <0x1|1>) then <%ymm1|256>[31:0] else <TMP_BV_32_0|32>)))
+%ymm1  : (let ((a!1 (ite (= (mincmp_single ((_ extract 31 0) %ymm1) TMP_BV_32_0) #b1)
+                ((_ extract 31 0) %ymm1)
+                TMP_BV_32_0)))
+  (concat ((_ extract 255 128) %ymm1) (concat ((_ extract 127 32) %ymm1) a!1)))
 
 Information about memory reads:
-  Value <TMP_BV_32_0|32> (4 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

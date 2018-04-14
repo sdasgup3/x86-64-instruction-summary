@@ -8,14 +8,20 @@ code: vpmuldq (%rax), %xmm2, %xmm1
   must undef:      { }
   required flags:  { avx }
 
+vpmuldq (%rax), %xmm2, %xmm1: Hindex1(10)
+vpmuldq (%rax), %xmm2, %xmm1: Hindex1(10)
 Formula:
 
-%ymm1  : (concat <0x0|128> (concat (mult (sign-extend-64 <%ymm2|256>[95:64]) (sign-extend-64 <TMP_BV_128_0|128>[95:64])) (mult (sign-extend-64 <%ymm2|256>[31:0]) (sign-extend-64 <TMP_BV_128_0|128>[31:0]))))
+%ymm1  : (let ((a!1 (concat (bvmul ((_ sign_extend 32) ((_ extract 95 64) %ymm2))
+                          ((_ sign_extend 32) ((_ extract 95 64) TMP_BV_128_0)))
+                   (bvmul ((_ sign_extend 32) ((_ extract 31 0) %ymm2))
+                          ((_ sign_extend 32) ((_ extract 31 0) TMP_BV_128_0))))))
+  (concat #x00000000000000000000000000000000 a!1))
 
 Information about memory reads:
-  Value <TMP_BV_128_0|128> (16 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

@@ -8,21 +8,25 @@ code: blsiq (%rax), %rbx
   must undef:      { %pf %af }
   required flags:  { bmi1 }
 
+blsiq (%rax), %rbx: Hindex2(10)
+blsiq (%rax), %rbx: Hindex2(10)
 Formula:
 
-%rbx   : (and -<TMP_BV_64_0|64> <TMP_BV_64_0|64>)
+%rbx   : (bvand (bvneg TMP_BV_64_0) TMP_BV_64_0)
 
-%cf    : (not (== <TMP_BV_64_0|64> <0x0|64>))
-%pf    : <TMP_BOOL_0>
-%af    : <TMP_BOOL_1>
-%zf    : (== (and -<TMP_BV_64_0|64> <TMP_BV_64_0|64>) <0x0|64>)
-%sf    : (== (and -<TMP_BV_64_0|64>[63:63] <TMP_BV_64_0|64>[63:63]) <0x1|1>)
-%of    : FALSE
+%cf    : (not (= TMP_BV_64_0 #x0000000000000000))
+%pf    : TMP_BOOL_0
+%af    : TMP_BOOL_1
+%zf    : (= (bvand (bvneg TMP_BV_64_0) TMP_BV_64_0) #x0000000000000000)
+%sf    : (= (bvand ((_ extract 63 63) (bvneg TMP_BV_64_0))
+          ((_ extract 63 63) TMP_BV_64_0))
+   #b1)
+%of    : false
 
 Information about memory reads:
-  Value <TMP_BV_64_0|64> (8 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

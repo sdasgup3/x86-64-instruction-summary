@@ -8,16 +8,26 @@ code: vpmovzxwq (%rax), %xmm1
   must undef:      { }
   required flags:  { avx }
 
+vpmovzxwq (%rax), %xmm1: Hindex0(10)
+vpmovzxwq (%rax), %xmm1: Hindex0(10)
+callq .move_128_064_xmm2_r12_r13: Hindex8(9)
+vzeroall : Hindex1(9)
+callq .move_128_064_xmm2_r10_r11: Hindex8(9)
+callq .move_032_064_r12d_r13d_rdx: Hindex8(9)
+callq .move_032_016_edx_r10w_r11w: Hindex8(9)
+callq .move_064_128_r10_r11_xmm1: Hindex8(9)
 Formula:
 
-%ymm1  : (concat <0x0|128> (concat (concat <0x0|48> <TMP_BV_32_0|32>[31:16]) (concat <0x0|48> <TMP_BV_32_1|32>[15:0])))
+%ymm1  : (concat #x00000000000000000000000000000000
+        (concat (concat #x000000000000 ((_ extract 31 16) TMP_BV_32_0))
+                (concat #x000000000000 ((_ extract 15 0) TMP_BV_32_1))))
 
 Information about memory reads:
-  Value <TMP_BV_32_0|32> (4 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_32_1|32> (4 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_1 (4 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

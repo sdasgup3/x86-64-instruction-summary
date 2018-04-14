@@ -8,25 +8,83 @@ code: addw (%rax), %bx
   must undef:      { }
   required flags:  { }
 
+addw (%rax), %bx: Hindex0(10)
+addw (%rax), %bx: Hindex0(10)
+xorq %rax, %rax: Hindex1(9)
+adcb %al, %al: Hindex2(9)
+adcw %cx, %bx: Hindex2(9)
+callq .set_szp_for_bx: Hindex8(9)
 Formula:
 
-%rbx   : (concat <%rbx|64>[63:16] (plus (concat <0x0|1> <TMP_BV_16_0|16>) (concat <0x0|1> <%rbx|64>[15:0]))[15:0])
+%rbx   : (let ((a!1 ((_ extract 15 0)
+             (bvadd (concat #b0 TMP_BV_16_0)
+                    (concat #b0 ((_ extract 15 0) %rbx))))))
+  (concat ((_ extract 63 16) %rbx) a!1))
 
-%cf    : (== (plus (concat <0x0|1> <TMP_BV_16_0|16>) (concat <0x0|1> <%rbx|64>[15:0]))[16:16] <0x1|1>)
-%pf    : (not (xor (xor (xor (xor (xor (xor (xor (== (plus (concat <0x0|1> <TMP_BV_16_0|16>) (concat <0x0|1> <%rbx|64>[15:0]))[0:0] <0x1|1>) (== (plus (concat <0x0|1> <TMP_BV_16_0|16>) (concat <0x0|1> <%rbx|64>[15:0]))[1:1] <0x1|1>)) (== (plus (concat <0x0|1> <TMP_BV_16_0|16>) (concat <0x0|1> <%rbx|64>[15:0]))[2:2] <0x1|1>)) (== (plus (concat <0x0|1> <TMP_BV_16_0|16>) (concat <0x0|1> <%rbx|64>[15:0]))[3:3] <0x1|1>)) (== (plus (concat <0x0|1> <TMP_BV_16_0|16>) (concat <0x0|1> <%rbx|64>[15:0]))[4:4] <0x1|1>)) (== (plus (concat <0x0|1> <TMP_BV_16_0|16>) (concat <0x0|1> <%rbx|64>[15:0]))[5:5] <0x1|1>)) (== (plus (concat <0x0|1> <TMP_BV_16_0|16>) (concat <0x0|1> <%rbx|64>[15:0]))[6:6] <0x1|1>)) (== (plus (concat <0x0|1> <TMP_BV_16_0|16>) (concat <0x0|1> <%rbx|64>[15:0]))[7:7] <0x1|1>)))
-%af    : (== (plus (concat <0x0|1> <TMP_BV_16_1|16>[3:0]) (concat <0x0|1> <%rbx|64>[3:0]))[4:4] <0x1|1>)
-%zf    : (== (plus (concat <0x0|1> <TMP_BV_16_0|16>) (concat <0x0|1> <%rbx|64>[15:0]))[15:0] <0x0|16>)
-%sf    : (== (plus (concat <0x0|1> <TMP_BV_16_0|16>) (concat <0x0|1> <%rbx|64>[15:0]))[15:15] <0x1|1>)
-%of    : (and (== (== <TMP_BV_16_2|16>[15:15] <0x1|1>) (== <%rbx|64>[15:15] <0x1|1>)) (not (== (== <TMP_BV_16_2|16>[15:15] <0x1|1>) (== (plus (concat <0x0|1> <TMP_BV_16_0|16>) (concat <0x0|1> <%rbx|64>[15:0]))[15:15] <0x1|1>))))
+%cf    : (let ((a!1 ((_ extract 16 16)
+             (bvadd (concat #b0 TMP_BV_16_0)
+                    (concat #b0 ((_ extract 15 0) %rbx))))))
+  (= a!1 #b1))
+%pf    : (let ((a!1 ((_ extract 0 0)
+             (bvadd (concat #b0 TMP_BV_16_0)
+                    (concat #b0 ((_ extract 15 0) %rbx)))))
+      (a!2 ((_ extract 1 1)
+             (bvadd (concat #b0 TMP_BV_16_0)
+                    (concat #b0 ((_ extract 15 0) %rbx)))))
+      (a!3 ((_ extract 2 2)
+             (bvadd (concat #b0 TMP_BV_16_0)
+                    (concat #b0 ((_ extract 15 0) %rbx)))))
+      (a!4 ((_ extract 3 3)
+             (bvadd (concat #b0 TMP_BV_16_0)
+                    (concat #b0 ((_ extract 15 0) %rbx)))))
+      (a!5 ((_ extract 4 4)
+             (bvadd (concat #b0 TMP_BV_16_0)
+                    (concat #b0 ((_ extract 15 0) %rbx)))))
+      (a!6 ((_ extract 5 5)
+             (bvadd (concat #b0 TMP_BV_16_0)
+                    (concat #b0 ((_ extract 15 0) %rbx)))))
+      (a!7 ((_ extract 6 6)
+             (bvadd (concat #b0 TMP_BV_16_0)
+                    (concat #b0 ((_ extract 15 0) %rbx)))))
+      (a!8 ((_ extract 7 7)
+             (bvadd (concat #b0 TMP_BV_16_0)
+                    (concat #b0 ((_ extract 15 0) %rbx))))))
+  (not (xor (= a!1 #b1)
+            (= a!2 #b1)
+            (= a!3 #b1)
+            (= a!4 #b1)
+            (= a!5 #b1)
+            (= a!6 #b1)
+            (= a!7 #b1)
+            (= a!8 #b1))))
+%af    : (let ((a!1 ((_ extract 4 4)
+             (bvadd (concat #b0 ((_ extract 3 0) TMP_BV_16_1))
+                    (concat #b0 ((_ extract 3 0) %rbx))))))
+  (= a!1 #b1))
+%zf    : (let ((a!1 ((_ extract 15 0)
+             (bvadd (concat #b0 TMP_BV_16_0)
+                    (concat #b0 ((_ extract 15 0) %rbx))))))
+  (= a!1 #x0000))
+%sf    : (let ((a!1 ((_ extract 15 15)
+             (bvadd (concat #b0 TMP_BV_16_0)
+                    (concat #b0 ((_ extract 15 0) %rbx))))))
+  (= a!1 #b1))
+%of    : (let ((a!1 ((_ extract 15 15)
+             (bvadd (concat #b0 TMP_BV_16_0)
+                    (concat #b0 ((_ extract 15 0) %rbx))))))
+(let ((a!2 (not (= (= ((_ extract 15 15) TMP_BV_16_2) #b1) (= a!1 #b1)))))
+  (and (= (= ((_ extract 15 15) TMP_BV_16_2) #b1)
+          (= ((_ extract 15 15) %rbx) #b1))
+       a!2)))
 
 Information about memory reads:
-  Value <TMP_BV_16_0|16> (2 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_16_1|16> (2 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_16_2|16> (2 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_1 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_2 (2 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

@@ -8,14 +8,78 @@ code: vfmadd132ss (%rax), %xmm2, %xmm1
   must undef:      { }
   required flags:  { fma }
 
+vfmadd132ss (%rax), %xmm2, %xmm1: Hindex0(10)
+vfmadd132ss (%rax), %xmm2, %xmm1: Hindex0(10)
+callq .move_128_064_xmm2_r8_r9: Hindex8(9)
+vzeroall : Hindex1(9)
+callq .move_064_128_r8_r9_xmm1: Hindex8(9)
+callq .move_128_064_xmm2_r10_r11: Hindex8(9)
+vzeroall : Hindex1(9)
+callq .move_064_128_r10_r11_xmm3: Hindex8(9)
+callq .move_256_128_ymm3_xmm12_xmm13: Hindex8(9)
+callq .move_128_256_xmm12_xmm13_ymm1: Hindex8(9)
+callq .move_128_064_xmm2_r12_r13: Hindex8(9)
+vzeroall : Hindex1(9)
+callq .move_064_128_r12_r13_xmm1: Hindex8(9)
+vfmadd132ps %ymm1, %ymm3, %ymm2: Hindex1(9)
+vmaxpd %ymm2, %ymm2, %ymm1: Hindex0(9)
+callq .move_128_064_xmm2_r12_r13: Hindex8(9)
+vzeroall : Hindex1(9)
+callq .move_064_128_r12_r13_xmm1: Hindex8(9)
+vrcpps %ymm1, %ymm10: Hindex0(9)
+callq .move_128_256_xmm10_xmm11_ymm1: Hindex8(9)
+callq .move_128_032_xmm2_xmm8_xmm9_xmm10_xmm11: Hindex8(9)
+callq .move_128_064_xmm2_r10_r11: Hindex8(9)
+vzeroall : Hindex1(9)
+callq .move_064_128_r10_r11_xmm3: Hindex8(9)
+callq .move_256_128_ymm3_xmm12_xmm13: Hindex8(9)
+callq .move_128_256_xmm12_xmm13_ymm1: Hindex8(9)
+callq .move_032_128_xmm8_xmm9_xmm10_xmm11_xmm1: Hindex8(9)
+callq .move_128_032_xmm1_xmm8_xmm9_xmm10_xmm11: Hindex8(9)
+callq .move_128_064_xmm2_r8_r9: Hindex8(9)
+vzeroall : Hindex1(9)
+callq .move_byte_5_of_ymm1_to_r9b: Hindex8(9)
+callq .move_064_128_r8_r9_xmm2: Hindex8(9)
+callq .move_128_032_xmm2_xmm8_xmm9_xmm10_xmm11: Hindex8(9)
+callq .move_64_128_xmm8_xmm9_xmm1: Hindex8(9)
+callq .move_032_128_xmm8_xmm9_xmm10_xmm11_xmm1: Hindex8(9)
+callq .move_128_064_xmm1_r8_r9: Hindex8(9)
+vzeroall : Hindex1(9)
+callq .move_064_128_r8_r9_xmm1: Hindex8(9)
+callq .move_128_064_xmm1_r12_r13: Hindex8(9)
+callq .move_128_064_xmm2_r12_r13: Hindex8(9)
+vzeroall : Hindex1(9)
+callq .move_064_128_r12_r13_xmm1: Hindex8(9)
+vrcpps %ymm1, %ymm10: Hindex0(9)
+callq .move_128_256_xmm10_xmm11_ymm1: Hindex8(9)
+callq .move_128_032_xmm2_xmm8_xmm9_xmm10_xmm11: Hindex8(9)
+callq .move_128_064_xmm2_r10_r11: Hindex8(9)
+vzeroall : Hindex1(9)
+callq .move_064_128_r10_r11_xmm3: Hindex8(9)
+callq .move_256_128_ymm3_xmm12_xmm13: Hindex8(9)
+callq .move_128_256_xmm12_xmm13_ymm1: Hindex8(9)
+callq .move_032_128_xmm8_xmm9_xmm10_xmm11_xmm1: Hindex8(9)
+callq .move_064_128_r12_r13_xmm1: Hindex8(9)
+callq .move_128_032_xmm1_xmm8_xmm9_xmm10_xmm11: Hindex8(9)
+callq .move_128_064_xmm2_r8_r9: Hindex8(9)
+vzeroall : Hindex1(9)
+callq .move_byte_5_of_ymm1_to_r9b: Hindex8(9)
+callq .move_064_128_r8_r9_xmm2: Hindex8(9)
+callq .move_128_032_xmm2_xmm8_xmm9_xmm10_xmm11: Hindex8(9)
+callq .move_64_128_xmm8_xmm9_xmm1: Hindex8(9)
+callq .move_032_128_xmm8_xmm9_xmm10_xmm11_xmm1: Hindex8(9)
 Formula:
 
-%ymm1  : (concat <0x0|128> (concat <%ymm1|256>[127:32] vfmadd132_single(<%ymm1|256>[31:0], <%ymm2|256>[31:0], <TMP_BV_32_0|32>)))
+%ymm1  : (concat #x00000000000000000000000000000000
+        (concat ((_ extract 127 32) %ymm1)
+                (vfmadd132_single ((_ extract 31 0) %ymm1)
+                                  ((_ extract 31 0) %ymm2)
+                                  TMP_BV_32_0)))
 
 Information about memory reads:
-  Value <TMP_BV_32_0|32> (4 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

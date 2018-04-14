@@ -8,19 +8,33 @@ code: rorq $0x1, (%rax)
   must undef:      { }
   required flags:  { }
 
+rorq $0x1, (%rax): Hindex8(10)
+rorq $0x1, (%rax): Hindex8(10)
 Formula:
 
-%cf    : (or (and TRUE (== (ror <TMP_BV_64_0|64> <0x1|64>)[63:63] <0x1|1>)) (and FALSE <%cf>))
-%of    : (or (and TRUE (xor (== (ror <TMP_BV_64_0|64> <0x1|64>)[63:63] <0x1|1>) (== (ror <TMP_BV_64_0|64> <0x1|64>)[62:62] <0x1|1>))) (and FALSE <TMP_BOOL_0>))
+%cf    : (let ((a!1 (and true
+                (= ((_ extract 63 63)
+                     (ext_rotate_right TMP_BV_64_0 #x0000000000000001))
+                   #b1))))
+  (or a!1 (and false %cf)))
+%of    : (let ((a!1 (xor (= ((_ extract 63 63)
+                     (ext_rotate_right TMP_BV_64_0 #x0000000000000001))
+                   #b1)
+                (= ((_ extract 62 62)
+                     (ext_rotate_right TMP_BV_64_0 #x0000000000000001))
+                   #b1))))
+  (or (and true a!1) (and false TMP_BOOL_0)))
 
 Information about memory reads:
-  Value <TMP_BV_64_0|64> (8 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
 
 Information about memory writes:
-  Address <%rax|64> was updated to
-    (ror <TMP_BV_64_0|64> <0x1|64>) (8 bytes).
+  Address %rax was updated to
+    (ext_rotate_right TMP_BV_64_0 #x0000000000000001) (8 bytes).
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE)) (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv
+    (and (not sigfpe) (not sigbus) false)
+    (and (not sigfpe) (not sigbus) false))

@@ -8,14 +8,19 @@ code: cvtpi2ps (%rax), %xmm1
   must undef:      { }
   required flags:  { }
 
+cvtpi2ps (%rax), %xmm1: Hindex1(10)
+cvtpi2ps (%rax), %xmm1: Hindex1(10)
 Formula:
 
-%ymm1  : (concat <%ymm1|256>[255:128] (concat <%ymm1|256>[127:64] (concat cvt_int32_to_single(<TMP_BV_64_0|64>[63:32]) cvt_int32_to_single(<TMP_BV_64_0|64>[31:0]))))
+%ymm1  : (let ((a!1 (concat ((_ extract 127 64) %ymm1)
+                   (concat (cvt_int32_to_single ((_ extract 63 32) TMP_BV_64_0))
+                           (cvt_int32_to_single ((_ extract 31 0) TMP_BV_64_0))))))
+  (concat ((_ extract 255 128) %ymm1) a!1))
 
 Information about memory reads:
-  Value <TMP_BV_64_0|64> (8 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

@@ -8,16 +8,35 @@ code: vcvtps2ph $0x0, %ymm1, (%rax)
   must undef:      { }
   required flags:  { f16c }
 
+vcvtps2ph $0x0, %ymm1, (%rax): Hindex2(10)
+vcvtps2ph $0x0, %ymm1, (%rax): Hindex2(10)
 Formula:
 
 Information about memory reads:
-  Value <TMP_BV_128_0|128> (16 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rax.
 
 Information about memory writes:
-  Address <%rax|64> was updated to
-    (concat cvt_single_to_fp16_rm(<%ymm1|256>[255:224], <0x0|8>) (concat cvt_single_to_fp16_rm(<%ymm1|256>[223:192], <0x0|8>) (concat cvt_single_to_fp16_rm(<%ymm1|256>[191:160], <0x0|8>) (concat cvt_single_to_fp16_rm(<%ymm1|256>[159:128], <0x0|8>) (concat cvt_single_to_fp16_rm(<%ymm1|256>[127:96], <0x0|8>) (concat cvt_single_to_fp16_rm(<%ymm1|256>[95:64], <0x0|8>) (concat cvt_single_to_fp16_rm(<%ymm1|256>[63:32], <0x0|8>) cvt_single_to_fp16_rm(<%ymm1|256>[31:0], <0x0|8>)))))))) (16 bytes).
+  Address %rax was updated to
+    (let ((a!1 (concat (cvt_single_to_fp16_rm ((_ extract 95 64) %ymm1) #x00)
+                   (concat (cvt_single_to_fp16_rm
+                             ((_ extract 63 32) %ymm1)
+                             #x00)
+                           (cvt_single_to_fp16_rm ((_ extract 31 0) %ymm1) #x00)))))
+(let ((a!2 (concat (cvt_single_to_fp16_rm ((_ extract 159 128) %ymm1) #x00)
+                   (concat (cvt_single_to_fp16_rm
+                             ((_ extract 127 96) %ymm1)
+                             #x00)
+                           a!1))))
+(let ((a!3 (concat (cvt_single_to_fp16_rm ((_ extract 223 192) %ymm1) #x00)
+                   (concat (cvt_single_to_fp16_rm
+                             ((_ extract 191 160) %ymm1)
+                             #x00)
+                           a!2))))
+  (concat (cvt_single_to_fp16_rm ((_ extract 255 224) %ymm1) #x00) a!3)))) (16 bytes).
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE)) (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv
+    (and (not sigfpe) (not sigbus) false)
+    (and (not sigfpe) (not sigbus) false))

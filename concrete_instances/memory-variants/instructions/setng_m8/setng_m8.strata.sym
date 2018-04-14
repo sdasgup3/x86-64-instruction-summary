@@ -8,16 +8,61 @@ code: setng (%rax)
   must undef:      { }
   required flags:  { }
 
+setng (%rax): Hindex0(10)
+setng (%rax): Hindex0(10)
+callq .read_sf_into_rbx: Hindex8(9)
+callq .read_zf_into_rbx: Hindex8(9)
+callq .read_of_into_rcx: Hindex8(9)
+callq .read_sf_into_rbx: Hindex8(9)
+callq .move_016_008_cx_r8b_r9b: Hindex8(9)
+movswq %bx, %r12: Hindex5(9)
+callq .move_008_016_r8b_r9b_bx: Hindex8(9)
+callq .set_szp_for_bx: Hindex8(9)
+callq .read_sf_into_rbx: Hindex8(9)
+callq .move_008_016_r8b_r9b_bx: Hindex8(9)
+xorq %rbx, %r12: Hindex1(9)
+movswq %r12w, %rbx: Hindex5(9)
+callq .set_szp_for_bx: Hindex8(9)
+movslq %ecx, %rdx: Hindex5(9)
+movb %dl, %ah: Hindex5(9)
+callq .set_szp_for_bx: Hindex8(9)
+callq .set_cf: Hindex8(9)
+callq .read_cf_into_rbx: Hindex8(9)
+movb %bl, %ah: Hindex5(9)
+callq .read_cf_into_rcx: Hindex8(9)
+cmoveq %rcx, %rax: Hindex3(9)
+movb %bl, %ch: Hindex5(9)
+movb %ch, %cl: Hindex5(9)
+movq $0x40, %rbx: Hindex5(9)
+movb %ah, %bl: Hindex5(9)
+callq .clear_cf: Hindex8(9)
+callq .set_of: Hindex8(9)
+callq .read_of_into_rbx: Hindex8(9)
+callq .move_064_032_rbx_r10d_r11d: Hindex8(9)
+movsbq %cl, %r10: Hindex5(9)
+callq .move_032_064_r10d_r11d_rbx: Hindex8(9)
+callq .set_of: Hindex8(9)
+callq .read_of_into_rbx: Hindex8(9)
+callq .move_064_032_rbx_r10d_r11d: Hindex8(9)
+movsbq %cl, %r10: Hindex5(9)
+callq .move_032_064_r10d_r11d_rbx: Hindex8(9)
+movsbq %r15b, %rcx: Hindex5(9)
+adcb %cl, %r13b: Hindex2(9)
+movslq %r13d, %rbx: Hindex5(9)
+movb %cl, %ah: Hindex5(9)
 Formula:
 
 Information about memory reads:
-  Value <TMP_BV_8_0|8> (1 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_8_0 (1 bytes)
+    was read at address %rax.
 
 Information about memory writes:
-  Address <%rax|64> was updated to
-    (if (== (concat (xor (if <%of> then <0x1|8> else <0x0|8>) (if <%sf> then <0x1|8> else <0x0|8>)) (if <%zf> then <0x1|8> else <0x0|8>)) <0x0|16>) then <0x0|8> else <0x1|8>) (1 bytes).
+  Address %rax was updated to
+    (let ((a!1 (= (concat (bvxor (ite %of #x01 #x00) (ite %sf #x01 #x00))
+                      (ite %zf #x01 #x00))
+              #x0000)))
+  (ite a!1 #x00 #x01)) (1 bytes).
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

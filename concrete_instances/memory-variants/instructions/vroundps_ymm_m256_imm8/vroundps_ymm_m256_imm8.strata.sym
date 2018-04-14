@@ -8,14 +8,39 @@ code: vroundps $0x0, (%rax), %ymm1
   must undef:      { }
   required flags:  { avx }
 
+vroundps $0x0, (%rax), %ymm1: Hindex1(10)
+vroundps $0x0, (%rax), %ymm1: Hindex1(10)
 Formula:
 
-%ymm1  : (concat cvt_single_to_int32_rm(<TMP_BV_256_0|256>[255:224], <0x0|8>) (concat cvt_single_to_int32_rm(<TMP_BV_256_0|256>[223:192], <0x0|8>) (concat cvt_single_to_int32_rm(<TMP_BV_256_0|256>[191:160], <0x0|8>) (concat cvt_single_to_int32_rm(<TMP_BV_256_0|256>[159:128], <0x0|8>) (concat cvt_single_to_int32_rm(<TMP_BV_256_0|256>[127:96], <0x0|8>) (concat cvt_single_to_int32_rm(<TMP_BV_256_0|256>[95:64], <0x0|8>) (concat cvt_single_to_int32_rm(<TMP_BV_256_0|256>[63:32], <0x0|8>) cvt_single_to_int32_rm(<TMP_BV_256_0|256>[31:0], <0x0|8>))))))))
+%ymm1  : (let ((a!1 (concat (cvt_single_to_int32_rm
+                     ((_ extract 95 64) TMP_BV_256_0)
+                     #x00)
+                   (concat (cvt_single_to_int32_rm
+                             ((_ extract 63 32) TMP_BV_256_0)
+                             #x00)
+                           (cvt_single_to_int32_rm
+                             ((_ extract 31 0) TMP_BV_256_0)
+                             #x00)))))
+(let ((a!2 (concat (cvt_single_to_int32_rm
+                     ((_ extract 159 128) TMP_BV_256_0)
+                     #x00)
+                   (concat (cvt_single_to_int32_rm
+                             ((_ extract 127 96) TMP_BV_256_0)
+                             #x00)
+                           a!1))))
+(let ((a!3 (concat (cvt_single_to_int32_rm
+                     ((_ extract 223 192) TMP_BV_256_0)
+                     #x00)
+                   (concat (cvt_single_to_int32_rm
+                             ((_ extract 191 160) TMP_BV_256_0)
+                             #x00)
+                           a!2))))
+  (concat (cvt_single_to_int32_rm ((_ extract 255 224) TMP_BV_256_0) #x00) a!3))))
 
 Information about memory reads:
-  Value <TMP_BV_256_0|256> (32 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

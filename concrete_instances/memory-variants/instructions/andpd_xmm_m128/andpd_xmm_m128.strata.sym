@@ -8,20 +8,83 @@ code: andpd (%rax), %xmm1
   must undef:      { }
   required flags:  { sse2 }
 
+andpd (%rax), %xmm1: Hindex0(10)
+andpd (%rax), %xmm1: Hindex0(10)
+callq .move_128_064_xmm2_r8_r9: Hindex8(9)
+vzeroall : Hindex1(9)
+callq .move_064_128_r8_r9_xmm1: Hindex8(9)
+callq .move_128_032_xmm1_xmm4_xmm5_xmm6_xmm7: Hindex8(9)
+callq .move_128_064_xmm2_r12_r13: Hindex8(9)
+vzeroall : Hindex1(9)
+callq .move_064_128_r12_r13_xmm1: Hindex8(9)
+callq .move_128_064_xmm2_r12_r13: Hindex8(9)
+vzeroall : Hindex1(9)
+callq .move_064_128_r12_r13_xmm1: Hindex8(9)
+vmaxps %ymm3, %ymm11, %ymm1: Hindex0(9)
+callq .move_128_032_xmm1_xmm8_xmm9_xmm10_xmm11: Hindex8(9)
+callq .move_128_064_xmm2_r8_r9: Hindex8(9)
+vzeroall : Hindex1(9)
+callq .move_byte_5_of_ymm1_to_r9b: Hindex8(9)
+callq .move_064_128_r8_r9_xmm2: Hindex8(9)
+callq .move_128_032_xmm2_xmm8_xmm9_xmm10_xmm11: Hindex8(9)
+callq .move_64_128_xmm8_xmm9_xmm1: Hindex8(9)
+callq .move_032_128_xmm8_xmm9_xmm10_xmm11_xmm1: Hindex8(9)
+callq .move_128_064_xmm2_r12_r13: Hindex8(9)
+callq .move_128_064_xmm2_r12_r13: Hindex8(9)
+vzeroall : Hindex1(9)
+callq .move_064_128_r12_r13_xmm1: Hindex8(9)
+callq .move_128_064_xmm1_r8_r9: Hindex8(9)
+xorq %r8, %r12: Hindex1(9)
+xorq %r9, %r13: Hindex1(9)
+callq .move_064_128_r12_r13_xmm1: Hindex8(9)
+callq .move_128_064_xmm2_r8_r9: Hindex8(9)
+vzeroall : Hindex1(9)
+callq .move_064_128_r8_r9_xmm1: Hindex8(9)
+callq .move_128_064_xmm3_r10_r11: Hindex8(9)
+callq .move_128_064_xmm2_r8_r9: Hindex8(9)
+vzeroall : Hindex1(9)
+orq %r9, %r11: Hindex1(9)
+orq %r8, %r10: Hindex1(9)
+callq .move_064_128_r10_r11_xmm1: Hindex8(9)
+callq .move_128_064_xmm2_r8_r9: Hindex8(9)
+callq .move_064_128_r8_r9_xmm1: Hindex8(9)
+callq .move_128_064_xmm3_r12_r13: Hindex8(9)
+callq .move_128_064_xmm2_r8_r9: Hindex8(9)
+vzeroall : Hindex1(9)
+xorq %r13, %r9: Hindex1(9)
+xorq %r12, %r8: Hindex1(9)
+callq .move_064_128_r8_r9_xmm1: Hindex8(9)
+callq .move_128_064_xmm2_r8_r9: Hindex8(9)
+callq .move_064_128_r8_r9_xmm1: Hindex8(9)
+callq .move_128_064_xmm2_r8_r9: Hindex8(9)
+vzeroall : Hindex1(9)
+callq .move_064_128_r8_r9_xmm1: Hindex8(9)
+callq .move_128_064_xmm2_r8_r9: Hindex8(9)
+callq .move_064_128_r8_r9_xmm1: Hindex8(9)
 Formula:
 
-%ymm1  : (concat <%ymm1|256>[255:128] (concat (xor (xor <TMP_BV_128_0|128>[127:64] <%ymm1|256>[127:64]) (or <TMP_BV_128_1|128>[127:64] (xor <TMP_BV_128_0|128>[127:64] <%ymm1|256>[127:64]))) (xor (xor <TMP_BV_128_2|128>[63:0] <%ymm1|256>[63:0]) (or <TMP_BV_128_3|128>[63:0] (xor <TMP_BV_128_2|128>[63:0] <%ymm1|256>[63:0])))))
+%ymm1  : (let ((a!1 (bvxor (bvxor ((_ extract 127 64) TMP_BV_128_0)
+                         ((_ extract 127 64) %ymm1))
+                  (bvor ((_ extract 127 64) TMP_BV_128_1)
+                        (bvxor ((_ extract 127 64) TMP_BV_128_0)
+                               ((_ extract 127 64) %ymm1)))))
+      (a!2 (bvxor (bvxor ((_ extract 63 0) TMP_BV_128_2)
+                         ((_ extract 63 0) %ymm1))
+                  (bvor ((_ extract 63 0) TMP_BV_128_3)
+                        (bvxor ((_ extract 63 0) TMP_BV_128_2)
+                               ((_ extract 63 0) %ymm1))))))
+  (concat ((_ extract 255 128) %ymm1) (concat a!1 a!2)))
 
 Information about memory reads:
-  Value <TMP_BV_128_0|128> (16 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_128_1|128> (16 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_128_2|128> (16 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_128_3|128> (16 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rax.
+  Value TMP_BV_128_1 (16 bytes)
+    was read at address %rax.
+  Value TMP_BV_128_2 (16 bytes)
+    was read at address %rax.
+  Value TMP_BV_128_3 (16 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

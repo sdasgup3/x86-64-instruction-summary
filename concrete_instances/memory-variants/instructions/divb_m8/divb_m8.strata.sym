@@ -8,21 +8,25 @@ code: divb (%rax)
   must undef:      { %cf %pf %af %zf %sf %of }
   required flags:  { }
 
+divb (%rax): Hindex2(10)
+divb (%rax): Hindex2(10)
 Formula:
 
-%rax   : (concat (concat <%rax|64>[63:16] div_remainder_int8(<%rax|64>[15:0], <TMP_BV_8_0|8>)) div_quotient_int8(<%rax|64>[15:0], <TMP_BV_8_0|8>))
+%rax   : (concat (concat ((_ extract 63 16) %rax)
+                (div_remainder_int8 ((_ extract 15 0) %rax) TMP_BV_8_0))
+        (div_quotient_int8 ((_ extract 15 0) %rax) TMP_BV_8_0))
 
-%cf    : <TMP_BOOL_5>
-%pf    : <TMP_BOOL_2>
-%af    : <TMP_BOOL_1>
-%zf    : <TMP_BOOL_0>
-%sf    : <TMP_BOOL_3>
-%of    : <TMP_BOOL_4>
+%cf    : TMP_BOOL_5
+%pf    : TMP_BOOL_2
+%af    : TMP_BOOL_1
+%zf    : TMP_BOOL_0
+%sf    : TMP_BOOL_3
+%of    : TMP_BOOL_4
 
 Information about memory reads:
-  Value <TMP_BV_8_0|8> (1 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_8_0 (1 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

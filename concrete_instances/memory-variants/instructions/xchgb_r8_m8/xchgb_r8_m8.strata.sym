@@ -8,20 +8,22 @@ code: xchgb (%rax), %bl
   must undef:      { }
   required flags:  { }
 
+xchgb (%rax), %bl: Hindex2(10)
+xchgb (%rax), %bl: Hindex2(10)
 Formula:
 
-%rbx   : (concat <%rbx|64>[63:8] <TMP_BV_8_1|8>)
+%rbx   : (concat ((_ extract 63 8) %rbx) TMP_BV_8_0)
 
 Information about memory reads:
-  Value <TMP_BV_8_0|8> (1 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_8_1|8> (1 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_8_0 (1 bytes)
+    was read at address %rax.
 
 Information about memory writes:
-  Address <%rax|64> was updated to
-    <%rbx|64>[7:0] (1 bytes).
+  Address %rax was updated to
+    ((_ extract 7 0) %rbx) (1 bytes).
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv
+    (and (not sigfpe) (not sigbus) false)
+    (and (not sigfpe) (not sigbus) false))

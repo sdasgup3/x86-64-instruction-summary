@@ -8,14 +8,17 @@ code: rorxq $0x0, (%rax), %rbx
   must undef:      { }
   required flags:  { bmi2 }
 
+rorxq $0x0, (%rax), %rbx: Hindex2(10)
+rorxq $0x0, (%rax), %rbx: Hindex2(10)
 Formula:
 
-%rbx   : (or (>> <TMP_BV_64_0|64> <0x0|64>) (<< <TMP_BV_64_0|64> <0x40|64>))
+%rbx   : (bvor (bvlshr TMP_BV_64_0 #x0000000000000000)
+      (bvshl TMP_BV_64_0 #x0000000000000040))
 
 Information about memory reads:
-  Value <TMP_BV_64_0|64> (8 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

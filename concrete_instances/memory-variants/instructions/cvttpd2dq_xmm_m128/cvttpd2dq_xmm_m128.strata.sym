@@ -8,16 +8,31 @@ code: cvttpd2dq (%rax), %xmm1
   must undef:      { }
   required flags:  { sse2 }
 
+cvttpd2dq (%rax), %xmm1: Hindex0(10)
+cvttpd2dq (%rax), %xmm1: Hindex0(10)
+callq .move_128_064_xmm2_r10_r11: Hindex8(9)
+vzeroall : Hindex1(9)
+callq .move_064_128_r10_r11_xmm3: Hindex8(9)
+callq .move_256_128_ymm3_xmm12_xmm13: Hindex8(9)
+callq .move_128_256_xmm12_xmm13_ymm1: Hindex8(9)
+vcvttpd2dq %ymm4, %xmm1: Hindex1(9)
+callq .move_128_064_xmm2_r12_r13: Hindex8(9)
+callq .move_064_128_r12_r13_xmm1: Hindex8(9)
 Formula:
 
-%ymm1  : (concat <%ymm1|256>[255:128] (concat <0x0|32> (concat <0x0|32> (concat cvt_double_to_int32_truncate(<TMP_BV_128_0|128>[127:64]) cvt_double_to_int32_truncate(<TMP_BV_128_1|128>[63:0])))))
+%ymm1  : (let ((a!1 (concat #x00000000
+                   (concat (cvt_double_to_int32_truncate
+                             ((_ extract 127 64) TMP_BV_128_0))
+                           (cvt_double_to_int32_truncate
+                             ((_ extract 63 0) TMP_BV_128_1))))))
+  (concat ((_ extract 255 128) %ymm1) (concat #x00000000 a!1)))
 
 Information about memory reads:
-  Value <TMP_BV_128_0|128> (16 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_128_1|128> (16 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rax.
+  Value TMP_BV_128_1 (16 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

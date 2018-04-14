@@ -8,14 +8,29 @@ code: vpermilpd (%rax), %ymm2, %ymm1
   must undef:      { }
   required flags:  { avx }
 
+vpermilpd (%rax), %ymm2, %ymm1: Hindex2(10)
+vpermilpd (%rax), %ymm2, %ymm1: Hindex2(10)
 Formula:
 
-%ymm1  : (concat (if (== <TMP_BV_256_0|256>[193:193] <0x0|1>) then <%ymm2|256>[191:128] else <%ymm2|256>[255:192]) (concat (if (== <TMP_BV_256_0|256>[129:129] <0x0|1>) then <%ymm2|256>[191:128] else <%ymm2|256>[255:192]) (concat (if (== <TMP_BV_256_0|256>[65:65] <0x0|1>) then <%ymm2|256>[63:0] else <%ymm2|256>[127:64]) (if (== <TMP_BV_256_0|256>[1:1] <0x0|1>) then <%ymm2|256>[63:0] else <%ymm2|256>[127:64]))))
+%ymm1  : (let ((a!1 (concat (ite (= ((_ extract 65 65) TMP_BV_256_0) #b0)
+                        ((_ extract 63 0) %ymm2)
+                        ((_ extract 127 64) %ymm2))
+                   (ite (= ((_ extract 1 1) TMP_BV_256_0) #b0)
+                        ((_ extract 63 0) %ymm2)
+                        ((_ extract 127 64) %ymm2)))))
+(let ((a!2 (concat (ite (= ((_ extract 129 129) TMP_BV_256_0) #b0)
+                        ((_ extract 191 128) %ymm2)
+                        ((_ extract 255 192) %ymm2))
+                   a!1)))
+  (concat (ite (= ((_ extract 193 193) TMP_BV_256_0) #b0)
+               ((_ extract 191 128) %ymm2)
+               ((_ extract 255 192) %ymm2))
+          a!2)))
 
 Information about memory reads:
-  Value <TMP_BV_256_0|256> (32 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

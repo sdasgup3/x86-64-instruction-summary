@@ -8,14 +8,24 @@ code: vpsllq (%rax), %xmm2, %xmm1
   must undef:      { }
   required flags:  { avx }
 
+vpsllq (%rax), %xmm2, %xmm1: Hindex2(10)
+vpsllq (%rax), %xmm2, %xmm1: Hindex2(10)
 Formula:
 
-%ymm1  : (if (> <TMP_BV_128_0|128>[63:0] <0x3f|64>) then (concat <0x0|128> <0x0|128>) else (concat <0x0|128> (concat (<< <%ymm2|256>[127:64] <TMP_BV_128_0|128>[63:0]) (<< <%ymm2|256>[63:0] <TMP_BV_128_0|128>[63:0]))))
+%ymm1  : (let ((a!1 (concat #x00000000000000000000000000000000
+                   (concat (bvshl ((_ extract 127 64) %ymm2)
+                                  ((_ extract 63 0) TMP_BV_128_0))
+                           (bvshl ((_ extract 63 0) %ymm2)
+                                  ((_ extract 63 0) TMP_BV_128_0))))))
+  (ite (bvugt ((_ extract 63 0) TMP_BV_128_0) #x000000000000003f)
+       (concat #x00000000000000000000000000000000
+               #x00000000000000000000000000000000)
+       a!1))
 
 Information about memory reads:
-  Value <TMP_BV_128_0|128> (16 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

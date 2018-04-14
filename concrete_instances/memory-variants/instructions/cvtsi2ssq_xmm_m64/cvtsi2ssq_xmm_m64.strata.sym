@@ -8,14 +8,17 @@ code: cvtsi2ssq (%rax), %xmm1
   must undef:      { }
   required flags:  { sse }
 
+cvtsi2ssq (%rax), %xmm1: Hindex2(10)
+cvtsi2ssq (%rax), %xmm1: Hindex2(10)
 Formula:
 
-%ymm1  : (concat <%ymm1|256>[255:128] (concat <%ymm1|256>[127:32] cvt_int64_to_single(<TMP_BV_64_0|64>)))
+%ymm1  : (concat ((_ extract 255 128) %ymm1)
+        (concat ((_ extract 127 32) %ymm1) (cvt_int64_to_single TMP_BV_64_0)))
 
 Information about memory reads:
-  Value <TMP_BV_64_0|64> (8 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

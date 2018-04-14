@@ -8,21 +8,33 @@ code: imull $0x0, (%rax), %ebx
   must undef:      { %pf %af %zf %sf }
   required flags:  { }
 
+imull $0x0, (%rax), %ebx: Hindex2(10)
+imull $0x0, (%rax), %ebx: Hindex2(10)
 Formula:
 
-%rbx   : (concat <0x0|32> (mult (sign-extend-64 <TMP_BV_32_0|32>) <0x0|64>)[31:0])
+%rbx   : (concat #x00000000
+        ((_ extract 31 0)
+          (bvmul ((_ sign_extend 32) TMP_BV_32_0) #x0000000000000000)))
 
-%cf    : (not (== (mult (sign-extend-64 <TMP_BV_32_0|32>) <0x0|64>) (sign-extend-64 (mult (sign-extend-64 <TMP_BV_32_0|32>) <0x0|64>)[31:0])))
-%pf    : <TMP_BOOL_2>
-%af    : <TMP_BOOL_1>
-%zf    : <TMP_BOOL_0>
-%sf    : (== (mult (sign-extend-64 <TMP_BV_32_0|32>) <0x0|64>)[31:31] <0x1|1>)
-%of    : (not (== (mult (sign-extend-64 <TMP_BV_32_0|32>) <0x0|64>) (sign-extend-64 (mult (sign-extend-64 <TMP_BV_32_0|32>) <0x0|64>)[31:0])))
+%cf    : (let ((a!1 ((_ sign_extend 32)
+             ((_ extract 31 0)
+               (bvmul ((_ sign_extend 32) TMP_BV_32_0) #x0000000000000000)))))
+  (not (= (bvmul ((_ sign_extend 32) TMP_BV_32_0) #x0000000000000000) a!1)))
+%pf    : TMP_BOOL_2
+%af    : TMP_BOOL_1
+%zf    : TMP_BOOL_0
+%sf    : (= ((_ extract 31 31)
+     (bvmul ((_ sign_extend 32) TMP_BV_32_0) #x0000000000000000))
+   #b1)
+%of    : (let ((a!1 ((_ sign_extend 32)
+             ((_ extract 31 0)
+               (bvmul ((_ sign_extend 32) TMP_BV_32_0) #x0000000000000000)))))
+  (not (= (bvmul ((_ sign_extend 32) TMP_BV_32_0) #x0000000000000000) a!1)))
 
 Information about memory reads:
-  Value <TMP_BV_32_0|32> (4 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

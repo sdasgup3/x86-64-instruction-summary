@@ -8,23 +8,73 @@ code: andnl (%rax), %ecx, %ebx
   must undef:      { %pf %af }
   required flags:  { bmi1 }
 
+andnl (%rax), %ecx, %ebx: Hindex0(10)
+andnl (%rax), %ecx, %ebx: Hindex0(10)
+movslq %edx, %rbx: Hindex5(9)
+movq $0x0, %rbx: Hindex5(9)
+movswq %bx, %r10: Hindex5(9)
+movslq %ebx, %rbx: Hindex5(9)
+callq .move_032_016_ecx_r8w_r9w: Hindex8(9)
+callq .move_064_032_rbx_r10d_r11d: Hindex8(9)
+movq %r10, %rcx: Hindex5(9)
+callq .move_016_032_r8w_r9w_ebx: Hindex8(9)
+callq .clear_cf: Hindex8(9)
+adcl %ecx, %ebx: Hindex2(9)
+movswq %cx, %r11: Hindex5(9)
+movswq %bx, %r10: Hindex5(9)
+movslq %ebx, %rbx: Hindex5(9)
+callq .move_032_016_ecx_r8w_r9w: Hindex8(9)
+callq .move_064_032_rbx_r10d_r11d: Hindex8(9)
+movq %r10, %rcx: Hindex5(9)
+callq .move_016_032_r8w_r9w_ebx: Hindex8(9)
+callq .clear_cf: Hindex8(9)
+adcl %ecx, %ebx: Hindex2(9)
+orq %r11, %r8: Hindex1(9)
+movswq %bx, %r10: Hindex5(9)
+movslq %ebx, %rbx: Hindex5(9)
+callq .move_032_016_ecx_r8w_r9w: Hindex8(9)
+callq .move_064_032_rbx_r10d_r11d: Hindex8(9)
+movq %r10, %rcx: Hindex5(9)
+callq .move_016_032_r8w_r9w_ebx: Hindex8(9)
+callq .set_szp_for_ebx: Hindex8(9)
+callq .move_032_016_ecx_r12w_r13w: Hindex8(9)
+callq .move_016_032_r12w_r13w_ecx: Hindex8(9)
+movswq %bx, %r10: Hindex5(9)
+movslq %ebx, %rbx: Hindex5(9)
+callq .move_032_016_ecx_r8w_r9w: Hindex8(9)
+callq .move_064_032_rbx_r10d_r11d: Hindex8(9)
+movq %r10, %rcx: Hindex5(9)
+callq .move_016_032_r8w_r9w_ebx: Hindex8(9)
+xorq %rcx, %rbx: Hindex1(9)
+callq .set_szp_for_ebx: Hindex8(9)
+movswq %bx, %r10: Hindex5(9)
+movslq %ebx, %rbx: Hindex5(9)
+callq .move_032_016_ecx_r8w_r9w: Hindex8(9)
+callq .move_064_032_rbx_r10d_r11d: Hindex8(9)
+movq %r10, %rcx: Hindex5(9)
+callq .move_016_032_r8w_r9w_ebx: Hindex8(9)
 Formula:
 
-%rbx   : (concat <0x0|32> (xor (or <TMP_BV_32_0|32> <%rcx|64>[31:0]) <%rcx|64>[31:0]))
+%rbx   : (concat #x00000000
+        (bvxor (bvor TMP_BV_32_0 ((_ extract 31 0) %rcx))
+               ((_ extract 31 0) %rcx)))
 
-%cf    : FALSE
-%pf    : <TMP_BOOL_6>
-%af    : <TMP_BOOL_7>
-%zf    : (== (xor (or <TMP_BV_32_0|32> <%rcx|64>[31:0]) <%rcx|64>[31:0]) <0x0|32>)
-%sf    : (== (xor (or <TMP_BV_32_1|32>[31:31] <%rcx|64>[31:31]) <%rcx|64>[31:31]) <0x1|1>)
-%of    : FALSE
+%cf    : false
+%pf    : TMP_BOOL_6
+%af    : TMP_BOOL_7
+%zf    : (= (bvxor (bvor TMP_BV_32_0 ((_ extract 31 0) %rcx)) ((_ extract 31 0) %rcx))
+   #x00000000)
+%sf    : (= (bvxor (bvor ((_ extract 31 31) TMP_BV_32_1) ((_ extract 31 31) %rcx))
+          ((_ extract 31 31) %rcx))
+   #b1)
+%of    : false
 
 Information about memory reads:
-  Value <TMP_BV_32_0|32> (4 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_32_1|32> (4 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_1 (4 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

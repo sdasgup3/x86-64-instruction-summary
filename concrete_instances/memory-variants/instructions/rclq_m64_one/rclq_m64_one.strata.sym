@@ -8,25 +8,47 @@ code: rclq $0x1, (%rax)
   must undef:      { }
   required flags:  { }
 
+rclq $0x1, (%rax): Hindex0(10)
+rclq $0x1, (%rax): Hindex0(10)
+adcq %rbx, %rbx: Hindex2(9)
 Formula:
 
-%cf    : (== (plus (if <%cf> then (plus (concat <0x0|1> <TMP_BV_64_0|64>) <0x1|65>) else (concat <0x0|1> <TMP_BV_64_0|64>)) (concat <0x0|1> <TMP_BV_64_1|64>))[64:64] <0x1|1>)
-%of    : (and (== (== <TMP_BV_64_2|64>[63:63] <0x1|1>) (== <TMP_BV_64_3|64>[63:63] <0x1|1>)) (not (== (== <TMP_BV_64_2|64>[63:63] <0x1|1>) (== (plus (if <%cf> then (plus (concat <0x0|1> <TMP_BV_64_0|64>) <0x1|65>) else (concat <0x0|1> <TMP_BV_64_0|64>)) (concat <0x0|1> <TMP_BV_64_1|64>))[63:63] <0x1|1>))))
+%cf    : (let ((a!1 (bvadd (ite %cf
+                       (bvadd (concat #b0 TMP_BV_64_0)
+                              #b00000000000000000000000000000000000000000000000000000000000000001)
+                       (concat #b0 TMP_BV_64_0))
+                  (concat #b0 TMP_BV_64_1))))
+  (= ((_ extract 64 64) a!1) #b1))
+%of    : (let ((a!1 (bvadd (ite %cf
+                       (bvadd (concat #b0 TMP_BV_64_0)
+                              #b00000000000000000000000000000000000000000000000000000000000000001)
+                       (concat #b0 TMP_BV_64_0))
+                  (concat #b0 TMP_BV_64_1))))
+(let ((a!2 (not (= (= ((_ extract 63 63) TMP_BV_64_2) #b1)
+                   (= ((_ extract 63 63) a!1) #b1)))))
+  (and (= (= ((_ extract 63 63) TMP_BV_64_2) #b1)
+          (= ((_ extract 63 63) TMP_BV_64_3) #b1))
+       a!2)))
 
 Information about memory reads:
-  Value <TMP_BV_64_0|64> (8 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_64_1|64> (8 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_64_2|64> (8 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_64_3|64> (8 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_1 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_2 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_3 (8 bytes)
+    was read at address %rax.
 
 Information about memory writes:
-  Address <%rax|64> was updated to
-    (plus (if <%cf> then (plus (concat <0x0|1> <TMP_BV_64_0|64>) <0x1|65>) else (concat <0x0|1> <TMP_BV_64_0|64>)) (concat <0x0|1> <TMP_BV_64_1|64>))[63:0] (8 bytes).
+  Address %rax was updated to
+    (let ((a!1 (bvadd (ite %cf
+                       (bvadd (concat #b0 TMP_BV_64_0)
+                              #b00000000000000000000000000000000000000000000000000000000000000001)
+                       (concat #b0 TMP_BV_64_0))
+                  (concat #b0 TMP_BV_64_1))))
+  ((_ extract 63 0) a!1)) (8 bytes).
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

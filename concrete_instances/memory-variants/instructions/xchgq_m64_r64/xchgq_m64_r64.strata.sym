@@ -8,18 +8,22 @@ code: xchgq %rbx, (%rax)
   must undef:      { }
   required flags:  { }
 
+xchgq %rbx, (%rax): Hindex2(10)
+xchgq %rbx, (%rax): Hindex2(10)
 Formula:
 
-%rbx   : <TMP_BV_64_0|64>
+%rbx   : TMP_BV_64_0
 
 Information about memory reads:
-  Value <TMP_BV_64_0|64> (8 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
 
 Information about memory writes:
-  Address <%rax|64> was updated to
-    <%rbx|64> (8 bytes).
+  Address %rax was updated to
+    %rbx (8 bytes).
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv
+    (and (not sigfpe) (not sigbus) false)
+    (and (not sigfpe) (not sigbus) false))

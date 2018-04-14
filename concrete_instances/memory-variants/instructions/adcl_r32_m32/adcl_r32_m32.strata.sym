@@ -8,23 +8,72 @@ code: adcl (%rax), %ebx
   must undef:      { }
   required flags:  { }
 
+Base Instruction!!
+adcl (%rax), %ebx: Hindex0(10)
+Base Instruction!!
+adcl (%rax), %ebx: Hindex0(10)
+adcl %ecx, %ebx: Hindex2(9)
 Formula:
 
-%rbx   : (concat <0x0|32> (plus (if <%cf> then (plus (concat <0x0|1> <TMP_BV_32_0|32>) <0x1|33>) else (concat <0x0|1> <TMP_BV_32_0|32>)) (concat <0x0|1> <%rbx|64>[31:0]))[31:0])
+%rbx   : (let ((a!1 (bvadd (ite %cf
+                       (bvadd (concat #b0 TMP_BV_32_0)
+                              #b000000000000000000000000000000001)
+                       (concat #b0 TMP_BV_32_0))
+                  (concat #b0 ((_ extract 31 0) %rbx)))))
+  (concat #x00000000 ((_ extract 31 0) a!1)))
 
-%cf    : (== (plus (if <%cf> then (plus (concat <0x0|1> <TMP_BV_32_0|32>) <0x1|33>) else (concat <0x0|1> <TMP_BV_32_0|32>)) (concat <0x0|1> <%rbx|64>[31:0]))[32:32] <0x1|1>)
-%pf    : (not (xor (xor (xor (xor (xor (xor (xor (== (plus (if <%cf> then (plus (concat <0x0|1> <TMP_BV_32_0|32>) <0x1|33>) else (concat <0x0|1> <TMP_BV_32_0|32>)) (concat <0x0|1> <%rbx|64>[31:0]))[0:0] <0x1|1>) (== (plus (if <%cf> then (plus (concat <0x0|1> <TMP_BV_32_0|32>) <0x1|33>) else (concat <0x0|1> <TMP_BV_32_0|32>)) (concat <0x0|1> <%rbx|64>[31:0]))[1:1] <0x1|1>)) (== (plus (if <%cf> then (plus (concat <0x0|1> <TMP_BV_32_0|32>) <0x1|33>) else (concat <0x0|1> <TMP_BV_32_0|32>)) (concat <0x0|1> <%rbx|64>[31:0]))[2:2] <0x1|1>)) (== (plus (if <%cf> then (plus (concat <0x0|1> <TMP_BV_32_0|32>) <0x1|33>) else (concat <0x0|1> <TMP_BV_32_0|32>)) (concat <0x0|1> <%rbx|64>[31:0]))[3:3] <0x1|1>)) (== (plus (if <%cf> then (plus (concat <0x0|1> <TMP_BV_32_0|32>) <0x1|33>) else (concat <0x0|1> <TMP_BV_32_0|32>)) (concat <0x0|1> <%rbx|64>[31:0]))[4:4] <0x1|1>)) (== (plus (if <%cf> then (plus (concat <0x0|1> <TMP_BV_32_0|32>) <0x1|33>) else (concat <0x0|1> <TMP_BV_32_0|32>)) (concat <0x0|1> <%rbx|64>[31:0]))[5:5] <0x1|1>)) (== (plus (if <%cf> then (plus (concat <0x0|1> <TMP_BV_32_0|32>) <0x1|33>) else (concat <0x0|1> <TMP_BV_32_0|32>)) (concat <0x0|1> <%rbx|64>[31:0]))[6:6] <0x1|1>)) (== (plus (if <%cf> then (plus (concat <0x0|1> <TMP_BV_32_0|32>) <0x1|33>) else (concat <0x0|1> <TMP_BV_32_0|32>)) (concat <0x0|1> <%rbx|64>[31:0]))[7:7] <0x1|1>)))
-%af    : (== (plus (concat <0x0|1> <TMP_BV_32_1|32>[3:0]) (concat <0x0|1> <%rbx|64>[3:0]))[4:4] <0x1|1>)
-%zf    : (== (plus (if <%cf> then (plus (concat <0x0|1> <TMP_BV_32_0|32>) <0x1|33>) else (concat <0x0|1> <TMP_BV_32_0|32>)) (concat <0x0|1> <%rbx|64>[31:0]))[31:0] <0x0|32>)
-%sf    : (== (plus (if <%cf> then (plus (concat <0x0|1> <TMP_BV_32_0|32>) <0x1|33>) else (concat <0x0|1> <TMP_BV_32_0|32>)) (concat <0x0|1> <%rbx|64>[31:0]))[31:31] <0x1|1>)
-%of    : (and (== (== <TMP_BV_32_0|32>[31:31] <0x1|1>) (== <%rbx|64>[31:31] <0x1|1>)) (not (== (== <TMP_BV_32_0|32>[31:31] <0x1|1>) (== (plus (if <%cf> then (plus (concat <0x0|1> <TMP_BV_32_0|32>) <0x1|33>) else (concat <0x0|1> <TMP_BV_32_0|32>)) (concat <0x0|1> <%rbx|64>[31:0]))[31:31] <0x1|1>))))
+%cf    : (let ((a!1 (bvadd (ite %cf
+                       (bvadd (concat #b0 TMP_BV_32_0)
+                              #b000000000000000000000000000000001)
+                       (concat #b0 TMP_BV_32_0))
+                  (concat #b0 ((_ extract 31 0) %rbx)))))
+  (= ((_ extract 32 32) a!1) #b1))
+%pf    : (let ((a!1 (bvadd (ite %cf
+                       (bvadd (concat #b0 TMP_BV_32_0)
+                              #b000000000000000000000000000000001)
+                       (concat #b0 TMP_BV_32_0))
+                  (concat #b0 ((_ extract 31 0) %rbx)))))
+  (not (xor (= ((_ extract 0 0) a!1) #b1)
+            (= ((_ extract 1 1) a!1) #b1)
+            (= ((_ extract 2 2) a!1) #b1)
+            (= ((_ extract 3 3) a!1) #b1)
+            (= ((_ extract 4 4) a!1) #b1)
+            (= ((_ extract 5 5) a!1) #b1)
+            (= ((_ extract 6 6) a!1) #b1)
+            (= ((_ extract 7 7) a!1) #b1))))
+%af    : (let ((a!1 ((_ extract 4 4)
+             (bvadd (concat #b0 ((_ extract 3 0) TMP_BV_32_1))
+                    (concat #b0 ((_ extract 3 0) %rbx))))))
+  (= a!1 #b1))
+%zf    : (let ((a!1 (bvadd (ite %cf
+                       (bvadd (concat #b0 TMP_BV_32_0)
+                              #b000000000000000000000000000000001)
+                       (concat #b0 TMP_BV_32_0))
+                  (concat #b0 ((_ extract 31 0) %rbx)))))
+  (= ((_ extract 31 0) a!1) #x00000000))
+%sf    : (let ((a!1 (bvadd (ite %cf
+                       (bvadd (concat #b0 TMP_BV_32_0)
+                              #b000000000000000000000000000000001)
+                       (concat #b0 TMP_BV_32_0))
+                  (concat #b0 ((_ extract 31 0) %rbx)))))
+  (= ((_ extract 31 31) a!1) #b1))
+%of    : (let ((a!1 (bvadd (ite %cf
+                       (bvadd (concat #b0 TMP_BV_32_0)
+                              #b000000000000000000000000000000001)
+                       (concat #b0 TMP_BV_32_0))
+                  (concat #b0 ((_ extract 31 0) %rbx)))))
+(let ((a!2 (not (= (= ((_ extract 31 31) TMP_BV_32_0) #b1)
+                   (= ((_ extract 31 31) a!1) #b1)))))
+  (and (= (= ((_ extract 31 31) TMP_BV_32_0) #b1)
+          (= ((_ extract 31 31) %rbx) #b1))
+       a!2)))
 
 Information about memory reads:
-  Value <TMP_BV_32_0|32> (4 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_32_1|32> (4 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_1 (4 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

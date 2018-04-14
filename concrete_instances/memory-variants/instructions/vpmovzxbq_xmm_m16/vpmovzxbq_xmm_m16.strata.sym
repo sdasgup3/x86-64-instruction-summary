@@ -8,14 +8,18 @@ code: vpmovzxbq (%rax), %xmm1
   must undef:      { }
   required flags:  { avx }
 
+vpmovzxbq (%rax), %xmm1: Hindex1(10)
+vpmovzxbq (%rax), %xmm1: Hindex1(10)
 Formula:
 
-%ymm1  : (concat <0x0|128> (concat (concat <0x0|56> <TMP_BV_16_0|16>[15:8]) (concat <0x0|56> <TMP_BV_16_0|16>[7:0])))
+%ymm1  : (concat #x00000000000000000000000000000000
+        (concat (concat #x00000000000000 ((_ extract 15 8) TMP_BV_16_0))
+                (concat #x00000000000000 ((_ extract 7 0) TMP_BV_16_0))))
 
 Information about memory reads:
-  Value <TMP_BV_16_0|16> (2 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

@@ -8,23 +8,72 @@ code: sarl $0x0, (%rax)
   must undef:      { }
   required flags:  { }
 
+sarl $0x0, (%rax): Hindex8(10)
+sarl $0x0, (%rax): Hindex8(10)
 Formula:
 
-%cf    : (or (and FALSE (== (s_shr (concat <TMP_BV_32_0|32> <0x0|1>) <0x0|33>)[0:0] <0x1|1>)) (and TRUE <%cf>))
-%pf    : (or (and FALSE (not (xor (xor (xor (xor (xor (xor (xor (== (s_shr (concat <TMP_BV_32_0|32> <0x0|1>) <0x0|33>)[1:1] <0x1|1>) (== (s_shr (concat <TMP_BV_32_0|32> <0x0|1>) <0x0|33>)[2:2] <0x1|1>)) (== (s_shr (concat <TMP_BV_32_0|32> <0x0|1>) <0x0|33>)[3:3] <0x1|1>)) (== (s_shr (concat <TMP_BV_32_0|32> <0x0|1>) <0x0|33>)[4:4] <0x1|1>)) (== (s_shr (concat <TMP_BV_32_0|32> <0x0|1>) <0x0|33>)[5:5] <0x1|1>)) (== (s_shr (concat <TMP_BV_32_0|32> <0x0|1>) <0x0|33>)[6:6] <0x1|1>)) (== (s_shr (concat <TMP_BV_32_0|32> <0x0|1>) <0x0|33>)[7:7] <0x1|1>)) (== (s_shr (concat <TMP_BV_32_0|32> <0x0|1>) <0x0|33>)[8:8] <0x1|1>)))) (and TRUE <%pf>))
-%af    : (or (and FALSE <TMP_BOOL_0>) (and TRUE <%af>))
-%zf    : (or (and FALSE (== (s_shr (concat <TMP_BV_32_0|32> <0x0|1>) <0x0|33>)[32:1] <0x0|32>)) (and TRUE <%zf>))
-%sf    : (or (and FALSE (== (s_shr (concat <TMP_BV_32_0|32> <0x0|1>) <0x0|33>)[32:32] <0x1|1>)) (and TRUE <%sf>))
-%of    : (or FALSE (and TRUE <%of>))
+%cf    : (let ((a!1 (= ((_ extract 0 0)
+                (bvashr (concat TMP_BV_32_0 #b0)
+                        #b000000000000000000000000000000000))
+              #b1)))
+  (or (and false a!1) (and true %cf)))
+%pf    : (let ((a!1 (= ((_ extract 1 1)
+                (bvashr (concat TMP_BV_32_0 #b0)
+                        #b000000000000000000000000000000000))
+              #b1))
+      (a!2 (= ((_ extract 2 2)
+                (bvashr (concat TMP_BV_32_0 #b0)
+                        #b000000000000000000000000000000000))
+              #b1))
+      (a!3 (= ((_ extract 3 3)
+                (bvashr (concat TMP_BV_32_0 #b0)
+                        #b000000000000000000000000000000000))
+              #b1))
+      (a!4 (= ((_ extract 4 4)
+                (bvashr (concat TMP_BV_32_0 #b0)
+                        #b000000000000000000000000000000000))
+              #b1))
+      (a!5 (= ((_ extract 5 5)
+                (bvashr (concat TMP_BV_32_0 #b0)
+                        #b000000000000000000000000000000000))
+              #b1))
+      (a!6 (= ((_ extract 6 6)
+                (bvashr (concat TMP_BV_32_0 #b0)
+                        #b000000000000000000000000000000000))
+              #b1))
+      (a!7 (= ((_ extract 7 7)
+                (bvashr (concat TMP_BV_32_0 #b0)
+                        #b000000000000000000000000000000000))
+              #b1))
+      (a!8 (= ((_ extract 8 8)
+                (bvashr (concat TMP_BV_32_0 #b0)
+                        #b000000000000000000000000000000000))
+              #b1)))
+  (or (and false (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8))) (and true %pf)))
+%af    : (or (and false TMP_BOOL_0) (and true %af))
+%zf    : (let ((a!1 (= ((_ extract 32 1)
+                (bvashr (concat TMP_BV_32_0 #b0)
+                        #b000000000000000000000000000000000))
+              #x00000000)))
+  (or (and false a!1) (and true %zf)))
+%sf    : (let ((a!1 (= ((_ extract 32 32)
+                (bvashr (concat TMP_BV_32_0 #b0)
+                        #b000000000000000000000000000000000))
+              #b1)))
+  (or (and false a!1) (and true %sf)))
+%of    : (or false (and true %of))
 
 Information about memory reads:
-  Value <TMP_BV_32_0|32> (4 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
 
 Information about memory writes:
-  Address <%rax|64> was updated to
-    (s_shr (concat <TMP_BV_32_0|32> <0x0|1>) <0x0|33>)[32:1] (4 bytes).
+  Address %rax was updated to
+    ((_ extract 32 1)
+  (bvashr (concat TMP_BV_32_0 #b0) #b000000000000000000000000000000000)) (4 bytes).
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE)) (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv
+    (and (not sigfpe) (not sigbus) false)
+    (and (not sigfpe) (not sigbus) false))

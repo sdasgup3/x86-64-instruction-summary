@@ -8,14 +8,18 @@ code: vmovdqu (%rax), %ymm1
   must undef:      { }
   required flags:  { avx }
 
+vmovdqu (%rax), %ymm1: Hindex0(10)
+vmovdqu (%rax), %ymm1: Hindex0(10)
+vmaxps %ymm2, %ymm2, %ymm10: Hindex0(9)
+vmaxpd %ymm10, %ymm2, %ymm1: Hindex0(9)
 Formula:
 
-%ymm1  : <TMP_BV_256_0|256>
+%ymm1  : TMP_BV_256_0
 
 Information about memory reads:
-  Value <TMP_BV_256_0|256> (32 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

@@ -8,14 +8,20 @@ code: vcvtph2ps (%rax), %xmm1
   must undef:      { }
   required flags:  { f16c }
 
+vcvtph2ps (%rax), %xmm1: Hindex2(10)
+vcvtph2ps (%rax), %xmm1: Hindex2(10)
 Formula:
 
-%ymm1  : (concat <0x0|128> (concat cvt_half_to_single(<TMP_BV_64_0|64>[63:48]) (concat cvt_half_to_single(<TMP_BV_64_0|64>[47:32]) (concat cvt_half_to_single(<TMP_BV_64_0|64>[31:16]) cvt_half_to_single(<TMP_BV_64_0|64>[15:0])))))
+%ymm1  : (let ((a!1 (concat (cvt_half_to_single ((_ extract 47 32) TMP_BV_64_0))
+                   (concat (cvt_half_to_single ((_ extract 31 16) TMP_BV_64_0))
+                           (cvt_half_to_single ((_ extract 15 0) TMP_BV_64_0))))))
+  (concat #x00000000000000000000000000000000
+          (concat (cvt_half_to_single ((_ extract 63 48) TMP_BV_64_0)) a!1)))
 
 Information about memory reads:
-  Value <TMP_BV_64_0|64> (8 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

@@ -8,14 +8,19 @@ code: vshufpd $0x0, (%rax), %ymm2, %ymm1
   must undef:      { }
   required flags:  { avx }
 
+vshufpd $0x0, (%rax), %ymm2, %ymm1: Hindex2(10)
+vshufpd $0x0, (%rax), %ymm2, %ymm1: Hindex2(10)
 Formula:
 
-%ymm1  : (concat <TMP_BV_256_0|256>[191:128] (concat <%ymm2|256>[191:128] (concat <TMP_BV_256_0|256>[63:0] <%ymm2|256>[63:0])))
+%ymm1  : (concat ((_ extract 191 128) TMP_BV_256_0)
+        (concat ((_ extract 191 128) %ymm2)
+                (concat ((_ extract 63 0) TMP_BV_256_0)
+                        ((_ extract 63 0) %ymm2))))
 
 Information about memory reads:
-  Value <TMP_BV_256_0|256> (32 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

@@ -8,23 +8,30 @@ code: andnq (%rax), %rcx, %rbx
   must undef:      { %pf %af }
   required flags:  { bmi1 }
 
+andnq (%rax), %rcx, %rbx: Hindex0(10)
+andnq (%rax), %rcx, %rbx: Hindex0(10)
+orq %rcx, %rdx: Hindex1(9)
+xorq %rcx, %rdx: Hindex1(9)
+movq %rdx, %rbx: Hindex5(9)
 Formula:
 
-%rbx   : (xor (or <TMP_BV_64_0|64> <%rcx|64>) <%rcx|64>)
+%rbx   : (bvxor (bvor TMP_BV_64_0 %rcx) %rcx)
 
-%cf    : FALSE
-%pf    : <TMP_BOOL_4>
-%af    : <TMP_BOOL_5>
-%zf    : (== (xor (or <TMP_BV_64_0|64> <%rcx|64>) <%rcx|64>) <0x0|64>)
-%sf    : (== (xor (or <TMP_BV_64_1|64>[63:63] <%rcx|64>[63:63]) <%rcx|64>[63:63]) <0x1|1>)
-%of    : FALSE
+%cf    : false
+%pf    : TMP_BOOL_4
+%af    : TMP_BOOL_5
+%zf    : (= (bvxor (bvor TMP_BV_64_0 %rcx) %rcx) #x0000000000000000)
+%sf    : (= (bvxor (bvor ((_ extract 63 63) TMP_BV_64_1) ((_ extract 63 63) %rcx))
+          ((_ extract 63 63) %rcx))
+   #b1)
+%of    : false
 
 Information about memory reads:
-  Value <TMP_BV_64_0|64> (8 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_64_1|64> (8 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_1 (8 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

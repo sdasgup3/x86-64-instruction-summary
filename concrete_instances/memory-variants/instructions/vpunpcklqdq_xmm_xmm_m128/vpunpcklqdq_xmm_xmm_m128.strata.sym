@@ -8,14 +8,22 @@ code: vpunpcklqdq (%rax), %xmm2, %xmm1
   must undef:      { }
   required flags:  { avx }
 
+vpunpcklqdq (%rax), %xmm2, %xmm1: Hindex0(10)
+vpunpcklqdq (%rax), %xmm2, %xmm1: Hindex0(10)
+callq .move_128_064_xmm3_r8_r9: Hindex8(9)
+callq .move_128_064_xmm2_r10_r11: Hindex8(9)
+vzeroall : Hindex1(9)
+movq %r8, %r11: Hindex5(9)
+callq .move_064_128_r10_r11_xmm1: Hindex8(9)
 Formula:
 
-%ymm1  : (concat <0x0|128> (concat <TMP_BV_128_0|128>[63:0] <%ymm2|256>[63:0]))
+%ymm1  : (concat #x00000000000000000000000000000000
+        (concat ((_ extract 63 0) TMP_BV_128_0) ((_ extract 63 0) %ymm2)))
 
 Information about memory reads:
-  Value <TMP_BV_128_0|128> (16 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

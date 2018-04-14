@@ -8,16 +8,28 @@ code: notl (%rax)
   must undef:      { }
   required flags:  { }
 
+notl (%rax): Hindex0(10)
+notl (%rax): Hindex0(10)
+movslq %ebx, %rax: Hindex5(9)
+movq $0xffffffffffffffff, %rbx: Hindex5(9)
+movswq %bx, %r10: Hindex5(9)
+movslq %ebx, %rbx: Hindex5(9)
+callq .move_032_016_ecx_r8w_r9w: Hindex8(9)
+callq .move_064_032_rbx_r10d_r11d: Hindex8(9)
+movq %r10, %rcx: Hindex5(9)
+callq .move_016_032_r8w_r9w_ebx: Hindex8(9)
+xorq %rcx, %rbx: Hindex1(9)
+callq .set_szp_for_ebx: Hindex8(9)
 Formula:
 
 Information about memory reads:
-  Value <TMP_BV_32_0|32> (4 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
 
 Information about memory writes:
-  Address <%rax|64> was updated to
-    (xor <TMP_BV_32_0|32> <0xffffffff|32>) (4 bytes).
+  Address %rax was updated to
+    (bvxor TMP_BV_32_0 #xffffffff) (4 bytes).
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

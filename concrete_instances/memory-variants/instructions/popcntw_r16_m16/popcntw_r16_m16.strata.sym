@@ -8,53 +8,92 @@ code: popcntw (%rax), %bx
   must undef:      { }
   required flags:  { popcnt }
 
+popcntw (%rax), %bx: Hindex0(10)
+popcntw (%rax), %bx: Hindex0(10)
+xorq %rax, %rax: Hindex1(9)
+xorq %rax, %rax: Hindex1(9)
+adcb %al, %al: Hindex2(9)
+adcw %cx, %ax: Hindex2(9)
+popcntq %rax, %rbx: Hindex1(9)
+xorq %rax, %rax: Hindex1(9)
+adcb %al, %al: Hindex2(9)
 Formula:
 
-%rbx   : (concat <%rbx|64>[63:16] (plus (concat <0x0|8> (plus (concat <0x0|4> (plus (concat <0x0|2> (plus (concat <0x0|1> <TMP_BV_16_0|16>[15:15]) (concat <0x0|1> <TMP_BV_16_1|16>[14:14]))) (concat <0x0|2> (plus (concat <0x0|1> <TMP_BV_16_2|16>[13:13]) (concat <0x0|1> <TMP_BV_16_3|16>[12:12]))))) (concat <0x0|4> (plus (concat <0x0|2> (plus (concat <0x0|1> <TMP_BV_16_4|16>[11:11]) (concat <0x0|1> <TMP_BV_16_5|16>[10:10]))) (concat <0x0|2> (plus (concat <0x0|1> <TMP_BV_16_6|16>[9:9]) (concat <0x0|1> <TMP_BV_16_7|16>[8:8]))))))) (concat <0x0|8> (plus (concat <0x0|4> (plus (concat <0x0|2> (plus (concat <0x0|1> <TMP_BV_16_8|16>[7:7]) (concat <0x0|1> <TMP_BV_16_9|16>[6:6]))) (concat <0x0|2> (plus (concat <0x0|1> <TMP_BV_16_10|16>[5:5]) (concat <0x0|1> <TMP_BV_16_11|16>[4:4]))))) (concat <0x0|4> (plus (concat <0x0|2> (plus (concat <0x0|1> <TMP_BV_16_12|16>[3:3]) (concat <0x0|1> <TMP_BV_16_13|16>[2:2]))) (concat <0x0|2> (plus (concat <0x0|1> <TMP_BV_16_14|16>[1:1]) (concat <0x0|1> <TMP_BV_16_15|16>[0:0])))))))))
+%rbx   : (let ((a!1 (concat #b00
+                   (bvadd (concat #b0 ((_ extract 15 15) TMP_BV_16_0))
+                          (concat #b0 ((_ extract 14 14) TMP_BV_16_1)))))
+      (a!2 (concat #b00
+                   (bvadd (concat #b0 ((_ extract 13 13) TMP_BV_16_2))
+                          (concat #b0 ((_ extract 12 12) TMP_BV_16_3)))))
+      (a!3 (concat #b00
+                   (bvadd (concat #b0 ((_ extract 11 11) TMP_BV_16_4))
+                          (concat #b0 ((_ extract 10 10) TMP_BV_16_5)))))
+      (a!4 (concat #b00
+                   (bvadd (concat #b0 ((_ extract 9 9) TMP_BV_16_6))
+                          (concat #b0 ((_ extract 8 8) TMP_BV_16_7)))))
+      (a!6 (concat #b00
+                   (bvadd (concat #b0 ((_ extract 7 7) TMP_BV_16_8))
+                          (concat #b0 ((_ extract 6 6) TMP_BV_16_9)))))
+      (a!7 (concat #b00
+                   (bvadd (concat #b0 ((_ extract 5 5) TMP_BV_16_10))
+                          (concat #b0 ((_ extract 4 4) TMP_BV_16_11)))))
+      (a!8 (concat #b00
+                   (bvadd (concat #b0 ((_ extract 3 3) TMP_BV_16_12))
+                          (concat #b0 ((_ extract 2 2) TMP_BV_16_13)))))
+      (a!9 (concat #b00
+                   (bvadd (concat #b0 ((_ extract 1 1) TMP_BV_16_14))
+                          (concat #b0 ((_ extract 0 0) TMP_BV_16_15))))))
+(let ((a!5 (concat #x00
+                   (bvadd (concat #x0 (bvadd a!1 a!2))
+                          (concat #x0 (bvadd a!3 a!4)))))
+      (a!10 (concat #x00
+                    (bvadd (concat #x0 (bvadd a!6 a!7))
+                           (concat #x0 (bvadd a!8 a!9))))))
+  (concat ((_ extract 63 16) %rbx) (bvadd a!5 a!10))))
 
-%cf    : FALSE
-%pf    : FALSE
-%af    : FALSE
-%zf    : (== (concat <0x0|48> <TMP_BV_16_16|16>) <0x0|64>)
-%sf    : FALSE
-%of    : FALSE
+%cf    : false
+%pf    : false
+%af    : false
+%zf    : (= (concat #x000000000000 TMP_BV_16_16) #x0000000000000000)
+%sf    : false
+%of    : false
 
 Information about memory reads:
-  Value <TMP_BV_16_0|16> (2 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_16_1|16> (2 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_16_2|16> (2 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_16_3|16> (2 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_16_4|16> (2 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_16_5|16> (2 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_16_6|16> (2 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_16_7|16> (2 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_16_8|16> (2 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_16_9|16> (2 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_16_10|16> (2 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_16_11|16> (2 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_16_12|16> (2 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_16_13|16> (2 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_16_14|16> (2 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_16_15|16> (2 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_16_16|16> (2 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_1 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_2 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_3 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_4 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_5 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_6 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_7 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_8 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_9 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_10 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_11 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_12 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_13 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_14 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_15 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_16 (2 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

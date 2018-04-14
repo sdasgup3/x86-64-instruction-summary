@@ -8,14 +8,17 @@ code: vdpps $0x0, (%rax), %ymm2, %ymm1
   must undef:      { }
   required flags:  { avx }
 
+vdpps $0x0, (%rax), %ymm2, %ymm1: Hindex1(10)
+vdpps $0x0, (%rax), %ymm2, %ymm1: Hindex1(10)
 Formula:
 
-%ymm1  : (concat (concat (concat <0x0|64> <0x0|32>) <0x0|32>) (concat (concat <0x0|64> <0x0|32>) <0x0|32>))
+%ymm1  : (concat (concat (concat #x0000000000000000 #x00000000) #x00000000)
+        (concat (concat #x0000000000000000 #x00000000) #x00000000))
 
 Information about memory reads:
-  Value <TMP_BV_256_0|256> (32 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

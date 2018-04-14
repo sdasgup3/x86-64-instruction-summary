@@ -8,20 +8,45 @@ code: vmaxpd (%rax), %ymm2, %ymm1
   must undef:      { }
   required flags:  { avx }
 
+Base Instruction!!
+vmaxpd (%rax), %ymm2, %ymm1: Hindex0(10)
+Base Instruction!!
+vmaxpd (%rax), %ymm2, %ymm1: Hindex0(10)
+vmaxpd %ymm3, %ymm2, %ymm1: Hindex0(9)
 Formula:
 
-%ymm1  : (concat (if (== maxcmp_double(<%ymm2|256>[255:192], <TMP_BV_256_0|256>[255:192]) <0x1|1>) then <%ymm2|256>[255:192] else <TMP_BV_256_0|256>[255:192]) (concat (if (== maxcmp_double(<%ymm2|256>[191:128], <TMP_BV_256_1|256>[191:128]) <0x1|1>) then <%ymm2|256>[191:128] else <TMP_BV_256_1|256>[191:128]) (concat (if (== maxcmp_double(<%ymm2|256>[127:64], <TMP_BV_256_2|256>[127:64]) <0x1|1>) then <%ymm2|256>[127:64] else <TMP_BV_256_2|256>[127:64]) (if (== maxcmp_double(<%ymm2|256>[63:0], <TMP_BV_256_3|256>[63:0]) <0x1|1>) then <%ymm2|256>[63:0] else <TMP_BV_256_3|256>[63:0]))))
+%ymm1  : (let ((a!1 (ite (= (maxcmp_double ((_ extract 255 192) %ymm2)
+                                  ((_ extract 255 192) TMP_BV_256_0))
+                   #b1)
+                ((_ extract 255 192) %ymm2)
+                ((_ extract 255 192) TMP_BV_256_0)))
+      (a!2 (ite (= (maxcmp_double ((_ extract 191 128) %ymm2)
+                                  ((_ extract 191 128) TMP_BV_256_1))
+                   #b1)
+                ((_ extract 191 128) %ymm2)
+                ((_ extract 191 128) TMP_BV_256_1)))
+      (a!3 (ite (= (maxcmp_double ((_ extract 127 64) %ymm2)
+                                  ((_ extract 127 64) TMP_BV_256_2))
+                   #b1)
+                ((_ extract 127 64) %ymm2)
+                ((_ extract 127 64) TMP_BV_256_2)))
+      (a!4 (ite (= (maxcmp_double ((_ extract 63 0) %ymm2)
+                                  ((_ extract 63 0) TMP_BV_256_3))
+                   #b1)
+                ((_ extract 63 0) %ymm2)
+                ((_ extract 63 0) TMP_BV_256_3))))
+  (concat a!1 (concat a!2 (concat a!3 a!4))))
 
 Information about memory reads:
-  Value <TMP_BV_256_0|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_1|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_2|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_3|256> (32 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_1 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_2 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_3 (32 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

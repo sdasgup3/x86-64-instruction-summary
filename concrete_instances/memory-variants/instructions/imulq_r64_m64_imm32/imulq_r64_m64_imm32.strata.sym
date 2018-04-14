@@ -8,21 +8,38 @@ code: imulq $0x0, (%rax), %rbx
   must undef:      { %pf %af %zf %sf }
   required flags:  { }
 
+imulq $0x0, (%rax), %rbx: Hindex2(10)
+imulq $0x0, (%rax), %rbx: Hindex2(10)
 Formula:
 
-%rbx   : (mult (sign-extend-128 <TMP_BV_64_0|64>) (sign-extend-128 <0x0|32>))[63:0]
+%rbx   : ((_ extract 63 0)
+  (bvmul ((_ sign_extend 64) TMP_BV_64_0) ((_ sign_extend 96) #x00000000)))
 
-%cf    : (not (== (mult (sign-extend-128 <TMP_BV_64_0|64>) (sign-extend-128 <0x0|32>)) (sign-extend-128 (mult (sign-extend-128 <TMP_BV_64_0|64>) (sign-extend-128 <0x0|32>))[63:0])))
-%pf    : <TMP_BOOL_2>
-%af    : <TMP_BOOL_1>
-%zf    : <TMP_BOOL_0>
-%sf    : (== (mult (sign-extend-128 <TMP_BV_64_0|64>) (sign-extend-128 <0x0|32>))[63:63] <0x1|1>)
-%of    : (not (== (mult (sign-extend-128 <TMP_BV_64_0|64>) (sign-extend-128 <0x0|32>)) (sign-extend-128 (mult (sign-extend-128 <TMP_BV_64_0|64>) (sign-extend-128 <0x0|32>))[63:0])))
+%cf    : (let ((a!1 ((_ sign_extend 64)
+             ((_ extract 63 0)
+               (bvmul ((_ sign_extend 64) TMP_BV_64_0)
+                      ((_ sign_extend 96) #x00000000))))))
+  (not (= (bvmul ((_ sign_extend 64) TMP_BV_64_0)
+                 ((_ sign_extend 96) #x00000000))
+          a!1)))
+%pf    : TMP_BOOL_2
+%af    : TMP_BOOL_1
+%zf    : TMP_BOOL_0
+%sf    : (= ((_ extract 63 63)
+     (bvmul ((_ sign_extend 64) TMP_BV_64_0) ((_ sign_extend 96) #x00000000)))
+   #b1)
+%of    : (let ((a!1 ((_ sign_extend 64)
+             ((_ extract 63 0)
+               (bvmul ((_ sign_extend 64) TMP_BV_64_0)
+                      ((_ sign_extend 96) #x00000000))))))
+  (not (= (bvmul ((_ sign_extend 64) TMP_BV_64_0)
+                 ((_ sign_extend 96) #x00000000))
+          a!1)))
 
 Information about memory reads:
-  Value <TMP_BV_64_0|64> (8 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

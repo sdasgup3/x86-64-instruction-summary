@@ -8,19 +8,57 @@ code: vtestps (%rax), %ymm1
   must undef:      { }
   required flags:  { avx }
 
+vtestps (%rax), %ymm1: Hindex2(10)
+vtestps (%rax), %ymm1: Hindex2(10)
 Formula:
 
-%cf    : (and (and (and (and (and (and (and (== (and !<%ymm1|256>[31:31] <TMP_BV_256_0|256>[31:31]) <0x0|1>) (== (and !<%ymm1|256>[63:63] <TMP_BV_256_0|256>[63:63]) <0x0|1>)) (== (and !<%ymm1|256>[95:95] <TMP_BV_256_0|256>[95:95]) <0x0|1>)) (== (and !<%ymm1|256>[127:127] <TMP_BV_256_0|256>[127:127]) <0x0|1>)) (== (and !<%ymm1|256>[159:159] <TMP_BV_256_0|256>[159:159]) <0x0|1>)) (== (and !<%ymm1|256>[191:191] <TMP_BV_256_0|256>[191:191]) <0x0|1>)) (== (and !<%ymm1|256>[223:223] <TMP_BV_256_0|256>[223:223]) <0x0|1>)) (== (and !<%ymm1|256>[255:255] <TMP_BV_256_0|256>[255:255]) <0x0|1>))
-%pf    : FALSE
-%af    : FALSE
-%zf    : (and (and (and (and (and (and (and (== (and <%ymm1|256>[31:31] <TMP_BV_256_0|256>[31:31]) <0x0|1>) (== (and <%ymm1|256>[63:63] <TMP_BV_256_0|256>[63:63]) <0x0|1>)) (== (and <%ymm1|256>[95:95] <TMP_BV_256_0|256>[95:95]) <0x0|1>)) (== (and <%ymm1|256>[127:127] <TMP_BV_256_0|256>[127:127]) <0x0|1>)) (== (and <%ymm1|256>[159:159] <TMP_BV_256_0|256>[159:159]) <0x0|1>)) (== (and <%ymm1|256>[191:191] <TMP_BV_256_0|256>[191:191]) <0x0|1>)) (== (and <%ymm1|256>[223:223] <TMP_BV_256_0|256>[223:223]) <0x0|1>)) (== (and <%ymm1|256>[255:255] <TMP_BV_256_0|256>[255:255]) <0x0|1>))
-%sf    : FALSE
-%of    : FALSE
+%cf    : (let ((a!1 (= (bvand (bvnot ((_ extract 31 31) %ymm1))
+                     ((_ extract 31 31) TMP_BV_256_0))
+              #b0))
+      (a!2 (= (bvand (bvnot ((_ extract 63 63) %ymm1))
+                     ((_ extract 63 63) TMP_BV_256_0))
+              #b0))
+      (a!3 (= (bvand (bvnot ((_ extract 95 95) %ymm1))
+                     ((_ extract 95 95) TMP_BV_256_0))
+              #b0))
+      (a!4 (= (bvand (bvnot ((_ extract 127 127) %ymm1))
+                     ((_ extract 127 127) TMP_BV_256_0))
+              #b0))
+      (a!5 (= (bvand (bvnot ((_ extract 159 159) %ymm1))
+                     ((_ extract 159 159) TMP_BV_256_0))
+              #b0))
+      (a!6 (= (bvand (bvnot ((_ extract 191 191) %ymm1))
+                     ((_ extract 191 191) TMP_BV_256_0))
+              #b0))
+      (a!7 (= (bvand (bvnot ((_ extract 223 223) %ymm1))
+                     ((_ extract 223 223) TMP_BV_256_0))
+              #b0))
+      (a!8 (= (bvand (bvnot ((_ extract 255 255) %ymm1))
+                     ((_ extract 255 255) TMP_BV_256_0))
+              #b0)))
+  (and a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8))
+%pf    : false
+%af    : false
+%zf    : (and (= (bvand ((_ extract 31 31) %ymm1) ((_ extract 31 31) TMP_BV_256_0)) #b0)
+     (= (bvand ((_ extract 63 63) %ymm1) ((_ extract 63 63) TMP_BV_256_0)) #b0)
+     (= (bvand ((_ extract 95 95) %ymm1) ((_ extract 95 95) TMP_BV_256_0)) #b0)
+     (= (bvand ((_ extract 127 127) %ymm1) ((_ extract 127 127) TMP_BV_256_0))
+        #b0)
+     (= (bvand ((_ extract 159 159) %ymm1) ((_ extract 159 159) TMP_BV_256_0))
+        #b0)
+     (= (bvand ((_ extract 191 191) %ymm1) ((_ extract 191 191) TMP_BV_256_0))
+        #b0)
+     (= (bvand ((_ extract 223 223) %ymm1) ((_ extract 223 223) TMP_BV_256_0))
+        #b0)
+     (= (bvand ((_ extract 255 255) %ymm1) ((_ extract 255 255) TMP_BV_256_0))
+        #b0))
+%sf    : false
+%of    : false
 
 Information about memory reads:
-  Value <TMP_BV_256_0|256> (32 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

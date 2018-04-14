@@ -8,14 +8,25 @@ code: vpbroadcastq (%rax), %ymm1
   must undef:      { }
   required flags:  { avx2 }
 
+vpbroadcastq (%rax), %ymm1: Hindex0(10)
+vpbroadcastq (%rax), %ymm1: Hindex0(10)
+callq .move_128_064_xmm2_r10_r11: Hindex8(9)
+vzeroall : Hindex1(9)
+movq %r10, %r11: Hindex5(9)
+callq .move_064_128_r10_r11_xmm1: Hindex8(9)
+callq .move_128_064_xmm2_r8_r9: Hindex8(9)
+vzeroall : Hindex1(9)
+callq .move_064_128_r8_r9_xmm1: Hindex8(9)
+vminpd %ymm2, %ymm2, %ymm1: Hindex0(9)
+callq .move_128_256_xmm8_xmm9_ymm1: Hindex8(9)
 Formula:
 
-%ymm1  : (concat (concat <TMP_BV_64_0|64> <TMP_BV_64_0|64>) (concat <TMP_BV_64_0|64> <TMP_BV_64_0|64>))
+%ymm1  : (concat (concat TMP_BV_64_0 TMP_BV_64_0) (concat TMP_BV_64_0 TMP_BV_64_0))
 
 Information about memory reads:
-  Value <TMP_BV_64_0|64> (8 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

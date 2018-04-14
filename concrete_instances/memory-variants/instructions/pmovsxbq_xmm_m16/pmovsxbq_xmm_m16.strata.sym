@@ -8,14 +8,18 @@ code: pmovsxbq (%rax), %xmm1
   must undef:      { }
   required flags:  { sse4_1 }
 
+pmovsxbq (%rax), %xmm1: Hindex1(10)
+pmovsxbq (%rax), %xmm1: Hindex1(10)
 Formula:
 
-%ymm1  : (concat <%ymm1|256>[255:128] (concat (sign-extend-64 <TMP_BV_16_0|16>[15:8]) (sign-extend-64 <TMP_BV_16_0|16>[7:0])))
+%ymm1  : (concat ((_ extract 255 128) %ymm1)
+        (concat ((_ sign_extend 56) ((_ extract 15 8) TMP_BV_16_0))
+                ((_ sign_extend 56) ((_ extract 7 0) TMP_BV_16_0))))
 
 Information about memory reads:
-  Value <TMP_BV_16_0|16> (2 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

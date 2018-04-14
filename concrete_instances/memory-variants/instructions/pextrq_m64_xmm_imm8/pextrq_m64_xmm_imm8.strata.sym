@@ -8,16 +8,21 @@ code: pextrq $0x0, %xmm1, (%rax)
   must undef:      { }
   required flags:  { sse4_1 }
 
+pextrq $0x0, %xmm1, (%rax): Hindex2(10)
+pextrq $0x0, %xmm1, (%rax): Hindex2(10)
 Formula:
 
 Information about memory reads:
-  Value <TMP_BV_64_0|64> (8 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
 
 Information about memory writes:
-  Address <%rax|64> was updated to
-    (>> <%ymm1|256>[127:0] <0x0|128>)[63:0] (8 bytes).
+  Address %rax was updated to
+    ((_ extract 63 0)
+  (bvlshr ((_ extract 127 0) %ymm1) #x00000000000000000000000000000000)) (8 bytes).
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE)) (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv
+    (and (not sigfpe) (not sigbus) false)
+    (and (not sigfpe) (not sigbus) false))

@@ -8,21 +8,500 @@ code: tzcntq (%rax), %rbx
   must undef:      { %pf %af %sf %of }
   required flags:  { bmi1 }
 
+tzcntq (%rax), %rbx: Hindex2(10)
+tzcntq (%rax), %rbx: Hindex2(10)
 Formula:
 
-%rbx   : (if (== <TMP_BV_64_0|64>[0:0] <0x1|1>) then <0x0|64> else (if (== <TMP_BV_64_0|64>[1:1] <0x1|1>) then <0x1|64> else (if (== <TMP_BV_64_0|64>[2:2] <0x1|1>) then <0x2|64> else (if (== <TMP_BV_64_0|64>[3:3] <0x1|1>) then <0x3|64> else (if (== <TMP_BV_64_0|64>[4:4] <0x1|1>) then <0x4|64> else (if (== <TMP_BV_64_0|64>[5:5] <0x1|1>) then <0x5|64> else (if (== <TMP_BV_64_0|64>[6:6] <0x1|1>) then <0x6|64> else (if (== <TMP_BV_64_0|64>[7:7] <0x1|1>) then <0x7|64> else (if (== <TMP_BV_64_0|64>[8:8] <0x1|1>) then <0x8|64> else (if (== <TMP_BV_64_0|64>[9:9] <0x1|1>) then <0x9|64> else (if (== <TMP_BV_64_0|64>[10:10] <0x1|1>) then <0xa|64> else (if (== <TMP_BV_64_0|64>[11:11] <0x1|1>) then <0xb|64> else (if (== <TMP_BV_64_0|64>[12:12] <0x1|1>) then <0xc|64> else (if (== <TMP_BV_64_0|64>[13:13] <0x1|1>) then <0xd|64> else (if (== <TMP_BV_64_0|64>[14:14] <0x1|1>) then <0xe|64> else (if (== <TMP_BV_64_0|64>[15:15] <0x1|1>) then <0xf|64> else (if (== <TMP_BV_64_0|64>[16:16] <0x1|1>) then <0x10|64> else (if (== <TMP_BV_64_0|64>[17:17] <0x1|1>) then <0x11|64> else (if (== <TMP_BV_64_0|64>[18:18] <0x1|1>) then <0x12|64> else (if (== <TMP_BV_64_0|64>[19:19] <0x1|1>) then <0x13|64> else (if (== <TMP_BV_64_0|64>[20:20] <0x1|1>) then <0x14|64> else (if (== <TMP_BV_64_0|64>[21:21] <0x1|1>) then <0x15|64> else (if (== <TMP_BV_64_0|64>[22:22] <0x1|1>) then <0x16|64> else (if (== <TMP_BV_64_0|64>[23:23] <0x1|1>) then <0x17|64> else (if (== <TMP_BV_64_0|64>[24:24] <0x1|1>) then <0x18|64> else (if (== <TMP_BV_64_0|64>[25:25] <0x1|1>) then <0x19|64> else (if (== <TMP_BV_64_0|64>[26:26] <0x1|1>) then <0x1a|64> else (if (== <TMP_BV_64_0|64>[27:27] <0x1|1>) then <0x1b|64> else (if (== <TMP_BV_64_0|64>[28:28] <0x1|1>) then <0x1c|64> else (if (== <TMP_BV_64_0|64>[29:29] <0x1|1>) then <0x1d|64> else (if (== <TMP_BV_64_0|64>[30:30] <0x1|1>) then <0x1e|64> else (if (== <TMP_BV_64_0|64>[31:31] <0x1|1>) then <0x1f|64> else (if (== <TMP_BV_64_0|64>[32:32] <0x1|1>) then <0x20|64> else (if (== <TMP_BV_64_0|64>[33:33] <0x1|1>) then <0x21|64> else (if (== <TMP_BV_64_0|64>[34:34] <0x1|1>) then <0x22|64> else (if (== <TMP_BV_64_0|64>[35:35] <0x1|1>) then <0x23|64> else (if (== <TMP_BV_64_0|64>[36:36] <0x1|1>) then <0x24|64> else (if (== <TMP_BV_64_0|64>[37:37] <0x1|1>) then <0x25|64> else (if (== <TMP_BV_64_0|64>[38:38] <0x1|1>) then <0x26|64> else (if (== <TMP_BV_64_0|64>[39:39] <0x1|1>) then <0x27|64> else (if (== <TMP_BV_64_0|64>[40:40] <0x1|1>) then <0x28|64> else (if (== <TMP_BV_64_0|64>[41:41] <0x1|1>) then <0x29|64> else (if (== <TMP_BV_64_0|64>[42:42] <0x1|1>) then <0x2a|64> else (if (== <TMP_BV_64_0|64>[43:43] <0x1|1>) then <0x2b|64> else (if (== <TMP_BV_64_0|64>[44:44] <0x1|1>) then <0x2c|64> else (if (== <TMP_BV_64_0|64>[45:45] <0x1|1>) then <0x2d|64> else (if (== <TMP_BV_64_0|64>[46:46] <0x1|1>) then <0x2e|64> else (if (== <TMP_BV_64_0|64>[47:47] <0x1|1>) then <0x2f|64> else (if (== <TMP_BV_64_0|64>[48:48] <0x1|1>) then <0x30|64> else (if (== <TMP_BV_64_0|64>[49:49] <0x1|1>) then <0x31|64> else (if (== <TMP_BV_64_0|64>[50:50] <0x1|1>) then <0x32|64> else (if (== <TMP_BV_64_0|64>[51:51] <0x1|1>) then <0x33|64> else (if (== <TMP_BV_64_0|64>[52:52] <0x1|1>) then <0x34|64> else (if (== <TMP_BV_64_0|64>[53:53] <0x1|1>) then <0x35|64> else (if (== <TMP_BV_64_0|64>[54:54] <0x1|1>) then <0x36|64> else (if (== <TMP_BV_64_0|64>[55:55] <0x1|1>) then <0x37|64> else (if (== <TMP_BV_64_0|64>[56:56] <0x1|1>) then <0x38|64> else (if (== <TMP_BV_64_0|64>[57:57] <0x1|1>) then <0x39|64> else (if (== <TMP_BV_64_0|64>[58:58] <0x1|1>) then <0x3a|64> else (if (== <TMP_BV_64_0|64>[59:59] <0x1|1>) then <0x3b|64> else (if (== <TMP_BV_64_0|64>[60:60] <0x1|1>) then <0x3c|64> else (if (== <TMP_BV_64_0|64>[61:61] <0x1|1>) then <0x3d|64> else (if (== <TMP_BV_64_0|64>[62:62] <0x1|1>) then <0x3e|64> else (if (== <TMP_BV_64_0|64>[63:63] <0x1|1>) then <0x3f|64> else <0x40|64>))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+%rbx   : (let ((a!1 (ite (= ((_ extract 62 62) TMP_BV_64_0) #b1)
+                #x000000000000003e
+                (ite (= ((_ extract 63 63) TMP_BV_64_0) #b1)
+                     #x000000000000003f
+                     #x0000000000000040))))
+(let ((a!2 (ite (= ((_ extract 60 60) TMP_BV_64_0) #b1)
+                #x000000000000003c
+                (ite (= ((_ extract 61 61) TMP_BV_64_0) #b1)
+                     #x000000000000003d
+                     a!1))))
+(let ((a!3 (ite (= ((_ extract 58 58) TMP_BV_64_0) #b1)
+                #x000000000000003a
+                (ite (= ((_ extract 59 59) TMP_BV_64_0) #b1)
+                     #x000000000000003b
+                     a!2))))
+(let ((a!4 (ite (= ((_ extract 56 56) TMP_BV_64_0) #b1)
+                #x0000000000000038
+                (ite (= ((_ extract 57 57) TMP_BV_64_0) #b1)
+                     #x0000000000000039
+                     a!3))))
+(let ((a!5 (ite (= ((_ extract 54 54) TMP_BV_64_0) #b1)
+                #x0000000000000036
+                (ite (= ((_ extract 55 55) TMP_BV_64_0) #b1)
+                     #x0000000000000037
+                     a!4))))
+(let ((a!6 (ite (= ((_ extract 52 52) TMP_BV_64_0) #b1)
+                #x0000000000000034
+                (ite (= ((_ extract 53 53) TMP_BV_64_0) #b1)
+                     #x0000000000000035
+                     a!5))))
+(let ((a!7 (ite (= ((_ extract 50 50) TMP_BV_64_0) #b1)
+                #x0000000000000032
+                (ite (= ((_ extract 51 51) TMP_BV_64_0) #b1)
+                     #x0000000000000033
+                     a!6))))
+(let ((a!8 (ite (= ((_ extract 48 48) TMP_BV_64_0) #b1)
+                #x0000000000000030
+                (ite (= ((_ extract 49 49) TMP_BV_64_0) #b1)
+                     #x0000000000000031
+                     a!7))))
+(let ((a!9 (ite (= ((_ extract 46 46) TMP_BV_64_0) #b1)
+                #x000000000000002e
+                (ite (= ((_ extract 47 47) TMP_BV_64_0) #b1)
+                     #x000000000000002f
+                     a!8))))
+(let ((a!10 (ite (= ((_ extract 44 44) TMP_BV_64_0) #b1)
+                 #x000000000000002c
+                 (ite (= ((_ extract 45 45) TMP_BV_64_0) #b1)
+                      #x000000000000002d
+                      a!9))))
+(let ((a!11 (ite (= ((_ extract 42 42) TMP_BV_64_0) #b1)
+                 #x000000000000002a
+                 (ite (= ((_ extract 43 43) TMP_BV_64_0) #b1)
+                      #x000000000000002b
+                      a!10))))
+(let ((a!12 (ite (= ((_ extract 40 40) TMP_BV_64_0) #b1)
+                 #x0000000000000028
+                 (ite (= ((_ extract 41 41) TMP_BV_64_0) #b1)
+                      #x0000000000000029
+                      a!11))))
+(let ((a!13 (ite (= ((_ extract 38 38) TMP_BV_64_0) #b1)
+                 #x0000000000000026
+                 (ite (= ((_ extract 39 39) TMP_BV_64_0) #b1)
+                      #x0000000000000027
+                      a!12))))
+(let ((a!14 (ite (= ((_ extract 36 36) TMP_BV_64_0) #b1)
+                 #x0000000000000024
+                 (ite (= ((_ extract 37 37) TMP_BV_64_0) #b1)
+                      #x0000000000000025
+                      a!13))))
+(let ((a!15 (ite (= ((_ extract 34 34) TMP_BV_64_0) #b1)
+                 #x0000000000000022
+                 (ite (= ((_ extract 35 35) TMP_BV_64_0) #b1)
+                      #x0000000000000023
+                      a!14))))
+(let ((a!16 (ite (= ((_ extract 32 32) TMP_BV_64_0) #b1)
+                 #x0000000000000020
+                 (ite (= ((_ extract 33 33) TMP_BV_64_0) #b1)
+                      #x0000000000000021
+                      a!15))))
+(let ((a!17 (ite (= ((_ extract 30 30) TMP_BV_64_0) #b1)
+                 #x000000000000001e
+                 (ite (= ((_ extract 31 31) TMP_BV_64_0) #b1)
+                      #x000000000000001f
+                      a!16))))
+(let ((a!18 (ite (= ((_ extract 28 28) TMP_BV_64_0) #b1)
+                 #x000000000000001c
+                 (ite (= ((_ extract 29 29) TMP_BV_64_0) #b1)
+                      #x000000000000001d
+                      a!17))))
+(let ((a!19 (ite (= ((_ extract 26 26) TMP_BV_64_0) #b1)
+                 #x000000000000001a
+                 (ite (= ((_ extract 27 27) TMP_BV_64_0) #b1)
+                      #x000000000000001b
+                      a!18))))
+(let ((a!20 (ite (= ((_ extract 24 24) TMP_BV_64_0) #b1)
+                 #x0000000000000018
+                 (ite (= ((_ extract 25 25) TMP_BV_64_0) #b1)
+                      #x0000000000000019
+                      a!19))))
+(let ((a!21 (ite (= ((_ extract 22 22) TMP_BV_64_0) #b1)
+                 #x0000000000000016
+                 (ite (= ((_ extract 23 23) TMP_BV_64_0) #b1)
+                      #x0000000000000017
+                      a!20))))
+(let ((a!22 (ite (= ((_ extract 20 20) TMP_BV_64_0) #b1)
+                 #x0000000000000014
+                 (ite (= ((_ extract 21 21) TMP_BV_64_0) #b1)
+                      #x0000000000000015
+                      a!21))))
+(let ((a!23 (ite (= ((_ extract 18 18) TMP_BV_64_0) #b1)
+                 #x0000000000000012
+                 (ite (= ((_ extract 19 19) TMP_BV_64_0) #b1)
+                      #x0000000000000013
+                      a!22))))
+(let ((a!24 (ite (= ((_ extract 16 16) TMP_BV_64_0) #b1)
+                 #x0000000000000010
+                 (ite (= ((_ extract 17 17) TMP_BV_64_0) #b1)
+                      #x0000000000000011
+                      a!23))))
+(let ((a!25 (ite (= ((_ extract 14 14) TMP_BV_64_0) #b1)
+                 #x000000000000000e
+                 (ite (= ((_ extract 15 15) TMP_BV_64_0) #b1)
+                      #x000000000000000f
+                      a!24))))
+(let ((a!26 (ite (= ((_ extract 12 12) TMP_BV_64_0) #b1)
+                 #x000000000000000c
+                 (ite (= ((_ extract 13 13) TMP_BV_64_0) #b1)
+                      #x000000000000000d
+                      a!25))))
+(let ((a!27 (ite (= ((_ extract 10 10) TMP_BV_64_0) #b1)
+                 #x000000000000000a
+                 (ite (= ((_ extract 11 11) TMP_BV_64_0) #b1)
+                      #x000000000000000b
+                      a!26))))
+(let ((a!28 (ite (= ((_ extract 8 8) TMP_BV_64_0) #b1)
+                 #x0000000000000008
+                 (ite (= ((_ extract 9 9) TMP_BV_64_0) #b1)
+                      #x0000000000000009
+                      a!27))))
+(let ((a!29 (ite (= ((_ extract 6 6) TMP_BV_64_0) #b1)
+                 #x0000000000000006
+                 (ite (= ((_ extract 7 7) TMP_BV_64_0) #b1)
+                      #x0000000000000007
+                      a!28))))
+(let ((a!30 (ite (= ((_ extract 4 4) TMP_BV_64_0) #b1)
+                 #x0000000000000004
+                 (ite (= ((_ extract 5 5) TMP_BV_64_0) #b1)
+                      #x0000000000000005
+                      a!29))))
+(let ((a!31 (ite (= ((_ extract 2 2) TMP_BV_64_0) #b1)
+                 #x0000000000000002
+                 (ite (= ((_ extract 3 3) TMP_BV_64_0) #b1)
+                      #x0000000000000003
+                      a!30))))
+  (ite (= ((_ extract 0 0) TMP_BV_64_0) #b1)
+       #x0000000000000000
+       (ite (= ((_ extract 1 1) TMP_BV_64_0) #b1) #x0000000000000001 a!31)))))))))))))))))))))))))))))))))
 
-%cf    : (== (if (== <TMP_BV_64_0|64>[0:0] <0x1|1>) then <0x0|64> else (if (== <TMP_BV_64_0|64>[1:1] <0x1|1>) then <0x1|64> else (if (== <TMP_BV_64_0|64>[2:2] <0x1|1>) then <0x2|64> else (if (== <TMP_BV_64_0|64>[3:3] <0x1|1>) then <0x3|64> else (if (== <TMP_BV_64_0|64>[4:4] <0x1|1>) then <0x4|64> else (if (== <TMP_BV_64_0|64>[5:5] <0x1|1>) then <0x5|64> else (if (== <TMP_BV_64_0|64>[6:6] <0x1|1>) then <0x6|64> else (if (== <TMP_BV_64_0|64>[7:7] <0x1|1>) then <0x7|64> else (if (== <TMP_BV_64_0|64>[8:8] <0x1|1>) then <0x8|64> else (if (== <TMP_BV_64_0|64>[9:9] <0x1|1>) then <0x9|64> else (if (== <TMP_BV_64_0|64>[10:10] <0x1|1>) then <0xa|64> else (if (== <TMP_BV_64_0|64>[11:11] <0x1|1>) then <0xb|64> else (if (== <TMP_BV_64_0|64>[12:12] <0x1|1>) then <0xc|64> else (if (== <TMP_BV_64_0|64>[13:13] <0x1|1>) then <0xd|64> else (if (== <TMP_BV_64_0|64>[14:14] <0x1|1>) then <0xe|64> else (if (== <TMP_BV_64_0|64>[15:15] <0x1|1>) then <0xf|64> else (if (== <TMP_BV_64_0|64>[16:16] <0x1|1>) then <0x10|64> else (if (== <TMP_BV_64_0|64>[17:17] <0x1|1>) then <0x11|64> else (if (== <TMP_BV_64_0|64>[18:18] <0x1|1>) then <0x12|64> else (if (== <TMP_BV_64_0|64>[19:19] <0x1|1>) then <0x13|64> else (if (== <TMP_BV_64_0|64>[20:20] <0x1|1>) then <0x14|64> else (if (== <TMP_BV_64_0|64>[21:21] <0x1|1>) then <0x15|64> else (if (== <TMP_BV_64_0|64>[22:22] <0x1|1>) then <0x16|64> else (if (== <TMP_BV_64_0|64>[23:23] <0x1|1>) then <0x17|64> else (if (== <TMP_BV_64_0|64>[24:24] <0x1|1>) then <0x18|64> else (if (== <TMP_BV_64_0|64>[25:25] <0x1|1>) then <0x19|64> else (if (== <TMP_BV_64_0|64>[26:26] <0x1|1>) then <0x1a|64> else (if (== <TMP_BV_64_0|64>[27:27] <0x1|1>) then <0x1b|64> else (if (== <TMP_BV_64_0|64>[28:28] <0x1|1>) then <0x1c|64> else (if (== <TMP_BV_64_0|64>[29:29] <0x1|1>) then <0x1d|64> else (if (== <TMP_BV_64_0|64>[30:30] <0x1|1>) then <0x1e|64> else (if (== <TMP_BV_64_0|64>[31:31] <0x1|1>) then <0x1f|64> else (if (== <TMP_BV_64_0|64>[32:32] <0x1|1>) then <0x20|64> else (if (== <TMP_BV_64_0|64>[33:33] <0x1|1>) then <0x21|64> else (if (== <TMP_BV_64_0|64>[34:34] <0x1|1>) then <0x22|64> else (if (== <TMP_BV_64_0|64>[35:35] <0x1|1>) then <0x23|64> else (if (== <TMP_BV_64_0|64>[36:36] <0x1|1>) then <0x24|64> else (if (== <TMP_BV_64_0|64>[37:37] <0x1|1>) then <0x25|64> else (if (== <TMP_BV_64_0|64>[38:38] <0x1|1>) then <0x26|64> else (if (== <TMP_BV_64_0|64>[39:39] <0x1|1>) then <0x27|64> else (if (== <TMP_BV_64_0|64>[40:40] <0x1|1>) then <0x28|64> else (if (== <TMP_BV_64_0|64>[41:41] <0x1|1>) then <0x29|64> else (if (== <TMP_BV_64_0|64>[42:42] <0x1|1>) then <0x2a|64> else (if (== <TMP_BV_64_0|64>[43:43] <0x1|1>) then <0x2b|64> else (if (== <TMP_BV_64_0|64>[44:44] <0x1|1>) then <0x2c|64> else (if (== <TMP_BV_64_0|64>[45:45] <0x1|1>) then <0x2d|64> else (if (== <TMP_BV_64_0|64>[46:46] <0x1|1>) then <0x2e|64> else (if (== <TMP_BV_64_0|64>[47:47] <0x1|1>) then <0x2f|64> else (if (== <TMP_BV_64_0|64>[48:48] <0x1|1>) then <0x30|64> else (if (== <TMP_BV_64_0|64>[49:49] <0x1|1>) then <0x31|64> else (if (== <TMP_BV_64_0|64>[50:50] <0x1|1>) then <0x32|64> else (if (== <TMP_BV_64_0|64>[51:51] <0x1|1>) then <0x33|64> else (if (== <TMP_BV_64_0|64>[52:52] <0x1|1>) then <0x34|64> else (if (== <TMP_BV_64_0|64>[53:53] <0x1|1>) then <0x35|64> else (if (== <TMP_BV_64_0|64>[54:54] <0x1|1>) then <0x36|64> else (if (== <TMP_BV_64_0|64>[55:55] <0x1|1>) then <0x37|64> else (if (== <TMP_BV_64_0|64>[56:56] <0x1|1>) then <0x38|64> else (if (== <TMP_BV_64_0|64>[57:57] <0x1|1>) then <0x39|64> else (if (== <TMP_BV_64_0|64>[58:58] <0x1|1>) then <0x3a|64> else (if (== <TMP_BV_64_0|64>[59:59] <0x1|1>) then <0x3b|64> else (if (== <TMP_BV_64_0|64>[60:60] <0x1|1>) then <0x3c|64> else (if (== <TMP_BV_64_0|64>[61:61] <0x1|1>) then <0x3d|64> else (if (== <TMP_BV_64_0|64>[62:62] <0x1|1>) then <0x3e|64> else (if (== <TMP_BV_64_0|64>[63:63] <0x1|1>) then <0x3f|64> else <0x40|64>)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))) <0x40|64>)
-%pf    : <TMP_BOOL_2>
-%af    : <TMP_BOOL_3>
-%zf    : (== (if (== <TMP_BV_64_0|64>[0:0] <0x1|1>) then <0x0|64> else (if (== <TMP_BV_64_0|64>[1:1] <0x1|1>) then <0x1|64> else (if (== <TMP_BV_64_0|64>[2:2] <0x1|1>) then <0x2|64> else (if (== <TMP_BV_64_0|64>[3:3] <0x1|1>) then <0x3|64> else (if (== <TMP_BV_64_0|64>[4:4] <0x1|1>) then <0x4|64> else (if (== <TMP_BV_64_0|64>[5:5] <0x1|1>) then <0x5|64> else (if (== <TMP_BV_64_0|64>[6:6] <0x1|1>) then <0x6|64> else (if (== <TMP_BV_64_0|64>[7:7] <0x1|1>) then <0x7|64> else (if (== <TMP_BV_64_0|64>[8:8] <0x1|1>) then <0x8|64> else (if (== <TMP_BV_64_0|64>[9:9] <0x1|1>) then <0x9|64> else (if (== <TMP_BV_64_0|64>[10:10] <0x1|1>) then <0xa|64> else (if (== <TMP_BV_64_0|64>[11:11] <0x1|1>) then <0xb|64> else (if (== <TMP_BV_64_0|64>[12:12] <0x1|1>) then <0xc|64> else (if (== <TMP_BV_64_0|64>[13:13] <0x1|1>) then <0xd|64> else (if (== <TMP_BV_64_0|64>[14:14] <0x1|1>) then <0xe|64> else (if (== <TMP_BV_64_0|64>[15:15] <0x1|1>) then <0xf|64> else (if (== <TMP_BV_64_0|64>[16:16] <0x1|1>) then <0x10|64> else (if (== <TMP_BV_64_0|64>[17:17] <0x1|1>) then <0x11|64> else (if (== <TMP_BV_64_0|64>[18:18] <0x1|1>) then <0x12|64> else (if (== <TMP_BV_64_0|64>[19:19] <0x1|1>) then <0x13|64> else (if (== <TMP_BV_64_0|64>[20:20] <0x1|1>) then <0x14|64> else (if (== <TMP_BV_64_0|64>[21:21] <0x1|1>) then <0x15|64> else (if (== <TMP_BV_64_0|64>[22:22] <0x1|1>) then <0x16|64> else (if (== <TMP_BV_64_0|64>[23:23] <0x1|1>) then <0x17|64> else (if (== <TMP_BV_64_0|64>[24:24] <0x1|1>) then <0x18|64> else (if (== <TMP_BV_64_0|64>[25:25] <0x1|1>) then <0x19|64> else (if (== <TMP_BV_64_0|64>[26:26] <0x1|1>) then <0x1a|64> else (if (== <TMP_BV_64_0|64>[27:27] <0x1|1>) then <0x1b|64> else (if (== <TMP_BV_64_0|64>[28:28] <0x1|1>) then <0x1c|64> else (if (== <TMP_BV_64_0|64>[29:29] <0x1|1>) then <0x1d|64> else (if (== <TMP_BV_64_0|64>[30:30] <0x1|1>) then <0x1e|64> else (if (== <TMP_BV_64_0|64>[31:31] <0x1|1>) then <0x1f|64> else (if (== <TMP_BV_64_0|64>[32:32] <0x1|1>) then <0x20|64> else (if (== <TMP_BV_64_0|64>[33:33] <0x1|1>) then <0x21|64> else (if (== <TMP_BV_64_0|64>[34:34] <0x1|1>) then <0x22|64> else (if (== <TMP_BV_64_0|64>[35:35] <0x1|1>) then <0x23|64> else (if (== <TMP_BV_64_0|64>[36:36] <0x1|1>) then <0x24|64> else (if (== <TMP_BV_64_0|64>[37:37] <0x1|1>) then <0x25|64> else (if (== <TMP_BV_64_0|64>[38:38] <0x1|1>) then <0x26|64> else (if (== <TMP_BV_64_0|64>[39:39] <0x1|1>) then <0x27|64> else (if (== <TMP_BV_64_0|64>[40:40] <0x1|1>) then <0x28|64> else (if (== <TMP_BV_64_0|64>[41:41] <0x1|1>) then <0x29|64> else (if (== <TMP_BV_64_0|64>[42:42] <0x1|1>) then <0x2a|64> else (if (== <TMP_BV_64_0|64>[43:43] <0x1|1>) then <0x2b|64> else (if (== <TMP_BV_64_0|64>[44:44] <0x1|1>) then <0x2c|64> else (if (== <TMP_BV_64_0|64>[45:45] <0x1|1>) then <0x2d|64> else (if (== <TMP_BV_64_0|64>[46:46] <0x1|1>) then <0x2e|64> else (if (== <TMP_BV_64_0|64>[47:47] <0x1|1>) then <0x2f|64> else (if (== <TMP_BV_64_0|64>[48:48] <0x1|1>) then <0x30|64> else (if (== <TMP_BV_64_0|64>[49:49] <0x1|1>) then <0x31|64> else (if (== <TMP_BV_64_0|64>[50:50] <0x1|1>) then <0x32|64> else (if (== <TMP_BV_64_0|64>[51:51] <0x1|1>) then <0x33|64> else (if (== <TMP_BV_64_0|64>[52:52] <0x1|1>) then <0x34|64> else (if (== <TMP_BV_64_0|64>[53:53] <0x1|1>) then <0x35|64> else (if (== <TMP_BV_64_0|64>[54:54] <0x1|1>) then <0x36|64> else (if (== <TMP_BV_64_0|64>[55:55] <0x1|1>) then <0x37|64> else (if (== <TMP_BV_64_0|64>[56:56] <0x1|1>) then <0x38|64> else (if (== <TMP_BV_64_0|64>[57:57] <0x1|1>) then <0x39|64> else (if (== <TMP_BV_64_0|64>[58:58] <0x1|1>) then <0x3a|64> else (if (== <TMP_BV_64_0|64>[59:59] <0x1|1>) then <0x3b|64> else (if (== <TMP_BV_64_0|64>[60:60] <0x1|1>) then <0x3c|64> else (if (== <TMP_BV_64_0|64>[61:61] <0x1|1>) then <0x3d|64> else (if (== <TMP_BV_64_0|64>[62:62] <0x1|1>) then <0x3e|64> else (if (== <TMP_BV_64_0|64>[63:63] <0x1|1>) then <0x3f|64> else <0x40|64>)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))) <0x0|64>)
-%sf    : <TMP_BOOL_1>
-%of    : <TMP_BOOL_0>
+%cf    : (let ((a!1 (ite (= ((_ extract 62 62) TMP_BV_64_0) #b1)
+                #x000000000000003e
+                (ite (= ((_ extract 63 63) TMP_BV_64_0) #b1)
+                     #x000000000000003f
+                     #x0000000000000040))))
+(let ((a!2 (ite (= ((_ extract 60 60) TMP_BV_64_0) #b1)
+                #x000000000000003c
+                (ite (= ((_ extract 61 61) TMP_BV_64_0) #b1)
+                     #x000000000000003d
+                     a!1))))
+(let ((a!3 (ite (= ((_ extract 58 58) TMP_BV_64_0) #b1)
+                #x000000000000003a
+                (ite (= ((_ extract 59 59) TMP_BV_64_0) #b1)
+                     #x000000000000003b
+                     a!2))))
+(let ((a!4 (ite (= ((_ extract 56 56) TMP_BV_64_0) #b1)
+                #x0000000000000038
+                (ite (= ((_ extract 57 57) TMP_BV_64_0) #b1)
+                     #x0000000000000039
+                     a!3))))
+(let ((a!5 (ite (= ((_ extract 54 54) TMP_BV_64_0) #b1)
+                #x0000000000000036
+                (ite (= ((_ extract 55 55) TMP_BV_64_0) #b1)
+                     #x0000000000000037
+                     a!4))))
+(let ((a!6 (ite (= ((_ extract 52 52) TMP_BV_64_0) #b1)
+                #x0000000000000034
+                (ite (= ((_ extract 53 53) TMP_BV_64_0) #b1)
+                     #x0000000000000035
+                     a!5))))
+(let ((a!7 (ite (= ((_ extract 50 50) TMP_BV_64_0) #b1)
+                #x0000000000000032
+                (ite (= ((_ extract 51 51) TMP_BV_64_0) #b1)
+                     #x0000000000000033
+                     a!6))))
+(let ((a!8 (ite (= ((_ extract 48 48) TMP_BV_64_0) #b1)
+                #x0000000000000030
+                (ite (= ((_ extract 49 49) TMP_BV_64_0) #b1)
+                     #x0000000000000031
+                     a!7))))
+(let ((a!9 (ite (= ((_ extract 46 46) TMP_BV_64_0) #b1)
+                #x000000000000002e
+                (ite (= ((_ extract 47 47) TMP_BV_64_0) #b1)
+                     #x000000000000002f
+                     a!8))))
+(let ((a!10 (ite (= ((_ extract 44 44) TMP_BV_64_0) #b1)
+                 #x000000000000002c
+                 (ite (= ((_ extract 45 45) TMP_BV_64_0) #b1)
+                      #x000000000000002d
+                      a!9))))
+(let ((a!11 (ite (= ((_ extract 42 42) TMP_BV_64_0) #b1)
+                 #x000000000000002a
+                 (ite (= ((_ extract 43 43) TMP_BV_64_0) #b1)
+                      #x000000000000002b
+                      a!10))))
+(let ((a!12 (ite (= ((_ extract 40 40) TMP_BV_64_0) #b1)
+                 #x0000000000000028
+                 (ite (= ((_ extract 41 41) TMP_BV_64_0) #b1)
+                      #x0000000000000029
+                      a!11))))
+(let ((a!13 (ite (= ((_ extract 38 38) TMP_BV_64_0) #b1)
+                 #x0000000000000026
+                 (ite (= ((_ extract 39 39) TMP_BV_64_0) #b1)
+                      #x0000000000000027
+                      a!12))))
+(let ((a!14 (ite (= ((_ extract 36 36) TMP_BV_64_0) #b1)
+                 #x0000000000000024
+                 (ite (= ((_ extract 37 37) TMP_BV_64_0) #b1)
+                      #x0000000000000025
+                      a!13))))
+(let ((a!15 (ite (= ((_ extract 34 34) TMP_BV_64_0) #b1)
+                 #x0000000000000022
+                 (ite (= ((_ extract 35 35) TMP_BV_64_0) #b1)
+                      #x0000000000000023
+                      a!14))))
+(let ((a!16 (ite (= ((_ extract 32 32) TMP_BV_64_0) #b1)
+                 #x0000000000000020
+                 (ite (= ((_ extract 33 33) TMP_BV_64_0) #b1)
+                      #x0000000000000021
+                      a!15))))
+(let ((a!17 (ite (= ((_ extract 30 30) TMP_BV_64_0) #b1)
+                 #x000000000000001e
+                 (ite (= ((_ extract 31 31) TMP_BV_64_0) #b1)
+                      #x000000000000001f
+                      a!16))))
+(let ((a!18 (ite (= ((_ extract 28 28) TMP_BV_64_0) #b1)
+                 #x000000000000001c
+                 (ite (= ((_ extract 29 29) TMP_BV_64_0) #b1)
+                      #x000000000000001d
+                      a!17))))
+(let ((a!19 (ite (= ((_ extract 26 26) TMP_BV_64_0) #b1)
+                 #x000000000000001a
+                 (ite (= ((_ extract 27 27) TMP_BV_64_0) #b1)
+                      #x000000000000001b
+                      a!18))))
+(let ((a!20 (ite (= ((_ extract 24 24) TMP_BV_64_0) #b1)
+                 #x0000000000000018
+                 (ite (= ((_ extract 25 25) TMP_BV_64_0) #b1)
+                      #x0000000000000019
+                      a!19))))
+(let ((a!21 (ite (= ((_ extract 22 22) TMP_BV_64_0) #b1)
+                 #x0000000000000016
+                 (ite (= ((_ extract 23 23) TMP_BV_64_0) #b1)
+                      #x0000000000000017
+                      a!20))))
+(let ((a!22 (ite (= ((_ extract 20 20) TMP_BV_64_0) #b1)
+                 #x0000000000000014
+                 (ite (= ((_ extract 21 21) TMP_BV_64_0) #b1)
+                      #x0000000000000015
+                      a!21))))
+(let ((a!23 (ite (= ((_ extract 18 18) TMP_BV_64_0) #b1)
+                 #x0000000000000012
+                 (ite (= ((_ extract 19 19) TMP_BV_64_0) #b1)
+                      #x0000000000000013
+                      a!22))))
+(let ((a!24 (ite (= ((_ extract 16 16) TMP_BV_64_0) #b1)
+                 #x0000000000000010
+                 (ite (= ((_ extract 17 17) TMP_BV_64_0) #b1)
+                      #x0000000000000011
+                      a!23))))
+(let ((a!25 (ite (= ((_ extract 14 14) TMP_BV_64_0) #b1)
+                 #x000000000000000e
+                 (ite (= ((_ extract 15 15) TMP_BV_64_0) #b1)
+                      #x000000000000000f
+                      a!24))))
+(let ((a!26 (ite (= ((_ extract 12 12) TMP_BV_64_0) #b1)
+                 #x000000000000000c
+                 (ite (= ((_ extract 13 13) TMP_BV_64_0) #b1)
+                      #x000000000000000d
+                      a!25))))
+(let ((a!27 (ite (= ((_ extract 10 10) TMP_BV_64_0) #b1)
+                 #x000000000000000a
+                 (ite (= ((_ extract 11 11) TMP_BV_64_0) #b1)
+                      #x000000000000000b
+                      a!26))))
+(let ((a!28 (ite (= ((_ extract 8 8) TMP_BV_64_0) #b1)
+                 #x0000000000000008
+                 (ite (= ((_ extract 9 9) TMP_BV_64_0) #b1)
+                      #x0000000000000009
+                      a!27))))
+(let ((a!29 (ite (= ((_ extract 6 6) TMP_BV_64_0) #b1)
+                 #x0000000000000006
+                 (ite (= ((_ extract 7 7) TMP_BV_64_0) #b1)
+                      #x0000000000000007
+                      a!28))))
+(let ((a!30 (ite (= ((_ extract 4 4) TMP_BV_64_0) #b1)
+                 #x0000000000000004
+                 (ite (= ((_ extract 5 5) TMP_BV_64_0) #b1)
+                      #x0000000000000005
+                      a!29))))
+(let ((a!31 (ite (= ((_ extract 2 2) TMP_BV_64_0) #b1)
+                 #x0000000000000002
+                 (ite (= ((_ extract 3 3) TMP_BV_64_0) #b1)
+                      #x0000000000000003
+                      a!30))))
+(let ((a!32 (ite (= ((_ extract 0 0) TMP_BV_64_0) #b1)
+                 #x0000000000000000
+                 (ite (= ((_ extract 1 1) TMP_BV_64_0) #b1)
+                      #x0000000000000001
+                      a!31))))
+  (= a!32 #x0000000000000040)))))))))))))))))))))))))))))))))
+%pf    : TMP_BOOL_2
+%af    : TMP_BOOL_3
+%zf    : (let ((a!1 (ite (= ((_ extract 62 62) TMP_BV_64_0) #b1)
+                #x000000000000003e
+                (ite (= ((_ extract 63 63) TMP_BV_64_0) #b1)
+                     #x000000000000003f
+                     #x0000000000000040))))
+(let ((a!2 (ite (= ((_ extract 60 60) TMP_BV_64_0) #b1)
+                #x000000000000003c
+                (ite (= ((_ extract 61 61) TMP_BV_64_0) #b1)
+                     #x000000000000003d
+                     a!1))))
+(let ((a!3 (ite (= ((_ extract 58 58) TMP_BV_64_0) #b1)
+                #x000000000000003a
+                (ite (= ((_ extract 59 59) TMP_BV_64_0) #b1)
+                     #x000000000000003b
+                     a!2))))
+(let ((a!4 (ite (= ((_ extract 56 56) TMP_BV_64_0) #b1)
+                #x0000000000000038
+                (ite (= ((_ extract 57 57) TMP_BV_64_0) #b1)
+                     #x0000000000000039
+                     a!3))))
+(let ((a!5 (ite (= ((_ extract 54 54) TMP_BV_64_0) #b1)
+                #x0000000000000036
+                (ite (= ((_ extract 55 55) TMP_BV_64_0) #b1)
+                     #x0000000000000037
+                     a!4))))
+(let ((a!6 (ite (= ((_ extract 52 52) TMP_BV_64_0) #b1)
+                #x0000000000000034
+                (ite (= ((_ extract 53 53) TMP_BV_64_0) #b1)
+                     #x0000000000000035
+                     a!5))))
+(let ((a!7 (ite (= ((_ extract 50 50) TMP_BV_64_0) #b1)
+                #x0000000000000032
+                (ite (= ((_ extract 51 51) TMP_BV_64_0) #b1)
+                     #x0000000000000033
+                     a!6))))
+(let ((a!8 (ite (= ((_ extract 48 48) TMP_BV_64_0) #b1)
+                #x0000000000000030
+                (ite (= ((_ extract 49 49) TMP_BV_64_0) #b1)
+                     #x0000000000000031
+                     a!7))))
+(let ((a!9 (ite (= ((_ extract 46 46) TMP_BV_64_0) #b1)
+                #x000000000000002e
+                (ite (= ((_ extract 47 47) TMP_BV_64_0) #b1)
+                     #x000000000000002f
+                     a!8))))
+(let ((a!10 (ite (= ((_ extract 44 44) TMP_BV_64_0) #b1)
+                 #x000000000000002c
+                 (ite (= ((_ extract 45 45) TMP_BV_64_0) #b1)
+                      #x000000000000002d
+                      a!9))))
+(let ((a!11 (ite (= ((_ extract 42 42) TMP_BV_64_0) #b1)
+                 #x000000000000002a
+                 (ite (= ((_ extract 43 43) TMP_BV_64_0) #b1)
+                      #x000000000000002b
+                      a!10))))
+(let ((a!12 (ite (= ((_ extract 40 40) TMP_BV_64_0) #b1)
+                 #x0000000000000028
+                 (ite (= ((_ extract 41 41) TMP_BV_64_0) #b1)
+                      #x0000000000000029
+                      a!11))))
+(let ((a!13 (ite (= ((_ extract 38 38) TMP_BV_64_0) #b1)
+                 #x0000000000000026
+                 (ite (= ((_ extract 39 39) TMP_BV_64_0) #b1)
+                      #x0000000000000027
+                      a!12))))
+(let ((a!14 (ite (= ((_ extract 36 36) TMP_BV_64_0) #b1)
+                 #x0000000000000024
+                 (ite (= ((_ extract 37 37) TMP_BV_64_0) #b1)
+                      #x0000000000000025
+                      a!13))))
+(let ((a!15 (ite (= ((_ extract 34 34) TMP_BV_64_0) #b1)
+                 #x0000000000000022
+                 (ite (= ((_ extract 35 35) TMP_BV_64_0) #b1)
+                      #x0000000000000023
+                      a!14))))
+(let ((a!16 (ite (= ((_ extract 32 32) TMP_BV_64_0) #b1)
+                 #x0000000000000020
+                 (ite (= ((_ extract 33 33) TMP_BV_64_0) #b1)
+                      #x0000000000000021
+                      a!15))))
+(let ((a!17 (ite (= ((_ extract 30 30) TMP_BV_64_0) #b1)
+                 #x000000000000001e
+                 (ite (= ((_ extract 31 31) TMP_BV_64_0) #b1)
+                      #x000000000000001f
+                      a!16))))
+(let ((a!18 (ite (= ((_ extract 28 28) TMP_BV_64_0) #b1)
+                 #x000000000000001c
+                 (ite (= ((_ extract 29 29) TMP_BV_64_0) #b1)
+                      #x000000000000001d
+                      a!17))))
+(let ((a!19 (ite (= ((_ extract 26 26) TMP_BV_64_0) #b1)
+                 #x000000000000001a
+                 (ite (= ((_ extract 27 27) TMP_BV_64_0) #b1)
+                      #x000000000000001b
+                      a!18))))
+(let ((a!20 (ite (= ((_ extract 24 24) TMP_BV_64_0) #b1)
+                 #x0000000000000018
+                 (ite (= ((_ extract 25 25) TMP_BV_64_0) #b1)
+                      #x0000000000000019
+                      a!19))))
+(let ((a!21 (ite (= ((_ extract 22 22) TMP_BV_64_0) #b1)
+                 #x0000000000000016
+                 (ite (= ((_ extract 23 23) TMP_BV_64_0) #b1)
+                      #x0000000000000017
+                      a!20))))
+(let ((a!22 (ite (= ((_ extract 20 20) TMP_BV_64_0) #b1)
+                 #x0000000000000014
+                 (ite (= ((_ extract 21 21) TMP_BV_64_0) #b1)
+                      #x0000000000000015
+                      a!21))))
+(let ((a!23 (ite (= ((_ extract 18 18) TMP_BV_64_0) #b1)
+                 #x0000000000000012
+                 (ite (= ((_ extract 19 19) TMP_BV_64_0) #b1)
+                      #x0000000000000013
+                      a!22))))
+(let ((a!24 (ite (= ((_ extract 16 16) TMP_BV_64_0) #b1)
+                 #x0000000000000010
+                 (ite (= ((_ extract 17 17) TMP_BV_64_0) #b1)
+                      #x0000000000000011
+                      a!23))))
+(let ((a!25 (ite (= ((_ extract 14 14) TMP_BV_64_0) #b1)
+                 #x000000000000000e
+                 (ite (= ((_ extract 15 15) TMP_BV_64_0) #b1)
+                      #x000000000000000f
+                      a!24))))
+(let ((a!26 (ite (= ((_ extract 12 12) TMP_BV_64_0) #b1)
+                 #x000000000000000c
+                 (ite (= ((_ extract 13 13) TMP_BV_64_0) #b1)
+                      #x000000000000000d
+                      a!25))))
+(let ((a!27 (ite (= ((_ extract 10 10) TMP_BV_64_0) #b1)
+                 #x000000000000000a
+                 (ite (= ((_ extract 11 11) TMP_BV_64_0) #b1)
+                      #x000000000000000b
+                      a!26))))
+(let ((a!28 (ite (= ((_ extract 8 8) TMP_BV_64_0) #b1)
+                 #x0000000000000008
+                 (ite (= ((_ extract 9 9) TMP_BV_64_0) #b1)
+                      #x0000000000000009
+                      a!27))))
+(let ((a!29 (ite (= ((_ extract 6 6) TMP_BV_64_0) #b1)
+                 #x0000000000000006
+                 (ite (= ((_ extract 7 7) TMP_BV_64_0) #b1)
+                      #x0000000000000007
+                      a!28))))
+(let ((a!30 (ite (= ((_ extract 4 4) TMP_BV_64_0) #b1)
+                 #x0000000000000004
+                 (ite (= ((_ extract 5 5) TMP_BV_64_0) #b1)
+                      #x0000000000000005
+                      a!29))))
+(let ((a!31 (ite (= ((_ extract 2 2) TMP_BV_64_0) #b1)
+                 #x0000000000000002
+                 (ite (= ((_ extract 3 3) TMP_BV_64_0) #b1)
+                      #x0000000000000003
+                      a!30))))
+(let ((a!32 (ite (= ((_ extract 0 0) TMP_BV_64_0) #b1)
+                 #x0000000000000000
+                 (ite (= ((_ extract 1 1) TMP_BV_64_0) #b1)
+                      #x0000000000000001
+                      a!31))))
+  (= a!32 #x0000000000000000)))))))))))))))))))))))))))))))))
+%sf    : TMP_BOOL_1
+%of    : TMP_BOOL_0
 
 Information about memory reads:
-  Value <TMP_BV_64_0|64> (8 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

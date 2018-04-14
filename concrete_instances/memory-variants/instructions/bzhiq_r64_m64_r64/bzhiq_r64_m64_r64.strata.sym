@@ -8,21 +8,413 @@ code: bzhiq %rcx, (%rax), %rbx
   must undef:      { %pf %af }
   required flags:  { bmi2 }
 
+bzhiq %rcx, (%rax), %rbx: Hindex2(10)
+bzhiq %rcx, (%rax), %rbx: Hindex2(10)
 Formula:
 
-%rbx   : (if (< <%rcx|64>[7:0] <0x40|8>) then (if (== <%rcx|64>[7:0] <0x3f|8>) then (concat <0x0|1> <TMP_BV_64_0|64>[62:0]) else (if (== <%rcx|64>[7:0] <0x3e|8>) then (concat <0x0|2> <TMP_BV_64_0|64>[61:0]) else (if (== <%rcx|64>[7:0] <0x3d|8>) then (concat <0x0|3> <TMP_BV_64_0|64>[60:0]) else (if (== <%rcx|64>[7:0] <0x3c|8>) then (concat <0x0|4> <TMP_BV_64_0|64>[59:0]) else (if (== <%rcx|64>[7:0] <0x3b|8>) then (concat <0x0|5> <TMP_BV_64_0|64>[58:0]) else (if (== <%rcx|64>[7:0] <0x3a|8>) then (concat <0x0|6> <TMP_BV_64_0|64>[57:0]) else (if (== <%rcx|64>[7:0] <0x39|8>) then (concat <0x0|7> <TMP_BV_64_0|64>[56:0]) else (if (== <%rcx|64>[7:0] <0x38|8>) then (concat <0x0|8> <TMP_BV_64_0|64>[55:0]) else (if (== <%rcx|64>[7:0] <0x37|8>) then (concat <0x0|9> <TMP_BV_64_0|64>[54:0]) else (if (== <%rcx|64>[7:0] <0x36|8>) then (concat <0x0|10> <TMP_BV_64_0|64>[53:0]) else (if (== <%rcx|64>[7:0] <0x35|8>) then (concat <0x0|11> <TMP_BV_64_0|64>[52:0]) else (if (== <%rcx|64>[7:0] <0x34|8>) then (concat <0x0|12> <TMP_BV_64_0|64>[51:0]) else (if (== <%rcx|64>[7:0] <0x33|8>) then (concat <0x0|13> <TMP_BV_64_0|64>[50:0]) else (if (== <%rcx|64>[7:0] <0x32|8>) then (concat <0x0|14> <TMP_BV_64_0|64>[49:0]) else (if (== <%rcx|64>[7:0] <0x31|8>) then (concat <0x0|15> <TMP_BV_64_0|64>[48:0]) else (if (== <%rcx|64>[7:0] <0x30|8>) then (concat <0x0|16> <TMP_BV_64_0|64>[47:0]) else (if (== <%rcx|64>[7:0] <0x2f|8>) then (concat <0x0|17> <TMP_BV_64_0|64>[46:0]) else (if (== <%rcx|64>[7:0] <0x2e|8>) then (concat <0x0|18> <TMP_BV_64_0|64>[45:0]) else (if (== <%rcx|64>[7:0] <0x2d|8>) then (concat <0x0|19> <TMP_BV_64_0|64>[44:0]) else (if (== <%rcx|64>[7:0] <0x2c|8>) then (concat <0x0|20> <TMP_BV_64_0|64>[43:0]) else (if (== <%rcx|64>[7:0] <0x2b|8>) then (concat <0x0|21> <TMP_BV_64_0|64>[42:0]) else (if (== <%rcx|64>[7:0] <0x2a|8>) then (concat <0x0|22> <TMP_BV_64_0|64>[41:0]) else (if (== <%rcx|64>[7:0] <0x29|8>) then (concat <0x0|23> <TMP_BV_64_0|64>[40:0]) else (if (== <%rcx|64>[7:0] <0x28|8>) then (concat <0x0|24> <TMP_BV_64_0|64>[39:0]) else (if (== <%rcx|64>[7:0] <0x27|8>) then (concat <0x0|25> <TMP_BV_64_0|64>[38:0]) else (if (== <%rcx|64>[7:0] <0x26|8>) then (concat <0x0|26> <TMP_BV_64_0|64>[37:0]) else (if (== <%rcx|64>[7:0] <0x25|8>) then (concat <0x0|27> <TMP_BV_64_0|64>[36:0]) else (if (== <%rcx|64>[7:0] <0x24|8>) then (concat <0x0|28> <TMP_BV_64_0|64>[35:0]) else (if (== <%rcx|64>[7:0] <0x23|8>) then (concat <0x0|29> <TMP_BV_64_0|64>[34:0]) else (if (== <%rcx|64>[7:0] <0x22|8>) then (concat <0x0|30> <TMP_BV_64_0|64>[33:0]) else (if (== <%rcx|64>[7:0] <0x21|8>) then (concat <0x0|31> <TMP_BV_64_0|64>[32:0]) else (if (== <%rcx|64>[7:0] <0x20|8>) then (concat <0x0|32> <TMP_BV_64_0|64>[31:0]) else (if (== <%rcx|64>[7:0] <0x1f|8>) then (concat <0x0|33> <TMP_BV_64_0|64>[30:0]) else (if (== <%rcx|64>[7:0] <0x1e|8>) then (concat <0x0|34> <TMP_BV_64_0|64>[29:0]) else (if (== <%rcx|64>[7:0] <0x1d|8>) then (concat <0x0|35> <TMP_BV_64_0|64>[28:0]) else (if (== <%rcx|64>[7:0] <0x1c|8>) then (concat <0x0|36> <TMP_BV_64_0|64>[27:0]) else (if (== <%rcx|64>[7:0] <0x1b|8>) then (concat <0x0|37> <TMP_BV_64_0|64>[26:0]) else (if (== <%rcx|64>[7:0] <0x1a|8>) then (concat <0x0|38> <TMP_BV_64_0|64>[25:0]) else (if (== <%rcx|64>[7:0] <0x19|8>) then (concat <0x0|39> <TMP_BV_64_0|64>[24:0]) else (if (== <%rcx|64>[7:0] <0x18|8>) then (concat <0x0|40> <TMP_BV_64_0|64>[23:0]) else (if (== <%rcx|64>[7:0] <0x17|8>) then (concat <0x0|41> <TMP_BV_64_0|64>[22:0]) else (if (== <%rcx|64>[7:0] <0x16|8>) then (concat <0x0|42> <TMP_BV_64_0|64>[21:0]) else (if (== <%rcx|64>[7:0] <0x15|8>) then (concat <0x0|43> <TMP_BV_64_0|64>[20:0]) else (if (== <%rcx|64>[7:0] <0x14|8>) then (concat <0x0|44> <TMP_BV_64_0|64>[19:0]) else (if (== <%rcx|64>[7:0] <0x13|8>) then (concat <0x0|45> <TMP_BV_64_0|64>[18:0]) else (if (== <%rcx|64>[7:0] <0x12|8>) then (concat <0x0|46> <TMP_BV_64_0|64>[17:0]) else (if (== <%rcx|64>[7:0] <0x11|8>) then (concat <0x0|47> <TMP_BV_64_0|64>[16:0]) else (if (== <%rcx|64>[7:0] <0x10|8>) then (concat <0x0|48> <TMP_BV_64_0|64>[15:0]) else (if (== <%rcx|64>[7:0] <0xf|8>) then (concat <0x0|49> <TMP_BV_64_0|64>[14:0]) else (if (== <%rcx|64>[7:0] <0xe|8>) then (concat <0x0|50> <TMP_BV_64_0|64>[13:0]) else (if (== <%rcx|64>[7:0] <0xd|8>) then (concat <0x0|51> <TMP_BV_64_0|64>[12:0]) else (if (== <%rcx|64>[7:0] <0xc|8>) then (concat <0x0|52> <TMP_BV_64_0|64>[11:0]) else (if (== <%rcx|64>[7:0] <0xb|8>) then (concat <0x0|53> <TMP_BV_64_0|64>[10:0]) else (if (== <%rcx|64>[7:0] <0xa|8>) then (concat <0x0|54> <TMP_BV_64_0|64>[9:0]) else (if (== <%rcx|64>[7:0] <0x9|8>) then (concat <0x0|55> <TMP_BV_64_0|64>[8:0]) else (if (== <%rcx|64>[7:0] <0x8|8>) then (concat <0x0|56> <TMP_BV_64_0|64>[7:0]) else (if (== <%rcx|64>[7:0] <0x7|8>) then (concat <0x0|57> <TMP_BV_64_0|64>[6:0]) else (if (== <%rcx|64>[7:0] <0x6|8>) then (concat <0x0|58> <TMP_BV_64_0|64>[5:0]) else (if (== <%rcx|64>[7:0] <0x5|8>) then (concat <0x0|59> <TMP_BV_64_0|64>[4:0]) else (if (== <%rcx|64>[7:0] <0x4|8>) then (concat <0x0|60> <TMP_BV_64_0|64>[3:0]) else (if (== <%rcx|64>[7:0] <0x3|8>) then (concat <0x0|61> <TMP_BV_64_0|64>[2:0]) else (if (== <%rcx|64>[7:0] <0x2|8>) then (concat <0x0|62> <TMP_BV_64_0|64>[1:0]) else (if (== <%rcx|64>[7:0] <0x1|8>) then (concat <0x0|63> <TMP_BV_64_0|64>[0:0]) else <0x0|64>))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))) else <TMP_BV_64_0|64>)
+%rbx   : (let ((a!1 (ite (= ((_ extract 7 0) %rcx) #x02)
+                (concat #b00000000000000000000000000000000000000000000000000000000000000
+                        ((_ extract 1 0) TMP_BV_64_0))
+                (ite (= ((_ extract 7 0) %rcx) #x01)
+                     (concat #b000000000000000000000000000000000000000000000000000000000000000
+                             ((_ extract 0 0) TMP_BV_64_0))
+                     #x0000000000000000))))
+(let ((a!2 (ite (= ((_ extract 7 0) %rcx) #x04)
+                (concat #x000000000000000 ((_ extract 3 0) TMP_BV_64_0))
+                (ite (= ((_ extract 7 0) %rcx) #x03)
+                     (concat #b0000000000000000000000000000000000000000000000000000000000000
+                             ((_ extract 2 0) TMP_BV_64_0))
+                     a!1))))
+(let ((a!3 (ite (= ((_ extract 7 0) %rcx) #x06)
+                (concat #b0000000000000000000000000000000000000000000000000000000000
+                        ((_ extract 5 0) TMP_BV_64_0))
+                (ite (= ((_ extract 7 0) %rcx) #x05)
+                     (concat #b00000000000000000000000000000000000000000000000000000000000
+                             ((_ extract 4 0) TMP_BV_64_0))
+                     a!2))))
+(let ((a!4 (ite (= ((_ extract 7 0) %rcx) #x08)
+                (concat #x00000000000000 ((_ extract 7 0) TMP_BV_64_0))
+                (ite (= ((_ extract 7 0) %rcx) #x07)
+                     (concat #b000000000000000000000000000000000000000000000000000000000
+                             ((_ extract 6 0) TMP_BV_64_0))
+                     a!3))))
+(let ((a!5 (ite (= ((_ extract 7 0) %rcx) #x0a)
+                (concat #b000000000000000000000000000000000000000000000000000000
+                        ((_ extract 9 0) TMP_BV_64_0))
+                (ite (= ((_ extract 7 0) %rcx) #x09)
+                     (concat #b0000000000000000000000000000000000000000000000000000000
+                             ((_ extract 8 0) TMP_BV_64_0))
+                     a!4))))
+(let ((a!6 (ite (= ((_ extract 7 0) %rcx) #x0c)
+                (concat #x0000000000000 ((_ extract 11 0) TMP_BV_64_0))
+                (ite (= ((_ extract 7 0) %rcx) #x0b)
+                     (concat #b00000000000000000000000000000000000000000000000000000
+                             ((_ extract 10 0) TMP_BV_64_0))
+                     a!5))))
+(let ((a!7 (ite (= ((_ extract 7 0) %rcx) #x0e)
+                (concat #b00000000000000000000000000000000000000000000000000
+                        ((_ extract 13 0) TMP_BV_64_0))
+                (ite (= ((_ extract 7 0) %rcx) #x0d)
+                     (concat #b000000000000000000000000000000000000000000000000000
+                             ((_ extract 12 0) TMP_BV_64_0))
+                     a!6))))
+(let ((a!8 (ite (= ((_ extract 7 0) %rcx) #x10)
+                (concat #x000000000000 ((_ extract 15 0) TMP_BV_64_0))
+                (ite (= ((_ extract 7 0) %rcx) #x0f)
+                     (concat #b0000000000000000000000000000000000000000000000000
+                             ((_ extract 14 0) TMP_BV_64_0))
+                     a!7))))
+(let ((a!9 (ite (= ((_ extract 7 0) %rcx) #x12)
+                (concat #b0000000000000000000000000000000000000000000000
+                        ((_ extract 17 0) TMP_BV_64_0))
+                (ite (= ((_ extract 7 0) %rcx) #x11)
+                     (concat #b00000000000000000000000000000000000000000000000
+                             ((_ extract 16 0) TMP_BV_64_0))
+                     a!8))))
+(let ((a!10 (ite (= ((_ extract 7 0) %rcx) #x14)
+                 (concat #x00000000000 ((_ extract 19 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x13)
+                      (concat #b000000000000000000000000000000000000000000000
+                              ((_ extract 18 0) TMP_BV_64_0))
+                      a!9))))
+(let ((a!11 (ite (= ((_ extract 7 0) %rcx) #x16)
+                 (concat #b000000000000000000000000000000000000000000
+                         ((_ extract 21 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x15)
+                      (concat #b0000000000000000000000000000000000000000000
+                              ((_ extract 20 0) TMP_BV_64_0))
+                      a!10))))
+(let ((a!12 (ite (= ((_ extract 7 0) %rcx) #x18)
+                 (concat #x0000000000 ((_ extract 23 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x17)
+                      (concat #b00000000000000000000000000000000000000000
+                              ((_ extract 22 0) TMP_BV_64_0))
+                      a!11))))
+(let ((a!13 (ite (= ((_ extract 7 0) %rcx) #x1a)
+                 (concat #b00000000000000000000000000000000000000
+                         ((_ extract 25 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x19)
+                      (concat #b000000000000000000000000000000000000000
+                              ((_ extract 24 0) TMP_BV_64_0))
+                      a!12))))
+(let ((a!14 (ite (= ((_ extract 7 0) %rcx) #x1c)
+                 (concat #x000000000 ((_ extract 27 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x1b)
+                      (concat #b0000000000000000000000000000000000000
+                              ((_ extract 26 0) TMP_BV_64_0))
+                      a!13))))
+(let ((a!15 (ite (= ((_ extract 7 0) %rcx) #x1e)
+                 (concat #b0000000000000000000000000000000000
+                         ((_ extract 29 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x1d)
+                      (concat #b00000000000000000000000000000000000
+                              ((_ extract 28 0) TMP_BV_64_0))
+                      a!14))))
+(let ((a!16 (ite (= ((_ extract 7 0) %rcx) #x20)
+                 (concat #x00000000 ((_ extract 31 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x1f)
+                      (concat #b000000000000000000000000000000000
+                              ((_ extract 30 0) TMP_BV_64_0))
+                      a!15))))
+(let ((a!17 (ite (= ((_ extract 7 0) %rcx) #x22)
+                 (concat #b000000000000000000000000000000
+                         ((_ extract 33 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x21)
+                      (concat #b0000000000000000000000000000000
+                              ((_ extract 32 0) TMP_BV_64_0))
+                      a!16))))
+(let ((a!18 (ite (= ((_ extract 7 0) %rcx) #x24)
+                 (concat #x0000000 ((_ extract 35 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x23)
+                      (concat #b00000000000000000000000000000
+                              ((_ extract 34 0) TMP_BV_64_0))
+                      a!17))))
+(let ((a!19 (ite (= ((_ extract 7 0) %rcx) #x26)
+                 (concat #b00000000000000000000000000
+                         ((_ extract 37 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x25)
+                      (concat #b000000000000000000000000000
+                              ((_ extract 36 0) TMP_BV_64_0))
+                      a!18))))
+(let ((a!20 (ite (= ((_ extract 7 0) %rcx) #x28)
+                 (concat #x000000 ((_ extract 39 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x27)
+                      (concat #b0000000000000000000000000
+                              ((_ extract 38 0) TMP_BV_64_0))
+                      a!19))))
+(let ((a!21 (ite (= ((_ extract 7 0) %rcx) #x2a)
+                 (concat #b0000000000000000000000
+                         ((_ extract 41 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x29)
+                      (concat #b00000000000000000000000
+                              ((_ extract 40 0) TMP_BV_64_0))
+                      a!20))))
+(let ((a!22 (ite (= ((_ extract 7 0) %rcx) #x2c)
+                 (concat #x00000 ((_ extract 43 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x2b)
+                      (concat #b000000000000000000000
+                              ((_ extract 42 0) TMP_BV_64_0))
+                      a!21))))
+(let ((a!23 (ite (= ((_ extract 7 0) %rcx) #x2e)
+                 (concat #b000000000000000000 ((_ extract 45 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x2d)
+                      (concat #b0000000000000000000
+                              ((_ extract 44 0) TMP_BV_64_0))
+                      a!22))))
+(let ((a!24 (ite (= ((_ extract 7 0) %rcx) #x30)
+                 (concat #x0000 ((_ extract 47 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x2f)
+                      (concat #b00000000000000000
+                              ((_ extract 46 0) TMP_BV_64_0))
+                      a!23))))
+(let ((a!25 (ite (= ((_ extract 7 0) %rcx) #x32)
+                 (concat #b00000000000000 ((_ extract 49 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x31)
+                      (concat #b000000000000000 ((_ extract 48 0) TMP_BV_64_0))
+                      a!24))))
+(let ((a!26 (ite (= ((_ extract 7 0) %rcx) #x34)
+                 (concat #x000 ((_ extract 51 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x33)
+                      (concat #b0000000000000 ((_ extract 50 0) TMP_BV_64_0))
+                      a!25))))
+(let ((a!27 (ite (= ((_ extract 7 0) %rcx) #x36)
+                 (concat #b0000000000 ((_ extract 53 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x35)
+                      (concat #b00000000000 ((_ extract 52 0) TMP_BV_64_0))
+                      a!26))))
+(let ((a!28 (ite (= ((_ extract 7 0) %rcx) #x38)
+                 (concat #x00 ((_ extract 55 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x37)
+                      (concat #b000000000 ((_ extract 54 0) TMP_BV_64_0))
+                      a!27))))
+(let ((a!29 (ite (= ((_ extract 7 0) %rcx) #x3a)
+                 (concat #b000000 ((_ extract 57 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x39)
+                      (concat #b0000000 ((_ extract 56 0) TMP_BV_64_0))
+                      a!28))))
+(let ((a!30 (ite (= ((_ extract 7 0) %rcx) #x3c)
+                 (concat #x0 ((_ extract 59 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x3b)
+                      (concat #b00000 ((_ extract 58 0) TMP_BV_64_0))
+                      a!29))))
+(let ((a!31 (ite (= ((_ extract 7 0) %rcx) #x3e)
+                 (concat #b00 ((_ extract 61 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x3d)
+                      (concat #b000 ((_ extract 60 0) TMP_BV_64_0))
+                      a!30))))
+  (ite (bvult ((_ extract 7 0) %rcx) #x40)
+       (ite (= ((_ extract 7 0) %rcx) #x3f)
+            (concat #b0 ((_ extract 62 0) TMP_BV_64_0))
+            a!31)
+       TMP_BV_64_0))))))))))))))))))))))))))))))))
 
-%cf    : (>= <%rcx|64>[7:0] <0x40|8>)
-%pf    : <TMP_BOOL_0>
-%af    : <TMP_BOOL_1>
-%zf    : (== (if (< <%rcx|64>[7:0] <0x40|8>) then (if (== <%rcx|64>[7:0] <0x3f|8>) then (concat <0x0|1> <TMP_BV_64_0|64>[62:0]) else (if (== <%rcx|64>[7:0] <0x3e|8>) then (concat <0x0|2> <TMP_BV_64_0|64>[61:0]) else (if (== <%rcx|64>[7:0] <0x3d|8>) then (concat <0x0|3> <TMP_BV_64_0|64>[60:0]) else (if (== <%rcx|64>[7:0] <0x3c|8>) then (concat <0x0|4> <TMP_BV_64_0|64>[59:0]) else (if (== <%rcx|64>[7:0] <0x3b|8>) then (concat <0x0|5> <TMP_BV_64_0|64>[58:0]) else (if (== <%rcx|64>[7:0] <0x3a|8>) then (concat <0x0|6> <TMP_BV_64_0|64>[57:0]) else (if (== <%rcx|64>[7:0] <0x39|8>) then (concat <0x0|7> <TMP_BV_64_0|64>[56:0]) else (if (== <%rcx|64>[7:0] <0x38|8>) then (concat <0x0|8> <TMP_BV_64_0|64>[55:0]) else (if (== <%rcx|64>[7:0] <0x37|8>) then (concat <0x0|9> <TMP_BV_64_0|64>[54:0]) else (if (== <%rcx|64>[7:0] <0x36|8>) then (concat <0x0|10> <TMP_BV_64_0|64>[53:0]) else (if (== <%rcx|64>[7:0] <0x35|8>) then (concat <0x0|11> <TMP_BV_64_0|64>[52:0]) else (if (== <%rcx|64>[7:0] <0x34|8>) then (concat <0x0|12> <TMP_BV_64_0|64>[51:0]) else (if (== <%rcx|64>[7:0] <0x33|8>) then (concat <0x0|13> <TMP_BV_64_0|64>[50:0]) else (if (== <%rcx|64>[7:0] <0x32|8>) then (concat <0x0|14> <TMP_BV_64_0|64>[49:0]) else (if (== <%rcx|64>[7:0] <0x31|8>) then (concat <0x0|15> <TMP_BV_64_0|64>[48:0]) else (if (== <%rcx|64>[7:0] <0x30|8>) then (concat <0x0|16> <TMP_BV_64_0|64>[47:0]) else (if (== <%rcx|64>[7:0] <0x2f|8>) then (concat <0x0|17> <TMP_BV_64_0|64>[46:0]) else (if (== <%rcx|64>[7:0] <0x2e|8>) then (concat <0x0|18> <TMP_BV_64_0|64>[45:0]) else (if (== <%rcx|64>[7:0] <0x2d|8>) then (concat <0x0|19> <TMP_BV_64_0|64>[44:0]) else (if (== <%rcx|64>[7:0] <0x2c|8>) then (concat <0x0|20> <TMP_BV_64_0|64>[43:0]) else (if (== <%rcx|64>[7:0] <0x2b|8>) then (concat <0x0|21> <TMP_BV_64_0|64>[42:0]) else (if (== <%rcx|64>[7:0] <0x2a|8>) then (concat <0x0|22> <TMP_BV_64_0|64>[41:0]) else (if (== <%rcx|64>[7:0] <0x29|8>) then (concat <0x0|23> <TMP_BV_64_0|64>[40:0]) else (if (== <%rcx|64>[7:0] <0x28|8>) then (concat <0x0|24> <TMP_BV_64_0|64>[39:0]) else (if (== <%rcx|64>[7:0] <0x27|8>) then (concat <0x0|25> <TMP_BV_64_0|64>[38:0]) else (if (== <%rcx|64>[7:0] <0x26|8>) then (concat <0x0|26> <TMP_BV_64_0|64>[37:0]) else (if (== <%rcx|64>[7:0] <0x25|8>) then (concat <0x0|27> <TMP_BV_64_0|64>[36:0]) else (if (== <%rcx|64>[7:0] <0x24|8>) then (concat <0x0|28> <TMP_BV_64_0|64>[35:0]) else (if (== <%rcx|64>[7:0] <0x23|8>) then (concat <0x0|29> <TMP_BV_64_0|64>[34:0]) else (if (== <%rcx|64>[7:0] <0x22|8>) then (concat <0x0|30> <TMP_BV_64_0|64>[33:0]) else (if (== <%rcx|64>[7:0] <0x21|8>) then (concat <0x0|31> <TMP_BV_64_0|64>[32:0]) else (if (== <%rcx|64>[7:0] <0x20|8>) then (concat <0x0|32> <TMP_BV_64_0|64>[31:0]) else (if (== <%rcx|64>[7:0] <0x1f|8>) then (concat <0x0|33> <TMP_BV_64_0|64>[30:0]) else (if (== <%rcx|64>[7:0] <0x1e|8>) then (concat <0x0|34> <TMP_BV_64_0|64>[29:0]) else (if (== <%rcx|64>[7:0] <0x1d|8>) then (concat <0x0|35> <TMP_BV_64_0|64>[28:0]) else (if (== <%rcx|64>[7:0] <0x1c|8>) then (concat <0x0|36> <TMP_BV_64_0|64>[27:0]) else (if (== <%rcx|64>[7:0] <0x1b|8>) then (concat <0x0|37> <TMP_BV_64_0|64>[26:0]) else (if (== <%rcx|64>[7:0] <0x1a|8>) then (concat <0x0|38> <TMP_BV_64_0|64>[25:0]) else (if (== <%rcx|64>[7:0] <0x19|8>) then (concat <0x0|39> <TMP_BV_64_0|64>[24:0]) else (if (== <%rcx|64>[7:0] <0x18|8>) then (concat <0x0|40> <TMP_BV_64_0|64>[23:0]) else (if (== <%rcx|64>[7:0] <0x17|8>) then (concat <0x0|41> <TMP_BV_64_0|64>[22:0]) else (if (== <%rcx|64>[7:0] <0x16|8>) then (concat <0x0|42> <TMP_BV_64_0|64>[21:0]) else (if (== <%rcx|64>[7:0] <0x15|8>) then (concat <0x0|43> <TMP_BV_64_0|64>[20:0]) else (if (== <%rcx|64>[7:0] <0x14|8>) then (concat <0x0|44> <TMP_BV_64_0|64>[19:0]) else (if (== <%rcx|64>[7:0] <0x13|8>) then (concat <0x0|45> <TMP_BV_64_0|64>[18:0]) else (if (== <%rcx|64>[7:0] <0x12|8>) then (concat <0x0|46> <TMP_BV_64_0|64>[17:0]) else (if (== <%rcx|64>[7:0] <0x11|8>) then (concat <0x0|47> <TMP_BV_64_0|64>[16:0]) else (if (== <%rcx|64>[7:0] <0x10|8>) then (concat <0x0|48> <TMP_BV_64_0|64>[15:0]) else (if (== <%rcx|64>[7:0] <0xf|8>) then (concat <0x0|49> <TMP_BV_64_0|64>[14:0]) else (if (== <%rcx|64>[7:0] <0xe|8>) then (concat <0x0|50> <TMP_BV_64_0|64>[13:0]) else (if (== <%rcx|64>[7:0] <0xd|8>) then (concat <0x0|51> <TMP_BV_64_0|64>[12:0]) else (if (== <%rcx|64>[7:0] <0xc|8>) then (concat <0x0|52> <TMP_BV_64_0|64>[11:0]) else (if (== <%rcx|64>[7:0] <0xb|8>) then (concat <0x0|53> <TMP_BV_64_0|64>[10:0]) else (if (== <%rcx|64>[7:0] <0xa|8>) then (concat <0x0|54> <TMP_BV_64_0|64>[9:0]) else (if (== <%rcx|64>[7:0] <0x9|8>) then (concat <0x0|55> <TMP_BV_64_0|64>[8:0]) else (if (== <%rcx|64>[7:0] <0x8|8>) then (concat <0x0|56> <TMP_BV_64_0|64>[7:0]) else (if (== <%rcx|64>[7:0] <0x7|8>) then (concat <0x0|57> <TMP_BV_64_0|64>[6:0]) else (if (== <%rcx|64>[7:0] <0x6|8>) then (concat <0x0|58> <TMP_BV_64_0|64>[5:0]) else (if (== <%rcx|64>[7:0] <0x5|8>) then (concat <0x0|59> <TMP_BV_64_0|64>[4:0]) else (if (== <%rcx|64>[7:0] <0x4|8>) then (concat <0x0|60> <TMP_BV_64_0|64>[3:0]) else (if (== <%rcx|64>[7:0] <0x3|8>) then (concat <0x0|61> <TMP_BV_64_0|64>[2:0]) else (if (== <%rcx|64>[7:0] <0x2|8>) then (concat <0x0|62> <TMP_BV_64_0|64>[1:0]) else (if (== <%rcx|64>[7:0] <0x1|8>) then (concat <0x0|63> <TMP_BV_64_0|64>[0:0]) else <0x0|64>))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))) else <TMP_BV_64_0|64>) <0x0|64>)
-%sf    : (== (if (< <%rcx|64>[7:0] <0x40|8>) then <0x0|1> else <TMP_BV_64_0|64>[63:63]) <0x1|1>)
-%of    : FALSE
+%cf    : (bvuge ((_ extract 7 0) %rcx) #x40)
+%pf    : TMP_BOOL_0
+%af    : TMP_BOOL_1
+%zf    : (let ((a!1 (ite (= ((_ extract 7 0) %rcx) #x02)
+                (concat #b00000000000000000000000000000000000000000000000000000000000000
+                        ((_ extract 1 0) TMP_BV_64_0))
+                (ite (= ((_ extract 7 0) %rcx) #x01)
+                     (concat #b000000000000000000000000000000000000000000000000000000000000000
+                             ((_ extract 0 0) TMP_BV_64_0))
+                     #x0000000000000000))))
+(let ((a!2 (ite (= ((_ extract 7 0) %rcx) #x04)
+                (concat #x000000000000000 ((_ extract 3 0) TMP_BV_64_0))
+                (ite (= ((_ extract 7 0) %rcx) #x03)
+                     (concat #b0000000000000000000000000000000000000000000000000000000000000
+                             ((_ extract 2 0) TMP_BV_64_0))
+                     a!1))))
+(let ((a!3 (ite (= ((_ extract 7 0) %rcx) #x06)
+                (concat #b0000000000000000000000000000000000000000000000000000000000
+                        ((_ extract 5 0) TMP_BV_64_0))
+                (ite (= ((_ extract 7 0) %rcx) #x05)
+                     (concat #b00000000000000000000000000000000000000000000000000000000000
+                             ((_ extract 4 0) TMP_BV_64_0))
+                     a!2))))
+(let ((a!4 (ite (= ((_ extract 7 0) %rcx) #x08)
+                (concat #x00000000000000 ((_ extract 7 0) TMP_BV_64_0))
+                (ite (= ((_ extract 7 0) %rcx) #x07)
+                     (concat #b000000000000000000000000000000000000000000000000000000000
+                             ((_ extract 6 0) TMP_BV_64_0))
+                     a!3))))
+(let ((a!5 (ite (= ((_ extract 7 0) %rcx) #x0a)
+                (concat #b000000000000000000000000000000000000000000000000000000
+                        ((_ extract 9 0) TMP_BV_64_0))
+                (ite (= ((_ extract 7 0) %rcx) #x09)
+                     (concat #b0000000000000000000000000000000000000000000000000000000
+                             ((_ extract 8 0) TMP_BV_64_0))
+                     a!4))))
+(let ((a!6 (ite (= ((_ extract 7 0) %rcx) #x0c)
+                (concat #x0000000000000 ((_ extract 11 0) TMP_BV_64_0))
+                (ite (= ((_ extract 7 0) %rcx) #x0b)
+                     (concat #b00000000000000000000000000000000000000000000000000000
+                             ((_ extract 10 0) TMP_BV_64_0))
+                     a!5))))
+(let ((a!7 (ite (= ((_ extract 7 0) %rcx) #x0e)
+                (concat #b00000000000000000000000000000000000000000000000000
+                        ((_ extract 13 0) TMP_BV_64_0))
+                (ite (= ((_ extract 7 0) %rcx) #x0d)
+                     (concat #b000000000000000000000000000000000000000000000000000
+                             ((_ extract 12 0) TMP_BV_64_0))
+                     a!6))))
+(let ((a!8 (ite (= ((_ extract 7 0) %rcx) #x10)
+                (concat #x000000000000 ((_ extract 15 0) TMP_BV_64_0))
+                (ite (= ((_ extract 7 0) %rcx) #x0f)
+                     (concat #b0000000000000000000000000000000000000000000000000
+                             ((_ extract 14 0) TMP_BV_64_0))
+                     a!7))))
+(let ((a!9 (ite (= ((_ extract 7 0) %rcx) #x12)
+                (concat #b0000000000000000000000000000000000000000000000
+                        ((_ extract 17 0) TMP_BV_64_0))
+                (ite (= ((_ extract 7 0) %rcx) #x11)
+                     (concat #b00000000000000000000000000000000000000000000000
+                             ((_ extract 16 0) TMP_BV_64_0))
+                     a!8))))
+(let ((a!10 (ite (= ((_ extract 7 0) %rcx) #x14)
+                 (concat #x00000000000 ((_ extract 19 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x13)
+                      (concat #b000000000000000000000000000000000000000000000
+                              ((_ extract 18 0) TMP_BV_64_0))
+                      a!9))))
+(let ((a!11 (ite (= ((_ extract 7 0) %rcx) #x16)
+                 (concat #b000000000000000000000000000000000000000000
+                         ((_ extract 21 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x15)
+                      (concat #b0000000000000000000000000000000000000000000
+                              ((_ extract 20 0) TMP_BV_64_0))
+                      a!10))))
+(let ((a!12 (ite (= ((_ extract 7 0) %rcx) #x18)
+                 (concat #x0000000000 ((_ extract 23 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x17)
+                      (concat #b00000000000000000000000000000000000000000
+                              ((_ extract 22 0) TMP_BV_64_0))
+                      a!11))))
+(let ((a!13 (ite (= ((_ extract 7 0) %rcx) #x1a)
+                 (concat #b00000000000000000000000000000000000000
+                         ((_ extract 25 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x19)
+                      (concat #b000000000000000000000000000000000000000
+                              ((_ extract 24 0) TMP_BV_64_0))
+                      a!12))))
+(let ((a!14 (ite (= ((_ extract 7 0) %rcx) #x1c)
+                 (concat #x000000000 ((_ extract 27 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x1b)
+                      (concat #b0000000000000000000000000000000000000
+                              ((_ extract 26 0) TMP_BV_64_0))
+                      a!13))))
+(let ((a!15 (ite (= ((_ extract 7 0) %rcx) #x1e)
+                 (concat #b0000000000000000000000000000000000
+                         ((_ extract 29 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x1d)
+                      (concat #b00000000000000000000000000000000000
+                              ((_ extract 28 0) TMP_BV_64_0))
+                      a!14))))
+(let ((a!16 (ite (= ((_ extract 7 0) %rcx) #x20)
+                 (concat #x00000000 ((_ extract 31 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x1f)
+                      (concat #b000000000000000000000000000000000
+                              ((_ extract 30 0) TMP_BV_64_0))
+                      a!15))))
+(let ((a!17 (ite (= ((_ extract 7 0) %rcx) #x22)
+                 (concat #b000000000000000000000000000000
+                         ((_ extract 33 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x21)
+                      (concat #b0000000000000000000000000000000
+                              ((_ extract 32 0) TMP_BV_64_0))
+                      a!16))))
+(let ((a!18 (ite (= ((_ extract 7 0) %rcx) #x24)
+                 (concat #x0000000 ((_ extract 35 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x23)
+                      (concat #b00000000000000000000000000000
+                              ((_ extract 34 0) TMP_BV_64_0))
+                      a!17))))
+(let ((a!19 (ite (= ((_ extract 7 0) %rcx) #x26)
+                 (concat #b00000000000000000000000000
+                         ((_ extract 37 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x25)
+                      (concat #b000000000000000000000000000
+                              ((_ extract 36 0) TMP_BV_64_0))
+                      a!18))))
+(let ((a!20 (ite (= ((_ extract 7 0) %rcx) #x28)
+                 (concat #x000000 ((_ extract 39 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x27)
+                      (concat #b0000000000000000000000000
+                              ((_ extract 38 0) TMP_BV_64_0))
+                      a!19))))
+(let ((a!21 (ite (= ((_ extract 7 0) %rcx) #x2a)
+                 (concat #b0000000000000000000000
+                         ((_ extract 41 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x29)
+                      (concat #b00000000000000000000000
+                              ((_ extract 40 0) TMP_BV_64_0))
+                      a!20))))
+(let ((a!22 (ite (= ((_ extract 7 0) %rcx) #x2c)
+                 (concat #x00000 ((_ extract 43 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x2b)
+                      (concat #b000000000000000000000
+                              ((_ extract 42 0) TMP_BV_64_0))
+                      a!21))))
+(let ((a!23 (ite (= ((_ extract 7 0) %rcx) #x2e)
+                 (concat #b000000000000000000 ((_ extract 45 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x2d)
+                      (concat #b0000000000000000000
+                              ((_ extract 44 0) TMP_BV_64_0))
+                      a!22))))
+(let ((a!24 (ite (= ((_ extract 7 0) %rcx) #x30)
+                 (concat #x0000 ((_ extract 47 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x2f)
+                      (concat #b00000000000000000
+                              ((_ extract 46 0) TMP_BV_64_0))
+                      a!23))))
+(let ((a!25 (ite (= ((_ extract 7 0) %rcx) #x32)
+                 (concat #b00000000000000 ((_ extract 49 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x31)
+                      (concat #b000000000000000 ((_ extract 48 0) TMP_BV_64_0))
+                      a!24))))
+(let ((a!26 (ite (= ((_ extract 7 0) %rcx) #x34)
+                 (concat #x000 ((_ extract 51 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x33)
+                      (concat #b0000000000000 ((_ extract 50 0) TMP_BV_64_0))
+                      a!25))))
+(let ((a!27 (ite (= ((_ extract 7 0) %rcx) #x36)
+                 (concat #b0000000000 ((_ extract 53 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x35)
+                      (concat #b00000000000 ((_ extract 52 0) TMP_BV_64_0))
+                      a!26))))
+(let ((a!28 (ite (= ((_ extract 7 0) %rcx) #x38)
+                 (concat #x00 ((_ extract 55 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x37)
+                      (concat #b000000000 ((_ extract 54 0) TMP_BV_64_0))
+                      a!27))))
+(let ((a!29 (ite (= ((_ extract 7 0) %rcx) #x3a)
+                 (concat #b000000 ((_ extract 57 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x39)
+                      (concat #b0000000 ((_ extract 56 0) TMP_BV_64_0))
+                      a!28))))
+(let ((a!30 (ite (= ((_ extract 7 0) %rcx) #x3c)
+                 (concat #x0 ((_ extract 59 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x3b)
+                      (concat #b00000 ((_ extract 58 0) TMP_BV_64_0))
+                      a!29))))
+(let ((a!31 (ite (= ((_ extract 7 0) %rcx) #x3e)
+                 (concat #b00 ((_ extract 61 0) TMP_BV_64_0))
+                 (ite (= ((_ extract 7 0) %rcx) #x3d)
+                      (concat #b000 ((_ extract 60 0) TMP_BV_64_0))
+                      a!30))))
+(let ((a!32 (ite (bvult ((_ extract 7 0) %rcx) #x40)
+                 (ite (= ((_ extract 7 0) %rcx) #x3f)
+                      (concat #b0 ((_ extract 62 0) TMP_BV_64_0))
+                      a!31)
+                 TMP_BV_64_0)))
+  (= a!32 #x0000000000000000)))))))))))))))))))))))))))))))))
+%sf    : (= (ite (bvult ((_ extract 7 0) %rcx) #x40) #b0 ((_ extract 63 63) TMP_BV_64_0))
+   #b1)
+%of    : false
 
 Information about memory reads:
-  Value <TMP_BV_64_0|64> (8 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

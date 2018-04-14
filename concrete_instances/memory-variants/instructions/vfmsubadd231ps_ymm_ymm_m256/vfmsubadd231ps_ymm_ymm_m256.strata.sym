@@ -8,28 +8,41 @@ code: vfmsubadd231ps (%rax), %ymm2, %ymm1
   must undef:      { }
   required flags:  { fma }
 
+vfmsubadd231ps (%rax), %ymm2, %ymm1: Hindex2(10)
+vfmsubadd231ps (%rax), %ymm2, %ymm1: Hindex2(10)
 Formula:
 
-%ymm1  : (concat (concat (or (concat vfmsub132_single(<%ymm2|256>[255:224], vfnmsub132_single((xor (xor <0x0|32> add_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[159:152]), <%ymm1|256>[255:224], <%ymm1|256>[255:224]))) (or <0x0|32> (xor <0x0|32> add_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[159:152]), <%ymm1|256>[255:224], <%ymm1|256>[255:224]))))), add_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[159:152]), <%ymm1|256>[255:224], <%ymm1|256>[255:224])), add_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[159:152]), <%ymm1|256>[255:224], <%ymm1|256>[255:224]))), <TMP_BV_256_0|256>[255:224]) vfmsub132_single(<%ymm2|256>[223:192], vfnmsub132_single((xor (xor <0x0|32> sub_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[151:144]), <%ymm1|256>[223:192], <%ymm1|256>[223:192]))) (or <0x0|32> (xor <0x0|32> sub_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[151:144]), <%ymm1|256>[223:192], <%ymm1|256>[223:192]))))), sub_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[151:144]), <%ymm1|256>[223:192], <%ymm1|256>[223:192])), sub_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[151:144]), <%ymm1|256>[223:192], <%ymm1|256>[223:192]))), <TMP_BV_256_1|256>[223:192])) (xor (xor <0x0|64> (concat add_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[159:152]), <%ymm1|256>[255:224], <%ymm1|256>[255:224])) sub_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[151:144]), <%ymm1|256>[223:192], <%ymm1|256>[223:192])))) (or <0x0|64> (xor <0x0|64> (concat add_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[159:152]), <%ymm1|256>[255:224], <%ymm1|256>[255:224])) sub_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[151:144]), <%ymm1|256>[223:192], <%ymm1|256>[223:192]))))))) (or (concat vfmsub132_single(<%ymm2|256>[191:160], vfnmsub132_single((xor (xor <0x0|32> add_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[143:136]), <%ymm1|256>[191:160], <%ymm1|256>[191:160]))) (or <0x0|32> (xor <0x0|32> add_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[143:136]), <%ymm1|256>[191:160], <%ymm1|256>[191:160]))))), add_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[143:136]), <%ymm1|256>[191:160], <%ymm1|256>[191:160])), add_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[143:136]), <%ymm1|256>[191:160], <%ymm1|256>[191:160]))), <TMP_BV_256_2|256>[191:160]) vfmsub132_single(<%ymm2|256>[159:128], vfnmsub132_single((xor (xor <0x0|32> sub_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[135:128]), <%ymm1|256>[159:128], <%ymm1|256>[159:128]))) (or <0x0|32> (xor <0x0|32> sub_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[135:128]), <%ymm1|256>[159:128], <%ymm1|256>[159:128]))))), sub_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[135:128]), <%ymm1|256>[159:128], <%ymm1|256>[159:128])), sub_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[135:128]), <%ymm1|256>[159:128], <%ymm1|256>[159:128]))), <TMP_BV_256_3|256>[159:128])) (xor (xor <0x0|64> (concat add_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[143:136]), <%ymm1|256>[191:160], <%ymm1|256>[191:160])) sub_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[135:128]), <%ymm1|256>[159:128], <%ymm1|256>[159:128])))) (or <0x0|64> (xor <0x0|64> (concat add_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[143:136]), <%ymm1|256>[191:160], <%ymm1|256>[191:160])) sub_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[135:128]), <%ymm1|256>[159:128], <%ymm1|256>[159:128])))))))) (concat (or (concat vfmsub132_single(<%ymm2|256>[127:96], vfnmsub132_single((xor (xor <0x0|32> add_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[31:24]), <%ymm1|256>[127:96], <%ymm1|256>[127:96]))) (or <0x0|32> (xor <0x0|32> add_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[31:24]), <%ymm1|256>[127:96], <%ymm1|256>[127:96]))))), add_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[31:24]), <%ymm1|256>[127:96], <%ymm1|256>[127:96])), add_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[31:24]), <%ymm1|256>[127:96], <%ymm1|256>[127:96]))), <TMP_BV_256_4|256>[127:96]) vfmsub132_single(<%ymm2|256>[95:64], vfnmsub132_single((xor (xor <0x0|32> sub_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[23:16]), <%ymm1|256>[95:64], <%ymm1|256>[95:64]))) (or <0x0|32> (xor <0x0|32> sub_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[23:16]), <%ymm1|256>[95:64], <%ymm1|256>[95:64]))))), sub_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[23:16]), <%ymm1|256>[95:64], <%ymm1|256>[95:64])), sub_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[23:16]), <%ymm1|256>[95:64], <%ymm1|256>[95:64]))), <TMP_BV_256_5|256>[95:64])) (xor (xor <0x0|64> (concat add_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[31:24]), <%ymm1|256>[127:96], <%ymm1|256>[127:96])) sub_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[23:16]), <%ymm1|256>[95:64], <%ymm1|256>[95:64])))) (or <0x0|64> (xor <0x0|64> (concat add_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[31:24]), <%ymm1|256>[127:96], <%ymm1|256>[127:96])) sub_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[23:16]), <%ymm1|256>[95:64], <%ymm1|256>[95:64]))))))) (or (concat vfmsub132_single(<%ymm2|256>[63:32], vfnmsub132_single((xor (xor <0x0|32> add_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[15:8]), <%ymm1|256>[63:32], <%ymm1|256>[63:32]))) (or <0x0|32> (xor <0x0|32> add_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[15:8]), <%ymm1|256>[63:32], <%ymm1|256>[63:32]))))), add_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[15:8]), <%ymm1|256>[63:32], <%ymm1|256>[63:32])), add_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[15:8]), <%ymm1|256>[63:32], <%ymm1|256>[63:32]))), <TMP_BV_256_6|256>[63:32]) vfmsub132_single(<%ymm2|256>[31:0], vfnmsub132_single((xor (xor <0x0|32> sub_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[7:0]), <%ymm1|256>[31:0], <%ymm1|256>[31:0]))) (or <0x0|32> (xor <0x0|32> sub_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[7:0]), <%ymm1|256>[31:0], <%ymm1|256>[31:0]))))), sub_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[7:0]), <%ymm1|256>[31:0], <%ymm1|256>[31:0])), sub_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[7:0]), <%ymm1|256>[31:0], <%ymm1|256>[31:0]))), <TMP_BV_256_7|256>[31:0])) (xor (xor <0x0|64> (concat add_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[15:8]), <%ymm1|256>[63:32], <%ymm1|256>[63:32])) sub_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[7:0]), <%ymm1|256>[31:0], <%ymm1|256>[31:0])))) (or <0x0|64> (xor <0x0|64> (concat add_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[15:8]), <%ymm1|256>[63:32], <%ymm1|256>[63:32])) sub_single(vfnmsub132_single(<0x0|32>, <0x0|32>, <0x0|32>), vfnmsub132_single((concat <0x0|24> <%ymm1|256>[7:0]), <%ymm1|256>[31:0], <%ymm1|256>[31:0])))))))))
+%ymm1  : (let ((a!1 (concat (concat (vfmsub231_single ((_ extract 127 96) %ymm1)
+                                             ((_ extract 127 96) %ymm2)
+                                             ((_ extract 127 96) TMP_BV_256_0))
+                           (vfmadd231_single ((_ extract 95 64) %ymm1)
+                                             ((_ extract 95 64) %ymm2)
+                                             ((_ extract 95 64) TMP_BV_256_0)))
+                   (concat (vfmsub231_single ((_ extract 63 32) %ymm1)
+                                             ((_ extract 63 32) %ymm2)
+                                             ((_ extract 63 32) TMP_BV_256_0))
+                           (vfmadd231_single ((_ extract 31 0) %ymm1)
+                                             ((_ extract 31 0) %ymm2)
+                                             ((_ extract 31 0) TMP_BV_256_0))))))
+(let ((a!2 (concat (concat (vfmsub231_single ((_ extract 191 160) %ymm1)
+                                             ((_ extract 191 160) %ymm2)
+                                             ((_ extract 191 160) TMP_BV_256_0))
+                           (vfmadd231_single ((_ extract 159 128) %ymm1)
+                                             ((_ extract 159 128) %ymm2)
+                                             ((_ extract 159 128) TMP_BV_256_0)))
+                   a!1)))
+  (concat (concat (vfmsub231_single ((_ extract 255 224) %ymm1)
+                                    ((_ extract 255 224) %ymm2)
+                                    ((_ extract 255 224) TMP_BV_256_0))
+                  (vfmadd231_single ((_ extract 223 192) %ymm1)
+                                    ((_ extract 223 192) %ymm2)
+                                    ((_ extract 223 192) TMP_BV_256_0)))
+          a!2)))
 
 Information about memory reads:
-  Value <TMP_BV_256_0|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_1|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_2|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_3|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_4|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_5|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_6|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_7|256> (32 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

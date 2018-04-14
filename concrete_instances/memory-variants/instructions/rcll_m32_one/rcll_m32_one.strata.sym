@@ -8,23 +8,46 @@ code: rcll $0x1, (%rax)
   must undef:      { }
   required flags:  { }
 
+rcll $0x1, (%rax): Hindex0(10)
+rcll $0x1, (%rax): Hindex0(10)
+movslq %ebx, %rbx: Hindex5(9)
+adcl %ebx, %ebx: Hindex2(9)
 Formula:
 
-%cf    : (== (plus (if <%cf> then (plus (concat <0x0|1> <TMP_BV_32_0|32>) <0x1|33>) else (concat <0x0|1> <TMP_BV_32_0|32>)) (concat <0x0|1> <TMP_BV_32_0|32>))[32:32] <0x1|1>)
-%of    : (and (== (== <TMP_BV_32_1|32>[31:31] <0x1|1>) (== <TMP_BV_32_2|32>[31:31] <0x1|1>)) (not (== (== <TMP_BV_32_1|32>[31:31] <0x1|1>) (== (plus (if <%cf> then (plus (concat <0x0|1> <TMP_BV_32_0|32>) <0x1|33>) else (concat <0x0|1> <TMP_BV_32_0|32>)) (concat <0x0|1> <TMP_BV_32_0|32>))[31:31] <0x1|1>))))
+%cf    : (let ((a!1 (bvadd (ite %cf
+                       (bvadd (concat #b0 TMP_BV_32_0)
+                              #b000000000000000000000000000000001)
+                       (concat #b0 TMP_BV_32_0))
+                  (concat #b0 TMP_BV_32_0))))
+  (= ((_ extract 32 32) a!1) #b1))
+%of    : (let ((a!1 (bvadd (ite %cf
+                       (bvadd (concat #b0 TMP_BV_32_0)
+                              #b000000000000000000000000000000001)
+                       (concat #b0 TMP_BV_32_0))
+                  (concat #b0 TMP_BV_32_0))))
+(let ((a!2 (not (= (= ((_ extract 31 31) TMP_BV_32_1) #b1)
+                   (= ((_ extract 31 31) a!1) #b1)))))
+  (and (= (= ((_ extract 31 31) TMP_BV_32_1) #b1)
+          (= ((_ extract 31 31) TMP_BV_32_2) #b1))
+       a!2)))
 
 Information about memory reads:
-  Value <TMP_BV_32_0|32> (4 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_32_1|32> (4 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_32_2|32> (4 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_1 (4 bytes)
+    was read at address %rax.
+  Value TMP_BV_32_2 (4 bytes)
+    was read at address %rax.
 
 Information about memory writes:
-  Address <%rax|64> was updated to
-    (plus (if <%cf> then (plus (concat <0x0|1> <TMP_BV_32_0|32>) <0x1|33>) else (concat <0x0|1> <TMP_BV_32_0|32>)) (concat <0x0|1> <TMP_BV_32_0|32>))[31:0] (4 bytes).
+  Address %rax was updated to
+    (let ((a!1 (bvadd (ite %cf
+                       (bvadd (concat #b0 TMP_BV_32_0)
+                              #b000000000000000000000000000000001)
+                       (concat #b0 TMP_BV_32_0))
+                  (concat #b0 TMP_BV_32_0))))
+  ((_ extract 31 0) a!1)) (4 bytes).
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

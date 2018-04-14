@@ -8,14 +8,16 @@ code: movsd (%rax), %xmm1
   must undef:      { }
   required flags:  { sse2 }
 
+movsd (%rax), %xmm1: Hindex2(10)
+movsd (%rax), %xmm1: Hindex2(10)
 Formula:
 
-%ymm1  : (concat <%ymm1|256>[255:128] (concat <%ymm1|256>[127:64] <TMP_BV_64_0|64>))
+%ymm1  : (concat ((_ extract 255 128) %ymm1) (concat #x0000000000000000 TMP_BV_64_0))
 
 Information about memory reads:
-  Value <TMP_BV_64_0|64> (8 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

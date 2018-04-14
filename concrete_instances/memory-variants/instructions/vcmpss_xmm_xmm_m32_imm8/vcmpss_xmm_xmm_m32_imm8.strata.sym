@@ -8,14 +8,21 @@ code: vcmpss $0x0, (%rax), %xmm2, %xmm1
   must undef:      { }
   required flags:  { avx }
 
+vcmpss $0x0, (%rax), %xmm2, %xmm1: Hindex2(10)
+vcmpss $0x0, (%rax), %xmm2, %xmm1: Hindex2(10)
 Formula:
 
-%ymm1  : (concat <0x0|128> (concat <%ymm2|256>[127:32] (if (== cmp_single_pred(<%ymm2|256>[31:0], <TMP_BV_32_0|32>, <0x0|8>) <0x1|1>) then <0xffffffff|32> else <0x0|32>)))
+%ymm1  : (let ((a!1 (ite (= (cmp_single_pred ((_ extract 31 0) %ymm2) TMP_BV_32_0 #x00)
+                   #b1)
+                #xffffffff
+                #x00000000)))
+  (concat #x00000000000000000000000000000000
+          (concat ((_ extract 127 32) %ymm2) a!1)))
 
 Information about memory reads:
-  Value <TMP_BV_32_0|32> (4 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

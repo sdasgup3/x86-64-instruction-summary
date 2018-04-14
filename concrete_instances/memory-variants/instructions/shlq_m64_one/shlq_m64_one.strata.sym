@@ -8,29 +8,67 @@ code: shlq $0x1, (%rax)
   must undef:      { %af }
   required flags:  { }
 
+shlq $0x1, (%rax): Hindex0(10)
+shlq $0x1, (%rax): Hindex0(10)
+xorq %rax, %rax: Hindex1(9)
+adcb %al, %al: Hindex2(9)
+adcq %rbx, %rbx: Hindex2(9)
 Formula:
 
-%cf    : (== (plus (concat <0x0|1> <TMP_BV_64_0|64>) (concat <0x0|1> <TMP_BV_64_1|64>))[64:64] <0x1|1>)
-%pf    : (not (xor (xor (xor (xor (xor (xor (xor (== (plus (concat <0x0|1> <TMP_BV_64_0|64>) (concat <0x0|1> <TMP_BV_64_1|64>))[0:0] <0x1|1>) (== (plus (concat <0x0|1> <TMP_BV_64_0|64>) (concat <0x0|1> <TMP_BV_64_1|64>))[1:1] <0x1|1>)) (== (plus (concat <0x0|1> <TMP_BV_64_0|64>) (concat <0x0|1> <TMP_BV_64_1|64>))[2:2] <0x1|1>)) (== (plus (concat <0x0|1> <TMP_BV_64_0|64>) (concat <0x0|1> <TMP_BV_64_1|64>))[3:3] <0x1|1>)) (== (plus (concat <0x0|1> <TMP_BV_64_0|64>) (concat <0x0|1> <TMP_BV_64_1|64>))[4:4] <0x1|1>)) (== (plus (concat <0x0|1> <TMP_BV_64_0|64>) (concat <0x0|1> <TMP_BV_64_1|64>))[5:5] <0x1|1>)) (== (plus (concat <0x0|1> <TMP_BV_64_0|64>) (concat <0x0|1> <TMP_BV_64_1|64>))[6:6] <0x1|1>)) (== (plus (concat <0x0|1> <TMP_BV_64_0|64>) (concat <0x0|1> <TMP_BV_64_1|64>))[7:7] <0x1|1>)))
-%af    : <TMP_BOOL_2>
-%zf    : (== (plus (concat <0x0|1> <TMP_BV_64_0|64>) (concat <0x0|1> <TMP_BV_64_1|64>))[63:0] <0x0|64>)
-%sf    : (== (plus (concat <0x0|1> <TMP_BV_64_0|64>) (concat <0x0|1> <TMP_BV_64_1|64>))[63:63] <0x1|1>)
-%of    : (and (== (== <TMP_BV_64_2|64>[63:63] <0x1|1>) (== <TMP_BV_64_3|64>[63:63] <0x1|1>)) (not (== (== <TMP_BV_64_2|64>[63:63] <0x1|1>) (== (plus (concat <0x0|1> <TMP_BV_64_0|64>) (concat <0x0|1> <TMP_BV_64_1|64>))[63:63] <0x1|1>))))
+%cf    : (= ((_ extract 64 64) (bvadd (concat #b0 TMP_BV_64_0) (concat #b0 TMP_BV_64_1)))
+   #b1)
+%pf    : (let ((a!1 (= ((_ extract 0 0)
+                (bvadd (concat #b0 TMP_BV_64_0) (concat #b0 TMP_BV_64_1)))
+              #b1))
+      (a!2 (= ((_ extract 1 1)
+                (bvadd (concat #b0 TMP_BV_64_0) (concat #b0 TMP_BV_64_1)))
+              #b1))
+      (a!3 (= ((_ extract 2 2)
+                (bvadd (concat #b0 TMP_BV_64_0) (concat #b0 TMP_BV_64_1)))
+              #b1))
+      (a!4 (= ((_ extract 3 3)
+                (bvadd (concat #b0 TMP_BV_64_0) (concat #b0 TMP_BV_64_1)))
+              #b1))
+      (a!5 (= ((_ extract 4 4)
+                (bvadd (concat #b0 TMP_BV_64_0) (concat #b0 TMP_BV_64_1)))
+              #b1))
+      (a!6 (= ((_ extract 5 5)
+                (bvadd (concat #b0 TMP_BV_64_0) (concat #b0 TMP_BV_64_1)))
+              #b1))
+      (a!7 (= ((_ extract 6 6)
+                (bvadd (concat #b0 TMP_BV_64_0) (concat #b0 TMP_BV_64_1)))
+              #b1))
+      (a!8 (= ((_ extract 7 7)
+                (bvadd (concat #b0 TMP_BV_64_0) (concat #b0 TMP_BV_64_1)))
+              #b1)))
+  (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)))
+%af    : TMP_BOOL_2
+%zf    : (= ((_ extract 63 0) (bvadd (concat #b0 TMP_BV_64_0) (concat #b0 TMP_BV_64_1)))
+   #x0000000000000000)
+%sf    : (= ((_ extract 63 63) (bvadd (concat #b0 TMP_BV_64_0) (concat #b0 TMP_BV_64_1)))
+   #b1)
+%of    : (let ((a!1 (= ((_ extract 63 63)
+                (bvadd (concat #b0 TMP_BV_64_0) (concat #b0 TMP_BV_64_1)))
+              #b1)))
+(let ((a!2 (not (= (= ((_ extract 63 63) TMP_BV_64_2) #b1) a!1))))
+  (and (= (= ((_ extract 63 63) TMP_BV_64_2) #b1)
+          (= ((_ extract 63 63) TMP_BV_64_3) #b1))
+       a!2)))
 
 Information about memory reads:
-  Value <TMP_BV_64_0|64> (8 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_64_1|64> (8 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_64_2|64> (8 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_64_3|64> (8 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_1 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_2 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_3 (8 bytes)
+    was read at address %rax.
 
 Information about memory writes:
-  Address <%rax|64> was updated to
-    (plus (concat <0x0|1> <TMP_BV_64_0|64>) (concat <0x0|1> <TMP_BV_64_1|64>))[63:0] (8 bytes).
+  Address %rax was updated to
+    ((_ extract 63 0) (bvadd (concat #b0 TMP_BV_64_0) (concat #b0 TMP_BV_64_1))) (8 bytes).
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

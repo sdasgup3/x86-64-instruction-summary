@@ -8,14 +8,21 @@ code: vcmpsd $0x0, (%rax), %xmm2, %xmm1
   must undef:      { }
   required flags:  { avx }
 
+vcmpsd $0x0, (%rax), %xmm2, %xmm1: Hindex2(10)
+vcmpsd $0x0, (%rax), %xmm2, %xmm1: Hindex2(10)
 Formula:
 
-%ymm1  : (concat <0x0|128> (concat <%ymm2|256>[127:64] (if (== cmp_double_pred(<%ymm2|256>[63:0], <TMP_BV_64_0|64>, <0x0|8>) <0x1|1>) then <0xffffffffffffffff|64> else <0x0|64>)))
+%ymm1  : (let ((a!1 (ite (= (cmp_double_pred ((_ extract 63 0) %ymm2) TMP_BV_64_0 #x00)
+                   #b1)
+                #xffffffffffffffff
+                #x0000000000000000)))
+  (concat #x00000000000000000000000000000000
+          (concat ((_ extract 127 64) %ymm2) a!1)))
 
 Information about memory reads:
-  Value <TMP_BV_64_0|64> (8 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

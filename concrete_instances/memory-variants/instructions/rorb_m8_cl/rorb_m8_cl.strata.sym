@@ -8,19 +8,33 @@ code: rorb %cl, (%rax)
   must undef:      { }
   required flags:  { }
 
+rorb %cl, (%rax): Hindex8(10)
+rorb %cl, (%rax): Hindex8(10)
 Formula:
 
-%cf    : (or (and (not (== (and <%rcx|64>[7:0] <0x1f|8>) <0x0|8>)) (== (ror <TMP_BV_8_0|8> (and <%rcx|64>[7:0] <0x1f|8>))[7:7] <0x1|1>)) (and (not (not (== (and <%rcx|64>[7:0] <0x1f|8>) <0x0|8>))) <%cf>))
-%of    : (or (and (== (and <%rcx|64>[7:0] <0x1f|8>) <0x1|8>) (xor (== (ror <TMP_BV_8_0|8> (and <%rcx|64>[7:0] <0x1f|8>))[7:7] <0x1|1>) (== (ror <TMP_BV_8_0|8> (and <%rcx|64>[7:0] <0x1f|8>))[6:6] <0x1|1>))) (and (not (== (and <%rcx|64>[7:0] <0x1f|8>) <0x1|8>)) <TMP_BOOL_0>))
+%cf    : (let ((a!1 (not (= (bvand ((_ extract 7 0) %rcx) #x1f) #x00)))
+      (a!2 ((_ extract 7 7)
+             (ext_rotate_right TMP_BV_8_0 (bvand ((_ extract 7 0) %rcx) #x1f)))))
+  (or (and a!1 (= a!2 #b1)) (and (not a!1) %cf)))
+%of    : (let ((a!1 ((_ extract 7 7)
+             (ext_rotate_right TMP_BV_8_0 (bvand ((_ extract 7 0) %rcx) #x1f))))
+      (a!2 ((_ extract 6 6)
+             (ext_rotate_right TMP_BV_8_0 (bvand ((_ extract 7 0) %rcx) #x1f))))
+      (a!4 (not (= (bvand ((_ extract 7 0) %rcx) #x1f) #x01))))
+(let ((a!3 (and (= (bvand ((_ extract 7 0) %rcx) #x1f) #x01)
+                (xor (= a!1 #b1) (= a!2 #b1)))))
+  (or a!3 (and a!4 TMP_BOOL_0))))
 
 Information about memory reads:
-  Value <TMP_BV_8_0|8> (1 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_8_0 (1 bytes)
+    was read at address %rax.
 
 Information about memory writes:
-  Address <%rax|64> was updated to
-    (ror <TMP_BV_8_0|8> (and <%rcx|64>[7:0] <0x1f|8>)) (1 bytes).
+  Address %rax was updated to
+    (ext_rotate_right TMP_BV_8_0 (bvand ((_ extract 7 0) %rcx) #x1f)) (1 bytes).
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE)) (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv
+    (and (not sigfpe) (not sigbus) false)
+    (and (not sigfpe) (not sigbus) false))

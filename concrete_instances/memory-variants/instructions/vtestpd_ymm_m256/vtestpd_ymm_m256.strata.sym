@@ -8,19 +8,39 @@ code: vtestpd (%rax), %ymm1
   must undef:      { }
   required flags:  { avx }
 
+vtestpd (%rax), %ymm1: Hindex2(10)
+vtestpd (%rax), %ymm1: Hindex2(10)
 Formula:
 
-%cf    : (and (and (and (== (and !<%ymm1|256>[63:63] <TMP_BV_256_0|256>[63:63]) <0x0|1>) (== (and !<%ymm1|256>[127:127] <TMP_BV_256_0|256>[127:127]) <0x0|1>)) (== (and !<%ymm1|256>[191:191] <TMP_BV_256_0|256>[191:191]) <0x0|1>)) (== (and !<%ymm1|256>[255:255] <TMP_BV_256_0|256>[255:255]) <0x0|1>))
-%pf    : FALSE
-%af    : FALSE
-%zf    : (and (and (and (== (and <%ymm1|256>[63:63] <TMP_BV_256_0|256>[63:63]) <0x0|1>) (== (and <%ymm1|256>[127:127] <TMP_BV_256_0|256>[127:127]) <0x0|1>)) (== (and <%ymm1|256>[191:191] <TMP_BV_256_0|256>[191:191]) <0x0|1>)) (== (and <%ymm1|256>[255:255] <TMP_BV_256_0|256>[255:255]) <0x0|1>))
-%sf    : FALSE
-%of    : FALSE
+%cf    : (let ((a!1 (= (bvand (bvnot ((_ extract 63 63) %ymm1))
+                     ((_ extract 63 63) TMP_BV_256_0))
+              #b0))
+      (a!2 (= (bvand (bvnot ((_ extract 127 127) %ymm1))
+                     ((_ extract 127 127) TMP_BV_256_0))
+              #b0))
+      (a!3 (= (bvand (bvnot ((_ extract 191 191) %ymm1))
+                     ((_ extract 191 191) TMP_BV_256_0))
+              #b0))
+      (a!4 (= (bvand (bvnot ((_ extract 255 255) %ymm1))
+                     ((_ extract 255 255) TMP_BV_256_0))
+              #b0)))
+  (and a!1 a!2 a!3 a!4))
+%pf    : false
+%af    : false
+%zf    : (and (= (bvand ((_ extract 63 63) %ymm1) ((_ extract 63 63) TMP_BV_256_0)) #b0)
+     (= (bvand ((_ extract 127 127) %ymm1) ((_ extract 127 127) TMP_BV_256_0))
+        #b0)
+     (= (bvand ((_ extract 191 191) %ymm1) ((_ extract 191 191) TMP_BV_256_0))
+        #b0)
+     (= (bvand ((_ extract 255 255) %ymm1) ((_ extract 255 255) TMP_BV_256_0))
+        #b0))
+%sf    : false
+%of    : false
 
 Information about memory reads:
-  Value <TMP_BV_256_0|256> (32 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

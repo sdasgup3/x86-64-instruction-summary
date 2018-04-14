@@ -8,14 +8,32 @@ code: vpshufhw $0x0, (%rax), %ymm1
   must undef:      { }
   required flags:  { avx2 }
 
+vpshufhw $0x0, (%rax), %ymm1: Hindex1(10)
+vpshufhw $0x0, (%rax), %ymm1: Hindex1(10)
 Formula:
 
-%ymm1  : (concat (>> <TMP_BV_256_0|256> (<< (concat <0x0|254> <0x0|2>) <0x4|256>))[207:192] (concat (>> <TMP_BV_256_0|256> (<< (concat <0x0|254> <0x0|2>) <0x4|256>))[207:192] (concat (>> <TMP_BV_256_0|256> (<< (concat <0x0|254> <0x0|2>) <0x4|256>))[207:192] (concat (>> <TMP_BV_256_0|256> (<< (concat <0x0|254> <0x0|2>) <0x4|256>))[207:192] (concat <TMP_BV_256_0|256>[191:128] (concat (>> <TMP_BV_256_0|256> (<< (concat <0x0|254> <0x0|2>) <0x4|256>))[79:64] (concat (>> <TMP_BV_256_0|256> (<< (concat <0x0|254> <0x0|2>) <0x4|256>))[79:64] (concat (>> <TMP_BV_256_0|256> (<< (concat <0x0|254> <0x0|2>) <0x4|256>))[79:64] (concat (>> <TMP_BV_256_0|256> (<< (concat <0x0|254> <0x0|2>) <0x4|256>))[79:64] <TMP_BV_256_0|256>[63:0])))))))))
+%ymm1  : (let ((a!1 ((_ extract 207 192)
+             (bvlshr TMP_BV_256_0
+                     (bvshl (concat #b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+                                    #b00)
+                            #x0000000000000000000000000000000000000000000000000000000000000004))))
+      (a!2 ((_ extract 79 64)
+             (bvlshr TMP_BV_256_0
+                     (bvshl (concat #b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+                                    #b00)
+                            #x0000000000000000000000000000000000000000000000000000000000000004)))))
+(let ((a!3 (concat a!2
+                   (concat a!2 (concat a!2 ((_ extract 63 0) TMP_BV_256_0))))))
+(let ((a!4 (concat a!1
+                   (concat a!1
+                           (concat ((_ extract 191 128) TMP_BV_256_0)
+                                   (concat a!2 a!3))))))
+  (concat a!1 (concat a!1 a!4)))))
 
 Information about memory reads:
-  Value <TMP_BV_256_0|256> (32 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

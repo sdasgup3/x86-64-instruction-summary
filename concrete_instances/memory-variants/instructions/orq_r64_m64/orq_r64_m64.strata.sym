@@ -8,23 +8,44 @@ code: orq (%rax), %rbx
   must undef:      { %af }
   required flags:  { }
 
+Base Instruction!!
+orq (%rax), %rbx: Hindex0(10)
+Base Instruction!!
+orq (%rax), %rbx: Hindex0(10)
+orq %rcx, %rbx: Hindex1(9)
 Formula:
 
-%rbx   : (or <%rbx|64> <TMP_BV_64_0|64>)
+%rbx   : (bvor %rbx TMP_BV_64_0)
 
-%cf    : FALSE
-%pf    : (not (xor (xor (xor (xor (xor (xor (xor (== (or <%rbx|64>[0:0] <TMP_BV_64_1|64>[0:0]) <0x1|1>) (== (or <%rbx|64>[1:1] <TMP_BV_64_1|64>[1:1]) <0x1|1>)) (== (or <%rbx|64>[2:2] <TMP_BV_64_1|64>[2:2]) <0x1|1>)) (== (or <%rbx|64>[3:3] <TMP_BV_64_1|64>[3:3]) <0x1|1>)) (== (or <%rbx|64>[4:4] <TMP_BV_64_1|64>[4:4]) <0x1|1>)) (== (or <%rbx|64>[5:5] <TMP_BV_64_1|64>[5:5]) <0x1|1>)) (== (or <%rbx|64>[6:6] <TMP_BV_64_1|64>[6:6]) <0x1|1>)) (== (or <%rbx|64>[7:7] <TMP_BV_64_1|64>[7:7]) <0x1|1>)))
-%af    : <TMP_BOOL_1>
-%zf    : (== (or <%rbx|64> <TMP_BV_64_1|64>) <0x0|64>)
-%sf    : (== (or <%rbx|64>[63:63] <TMP_BV_64_1|64>[63:63]) <0x1|1>)
-%of    : FALSE
+%cf    : false
+%pf    : (let ((a!1 (xor (= (bvor ((_ extract 0 0) %rbx) ((_ extract 0 0) TMP_BV_64_1))
+                   #b1)
+                (= (bvor ((_ extract 1 1) %rbx) ((_ extract 1 1) TMP_BV_64_1))
+                   #b1)
+                (= (bvor ((_ extract 2 2) %rbx) ((_ extract 2 2) TMP_BV_64_1))
+                   #b1)
+                (= (bvor ((_ extract 3 3) %rbx) ((_ extract 3 3) TMP_BV_64_1))
+                   #b1)
+                (= (bvor ((_ extract 4 4) %rbx) ((_ extract 4 4) TMP_BV_64_1))
+                   #b1)
+                (= (bvor ((_ extract 5 5) %rbx) ((_ extract 5 5) TMP_BV_64_1))
+                   #b1)
+                (= (bvor ((_ extract 6 6) %rbx) ((_ extract 6 6) TMP_BV_64_1))
+                   #b1)
+                (= (bvor ((_ extract 7 7) %rbx) ((_ extract 7 7) TMP_BV_64_1))
+                   #b1))))
+  (not a!1))
+%af    : TMP_BOOL_1
+%zf    : (= (bvor %rbx TMP_BV_64_1) #x0000000000000000)
+%sf    : (= (bvor ((_ extract 63 63) %rbx) ((_ extract 63 63) TMP_BV_64_1)) #b1)
+%of    : false
 
 Information about memory reads:
-  Value <TMP_BV_64_0|64> (8 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_64_1|64> (8 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_1 (8 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

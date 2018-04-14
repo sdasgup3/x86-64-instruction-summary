@@ -8,21 +8,41 @@ code: imulw (%rax), %bx
   must undef:      { %pf %af %zf %sf }
   required flags:  { }
 
+imulw (%rax), %bx: Hindex2(10)
+imulw (%rax), %bx: Hindex2(10)
 Formula:
 
-%rbx   : (concat <%rbx|64>[63:16] (mult (sign-extend-32 <%rbx|64>[15:0]) (sign-extend-32 <TMP_BV_16_0|16>))[15:0])
+%rbx   : (let ((a!1 ((_ extract 15 0)
+             (bvmul ((_ sign_extend 16) ((_ extract 15 0) %rbx))
+                    ((_ sign_extend 16) TMP_BV_16_0)))))
+  (concat ((_ extract 63 16) %rbx) a!1))
 
-%cf    : (not (== (mult (sign-extend-32 <%rbx|64>[15:0]) (sign-extend-32 <TMP_BV_16_0|16>)) (sign-extend-32 (mult (sign-extend-32 <%rbx|64>[15:0]) (sign-extend-32 <TMP_BV_16_0|16>))[15:0])))
-%pf    : <TMP_BOOL_2>
-%af    : <TMP_BOOL_1>
-%zf    : <TMP_BOOL_0>
-%sf    : (== (mult (sign-extend-32 <%rbx|64>[15:0]) (sign-extend-32 <TMP_BV_16_0|16>))[15:15] <0x1|1>)
-%of    : (not (== (mult (sign-extend-32 <%rbx|64>[15:0]) (sign-extend-32 <TMP_BV_16_0|16>)) (sign-extend-32 (mult (sign-extend-32 <%rbx|64>[15:0]) (sign-extend-32 <TMP_BV_16_0|16>))[15:0])))
+%cf    : (let ((a!1 ((_ extract 15 0)
+             (bvmul ((_ sign_extend 16) ((_ extract 15 0) %rbx))
+                    ((_ sign_extend 16) TMP_BV_16_0)))))
+(let ((a!2 (= (bvmul ((_ sign_extend 16) ((_ extract 15 0) %rbx))
+                     ((_ sign_extend 16) TMP_BV_16_0))
+              ((_ sign_extend 16) a!1))))
+  (not a!2)))
+%pf    : TMP_BOOL_2
+%af    : TMP_BOOL_1
+%zf    : TMP_BOOL_0
+%sf    : (let ((a!1 ((_ extract 15 15)
+             (bvmul ((_ sign_extend 16) ((_ extract 15 0) %rbx))
+                    ((_ sign_extend 16) TMP_BV_16_0)))))
+  (= a!1 #b1))
+%of    : (let ((a!1 ((_ extract 15 0)
+             (bvmul ((_ sign_extend 16) ((_ extract 15 0) %rbx))
+                    ((_ sign_extend 16) TMP_BV_16_0)))))
+(let ((a!2 (= (bvmul ((_ sign_extend 16) ((_ extract 15 0) %rbx))
+                     ((_ sign_extend 16) TMP_BV_16_0))
+              ((_ sign_extend 16) a!1))))
+  (not a!2)))
 
 Information about memory reads:
-  Value <TMP_BV_16_0|16> (2 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

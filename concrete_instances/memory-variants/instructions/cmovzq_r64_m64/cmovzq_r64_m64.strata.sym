@@ -8,14 +8,17 @@ code: cmovzq (%rax), %rbx
   must undef:      { }
   required flags:  { cmov }
 
+cmovzq (%rax), %rbx: Hindex0(10)
+cmovzq (%rax), %rbx: Hindex0(10)
+cmoveq %rcx, %rbx: Hindex3(9)
 Formula:
 
-%rbx   : (if <%zf> then <TMP_BV_64_0|64> else <%rbx|64>)
+%rbx   : (ite %zf TMP_BV_64_0 %rbx)
 
 Information about memory reads:
-  Value <TMP_BV_64_0|64> (8 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

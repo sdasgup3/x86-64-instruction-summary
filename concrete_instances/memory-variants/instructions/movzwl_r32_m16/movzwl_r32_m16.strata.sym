@@ -8,14 +8,19 @@ code: movzwl (%rax), %ebx
   must undef:      { }
   required flags:  { }
 
+movzwl (%rax), %ebx: Hindex0(10)
+movzwl (%rax), %ebx: Hindex0(10)
+movq $0x20, %rbx: Hindex5(9)
+callq .move_016_008_cx_r12b_r13b: Hindex8(9)
+callq .move_008_016_r12b_r13b_bx: Hindex8(9)
 Formula:
 
-%rbx   : (concat <0x0|48> <TMP_BV_16_0|16>)
+%rbx   : (concat #x000000000000 TMP_BV_16_0)
 
 Information about memory reads:
-  Value <TMP_BV_16_0|16> (2 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

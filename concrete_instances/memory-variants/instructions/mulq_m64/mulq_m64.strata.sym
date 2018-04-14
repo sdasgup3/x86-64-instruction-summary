@@ -8,22 +8,36 @@ code: mulq (%rax)
   must undef:      { %pf %af %zf %sf }
   required flags:  { }
 
+mulq (%rax): Hindex2(10)
+mulq (%rax): Hindex2(10)
 Formula:
 
-%rax   : (mult (concat <0x0|64> <TMP_BV_64_0|64>) (concat <0x0|64> <%rax|64>))[63:0]
-%rdx   : (mult (concat <0x0|64> <TMP_BV_64_0|64>) (concat <0x0|64> <%rax|64>))[127:64]
+%rax   : ((_ extract 63 0)
+  (bvmul (concat #x0000000000000000 TMP_BV_64_0)
+         (concat #x0000000000000000 %rax)))
+%rdx   : ((_ extract 127 64)
+  (bvmul (concat #x0000000000000000 TMP_BV_64_0)
+         (concat #x0000000000000000 %rax)))
 
-%cf    : (not (== (mult (concat <0x0|64> <TMP_BV_64_0|64>) (concat <0x0|64> <%rax|64>))[127:64] <0x0|64>))
-%pf    : <TMP_BOOL_2>
-%af    : <TMP_BOOL_1>
-%zf    : <TMP_BOOL_0>
-%sf    : <TMP_BOOL_3>
-%of    : (not (== (mult (concat <0x0|64> <TMP_BV_64_0|64>) (concat <0x0|64> <%rax|64>))[127:64] <0x0|64>))
+%cf    : (let ((a!1 (= ((_ extract 127 64)
+                (bvmul (concat #x0000000000000000 TMP_BV_64_0)
+                       (concat #x0000000000000000 %rax)))
+              #x0000000000000000)))
+  (not a!1))
+%pf    : TMP_BOOL_2
+%af    : TMP_BOOL_1
+%zf    : TMP_BOOL_0
+%sf    : TMP_BOOL_3
+%of    : (let ((a!1 (= ((_ extract 127 64)
+                (bvmul (concat #x0000000000000000 TMP_BV_64_0)
+                       (concat #x0000000000000000 %rax)))
+              #x0000000000000000)))
+  (not a!1))
 
 Information about memory reads:
-  Value <TMP_BV_64_0|64> (8 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

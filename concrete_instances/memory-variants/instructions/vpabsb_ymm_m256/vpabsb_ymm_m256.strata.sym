@@ -8,76 +8,141 @@ code: vpabsb (%rax), %ymm1
   must undef:      { }
   required flags:  { avx2 }
 
+vpabsb (%rax), %ymm1: Hindex1(10)
+vpabsb (%rax), %ymm1: Hindex1(10)
 Formula:
 
-%ymm1  : (concat (if (> <TMP_BV_256_0|256>[255:248] <0x7f|8>) then -<TMP_BV_256_0|256>[255:248] else <TMP_BV_256_0|256>[255:248]) (concat (if (> <TMP_BV_256_1|256>[247:240] <0x7f|8>) then -<TMP_BV_256_1|256>[247:240] else <TMP_BV_256_1|256>[247:240]) (concat (if (> <TMP_BV_256_2|256>[239:232] <0x7f|8>) then -<TMP_BV_256_2|256>[239:232] else <TMP_BV_256_2|256>[239:232]) (concat (if (> <TMP_BV_256_3|256>[231:224] <0x7f|8>) then -<TMP_BV_256_3|256>[231:224] else <TMP_BV_256_3|256>[231:224]) (concat (if (> <TMP_BV_256_4|256>[223:216] <0x7f|8>) then -<TMP_BV_256_4|256>[223:216] else <TMP_BV_256_4|256>[223:216]) (concat (if (> <TMP_BV_256_5|256>[215:208] <0x7f|8>) then -<TMP_BV_256_5|256>[215:208] else <TMP_BV_256_5|256>[215:208]) (concat (if (> <TMP_BV_256_6|256>[207:200] <0x7f|8>) then -<TMP_BV_256_6|256>[207:200] else <TMP_BV_256_6|256>[207:200]) (concat (if (> <TMP_BV_256_7|256>[199:192] <0x7f|8>) then -<TMP_BV_256_7|256>[199:192] else <TMP_BV_256_7|256>[199:192]) (concat (if (> <TMP_BV_256_8|256>[191:184] <0x7f|8>) then -<TMP_BV_256_8|256>[191:184] else <TMP_BV_256_8|256>[191:184]) (concat (if (> <TMP_BV_256_9|256>[183:176] <0x7f|8>) then -<TMP_BV_256_9|256>[183:176] else <TMP_BV_256_9|256>[183:176]) (concat (if (> <TMP_BV_256_10|256>[175:168] <0x7f|8>) then -<TMP_BV_256_10|256>[175:168] else <TMP_BV_256_10|256>[175:168]) (concat (if (> <TMP_BV_256_11|256>[167:160] <0x7f|8>) then -<TMP_BV_256_11|256>[167:160] else <TMP_BV_256_11|256>[167:160]) (concat (if (> <TMP_BV_256_12|256>[159:152] <0x7f|8>) then -<TMP_BV_256_12|256>[159:152] else <TMP_BV_256_12|256>[159:152]) (concat (if (> <TMP_BV_256_13|256>[151:144] <0x7f|8>) then -<TMP_BV_256_13|256>[151:144] else <TMP_BV_256_13|256>[151:144]) (concat (if (> <TMP_BV_256_14|256>[143:136] <0x7f|8>) then -<TMP_BV_256_14|256>[143:136] else <TMP_BV_256_14|256>[143:136]) (concat (if (> <TMP_BV_256_15|256>[135:128] <0x7f|8>) then -<TMP_BV_256_15|256>[135:128] else <TMP_BV_256_15|256>[135:128]) (concat (if (> <TMP_BV_256_16|256>[127:120] <0x7f|8>) then -<TMP_BV_256_16|256>[127:120] else <TMP_BV_256_16|256>[127:120]) (concat (if (> <TMP_BV_256_17|256>[119:112] <0x7f|8>) then -<TMP_BV_256_17|256>[119:112] else <TMP_BV_256_17|256>[119:112]) (concat (if (> <TMP_BV_256_18|256>[111:104] <0x7f|8>) then -<TMP_BV_256_18|256>[111:104] else <TMP_BV_256_18|256>[111:104]) (concat (if (> <TMP_BV_256_19|256>[103:96] <0x7f|8>) then -<TMP_BV_256_19|256>[103:96] else <TMP_BV_256_19|256>[103:96]) (concat (if (> <TMP_BV_256_20|256>[95:88] <0x7f|8>) then -<TMP_BV_256_20|256>[95:88] else <TMP_BV_256_20|256>[95:88]) (concat (if (> <TMP_BV_256_21|256>[87:80] <0x7f|8>) then -<TMP_BV_256_21|256>[87:80] else <TMP_BV_256_21|256>[87:80]) (concat (if (> <TMP_BV_256_22|256>[79:72] <0x7f|8>) then -<TMP_BV_256_22|256>[79:72] else <TMP_BV_256_22|256>[79:72]) (concat (if (> <TMP_BV_256_23|256>[71:64] <0x7f|8>) then -<TMP_BV_256_23|256>[71:64] else <TMP_BV_256_23|256>[71:64]) (concat (if (> <TMP_BV_256_24|256>[63:56] <0x7f|8>) then -<TMP_BV_256_24|256>[63:56] else <TMP_BV_256_24|256>[63:56]) (concat (if (> <TMP_BV_256_25|256>[55:48] <0x7f|8>) then -<TMP_BV_256_25|256>[55:48] else <TMP_BV_256_25|256>[55:48]) (concat (if (> <TMP_BV_256_26|256>[47:40] <0x7f|8>) then -<TMP_BV_256_26|256>[47:40] else <TMP_BV_256_26|256>[47:40]) (concat (if (> <TMP_BV_256_27|256>[39:32] <0x7f|8>) then -<TMP_BV_256_27|256>[39:32] else <TMP_BV_256_27|256>[39:32]) (concat (if (> <TMP_BV_256_28|256>[31:24] <0x7f|8>) then -<TMP_BV_256_28|256>[31:24] else <TMP_BV_256_28|256>[31:24]) (concat (if (> <TMP_BV_256_29|256>[23:16] <0x7f|8>) then -<TMP_BV_256_29|256>[23:16] else <TMP_BV_256_29|256>[23:16]) (concat (if (> <TMP_BV_256_30|256>[15:8] <0x7f|8>) then -<TMP_BV_256_30|256>[15:8] else <TMP_BV_256_30|256>[15:8]) (if (> <TMP_BV_256_31|256>[7:0] <0x7f|8>) then -<TMP_BV_256_31|256>[7:0] else <TMP_BV_256_31|256>[7:0]))))))))))))))))))))))))))))))))
+%ymm1  : (let ((a!1 (concat (ite (bvugt ((_ extract 15 8) TMP_BV_256_0) #x7f)
+                        (bvneg ((_ extract 15 8) TMP_BV_256_0))
+                        ((_ extract 15 8) TMP_BV_256_0))
+                   (ite (bvugt ((_ extract 7 0) TMP_BV_256_0) #x7f)
+                        (bvneg ((_ extract 7 0) TMP_BV_256_0))
+                        ((_ extract 7 0) TMP_BV_256_0)))))
+(let ((a!2 (concat (ite (bvugt ((_ extract 23 16) TMP_BV_256_0) #x7f)
+                        (bvneg ((_ extract 23 16) TMP_BV_256_0))
+                        ((_ extract 23 16) TMP_BV_256_0))
+                   a!1)))
+(let ((a!3 (concat (ite (bvugt ((_ extract 31 24) TMP_BV_256_0) #x7f)
+                        (bvneg ((_ extract 31 24) TMP_BV_256_0))
+                        ((_ extract 31 24) TMP_BV_256_0))
+                   a!2)))
+(let ((a!4 (concat (ite (bvugt ((_ extract 39 32) TMP_BV_256_0) #x7f)
+                        (bvneg ((_ extract 39 32) TMP_BV_256_0))
+                        ((_ extract 39 32) TMP_BV_256_0))
+                   a!3)))
+(let ((a!5 (concat (ite (bvugt ((_ extract 47 40) TMP_BV_256_0) #x7f)
+                        (bvneg ((_ extract 47 40) TMP_BV_256_0))
+                        ((_ extract 47 40) TMP_BV_256_0))
+                   a!4)))
+(let ((a!6 (concat (ite (bvugt ((_ extract 55 48) TMP_BV_256_0) #x7f)
+                        (bvneg ((_ extract 55 48) TMP_BV_256_0))
+                        ((_ extract 55 48) TMP_BV_256_0))
+                   a!5)))
+(let ((a!7 (concat (ite (bvugt ((_ extract 63 56) TMP_BV_256_0) #x7f)
+                        (bvneg ((_ extract 63 56) TMP_BV_256_0))
+                        ((_ extract 63 56) TMP_BV_256_0))
+                   a!6)))
+(let ((a!8 (concat (ite (bvugt ((_ extract 71 64) TMP_BV_256_0) #x7f)
+                        (bvneg ((_ extract 71 64) TMP_BV_256_0))
+                        ((_ extract 71 64) TMP_BV_256_0))
+                   a!7)))
+(let ((a!9 (concat (ite (bvugt ((_ extract 79 72) TMP_BV_256_0) #x7f)
+                        (bvneg ((_ extract 79 72) TMP_BV_256_0))
+                        ((_ extract 79 72) TMP_BV_256_0))
+                   a!8)))
+(let ((a!10 (concat (ite (bvugt ((_ extract 87 80) TMP_BV_256_0) #x7f)
+                         (bvneg ((_ extract 87 80) TMP_BV_256_0))
+                         ((_ extract 87 80) TMP_BV_256_0))
+                    a!9)))
+(let ((a!11 (concat (ite (bvugt ((_ extract 95 88) TMP_BV_256_0) #x7f)
+                         (bvneg ((_ extract 95 88) TMP_BV_256_0))
+                         ((_ extract 95 88) TMP_BV_256_0))
+                    a!10)))
+(let ((a!12 (concat (ite (bvugt ((_ extract 103 96) TMP_BV_256_0) #x7f)
+                         (bvneg ((_ extract 103 96) TMP_BV_256_0))
+                         ((_ extract 103 96) TMP_BV_256_0))
+                    a!11)))
+(let ((a!13 (concat (ite (bvugt ((_ extract 111 104) TMP_BV_256_0) #x7f)
+                         (bvneg ((_ extract 111 104) TMP_BV_256_0))
+                         ((_ extract 111 104) TMP_BV_256_0))
+                    a!12)))
+(let ((a!14 (concat (ite (bvugt ((_ extract 119 112) TMP_BV_256_0) #x7f)
+                         (bvneg ((_ extract 119 112) TMP_BV_256_0))
+                         ((_ extract 119 112) TMP_BV_256_0))
+                    a!13)))
+(let ((a!15 (concat (ite (bvugt ((_ extract 127 120) TMP_BV_256_0) #x7f)
+                         (bvneg ((_ extract 127 120) TMP_BV_256_0))
+                         ((_ extract 127 120) TMP_BV_256_0))
+                    a!14)))
+(let ((a!16 (concat (ite (bvugt ((_ extract 135 128) TMP_BV_256_0) #x7f)
+                         (bvneg ((_ extract 135 128) TMP_BV_256_0))
+                         ((_ extract 135 128) TMP_BV_256_0))
+                    a!15)))
+(let ((a!17 (concat (ite (bvugt ((_ extract 143 136) TMP_BV_256_0) #x7f)
+                         (bvneg ((_ extract 143 136) TMP_BV_256_0))
+                         ((_ extract 143 136) TMP_BV_256_0))
+                    a!16)))
+(let ((a!18 (concat (ite (bvugt ((_ extract 151 144) TMP_BV_256_0) #x7f)
+                         (bvneg ((_ extract 151 144) TMP_BV_256_0))
+                         ((_ extract 151 144) TMP_BV_256_0))
+                    a!17)))
+(let ((a!19 (concat (ite (bvugt ((_ extract 159 152) TMP_BV_256_0) #x7f)
+                         (bvneg ((_ extract 159 152) TMP_BV_256_0))
+                         ((_ extract 159 152) TMP_BV_256_0))
+                    a!18)))
+(let ((a!20 (concat (ite (bvugt ((_ extract 167 160) TMP_BV_256_0) #x7f)
+                         (bvneg ((_ extract 167 160) TMP_BV_256_0))
+                         ((_ extract 167 160) TMP_BV_256_0))
+                    a!19)))
+(let ((a!21 (concat (ite (bvugt ((_ extract 175 168) TMP_BV_256_0) #x7f)
+                         (bvneg ((_ extract 175 168) TMP_BV_256_0))
+                         ((_ extract 175 168) TMP_BV_256_0))
+                    a!20)))
+(let ((a!22 (concat (ite (bvugt ((_ extract 183 176) TMP_BV_256_0) #x7f)
+                         (bvneg ((_ extract 183 176) TMP_BV_256_0))
+                         ((_ extract 183 176) TMP_BV_256_0))
+                    a!21)))
+(let ((a!23 (concat (ite (bvugt ((_ extract 191 184) TMP_BV_256_0) #x7f)
+                         (bvneg ((_ extract 191 184) TMP_BV_256_0))
+                         ((_ extract 191 184) TMP_BV_256_0))
+                    a!22)))
+(let ((a!24 (concat (ite (bvugt ((_ extract 199 192) TMP_BV_256_0) #x7f)
+                         (bvneg ((_ extract 199 192) TMP_BV_256_0))
+                         ((_ extract 199 192) TMP_BV_256_0))
+                    a!23)))
+(let ((a!25 (concat (ite (bvugt ((_ extract 207 200) TMP_BV_256_0) #x7f)
+                         (bvneg ((_ extract 207 200) TMP_BV_256_0))
+                         ((_ extract 207 200) TMP_BV_256_0))
+                    a!24)))
+(let ((a!26 (concat (ite (bvugt ((_ extract 215 208) TMP_BV_256_0) #x7f)
+                         (bvneg ((_ extract 215 208) TMP_BV_256_0))
+                         ((_ extract 215 208) TMP_BV_256_0))
+                    a!25)))
+(let ((a!27 (concat (ite (bvugt ((_ extract 223 216) TMP_BV_256_0) #x7f)
+                         (bvneg ((_ extract 223 216) TMP_BV_256_0))
+                         ((_ extract 223 216) TMP_BV_256_0))
+                    a!26)))
+(let ((a!28 (concat (ite (bvugt ((_ extract 231 224) TMP_BV_256_0) #x7f)
+                         (bvneg ((_ extract 231 224) TMP_BV_256_0))
+                         ((_ extract 231 224) TMP_BV_256_0))
+                    a!27)))
+(let ((a!29 (concat (ite (bvugt ((_ extract 239 232) TMP_BV_256_0) #x7f)
+                         (bvneg ((_ extract 239 232) TMP_BV_256_0))
+                         ((_ extract 239 232) TMP_BV_256_0))
+                    a!28)))
+(let ((a!30 (concat (ite (bvugt ((_ extract 247 240) TMP_BV_256_0) #x7f)
+                         (bvneg ((_ extract 247 240) TMP_BV_256_0))
+                         ((_ extract 247 240) TMP_BV_256_0))
+                    a!29)))
+  (concat (ite (bvugt ((_ extract 255 248) TMP_BV_256_0) #x7f)
+               (bvneg ((_ extract 255 248) TMP_BV_256_0))
+               ((_ extract 255 248) TMP_BV_256_0))
+          a!30)))))))))))))))))))))))))))))))
 
 Information about memory reads:
-  Value <TMP_BV_256_0|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_1|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_2|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_3|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_4|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_5|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_6|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_7|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_8|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_9|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_10|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_11|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_12|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_13|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_14|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_15|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_16|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_17|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_18|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_19|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_20|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_21|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_22|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_23|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_24|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_25|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_26|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_27|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_28|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_29|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_30|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_31|256> (32 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

@@ -8,16 +8,21 @@ code: vextractps $0x0, %xmm1, (%rax)
   must undef:      { }
   required flags:  { avx }
 
+vextractps $0x0, %xmm1, (%rax): Hindex2(10)
+vextractps $0x0, %xmm1, (%rax): Hindex2(10)
 Formula:
 
 Information about memory reads:
-  Value <TMP_BV_32_0|32> (4 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
 
 Information about memory writes:
-  Address <%rax|64> was updated to
-    (>> <%ymm1|256>[127:0] <0x0|128>)[31:0] (4 bytes).
+  Address %rax was updated to
+    ((_ extract 31 0)
+  (bvlshr ((_ extract 127 0) %ymm1) #x00000000000000000000000000000000)) (4 bytes).
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE)) (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv
+    (and (not sigfpe) (not sigbus) false)
+    (and (not sigfpe) (not sigbus) false))

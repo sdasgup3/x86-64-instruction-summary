@@ -8,14 +8,19 @@ code: movsbq (%rax), %rbx
   must undef:      { }
   required flags:  { }
 
+Base Instruction!!
+movsbq (%rax), %rbx: Hindex0(10)
+Base Instruction!!
+movsbq (%rax), %rbx: Hindex0(10)
+movsbq %cl, %rbx: Hindex5(9)
 Formula:
 
-%rbx   : (sign-extend-64 <TMP_BV_8_0|8>)
+%rbx   : ((_ sign_extend 56) TMP_BV_8_0)
 
 Information about memory reads:
-  Value <TMP_BV_8_0|8> (1 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_8_0 (1 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

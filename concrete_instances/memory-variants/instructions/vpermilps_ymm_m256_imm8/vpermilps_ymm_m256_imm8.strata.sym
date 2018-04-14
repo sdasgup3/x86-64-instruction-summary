@@ -8,14 +8,23 @@ code: vpermilps $0x0, (%rax), %ymm1
   must undef:      { }
   required flags:  { avx }
 
+vpermilps $0x0, (%rax), %ymm1: Hindex2(10)
+vpermilps $0x0, (%rax), %ymm1: Hindex2(10)
 Formula:
 
-%ymm1  : (concat <TMP_BV_256_0|256>[159:128] (concat <TMP_BV_256_0|256>[159:128] (concat <TMP_BV_256_0|256>[159:128] (concat <TMP_BV_256_0|256>[159:128] (concat <TMP_BV_256_0|256>[31:0] (concat <TMP_BV_256_0|256>[31:0] (concat <TMP_BV_256_0|256>[31:0] <TMP_BV_256_0|256>[31:0])))))))
+%ymm1  : (let ((a!1 (concat ((_ extract 31 0) TMP_BV_256_0)
+                   (concat ((_ extract 31 0) TMP_BV_256_0)
+                           (concat ((_ extract 31 0) TMP_BV_256_0)
+                                   ((_ extract 31 0) TMP_BV_256_0))))))
+(let ((a!2 (concat ((_ extract 159 128) TMP_BV_256_0)
+                   (concat ((_ extract 159 128) TMP_BV_256_0)
+                           (concat ((_ extract 159 128) TMP_BV_256_0) a!1)))))
+  (concat ((_ extract 159 128) TMP_BV_256_0) a!2)))
 
 Information about memory reads:
-  Value <TMP_BV_256_0|256> (32 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

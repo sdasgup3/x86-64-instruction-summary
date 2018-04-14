@@ -8,10 +8,12 @@ code: leal (%rax), %ebx
   must undef:      { }
   required flags:  { }
 
+leal (%rax), %ebx: Hindex5(10)
+leal (%rax), %ebx: Hindex5(10)
 Formula:
 
-%rbx   : (concat <0x0|32> <%rax|64>[31:0])
+%rbx   : (concat #x00000000 ((_ extract 31 0) %rax))
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

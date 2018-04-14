@@ -8,19 +8,23 @@ code: vptest (%rax), %ymm1
   must undef:      { }
   required flags:  { avx }
 
+vptest (%rax), %ymm1: Hindex2(10)
+vptest (%rax), %ymm1: Hindex2(10)
 Formula:
 
-%cf    : (== (and !<%ymm1|256> <TMP_BV_256_0|256>) <0x0|256>)
-%pf    : FALSE
-%af    : FALSE
-%zf    : (== (and <%ymm1|256> <TMP_BV_256_0|256>) <0x0|256>)
-%sf    : FALSE
-%of    : FALSE
+%cf    : (= (bvand (bvnot %ymm1) TMP_BV_256_0)
+   #x0000000000000000000000000000000000000000000000000000000000000000)
+%pf    : false
+%af    : false
+%zf    : (= (bvand %ymm1 TMP_BV_256_0)
+   #x0000000000000000000000000000000000000000000000000000000000000000)
+%sf    : false
+%of    : false
 
 Information about memory reads:
-  Value <TMP_BV_256_0|256> (32 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

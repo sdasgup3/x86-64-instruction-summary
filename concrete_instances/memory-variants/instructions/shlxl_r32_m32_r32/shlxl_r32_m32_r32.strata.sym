@@ -8,14 +8,17 @@ code: shlxl %ecx, (%rax), %ebx
   must undef:      { }
   required flags:  { bmi2 }
 
+shlxl %ecx, (%rax), %ebx: Hindex2(10)
+shlxl %ecx, (%rax), %ebx: Hindex2(10)
 Formula:
 
-%rbx   : (concat <0x0|32> (<< <TMP_BV_32_0|32> (and <%rcx|64>[31:0] <0x1f|32>)))
+%rbx   : (concat #x00000000
+        (bvshl TMP_BV_32_0 (bvand ((_ extract 31 0) %rcx) #x0000001f)))
 
 Information about memory reads:
-  Value <TMP_BV_32_0|32> (4 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

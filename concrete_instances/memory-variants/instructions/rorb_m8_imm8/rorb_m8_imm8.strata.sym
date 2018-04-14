@@ -8,19 +8,27 @@ code: rorb $0x0, (%rax)
   must undef:      { }
   required flags:  { }
 
+rorb $0x0, (%rax): Hindex8(10)
+rorb $0x0, (%rax): Hindex8(10)
 Formula:
 
-%cf    : (or (and FALSE (== (ror <TMP_BV_8_0|8> <0x0|8>)[7:7] <0x1|1>)) (and TRUE <%cf>))
-%of    : (or (and FALSE (xor (== (ror <TMP_BV_8_0|8> <0x0|8>)[7:7] <0x1|1>) (== (ror <TMP_BV_8_0|8> <0x0|8>)[6:6] <0x1|1>))) (and TRUE <TMP_BOOL_0>))
+%cf    : (let ((a!1 (and false
+                (= ((_ extract 7 7) (ext_rotate_right TMP_BV_8_0 #x00)) #b1))))
+  (or a!1 (and true %cf)))
+%of    : (let ((a!1 (xor (= ((_ extract 7 7) (ext_rotate_right TMP_BV_8_0 #x00)) #b1)
+                (= ((_ extract 6 6) (ext_rotate_right TMP_BV_8_0 #x00)) #b1))))
+  (or (and false a!1) (and true TMP_BOOL_0)))
 
 Information about memory reads:
-  Value <TMP_BV_8_0|8> (1 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_8_0 (1 bytes)
+    was read at address %rax.
 
 Information about memory writes:
-  Address <%rax|64> was updated to
-    (ror <TMP_BV_8_0|8> <0x0|8>) (1 bytes).
+  Address %rax was updated to
+    (ext_rotate_right TMP_BV_8_0 #x00) (1 bytes).
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE)) (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv
+    (and (not sigfpe) (not sigbus) false)
+    (and (not sigfpe) (not sigbus) false))

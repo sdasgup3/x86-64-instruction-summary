@@ -8,14 +8,24 @@ code: vcvtps2pd (%rax), %ymm1
   must undef:      { }
   required flags:  { avx }
 
+Base Instruction!!
+vcvtps2pd (%rax), %ymm1: Hindex0(10)
+Base Instruction!!
+vcvtps2pd (%rax), %ymm1: Hindex0(10)
+vcvtps2pd %xmm2, %ymm1: Hindex0(9)
 Formula:
 
-%ymm1  : (concat cvt_single_to_double(<TMP_BV_128_0|128>[127:96]) (concat cvt_single_to_double(<TMP_BV_128_0|128>[95:64]) (concat cvt_single_to_double(<TMP_BV_128_0|128>[63:32]) cvt_single_to_double(<TMP_BV_128_0|128>[31:0]))))
+%ymm1  : (let ((a!1 (concat (cvt_single_to_double ((_ extract 95 64) TMP_BV_128_0))
+                   (concat (cvt_single_to_double
+                             ((_ extract 63 32) TMP_BV_128_0))
+                           (cvt_single_to_double
+                             ((_ extract 31 0) TMP_BV_128_0))))))
+  (concat (cvt_single_to_double ((_ extract 127 96) TMP_BV_128_0)) a!1))
 
 Information about memory reads:
-  Value <TMP_BV_128_0|128> (16 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

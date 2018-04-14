@@ -8,14 +8,22 @@ code: cmovnzw (%rax), %bx
   must undef:      { }
   required flags:  { cmov }
 
+cmovnzw (%rax), %bx: Hindex0(10)
+cmovnzw (%rax), %bx: Hindex0(10)
+movq $0x40, %rbx: Hindex5(9)
+movb %ah, %bl: Hindex5(9)
+movswq %cx, %rbx: Hindex5(9)
+callq .move_016_008_cx_r8b_r9b: Hindex8(9)
+callq .move_008_016_r8b_r9b_bx: Hindex8(9)
+cmoveq %rbp, %rbx: Hindex3(9)
 Formula:
 
-%rbx   : (concat <%rbx|64>[63:16] (if <%zf> then <%rbx|64>[15:0] else <TMP_BV_16_0|16>))
+%rbx   : (concat ((_ extract 63 16) %rbx) (ite %zf ((_ extract 15 0) %rbx) TMP_BV_16_0))
 
 Information about memory reads:
-  Value <TMP_BV_16_0|16> (2 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

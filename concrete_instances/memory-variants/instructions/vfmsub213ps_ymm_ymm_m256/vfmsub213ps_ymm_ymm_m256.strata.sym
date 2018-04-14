@@ -8,28 +8,57 @@ code: vfmsub213ps (%rax), %ymm2, %ymm1
   must undef:      { }
   required flags:  { fma }
 
+vfmsub213ps (%rax), %ymm2, %ymm1: Hindex0(10)
+vfmsub213ps (%rax), %ymm2, %ymm1: Hindex0(10)
+vfmsub132ps %ymm1, %ymm3, %ymm2: Hindex1(9)
+vmaxpd %ymm2, %ymm2, %ymm1: Hindex0(9)
 Formula:
 
-%ymm1  : (concat (concat vfmsub132_single(<%ymm2|256>[255:224], <TMP_BV_256_0|256>[255:224], <%ymm1|256>[255:224]) vfmsub132_single(<%ymm2|256>[223:192], <TMP_BV_256_1|256>[223:192], <%ymm1|256>[223:192])) (concat vfmsub132_single(<%ymm2|256>[191:160], <TMP_BV_256_2|256>[191:160], <%ymm1|256>[191:160]) (concat vfmsub132_single(<%ymm2|256>[159:128], <TMP_BV_256_3|256>[159:128], <%ymm1|256>[159:128]) (concat vfmsub132_single(<%ymm2|256>[127:96], <TMP_BV_256_4|256>[127:96], <%ymm1|256>[127:96]) (concat vfmsub132_single(<%ymm2|256>[95:64], <TMP_BV_256_5|256>[95:64], <%ymm1|256>[95:64]) (concat vfmsub132_single(<%ymm2|256>[63:32], <TMP_BV_256_6|256>[63:32], <%ymm1|256>[63:32]) vfmsub132_single(<%ymm2|256>[31:0], <TMP_BV_256_7|256>[31:0], <%ymm1|256>[31:0])))))))
+%ymm1  : (let ((a!1 (concat (vfmsub132_single ((_ extract 95 64) %ymm2)
+                                     ((_ extract 95 64) TMP_BV_256_5)
+                                     ((_ extract 95 64) %ymm1))
+                   (concat (vfmsub132_single ((_ extract 63 32) %ymm2)
+                                             ((_ extract 63 32) TMP_BV_256_6)
+                                             ((_ extract 63 32) %ymm1))
+                           (vfmsub132_single ((_ extract 31 0) %ymm2)
+                                             ((_ extract 31 0) TMP_BV_256_7)
+                                             ((_ extract 31 0) %ymm1))))))
+(let ((a!2 (concat (vfmsub132_single ((_ extract 159 128) %ymm2)
+                                     ((_ extract 159 128) TMP_BV_256_3)
+                                     ((_ extract 159 128) %ymm1))
+                   (concat (vfmsub132_single ((_ extract 127 96) %ymm2)
+                                             ((_ extract 127 96) TMP_BV_256_4)
+                                             ((_ extract 127 96) %ymm1))
+                           a!1))))
+  (concat (concat (vfmsub132_single ((_ extract 255 224) %ymm2)
+                                    ((_ extract 255 224) TMP_BV_256_0)
+                                    ((_ extract 255 224) %ymm1))
+                  (vfmsub132_single ((_ extract 223 192) %ymm2)
+                                    ((_ extract 223 192) TMP_BV_256_1)
+                                    ((_ extract 223 192) %ymm1)))
+          (concat (vfmsub132_single ((_ extract 191 160) %ymm2)
+                                    ((_ extract 191 160) TMP_BV_256_2)
+                                    ((_ extract 191 160) %ymm1))
+                  a!2))))
 
 Information about memory reads:
-  Value <TMP_BV_256_0|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_1|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_2|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_3|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_4|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_5|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_6|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_7|256> (32 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_1 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_2 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_3 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_4 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_5 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_6 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_7 (32 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

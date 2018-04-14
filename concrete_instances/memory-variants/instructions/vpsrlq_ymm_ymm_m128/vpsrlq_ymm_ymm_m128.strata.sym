@@ -8,20 +8,26 @@ code: vpsrlq (%rax), %ymm2, %ymm1
   must undef:      { }
   required flags:  { avx2 }
 
+vpsrlq (%rax), %ymm2, %ymm1: Hindex2(10)
+vpsrlq (%rax), %ymm2, %ymm1: Hindex2(10)
 Formula:
 
-%ymm1  : (concat (if (> <TMP_BV_128_0|128>[63:0] <0x3f|64>) then <0x0|128> else (concat (>> <%ymm2|256>[255:192] <TMP_BV_128_1|128>[63:0]) (>> <%ymm2|256>[191:128] <TMP_BV_128_1|128>[63:0]))) (if (> <TMP_BV_128_2|128>[63:0] <0x3f|64>) then <0x0|128> else (concat (>> <%ymm2|256>[127:64] <TMP_BV_128_3|128>[63:0]) (>> <%ymm2|256>[63:0] <TMP_BV_128_3|128>[63:0]))))
+%ymm1  : (let ((a!1 (concat (bvlshr ((_ extract 191 128) %ymm2)
+                           ((_ extract 63 0) TMP_BV_128_0))
+                   (concat (bvlshr ((_ extract 127 64) %ymm2)
+                                   ((_ extract 63 0) TMP_BV_128_0))
+                           (bvlshr ((_ extract 63 0) %ymm2)
+                                   ((_ extract 63 0) TMP_BV_128_0))))))
+  (ite (bvugt ((_ extract 63 0) TMP_BV_128_0) #x000000000000003f)
+       #x0000000000000000000000000000000000000000000000000000000000000000
+       (concat (bvlshr ((_ extract 255 192) %ymm2)
+                       ((_ extract 63 0) TMP_BV_128_0))
+               a!1)))
 
 Information about memory reads:
-  Value <TMP_BV_128_0|128> (16 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_128_1|128> (16 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_128_2|128> (16 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_128_3|128> (16 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

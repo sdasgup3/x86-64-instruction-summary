@@ -8,15 +8,23 @@ code: mulxl (%rax), %ecx, %ebx
   must undef:      { }
   required flags:  { bmi2 }
 
+mulxl (%rax), %ecx, %ebx: Hindex2(10)
+mulxl (%rax), %ecx, %ebx: Hindex2(10)
 Formula:
 
-%rcx   : (concat <0x0|32> (mult (concat <0x0|32> <%rdx|64>[31:0]) (concat <0x0|32> <TMP_BV_32_0|32>))[31:0])
-%rbx   : (concat <0x0|32> (mult (concat <0x0|32> <%rdx|64>[31:0]) (concat <0x0|32> <TMP_BV_32_0|32>))[63:32])
+%rcx   : (let ((a!1 ((_ extract 31 0)
+             (bvmul (concat #x00000000 ((_ extract 31 0) %rdx))
+                    (concat #x00000000 TMP_BV_32_0)))))
+  (concat #x00000000 a!1))
+%rbx   : (let ((a!1 ((_ extract 63 32)
+             (bvmul (concat #x00000000 ((_ extract 31 0) %rdx))
+                    (concat #x00000000 TMP_BV_32_0)))))
+  (concat #x00000000 a!1))
 
 Information about memory reads:
-  Value <TMP_BV_32_0|32> (4 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

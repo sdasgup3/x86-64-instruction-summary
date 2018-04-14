@@ -8,22 +8,30 @@ code: divw (%rax)
   must undef:      { %cf %pf %af %zf %sf %of }
   required flags:  { }
 
+divw (%rax): Hindex2(10)
+divw (%rax): Hindex2(10)
 Formula:
 
-%rax   : (concat <%rax|64>[63:16] div_quotient_int16((concat <%rdx|64>[15:0] <%rax|64>[15:0]), <TMP_BV_16_0|16>))
-%rdx   : (concat <%rdx|64>[63:16] div_remainder_int16((concat <%rdx|64>[15:0] <%rax|64>[15:0]), <TMP_BV_16_0|16>))
+%rax   : (concat ((_ extract 63 16) %rax)
+        (div_quotient_int16
+          (concat ((_ extract 15 0) %rdx) ((_ extract 15 0) %rax))
+          TMP_BV_16_0))
+%rdx   : (concat ((_ extract 63 16) %rdx)
+        (div_remainder_int16
+          (concat ((_ extract 15 0) %rdx) ((_ extract 15 0) %rax))
+          TMP_BV_16_0))
 
-%cf    : <TMP_BOOL_5>
-%pf    : <TMP_BOOL_2>
-%af    : <TMP_BOOL_1>
-%zf    : <TMP_BOOL_0>
-%sf    : <TMP_BOOL_3>
-%of    : <TMP_BOOL_4>
+%cf    : TMP_BOOL_5
+%pf    : TMP_BOOL_2
+%af    : TMP_BOOL_1
+%zf    : TMP_BOOL_0
+%sf    : TMP_BOOL_3
+%of    : TMP_BOOL_4
 
 Information about memory reads:
-  Value <TMP_BV_16_0|16> (2 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

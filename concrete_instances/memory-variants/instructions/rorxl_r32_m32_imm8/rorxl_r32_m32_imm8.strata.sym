@@ -8,14 +8,17 @@ code: rorxl $0x0, (%rax), %ebx
   must undef:      { }
   required flags:  { bmi2 }
 
+rorxl $0x0, (%rax), %ebx: Hindex2(10)
+rorxl $0x0, (%rax), %ebx: Hindex2(10)
 Formula:
 
-%rbx   : (concat <0x0|32> (or (>> <TMP_BV_32_0|32> <0x0|32>) (<< <TMP_BV_32_0|32> <0x20|32>)))
+%rbx   : (concat #x00000000
+        (bvor (bvlshr TMP_BV_32_0 #x00000000) (bvshl TMP_BV_32_0 #x00000020)))
 
 Information about memory reads:
-  Value <TMP_BV_32_0|32> (4 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

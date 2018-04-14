@@ -8,41 +8,72 @@ code: orw %bx, (%rax)
   must undef:      { %af }
   required flags:  { }
 
+orw %bx, (%rax): Hindex0(10)
+orw %bx, (%rax): Hindex0(10)
+movswq %cx, %rdx: Hindex5(9)
+callq .move_016_008_bx_r10b_r11b: Hindex8(9)
+callq .move_016_008_cx_r8b_r9b: Hindex8(9)
+callq .move_008_016_r10b_r11b_cx: Hindex8(9)
+callq .move_008_016_r8b_r9b_bx: Hindex8(9)
+movswq %cx, %rax: Hindex5(9)
+orq %rax, %rdx: Hindex1(9)
+movslq %edx, %rbx: Hindex5(9)
 Formula:
 
-%cf    : FALSE
-%pf    : (not (xor (xor (xor (xor (xor (xor (xor (== (or <%rbx|64>[0:0] <TMP_BV_16_2|16>[0:0]) <0x1|1>) (== (or <%rbx|64>[1:1] <TMP_BV_16_3|16>[1:1]) <0x1|1>)) (== (or <%rbx|64>[2:2] <TMP_BV_16_4|16>[2:2]) <0x1|1>)) (== (or <%rbx|64>[3:3] <TMP_BV_16_5|16>[3:3]) <0x1|1>)) (== (or <%rbx|64>[4:4] <TMP_BV_16_6|16>[4:4]) <0x1|1>)) (== (or <%rbx|64>[5:5] <TMP_BV_16_7|16>[5:5]) <0x1|1>)) (== (or <%rbx|64>[6:6] <TMP_BV_16_8|16>[6:6]) <0x1|1>)) (== (or <%rbx|64>[7:7] <TMP_BV_16_9|16>[7:7]) <0x1|1>)))
-%af    : <TMP_BOOL_2>
-%zf    : (== (or (sign-extend-64 <%rbx|64>[15:0]) (sign-extend-64 <TMP_BV_16_1|16>)) <0x0|64>)
-%sf    : (== (or (sign-extend-64 <%rbx|64>[15:0])[63:63] (sign-extend-64 <TMP_BV_16_1|16>)[63:63]) <0x1|1>)
-%of    : FALSE
+%cf    : false
+%pf    : (let ((a!1 (xor (= (bvor ((_ extract 0 0) %rbx) ((_ extract 0 0) TMP_BV_16_2))
+                   #b1)
+                (= (bvor ((_ extract 1 1) %rbx) ((_ extract 1 1) TMP_BV_16_3))
+                   #b1)
+                (= (bvor ((_ extract 2 2) %rbx) ((_ extract 2 2) TMP_BV_16_4))
+                   #b1)
+                (= (bvor ((_ extract 3 3) %rbx) ((_ extract 3 3) TMP_BV_16_5))
+                   #b1)
+                (= (bvor ((_ extract 4 4) %rbx) ((_ extract 4 4) TMP_BV_16_6))
+                   #b1)
+                (= (bvor ((_ extract 5 5) %rbx) ((_ extract 5 5) TMP_BV_16_7))
+                   #b1)
+                (= (bvor ((_ extract 6 6) %rbx) ((_ extract 6 6) TMP_BV_16_8))
+                   #b1)
+                (= (bvor ((_ extract 7 7) %rbx) ((_ extract 7 7) TMP_BV_16_9))
+                   #b1))))
+  (not a!1))
+%af    : TMP_BOOL_2
+%zf    : (= (bvor ((_ sign_extend 48) ((_ extract 15 0) %rbx))
+         ((_ sign_extend 48) TMP_BV_16_1))
+   #x0000000000000000)
+%sf    : (let ((a!1 (bvor ((_ extract 63 63)
+                   ((_ sign_extend 48) ((_ extract 15 0) %rbx)))
+                 ((_ extract 63 63) ((_ sign_extend 48) TMP_BV_16_1)))))
+  (= a!1 #b1))
+%of    : false
 
 Information about memory reads:
-  Value <TMP_BV_16_0|16> (2 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_16_1|16> (2 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_16_2|16> (2 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_16_3|16> (2 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_16_4|16> (2 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_16_5|16> (2 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_16_6|16> (2 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_16_7|16> (2 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_16_8|16> (2 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_16_9|16> (2 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_1 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_2 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_3 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_4 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_5 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_6 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_7 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_8 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_9 (2 bytes)
+    was read at address %rax.
 
 Information about memory writes:
-  Address <%rax|64> was updated to
-    (or <%rbx|64>[15:0] <TMP_BV_16_1|16>) (2 bytes).
+  Address %rax was updated to
+    (bvor ((_ extract 15 0) %rbx) TMP_BV_16_1) (2 bytes).
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

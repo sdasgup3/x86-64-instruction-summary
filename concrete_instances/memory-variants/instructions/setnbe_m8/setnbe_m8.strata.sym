@@ -8,16 +8,34 @@ code: setnbe (%rax)
   must undef:      { }
   required flags:  { }
 
+setnbe (%rax): Hindex0(10)
+setnbe (%rax): Hindex0(10)
+callq .read_zf_into_rbx: Hindex8(9)
+callq .read_cf_into_rbx: Hindex8(9)
+movb %bl, %ah: Hindex5(9)
+callq .move_064_032_rbx_r12d_r13d: Hindex8(9)
+callq .move_032_064_r12d_r13d_rbx: Hindex8(9)
+movswq %bx, %r10: Hindex5(9)
+movslq %ebx, %rbx: Hindex5(9)
+callq .move_032_016_ecx_r8w_r9w: Hindex8(9)
+callq .move_064_032_rbx_r10d_r11d: Hindex8(9)
+movq %r10, %rcx: Hindex5(9)
+callq .move_016_032_r8w_r9w_ebx: Hindex8(9)
+callq .clear_cf: Hindex8(9)
+adcl %ecx, %ebx: Hindex2(9)
+callq .read_zf_into_rbx: Hindex8(9)
 Formula:
 
 Information about memory reads:
-  Value <TMP_BV_8_0|8> (1 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_8_0 (1 bytes)
+    was read at address %rax.
 
 Information about memory writes:
-  Address <%rax|64> was updated to
-    (if (== (concat (if <%cf> then <0x1|24> else <0x0|24>) (if <%zf> then <0x1|8> else <0x0|8>)) <0x0|32>) then <0x1|8> else <0x0|8>) (1 bytes).
+  Address %rax was updated to
+    (ite (= (concat (ite %cf #x000001 #x000000) (ite %zf #x01 #x00)) #x00000000)
+     #x01
+     #x00) (1 bytes).
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

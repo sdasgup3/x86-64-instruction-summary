@@ -8,19 +8,43 @@ code: rcll %cl, (%rax)
   must undef:      { }
   required flags:  { }
 
+rcll %cl, (%rax): Hindex8(10)
+rcll %cl, (%rax): Hindex8(10)
 Formula:
 
-%cf    : (== (rol (concat (if <%cf> then <0x1|1> else <0x0|1>) <TMP_BV_32_0|32>) (mod (concat <0x0|25> (and <%rcx|64>[7:0] <0x1f|8>)) <0x21|33>))[32:32] <0x1|1>)
-%of    : (or (and (== (mod (concat <0x0|25> (and <%rcx|64>[7:0] <0x1f|8>)) <0x21|33>)[7:0] <0x1|8>) (xor (== (rol (concat (if <%cf> then <0x1|1> else <0x0|1>) <TMP_BV_32_0|32>) (mod (concat <0x0|25> (and <%rcx|64>[7:0] <0x1f|8>)) <0x21|33>))[32:32] <0x1|1>) (== (rol (concat (if <%cf> then <0x1|1> else <0x0|1>) <TMP_BV_32_0|32>) (mod (concat <0x0|25> (and <%rcx|64>[7:0] <0x1f|8>)) <0x21|33>))[31:31] <0x1|1>))) (and (not (== (mod (concat <0x0|25> (and <%rcx|64>[7:0] <0x1f|8>)) <0x21|33>)[7:0] <0x1|8>)) (or (and (not (== (mod (concat <0x0|25> (and <%rcx|64>[7:0] <0x1f|8>)) <0x21|33>)[7:0] <0x0|8>)) <%of>) (and (not (not (== (mod (concat <0x0|25> (and <%rcx|64>[7:0] <0x1f|8>)) <0x21|33>)[7:0] <0x0|8>))) <TMP_BOOL_0>))))
+%cf    : (let ((a!1 (bvurem (concat #b0000000000000000000000000
+                           (bvand ((_ extract 7 0) %rcx) #x1f))
+                   #b000000000000000000000000000100001)))
+(let ((a!2 ((_ extract 32 32)
+             (ext_rotate_left (concat (ite %cf #b1 #b0) TMP_BV_32_0) a!1))))
+  (= a!2 #b1)))
+%of    : (let ((a!1 (bvurem (concat #b0000000000000000000000000
+                           (bvand ((_ extract 7 0) %rcx) #x1f))
+                   #b000000000000000000000000000100001)))
+(let ((a!2 ((_ extract 32 32)
+             (ext_rotate_left (concat (ite %cf #b1 #b0) TMP_BV_32_0) a!1)))
+      (a!3 ((_ extract 31 31)
+             (ext_rotate_left (concat (ite %cf #b1 #b0) TMP_BV_32_0) a!1)))
+      (a!4 (and (not (= ((_ extract 7 0) a!1) #x00)) %of))
+      (a!5 (not (not (= ((_ extract 7 0) a!1) #x00)))))
+(let ((a!6 (and (not (= ((_ extract 7 0) a!1) #x01))
+                (or a!4 (and a!5 TMP_BOOL_0)))))
+  (or (and (= ((_ extract 7 0) a!1) #x01) (xor (= a!2 #b1) (= a!3 #b1))) a!6))))
 
 Information about memory reads:
-  Value <TMP_BV_32_0|32> (4 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
 
 Information about memory writes:
-  Address <%rax|64> was updated to
-    (rol (concat (if <%cf> then <0x1|1> else <0x0|1>) <TMP_BV_32_0|32>) (mod (concat <0x0|25> (and <%rcx|64>[7:0] <0x1f|8>)) <0x21|33>))[31:0] (4 bytes).
+  Address %rax was updated to
+    (let ((a!1 (bvurem (concat #b0000000000000000000000000
+                           (bvand ((_ extract 7 0) %rcx) #x1f))
+                   #b000000000000000000000000000100001)))
+  ((_ extract 31 0)
+    (ext_rotate_left (concat (ite %cf #b1 #b0) TMP_BV_32_0) a!1))) (4 bytes).
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE)) (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv
+    (and (not sigfpe) (not sigbus) false)
+    (and (not sigfpe) (not sigbus) false))

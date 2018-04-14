@@ -8,10 +8,12 @@ code: leaq (%rax), %rbx
   must undef:      { }
   required flags:  { }
 
+leaq (%rax), %rbx: Hindex5(10)
+leaq (%rax), %rbx: Hindex5(10)
 Formula:
 
-%rbx   : <%rax|64>
+%rbx   : %rax
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

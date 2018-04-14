@@ -8,14 +8,34 @@ code: vpsravd (%rax), %ymm2, %ymm1
   must undef:      { }
   required flags:  { avx2 }
 
+vpsravd (%rax), %ymm2, %ymm1: Hindex1(10)
+vpsravd (%rax), %ymm2, %ymm1: Hindex1(10)
 Formula:
 
-%ymm1  : (concat (s_shr <%ymm2|256>[255:224] <TMP_BV_256_0|256>[255:224]) (concat (s_shr <%ymm2|256>[223:192] <TMP_BV_256_0|256>[223:192]) (concat (s_shr <%ymm2|256>[191:160] <TMP_BV_256_0|256>[191:160]) (concat (s_shr <%ymm2|256>[159:128] <TMP_BV_256_0|256>[159:128]) (concat (s_shr <%ymm2|256>[127:96] <TMP_BV_256_0|256>[127:96]) (concat (s_shr <%ymm2|256>[95:64] <TMP_BV_256_0|256>[95:64]) (concat (s_shr <%ymm2|256>[63:32] <TMP_BV_256_0|256>[63:32]) (s_shr <%ymm2|256>[31:0] <TMP_BV_256_0|256>[31:0]))))))))
+%ymm1  : (let ((a!1 (concat (bvashr ((_ extract 95 64) %ymm2)
+                           ((_ extract 95 64) TMP_BV_256_0))
+                   (concat (bvashr ((_ extract 63 32) %ymm2)
+                                   ((_ extract 63 32) TMP_BV_256_0))
+                           (bvashr ((_ extract 31 0) %ymm2)
+                                   ((_ extract 31 0) TMP_BV_256_0))))))
+(let ((a!2 (concat (bvashr ((_ extract 159 128) %ymm2)
+                           ((_ extract 159 128) TMP_BV_256_0))
+                   (concat (bvashr ((_ extract 127 96) %ymm2)
+                                   ((_ extract 127 96) TMP_BV_256_0))
+                           a!1))))
+(let ((a!3 (concat (bvashr ((_ extract 223 192) %ymm2)
+                           ((_ extract 223 192) TMP_BV_256_0))
+                   (concat (bvashr ((_ extract 191 160) %ymm2)
+                                   ((_ extract 191 160) TMP_BV_256_0))
+                           a!2))))
+  (concat (bvashr ((_ extract 255 224) %ymm2)
+                  ((_ extract 255 224) TMP_BV_256_0))
+          a!3))))
 
 Information about memory reads:
-  Value <TMP_BV_256_0|256> (32 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

@@ -8,19 +8,35 @@ code: roll %cl, (%rax)
   must undef:      { }
   required flags:  { }
 
+roll %cl, (%rax): Hindex8(10)
+roll %cl, (%rax): Hindex8(10)
 Formula:
 
-%cf    : (or (and (not (== (and <%rcx|64>[7:0] <0x1f|8>) <0x0|8>)) (== (rol <TMP_BV_32_0|32> (concat <0x0|24> (and <%rcx|64>[7:0] <0x1f|8>)))[0:0] <0x1|1>)) (and (not (not (== (and <%rcx|64>[7:0] <0x1f|8>) <0x0|8>))) <%cf>))
-%of    : (or (and (== (and <%rcx|64>[7:0] <0x1f|8>) <0x1|8>) (xor (== (rol <TMP_BV_32_0|32> (concat <0x0|24> (and <%rcx|64>[7:0] <0x1f|8>)))[31:31] <0x1|1>) (== (rol <TMP_BV_32_0|32> (concat <0x0|24> (and <%rcx|64>[7:0] <0x1f|8>)))[0:0] <0x1|1>))) (and (not (== (and <%rcx|64>[7:0] <0x1f|8>) <0x1|8>)) <TMP_BOOL_0>))
+%cf    : (let ((a!1 (not (= (bvand ((_ extract 7 0) %rcx) #x1f) #x00)))
+      (a!2 (ext_rotate_left TMP_BV_32_0
+                            (concat #x000000
+                                    (bvand ((_ extract 7 0) %rcx) #x1f)))))
+  (or (and a!1 (= ((_ extract 0 0) a!2) #b1)) (and (not a!1) %cf)))
+%of    : (let ((a!1 (ext_rotate_left TMP_BV_32_0
+                            (concat #x000000
+                                    (bvand ((_ extract 7 0) %rcx) #x1f))))
+      (a!3 (not (= (bvand ((_ extract 7 0) %rcx) #x1f) #x01))))
+(let ((a!2 (and (= (bvand ((_ extract 7 0) %rcx) #x1f) #x01)
+                (xor (= ((_ extract 31 31) a!1) #b1)
+                     (= ((_ extract 0 0) a!1) #b1)))))
+  (or a!2 (and a!3 TMP_BOOL_0))))
 
 Information about memory reads:
-  Value <TMP_BV_32_0|32> (4 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
 
 Information about memory writes:
-  Address <%rax|64> was updated to
-    (rol <TMP_BV_32_0|32> (concat <0x0|24> (and <%rcx|64>[7:0] <0x1f|8>))) (4 bytes).
+  Address %rax was updated to
+    (ext_rotate_left TMP_BV_32_0
+                 (concat #x000000 (bvand ((_ extract 7 0) %rcx) #x1f))) (4 bytes).
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE)) (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv
+    (and (not sigfpe) (not sigbus) false)
+    (and (not sigfpe) (not sigbus) false))

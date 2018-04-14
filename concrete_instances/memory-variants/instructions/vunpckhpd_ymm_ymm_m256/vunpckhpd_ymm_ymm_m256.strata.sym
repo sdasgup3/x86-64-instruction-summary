@@ -8,16 +8,34 @@ code: vunpckhpd (%rax), %ymm2, %ymm1
   must undef:      { }
   required flags:  { avx }
 
+vunpckhpd (%rax), %ymm2, %ymm1: Hindex0(10)
+vunpckhpd (%rax), %ymm2, %ymm1: Hindex0(10)
+callq .move_256_128_ymm2_xmm8_xmm9: Hindex8(9)
+callq .move_256_128_ymm3_xmm10_xmm11: Hindex8(9)
+callq .move_128_64_xmm1_xmm12_xmm13: Hindex8(9)
+callq .move_128_064_xmm2_r12_r13: Hindex8(9)
+callq .move_128_032_xmm1_r10d_r11d_r12d_r13d: Hindex8(9)
+callq .move_032_064_r10d_r11d_rbx: Hindex8(9)
+movq %r10, %rbx: Hindex5(9)
+callq .move_064_128_r12_r13_xmm1: Hindex8(9)
+callq .move_128_64_xmm1_xmm12_xmm13: Hindex8(9)
+callq .move_128_064_xmm2_r12_r13: Hindex8(9)
+callq .move_128_032_xmm1_r10d_r11d_r12d_r13d: Hindex8(9)
+callq .move_032_064_r10d_r11d_rbx: Hindex8(9)
+movq %r10, %rbx: Hindex5(9)
+callq .move_064_128_r12_r13_xmm1: Hindex8(9)
+callq .move_128_256_xmm8_xmm9_ymm1: Hindex8(9)
 Formula:
 
-%ymm1  : (concat (concat <TMP_BV_256_0|256>[255:192] <%ymm2|256>[255:192]) (concat <TMP_BV_256_1|256>[127:64] <%ymm2|256>[127:64]))
+%ymm1  : (concat (concat ((_ extract 255 192) TMP_BV_256_0) ((_ extract 255 192) %ymm2))
+        (concat ((_ extract 127 64) TMP_BV_256_1) ((_ extract 127 64) %ymm2)))
 
 Information about memory reads:
-  Value <TMP_BV_256_0|256> (32 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_256_1|256> (32 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rax.
+  Value TMP_BV_256_1 (32 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

@@ -8,14 +8,22 @@ code: blendvpd %xmm0, (%rax), %xmm1
   must undef:      { }
   required flags:  { sse4_1 }
 
+blendvpd %xmm0, (%rax), %xmm1: Hindex2(10)
+blendvpd %xmm0, (%rax), %xmm1: Hindex2(10)
 Formula:
 
-%ymm1  : (concat <%ymm1|256>[255:128] (concat (if (== <%ymm0|256>[127:127] <0x0|1>) then <%ymm1|256>[127:64] else <TMP_BV_128_0|128>[127:64]) (if (== <%ymm0|256>[63:63] <0x0|1>) then <%ymm1|256>[63:0] else <TMP_BV_128_0|128>[63:0])))
+%ymm1  : (let ((a!1 (concat (ite (= ((_ extract 127 127) %ymm0) #b0)
+                        ((_ extract 127 64) %ymm1)
+                        ((_ extract 127 64) TMP_BV_128_0))
+                   (ite (= ((_ extract 63 63) %ymm0) #b0)
+                        ((_ extract 63 0) %ymm1)
+                        ((_ extract 63 0) TMP_BV_128_0)))))
+  (concat ((_ extract 255 128) %ymm1) a!1))
 
 Information about memory reads:
-  Value <TMP_BV_128_0|128> (16 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

@@ -8,14 +8,18 @@ code: vroundss $0x0, (%rax), %xmm2, %xmm1
   must undef:      { }
   required flags:  { avx }
 
+vroundss $0x0, (%rax), %xmm2, %xmm1: Hindex2(10)
+vroundss $0x0, (%rax), %xmm2, %xmm1: Hindex2(10)
 Formula:
 
-%ymm1  : (concat <0x0|128> (concat <%ymm2|256>[127:64] cvt_single_to_int32_rm(<TMP_BV_32_0|32>[63:0], <0x0|8>)))
+%ymm1  : (concat #x00000000000000000000000000000000
+        (concat ((_ extract 127 32) %ymm2)
+                (cvt_single_to_int32_rm TMP_BV_32_0 #x00)))
 
 Information about memory reads:
-  Value <TMP_BV_32_0|32> (4 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

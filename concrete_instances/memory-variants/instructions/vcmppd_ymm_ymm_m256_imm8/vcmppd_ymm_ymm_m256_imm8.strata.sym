@@ -8,14 +8,40 @@ code: vcmppd $0x0, (%rax), %ymm2, %ymm1
   must undef:      { }
   required flags:  { avx }
 
+vcmppd $0x0, (%rax), %ymm2, %ymm1: Hindex2(10)
+vcmppd $0x0, (%rax), %ymm2, %ymm1: Hindex2(10)
 Formula:
 
-%ymm1  : (concat (if (== cmp_double_pred(<%ymm2|256>[255:192], <TMP_BV_256_0|256>[255:192], <0x0|8>) <0x1|1>) then <0xffffffffffffffff|64> else <0x0|64>) (concat (if (== cmp_double_pred(<%ymm2|256>[191:128], <TMP_BV_256_0|256>[191:128], <0x0|8>) <0x1|1>) then <0xffffffffffffffff|64> else <0x0|64>) (concat (if (== cmp_double_pred(<%ymm2|256>[127:64], <TMP_BV_256_0|256>[127:64], <0x0|8>) <0x1|1>) then <0xffffffffffffffff|64> else <0x0|64>) (if (== cmp_double_pred(<%ymm2|256>[63:0], <TMP_BV_256_0|256>[63:0], <0x0|8>) <0x1|1>) then <0xffffffffffffffff|64> else <0x0|64>))))
+%ymm1  : (let ((a!1 (ite (= (cmp_double_pred ((_ extract 255 192) %ymm2)
+                                    ((_ extract 255 192) TMP_BV_256_0)
+                                    #x00)
+                   #b1)
+                #xffffffffffffffff
+                #x0000000000000000))
+      (a!2 (ite (= (cmp_double_pred ((_ extract 191 128) %ymm2)
+                                    ((_ extract 191 128) TMP_BV_256_0)
+                                    #x00)
+                   #b1)
+                #xffffffffffffffff
+                #x0000000000000000))
+      (a!3 (ite (= (cmp_double_pred ((_ extract 127 64) %ymm2)
+                                    ((_ extract 127 64) TMP_BV_256_0)
+                                    #x00)
+                   #b1)
+                #xffffffffffffffff
+                #x0000000000000000))
+      (a!4 (ite (= (cmp_double_pred ((_ extract 63 0) %ymm2)
+                                    ((_ extract 63 0) TMP_BV_256_0)
+                                    #x00)
+                   #b1)
+                #xffffffffffffffff
+                #x0000000000000000)))
+  (concat a!1 (concat a!2 (concat a!3 a!4))))
 
 Information about memory reads:
-  Value <TMP_BV_256_0|256> (32 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

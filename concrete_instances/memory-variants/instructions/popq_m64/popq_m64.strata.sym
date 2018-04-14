@@ -8,20 +8,25 @@ code: popq (%rax)
   must undef:      { }
   required flags:  { }
 
+popq (%rax): Hindex2(10)
+popq (%rax): Hindex2(10)
 Formula:
 
-%rsp   : (plus <%rsp|64> <0x8|64>)
+%rsp   : (bvadd %rsp #x0000000000000008)
 
 Information about memory reads:
-  Value <TMP_BV_64_0|64> (8 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_64_1|64> (8 bytes)
-    was read at address <%rsp|64>.
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
+  Value TMP_BV_64_1 (8 bytes)
+    was read at address %rsp.
 
 Information about memory writes:
-  Address <%rax|64> was updated to
-    <TMP_BV_64_1|64> (8 bytes).
+  Address %rax was updated to
+    TMP_BV_64_1 (8 bytes).
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or (or (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE)) (and (and (not <sigfpe>) (not <sigbus>)) FALSE)) (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv
+    (and (not sigfpe) (not sigbus) false)
+    (and (not sigfpe) (not sigbus) false)
+    (and (not sigfpe) (not sigbus) false))

@@ -8,14 +8,173 @@ code: vpcmpgtb (%rax), %ymm2, %ymm1
   must undef:      { }
   required flags:  { avx2 }
 
+vpcmpgtb (%rax), %ymm2, %ymm1: Hindex1(10)
+vpcmpgtb (%rax), %ymm2, %ymm1: Hindex1(10)
 Formula:
 
-%ymm1  : (concat (if (> <%ymm2|256>[255:248] <TMP_BV_256_0|256>[255:248]) then <0xff|8> else <0x0|8>) (concat (if (> <%ymm2|256>[247:240] <TMP_BV_256_0|256>[247:240]) then <0xff|8> else <0x0|8>) (concat (if (> <%ymm2|256>[239:232] <TMP_BV_256_0|256>[239:232]) then <0xff|8> else <0x0|8>) (concat (if (> <%ymm2|256>[231:224] <TMP_BV_256_0|256>[231:224]) then <0xff|8> else <0x0|8>) (concat (if (> <%ymm2|256>[223:216] <TMP_BV_256_0|256>[223:216]) then <0xff|8> else <0x0|8>) (concat (if (> <%ymm2|256>[215:208] <TMP_BV_256_0|256>[215:208]) then <0xff|8> else <0x0|8>) (concat (if (> <%ymm2|256>[207:200] <TMP_BV_256_0|256>[207:200]) then <0xff|8> else <0x0|8>) (concat (if (> <%ymm2|256>[199:192] <TMP_BV_256_0|256>[199:192]) then <0xff|8> else <0x0|8>) (concat (if (> <%ymm2|256>[191:184] <TMP_BV_256_0|256>[191:184]) then <0xff|8> else <0x0|8>) (concat (if (> <%ymm2|256>[183:176] <TMP_BV_256_0|256>[183:176]) then <0xff|8> else <0x0|8>) (concat (if (> <%ymm2|256>[175:168] <TMP_BV_256_0|256>[175:168]) then <0xff|8> else <0x0|8>) (concat (if (> <%ymm2|256>[167:160] <TMP_BV_256_0|256>[167:160]) then <0xff|8> else <0x0|8>) (concat (if (> <%ymm2|256>[159:152] <TMP_BV_256_0|256>[159:152]) then <0xff|8> else <0x0|8>) (concat (if (> <%ymm2|256>[151:144] <TMP_BV_256_0|256>[151:144]) then <0xff|8> else <0x0|8>) (concat (if (> <%ymm2|256>[143:136] <TMP_BV_256_0|256>[143:136]) then <0xff|8> else <0x0|8>) (concat (if (> <%ymm2|256>[135:128] <TMP_BV_256_0|256>[135:128]) then <0xff|8> else <0x0|8>) (concat (if (> <%ymm2|256>[127:120] <TMP_BV_256_0|256>[127:120]) then <0xff|8> else <0x0|8>) (concat (if (> <%ymm2|256>[119:112] <TMP_BV_256_0|256>[119:112]) then <0xff|8> else <0x0|8>) (concat (if (> <%ymm2|256>[111:104] <TMP_BV_256_0|256>[111:104]) then <0xff|8> else <0x0|8>) (concat (if (> <%ymm2|256>[103:96] <TMP_BV_256_0|256>[103:96]) then <0xff|8> else <0x0|8>) (concat (if (> <%ymm2|256>[95:88] <TMP_BV_256_0|256>[95:88]) then <0xff|8> else <0x0|8>) (concat (if (> <%ymm2|256>[87:80] <TMP_BV_256_0|256>[87:80]) then <0xff|8> else <0x0|8>) (concat (if (> <%ymm2|256>[79:72] <TMP_BV_256_0|256>[79:72]) then <0xff|8> else <0x0|8>) (concat (if (> <%ymm2|256>[71:64] <TMP_BV_256_0|256>[71:64]) then <0xff|8> else <0x0|8>) (concat (if (> <%ymm2|256>[63:56] <TMP_BV_256_0|256>[63:56]) then <0xff|8> else <0x0|8>) (concat (if (> <%ymm2|256>[55:48] <TMP_BV_256_0|256>[55:48]) then <0xff|8> else <0x0|8>) (concat (if (> <%ymm2|256>[47:40] <TMP_BV_256_0|256>[47:40]) then <0xff|8> else <0x0|8>) (concat (if (> <%ymm2|256>[39:32] <TMP_BV_256_0|256>[39:32]) then <0xff|8> else <0x0|8>) (concat (if (> <%ymm2|256>[31:24] <TMP_BV_256_0|256>[31:24]) then <0xff|8> else <0x0|8>) (concat (if (> <%ymm2|256>[23:16] <TMP_BV_256_0|256>[23:16]) then <0xff|8> else <0x0|8>) (concat (if (> <%ymm2|256>[15:8] <TMP_BV_256_0|256>[15:8]) then <0xff|8> else <0x0|8>) (if (> <%ymm2|256>[7:0] <TMP_BV_256_0|256>[7:0]) then <0xff|8> else <0x0|8>))))))))))))))))))))))))))))))))
+%ymm1  : (let ((a!1 (concat (ite (bvsgt ((_ extract 15 8) %ymm2)
+                               ((_ extract 15 8) TMP_BV_256_0))
+                        #xff
+                        #x00)
+                   (ite (bvsgt ((_ extract 7 0) %ymm2)
+                               ((_ extract 7 0) TMP_BV_256_0))
+                        #xff
+                        #x00))))
+(let ((a!2 (concat (ite (bvsgt ((_ extract 23 16) %ymm2)
+                               ((_ extract 23 16) TMP_BV_256_0))
+                        #xff
+                        #x00)
+                   a!1)))
+(let ((a!3 (concat (ite (bvsgt ((_ extract 31 24) %ymm2)
+                               ((_ extract 31 24) TMP_BV_256_0))
+                        #xff
+                        #x00)
+                   a!2)))
+(let ((a!4 (concat (ite (bvsgt ((_ extract 39 32) %ymm2)
+                               ((_ extract 39 32) TMP_BV_256_0))
+                        #xff
+                        #x00)
+                   a!3)))
+(let ((a!5 (concat (ite (bvsgt ((_ extract 47 40) %ymm2)
+                               ((_ extract 47 40) TMP_BV_256_0))
+                        #xff
+                        #x00)
+                   a!4)))
+(let ((a!6 (concat (ite (bvsgt ((_ extract 55 48) %ymm2)
+                               ((_ extract 55 48) TMP_BV_256_0))
+                        #xff
+                        #x00)
+                   a!5)))
+(let ((a!7 (concat (ite (bvsgt ((_ extract 63 56) %ymm2)
+                               ((_ extract 63 56) TMP_BV_256_0))
+                        #xff
+                        #x00)
+                   a!6)))
+(let ((a!8 (concat (ite (bvsgt ((_ extract 71 64) %ymm2)
+                               ((_ extract 71 64) TMP_BV_256_0))
+                        #xff
+                        #x00)
+                   a!7)))
+(let ((a!9 (concat (ite (bvsgt ((_ extract 79 72) %ymm2)
+                               ((_ extract 79 72) TMP_BV_256_0))
+                        #xff
+                        #x00)
+                   a!8)))
+(let ((a!10 (concat (ite (bvsgt ((_ extract 87 80) %ymm2)
+                                ((_ extract 87 80) TMP_BV_256_0))
+                         #xff
+                         #x00)
+                    a!9)))
+(let ((a!11 (concat (ite (bvsgt ((_ extract 95 88) %ymm2)
+                                ((_ extract 95 88) TMP_BV_256_0))
+                         #xff
+                         #x00)
+                    a!10)))
+(let ((a!12 (concat (ite (bvsgt ((_ extract 103 96) %ymm2)
+                                ((_ extract 103 96) TMP_BV_256_0))
+                         #xff
+                         #x00)
+                    a!11)))
+(let ((a!13 (concat (ite (bvsgt ((_ extract 111 104) %ymm2)
+                                ((_ extract 111 104) TMP_BV_256_0))
+                         #xff
+                         #x00)
+                    a!12)))
+(let ((a!14 (concat (ite (bvsgt ((_ extract 119 112) %ymm2)
+                                ((_ extract 119 112) TMP_BV_256_0))
+                         #xff
+                         #x00)
+                    a!13)))
+(let ((a!15 (concat (ite (bvsgt ((_ extract 127 120) %ymm2)
+                                ((_ extract 127 120) TMP_BV_256_0))
+                         #xff
+                         #x00)
+                    a!14)))
+(let ((a!16 (concat (ite (bvsgt ((_ extract 135 128) %ymm2)
+                                ((_ extract 135 128) TMP_BV_256_0))
+                         #xff
+                         #x00)
+                    a!15)))
+(let ((a!17 (concat (ite (bvsgt ((_ extract 143 136) %ymm2)
+                                ((_ extract 143 136) TMP_BV_256_0))
+                         #xff
+                         #x00)
+                    a!16)))
+(let ((a!18 (concat (ite (bvsgt ((_ extract 151 144) %ymm2)
+                                ((_ extract 151 144) TMP_BV_256_0))
+                         #xff
+                         #x00)
+                    a!17)))
+(let ((a!19 (concat (ite (bvsgt ((_ extract 159 152) %ymm2)
+                                ((_ extract 159 152) TMP_BV_256_0))
+                         #xff
+                         #x00)
+                    a!18)))
+(let ((a!20 (concat (ite (bvsgt ((_ extract 167 160) %ymm2)
+                                ((_ extract 167 160) TMP_BV_256_0))
+                         #xff
+                         #x00)
+                    a!19)))
+(let ((a!21 (concat (ite (bvsgt ((_ extract 175 168) %ymm2)
+                                ((_ extract 175 168) TMP_BV_256_0))
+                         #xff
+                         #x00)
+                    a!20)))
+(let ((a!22 (concat (ite (bvsgt ((_ extract 183 176) %ymm2)
+                                ((_ extract 183 176) TMP_BV_256_0))
+                         #xff
+                         #x00)
+                    a!21)))
+(let ((a!23 (concat (ite (bvsgt ((_ extract 191 184) %ymm2)
+                                ((_ extract 191 184) TMP_BV_256_0))
+                         #xff
+                         #x00)
+                    a!22)))
+(let ((a!24 (concat (ite (bvsgt ((_ extract 199 192) %ymm2)
+                                ((_ extract 199 192) TMP_BV_256_0))
+                         #xff
+                         #x00)
+                    a!23)))
+(let ((a!25 (concat (ite (bvsgt ((_ extract 207 200) %ymm2)
+                                ((_ extract 207 200) TMP_BV_256_0))
+                         #xff
+                         #x00)
+                    a!24)))
+(let ((a!26 (concat (ite (bvsgt ((_ extract 215 208) %ymm2)
+                                ((_ extract 215 208) TMP_BV_256_0))
+                         #xff
+                         #x00)
+                    a!25)))
+(let ((a!27 (concat (ite (bvsgt ((_ extract 223 216) %ymm2)
+                                ((_ extract 223 216) TMP_BV_256_0))
+                         #xff
+                         #x00)
+                    a!26)))
+(let ((a!28 (concat (ite (bvsgt ((_ extract 231 224) %ymm2)
+                                ((_ extract 231 224) TMP_BV_256_0))
+                         #xff
+                         #x00)
+                    a!27)))
+(let ((a!29 (concat (ite (bvsgt ((_ extract 239 232) %ymm2)
+                                ((_ extract 239 232) TMP_BV_256_0))
+                         #xff
+                         #x00)
+                    a!28)))
+(let ((a!30 (concat (ite (bvsgt ((_ extract 247 240) %ymm2)
+                                ((_ extract 247 240) TMP_BV_256_0))
+                         #xff
+                         #x00)
+                    a!29)))
+  (concat (ite (bvsgt ((_ extract 255 248) %ymm2)
+                      ((_ extract 255 248) TMP_BV_256_0))
+               #xff
+               #x00)
+          a!30)))))))))))))))))))))))))))))))
 
 Information about memory reads:
-  Value <TMP_BV_256_0|256> (32 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

@@ -8,16 +8,31 @@ code: setno (%rax)
   must undef:      { }
   required flags:  { }
 
+setno (%rax): Hindex0(10)
+setno (%rax): Hindex0(10)
+callq .read_of_into_rcx: Hindex8(9)
+callq .set_cf: Hindex8(9)
+callq .read_cf_into_rbx: Hindex8(9)
+movslq %ecx, %r8: Hindex5(9)
+callq .move_016_008_cx_r8b_r9b: Hindex8(9)
+movswq %bx, %r12: Hindex5(9)
+callq .move_008_016_r8b_r9b_bx: Hindex8(9)
+callq .set_szp_for_bx: Hindex8(9)
+callq .read_sf_into_rbx: Hindex8(9)
+callq .move_008_016_r8b_r9b_bx: Hindex8(9)
+xorq %rbx, %r12: Hindex1(9)
+movswq %r12w, %rbx: Hindex5(9)
+callq .set_szp_for_bx: Hindex8(9)
 Formula:
 
 Information about memory reads:
-  Value <TMP_BV_8_0|8> (1 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_8_0 (1 bytes)
+    was read at address %rax.
 
 Information about memory writes:
-  Address <%rax|64> was updated to
-    (if <%of> then <0x0|8> else <0x1|8>) (1 bytes).
+  Address %rax was updated to
+    (ite %of #x00 #x01) (1 bytes).
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

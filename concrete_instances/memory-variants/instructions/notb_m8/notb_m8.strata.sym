@@ -8,18 +8,45 @@ code: notb (%rax)
   must undef:      { }
   required flags:  { }
 
+notb (%rax): Hindex0(10)
+notb (%rax): Hindex0(10)
+xorq %rdx, %rdx: Hindex1(9)
+adcb %bl, %dl: Hindex2(9)
+movslq %ebx, %rax: Hindex5(9)
+movq $0xffffffffffffffff, %rbx: Hindex5(9)
+movswq %bx, %r10: Hindex5(9)
+movslq %ebx, %rbx: Hindex5(9)
+callq .move_032_016_ecx_r8w_r9w: Hindex8(9)
+callq .move_064_032_rbx_r10d_r11d: Hindex8(9)
+movq %r10, %rcx: Hindex5(9)
+callq .move_016_032_r8w_r9w_ebx: Hindex8(9)
+xorq %rcx, %rbx: Hindex1(9)
+callq .set_szp_for_ebx: Hindex8(9)
+movq $0x20, %rbx: Hindex5(9)
+callq .move_016_008_cx_r12b_r13b: Hindex8(9)
+callq .move_008_016_r12b_r13b_bx: Hindex8(9)
+callq .move_064_032_rbx_r8d_r9d: Hindex8(9)
+movq $0xffffffffffffffc0, %rbx: Hindex5(9)
+movswq %cx, %rbx: Hindex5(9)
+movswq %bx, %r9: Hindex5(9)
+movswq %bx, %r10: Hindex5(9)
+movslq %ebx, %rbx: Hindex5(9)
+callq .move_032_016_ecx_r8w_r9w: Hindex8(9)
+callq .move_064_032_rbx_r10d_r11d: Hindex8(9)
+movq %r10, %rcx: Hindex5(9)
+callq .move_016_032_r8w_r9w_ebx: Hindex8(9)
 Formula:
 
 Information about memory reads:
-  Value <TMP_BV_8_0|8> (1 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_8_1|8> (1 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_8_0 (1 bytes)
+    was read at address %rax.
+  Value TMP_BV_8_1 (1 bytes)
+    was read at address %rax.
 
 Information about memory writes:
-  Address <%rax|64> was updated to
-    (xor <TMP_BV_8_1|8> <0xff|8>) (1 bytes).
+  Address %rax was updated to
+    (bvxor TMP_BV_8_1 #xff) (1 bytes).
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

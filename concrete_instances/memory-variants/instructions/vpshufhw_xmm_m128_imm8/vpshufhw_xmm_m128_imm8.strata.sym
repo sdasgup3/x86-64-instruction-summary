@@ -8,14 +8,23 @@ code: vpshufhw $0x0, (%rax), %xmm1
   must undef:      { }
   required flags:  { avx }
 
+vpshufhw $0x0, (%rax), %xmm1: Hindex1(10)
+vpshufhw $0x0, (%rax), %xmm1: Hindex1(10)
 Formula:
 
-%ymm1  : (concat <0x0|128> (concat (>> <TMP_BV_128_0|128> (<< (concat <0x0|126> <0x0|2>) <0x4|128>))[79:64] (concat (>> <TMP_BV_128_0|128> (<< (concat <0x0|126> <0x0|2>) <0x4|128>))[79:64] (concat (>> <TMP_BV_128_0|128> (<< (concat <0x0|126> <0x0|2>) <0x4|128>))[79:64] (concat (>> <TMP_BV_128_0|128> (<< (concat <0x0|126> <0x0|2>) <0x4|128>))[79:64] <TMP_BV_128_0|128>[63:0])))))
+%ymm1  : (let ((a!1 ((_ extract 79 64)
+             (bvlshr TMP_BV_128_0
+                     (bvshl (concat #b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+                                    #b00)
+                            #x00000000000000000000000000000004)))))
+(let ((a!2 (concat a!1
+                   (concat a!1 (concat a!1 ((_ extract 63 0) TMP_BV_128_0))))))
+  (concat #x00000000000000000000000000000000 (concat a!1 a!2))))
 
 Information about memory reads:
-  Value <TMP_BV_128_0|128> (16 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

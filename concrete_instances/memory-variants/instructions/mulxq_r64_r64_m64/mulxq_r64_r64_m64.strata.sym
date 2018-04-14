@@ -8,15 +8,21 @@ code: mulxq (%rax), %rcx, %rbx
   must undef:      { }
   required flags:  { bmi2 }
 
+mulxq (%rax), %rcx, %rbx: Hindex2(10)
+mulxq (%rax), %rcx, %rbx: Hindex2(10)
 Formula:
 
-%rcx   : (mult (concat <0x0|64> <%rdx|64>) (concat <0x0|64> <TMP_BV_64_0|64>))[63:0]
-%rbx   : (mult (concat <0x0|64> <%rdx|64>) (concat <0x0|64> <TMP_BV_64_0|64>))[127:64]
+%rcx   : ((_ extract 63 0)
+  (bvmul (concat #x0000000000000000 %rdx)
+         (concat #x0000000000000000 TMP_BV_64_0)))
+%rbx   : ((_ extract 127 64)
+  (bvmul (concat #x0000000000000000 %rdx)
+         (concat #x0000000000000000 TMP_BV_64_0)))
 
 Information about memory reads:
-  Value <TMP_BV_64_0|64> (8 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

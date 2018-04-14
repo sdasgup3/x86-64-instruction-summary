@@ -8,37 +8,68 @@ code: orw (%rax), %bx
   must undef:      { %af }
   required flags:  { }
 
+orw (%rax), %bx: Hindex0(10)
+orw (%rax), %bx: Hindex0(10)
+movswq %cx, %rdx: Hindex5(9)
+callq .move_016_008_bx_r10b_r11b: Hindex8(9)
+callq .move_016_008_cx_r8b_r9b: Hindex8(9)
+callq .move_008_016_r10b_r11b_cx: Hindex8(9)
+callq .move_008_016_r8b_r9b_bx: Hindex8(9)
+movswq %cx, %rax: Hindex5(9)
+orq %rax, %rdx: Hindex1(9)
+movslq %edx, %rbx: Hindex5(9)
 Formula:
 
-%rbx   : (concat <%rbx|64>[63:16] (or <TMP_BV_16_0|16> <%rbx|64>[15:0]))
+%rbx   : (concat ((_ extract 63 16) %rbx) (bvor TMP_BV_16_0 ((_ extract 15 0) %rbx)))
 
-%cf    : FALSE
-%pf    : (not (xor (xor (xor (xor (xor (xor (xor (== (or <TMP_BV_16_1|16>[0:0] <%rbx|64>[0:0]) <0x1|1>) (== (or <TMP_BV_16_2|16>[1:1] <%rbx|64>[1:1]) <0x1|1>)) (== (or <TMP_BV_16_3|16>[2:2] <%rbx|64>[2:2]) <0x1|1>)) (== (or <TMP_BV_16_4|16>[3:3] <%rbx|64>[3:3]) <0x1|1>)) (== (or <TMP_BV_16_5|16>[4:4] <%rbx|64>[4:4]) <0x1|1>)) (== (or <TMP_BV_16_6|16>[5:5] <%rbx|64>[5:5]) <0x1|1>)) (== (or <TMP_BV_16_7|16>[6:6] <%rbx|64>[6:6]) <0x1|1>)) (== (or <TMP_BV_16_8|16>[7:7] <%rbx|64>[7:7]) <0x1|1>)))
-%af    : <TMP_BOOL_2>
-%zf    : (== (or (sign-extend-64 <TMP_BV_16_0|16>) (sign-extend-64 <%rbx|64>[15:0])) <0x0|64>)
-%sf    : (== (or (sign-extend-64 <TMP_BV_16_0|16>)[63:63] (sign-extend-64 <%rbx|64>[15:0])[63:63]) <0x1|1>)
-%of    : FALSE
+%cf    : false
+%pf    : (let ((a!1 (xor (= (bvor ((_ extract 0 0) TMP_BV_16_1) ((_ extract 0 0) %rbx))
+                   #b1)
+                (= (bvor ((_ extract 1 1) TMP_BV_16_2) ((_ extract 1 1) %rbx))
+                   #b1)
+                (= (bvor ((_ extract 2 2) TMP_BV_16_3) ((_ extract 2 2) %rbx))
+                   #b1)
+                (= (bvor ((_ extract 3 3) TMP_BV_16_4) ((_ extract 3 3) %rbx))
+                   #b1)
+                (= (bvor ((_ extract 4 4) TMP_BV_16_5) ((_ extract 4 4) %rbx))
+                   #b1)
+                (= (bvor ((_ extract 5 5) TMP_BV_16_6) ((_ extract 5 5) %rbx))
+                   #b1)
+                (= (bvor ((_ extract 6 6) TMP_BV_16_7) ((_ extract 6 6) %rbx))
+                   #b1)
+                (= (bvor ((_ extract 7 7) TMP_BV_16_8) ((_ extract 7 7) %rbx))
+                   #b1))))
+  (not a!1))
+%af    : TMP_BOOL_2
+%zf    : (= (bvor ((_ sign_extend 48) TMP_BV_16_0)
+         ((_ sign_extend 48) ((_ extract 15 0) %rbx)))
+   #x0000000000000000)
+%sf    : (let ((a!1 (bvor ((_ extract 63 63) ((_ sign_extend 48) TMP_BV_16_0))
+                 ((_ extract 63 63)
+                   ((_ sign_extend 48) ((_ extract 15 0) %rbx))))))
+  (= a!1 #b1))
+%of    : false
 
 Information about memory reads:
-  Value <TMP_BV_16_0|16> (2 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_16_1|16> (2 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_16_2|16> (2 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_16_3|16> (2 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_16_4|16> (2 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_16_5|16> (2 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_16_6|16> (2 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_16_7|16> (2 bytes)
-    was read at address <%rax|64>.
-  Value <TMP_BV_16_8|16> (2 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_1 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_2 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_3 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_4 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_5 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_6 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_7 (2 bytes)
+    was read at address %rax.
+  Value TMP_BV_16_8 (2 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

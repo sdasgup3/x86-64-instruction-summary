@@ -8,14 +8,30 @@ code: vblendvps %xmm3, (%rax), %xmm2, %xmm1
   must undef:      { }
   required flags:  { avx }
 
+vblendvps %xmm3, (%rax), %xmm2, %xmm1: Hindex2(10)
+vblendvps %xmm3, (%rax), %xmm2, %xmm1: Hindex2(10)
 Formula:
 
-%ymm1  : (concat <0x0|128> (concat (if (== <%ymm3|256>[127:127] <0x0|1>) then <%ymm2|256>[127:96] else <TMP_BV_128_0|128>[127:96]) (concat (if (== <%ymm3|256>[95:95] <0x0|1>) then <%ymm2|256>[95:64] else <TMP_BV_128_0|128>[95:64]) (concat (if (== <%ymm3|256>[63:63] <0x0|1>) then <%ymm2|256>[63:32] else <TMP_BV_128_0|128>[63:32]) (if (== <%ymm3|256>[31:31] <0x0|1>) then <%ymm2|256>[31:0] else <TMP_BV_128_0|128>[31:0])))))
+%ymm1  : (let ((a!1 (concat (ite (= ((_ extract 63 63) %ymm3) #b0)
+                        ((_ extract 63 32) %ymm2)
+                        ((_ extract 63 32) TMP_BV_128_0))
+                   (ite (= ((_ extract 31 31) %ymm3) #b0)
+                        ((_ extract 31 0) %ymm2)
+                        ((_ extract 31 0) TMP_BV_128_0)))))
+(let ((a!2 (concat (ite (= ((_ extract 95 95) %ymm3) #b0)
+                        ((_ extract 95 64) %ymm2)
+                        ((_ extract 95 64) TMP_BV_128_0))
+                   a!1)))
+(let ((a!3 (concat (ite (= ((_ extract 127 127) %ymm3) #b0)
+                        ((_ extract 127 96) %ymm2)
+                        ((_ extract 127 96) TMP_BV_128_0))
+                   a!2)))
+  (concat #x00000000000000000000000000000000 a!3))))
 
 Information about memory reads:
-  Value <TMP_BV_128_0|128> (16 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

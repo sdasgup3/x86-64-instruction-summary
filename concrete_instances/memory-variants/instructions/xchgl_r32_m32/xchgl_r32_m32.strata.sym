@@ -8,18 +8,22 @@ code: xchgl (%rax), %ebx
   must undef:      { }
   required flags:  { }
 
+xchgl (%rax), %ebx: Hindex2(10)
+xchgl (%rax), %ebx: Hindex2(10)
 Formula:
 
-%rbx   : (concat <0x0|32> <TMP_BV_32_0|32>)
+%rbx   : (concat #x00000000 TMP_BV_32_0)
 
 Information about memory reads:
-  Value <TMP_BV_32_0|32> (4 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rax.
 
 Information about memory writes:
-  Address <%rax|64> was updated to
-    <%rbx|64>[31:0] (4 bytes).
+  Address %rax was updated to
+    ((_ extract 31 0) %rbx) (4 bytes).
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv
+    (and (not sigfpe) (not sigbus) false)
+    (and (not sigfpe) (not sigbus) false))

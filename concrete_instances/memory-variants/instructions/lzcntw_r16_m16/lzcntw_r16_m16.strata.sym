@@ -8,21 +8,95 @@ code: lzcntw (%rax), %bx
   must undef:      { %pf %af %sf %of }
   required flags:  { bmi1 }
 
+lzcntw (%rax), %bx: Hindex2(10)
+lzcntw (%rax), %bx: Hindex2(10)
 Formula:
 
-%rbx   : (concat <%rbx|64>[63:16] (if (== <TMP_BV_16_0|16>[15:15] <0x1|1>) then <0x0|16> else (if (== <TMP_BV_16_0|16>[14:14] <0x1|1>) then <0x1|16> else (if (== <TMP_BV_16_0|16>[13:13] <0x1|1>) then <0x2|16> else (if (== <TMP_BV_16_0|16>[12:12] <0x1|1>) then <0x3|16> else (if (== <TMP_BV_16_0|16>[11:11] <0x1|1>) then <0x4|16> else (if (== <TMP_BV_16_0|16>[10:10] <0x1|1>) then <0x5|16> else (if (== <TMP_BV_16_0|16>[9:9] <0x1|1>) then <0x6|16> else (if (== <TMP_BV_16_0|16>[8:8] <0x1|1>) then <0x7|16> else (if (== <TMP_BV_16_0|16>[7:7] <0x1|1>) then <0x8|16> else (if (== <TMP_BV_16_0|16>[6:6] <0x1|1>) then <0x9|16> else (if (== <TMP_BV_16_0|16>[5:5] <0x1|1>) then <0xa|16> else (if (== <TMP_BV_16_0|16>[4:4] <0x1|1>) then <0xb|16> else (if (== <TMP_BV_16_0|16>[3:3] <0x1|1>) then <0xc|16> else (if (== <TMP_BV_16_0|16>[2:2] <0x1|1>) then <0xd|16> else (if (== <TMP_BV_16_0|16>[1:1] <0x1|1>) then <0xe|16> else (if (== <TMP_BV_16_0|16>[0:0] <0x1|1>) then <0xf|16> else <0x10|16>)))))))))))))))))
+%rbx   : (let ((a!1 (ite (= ((_ extract 1 1) TMP_BV_16_0) #b1)
+                #x000e
+                (ite (= ((_ extract 0 0) TMP_BV_16_0) #b1) #x000f #x0010))))
+(let ((a!2 (ite (= ((_ extract 3 3) TMP_BV_16_0) #b1)
+                #x000c
+                (ite (= ((_ extract 2 2) TMP_BV_16_0) #b1) #x000d a!1))))
+(let ((a!3 (ite (= ((_ extract 5 5) TMP_BV_16_0) #b1)
+                #x000a
+                (ite (= ((_ extract 4 4) TMP_BV_16_0) #b1) #x000b a!2))))
+(let ((a!4 (ite (= ((_ extract 7 7) TMP_BV_16_0) #b1)
+                #x0008
+                (ite (= ((_ extract 6 6) TMP_BV_16_0) #b1) #x0009 a!3))))
+(let ((a!5 (ite (= ((_ extract 9 9) TMP_BV_16_0) #b1)
+                #x0006
+                (ite (= ((_ extract 8 8) TMP_BV_16_0) #b1) #x0007 a!4))))
+(let ((a!6 (ite (= ((_ extract 11 11) TMP_BV_16_0) #b1)
+                #x0004
+                (ite (= ((_ extract 10 10) TMP_BV_16_0) #b1) #x0005 a!5))))
+(let ((a!7 (ite (= ((_ extract 13 13) TMP_BV_16_0) #b1)
+                #x0002
+                (ite (= ((_ extract 12 12) TMP_BV_16_0) #b1) #x0003 a!6))))
+(let ((a!8 (ite (= ((_ extract 15 15) TMP_BV_16_0) #b1)
+                #x0000
+                (ite (= ((_ extract 14 14) TMP_BV_16_0) #b1) #x0001 a!7))))
+  (concat ((_ extract 63 16) %rbx) a!8)))))))))
 
-%cf    : (== (if (== <TMP_BV_16_0|16>[15:15] <0x1|1>) then <0x0|16> else (if (== <TMP_BV_16_0|16>[14:14] <0x1|1>) then <0x1|16> else (if (== <TMP_BV_16_0|16>[13:13] <0x1|1>) then <0x2|16> else (if (== <TMP_BV_16_0|16>[12:12] <0x1|1>) then <0x3|16> else (if (== <TMP_BV_16_0|16>[11:11] <0x1|1>) then <0x4|16> else (if (== <TMP_BV_16_0|16>[10:10] <0x1|1>) then <0x5|16> else (if (== <TMP_BV_16_0|16>[9:9] <0x1|1>) then <0x6|16> else (if (== <TMP_BV_16_0|16>[8:8] <0x1|1>) then <0x7|16> else (if (== <TMP_BV_16_0|16>[7:7] <0x1|1>) then <0x8|16> else (if (== <TMP_BV_16_0|16>[6:6] <0x1|1>) then <0x9|16> else (if (== <TMP_BV_16_0|16>[5:5] <0x1|1>) then <0xa|16> else (if (== <TMP_BV_16_0|16>[4:4] <0x1|1>) then <0xb|16> else (if (== <TMP_BV_16_0|16>[3:3] <0x1|1>) then <0xc|16> else (if (== <TMP_BV_16_0|16>[2:2] <0x1|1>) then <0xd|16> else (if (== <TMP_BV_16_0|16>[1:1] <0x1|1>) then <0xe|16> else (if (== <TMP_BV_16_0|16>[0:0] <0x1|1>) then <0xf|16> else <0x10|16>)))))))))))))))) <0x10|16>)
-%pf    : <TMP_BOOL_2>
-%af    : <TMP_BOOL_3>
-%zf    : (== (if (== <TMP_BV_16_0|16>[15:15] <0x1|1>) then <0x0|16> else (if (== <TMP_BV_16_0|16>[14:14] <0x1|1>) then <0x1|16> else (if (== <TMP_BV_16_0|16>[13:13] <0x1|1>) then <0x2|16> else (if (== <TMP_BV_16_0|16>[12:12] <0x1|1>) then <0x3|16> else (if (== <TMP_BV_16_0|16>[11:11] <0x1|1>) then <0x4|16> else (if (== <TMP_BV_16_0|16>[10:10] <0x1|1>) then <0x5|16> else (if (== <TMP_BV_16_0|16>[9:9] <0x1|1>) then <0x6|16> else (if (== <TMP_BV_16_0|16>[8:8] <0x1|1>) then <0x7|16> else (if (== <TMP_BV_16_0|16>[7:7] <0x1|1>) then <0x8|16> else (if (== <TMP_BV_16_0|16>[6:6] <0x1|1>) then <0x9|16> else (if (== <TMP_BV_16_0|16>[5:5] <0x1|1>) then <0xa|16> else (if (== <TMP_BV_16_0|16>[4:4] <0x1|1>) then <0xb|16> else (if (== <TMP_BV_16_0|16>[3:3] <0x1|1>) then <0xc|16> else (if (== <TMP_BV_16_0|16>[2:2] <0x1|1>) then <0xd|16> else (if (== <TMP_BV_16_0|16>[1:1] <0x1|1>) then <0xe|16> else (if (== <TMP_BV_16_0|16>[0:0] <0x1|1>) then <0xf|16> else <0x10|16>)))))))))))))))) <0x0|16>)
-%sf    : <TMP_BOOL_1>
-%of    : <TMP_BOOL_0>
+%cf    : (let ((a!1 (ite (= ((_ extract 1 1) TMP_BV_16_0) #b1)
+                #x000e
+                (ite (= ((_ extract 0 0) TMP_BV_16_0) #b1) #x000f #x0010))))
+(let ((a!2 (ite (= ((_ extract 3 3) TMP_BV_16_0) #b1)
+                #x000c
+                (ite (= ((_ extract 2 2) TMP_BV_16_0) #b1) #x000d a!1))))
+(let ((a!3 (ite (= ((_ extract 5 5) TMP_BV_16_0) #b1)
+                #x000a
+                (ite (= ((_ extract 4 4) TMP_BV_16_0) #b1) #x000b a!2))))
+(let ((a!4 (ite (= ((_ extract 7 7) TMP_BV_16_0) #b1)
+                #x0008
+                (ite (= ((_ extract 6 6) TMP_BV_16_0) #b1) #x0009 a!3))))
+(let ((a!5 (ite (= ((_ extract 9 9) TMP_BV_16_0) #b1)
+                #x0006
+                (ite (= ((_ extract 8 8) TMP_BV_16_0) #b1) #x0007 a!4))))
+(let ((a!6 (ite (= ((_ extract 11 11) TMP_BV_16_0) #b1)
+                #x0004
+                (ite (= ((_ extract 10 10) TMP_BV_16_0) #b1) #x0005 a!5))))
+(let ((a!7 (ite (= ((_ extract 13 13) TMP_BV_16_0) #b1)
+                #x0002
+                (ite (= ((_ extract 12 12) TMP_BV_16_0) #b1) #x0003 a!6))))
+(let ((a!8 (ite (= ((_ extract 15 15) TMP_BV_16_0) #b1)
+                #x0000
+                (ite (= ((_ extract 14 14) TMP_BV_16_0) #b1) #x0001 a!7))))
+  (= a!8 #x0010)))))))))
+%pf    : TMP_BOOL_2
+%af    : TMP_BOOL_3
+%zf    : (let ((a!1 (ite (= ((_ extract 1 1) TMP_BV_16_0) #b1)
+                #x000e
+                (ite (= ((_ extract 0 0) TMP_BV_16_0) #b1) #x000f #x0010))))
+(let ((a!2 (ite (= ((_ extract 3 3) TMP_BV_16_0) #b1)
+                #x000c
+                (ite (= ((_ extract 2 2) TMP_BV_16_0) #b1) #x000d a!1))))
+(let ((a!3 (ite (= ((_ extract 5 5) TMP_BV_16_0) #b1)
+                #x000a
+                (ite (= ((_ extract 4 4) TMP_BV_16_0) #b1) #x000b a!2))))
+(let ((a!4 (ite (= ((_ extract 7 7) TMP_BV_16_0) #b1)
+                #x0008
+                (ite (= ((_ extract 6 6) TMP_BV_16_0) #b1) #x0009 a!3))))
+(let ((a!5 (ite (= ((_ extract 9 9) TMP_BV_16_0) #b1)
+                #x0006
+                (ite (= ((_ extract 8 8) TMP_BV_16_0) #b1) #x0007 a!4))))
+(let ((a!6 (ite (= ((_ extract 11 11) TMP_BV_16_0) #b1)
+                #x0004
+                (ite (= ((_ extract 10 10) TMP_BV_16_0) #b1) #x0005 a!5))))
+(let ((a!7 (ite (= ((_ extract 13 13) TMP_BV_16_0) #b1)
+                #x0002
+                (ite (= ((_ extract 12 12) TMP_BV_16_0) #b1) #x0003 a!6))))
+(let ((a!8 (ite (= ((_ extract 15 15) TMP_BV_16_0) #b1)
+                #x0000
+                (ite (= ((_ extract 14 14) TMP_BV_16_0) #b1) #x0001 a!7))))
+  (= a!8 #x0000)))))))))
+%sf    : TMP_BOOL_1
+%of    : TMP_BOOL_0
 
 Information about memory reads:
-  Value <TMP_BV_16_0|16> (2 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : (or <sigsegv> (and (and (not <sigfpe>) (not <sigbus>)) FALSE))
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

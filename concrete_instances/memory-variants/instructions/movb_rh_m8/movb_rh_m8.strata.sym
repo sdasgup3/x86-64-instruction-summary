@@ -8,14 +8,19 @@ code: movb (%rax), %ah
   must undef:      { }
   required flags:  { }
 
+Base Instruction!!
+movb (%rax), %ah: Hindex0(10)
+Base Instruction!!
+movb (%rax), %ah: Hindex0(10)
+movb %bl, %ah: Hindex5(9)
 Formula:
 
-%rax   : (concat (concat <%rax|64>[63:16] <TMP_BV_8_0|8>) <%rax|64>[7:0])
+%rax   : (concat (concat ((_ extract 63 16) %rax) TMP_BV_8_0) ((_ extract 7 0) %rax))
 
 Information about memory reads:
-  Value <TMP_BV_8_0|8> (1 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_8_0 (1 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

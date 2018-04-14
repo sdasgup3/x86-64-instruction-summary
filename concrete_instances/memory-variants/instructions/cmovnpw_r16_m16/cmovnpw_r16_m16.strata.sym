@@ -8,14 +8,52 @@ code: cmovnpw (%rax), %bx
   must undef:      { }
   required flags:  { cmov }
 
+cmovnpw (%rax), %bx: Hindex0(10)
+cmovnpw (%rax), %bx: Hindex0(10)
+movq $0x20, %rbx: Hindex5(9)
+callq .move_016_008_cx_r12b_r13b: Hindex8(9)
+callq .move_008_016_r12b_r13b_bx: Hindex8(9)
+callq .move_032_016_ecx_r10w_r11w: Hindex8(9)
+movq $0x0, %rbx: Hindex5(9)
+movswq %bx, %r10: Hindex5(9)
+movslq %ebx, %rbx: Hindex5(9)
+callq .move_032_016_ecx_r8w_r9w: Hindex8(9)
+callq .move_064_032_rbx_r10d_r11d: Hindex8(9)
+movq %r10, %rcx: Hindex5(9)
+callq .move_016_032_r8w_r9w_ebx: Hindex8(9)
+callq .clear_cf: Hindex8(9)
+adcl %ecx, %ebx: Hindex2(9)
+callq .read_pf_into_rbx: Hindex8(9)
+xorq %rax, %rax: Hindex1(9)
+xorq %rax, %rax: Hindex1(9)
+adcb %al, %al: Hindex2(9)
+adcw %cx, %ax: Hindex2(9)
+popcntq %rax, %rbx: Hindex1(9)
+xorq %rax, %rax: Hindex1(9)
+adcb %al, %al: Hindex2(9)
+callq .move_016_032_r10w_r11w_ebx: Hindex8(9)
+cmoveq %rbx, %rcx: Hindex3(9)
+movq $0x0, %rbx: Hindex5(9)
+movswq %bx, %r10: Hindex5(9)
+movslq %ebx, %rbx: Hindex5(9)
+callq .move_032_016_ecx_r8w_r9w: Hindex8(9)
+callq .move_064_032_rbx_r10d_r11d: Hindex8(9)
+movq %r10, %rcx: Hindex5(9)
+callq .move_016_032_r8w_r9w_ebx: Hindex8(9)
+callq .clear_cf: Hindex8(9)
+adcl %ecx, %ebx: Hindex2(9)
 Formula:
 
-%rbx   : (concat <%rbx|64>[63:16] (if (== (if <%pf> then <0x1|64> else <0x0|64>) <0x0|64>) then <TMP_BV_16_0|16> else <%rbx|64>[15:0]))
+%rbx   : (concat ((_ extract 63 16) %rbx)
+        (ite (= (ite %pf #x0000000000000001 #x0000000000000000)
+                #x0000000000000000)
+             TMP_BV_16_0
+             ((_ extract 15 0) %rbx)))
 
 Information about memory reads:
-  Value <TMP_BV_16_0|16> (2 bytes)
-    was read at address <%rax|64>.
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rax.
 
-sigfpe  : <sigfpe>
-sigbus  : <sigbus>
-sigsegv : <sigsegv>
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv
