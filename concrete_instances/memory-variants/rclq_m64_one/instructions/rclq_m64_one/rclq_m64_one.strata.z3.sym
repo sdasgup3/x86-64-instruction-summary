@@ -1,0 +1,51 @@
+code: rclq $0x1, (%rbx)
+
+  maybe read:      { %rbx %cf }
+  must read:       { %rbx %cf }
+  maybe write:     { %cf %of }
+  must write:      { %cf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%cf    : (let ((a!1 (bvadd (ite %cf
+                       (bvadd (concat #b0 TMP_BV_64_0)
+                              #b00000000000000000000000000000000000000000000000000000000000000001)
+                       (concat #b0 TMP_BV_64_0))
+                  (concat #b0 TMP_BV_64_1))))
+  (= ((_ extract 64 64) a!1) #b1))
+%of    : (let ((a!1 (bvadd (ite %cf
+                       (bvadd (concat #b0 TMP_BV_64_0)
+                              #b00000000000000000000000000000000000000000000000000000000000000001)
+                       (concat #b0 TMP_BV_64_0))
+                  (concat #b0 TMP_BV_64_1))))
+(let ((a!2 (not (= (= ((_ extract 63 63) TMP_BV_64_2) #b1)
+                   (= ((_ extract 63 63) a!1) #b1)))))
+  (and (= (= ((_ extract 63 63) TMP_BV_64_2) #b1)
+          (= ((_ extract 63 63) TMP_BV_64_3) #b1))
+       a!2)))
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rbx.
+  Value TMP_BV_64_1 (8 bytes)
+    was read at address %rbx.
+  Value TMP_BV_64_2 (8 bytes)
+    was read at address %rbx.
+  Value TMP_BV_64_3 (8 bytes)
+    was read at address %rbx.
+
+Information about memory writes:
+  Address %rbx was updated to
+    (let ((a!1 (bvadd (ite %cf
+                       (bvadd (concat #b0 TMP_BV_64_0)
+                              #b00000000000000000000000000000000000000000000000000000000000000001)
+                       (concat #b0 TMP_BV_64_0))
+                  (concat #b0 TMP_BV_64_1))))
+  ((_ extract 63 0) a!1)) (8 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

@@ -1,0 +1,79 @@
+code: vpsubd (%rbx), %xmm2, %xmm1
+
+  maybe read:      { %rbx %xmm2 }
+  must read:       { %rbx %xmm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%ymm1  : (let ((a!1 (concat #b0
+                   (bvxor (concat ((_ extract 127 96) TMP_BV_128_0)
+                                  ((_ extract 127 96) %ymm2))
+                          #xffffffffffffffff)))
+      (a!4 (concat #b0
+                   (bvxor (concat ((_ extract 95 64) TMP_BV_128_1)
+                                  ((_ extract 95 64) %ymm2))
+                          #xffffffffffffffff)))
+      (a!7 (concat #b0
+                   (bvxor (concat ((_ extract 63 32) TMP_BV_128_2)
+                                  ((_ extract 63 32) %ymm2))
+                          #xffffffffffffffff)))
+      (a!10 (concat #b0
+                    (bvxor (concat ((_ extract 31 0) TMP_BV_128_3)
+                                   ((_ extract 31 0) %ymm2))
+                           #xffffffffffffffff))))
+(let ((a!2 (bvadd a!1
+                  #b00000000000000000000000000000000000000000000000000000000000000001
+                  (concat #b0
+                          (concat ((_ extract 127 96) %ymm2)
+                                  ((_ extract 127 96) %ymm2)))))
+      (a!5 (bvadd a!4
+                  #b00000000000000000000000000000000000000000000000000000000000000001
+                  (concat #b0
+                          (concat ((_ extract 95 64) %ymm2)
+                                  ((_ extract 95 64) %ymm2)))))
+      (a!8 (bvadd a!7
+                  #b00000000000000000000000000000000000000000000000000000000000000001
+                  (concat #b0
+                          (concat ((_ extract 63 32) %ymm2)
+                                  ((_ extract 63 32) %ymm2)))))
+      (a!11 (bvadd a!10
+                   #b00000000000000000000000000000000000000000000000000000000000000001
+                   (concat #b0
+                           (concat ((_ extract 31 0) %ymm2)
+                                   ((_ extract 31 0) %ymm2))))))
+(let ((a!3 (bvadd (concat #b0 (concat #x00000000 ((_ extract 63 32) a!2)))
+                  (concat #b0 (concat #x00000000 ((_ extract 31 0) a!2)))))
+      (a!6 (bvadd (concat #b0 ((_ extract 63 0) a!5))
+                  (concat #b0 (concat #x00000000 ((_ extract 63 32) a!5)))))
+      (a!9 (bvadd (concat #b0
+                          (concat ((_ extract 63 32) a!8)
+                                  ((_ extract 63 32) a!8)))
+                  (concat #b0 ((_ extract 63 0) a!8))))
+      (a!12 (bvadd (concat #b0
+                           (concat ((_ extract 63 32) a!11)
+                                   ((_ extract 63 32) a!11)))
+                   (concat #b0 ((_ extract 63 0) a!11)))))
+(let ((a!13 (concat (concat (concat ((_ extract 31 0) a!3)
+                                    ((_ extract 31 0) a!6))
+                            ((_ extract 31 0) a!9))
+                    ((_ extract 31 0) a!12))))
+  (concat #x00000000000000000000000000000000 a!13)))))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+  Value TMP_BV_128_1 (16 bytes)
+    was read at address %rbx.
+  Value TMP_BV_128_2 (16 bytes)
+    was read at address %rbx.
+  Value TMP_BV_128_3 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

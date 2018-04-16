@@ -1,0 +1,24 @@
+code: cmovnlw (%rcx), %bx
+
+  maybe read:      { %rcx %sf %of }
+  must read:       { %rcx %sf %of }
+  maybe write:     { %bx }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { cmov }
+
+Formula:
+
+%rbx   : (let ((a!1 (ite (= (bvxor (ite %of #b1 #b0) (ite %sf #b1 #b0)) #b1)
+                ((_ extract 15 0) %rbx)
+                TMP_BV_16_0)))
+  (concat ((_ extract 63 16) %rbx) a!1))
+
+Information about memory reads:
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rcx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

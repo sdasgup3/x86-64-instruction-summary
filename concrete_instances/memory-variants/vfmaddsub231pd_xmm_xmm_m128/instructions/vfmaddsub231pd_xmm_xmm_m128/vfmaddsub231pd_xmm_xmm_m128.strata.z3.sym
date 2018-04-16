@@ -1,0 +1,77 @@
+code: vfmaddsub231pd (%rbx), %xmm2, %xmm1
+
+  maybe read:      { %rbx %xmm1 %xmm2 }
+  must read:       { %rbx %xmm1 %xmm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { fma }
+
+Formula:
+
+%ymm1  : (let ((a!1 (bvor ((_ extract 127 96) %ymm1)
+                 (bvxor #x00000000 (bvor ((_ extract 127 96) %ymm1) #x00000000))))
+      (a!3 (bvor ((_ extract 95 64) %ymm1)
+                 (bvxor #x00000000 (bvor ((_ extract 95 64) %ymm1) #x00000000))))
+      (a!6 (bvor ((_ extract 63 32) %ymm1)
+                 (bvxor #x00000000 (bvor ((_ extract 63 32) %ymm1) #x00000000))))
+      (a!9 (bvor ((_ extract 31 0) %ymm1)
+                 (bvxor #x00000000 (bvor ((_ extract 31 0) %ymm1) #x00000000)))))
+(let ((a!2 (bvxor (bvxor #x00000000
+                         (bvor ((_ extract 127 96) %ymm1) #x00000000))
+                  a!1))
+      (a!4 (bvxor (bvxor #x00000000 (bvor ((_ extract 95 64) %ymm1) #x00000000))
+                  a!3))
+      (a!7 (bvxor (bvxor #x00000000 (bvor ((_ extract 63 32) %ymm1) #x00000000))
+                  a!6))
+      (a!10 (bvxor (bvxor #x00000000 (bvor ((_ extract 31 0) %ymm1) #x00000000))
+                   a!9)))
+(let ((a!5 (concat (ite (= (maxcmp_single #x00000000 a!2) #b1) #x00000000 a!2)
+                   (ite (= (maxcmp_single #x00000000 a!4) #b1) #x00000000 a!4)))
+      (a!8 (ite (= (maxcmp_single ((_ extract 63 32) TMP_BV_128_1) a!7) #b1)
+                ((_ extract 63 32) TMP_BV_128_1)
+                a!7))
+      (a!11 (ite (= (maxcmp_single ((_ extract 31 0) TMP_BV_128_2) a!10) #b1)
+                 ((_ extract 31 0) TMP_BV_128_2)
+                 a!10)))
+(let ((a!12 (concat #x00000000
+                    ((_ extract 63 32)
+                      (vfnmsub132_double
+                        a!5
+                        ((_ extract 127 64) %ymm1)
+                        #x0000000000000000)))))
+(let ((a!13 (vfmsub132_double ((_ extract 63 0) %ymm2)
+                              (vfnmsub132_double
+                                (vfnmsub132_double
+                                  (concat a!8 a!11)
+                                  ((_ extract 63 0) %ymm1)
+                                  #x0000000000000000)
+                                (vfnmsub132_double
+                                  (concat a!8 a!11)
+                                  ((_ extract 63 0) %ymm1)
+                                  #x0000000000000000)
+                                a!12)
+                              ((_ extract 63 0) TMP_BV_128_3))))
+(let ((a!14 (concat (vfmsub132_double ((_ extract 127 64) %ymm2)
+                                      (vfnmsub132_double
+                                        a!5
+                                        ((_ extract 127 64) %ymm1)
+                                        #x0000000000000000)
+                                      ((_ extract 127 64) TMP_BV_128_0))
+                    a!13)))
+  (concat #x00000000000000000000000000000000 a!14)))))))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+  Value TMP_BV_128_1 (16 bytes)
+    was read at address %rbx.
+  Value TMP_BV_128_2 (16 bytes)
+    was read at address %rbx.
+  Value TMP_BV_128_3 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

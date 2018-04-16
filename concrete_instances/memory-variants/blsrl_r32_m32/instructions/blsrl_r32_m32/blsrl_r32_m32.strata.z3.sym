@@ -1,0 +1,60 @@
+code: blsrl (%rcx), %ebx
+
+  maybe read:      { %rcx }
+  must read:       { %rcx }
+  maybe write:     { %rbx %cf %zf %sf %of }
+  must write:      { %rbx %cf %zf %sf %of }
+  maybe undef:     { %pf %af }
+  must undef:      { %pf %af }
+  required flags:  { bmi1 }
+
+Formula:
+
+%rbx   : (let ((a!1 ((_ extract 31 0)
+             (bvadd (concat #b0 #xffffffffffffffff)
+                    (concat #b0 (concat #x00000000 TMP_BV_32_1))))))
+  (concat #x00000000 (bvxor (bvor TMP_BV_32_0 a!1) a!1 TMP_BV_32_2)))
+
+%cf    : (let ((a!1 ((_ extract 47 40)
+             (bvadd (concat #b0 #xffffffffffffffff)
+                    (concat #b0 (concat #x00000000 TMP_BV_32_3))))))
+  (= ((_ extract 8 8) (bvadd (concat #b0 a!1) (concat #b0 a!1))) #b1))
+%pf    : TMP_BOOL_18
+%af    : TMP_BOOL_19
+%zf    : (let ((a!1 ((_ extract 31 0)
+             (bvadd (concat #b0 #xffffffffffffffff)
+                    (concat #b0 (concat #x00000000 TMP_BV_32_1))))))
+  (= (bvxor (bvor TMP_BV_32_0 a!1) a!1 TMP_BV_32_2) #x00000000))
+%sf    : (let ((a!1 ((_ extract 31 31)
+             (bvadd (concat #b0 #xffffffffffffffff)
+                    (concat #b0 (concat #x00000000 TMP_BV_32_1))))))
+  (= (bvxor (bvor ((_ extract 31 31) TMP_BV_32_4) a!1)
+            a!1
+            ((_ extract 31 31) TMP_BV_32_5))
+     #b1))
+%of    : (let ((a!1 ((_ extract 47 47)
+             (bvadd (concat #b0 #xffffffffffffffff)
+                    (concat #b0 (concat #x00000000 TMP_BV_32_3)))))
+      (a!2 ((_ extract 47 40)
+             (bvadd (concat #b0 #xffffffffffffffff)
+                    (concat #b0 (concat #x00000000 TMP_BV_32_3))))))
+(let ((a!3 (= ((_ extract 7 7) (bvadd (concat #b0 a!2) (concat #b0 a!2))) #b1)))
+  (and (= (= a!1 #b1) (= a!1 #b1)) (not (= (= a!1 #b1) a!3)))))
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rcx.
+  Value TMP_BV_32_1 (4 bytes)
+    was read at address %rcx.
+  Value TMP_BV_32_2 (4 bytes)
+    was read at address %rcx.
+  Value TMP_BV_32_3 (4 bytes)
+    was read at address %rcx.
+  Value TMP_BV_32_4 (4 bytes)
+    was read at address %rcx.
+  Value TMP_BV_32_5 (4 bytes)
+    was read at address %rcx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

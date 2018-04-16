@@ -1,0 +1,83 @@
+code: vpunpckhwd (%rbx), %ymm2, %ymm1
+
+  maybe read:      { %rbx %ymm2 }
+  must read:       { %rbx %ymm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+Formula:
+
+%ymm1  : (let ((a!1 (bvor (concat ((_ extract 255 224) TMP_BV_256_1)
+                         (concat ((_ extract 239 224) TMP_BV_256_2)
+                                 ((_ extract 239 224) TMP_BV_256_3)))
+                 (concat (concat #x0000 ((_ extract 239 224) TMP_BV_256_0))
+                         (concat #x0000 ((_ extract 239 224) TMP_BV_256_0)))))
+      (a!3 (bvor (concat ((_ extract 223 192) TMP_BV_256_5)
+                         (concat ((_ extract 207 192) TMP_BV_256_4)
+                                 ((_ extract 207 192) TMP_BV_256_4)))
+                 (concat (concat #x0000 ((_ extract 207 192) TMP_BV_256_4))
+                         (concat #x0000 ((_ extract 207 192) TMP_BV_256_4)))))
+      (a!5 (bvor (concat ((_ extract 127 96) TMP_BV_256_7)
+                         (concat ((_ extract 111 96) TMP_BV_256_8)
+                                 ((_ extract 111 96) TMP_BV_256_9)))
+                 (concat (concat #x0000 ((_ extract 111 96) TMP_BV_256_6))
+                         (concat #x0000 ((_ extract 111 96) TMP_BV_256_6)))))
+      (a!7 (bvor (concat ((_ extract 95 64) TMP_BV_256_11)
+                         (concat ((_ extract 79 64) TMP_BV_256_10)
+                                 ((_ extract 79 64) TMP_BV_256_10)))
+                 (concat (concat #x0000 ((_ extract 79 64) TMP_BV_256_10))
+                         (concat #x0000 ((_ extract 79 64) TMP_BV_256_10))))))
+(let ((a!2 (bvxor (concat (concat #x0000 ((_ extract 255 240) %ymm2))
+                          (concat #x0000 ((_ extract 239 224) %ymm2)))
+                  (concat (concat #x0000 ((_ extract 239 224) TMP_BV_256_0))
+                          (concat #x0000 ((_ extract 239 224) TMP_BV_256_0)))
+                  a!1))
+      (a!4 (bvxor (concat (concat #x0000 ((_ extract 223 208) %ymm2))
+                          (concat #x0000 ((_ extract 207 192) %ymm2)))
+                  (concat (concat #x0000 ((_ extract 207 192) TMP_BV_256_4))
+                          (concat #x0000 ((_ extract 207 192) TMP_BV_256_4)))
+                  a!3))
+      (a!6 (bvxor (concat (concat #x0000 ((_ extract 127 112) %ymm2))
+                          (concat #x0000 ((_ extract 111 96) %ymm2)))
+                  (concat (concat #x0000 ((_ extract 111 96) TMP_BV_256_6))
+                          (concat #x0000 ((_ extract 111 96) TMP_BV_256_6)))
+                  a!5))
+      (a!8 (bvxor (concat (concat #x0000 ((_ extract 95 80) %ymm2))
+                          (concat #x0000 ((_ extract 79 64) %ymm2)))
+                  (concat (concat #x0000 ((_ extract 79 64) TMP_BV_256_10))
+                          (concat #x0000 ((_ extract 79 64) TMP_BV_256_10)))
+                  a!7)))
+  (concat (concat a!2 a!4) (concat a!6 a!8))))
+
+Information about memory reads:
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rbx.
+  Value TMP_BV_256_1 (32 bytes)
+    was read at address %rbx.
+  Value TMP_BV_256_2 (32 bytes)
+    was read at address %rbx.
+  Value TMP_BV_256_3 (32 bytes)
+    was read at address %rbx.
+  Value TMP_BV_256_4 (32 bytes)
+    was read at address %rbx.
+  Value TMP_BV_256_5 (32 bytes)
+    was read at address %rbx.
+  Value TMP_BV_256_6 (32 bytes)
+    was read at address %rbx.
+  Value TMP_BV_256_7 (32 bytes)
+    was read at address %rbx.
+  Value TMP_BV_256_8 (32 bytes)
+    was read at address %rbx.
+  Value TMP_BV_256_9 (32 bytes)
+    was read at address %rbx.
+  Value TMP_BV_256_10 (32 bytes)
+    was read at address %rbx.
+  Value TMP_BV_256_11 (32 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

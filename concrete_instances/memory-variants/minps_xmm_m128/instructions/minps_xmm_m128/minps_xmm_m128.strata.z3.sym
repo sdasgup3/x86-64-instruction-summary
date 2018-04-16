@@ -1,0 +1,48 @@
+code: minps (%rbx), %xmm1
+
+  maybe read:      { %rbx %xmm1 }
+  must read:       { %rbx %xmm1 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse }
+
+Formula:
+
+%ymm1  : (let ((a!1 (ite (= (mincmp_single ((_ extract 127 96) %ymm1)
+                                  ((_ extract 127 96) TMP_BV_128_0))
+                   #b1)
+                ((_ extract 127 96) %ymm1)
+                ((_ extract 127 96) TMP_BV_128_0)))
+      (a!2 (ite (= (mincmp_single ((_ extract 95 64) %ymm1)
+                                  ((_ extract 95 64) TMP_BV_128_1))
+                   #b1)
+                ((_ extract 95 64) %ymm1)
+                ((_ extract 95 64) TMP_BV_128_1)))
+      (a!3 (ite (= (mincmp_single ((_ extract 63 32) %ymm1)
+                                  ((_ extract 63 32) TMP_BV_128_2))
+                   #b1)
+                ((_ extract 63 32) %ymm1)
+                ((_ extract 63 32) TMP_BV_128_2)))
+      (a!4 (ite (= (mincmp_single ((_ extract 31 0) %ymm1)
+                                  ((_ extract 31 0) TMP_BV_128_3))
+                   #b1)
+                ((_ extract 31 0) %ymm1)
+                ((_ extract 31 0) TMP_BV_128_3))))
+  (concat ((_ extract 255 128) %ymm1)
+          (concat a!1 (concat a!2 (concat a!3 a!4)))))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+  Value TMP_BV_128_1 (16 bytes)
+    was read at address %rbx.
+  Value TMP_BV_128_2 (16 bytes)
+    was read at address %rbx.
+  Value TMP_BV_128_3 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

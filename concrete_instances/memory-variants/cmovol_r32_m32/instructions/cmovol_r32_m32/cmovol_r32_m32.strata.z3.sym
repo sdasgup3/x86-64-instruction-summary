@@ -1,0 +1,22 @@
+code: cmovol (%rcx), %ebx
+
+  maybe read:      { %rcx %of }
+  must read:       { %rcx %of }
+  maybe write:     { %rbx }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { cmov }
+
+Formula:
+
+%rbx   : (concat #x00000000
+        (ite (= (ite %of #x00 #xff) #x00) TMP_BV_32_0 ((_ extract 31 0) %rbx)))
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rcx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

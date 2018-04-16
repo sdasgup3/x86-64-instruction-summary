@@ -1,0 +1,88 @@
+code: rorw $0x1, (%rbx)
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { %cf %of }
+  must write:      { %cf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%cf    : (let ((a!1 ((_ extract 0 0)
+             (bvashr (concat ((_ sign_extend 48) TMP_BV_16_1) #b0)
+                     (concat #b000000000000000000000000000000000000000000000000000000000
+                             #x01))))
+      (a!2 ((_ extract 16 9)
+             (bvashr (concat ((_ sign_extend 48) TMP_BV_16_1) #b0)
+                     (concat #b000000000000000000000000000000000000000000000000000000000
+                             #x01)))))
+(let ((a!3 (ite (or (and true (= a!1 #b1)) false)
+                (bvadd (concat #b0 a!2) #b000000001)
+                (concat #b0 a!2))))
+(let ((a!4 (concat ((_ extract 7 0) (bvadd a!3 (concat #b0 a!2)))
+                   ((_ extract 7 0) (bvadd a!3 (concat #b0 a!2))))))
+(let ((a!5 ((_ extract 8 1)
+             (bvashr (concat ((_ sign_extend 48) a!4) #b0)
+                     (concat #b000000000000000000000000000000000000000000000000000000000
+                             #x01)))))
+  (= ((_ extract 8 8) (bvadd (concat #b0 a!5) (concat #b0 a!5))) #b1)))))
+%of    : (let ((a!1 ((_ extract 0 0)
+             (bvashr (concat ((_ sign_extend 48) TMP_BV_16_1) #b0)
+                     (concat #b000000000000000000000000000000000000000000000000000000000
+                             #x01))))
+      (a!2 ((_ extract 16 9)
+             (bvashr (concat ((_ sign_extend 48) TMP_BV_16_1) #b0)
+                     (concat #b000000000000000000000000000000000000000000000000000000000
+                             #x01)))))
+(let ((a!3 (ite (or (and true (= a!1 #b1)) false)
+                (bvadd (concat #b0 a!2) #b000000001)
+                (concat #b0 a!2))))
+(let ((a!4 (concat ((_ extract 7 0) (bvadd a!3 (concat #b0 a!2)))
+                   ((_ extract 7 0) (bvadd a!3 (concat #b0 a!2))))))
+(let ((a!5 ((_ extract 8 8)
+             (bvashr (concat ((_ sign_extend 48) a!4) #b0)
+                     (concat #b000000000000000000000000000000000000000000000000000000000
+                             #x01))))
+      (a!6 ((_ extract 8 1)
+             (bvashr (concat ((_ sign_extend 48) a!4) #b0)
+                     (concat #b000000000000000000000000000000000000000000000000000000000
+                             #x01)))))
+(let ((a!7 (= ((_ extract 7 7) (bvadd (concat #b0 a!6) (concat #b0 a!6))) #b1)))
+  (and (= (= a!5 #b1) (= a!5 #b1)) (not (= (= a!5 #b1) a!7))))))))
+
+Information about memory reads:
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rbx.
+  Value TMP_BV_16_1 (2 bytes)
+    was read at address %rbx.
+
+Information about memory writes:
+  Address %rbx was updated to
+    (let ((a!1 ((_ extract 0 0)
+             (bvashr (concat ((_ sign_extend 48) TMP_BV_16_1) #b0)
+                     (concat #b000000000000000000000000000000000000000000000000000000000
+                             #x01))))
+      (a!2 ((_ extract 16 9)
+             (bvashr (concat ((_ sign_extend 48) TMP_BV_16_1) #b0)
+                     (concat #b000000000000000000000000000000000000000000000000000000000
+                             #x01))))
+      (a!6 ((_ extract 8 1)
+             (bvashr (concat ((_ sign_extend 48) TMP_BV_16_1) #b0)
+                     (concat #b000000000000000000000000000000000000000000000000000000000
+                             #x01)))))
+(let ((a!3 (ite (or (and true (= a!1 #b1)) false)
+                (bvadd (concat #b0 a!2) #b000000001)
+                (concat #b0 a!2))))
+(let ((a!4 (concat ((_ extract 7 0) (bvadd a!3 (concat #b0 a!2)))
+                   ((_ extract 7 0) (bvadd a!3 (concat #b0 a!2))))))
+(let ((a!5 ((_ extract 8 1)
+             (bvashr (concat ((_ sign_extend 48) a!4) #b0)
+                     (concat #b000000000000000000000000000000000000000000000000000000000
+                             #x01)))))
+  (concat a!5 a!6))))) (2 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

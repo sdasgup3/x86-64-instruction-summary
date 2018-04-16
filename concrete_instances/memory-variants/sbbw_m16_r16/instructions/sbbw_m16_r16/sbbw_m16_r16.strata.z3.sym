@@ -1,0 +1,99 @@
+code: sbbw %cx, (%rbx)
+
+  maybe read:      { %cx %rbx %cf }
+  must read:       { %cx %rbx %cf }
+  maybe write:     { %cf %pf %af %zf %sf %of }
+  must write:      { %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%cf    : (let ((a!1 (= ((_ extract 8 8)
+                (bvadd (ite %cf #b000000000 #b011111111)
+                       (ite %cf #b000000000 #b011111111)))
+              #b1)))
+(let ((a!2 (bvadd (ite a!1
+                       (bvadd (concat #b0 TMP_BV_16_1) #b00000000000000001)
+                       (concat #b0 TMP_BV_16_1))
+                  (concat #b0 (bvxor ((_ extract 15 0) %rcx) #xffff)))))
+(let ((a!3 (bvadd (ite (= ((_ extract 16 16) a!2) #b1) #b000000000 #b011111111)
+                  (ite (= ((_ extract 16 16) a!2) #b1) #b000000000 #b011111111))))
+  (= ((_ extract 8 8) a!3) #b1))))
+%pf    : (let ((a!1 (= ((_ extract 8 8)
+                (bvadd (ite %cf #b000000000 #b011111111)
+                       (ite %cf #b000000000 #b011111111)))
+              #b1)))
+(let ((a!2 (bvadd (ite a!1
+                       (bvadd (concat #b0 TMP_BV_16_1) #b00000000000000001)
+                       (concat #b0 TMP_BV_16_1))
+                  (concat #b0 (bvxor ((_ extract 15 0) %rcx) #xffff)))))
+  (not (xor (= ((_ extract 0 0) a!2) #b1)
+            (= ((_ extract 1 1) a!2) #b1)
+            (= ((_ extract 2 2) a!2) #b1)
+            (= ((_ extract 3 3) a!2) #b1)
+            (= ((_ extract 4 4) a!2) #b1)
+            (= ((_ extract 5 5) a!2) #b1)
+            (= ((_ extract 6 6) a!2) #b1)
+            (= ((_ extract 7 7) a!2) #b1)))))
+%af    : (let ((a!1 (bvadd (concat #b0 ((_ extract 3 0) TMP_BV_16_2))
+                  (concat #b0 (bvxor ((_ extract 3 0) %rcx) #xf)))))
+  (= ((_ extract 4 4) a!1) #b1))
+%zf    : (let ((a!1 (= ((_ extract 8 8)
+                (bvadd (ite %cf #b000000000 #b011111111)
+                       (ite %cf #b000000000 #b011111111)))
+              #b1)))
+(let ((a!2 (bvadd (ite a!1
+                       (bvadd (concat #b0 TMP_BV_16_1) #b00000000000000001)
+                       (concat #b0 TMP_BV_16_1))
+                  (concat #b0 (bvxor ((_ extract 15 0) %rcx) #xffff)))))
+  (= ((_ extract 15 0) a!2) #x0000)))
+%sf    : (let ((a!1 (= ((_ extract 8 8)
+                (bvadd (ite %cf #b000000000 #b011111111)
+                       (ite %cf #b000000000 #b011111111)))
+              #b1)))
+(let ((a!2 (bvadd (ite a!1
+                       (bvadd (concat #b0 TMP_BV_16_1) #b00000000000000001)
+                       (concat #b0 TMP_BV_16_1))
+                  (concat #b0 (bvxor ((_ extract 15 0) %rcx) #xffff)))))
+  (= ((_ extract 15 15) a!2) #b1)))
+%of    : (let ((a!1 (= (= ((_ extract 15 15) TMP_BV_16_3) #b1)
+              (= (bvxor ((_ extract 15 15) %rcx) #b1) #b1)))
+      (a!2 (= ((_ extract 8 8)
+                (bvadd (ite %cf #b000000000 #b011111111)
+                       (ite %cf #b000000000 #b011111111)))
+              #b1)))
+(let ((a!3 (bvadd (ite a!2
+                       (bvadd (concat #b0 TMP_BV_16_1) #b00000000000000001)
+                       (concat #b0 TMP_BV_16_1))
+                  (concat #b0 (bvxor ((_ extract 15 0) %rcx) #xffff)))))
+(let ((a!4 (not (= (= ((_ extract 15 15) TMP_BV_16_3) #b1)
+                   (= ((_ extract 15 15) a!3) #b1)))))
+  (and a!1 a!4))))
+
+Information about memory reads:
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rbx.
+  Value TMP_BV_16_1 (2 bytes)
+    was read at address %rbx.
+  Value TMP_BV_16_2 (2 bytes)
+    was read at address %rbx.
+  Value TMP_BV_16_3 (2 bytes)
+    was read at address %rbx.
+
+Information about memory writes:
+  Address %rbx was updated to
+    (let ((a!1 (= ((_ extract 8 8)
+                (bvadd (ite %cf #b000000000 #b011111111)
+                       (ite %cf #b000000000 #b011111111)))
+              #b1)))
+(let ((a!2 (bvadd (ite a!1
+                       (bvadd (concat #b0 TMP_BV_16_1) #b00000000000000001)
+                       (concat #b0 TMP_BV_16_1))
+                  (concat #b0 (bvxor ((_ extract 15 0) %rcx) #xffff)))))
+  ((_ extract 15 0) a!2))) (2 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

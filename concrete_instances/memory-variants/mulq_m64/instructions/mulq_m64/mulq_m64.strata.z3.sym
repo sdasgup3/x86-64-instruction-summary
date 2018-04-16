@@ -1,0 +1,41 @@
+code: mulq (%rbx)
+
+  maybe read:      { %rax %rbx }
+  must read:       { %rax %rbx }
+  maybe write:     { %rax %rdx %cf %of }
+  must write:      { %rax %rdx %cf %of }
+  maybe undef:     { %pf %af %zf %sf }
+  must undef:      { %pf %af %zf %sf }
+  required flags:  { }
+
+Formula:
+
+%rax   : ((_ extract 63 0)
+  (bvmul (concat #x0000000000000000 TMP_BV_64_0)
+         (concat #x0000000000000000 %rax)))
+%rdx   : ((_ extract 127 64)
+  (bvmul (concat #x0000000000000000 TMP_BV_64_0)
+         (concat #x0000000000000000 %rax)))
+
+%cf    : (let ((a!1 (= ((_ extract 127 64)
+                (bvmul (concat #x0000000000000000 TMP_BV_64_0)
+                       (concat #x0000000000000000 %rax)))
+              #x0000000000000000)))
+  (not a!1))
+%pf    : TMP_BOOL_2
+%af    : TMP_BOOL_1
+%zf    : TMP_BOOL_0
+%sf    : TMP_BOOL_3
+%of    : (let ((a!1 (= ((_ extract 127 64)
+                (bvmul (concat #x0000000000000000 TMP_BV_64_0)
+                       (concat #x0000000000000000 %rax)))
+              #x0000000000000000)))
+  (not a!1))
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

@@ -1,0 +1,35 @@
+code: btq $0x0, (%rbx)
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { %cf }
+  must write:      { %cf }
+  maybe undef:     { %pf %af %sf %of }
+  must undef:      { %pf %af %sf %of }
+  required flags:  { }
+
+Formula:
+
+%cf    : (let ((a!1 (concat ((_ extract 64 1)
+                     (bvashr (concat TMP_BV_64_0 #b0)
+                             (concat #b000000000000000000000000000000000000000000000000000000000
+                                     #x00)))
+                   #b0)))
+(let ((a!2 (= ((_ extract 0 0)
+                (bvashr a!1
+                        (concat #b000000000000000000000000000000000000000000000000000000000
+                                #x01)))
+              #b1)))
+  (or (and true a!2) false)))
+%pf    : TMP_BOOL_16
+%af    : TMP_BOOL_17
+%sf    : TMP_BOOL_18
+%of    : TMP_BOOL_19
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv
