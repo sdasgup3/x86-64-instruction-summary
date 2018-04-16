@@ -1,22 +1,22 @@
-code: vblendps $0x0, (%rax), %xmm2, %xmm1
+code: vblendps $0x0, (%rbx), %xmm2, %xmm1
 
-  maybe read:      { %rax %xmm2 }
-  must read:       { %rax %xmm2 }
+  maybe read:      { %rbx %xmm2 }
+  must read:       { %rbx %xmm2 }
   maybe write:     { %ymm1 }
   must write:      { %ymm1 }
   maybe undef:     { }
   must undef:      { }
   required flags:  { avx }
 
-vblendps $0x0, (%rax), %xmm2, %xmm1: Hindex1(10)
-vblendps $0x0, (%rax), %xmm2, %xmm1: Hindex1(10)
+vblendps $0x0, (%rbx), %xmm2, %xmm1: Hindex1(10)
+vblendps $0x0, (%rbx), %xmm2, %xmm1: Hindex1(10)
 Formula:
 
 %ymm1  : (concat #x00000000000000000000000000000000 ((_ extract 127 0) %ymm2))
 
 Information about memory reads:
   Value TMP_BV_128_0 (16 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

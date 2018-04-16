@@ -1,15 +1,15 @@
-code: idivl (%rax)
+code: idivl (%rbx)
 
-  maybe read:      { %rax %edx }
-  must read:       { %rax %edx }
+  maybe read:      { %eax %edx %rbx }
+  must read:       { %eax %edx %rbx }
   maybe write:     { %rax %rdx }
   must write:      { %rax %rdx }
   maybe undef:     { %cf %pf %af %zf %sf %of }
   must undef:      { %cf %pf %af %zf %sf %of }
   required flags:  { }
 
-idivl (%rax): Hindex2(10)
-idivl (%rax): Hindex2(10)
+idivl (%rbx): Hindex2(10)
+idivl (%rbx): Hindex2(10)
 Formula:
 
 %rax   : (concat #x00000000
@@ -30,7 +30,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_32_0 (4 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

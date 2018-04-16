@@ -1,15 +1,15 @@
-code: idivq (%rax)
+code: idivq (%rbx)
 
-  maybe read:      { %rax %rdx }
-  must read:       { %rax %rdx }
+  maybe read:      { %rax %rdx %rbx }
+  must read:       { %rax %rdx %rbx }
   maybe write:     { %rax %rdx }
   must write:      { %rax %rdx }
   maybe undef:     { %cf %pf %af %zf %sf %of }
   must undef:      { %cf %pf %af %zf %sf %of }
   required flags:  { }
 
-idivq (%rax): Hindex2(10)
-idivq (%rax): Hindex2(10)
+idivq (%rbx): Hindex2(10)
+idivq (%rbx): Hindex2(10)
 Formula:
 
 %rax   : (idiv_quotient_int64 (concat %rdx %rax) TMP_BV_64_0)
@@ -24,7 +24,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

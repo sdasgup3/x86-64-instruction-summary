@@ -1,15 +1,15 @@
-code: vpunpckhwd (%rax), %xmm2, %xmm1
+code: vpunpckhwd (%rbx), %xmm2, %xmm1
 
-  maybe read:      { %rax %xmm2 }
-  must read:       { %rax %xmm2 }
+  maybe read:      { %rbx %xmm2 }
+  must read:       { %rbx %xmm2 }
   maybe write:     { %ymm1 }
   must write:      { %ymm1 }
   maybe undef:     { }
   must undef:      { }
   required flags:  { avx }
 
-vpunpckhwd (%rax), %xmm2, %xmm1: Hindex0(10)
-vpunpckhwd (%rax), %xmm2, %xmm1: Hindex0(10)
+vpunpckhwd (%rbx), %xmm2, %xmm1: Hindex0(10)
+vpunpckhwd (%rbx), %xmm2, %xmm1: Hindex0(10)
 callq .move_128_64_xmm2_xmm8_xmm9: Hindex8(9)
 callq .move_128_064_xmm3_r12_r13: Hindex8(9)
 callq .move_064_128_r12_r13_xmm2: Hindex8(9)
@@ -1374,17 +1374,17 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_128_0 (16 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_128_1 (16 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_128_2 (16 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_128_3 (16 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_128_4 (16 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_128_5 (16 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

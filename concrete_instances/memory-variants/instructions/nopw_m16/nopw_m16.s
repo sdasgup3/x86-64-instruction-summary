@@ -1,3 +1,3 @@
 .target:
-  nopw (%rax)
+  nopw (%rbx)
   retq

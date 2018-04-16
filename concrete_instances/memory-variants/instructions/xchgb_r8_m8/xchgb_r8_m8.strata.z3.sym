@@ -1,25 +1,25 @@
-code: xchgb (%rax), %bl
+code: xchgb (%rcx), %bl
 
-  maybe read:      { %rax %bl }
-  must read:       { %rax %bl }
+  maybe read:      { %rcx %bl }
+  must read:       { %rcx %bl }
   maybe write:     { %bl }
   must write:      { %bl }
   maybe undef:     { }
   must undef:      { }
   required flags:  { }
 
-xchgb (%rax), %bl: Hindex2(10)
-xchgb (%rax), %bl: Hindex2(10)
+xchgb (%rcx), %bl: Hindex2(10)
+xchgb (%rcx), %bl: Hindex2(10)
 Formula:
 
 %rbx   : (concat ((_ extract 63 8) %rbx) TMP_BV_8_0)
 
 Information about memory reads:
   Value TMP_BV_8_0 (1 bytes)
-    was read at address %rax.
+    was read at address %rcx.
 
 Information about memory writes:
-  Address %rax was updated to
+  Address %rcx was updated to
     ((_ extract 7 0) %rbx) (1 bytes).
 
 sigfpe  : sigfpe

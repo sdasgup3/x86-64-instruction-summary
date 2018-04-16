@@ -1,15 +1,15 @@
-code: cmpss $0x0, (%rax), %xmm1
+code: cmpss $0x0, (%rbx), %xmm1
 
-  maybe read:      { %rax %xmm1 }
-  must read:       { %rax %xmm1 }
+  maybe read:      { %rbx %xmm1 }
+  must read:       { %rbx %xmm1 }
   maybe write:     { %xmm1 }
   must write:      { %xmm1 }
   maybe undef:     { }
   must undef:      { }
   required flags:  { sse }
 
-cmpss $0x0, (%rax), %xmm1: Hindex2(10)
-cmpss $0x0, (%rax), %xmm1: Hindex2(10)
+cmpss $0x0, (%rbx), %xmm1: Hindex2(10)
+cmpss $0x0, (%rbx), %xmm1: Hindex2(10)
 Formula:
 
 %ymm1  : (let ((a!1 (ite (= (cmp_single_pred ((_ extract 31 0) %ymm1) TMP_BV_32_0 #x00)
@@ -20,7 +20,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_32_0 (4 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

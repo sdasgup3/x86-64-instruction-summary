@@ -1,15 +1,15 @@
-code: rolw %cl, (%rax)
+code: rolw %cl, (%rbx)
 
-  maybe read:      { %rax %cl }
-  must read:       { %rax %cl }
+  maybe read:      { %cl %rbx }
+  must read:       { %cl %rbx }
   maybe write:     { %cf %of }
   must write:      { }
   maybe undef:     { %of }
   must undef:      { }
   required flags:  { }
 
-rolw %cl, (%rax): Hindex8(10)
-rolw %cl, (%rax): Hindex8(10)
+rolw %cl, (%rbx): Hindex8(10)
+rolw %cl, (%rbx): Hindex8(10)
 Formula:
 
 %cf    : (let ((a!1 (not (= (bvand ((_ extract 7 0) %rcx) #x1f) #x00)))
@@ -26,10 +26,10 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_16_0 (2 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 Information about memory writes:
-  Address %rax was updated to
+  Address %rbx was updated to
     (ext_rotate_left TMP_BV_16_0 (concat #x00 (bvand ((_ extract 7 0) %rcx) #x1f))) (2 bytes).
 
 sigfpe  : sigfpe

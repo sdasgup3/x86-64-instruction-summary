@@ -1,15 +1,15 @@
-code: pmovzxbq (%rax), %xmm1
+code: pmovzxbq (%rbx), %xmm1
 
-  maybe read:      { %rax }
-  must read:       { %rax }
+  maybe read:      { %rbx }
+  must read:       { %rbx }
   maybe write:     { %xmm1 }
   must write:      { %xmm1 }
   maybe undef:     { }
   must undef:      { }
   required flags:  { sse4_1 }
 
-pmovzxbq (%rax), %xmm1: Hindex1(10)
-pmovzxbq (%rax), %xmm1: Hindex1(10)
+pmovzxbq (%rbx), %xmm1: Hindex1(10)
+pmovzxbq (%rbx), %xmm1: Hindex1(10)
 Formula:
 
 %ymm1  : (concat ((_ extract 255 128) %ymm1)
@@ -18,7 +18,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_16_0 (2 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

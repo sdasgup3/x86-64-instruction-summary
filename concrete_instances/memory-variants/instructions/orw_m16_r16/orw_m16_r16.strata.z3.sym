@@ -1,15 +1,15 @@
-code: orw %bx, (%rax)
+code: orw %cx, (%rbx)
 
-  maybe read:      { %rax %bx }
-  must read:       { %rax %bx }
+  maybe read:      { %cx %rbx }
+  must read:       { %cx %rbx }
   maybe write:     { %cf %pf %zf %sf %of }
   must write:      { %cf %pf %zf %sf %of }
   maybe undef:     { %af }
   must undef:      { %af }
   required flags:  { }
 
-orw %bx, (%rax): Hindex0(10)
-orw %bx, (%rax): Hindex0(10)
+orw %cx, (%rbx): Hindex0(10)
+orw %cx, (%rbx): Hindex0(10)
 movswq %cx, %rdx: Hindex5(9)
 callq .move_016_008_bx_r10b_r11b: Hindex8(9)
 callq .move_016_008_cx_r8b_r9b: Hindex8(9)
@@ -21,58 +21,58 @@ movslq %edx, %rbx: Hindex5(9)
 Formula:
 
 %cf    : false
-%pf    : (let ((a!1 (xor (= (bvor ((_ extract 0 0) %rbx) ((_ extract 0 0) TMP_BV_16_2))
+%pf    : (let ((a!1 (xor (= (bvor ((_ extract 0 0) %rcx) ((_ extract 0 0) TMP_BV_16_2))
                    #b1)
-                (= (bvor ((_ extract 1 1) %rbx) ((_ extract 1 1) TMP_BV_16_3))
+                (= (bvor ((_ extract 1 1) %rcx) ((_ extract 1 1) TMP_BV_16_3))
                    #b1)
-                (= (bvor ((_ extract 2 2) %rbx) ((_ extract 2 2) TMP_BV_16_4))
+                (= (bvor ((_ extract 2 2) %rcx) ((_ extract 2 2) TMP_BV_16_4))
                    #b1)
-                (= (bvor ((_ extract 3 3) %rbx) ((_ extract 3 3) TMP_BV_16_5))
+                (= (bvor ((_ extract 3 3) %rcx) ((_ extract 3 3) TMP_BV_16_5))
                    #b1)
-                (= (bvor ((_ extract 4 4) %rbx) ((_ extract 4 4) TMP_BV_16_6))
+                (= (bvor ((_ extract 4 4) %rcx) ((_ extract 4 4) TMP_BV_16_6))
                    #b1)
-                (= (bvor ((_ extract 5 5) %rbx) ((_ extract 5 5) TMP_BV_16_7))
+                (= (bvor ((_ extract 5 5) %rcx) ((_ extract 5 5) TMP_BV_16_7))
                    #b1)
-                (= (bvor ((_ extract 6 6) %rbx) ((_ extract 6 6) TMP_BV_16_8))
+                (= (bvor ((_ extract 6 6) %rcx) ((_ extract 6 6) TMP_BV_16_8))
                    #b1)
-                (= (bvor ((_ extract 7 7) %rbx) ((_ extract 7 7) TMP_BV_16_9))
+                (= (bvor ((_ extract 7 7) %rcx) ((_ extract 7 7) TMP_BV_16_9))
                    #b1))))
   (not a!1))
 %af    : TMP_BOOL_2
-%zf    : (= (bvor ((_ sign_extend 48) ((_ extract 15 0) %rbx))
+%zf    : (= (bvor ((_ sign_extend 48) ((_ extract 15 0) %rcx))
          ((_ sign_extend 48) TMP_BV_16_1))
    #x0000000000000000)
 %sf    : (let ((a!1 (bvor ((_ extract 63 63)
-                   ((_ sign_extend 48) ((_ extract 15 0) %rbx)))
+                   ((_ sign_extend 48) ((_ extract 15 0) %rcx)))
                  ((_ extract 63 63) ((_ sign_extend 48) TMP_BV_16_1)))))
   (= a!1 #b1))
 %of    : false
 
 Information about memory reads:
   Value TMP_BV_16_0 (2 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_16_1 (2 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_16_2 (2 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_16_3 (2 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_16_4 (2 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_16_5 (2 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_16_6 (2 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_16_7 (2 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_16_8 (2 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_16_9 (2 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 Information about memory writes:
-  Address %rax was updated to
-    (bvor ((_ extract 15 0) %rbx) TMP_BV_16_1) (2 bytes).
+  Address %rbx was updated to
+    (bvor ((_ extract 15 0) %rcx) TMP_BV_16_1) (2 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

@@ -1,15 +1,15 @@
-code: nopl (%rax)
+code: nopl (%rbx)
 
-  maybe read:      { %rax }
-  must read:       { %rax }
+  maybe read:      { %rbx }
+  must read:       { %rbx }
   maybe write:     { }
   must write:      { }
   maybe undef:     { }
   must undef:      { }
   required flags:  { nopl }
 
-nopl (%rax): Hindex0(10)
-nopl (%rax): Hindex0(10)
+nopl (%rbx): Hindex0(10)
+nopl (%rbx): Hindex0(10)
 Formula:
 
 sigfpe  : sigfpe

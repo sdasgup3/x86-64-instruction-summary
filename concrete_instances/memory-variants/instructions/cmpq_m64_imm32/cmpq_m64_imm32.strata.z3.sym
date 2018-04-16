@@ -1,15 +1,15 @@
-code: cmpq $0x0, (%rax)
+code: cmpq $0x0, (%rbx)
 
-  maybe read:      { %rax }
-  must read:       { %rax }
+  maybe read:      { %rbx }
+  must read:       { %rbx }
   maybe write:     { %cf %pf %af %zf %sf %of }
   must write:      { %cf %pf %af %zf %sf %of }
   maybe undef:     { }
   must undef:      { }
   required flags:  { }
 
-cmpq $0x0, (%rax): Hindex0(10)
-cmpq $0x0, (%rax): Hindex0(10)
+cmpq $0x0, (%rbx): Hindex0(10)
+cmpq $0x0, (%rbx): Hindex0(10)
 callq .set_cf: Hindex8(9)
 movq $0xfffffffffffffffe, %rdx: Hindex5(9)
 xorq %rax, %rax: Hindex1(9)
@@ -183,11 +183,11 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_64_1 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_64_2 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

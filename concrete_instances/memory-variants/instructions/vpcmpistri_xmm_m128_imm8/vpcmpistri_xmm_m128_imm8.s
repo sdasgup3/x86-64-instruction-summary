@@ -1,3 +1,3 @@
 .target:
-  vpcmpistri $0x0, (%rax), %xmm1
+  vpcmpistri $0x0, (%rbx), %xmm1
   retq

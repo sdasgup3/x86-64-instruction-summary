@@ -1,15 +1,15 @@
-code: shrxq %rcx, (%rax), %rbx
+code: shrxq %rdx, (%rcx), %rbx
 
-  maybe read:      { %rax %rcx }
-  must read:       { %rax %rcx }
+  maybe read:      { %rcx %rdx }
+  must read:       { %rcx %rdx }
   maybe write:     { %rbx }
   must write:      { %rbx }
   maybe undef:     { }
   must undef:      { }
   required flags:  { bmi2 }
 
-shrxq %rcx, (%rax), %rbx: Hindex0(10)
-shrxq %rcx, (%rax), %rbx: Hindex0(10)
+shrxq %rdx, (%rcx), %rbx: Hindex0(10)
+shrxq %rdx, (%rcx), %rbx: Hindex0(10)
 movq %rcx, %rbx: Hindex5(9)
 callq .clear_cf: Hindex8(9)
 callq .set_of: Hindex8(9)
@@ -34,12 +34,12 @@ Formula:
 
 %rbx   : (let ((a!1 (bvlshr (concat TMP_BV_64_0 #b0)
                    (concat #b000000000000000000000000000000000000000000000000000000000
-                           (bvand ((_ extract 7 0) %rcx) #x3f)))))
+                           (bvand ((_ extract 7 0) %rdx) #x3f)))))
   ((_ extract 64 1) a!1))
 
 Information about memory reads:
   Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+    was read at address %rcx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

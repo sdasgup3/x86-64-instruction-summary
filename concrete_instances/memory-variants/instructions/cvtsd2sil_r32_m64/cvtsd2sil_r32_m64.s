@@ -1,3 +1,3 @@
 .target:
-  cvtsd2sil (%rax), %ebx
+  cvtsd2sil (%rcx), %ebx
   retq

@@ -1,3 +1,3 @@
 .target:
-  rorq %cl, (%rax)
+  rorq %cl, (%rbx)
   retq

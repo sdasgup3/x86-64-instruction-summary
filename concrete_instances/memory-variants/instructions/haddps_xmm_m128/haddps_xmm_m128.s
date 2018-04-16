@@ -1,3 +1,3 @@
 .target:
-  haddps (%rax), %xmm1
+  haddps (%rbx), %xmm1
   retq

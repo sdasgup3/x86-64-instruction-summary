@@ -1,7 +1,7 @@
-code: adcl %ebx, (%rax)
+code: adcl %ecx, (%rbx)
 
-  maybe read:      { %rax %ebx %cf }
-  must read:       { %rax %ebx %cf }
+  maybe read:      { %ecx %rbx %cf }
+  must read:       { %ecx %rbx %cf }
   maybe write:     { %cf %pf %af %zf %sf %of }
   must write:      { %cf %pf %af %zf %sf %of }
   maybe undef:     { }
@@ -9,21 +9,21 @@ code: adcl %ebx, (%rax)
   required flags:  { }
 
 Base Instruction!!
-adcl %ebx, (%rax): Hindex0(10)
+adcl %ecx, (%rbx): Hindex0(10)
 Base Instruction!!
-adcl %ebx, (%rax): Hindex0(10)
+adcl %ecx, (%rbx): Hindex0(10)
 adcl %ecx, %ebx: Hindex2(9)
 Formula:
 
 %cf    : (let ((a!1 (ite %cf
-                (bvadd (concat #b0 ((_ extract 31 0) %rbx))
+                (bvadd (concat #b0 ((_ extract 31 0) %rcx))
                        #b000000000000000000000000000000001)
-                (concat #b0 ((_ extract 31 0) %rbx)))))
+                (concat #b0 ((_ extract 31 0) %rcx)))))
   (= ((_ extract 32 32) (bvadd a!1 (concat #b0 TMP_BV_32_0))) #b1))
 %pf    : (let ((a!1 (ite %cf
-                (bvadd (concat #b0 ((_ extract 31 0) %rbx))
+                (bvadd (concat #b0 ((_ extract 31 0) %rcx))
                        #b000000000000000000000000000000001)
-                (concat #b0 ((_ extract 31 0) %rbx)))))
+                (concat #b0 ((_ extract 31 0) %rcx)))))
 (let ((a!2 (= ((_ extract 0 0) (bvadd a!1 (concat #b0 TMP_BV_32_0))) #b1))
       (a!3 (= ((_ extract 1 1) (bvadd a!1 (concat #b0 TMP_BV_32_0))) #b1))
       (a!4 (= ((_ extract 2 2) (bvadd a!1 (concat #b0 TMP_BV_32_0))) #b1))
@@ -34,39 +34,39 @@ Formula:
       (a!9 (= ((_ extract 7 7) (bvadd a!1 (concat #b0 TMP_BV_32_0))) #b1)))
   (not (xor a!2 a!3 a!4 a!5 a!6 a!7 a!8 a!9))))
 %af    : (let ((a!1 ((_ extract 4 4)
-             (bvadd (concat #b0 ((_ extract 3 0) %rbx))
+             (bvadd (concat #b0 ((_ extract 3 0) %rcx))
                     (concat #b0 ((_ extract 3 0) TMP_BV_32_0))))))
   (= a!1 #b1))
 %zf    : (let ((a!1 (ite %cf
-                (bvadd (concat #b0 ((_ extract 31 0) %rbx))
+                (bvadd (concat #b0 ((_ extract 31 0) %rcx))
                        #b000000000000000000000000000000001)
-                (concat #b0 ((_ extract 31 0) %rbx)))))
+                (concat #b0 ((_ extract 31 0) %rcx)))))
   (= ((_ extract 31 0) (bvadd a!1 (concat #b0 TMP_BV_32_0))) #x00000000))
 %sf    : (let ((a!1 (ite %cf
-                (bvadd (concat #b0 ((_ extract 31 0) %rbx))
+                (bvadd (concat #b0 ((_ extract 31 0) %rcx))
                        #b000000000000000000000000000000001)
-                (concat #b0 ((_ extract 31 0) %rbx)))))
+                (concat #b0 ((_ extract 31 0) %rcx)))))
   (= ((_ extract 31 31) (bvadd a!1 (concat #b0 TMP_BV_32_0))) #b1))
 %of    : (let ((a!1 (ite %cf
-                (bvadd (concat #b0 ((_ extract 31 0) %rbx))
+                (bvadd (concat #b0 ((_ extract 31 0) %rcx))
                        #b000000000000000000000000000000001)
-                (concat #b0 ((_ extract 31 0) %rbx)))))
+                (concat #b0 ((_ extract 31 0) %rcx)))))
 (let ((a!2 (= ((_ extract 31 31) (bvadd a!1 (concat #b0 TMP_BV_32_0))) #b1)))
-(let ((a!3 (not (= (= ((_ extract 31 31) %rbx) #b1) a!2))))
-  (and (= (= ((_ extract 31 31) %rbx) #b1)
+(let ((a!3 (not (= (= ((_ extract 31 31) %rcx) #b1) a!2))))
+  (and (= (= ((_ extract 31 31) %rcx) #b1)
           (= ((_ extract 31 31) TMP_BV_32_0) #b1))
        a!3))))
 
 Information about memory reads:
   Value TMP_BV_32_0 (4 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 Information about memory writes:
-  Address %rax was updated to
+  Address %rbx was updated to
     (let ((a!1 (ite %cf
-                (bvadd (concat #b0 ((_ extract 31 0) %rbx))
+                (bvadd (concat #b0 ((_ extract 31 0) %rcx))
                        #b000000000000000000000000000000001)
-                (concat #b0 ((_ extract 31 0) %rbx)))))
+                (concat #b0 ((_ extract 31 0) %rcx)))))
   ((_ extract 31 0) (bvadd a!1 (concat #b0 TMP_BV_32_0)))) (4 bytes).
 
 sigfpe  : sigfpe

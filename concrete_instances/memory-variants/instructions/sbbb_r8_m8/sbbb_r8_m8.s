@@ -1,3 +1,3 @@
 .target:
-  sbbb (%rax), %bl
+  sbbb (%rcx), %bl
   retq

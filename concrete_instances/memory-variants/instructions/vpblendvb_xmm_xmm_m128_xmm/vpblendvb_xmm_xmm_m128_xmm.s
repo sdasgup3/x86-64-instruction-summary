@@ -1,3 +1,3 @@
 .target:
-  vpblendvb %xmm3, (%rax), %xmm2, %xmm1
+  vpblendvb %xmm3, (%rbx), %xmm2, %xmm1
   retq

@@ -1,3 +1,3 @@
 .target:
-  vpmaxuw (%rax), %xmm2, %xmm1
+  vpmaxuw (%rbx), %xmm2, %xmm1
   retq

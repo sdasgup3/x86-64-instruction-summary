@@ -1,3 +1,3 @@
 .target:
-  adcq $0x0, (%rax)
+  adcq $0x0, (%rbx)
   retq

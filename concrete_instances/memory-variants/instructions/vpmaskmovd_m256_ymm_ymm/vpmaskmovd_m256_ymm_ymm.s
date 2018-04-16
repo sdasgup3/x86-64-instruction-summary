@@ -1,3 +1,3 @@
 .target:
-  vpmaskmovd %ymm2, %ymm1, (%rax)
+  vpmaskmovd %ymm2, %ymm1, (%rbx)
   retq

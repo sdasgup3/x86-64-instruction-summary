@@ -1,15 +1,15 @@
-code: mulxl (%rax), %ecx, %ebx
+code: mulxl (%rdx), %ecx, %ebx
 
-  maybe read:      { %rax %edx }
-  must read:       { %rax %edx }
+  maybe read:      { %rdx }
+  must read:       { %rdx }
   maybe write:     { %rcx %rbx }
   must write:      { %rcx %rbx }
   maybe undef:     { }
   must undef:      { }
   required flags:  { bmi2 }
 
-mulxl (%rax), %ecx, %ebx: Hindex2(10)
-mulxl (%rax), %ecx, %ebx: Hindex2(10)
+mulxl (%rdx), %ecx, %ebx: Hindex2(10)
+mulxl (%rdx), %ecx, %ebx: Hindex2(10)
 Formula:
 
 %rcx   : (let ((a!1 ((_ extract 31 0)
@@ -23,7 +23,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_32_0 (4 bytes)
-    was read at address %rax.
+    was read at address %rdx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

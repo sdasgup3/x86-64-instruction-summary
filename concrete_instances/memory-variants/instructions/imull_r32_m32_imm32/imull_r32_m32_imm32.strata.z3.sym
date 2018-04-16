@@ -1,15 +1,15 @@
-code: imull $0x0, (%rax), %ebx
+code: imull $0x0, (%rcx), %ebx
 
-  maybe read:      { %rax }
-  must read:       { %rax }
+  maybe read:      { %rcx }
+  must read:       { %rcx }
   maybe write:     { %rbx %cf %of }
   must write:      { %rbx %cf %of }
   maybe undef:     { %pf %af %zf %sf }
   must undef:      { %pf %af %zf %sf }
   required flags:  { }
 
-imull $0x0, (%rax), %ebx: Hindex2(10)
-imull $0x0, (%rax), %ebx: Hindex2(10)
+imull $0x0, (%rcx), %ebx: Hindex2(10)
+imull $0x0, (%rcx), %ebx: Hindex2(10)
 Formula:
 
 %rbx   : (concat #x00000000
@@ -33,7 +33,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_32_0 (4 bytes)
-    was read at address %rax.
+    was read at address %rcx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

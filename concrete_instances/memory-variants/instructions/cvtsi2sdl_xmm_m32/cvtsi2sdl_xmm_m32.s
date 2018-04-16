@@ -1,3 +1,3 @@
 .target:
-  cvtsi2sdl (%rax), %xmm1
+  cvtsi2sdl (%rbx), %xmm1
   retq

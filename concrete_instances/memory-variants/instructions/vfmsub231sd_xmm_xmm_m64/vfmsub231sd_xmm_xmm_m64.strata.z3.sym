@@ -1,15 +1,15 @@
-code: vfmsub231sd (%rax), %xmm2, %xmm1
+code: vfmsub231sd (%rbx), %xmm2, %xmm1
 
-  maybe read:      { %rax %xmm1 %xmm2 }
-  must read:       { %rax %xmm1 %xmm2 }
+  maybe read:      { %rbx %xmm1 %xmm2 }
+  must read:       { %rbx %xmm1 %xmm2 }
   maybe write:     { %ymm1 }
   must write:      { %ymm1 }
   maybe undef:     { }
   must undef:      { }
   required flags:  { fma }
 
-vfmsub231sd (%rax), %xmm2, %xmm1: Hindex0(10)
-vfmsub231sd (%rax), %xmm2, %xmm1: Hindex0(10)
+vfmsub231sd (%rbx), %xmm2, %xmm1: Hindex0(10)
+vfmsub231sd (%rbx), %xmm2, %xmm1: Hindex0(10)
 callq .move_128_064_xmm2_r10_r11: Hindex8(9)
 vzeroall : Hindex1(9)
 movq %r10, %r11: Hindex5(9)
@@ -79,7 +79,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

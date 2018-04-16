@@ -1,3 +1,3 @@
 .target:
-  addsubps (%rax), %xmm1
+  addsubps (%rbx), %xmm1
   retq

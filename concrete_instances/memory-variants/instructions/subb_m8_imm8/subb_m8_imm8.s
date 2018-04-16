@@ -1,3 +1,3 @@
 .target:
-  subb $0x0, (%rax)
+  subb $0x0, (%rbx)
   retq

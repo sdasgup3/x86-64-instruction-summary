@@ -1,20 +1,20 @@
-code: vmovdqa %ymm1, (%rax)
+code: vmovdqa %ymm1, (%rbx)
 
-  maybe read:      { %rax %ymm1 }
-  must read:       { %rax %ymm1 }
+  maybe read:      { %rbx %ymm1 }
+  must read:       { %rbx %ymm1 }
   maybe write:     { }
   must write:      { }
   maybe undef:     { }
   must undef:      { }
   required flags:  { avx }
 
-vmovdqa %ymm1, (%rax): Hindex0(10)
-vmovdqa %ymm1, (%rax): Hindex0(10)
+vmovdqa %ymm1, (%rbx): Hindex0(10)
+vmovdqa %ymm1, (%rbx): Hindex0(10)
 vminpd %ymm2, %ymm2, %ymm1: Hindex0(9)
 Formula:
 
 Information about memory writes:
-  Address %rax was updated to
+  Address %rbx was updated to
     %ymm1 (32 bytes).
 
 sigfpe  : sigfpe

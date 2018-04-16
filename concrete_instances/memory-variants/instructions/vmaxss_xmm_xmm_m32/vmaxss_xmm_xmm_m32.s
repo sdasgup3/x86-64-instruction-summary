@@ -1,3 +1,3 @@
 .target:
-  vmaxss (%rax), %xmm2, %xmm1
+  vmaxss (%rbx), %xmm2, %xmm1
   retq

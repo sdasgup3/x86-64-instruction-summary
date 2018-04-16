@@ -1,3 +1,3 @@
 .target:
-  negl (%rax)
+  negl (%rbx)
   retq

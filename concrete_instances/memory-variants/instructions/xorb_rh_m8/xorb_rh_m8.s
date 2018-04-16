@@ -1,3 +1,3 @@
 .target:
-  xorb (%rax), %ah
+  xorb (%rbx), %ah
   retq

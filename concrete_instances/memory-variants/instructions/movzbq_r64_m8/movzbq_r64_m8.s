@@ -1,3 +1,3 @@
 .target:
-  movzbq (%rax), %rbx
+  movzbq (%rcx), %rbx
   retq

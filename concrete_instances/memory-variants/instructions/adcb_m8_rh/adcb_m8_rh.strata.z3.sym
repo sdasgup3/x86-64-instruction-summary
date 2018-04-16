@@ -1,15 +1,15 @@
-code: adcb %ah, (%rax)
+code: adcb %ah, (%rbx)
 
-  maybe read:      { %rax %cf }
-  must read:       { %rax %cf }
+  maybe read:      { %ah %rbx %cf }
+  must read:       { %ah %rbx %cf }
   maybe write:     { %cf %pf %af %zf %sf %of }
   must write:      { %cf %pf %af %zf %sf %of }
   maybe undef:     { }
   must undef:      { }
   required flags:  { }
 
-adcb %ah, (%rax): Hindex0(10)
-adcb %ah, (%rax): Hindex0(10)
+adcb %ah, (%rbx): Hindex0(10)
+adcb %ah, (%rbx): Hindex0(10)
 movb %ah, %cl: Hindex5(9)
 callq .set_of: Hindex8(9)
 callq .read_of_into_rbx: Hindex8(9)
@@ -57,16 +57,16 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_8_0 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_8_1 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_8_2 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_8_3 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 Information about memory writes:
-  Address %rax was updated to
+  Address %rbx was updated to
     (let ((a!1 (ite %cf
                 (bvadd (concat #b0 ((_ extract 15 8) %rax)) #b000000001)
                 (concat #b0 ((_ extract 15 8) %rax)))))

@@ -1,15 +1,15 @@
-code: addb (%rax), %ah
+code: addb (%rbx), %ah
 
-  maybe read:      { %rax }
-  must read:       { %rax }
+  maybe read:      { %ah %rbx }
+  must read:       { %ah %rbx }
   maybe write:     { %ah %cf %pf %af %zf %sf %of }
   must write:      { %ah %cf %pf %af %zf %sf %of }
   maybe undef:     { }
   must undef:      { }
   required flags:  { }
 
-addb (%rax), %ah: Hindex0(10)
-addb (%rax), %ah: Hindex0(10)
+addb (%rbx), %ah: Hindex0(10)
+addb (%rbx), %ah: Hindex0(10)
 xorq %rcx, %rcx: Hindex1(9)
 callq .read_sf_into_rbx: Hindex8(9)
 movb %ah, %bl: Hindex5(9)
@@ -95,11 +95,11 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_8_0 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_8_1 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_8_2 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

@@ -1,3 +1,3 @@
 .target:
-  vrcpps (%rax), %xmm1
+  vrcpps (%rbx), %xmm1
   retq

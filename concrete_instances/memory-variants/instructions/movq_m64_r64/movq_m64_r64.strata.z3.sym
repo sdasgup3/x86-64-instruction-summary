@@ -1,7 +1,7 @@
-code: movq %rbx, (%rax)
+code: movq %rcx, (%rbx)
 
-  maybe read:      { %rax %rbx }
-  must read:       { %rax %rbx }
+  maybe read:      { %rcx %rbx }
+  must read:       { %rcx %rbx }
   maybe write:     { }
   must write:      { }
   maybe undef:     { }
@@ -9,15 +9,15 @@ code: movq %rbx, (%rax)
   required flags:  { }
 
 Base Instruction!!
-movq %rbx, (%rax): Hindex0(10)
+movq %rcx, (%rbx): Hindex0(10)
 Base Instruction!!
-movq %rbx, (%rax): Hindex0(10)
+movq %rcx, (%rbx): Hindex0(10)
 movq %rcx, %rbx: Hindex5(9)
 Formula:
 
 Information about memory writes:
-  Address %rax was updated to
-    %rbx (8 bytes).
+  Address %rbx was updated to
+    %rcx (8 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

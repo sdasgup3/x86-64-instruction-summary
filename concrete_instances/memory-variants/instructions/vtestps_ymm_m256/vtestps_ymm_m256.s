@@ -1,3 +1,3 @@
 .target:
-  vtestps (%rax), %ymm1
+  vtestps (%rbx), %ymm1
   retq

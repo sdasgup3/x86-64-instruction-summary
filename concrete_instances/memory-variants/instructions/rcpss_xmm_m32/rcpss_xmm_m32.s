@@ -1,3 +1,3 @@
 .target:
-  rcpss (%rax), %xmm1
+  rcpss (%rbx), %xmm1
   retq

@@ -1,15 +1,15 @@
-code: imulb (%rax)
+code: imulb (%rbx)
 
-  maybe read:      { %rax }
-  must read:       { %rax }
+  maybe read:      { %al %rbx }
+  must read:       { %al %rbx }
   maybe write:     { %ax %cf %of }
   must write:      { %ax %cf %of }
   maybe undef:     { %pf %af %zf %sf }
   must undef:      { %pf %af %zf %sf }
   required flags:  { }
 
-imulb (%rax): Hindex2(10)
-imulb (%rax): Hindex2(10)
+imulb (%rbx): Hindex2(10)
+imulb (%rbx): Hindex2(10)
 Formula:
 
 %rax   : (concat ((_ extract 63 16) %rax)
@@ -40,7 +40,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_8_0 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

@@ -1,15 +1,15 @@
-code: negb (%rax)
+code: negb (%rbx)
 
-  maybe read:      { %rax }
-  must read:       { %rax }
+  maybe read:      { %rbx }
+  must read:       { %rbx }
   maybe write:     { %cf %pf %af %zf %sf %of }
   must write:      { %cf %pf %af %zf %sf %of }
   maybe undef:     { }
   must undef:      { }
   required flags:  { }
 
-negb (%rax): Hindex0(10)
-negb (%rax): Hindex0(10)
+negb (%rbx): Hindex0(10)
+negb (%rbx): Hindex0(10)
 movq $0x8, %rbx: Hindex5(9)
 callq .move_032_016_ebx_r10w_r11w: Hindex8(9)
 xorq %rax, %rax: Hindex1(9)
@@ -93,18 +93,18 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_8_0 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_8_1 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_8_2 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_8_3 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_8_4 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 Information about memory writes:
-  Address %rax was updated to
+  Address %rbx was updated to
     (let ((a!1 (bvadd #b00000000000000001
                   (concat #b0 (bvxor (concat #x00 TMP_BV_8_1) #xffff)))))
   ((_ extract 7 0) a!1)) (1 bytes).

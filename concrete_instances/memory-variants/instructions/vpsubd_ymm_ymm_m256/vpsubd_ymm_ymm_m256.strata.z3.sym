@@ -1,15 +1,15 @@
-code: vpsubd (%rax), %ymm2, %ymm1
+code: vpsubd (%rbx), %ymm2, %ymm1
 
-  maybe read:      { %rax %ymm2 }
-  must read:       { %rax %ymm2 }
+  maybe read:      { %rbx %ymm2 }
+  must read:       { %rbx %ymm2 }
   maybe write:     { %ymm1 }
   must write:      { %ymm1 }
   maybe undef:     { }
   must undef:      { }
   required flags:  { avx2 }
 
-vpsubd (%rax), %ymm2, %ymm1: Hindex0(10)
-vpsubd (%rax), %ymm2, %ymm1: Hindex0(10)
+vpsubd (%rbx), %ymm2, %ymm1: Hindex0(10)
+vpsubd (%rbx), %ymm2, %ymm1: Hindex0(10)
 callq .move_128_64_xmm2_xmm12_xmm13: Hindex8(9)
 callq .move_128_032_xmm1_xmm8_xmm9_xmm10_xmm11: Hindex8(9)
 callq .move_128_064_xmm2_r8_r9: Hindex8(9)
@@ -1596,21 +1596,21 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_256_0 (32 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_256_1 (32 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_256_2 (32 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_256_3 (32 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_256_4 (32 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_256_5 (32 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_256_6 (32 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_256_7 (32 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

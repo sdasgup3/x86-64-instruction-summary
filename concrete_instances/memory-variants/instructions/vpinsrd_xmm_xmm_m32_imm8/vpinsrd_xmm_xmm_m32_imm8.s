@@ -1,3 +1,3 @@
 .target:
-  vpinsrd $0x0, (%rax), %xmm2, %xmm1
+  vpinsrd $0x0, (%rbx), %xmm2, %xmm1
   retq

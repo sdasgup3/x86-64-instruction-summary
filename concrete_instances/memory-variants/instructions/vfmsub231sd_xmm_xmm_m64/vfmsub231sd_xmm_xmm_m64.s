@@ -1,3 +1,3 @@
 .target:
-  vfmsub231sd (%rax), %xmm2, %xmm1
+  vfmsub231sd (%rbx), %xmm2, %xmm1
   retq

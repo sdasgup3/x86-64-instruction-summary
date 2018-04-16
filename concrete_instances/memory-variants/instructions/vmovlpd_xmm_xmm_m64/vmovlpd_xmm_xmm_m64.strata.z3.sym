@@ -1,15 +1,15 @@
-code: vmovlpd (%rax), %xmm2, %xmm1
+code: vmovlpd (%rbx), %xmm2, %xmm1
 
-  maybe read:      { %rax %xmm2 }
-  must read:       { %rax %xmm2 }
+  maybe read:      { %rbx %xmm2 }
+  must read:       { %rbx %xmm2 }
   maybe write:     { %ymm1 }
   must write:      { %ymm1 }
   maybe undef:     { }
   must undef:      { }
   required flags:  { avx }
 
-vmovlpd (%rax), %xmm2, %xmm1: Hindex2(10)
-vmovlpd (%rax), %xmm2, %xmm1: Hindex2(10)
+vmovlpd (%rbx), %xmm2, %xmm1: Hindex2(10)
+vmovlpd (%rbx), %xmm2, %xmm1: Hindex2(10)
 Formula:
 
 %ymm1  : (concat #x00000000000000000000000000000000
@@ -17,7 +17,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

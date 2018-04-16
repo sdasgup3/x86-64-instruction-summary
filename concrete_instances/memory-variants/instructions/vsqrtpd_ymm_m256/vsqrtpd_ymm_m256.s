@@ -1,3 +1,3 @@
 .target:
-  vsqrtpd (%rax), %ymm1
+  vsqrtpd (%rbx), %ymm1
   retq

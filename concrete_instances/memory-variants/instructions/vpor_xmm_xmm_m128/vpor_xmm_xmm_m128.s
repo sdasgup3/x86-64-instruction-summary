@@ -1,3 +1,3 @@
 .target:
-  vpor (%rax), %xmm2, %xmm1
+  vpor (%rbx), %xmm2, %xmm1
   retq

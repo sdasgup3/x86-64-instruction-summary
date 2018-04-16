@@ -1,15 +1,15 @@
-code: cvtpi2ps (%rax), %xmm1
+code: cvtpi2ps (%rbx), %xmm1
 
-  maybe read:      { %rax %xmm1 %mxcsr::rc[0] }
-  must read:       { %rax %xmm1 %mxcsr::rc[0] }
+  maybe read:      { %rbx %xmm1 %mxcsr::rc[0] }
+  must read:       { %rbx %xmm1 %mxcsr::rc[0] }
   maybe write:     { %xmm1 }
   must write:      { %xmm1 }
   maybe undef:     { }
   must undef:      { }
   required flags:  { }
 
-cvtpi2ps (%rax), %xmm1: Hindex1(10)
-cvtpi2ps (%rax), %xmm1: Hindex1(10)
+cvtpi2ps (%rbx), %xmm1: Hindex1(10)
+cvtpi2ps (%rbx), %xmm1: Hindex1(10)
 Formula:
 
 %ymm1  : (let ((a!1 (concat ((_ extract 127 64) %ymm1)
@@ -19,7 +19,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

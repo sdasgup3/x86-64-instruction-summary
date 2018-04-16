@@ -1,15 +1,15 @@
-code: idivw (%rax)
+code: idivw (%rbx)
 
-  maybe read:      { %rax %dx }
-  must read:       { %rax %dx }
+  maybe read:      { %ax %dx %rbx }
+  must read:       { %ax %dx %rbx }
   maybe write:     { %ax %dx }
   must write:      { %ax %dx }
   maybe undef:     { %cf %pf %af %zf %sf %of }
   must undef:      { %cf %pf %af %zf %sf %of }
   required flags:  { }
 
-idivw (%rax): Hindex2(10)
-idivw (%rax): Hindex2(10)
+idivw (%rbx): Hindex2(10)
+idivw (%rbx): Hindex2(10)
 Formula:
 
 %rax   : (concat ((_ extract 63 16) %rax)
@@ -30,7 +30,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_16_0 (2 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

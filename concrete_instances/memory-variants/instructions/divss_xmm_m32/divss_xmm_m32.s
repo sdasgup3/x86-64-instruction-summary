@@ -1,3 +1,3 @@
 .target:
-  divss (%rax), %xmm1
+  divss (%rbx), %xmm1
   retq

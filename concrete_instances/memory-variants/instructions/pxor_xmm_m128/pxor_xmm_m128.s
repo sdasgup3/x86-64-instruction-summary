@@ -1,3 +1,3 @@
 .target:
-  pxor (%rax), %xmm1
+  pxor (%rbx), %xmm1
   retq

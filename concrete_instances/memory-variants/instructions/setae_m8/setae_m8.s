@@ -1,3 +1,3 @@
 .target:
-  setae (%rax)
+  setae (%rbx)
   retq

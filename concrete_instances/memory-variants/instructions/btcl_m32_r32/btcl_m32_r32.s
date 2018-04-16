@@ -1,3 +1,3 @@
 .target:
-  btcl %ebx, (%rax)
+  btcl %ecx, (%rbx)
   retq

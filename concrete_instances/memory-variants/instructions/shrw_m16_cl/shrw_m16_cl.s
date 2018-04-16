@@ -1,3 +1,3 @@
 .target:
-  shrw %cl, (%rax)
+  shrw %cl, (%rbx)
   retq

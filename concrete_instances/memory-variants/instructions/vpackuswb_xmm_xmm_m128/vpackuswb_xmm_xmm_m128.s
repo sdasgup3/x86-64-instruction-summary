@@ -1,3 +1,3 @@
 .target:
-  vpackuswb (%rax), %xmm2, %xmm1
+  vpackuswb (%rbx), %xmm2, %xmm1
   retq

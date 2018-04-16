@@ -1,3 +1,3 @@
 .target:
-  vdpps $0x0, (%rax), %xmm2, %xmm1
+  vdpps $0x0, (%rbx), %xmm2, %xmm1
   retq

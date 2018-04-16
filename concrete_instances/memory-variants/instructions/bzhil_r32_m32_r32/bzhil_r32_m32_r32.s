@@ -1,3 +1,3 @@
 .target:
-  bzhil %ecx, (%rax), %ebx
+  bzhil %edx, (%rcx), %ebx
   retq

@@ -1,15 +1,15 @@
-code: mull (%rax)
+code: mull (%rbx)
 
-  maybe read:      { %rax }
-  must read:       { %rax }
+  maybe read:      { %eax %rbx }
+  must read:       { %eax %rbx }
   maybe write:     { %rax %rdx %cf %of }
   must write:      { %rax %rdx %cf %of }
   maybe undef:     { %pf %af %zf %sf }
   must undef:      { %pf %af %zf %sf }
   required flags:  { }
 
-mull (%rax): Hindex2(10)
-mull (%rax): Hindex2(10)
+mull (%rbx): Hindex2(10)
+mull (%rbx): Hindex2(10)
 Formula:
 
 %rax   : (let ((a!1 ((_ extract 31 0)
@@ -36,7 +36,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_32_0 (4 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

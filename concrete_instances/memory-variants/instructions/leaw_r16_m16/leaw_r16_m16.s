@@ -1,3 +1,3 @@
 .target:
-  leaw (%rax), %bx
+  leaw (%rcx), %bx
   retq

@@ -1,3 +1,3 @@
 .target:
-  leal (%rax), %ebx
+  leal (%rcx), %ebx
   retq

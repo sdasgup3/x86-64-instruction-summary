@@ -1,3 +1,3 @@
 .target:
-  vshufpd $0x0, (%rax), %ymm2, %ymm1
+  vshufpd $0x0, (%rbx), %ymm2, %ymm1
   retq

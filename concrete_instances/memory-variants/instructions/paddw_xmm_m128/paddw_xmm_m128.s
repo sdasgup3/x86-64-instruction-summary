@@ -1,3 +1,3 @@
 .target:
-  paddw (%rax), %xmm1
+  paddw (%rbx), %xmm1
   retq

@@ -1,3 +1,3 @@
 .target:
-  unpcklpd (%rax), %xmm1
+  unpcklpd (%rbx), %xmm1
   retq

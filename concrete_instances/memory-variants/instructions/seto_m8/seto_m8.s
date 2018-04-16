@@ -1,3 +1,3 @@
 .target:
-  seto (%rax)
+  seto (%rbx)
   retq

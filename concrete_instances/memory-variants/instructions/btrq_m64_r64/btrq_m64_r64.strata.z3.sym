@@ -1,19 +1,19 @@
-code: btrq %rbx, (%rax)
+code: btrq %rcx, (%rbx)
 
-  maybe read:      { %rax %rbx }
-  must read:       { %rax %rbx }
+  maybe read:      { %rcx %rbx }
+  must read:       { %rcx %rbx }
   maybe write:     { %cf }
   must write:      { %cf }
   maybe undef:     { %pf %af %sf %of }
   must undef:      { %pf %af %sf %of }
   required flags:  { }
 
-btrq %rbx, (%rax): Hindex2(10)
-btrq %rbx, (%rax): Hindex2(10)
+btrq %rcx, (%rbx): Hindex2(10)
+btrq %rcx, (%rbx): Hindex2(10)
 Formula:
 
 %cf    : (let ((a!1 ((_ extract 0 0)
-             (bvlshr TMP_BV_8_1 (concat #b00000 ((_ extract 2 0) %rbx))))))
+             (bvlshr TMP_BV_8_1 (concat #b00000 ((_ extract 2 0) %rcx))))))
   (= a!1 #b1))
 %pf    : TMP_BOOL_3
 %af    : TMP_BOOL_2
@@ -22,17 +22,17 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_8_1info: Loc Size Mismatch
 
 info: Loc Address Mismatch
 
  (1 bytes)
-    was read at address (bvadd %rax (concat #b000 ((_ extract 63 3) %rbx))).
+    was read at address (bvadd %rbx (concat #b000 ((_ extract 63 3) %rcx))).
 
 Information about memory writes:
-  Address (bvadd %rax (concat #b000 ((_ extract 63 3) %rbx))) was updated to
-    (let ((a!1 (bvnot (bvshl #x01 (concat #b00000 ((_ extract 2 0) %rbx))))))
+  Address (bvadd %rbx (concat #b000 ((_ extract 63 3) %rcx))) was updated to
+    (let ((a!1 (bvnot (bvshl #x01 (concat #b00000 ((_ extract 2 0) %rcx))))))
   (bvand TMP_BV_8_1 a!1)) (1 bytes).
 
 sigfpe  : sigfpe

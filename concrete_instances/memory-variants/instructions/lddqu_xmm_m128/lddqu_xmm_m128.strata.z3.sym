@@ -1,22 +1,22 @@
-code: lddqu (%rax), %xmm1
+code: lddqu (%rbx), %xmm1
 
-  maybe read:      { %rax }
-  must read:       { %rax }
+  maybe read:      { %rbx }
+  must read:       { %rbx }
   maybe write:     { %xmm1 }
   must write:      { %xmm1 }
   maybe undef:     { }
   must undef:      { }
   required flags:  { pni }
 
-lddqu (%rax), %xmm1: Hindex1(10)
-lddqu (%rax), %xmm1: Hindex1(10)
+lddqu (%rbx), %xmm1: Hindex1(10)
+lddqu (%rbx), %xmm1: Hindex1(10)
 Formula:
 
 %ymm1  : (concat ((_ extract 255 128) %ymm1) TMP_BV_128_0)
 
 Information about memory reads:
   Value TMP_BV_128_0 (16 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

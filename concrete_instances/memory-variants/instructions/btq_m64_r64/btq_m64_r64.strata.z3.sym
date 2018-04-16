@@ -1,15 +1,15 @@
-code: btq %rbx, (%rax)
+code: btq %rcx, (%rbx)
 
-  maybe read:      { %rax %rbx }
-  must read:       { %rax %rbx }
+  maybe read:      { %rcx %rbx }
+  must read:       { %rcx %rbx }
   maybe write:     { %cf }
   must write:      { %cf }
   maybe undef:     { %pf %af %sf %of }
   must undef:      { %pf %af %sf %of }
   required flags:  { }
 
-btq %rbx, (%rax): Hindex0(10)
-btq %rbx, (%rax): Hindex0(10)
+btq %rcx, (%rbx): Hindex0(10)
+btq %rcx, (%rbx): Hindex0(10)
 sarq %cl, %rbx: Hindex7(9)
 movslq %edx, %rbx: Hindex5(9)
 movq $0x0, %rbx: Hindex5(9)
@@ -99,7 +99,7 @@ Formula:
 
 %cf    : (let ((a!1 (bvashr (concat TMP_BV_64_0 #b0)
                    (concat #b000000000000000000000000000000000000000000000000000000000
-                           (bvand ((_ extract 7 0) %rbx) #x3f)))))
+                           (bvand ((_ extract 7 0) %rcx) #x3f)))))
 (let ((a!2 ((_ extract 0 0)
              (bvashr (concat ((_ extract 64 1) a!1) #b0)
                      (concat #b000000000000000000000000000000000000000000000000000000000
@@ -112,7 +112,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

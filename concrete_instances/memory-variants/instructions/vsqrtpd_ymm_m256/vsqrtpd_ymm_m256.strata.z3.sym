@@ -1,7 +1,7 @@
-code: vsqrtpd (%rax), %ymm1
+code: vsqrtpd (%rbx), %ymm1
 
-  maybe read:      { %rax }
-  must read:       { %rax }
+  maybe read:      { %rbx }
+  must read:       { %rbx }
   maybe write:     { %ymm1 }
   must write:      { %ymm1 }
   maybe undef:     { }
@@ -9,9 +9,9 @@ code: vsqrtpd (%rax), %ymm1
   required flags:  { avx }
 
 Base Instruction!!
-vsqrtpd (%rax), %ymm1: Hindex0(10)
+vsqrtpd (%rbx), %ymm1: Hindex0(10)
 Base Instruction!!
-vsqrtpd (%rax), %ymm1: Hindex0(10)
+vsqrtpd (%rbx), %ymm1: Hindex0(10)
 vsqrtpd %ymm2, %ymm1: Hindex0(9)
 Formula:
 
@@ -22,13 +22,13 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_256_0 (32 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_256_1 (32 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_256_2 (32 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_256_3 (32 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

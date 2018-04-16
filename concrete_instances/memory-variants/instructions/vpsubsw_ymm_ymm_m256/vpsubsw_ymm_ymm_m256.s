@@ -1,3 +1,3 @@
 .target:
-  vpsubsw (%rax), %ymm2, %ymm1
+  vpsubsw (%rbx), %ymm2, %ymm1
   retq

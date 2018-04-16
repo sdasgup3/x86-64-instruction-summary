@@ -1,3 +1,3 @@
 .target:
-  incb (%rax)
+  incb (%rbx)
   retq

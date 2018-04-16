@@ -1,15 +1,15 @@
-code: vroundss $0x0, (%rax), %xmm2, %xmm1
+code: vroundss $0x0, (%rbx), %xmm2, %xmm1
 
-  maybe read:      { %rax %xmm2 %mxcsr::rc[0] }
-  must read:       { %rax %xmm2 %mxcsr::rc[0] }
+  maybe read:      { %rbx %xmm2 %mxcsr::rc[0] }
+  must read:       { %rbx %xmm2 %mxcsr::rc[0] }
   maybe write:     { %ymm1 }
   must write:      { %ymm1 }
   maybe undef:     { }
   must undef:      { }
   required flags:  { avx }
 
-vroundss $0x0, (%rax), %xmm2, %xmm1: Hindex2(10)
-vroundss $0x0, (%rax), %xmm2, %xmm1: Hindex2(10)
+vroundss $0x0, (%rbx), %xmm2, %xmm1: Hindex2(10)
+vroundss $0x0, (%rbx), %xmm2, %xmm1: Hindex2(10)
 Formula:
 
 %ymm1  : (concat #x00000000000000000000000000000000
@@ -18,7 +18,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_32_0 (4 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

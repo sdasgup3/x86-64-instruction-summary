@@ -1,15 +1,15 @@
-code: addw $0x0, (%rax)
+code: addw $0x0, (%rbx)
 
-  maybe read:      { %rax }
-  must read:       { %rax }
+  maybe read:      { %rbx }
+  must read:       { %rbx }
   maybe write:     { %cf %pf %af %zf %sf %of }
   must write:      { %cf %pf %af %zf %sf %of }
   maybe undef:     { }
   must undef:      { }
   required flags:  { }
 
-addw $0x0, (%rax): Hindex0(10)
-addw $0x0, (%rax): Hindex0(10)
+addw $0x0, (%rbx): Hindex0(10)
+addw $0x0, (%rbx): Hindex0(10)
 xorq %rax, %rax: Hindex1(9)
 adcb %al, %al: Hindex2(9)
 adcw %cx, %bx: Hindex2(9)
@@ -33,16 +33,16 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_16_0 (2 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_16_1 (2 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_16_2 (2 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_16_3 (2 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 Information about memory writes:
-  Address %rax was updated to
+  Address %rbx was updated to
     TMP_BV_16_1 (2 bytes).
 
 sigfpe  : sigfpe

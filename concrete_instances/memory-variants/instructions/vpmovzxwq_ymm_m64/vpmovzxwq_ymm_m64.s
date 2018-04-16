@@ -1,3 +1,3 @@
 .target:
-  vpmovzxwq (%rax), %ymm1
+  vpmovzxwq (%rbx), %ymm1
   retq

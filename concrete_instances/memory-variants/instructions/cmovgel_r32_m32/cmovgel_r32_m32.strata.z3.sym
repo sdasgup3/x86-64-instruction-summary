@@ -1,15 +1,15 @@
-code: cmovgel (%rax), %ebx
+code: cmovgel (%rcx), %ebx
 
-  maybe read:      { %rax %sf %of }
-  must read:       { %rax %sf %of }
+  maybe read:      { %rcx %sf %of }
+  must read:       { %rcx %sf %of }
   maybe write:     { %rbx }
   must write:      { }
   maybe undef:     { }
   must undef:      { }
   required flags:  { cmov }
 
-cmovgel (%rax), %ebx: Hindex0(10)
-cmovgel (%rax), %ebx: Hindex0(10)
+cmovgel (%rcx), %ebx: Hindex0(10)
+cmovgel (%rcx), %ebx: Hindex0(10)
 movslq %ecx, %r8: Hindex5(9)
 callq .read_of_into_rcx: Hindex8(9)
 callq .read_sf_into_rbx: Hindex8(9)
@@ -67,7 +67,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_32_0 (4 bytes)
-    was read at address %rax.
+    was read at address %rcx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

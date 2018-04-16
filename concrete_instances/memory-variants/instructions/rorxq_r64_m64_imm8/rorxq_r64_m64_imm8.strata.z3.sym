@@ -1,15 +1,15 @@
-code: rorxq $0x0, (%rax), %rbx
+code: rorxq $0x0, (%rcx), %rbx
 
-  maybe read:      { %rax }
-  must read:       { %rax }
+  maybe read:      { %rcx }
+  must read:       { %rcx }
   maybe write:     { %rbx }
   must write:      { %rbx }
   maybe undef:     { }
   must undef:      { }
   required flags:  { bmi2 }
 
-rorxq $0x0, (%rax), %rbx: Hindex2(10)
-rorxq $0x0, (%rax), %rbx: Hindex2(10)
+rorxq $0x0, (%rcx), %rbx: Hindex2(10)
+rorxq $0x0, (%rcx), %rbx: Hindex2(10)
 Formula:
 
 %rbx   : (bvor (bvlshr TMP_BV_64_0 #x0000000000000000)
@@ -17,7 +17,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+    was read at address %rcx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

@@ -1,15 +1,15 @@
-code: negl (%rax)
+code: negl (%rbx)
 
-  maybe read:      { %rax }
-  must read:       { %rax }
+  maybe read:      { %rbx }
+  must read:       { %rbx }
   maybe write:     { %cf %pf %af %zf %sf %of }
   must write:      { %cf %pf %af %zf %sf %of }
   maybe undef:     { }
   must undef:      { }
   required flags:  { }
 
-negl (%rax): Hindex0(10)
-negl (%rax): Hindex0(10)
+negl (%rbx): Hindex0(10)
+negl (%rbx): Hindex0(10)
 movslq %ebx, %rax: Hindex5(9)
 movq $0xffffffffffffffff, %rbx: Hindex5(9)
 movswq %bx, %r10: Hindex5(9)
@@ -272,14 +272,14 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_32_0 (4 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_32_1 (4 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_32_2 (4 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 Information about memory writes:
-  Address %rax was updated to
+  Address %rbx was updated to
     ((_ extract 31 0)
   (bvadd (concat #b0 (bvxor TMP_BV_32_0 #xffffffff))
          #b000000000000000000000000000000001)) (4 bytes).

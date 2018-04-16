@@ -1,3 +1,3 @@
 .target:
-  cvtsi2ssl (%rax), %xmm1
+  cvtsi2ssl (%rbx), %xmm1
   retq

@@ -1,3 +1,3 @@
 .target:
-  cmovpeq (%rax), %rbx
+  cmovpeq (%rcx), %rbx
   retq

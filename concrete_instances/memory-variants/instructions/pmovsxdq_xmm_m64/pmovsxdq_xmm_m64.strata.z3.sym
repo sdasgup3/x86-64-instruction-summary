@@ -1,15 +1,15 @@
-code: pmovsxdq (%rax), %xmm1
+code: pmovsxdq (%rbx), %xmm1
 
-  maybe read:      { %rax }
-  must read:       { %rax }
+  maybe read:      { %rbx }
+  must read:       { %rbx }
   maybe write:     { %xmm1 }
   must write:      { %xmm1 }
   maybe undef:     { }
   must undef:      { }
   required flags:  { sse4_1 }
 
-pmovsxdq (%rax), %xmm1: Hindex0(10)
-pmovsxdq (%rax), %xmm1: Hindex0(10)
+pmovsxdq (%rbx), %xmm1: Hindex0(10)
+pmovsxdq (%rbx), %xmm1: Hindex0(10)
 callq .move_128_032_xmm2_eax_edx_r8d_r9d: Hindex8(9)
 movslq %edx, %r11: Hindex5(9)
 vzeroall : Hindex1(9)
@@ -25,9 +25,9 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_64_1 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

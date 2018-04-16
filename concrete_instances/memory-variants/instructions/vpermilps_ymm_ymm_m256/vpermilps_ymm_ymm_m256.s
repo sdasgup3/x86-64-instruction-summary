@@ -1,3 +1,3 @@
 .target:
-  vpermilps (%rax), %ymm2, %ymm1
+  vpermilps (%rbx), %ymm2, %ymm1
   retq

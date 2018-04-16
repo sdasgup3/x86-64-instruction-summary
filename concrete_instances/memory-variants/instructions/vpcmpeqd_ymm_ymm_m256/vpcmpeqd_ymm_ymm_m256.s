@@ -1,3 +1,3 @@
 .target:
-  vpcmpeqd (%rax), %ymm2, %ymm1
+  vpcmpeqd (%rbx), %ymm2, %ymm1
   retq

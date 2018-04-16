@@ -1,3 +1,3 @@
 .target:
-  cmovaw (%rax), %bx
+  cmovaw (%rcx), %bx
   retq

@@ -1,15 +1,15 @@
-code: rclw %cl, (%rax)
+code: rclw %cl, (%rbx)
 
-  maybe read:      { %rax %cl %cf }
-  must read:       { %rax %cl %cf }
+  maybe read:      { %cl %rbx %cf }
+  must read:       { %cl %rbx %cf }
   maybe write:     { %cf %of }
   must write:      { }
   maybe undef:     { %of }
   must undef:      { }
   required flags:  { }
 
-rclw %cl, (%rax): Hindex8(10)
-rclw %cl, (%rax): Hindex8(10)
+rclw %cl, (%rbx): Hindex8(10)
+rclw %cl, (%rbx): Hindex8(10)
 Formula:
 
 %cf    : (let ((a!1 (bvurem (concat #b000000000 (bvand ((_ extract 7 0) %rcx) #x1f))
@@ -31,10 +31,10 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_16_0 (2 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 Information about memory writes:
-  Address %rax was updated to
+  Address %rbx was updated to
     (let ((a!1 (bvurem (concat #b000000000 (bvand ((_ extract 7 0) %rcx) #x1f))
                    #b00000000000010001)))
   ((_ extract 15 0)

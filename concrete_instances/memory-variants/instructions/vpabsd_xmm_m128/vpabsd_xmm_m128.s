@@ -1,3 +1,3 @@
 .target:
-  vpabsd (%rax), %xmm1
+  vpabsd (%rbx), %xmm1
   retq

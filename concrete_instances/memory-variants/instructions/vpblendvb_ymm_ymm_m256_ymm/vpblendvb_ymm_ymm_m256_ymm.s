@@ -1,3 +1,3 @@
 .target:
-  vpblendvb %ymm3, (%rax), %ymm2, %ymm1
+  vpblendvb %ymm3, (%rbx), %ymm2, %ymm1
   retq

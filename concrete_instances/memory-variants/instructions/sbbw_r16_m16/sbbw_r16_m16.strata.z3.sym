@@ -1,15 +1,15 @@
-code: sbbw (%rax), %bx
+code: sbbw (%rcx), %bx
 
-  maybe read:      { %rax %bx %cf }
-  must read:       { %rax %bx %cf }
+  maybe read:      { %rcx %bx %cf }
+  must read:       { %rcx %bx %cf }
   maybe write:     { %bx %cf %pf %af %zf %sf %of }
   must write:      { %bx %cf %pf %af %zf %sf %of }
   maybe undef:     { }
   must undef:      { }
   required flags:  { }
 
-sbbw (%rax), %bx: Hindex0(10)
-sbbw (%rax), %bx: Hindex0(10)
+sbbw (%rcx), %bx: Hindex0(10)
+sbbw (%rcx), %bx: Hindex0(10)
 callq .read_cf_into_rbx: Hindex8(9)
 callq .move_064_032_rbx_r8d_r9d: Hindex8(9)
 callq .move_r8b_to_byte_5_of_rbx: Hindex8(9)
@@ -293,11 +293,11 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_16_0 (2 bytes)
-    was read at address %rax.
+    was read at address %rcx.
   Value TMP_BV_16_1 (2 bytes)
-    was read at address %rax.
+    was read at address %rcx.
   Value TMP_BV_16_2 (2 bytes)
-    was read at address %rax.
+    was read at address %rcx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

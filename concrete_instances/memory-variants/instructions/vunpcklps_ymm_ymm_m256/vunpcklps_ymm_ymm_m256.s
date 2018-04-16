@@ -1,3 +1,3 @@
 .target:
-  vunpcklps (%rax), %ymm2, %ymm1
+  vunpcklps (%rbx), %ymm2, %ymm1
   retq

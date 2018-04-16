@@ -1,15 +1,15 @@
-code: vunpcklpd (%rax), %xmm2, %xmm1
+code: vunpcklpd (%rbx), %xmm2, %xmm1
 
-  maybe read:      { %rax %xmm2 }
-  must read:       { %rax %xmm2 }
+  maybe read:      { %rbx %xmm2 }
+  must read:       { %rbx %xmm2 }
   maybe write:     { %ymm1 }
   must write:      { %ymm1 }
   maybe undef:     { }
   must undef:      { }
   required flags:  { avx }
 
-vunpcklpd (%rax), %xmm2, %xmm1: Hindex0(10)
-vunpcklpd (%rax), %xmm2, %xmm1: Hindex0(10)
+vunpcklpd (%rbx), %xmm2, %xmm1: Hindex0(10)
+vunpcklpd (%rbx), %xmm2, %xmm1: Hindex0(10)
 callq .move_128_032_xmm1_r10d_r11d_r12d_r13d: Hindex8(9)
 callq .move_032_064_r10d_r11d_rbx: Hindex8(9)
 movq %r10, %rbx: Hindex5(9)
@@ -24,7 +24,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_128_0 (16 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

@@ -1,3 +1,3 @@
 .target:
-  bextrl %ecx, (%rax), %ebx
+  bextrl %edx, (%rcx), %ebx
   retq

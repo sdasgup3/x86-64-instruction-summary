@@ -1,3 +1,3 @@
 .target:
-  vcomisd (%rax), %xmm1
+  vcomisd (%rbx), %xmm1
   retq

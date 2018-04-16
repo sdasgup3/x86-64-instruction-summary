@@ -1,3 +1,3 @@
 .target:
-  btcq %rbx, (%rax)
+  btcq %rcx, (%rbx)
   retq

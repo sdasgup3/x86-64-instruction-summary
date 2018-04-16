@@ -1,15 +1,15 @@
-code: andq %rbx, (%rax)
+code: andq %rcx, (%rbx)
 
-  maybe read:      { %rax %rbx }
-  must read:       { %rax %rbx }
+  maybe read:      { %rcx %rbx }
+  must read:       { %rcx %rbx }
   maybe write:     { %cf %pf %zf %sf %of }
   must write:      { %cf %pf %zf %sf %of }
   maybe undef:     { %af }
   must undef:      { %af }
   required flags:  { }
 
-andq %rbx, (%rax): Hindex0(10)
-andq %rbx, (%rax): Hindex0(10)
+andq %rcx, (%rbx): Hindex0(10)
+andq %rcx, (%rbx): Hindex0(10)
 vzeroall : Hindex1(9)
 callq .move_128_064_xmm1_r8_r9: Hindex8(9)
 xorq %rbx, %r8: Hindex1(9)
@@ -122,93 +122,93 @@ callq .set_szp_for_rbx: Hindex8(9)
 Formula:
 
 %cf    : false
-%pf    : (let ((a!1 (bvor (bvxor #b0 ((_ extract 0 0) %rbx))
-                 (bvxor (bvxor #b0 ((_ extract 0 0) %rbx))
+%pf    : (let ((a!1 (bvor (bvxor #b0 ((_ extract 0 0) %rcx))
+                 (bvxor (bvxor #b0 ((_ extract 0 0) %rcx))
                         #b0
                         ((_ extract 0 0) TMP_BV_64_2))))
-      (a!3 (bvor (bvxor #b0 ((_ extract 1 1) %rbx))
-                 (bvxor (bvxor #b0 ((_ extract 1 1) %rbx))
+      (a!3 (bvor (bvxor #b0 ((_ extract 1 1) %rcx))
+                 (bvxor (bvxor #b0 ((_ extract 1 1) %rcx))
                         #b0
                         ((_ extract 1 1) TMP_BV_64_4))))
-      (a!5 (bvor (bvxor #b0 ((_ extract 2 2) %rbx))
-                 (bvxor (bvxor #b0 ((_ extract 2 2) %rbx))
+      (a!5 (bvor (bvxor #b0 ((_ extract 2 2) %rcx))
+                 (bvxor (bvxor #b0 ((_ extract 2 2) %rcx))
                         #b0
                         ((_ extract 2 2) TMP_BV_64_6))))
-      (a!7 (bvor (bvxor #b0 ((_ extract 3 3) %rbx))
-                 (bvxor (bvxor #b0 ((_ extract 3 3) %rbx))
+      (a!7 (bvor (bvxor #b0 ((_ extract 3 3) %rcx))
+                 (bvxor (bvxor #b0 ((_ extract 3 3) %rcx))
                         #b0
                         ((_ extract 3 3) TMP_BV_64_8))))
-      (a!9 (bvor (bvxor #b0 ((_ extract 4 4) %rbx))
-                 (bvxor (bvxor #b0 ((_ extract 4 4) %rbx))
+      (a!9 (bvor (bvxor #b0 ((_ extract 4 4) %rcx))
+                 (bvxor (bvxor #b0 ((_ extract 4 4) %rcx))
                         #b0
                         ((_ extract 4 4) TMP_BV_64_10))))
-      (a!11 (bvor (bvxor #b0 ((_ extract 5 5) %rbx))
-                  (bvxor (bvxor #b0 ((_ extract 5 5) %rbx))
+      (a!11 (bvor (bvxor #b0 ((_ extract 5 5) %rcx))
+                  (bvxor (bvxor #b0 ((_ extract 5 5) %rcx))
                          #b0
                          ((_ extract 5 5) TMP_BV_64_12))))
-      (a!13 (bvor (bvxor #b0 ((_ extract 6 6) %rbx))
-                  (bvxor (bvxor #b0 ((_ extract 6 6) %rbx))
+      (a!13 (bvor (bvxor #b0 ((_ extract 6 6) %rcx))
+                  (bvxor (bvxor #b0 ((_ extract 6 6) %rcx))
                          #b0
                          ((_ extract 6 6) TMP_BV_64_14))))
-      (a!15 (bvor (bvxor #b0 ((_ extract 7 7) %rbx))
-                  (bvxor (bvxor #b0 ((_ extract 7 7) %rbx))
+      (a!15 (bvor (bvxor #b0 ((_ extract 7 7) %rcx))
+                  (bvxor (bvxor #b0 ((_ extract 7 7) %rcx))
                          #b0
                          ((_ extract 7 7) TMP_BV_64_16)))))
-(let ((a!2 (= (bvxor (bvxor #b0 ((_ extract 0 0) %rbx))
+(let ((a!2 (= (bvxor (bvxor #b0 ((_ extract 0 0) %rcx))
                      #b0
                      ((_ extract 0 0) TMP_BV_64_1)
                      a!1)
               #b1))
-      (a!4 (= (bvxor (bvxor #b0 ((_ extract 1 1) %rbx))
+      (a!4 (= (bvxor (bvxor #b0 ((_ extract 1 1) %rcx))
                      #b0
                      ((_ extract 1 1) TMP_BV_64_3)
                      a!3)
               #b1))
-      (a!6 (= (bvxor (bvxor #b0 ((_ extract 2 2) %rbx))
+      (a!6 (= (bvxor (bvxor #b0 ((_ extract 2 2) %rcx))
                      #b0
                      ((_ extract 2 2) TMP_BV_64_5)
                      a!5)
               #b1))
-      (a!8 (= (bvxor (bvxor #b0 ((_ extract 3 3) %rbx))
+      (a!8 (= (bvxor (bvxor #b0 ((_ extract 3 3) %rcx))
                      #b0
                      ((_ extract 3 3) TMP_BV_64_7)
                      a!7)
               #b1))
-      (a!10 (= (bvxor (bvxor #b0 ((_ extract 4 4) %rbx))
+      (a!10 (= (bvxor (bvxor #b0 ((_ extract 4 4) %rcx))
                       #b0
                       ((_ extract 4 4) TMP_BV_64_9)
                       a!9)
                #b1))
-      (a!12 (= (bvxor (bvxor #b0 ((_ extract 5 5) %rbx))
+      (a!12 (= (bvxor (bvxor #b0 ((_ extract 5 5) %rcx))
                       #b0
                       ((_ extract 5 5) TMP_BV_64_11)
                       a!11)
                #b1))
-      (a!14 (= (bvxor (bvxor #b0 ((_ extract 6 6) %rbx))
+      (a!14 (= (bvxor (bvxor #b0 ((_ extract 6 6) %rcx))
                       #b0
                       ((_ extract 6 6) TMP_BV_64_13)
                       a!13)
                #b1))
-      (a!16 (= (bvxor (bvxor #b0 ((_ extract 7 7) %rbx))
+      (a!16 (= (bvxor (bvxor #b0 ((_ extract 7 7) %rcx))
                       #b0
                       ((_ extract 7 7) TMP_BV_64_15)
                       a!15)
                #b1)))
   (not (xor a!2 a!4 a!6 a!8 a!10 a!12 a!14 a!16))))
 %af    : TMP_BOOL_21
-%zf    : (let ((a!1 (bvxor (bvxor (bvxor #x0000000000000000 %rbx)
+%zf    : (let ((a!1 (bvxor (bvxor (bvxor #x0000000000000000 %rcx)
                          #x0000000000000000
                          TMP_BV_64_0)
-                  (bvor (bvxor #x0000000000000000 %rbx)
-                        (bvxor (bvxor #x0000000000000000 %rbx)
+                  (bvor (bvxor #x0000000000000000 %rcx)
+                        (bvxor (bvxor #x0000000000000000 %rcx)
                                #x0000000000000000
                                TMP_BV_64_0)))))
   (= a!1 #x0000000000000000))
-%sf    : (let ((a!1 (bvor (bvxor #b0 ((_ extract 63 63) %rbx))
-                 (bvxor (bvxor #b0 ((_ extract 63 63) %rbx))
+%sf    : (let ((a!1 (bvor (bvxor #b0 ((_ extract 63 63) %rcx))
+                 (bvxor (bvxor #b0 ((_ extract 63 63) %rcx))
                         #b0
                         ((_ extract 63 63) TMP_BV_64_18)))))
-  (= (bvxor (bvxor #b0 ((_ extract 63 63) %rbx))
+  (= (bvxor (bvxor #b0 ((_ extract 63 63) %rcx))
             #b0
             ((_ extract 63 63) TMP_BV_64_17)
             a!1)
@@ -217,49 +217,49 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_64_1 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_64_2 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_64_3 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_64_4 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_64_5 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_64_6 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_64_7 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_64_8 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_64_9 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_64_10 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_64_11 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_64_12 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_64_13 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_64_14 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_64_15 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_64_16 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_64_17 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_64_18 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 Information about memory writes:
-  Address %rax was updated to
-    (bvxor (bvxor (bvxor #x0000000000000000 %rbx) #x0000000000000000 TMP_BV_64_0)
-       (bvor (bvxor #x0000000000000000 %rbx)
-             (bvxor (bvxor #x0000000000000000 %rbx)
+  Address %rbx was updated to
+    (bvxor (bvxor (bvxor #x0000000000000000 %rcx) #x0000000000000000 TMP_BV_64_0)
+       (bvor (bvxor #x0000000000000000 %rcx)
+             (bvxor (bvxor #x0000000000000000 %rcx)
                     #x0000000000000000
                     TMP_BV_64_0))) (8 bytes).
 

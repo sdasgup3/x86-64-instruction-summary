@@ -1,7 +1,7 @@
 {
-  "def_in": "{ %rax %pf }",
+  "def_in": "{ %rbx %pf }",
   "live_out": "{ }",
-  "def_in_formal": "{ %rax %pf }",
+  "def_in_formal": "{ %rbx %pf }",
   "live_out_formal": "{ }",
   "search_without_uif": false,
   "delim": 0

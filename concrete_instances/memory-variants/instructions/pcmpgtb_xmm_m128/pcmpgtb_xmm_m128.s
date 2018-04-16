@@ -1,3 +1,3 @@
 .target:
-  pcmpgtb (%rax), %xmm1
+  pcmpgtb (%rbx), %xmm1
   retq
