@@ -1,15 +1,15 @@
-code: movl %ebx, (%rax)
+code: movl %ecx, (%rbx)
 
-  maybe read:      { %rax %ebx }
-  must read:       { %rax %ebx }
+  maybe read:      { %ecx %rbx }
+  must read:       { %ecx %rbx }
   maybe write:     { }
   must write:      { }
   maybe undef:     { }
   must undef:      { }
   required flags:  { }
 
-movl %ebx, (%rax): Hindex0(10)
-movl %ebx, (%rax): Hindex0(10)
+movl %ecx, (%rbx): Hindex0(10)
+movl %ecx, (%rbx): Hindex0(10)
 movq $0x0, %rbx: Hindex5(9)
 movswq %bx, %r10: Hindex5(9)
 movslq %ebx, %rbx: Hindex5(9)
@@ -22,8 +22,8 @@ adcl %ecx, %ebx: Hindex2(9)
 Formula:
 
 Information about memory writes:
-  Address %rax was updated to
-    ((_ extract 31 0) %rbx) (4 bytes).
+  Address %rbx was updated to
+    ((_ extract 31 0) %rcx) (4 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

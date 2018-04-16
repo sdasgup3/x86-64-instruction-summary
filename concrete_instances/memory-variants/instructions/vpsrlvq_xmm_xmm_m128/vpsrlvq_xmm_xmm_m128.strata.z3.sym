@@ -1,15 +1,15 @@
-code: vpsrlvq (%rax), %xmm2, %xmm1
+code: vpsrlvq (%rbx), %xmm2, %xmm1
 
-  maybe read:      { %rax %xmm2 }
-  must read:       { %rax %xmm2 }
+  maybe read:      { %rbx %xmm2 }
+  must read:       { %rbx %xmm2 }
   maybe write:     { %ymm1 }
   must write:      { %ymm1 }
   maybe undef:     { }
   must undef:      { }
   required flags:  { avx2 }
 
-vpsrlvq (%rax), %xmm2, %xmm1: Hindex2(10)
-vpsrlvq (%rax), %xmm2, %xmm1: Hindex2(10)
+vpsrlvq (%rbx), %xmm2, %xmm1: Hindex2(10)
+vpsrlvq (%rbx), %xmm2, %xmm1: Hindex2(10)
 Formula:
 
 %ymm1  : (concat #x00000000000000000000000000000000
@@ -20,7 +20,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_128_0 (16 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

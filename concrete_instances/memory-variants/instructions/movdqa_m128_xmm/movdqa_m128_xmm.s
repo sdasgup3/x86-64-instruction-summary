@@ -1,3 +1,3 @@
 .target:
-  movdqa %xmm1, (%rax)
+  movdqa %xmm1, (%rbx)
   retq

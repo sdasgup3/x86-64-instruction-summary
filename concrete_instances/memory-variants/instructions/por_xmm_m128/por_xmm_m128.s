@@ -1,3 +1,3 @@
 .target:
-  por (%rax), %xmm1
+  por (%rbx), %xmm1
   retq

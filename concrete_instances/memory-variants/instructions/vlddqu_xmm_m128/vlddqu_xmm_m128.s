@@ -1,3 +1,3 @@
 .target:
-  vlddqu (%rax), %xmm1
+  vlddqu (%rbx), %xmm1
   retq

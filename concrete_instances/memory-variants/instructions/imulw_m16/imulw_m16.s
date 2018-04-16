@@ -1,3 +1,3 @@
 .target:
-  imulw (%rax)
+  imulw (%rbx)
   retq

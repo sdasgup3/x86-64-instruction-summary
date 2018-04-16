@@ -1,3 +1,3 @@
 .target:
-  vpbroadcasti128 (%rax), %ymm1
+  vpbroadcasti128 (%rbx), %ymm1
   retq

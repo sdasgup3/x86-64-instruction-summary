@@ -1,15 +1,15 @@
-code: comisd (%rax), %xmm1
+code: comisd (%rbx), %xmm1
 
-  maybe read:      { %rax %xmm1 }
-  must read:       { %rax %xmm1 }
+  maybe read:      { %rbx %xmm1 }
+  must read:       { %rbx %xmm1 }
   maybe write:     { %cf %pf %af %zf %sf %of }
   must write:      { %cf %pf %af %zf %sf %of }
   maybe undef:     { }
   must undef:      { }
   required flags:  { sse2 }
 
-comisd (%rax), %xmm1: Hindex2(10)
-comisd (%rax), %xmm1: Hindex2(10)
+comisd (%rbx), %xmm1: Hindex2(10)
+comisd (%rbx), %xmm1: Hindex2(10)
 Formula:
 
 %cf    : (or (= (comisd ((_ extract 63 0) %ymm1) TMP_BV_64_0) #b00)
@@ -23,7 +23,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

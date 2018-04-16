@@ -1,3 +1,3 @@
 .target:
-  blsil (%rax), %ebx
+  blsil (%rcx), %ebx
   retq

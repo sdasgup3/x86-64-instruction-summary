@@ -1,15 +1,15 @@
-code: btcl $0x0, (%rax)
+code: btcl $0x0, (%rbx)
 
-  maybe read:      { %rax }
-  must read:       { %rax }
+  maybe read:      { %rbx }
+  must read:       { %rbx }
   maybe write:     { %cf }
   must write:      { %cf }
   maybe undef:     { %pf %af %sf %of }
   must undef:      { %pf %af %sf %of }
   required flags:  { }
 
-btcl $0x0, (%rax): Hindex2(10)
-btcl $0x0, (%rax): Hindex2(10)
+btcl $0x0, (%rbx): Hindex2(10)
+btcl $0x0, (%rbx): Hindex2(10)
 Formula:
 
 %cf    : (= ((_ extract 0 0) (bvlshr TMP_BV_8_1 #x00)) #b1)
@@ -20,14 +20,14 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_32_0 (4 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_8_1info: Loc Size Mismatch
 
  (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 Information about memory writes:
-  Address %rax was updated to
+  Address %rbx was updated to
     (bvxor TMP_BV_8_1 (bvshl #x01 #x00)) (1 bytes).
 
 sigfpe  : sigfpe

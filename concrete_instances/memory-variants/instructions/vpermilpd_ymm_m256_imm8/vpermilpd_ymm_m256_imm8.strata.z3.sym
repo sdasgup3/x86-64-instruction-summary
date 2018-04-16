@@ -1,15 +1,15 @@
-code: vpermilpd $0x0, (%rax), %ymm1
+code: vpermilpd $0x0, (%rbx), %ymm1
 
-  maybe read:      { %rax }
-  must read:       { %rax }
+  maybe read:      { %rbx }
+  must read:       { %rbx }
   maybe write:     { %ymm1 }
   must write:      { %ymm1 }
   maybe undef:     { }
   must undef:      { }
   required flags:  { avx }
 
-vpermilpd $0x0, (%rax), %ymm1: Hindex2(10)
-vpermilpd $0x0, (%rax), %ymm1: Hindex2(10)
+vpermilpd $0x0, (%rbx), %ymm1: Hindex2(10)
+vpermilpd $0x0, (%rbx), %ymm1: Hindex2(10)
 Formula:
 
 %ymm1  : (concat ((_ extract 191 128) TMP_BV_256_0)
@@ -19,7 +19,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_256_0 (32 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

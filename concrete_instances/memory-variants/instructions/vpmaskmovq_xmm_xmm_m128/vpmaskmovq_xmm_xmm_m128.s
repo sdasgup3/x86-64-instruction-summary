@@ -1,3 +1,3 @@
 .target:
-  vpmaskmovq (%rax), %xmm2, %xmm1
+  vpmaskmovq (%rbx), %xmm2, %xmm1
   retq

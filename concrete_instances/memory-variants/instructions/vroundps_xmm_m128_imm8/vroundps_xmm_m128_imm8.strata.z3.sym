@@ -1,15 +1,15 @@
-code: vroundps $0x0, (%rax), %xmm1
+code: vroundps $0x0, (%rbx), %xmm1
 
-  maybe read:      { %rax %mxcsr::rc[0] }
-  must read:       { %rax %mxcsr::rc[0] }
+  maybe read:      { %rbx %mxcsr::rc[0] }
+  must read:       { %rbx %mxcsr::rc[0] }
   maybe write:     { %ymm1 }
   must write:      { %ymm1 }
   maybe undef:     { }
   must undef:      { }
   required flags:  { avx }
 
-vroundps $0x0, (%rax), %xmm1: Hindex1(10)
-vroundps $0x0, (%rax), %xmm1: Hindex1(10)
+vroundps $0x0, (%rbx), %xmm1: Hindex1(10)
+vroundps $0x0, (%rbx), %xmm1: Hindex1(10)
 Formula:
 
 %ymm1  : (let ((a!1 (concat (cvt_single_to_int32_rm
@@ -29,7 +29,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_128_0 (16 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

@@ -1,15 +1,15 @@
-code: setno (%rax)
+code: setno (%rbx)
 
-  maybe read:      { %rax %of }
-  must read:       { %rax %of }
+  maybe read:      { %rbx %of }
+  must read:       { %rbx %of }
   maybe write:     { }
   must write:      { }
   maybe undef:     { }
   must undef:      { }
   required flags:  { }
 
-setno (%rax): Hindex0(10)
-setno (%rax): Hindex0(10)
+setno (%rbx): Hindex0(10)
+setno (%rbx): Hindex0(10)
 callq .read_of_into_rcx: Hindex8(9)
 callq .set_cf: Hindex8(9)
 callq .read_cf_into_rbx: Hindex8(9)
@@ -27,10 +27,10 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_8_0 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 Information about memory writes:
-  Address %rax was updated to
+  Address %rbx was updated to
     (ite %of #x00 #x01) (1 bytes).
 
 sigfpe  : sigfpe

@@ -1,15 +1,15 @@
-code: vfmaddsub132pd (%rax), %ymm2, %ymm1
+code: vfmaddsub132pd (%rbx), %ymm2, %ymm1
 
-  maybe read:      { %rax %ymm1 %ymm2 }
-  must read:       { %rax %ymm1 %ymm2 }
+  maybe read:      { %rbx %ymm1 %ymm2 }
+  must read:       { %rbx %ymm1 %ymm2 }
   maybe write:     { %ymm1 }
   must write:      { %ymm1 }
   maybe undef:     { }
   must undef:      { }
   required flags:  { fma }
 
-vfmaddsub132pd (%rax), %ymm2, %ymm1: Hindex2(10)
-vfmaddsub132pd (%rax), %ymm2, %ymm1: Hindex2(10)
+vfmaddsub132pd (%rbx), %ymm2, %ymm1: Hindex2(10)
+vfmaddsub132pd (%rbx), %ymm2, %ymm1: Hindex2(10)
 Formula:
 
 %ymm1  : (concat (concat (vfmadd132_double ((_ extract 255 192) %ymm1)
@@ -27,7 +27,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_256_0 (32 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

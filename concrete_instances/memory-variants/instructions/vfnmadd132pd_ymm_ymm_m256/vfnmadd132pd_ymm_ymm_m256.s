@@ -1,3 +1,3 @@
 .target:
-  vfnmadd132pd (%rax), %ymm2, %ymm1
+  vfnmadd132pd (%rbx), %ymm2, %ymm1
   retq

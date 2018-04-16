@@ -1,15 +1,15 @@
-code: xaddb %bl, (%rax)
+code: xaddb %cl, (%rbx)
 
-  maybe read:      { %rax %bl }
-  must read:       { %rax %bl }
-  maybe write:     { %bl %cf %pf %af %zf %sf %of }
-  must write:      { %bl %cf %pf %af %zf %sf %of }
+  maybe read:      { %cl %rbx }
+  must read:       { %cl %rbx }
+  maybe write:     { %cl %cf %pf %af %zf %sf %of }
+  must write:      { %cl %cf %pf %af %zf %sf %of }
   maybe undef:     { }
   must undef:      { }
   required flags:  { }
 
-xaddb %bl, (%rax): Hindex0(10)
-xaddb %bl, (%rax): Hindex0(10)
+xaddb %cl, (%rbx): Hindex0(10)
+xaddb %cl, (%rbx): Hindex0(10)
 callq .clear_cf: Hindex8(9)
 callq .set_of: Hindex8(9)
 callq .read_of_into_rbx: Hindex8(9)
@@ -26,27 +26,27 @@ adcb %cl, %r13b: Hindex2(9)
 movslq %r13d, %rbx: Hindex5(9)
 Formula:
 
-%rbx   : (concat ((_ extract 63 8) %rbx) TMP_BV_8_0)
+%rcx   : (concat ((_ extract 63 8) %rcx) TMP_BV_8_0)
 
 %cf    : (let ((a!1 ((_ extract 8 8)
-             (bvadd (concat #b0 TMP_BV_8_0) (concat #b0 ((_ extract 7 0) %rbx))))))
+             (bvadd (concat #b0 TMP_BV_8_0) (concat #b0 ((_ extract 7 0) %rcx))))))
   (= a!1 #b1))
 %pf    : (let ((a!1 ((_ extract 0 0)
-             (bvadd (concat #b0 TMP_BV_8_0) (concat #b0 ((_ extract 7 0) %rbx)))))
+             (bvadd (concat #b0 TMP_BV_8_0) (concat #b0 ((_ extract 7 0) %rcx)))))
       (a!2 ((_ extract 1 1)
-             (bvadd (concat #b0 TMP_BV_8_0) (concat #b0 ((_ extract 7 0) %rbx)))))
+             (bvadd (concat #b0 TMP_BV_8_0) (concat #b0 ((_ extract 7 0) %rcx)))))
       (a!3 ((_ extract 2 2)
-             (bvadd (concat #b0 TMP_BV_8_0) (concat #b0 ((_ extract 7 0) %rbx)))))
+             (bvadd (concat #b0 TMP_BV_8_0) (concat #b0 ((_ extract 7 0) %rcx)))))
       (a!4 ((_ extract 3 3)
-             (bvadd (concat #b0 TMP_BV_8_0) (concat #b0 ((_ extract 7 0) %rbx)))))
+             (bvadd (concat #b0 TMP_BV_8_0) (concat #b0 ((_ extract 7 0) %rcx)))))
       (a!5 ((_ extract 4 4)
-             (bvadd (concat #b0 TMP_BV_8_0) (concat #b0 ((_ extract 7 0) %rbx)))))
+             (bvadd (concat #b0 TMP_BV_8_0) (concat #b0 ((_ extract 7 0) %rcx)))))
       (a!6 ((_ extract 5 5)
-             (bvadd (concat #b0 TMP_BV_8_0) (concat #b0 ((_ extract 7 0) %rbx)))))
+             (bvadd (concat #b0 TMP_BV_8_0) (concat #b0 ((_ extract 7 0) %rcx)))))
       (a!7 ((_ extract 6 6)
-             (bvadd (concat #b0 TMP_BV_8_0) (concat #b0 ((_ extract 7 0) %rbx)))))
+             (bvadd (concat #b0 TMP_BV_8_0) (concat #b0 ((_ extract 7 0) %rcx)))))
       (a!8 ((_ extract 7 7)
-             (bvadd (concat #b0 TMP_BV_8_0) (concat #b0 ((_ extract 7 0) %rbx))))))
+             (bvadd (concat #b0 TMP_BV_8_0) (concat #b0 ((_ extract 7 0) %rcx))))))
   (not (xor (= a!1 #b1)
             (= a!2 #b1)
             (= a!3 #b1)
@@ -57,34 +57,34 @@ Formula:
             (= a!8 #b1))))
 %af    : (let ((a!1 ((_ extract 4 4)
              (bvadd (concat #b0 ((_ extract 3 0) TMP_BV_8_2))
-                    (concat #b0 ((_ extract 3 0) %rbx))))))
+                    (concat #b0 ((_ extract 3 0) %rcx))))))
   (= a!1 #b1))
 %zf    : (let ((a!1 ((_ extract 7 0)
-             (bvadd (concat #b0 TMP_BV_8_0) (concat #b0 ((_ extract 7 0) %rbx))))))
+             (bvadd (concat #b0 TMP_BV_8_0) (concat #b0 ((_ extract 7 0) %rcx))))))
   (= a!1 #x00))
 %sf    : (let ((a!1 ((_ extract 7 7)
-             (bvadd (concat #b0 TMP_BV_8_0) (concat #b0 ((_ extract 7 0) %rbx))))))
+             (bvadd (concat #b0 TMP_BV_8_0) (concat #b0 ((_ extract 7 0) %rcx))))))
   (= a!1 #b1))
 %of    : (let ((a!1 ((_ extract 7 7)
-             (bvadd (concat #b0 TMP_BV_8_0) (concat #b0 ((_ extract 7 0) %rbx))))))
+             (bvadd (concat #b0 TMP_BV_8_0) (concat #b0 ((_ extract 7 0) %rcx))))))
 (let ((a!2 (not (= (= ((_ extract 7 7) TMP_BV_8_3) #b1) (= a!1 #b1)))))
-  (and (= (= ((_ extract 7 7) TMP_BV_8_3) #b1) (= ((_ extract 7 7) %rbx) #b1))
+  (and (= (= ((_ extract 7 7) TMP_BV_8_3) #b1) (= ((_ extract 7 7) %rcx) #b1))
        a!2)))
 
 Information about memory reads:
   Value TMP_BV_8_0 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_8_1 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_8_2 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_8_3 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 Information about memory writes:
-  Address %rax was updated to
+  Address %rbx was updated to
     ((_ extract 7 0)
-  (bvadd (concat #b0 TMP_BV_8_0) (concat #b0 ((_ extract 7 0) %rbx)))) (1 bytes).
+  (bvadd (concat #b0 TMP_BV_8_0) (concat #b0 ((_ extract 7 0) %rcx)))) (1 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

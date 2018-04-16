@@ -1,3 +1,3 @@
 .target:
-  movntps %xmm1, (%rax)
+  movntps %xmm1, (%rbx)
   retq

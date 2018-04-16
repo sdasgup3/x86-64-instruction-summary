@@ -1,3 +1,3 @@
 .target:
-  vucomiss (%rax), %xmm1
+  vucomiss (%rbx), %xmm1
   retq

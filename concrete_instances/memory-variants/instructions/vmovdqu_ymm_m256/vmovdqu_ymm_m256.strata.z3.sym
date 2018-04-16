@@ -1,15 +1,15 @@
-code: vmovdqu (%rax), %ymm1
+code: vmovdqu (%rbx), %ymm1
 
-  maybe read:      { %rax }
-  must read:       { %rax }
+  maybe read:      { %rbx }
+  must read:       { %rbx }
   maybe write:     { %ymm1 }
   must write:      { %ymm1 }
   maybe undef:     { }
   must undef:      { }
   required flags:  { avx }
 
-vmovdqu (%rax), %ymm1: Hindex0(10)
-vmovdqu (%rax), %ymm1: Hindex0(10)
+vmovdqu (%rbx), %ymm1: Hindex0(10)
+vmovdqu (%rbx), %ymm1: Hindex0(10)
 vmaxps %ymm2, %ymm2, %ymm10: Hindex0(9)
 vmaxpd %ymm10, %ymm2, %ymm1: Hindex0(9)
 Formula:
@@ -18,7 +18,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_256_0 (32 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

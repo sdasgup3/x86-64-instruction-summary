@@ -1,15 +1,15 @@
-code: cmovneq (%rax), %rbx
+code: cmovneq (%rcx), %rbx
 
-  maybe read:      { %rax %zf }
-  must read:       { %rax %zf }
+  maybe read:      { %rcx %zf }
+  must read:       { %rcx %zf }
   maybe write:     { %rbx }
   must write:      { }
   maybe undef:     { }
   must undef:      { }
   required flags:  { cmov }
 
-cmovneq (%rax), %rbx: Hindex0(10)
-cmovneq (%rax), %rbx: Hindex0(10)
+cmovneq (%rcx), %rbx: Hindex0(10)
+cmovneq (%rcx), %rbx: Hindex0(10)
 callq .read_zf_into_rbx: Hindex8(9)
 xorq %rax, %rax: Hindex1(9)
 xorq %rcx, %rcx: Hindex1(9)
@@ -55,7 +55,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+    was read at address %rcx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

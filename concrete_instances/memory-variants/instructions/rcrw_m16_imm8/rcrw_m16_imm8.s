@@ -1,3 +1,3 @@
 .target:
-  rcrw $0x0, (%rax)
+  rcrw $0x0, (%rbx)
   retq

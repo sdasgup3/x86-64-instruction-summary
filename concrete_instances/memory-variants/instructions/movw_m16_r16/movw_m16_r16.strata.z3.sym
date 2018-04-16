@@ -1,25 +1,25 @@
-code: movw %bx, (%rax)
+code: movw %cx, (%rbx)
 
-  maybe read:      { %rax %bx }
-  must read:       { %rax %bx }
+  maybe read:      { %cx %rbx }
+  must read:       { %cx %rbx }
   maybe write:     { }
   must write:      { }
   maybe undef:     { }
   must undef:      { }
   required flags:  { }
 
-movw %bx, (%rax): Hindex0(10)
-movw %bx, (%rax): Hindex0(10)
+movw %cx, (%rbx): Hindex0(10)
+movw %cx, (%rbx): Hindex0(10)
 movswq %cx, %rbx: Hindex5(9)
 Formula:
 
 Information about memory reads:
   Value TMP_BV_16_0 (2 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 Information about memory writes:
-  Address %rax was updated to
-    ((_ extract 15 0) %rbx) (2 bytes).
+  Address %rbx was updated to
+    ((_ extract 15 0) %rcx) (2 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

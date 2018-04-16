@@ -1,3 +1,3 @@
 .target:
-  testw $0x0, (%rax)
+  testw $0x0, (%rbx)
   retq

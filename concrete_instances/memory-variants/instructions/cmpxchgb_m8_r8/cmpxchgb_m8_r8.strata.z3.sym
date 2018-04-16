@@ -1,15 +1,15 @@
-code: cmpxchgb %bl, (%rax)
+code: cmpxchgb %cl, (%rbx)
 
-  maybe read:      { %rax %bl }
-  must read:       { %rax %bl }
+  maybe read:      { %al %cl %rbx }
+  must read:       { %al %cl %rbx }
   maybe write:     { %al %cf %pf %af %zf %sf %of }
   must write:      { %cf %pf %af %zf %sf %of }
   maybe undef:     { }
   must undef:      { }
   required flags:  { }
 
-cmpxchgb %bl, (%rax): Hindex0(10)
-cmpxchgb %bl, (%rax): Hindex0(10)
+cmpxchgb %cl, (%rbx): Hindex0(10)
+cmpxchgb %cl, (%rbx): Hindex0(10)
 movb %bl, %ah: Hindex5(9)
 movb %cl, %ah: Hindex5(9)
 movq $0x20, %r14: Hindex5(9)
@@ -437,21 +437,21 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_8_0 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_8_1 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_8_2 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_8_3 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 Information about memory writes:
-  Address (concat ((_ extract 63 8) %rax) TMP_BV_8_0) was updated to
+  Address %rbx was updated to
     (let ((a!1 ((_ extract 7 0)
              (bvadd (concat #b0 ((_ extract 7 0) %rax))
                     #b000000001
                     (concat #b0 (bvxor #xff TMP_BV_8_0))))))
-  (ite (= a!1 #x00) ((_ extract 7 0) %rbx) TMP_BV_8_0)) (1 bytes).
+  (ite (= a!1 #x00) ((_ extract 7 0) %rcx) TMP_BV_8_0)) (1 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

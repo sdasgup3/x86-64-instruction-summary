@@ -1,3 +1,3 @@
 .target:
-  cmovael (%rax), %ebx
+  cmovael (%rcx), %ebx
   retq

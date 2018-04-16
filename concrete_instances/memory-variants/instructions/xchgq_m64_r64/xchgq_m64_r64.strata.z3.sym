@@ -1,26 +1,26 @@
-code: xchgq %rbx, (%rax)
+code: xchgq %rcx, (%rbx)
 
-  maybe read:      { %rax %rbx }
-  must read:       { %rax %rbx }
-  maybe write:     { %rbx }
-  must write:      { %rbx }
+  maybe read:      { %rcx %rbx }
+  must read:       { %rcx %rbx }
+  maybe write:     { %rcx }
+  must write:      { %rcx }
   maybe undef:     { }
   must undef:      { }
   required flags:  { }
 
-xchgq %rbx, (%rax): Hindex2(10)
-xchgq %rbx, (%rax): Hindex2(10)
+xchgq %rcx, (%rbx): Hindex2(10)
+xchgq %rcx, (%rbx): Hindex2(10)
 Formula:
 
-%rbx   : TMP_BV_64_0
+%rcx   : TMP_BV_64_0
 
 Information about memory reads:
   Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 Information about memory writes:
-  Address %rax was updated to
-    %rbx (8 bytes).
+  Address %rbx was updated to
+    %rcx (8 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

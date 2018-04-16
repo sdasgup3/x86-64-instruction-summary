@@ -1,15 +1,15 @@
-code: rorb $0x1, (%rax)
+code: rorb $0x1, (%rbx)
 
-  maybe read:      { %rax }
-  must read:       { %rax }
+  maybe read:      { %rbx }
+  must read:       { %rbx }
   maybe write:     { %cf %of }
   must write:      { %cf %of }
   maybe undef:     { }
   must undef:      { }
   required flags:  { }
 
-rorb $0x1, (%rax): Hindex0(10)
-rorb $0x1, (%rax): Hindex0(10)
+rorb $0x1, (%rbx): Hindex0(10)
+rorb $0x1, (%rbx): Hindex0(10)
 movb %bl, %bh: Hindex5(9)
 movswq %bx, %r12: Hindex5(9)
 movslq %edx, %rbx: Hindex5(9)
@@ -135,14 +135,14 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_8_0 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_8_1 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_8_2 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 Information about memory writes:
-  Address %rax was updated to
+  Address %rbx was updated to
     (let ((a!1 (bvashr (concat ((_ sign_extend 48) (concat TMP_BV_8_1 TMP_BV_8_2))
                            #b0)
                    (concat #b000000000000000000000000000000000000000000000000000000000

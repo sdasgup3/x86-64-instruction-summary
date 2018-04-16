@@ -1,15 +1,15 @@
-code: subw $0x0, (%rax)
+code: subw $0x0, (%rbx)
 
-  maybe read:      { %rax }
-  must read:       { %rax }
+  maybe read:      { %rbx }
+  must read:       { %rbx }
   maybe write:     { %cf %pf %af %zf %sf %of }
   must write:      { %cf %pf %af %zf %sf %of }
   maybe undef:     { }
   must undef:      { }
   required flags:  { }
 
-subw $0x0, (%rax): Hindex0(10)
-subw $0x0, (%rax): Hindex0(10)
+subw $0x0, (%rbx): Hindex0(10)
+subw $0x0, (%rbx): Hindex0(10)
 movq $0x20, %rbx: Hindex5(9)
 callq .move_016_008_cx_r12b_r13b: Hindex8(9)
 callq .move_008_016_r12b_r13b_bx: Hindex8(9)
@@ -486,16 +486,16 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_16_0 (2 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_16_1 (2 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_16_2 (2 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_16_3 (2 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 Information about memory writes:
-  Address %rax was updated to
+  Address %rbx was updated to
     ((_ extract 15 0)
   (bvadd (concat #b0 TMP_BV_16_1) #b00000000000000001 #b01111111111111111)) (2 bytes).
 

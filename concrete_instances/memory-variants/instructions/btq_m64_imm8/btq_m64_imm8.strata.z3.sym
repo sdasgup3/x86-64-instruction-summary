@@ -1,15 +1,15 @@
-code: btq $0x0, (%rax)
+code: btq $0x0, (%rbx)
 
-  maybe read:      { %rax }
-  must read:       { %rax }
+  maybe read:      { %rbx }
+  must read:       { %rbx }
   maybe write:     { %cf }
   must write:      { %cf }
   maybe undef:     { %pf %af %sf %of }
   must undef:      { %pf %af %sf %of }
   required flags:  { }
 
-btq $0x0, (%rax): Hindex0(10)
-btq $0x0, (%rax): Hindex0(10)
+btq $0x0, (%rbx): Hindex0(10)
+btq $0x0, (%rbx): Hindex0(10)
 sarq %cl, %rbx: Hindex7(9)
 movslq %edx, %rbx: Hindex5(9)
 movq $0x0, %rbx: Hindex5(9)
@@ -115,7 +115,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

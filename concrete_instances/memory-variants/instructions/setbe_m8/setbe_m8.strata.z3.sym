@@ -1,15 +1,15 @@
-code: setbe (%rax)
+code: setbe (%rbx)
 
-  maybe read:      { %rax %cf %zf }
-  must read:       { %rax %cf %zf }
+  maybe read:      { %rbx %cf %zf }
+  must read:       { %rbx %cf %zf }
   maybe write:     { }
   must write:      { }
   maybe undef:     { }
   must undef:      { }
   required flags:  { }
 
-setbe (%rax): Hindex0(10)
-setbe (%rax): Hindex0(10)
+setbe (%rbx): Hindex0(10)
+setbe (%rbx): Hindex0(10)
 callq .read_zf_into_rcx: Hindex8(9)
 callq .read_cf_into_rbx: Hindex8(9)
 cmoveq %rcx, %rbx: Hindex3(9)
@@ -19,10 +19,10 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_8_0 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 Information about memory writes:
-  Address %rax was updated to
+  Address %rbx was updated to
     (ite %zf (ite %zf #x01 #x00) (ite %cf #x01 #x00)) (1 bytes).
 
 sigfpe  : sigfpe

@@ -1,3 +1,3 @@
 .target:
-  vmovups %ymm1, (%rax)
+  vmovups %ymm1, (%rbx)
   retq

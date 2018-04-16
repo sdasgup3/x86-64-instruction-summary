@@ -1,15 +1,15 @@
-code: mulxq (%rax), %rcx, %rbx
+code: mulxq (%rdx), %rcx, %rbx
 
-  maybe read:      { %rax %rdx }
-  must read:       { %rax %rdx }
+  maybe read:      { %rdx }
+  must read:       { %rdx }
   maybe write:     { %rcx %rbx }
   must write:      { %rcx %rbx }
   maybe undef:     { }
   must undef:      { }
   required flags:  { bmi2 }
 
-mulxq (%rax), %rcx, %rbx: Hindex2(10)
-mulxq (%rax), %rcx, %rbx: Hindex2(10)
+mulxq (%rdx), %rcx, %rbx: Hindex2(10)
+mulxq (%rdx), %rcx, %rbx: Hindex2(10)
 Formula:
 
 %rcx   : ((_ extract 63 0)
@@ -21,7 +21,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+    was read at address %rdx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

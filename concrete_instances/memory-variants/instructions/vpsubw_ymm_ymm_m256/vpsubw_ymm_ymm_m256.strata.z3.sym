@@ -1,15 +1,15 @@
-code: vpsubw (%rax), %ymm2, %ymm1
+code: vpsubw (%rbx), %ymm2, %ymm1
 
-  maybe read:      { %rax %ymm2 }
-  must read:       { %rax %ymm2 }
+  maybe read:      { %rbx %ymm2 }
+  must read:       { %rbx %ymm2 }
   maybe write:     { %ymm1 }
   must write:      { %ymm1 }
   maybe undef:     { }
   must undef:      { }
   required flags:  { avx2 }
 
-vpsubw (%rax), %ymm2, %ymm1: Hindex1(10)
-vpsubw (%rax), %ymm2, %ymm1: Hindex1(10)
+vpsubw (%rbx), %ymm2, %ymm1: Hindex1(10)
+vpsubw (%rbx), %ymm2, %ymm1: Hindex1(10)
 Formula:
 
 %ymm1  : (let ((a!1 (concat (bvsub ((_ extract 47 32) %ymm2)
@@ -53,7 +53,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_256_0 (32 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

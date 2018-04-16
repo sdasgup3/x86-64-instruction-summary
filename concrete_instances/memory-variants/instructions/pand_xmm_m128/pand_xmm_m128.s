@@ -1,3 +1,3 @@
 .target:
-  pand (%rax), %xmm1
+  pand (%rbx), %xmm1
   retq

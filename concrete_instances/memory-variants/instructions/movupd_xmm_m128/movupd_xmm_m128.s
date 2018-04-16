@@ -1,3 +1,3 @@
 .target:
-  movupd (%rax), %xmm1
+  movupd (%rbx), %xmm1
   retq

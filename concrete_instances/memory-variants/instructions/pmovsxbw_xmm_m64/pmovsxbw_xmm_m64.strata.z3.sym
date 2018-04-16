@@ -1,15 +1,15 @@
-code: pmovsxbw (%rax), %xmm1
+code: pmovsxbw (%rbx), %xmm1
 
-  maybe read:      { %rax }
-  must read:       { %rax }
+  maybe read:      { %rbx }
+  must read:       { %rbx }
   maybe write:     { %xmm1 }
   must write:      { %xmm1 }
   maybe undef:     { }
   must undef:      { }
   required flags:  { sse4_1 }
 
-pmovsxbw (%rax), %xmm1: Hindex1(10)
-pmovsxbw (%rax), %xmm1: Hindex1(10)
+pmovsxbw (%rbx), %xmm1: Hindex1(10)
+pmovsxbw (%rbx), %xmm1: Hindex1(10)
 Formula:
 
 %ymm1  : (let ((a!1 (concat ((_ sign_extend 8) ((_ extract 23 16) TMP_BV_64_0))
@@ -26,7 +26,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

@@ -1,3 +1,3 @@
 .target:
-  blsiq (%rax), %rbx
+  blsiq (%rcx), %rbx
   retq

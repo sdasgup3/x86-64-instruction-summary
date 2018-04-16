@@ -1,7 +1,7 @@
-code: adcb (%rax), %bl
+code: adcb (%rcx), %bl
 
-  maybe read:      { %rax %bl %cf }
-  must read:       { %rax %bl %cf }
+  maybe read:      { %rcx %bl %cf }
+  must read:       { %rcx %bl %cf }
   maybe write:     { %bl %cf %pf %af %zf %sf %of }
   must write:      { %bl %cf %pf %af %zf %sf %of }
   maybe undef:     { }
@@ -9,9 +9,9 @@ code: adcb (%rax), %bl
   required flags:  { }
 
 Base Instruction!!
-adcb (%rax), %bl: Hindex0(10)
+adcb (%rcx), %bl: Hindex0(10)
 Base Instruction!!
-adcb (%rax), %bl: Hindex0(10)
+adcb (%rcx), %bl: Hindex0(10)
 adcb %cl, %bl: Hindex2(9)
 Formula:
 
@@ -63,9 +63,9 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_8_0 (1 bytes)
-    was read at address %rax.
+    was read at address %rcx.
   Value TMP_BV_8_1 (1 bytes)
-    was read at address %rax.
+    was read at address %rcx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

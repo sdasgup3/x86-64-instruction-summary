@@ -1,15 +1,15 @@
-code: testq %rbx, (%rax)
+code: testq %rcx, (%rbx)
 
-  maybe read:      { %rax %rbx }
-  must read:       { %rax %rbx }
+  maybe read:      { %rcx %rbx }
+  must read:       { %rcx %rbx }
   maybe write:     { %cf %pf %zf %sf %of }
   must write:      { %cf %pf %zf %sf %of }
   maybe undef:     { %af }
   must undef:      { %af }
   required flags:  { }
 
-testq %rbx, (%rax): Hindex0(10)
-testq %rbx, (%rax): Hindex0(10)
+testq %rcx, (%rbx): Hindex0(10)
+testq %rcx, (%rbx): Hindex0(10)
 orq %rcx, %rdx: Hindex1(9)
 xorq %rcx, %rdx: Hindex1(9)
 movq %rdx, %rbx: Hindex5(9)
@@ -115,8 +115,8 @@ adcb %bl, %bl: Hindex2(9)
 Formula:
 
 %cf    : (let ((a!1 (bvadd (concat #b0
-                          (bvxor (bvor TMP_BV_64_0 %rbx)
-                                 %rbx
+                          (bvxor (bvor TMP_BV_64_0 %rcx)
+                                 %rcx
                                  #xffffffffffffffff))
                   #b00000000000000000000000000000000000000000000000000000000000000001
                   (concat #b0 TMP_BV_64_1))))
@@ -124,8 +124,8 @@ Formula:
                   (ite (= ((_ extract 64 64) a!1) #b1) #b000000000 #b011111111))))
   (= ((_ extract 8 8) a!2) #b1)))
 %pf    : (let ((a!1 (bvadd (concat #b0
-                          (bvxor (bvor TMP_BV_64_0 %rbx)
-                                 %rbx
+                          (bvxor (bvor TMP_BV_64_0 %rcx)
+                                 %rcx
                                  #xffffffffffffffff))
                   #b00000000000000000000000000000000000000000000000000000000000000001
                   (concat #b0 TMP_BV_64_1))))
@@ -139,27 +139,27 @@ Formula:
             (= ((_ extract 7 7) a!1) #b1))))
 %af    : TMP_BOOL_28
 %zf    : (let ((a!1 (bvadd (concat #b0
-                          (bvxor (bvor TMP_BV_64_0 %rbx)
-                                 %rbx
+                          (bvxor (bvor TMP_BV_64_0 %rcx)
+                                 %rcx
                                  #xffffffffffffffff))
                   #b00000000000000000000000000000000000000000000000000000000000000001
                   (concat #b0 TMP_BV_64_1))))
   (= ((_ extract 63 0) a!1) #x0000000000000000))
 %sf    : (let ((a!1 (bvadd (concat #b0
-                          (bvxor (bvor TMP_BV_64_0 %rbx)
-                                 %rbx
+                          (bvxor (bvor TMP_BV_64_0 %rcx)
+                                 %rcx
                                  #xffffffffffffffff))
                   #b00000000000000000000000000000000000000000000000000000000000000001
                   (concat #b0 TMP_BV_64_1))))
   (= ((_ extract 63 63) a!1) #b1))
 %of    : (let ((a!1 (= (bvxor (bvor ((_ extract 63 63) TMP_BV_64_2)
-                           ((_ extract 63 63) %rbx))
-                     ((_ extract 63 63) %rbx)
+                           ((_ extract 63 63) %rcx))
+                     ((_ extract 63 63) %rcx)
                      #b1)
               #b1))
       (a!2 (bvadd (concat #b0
-                          (bvxor (bvor TMP_BV_64_0 %rbx)
-                                 %rbx
+                          (bvxor (bvor TMP_BV_64_0 %rcx)
+                                 %rcx
                                  #xffffffffffffffff))
                   #b00000000000000000000000000000000000000000000000000000000000000001
                   (concat #b0 TMP_BV_64_1))))
@@ -168,13 +168,13 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_64_1 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_64_2 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_64_3 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

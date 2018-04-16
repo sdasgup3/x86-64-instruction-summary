@@ -1,15 +1,15 @@
-code: vdpps $0x0, (%rax), %ymm2, %ymm1
+code: vdpps $0x0, (%rbx), %ymm2, %ymm1
 
-  maybe read:      { %rax %ymm2 }
-  must read:       { %rax %ymm2 }
+  maybe read:      { %rbx %ymm2 }
+  must read:       { %rbx %ymm2 }
   maybe write:     { %ymm1 }
   must write:      { %ymm1 }
   maybe undef:     { }
   must undef:      { }
   required flags:  { avx }
 
-vdpps $0x0, (%rax), %ymm2, %ymm1: Hindex1(10)
-vdpps $0x0, (%rax), %ymm2, %ymm1: Hindex1(10)
+vdpps $0x0, (%rbx), %ymm2, %ymm1: Hindex1(10)
+vdpps $0x0, (%rbx), %ymm2, %ymm1: Hindex1(10)
 Formula:
 
 %ymm1  : (concat (concat (concat #x0000000000000000 #x00000000) #x00000000)
@@ -17,7 +17,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_256_0 (32 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

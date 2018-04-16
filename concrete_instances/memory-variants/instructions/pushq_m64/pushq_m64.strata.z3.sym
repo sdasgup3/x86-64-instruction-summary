@@ -1,22 +1,22 @@
-code: pushq (%rax)
+code: pushq (%rbx)
 
-  maybe read:      { %rax %rsp }
-  must read:       { %rax %rsp }
+  maybe read:      { %rbx %rsp }
+  must read:       { %rbx %rsp }
   maybe write:     { %rsp }
   must write:      { %rsp }
   maybe undef:     { }
   must undef:      { }
   required flags:  { }
 
-pushq (%rax): Hindex2(10)
-pushq (%rax): Hindex2(10)
+pushq (%rbx): Hindex2(10)
+pushq (%rbx): Hindex2(10)
 Formula:
 
 %rsp   : (bvsub %rsp #x0000000000000008)
 
 Information about memory reads:
   Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 Information about memory writes:
   Address (bvsub %rsp #x0000000000000008) was updated to

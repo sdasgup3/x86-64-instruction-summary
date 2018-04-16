@@ -1,3 +1,3 @@
 .target:
-  imull (%rax), %ebx
+  imull (%rcx), %ebx
   retq

@@ -1,3 +1,3 @@
 .target:
-  vpsignb (%rax), %xmm2, %xmm1
+  vpsignb (%rbx), %xmm2, %xmm1
   retq

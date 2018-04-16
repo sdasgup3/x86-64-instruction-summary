@@ -1,15 +1,15 @@
-code: movb %bl, (%rax)
+code: movb %cl, (%rbx)
 
-  maybe read:      { %rax %bl }
-  must read:       { %rax %bl }
+  maybe read:      { %cl %rbx }
+  must read:       { %cl %rbx }
   maybe write:     { }
   must write:      { }
   maybe undef:     { }
   must undef:      { }
   required flags:  { }
 
-movb %bl, (%rax): Hindex0(10)
-movb %bl, (%rax): Hindex0(10)
+movb %cl, (%rbx): Hindex0(10)
+movb %cl, (%rbx): Hindex0(10)
 movq $0x1, %rbx: Hindex5(9)
 callq .set_szp_for_rbx: Hindex8(9)
 movq $0x0, %rbx: Hindex5(9)
@@ -36,11 +36,11 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_8_0 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 Information about memory writes:
-  Address %rax was updated to
-    ((_ extract 7 0) %rbx) (1 bytes).
+  Address %rbx was updated to
+    ((_ extract 7 0) %rcx) (1 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

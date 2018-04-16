@@ -1,15 +1,15 @@
-code: rorxl $0x0, (%rax), %ebx
+code: rorxl $0x0, (%rcx), %ebx
 
-  maybe read:      { %rax }
-  must read:       { %rax }
+  maybe read:      { %rcx }
+  must read:       { %rcx }
   maybe write:     { %rbx }
   must write:      { %rbx }
   maybe undef:     { }
   must undef:      { }
   required flags:  { bmi2 }
 
-rorxl $0x0, (%rax), %ebx: Hindex2(10)
-rorxl $0x0, (%rax), %ebx: Hindex2(10)
+rorxl $0x0, (%rcx), %ebx: Hindex2(10)
+rorxl $0x0, (%rcx), %ebx: Hindex2(10)
 Formula:
 
 %rbx   : (concat #x00000000
@@ -17,7 +17,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_32_0 (4 bytes)
-    was read at address %rax.
+    was read at address %rcx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

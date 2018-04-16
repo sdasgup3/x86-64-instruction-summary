@@ -1,15 +1,15 @@
-code: testb %ah, (%rax)
+code: testb %ah, (%rbx)
 
-  maybe read:      { %rax }
-  must read:       { %rax }
+  maybe read:      { %ah %rbx }
+  must read:       { %ah %rbx }
   maybe write:     { %cf %pf %zf %sf %of }
   must write:      { %cf %pf %zf %sf %of }
   maybe undef:     { %af }
   must undef:      { %af }
   required flags:  { }
 
-testb %ah, (%rax): Hindex0(10)
-testb %ah, (%rax): Hindex0(10)
+testb %ah, (%rbx): Hindex0(10)
+testb %ah, (%rbx): Hindex0(10)
 xorq %rcx, %rcx: Hindex1(9)
 callq .read_sf_into_rbx: Hindex8(9)
 movb %ah, %bl: Hindex5(9)
@@ -136,39 +136,39 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_8_0 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_8_1 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_8_2 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_8_3 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_8_4 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_8_5 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_8_6 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_8_7 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_8_8 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_8_9 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_8_10 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_8_11 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_8_12 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_8_13 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_8_14 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_8_15 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_8_16 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

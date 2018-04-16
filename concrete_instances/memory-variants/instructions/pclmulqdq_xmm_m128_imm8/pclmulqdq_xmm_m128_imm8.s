@@ -1,3 +1,3 @@
 .target:
-  pclmulqdq $0x0, (%rax), %xmm1
+  pclmulqdq $0x0, (%rbx), %xmm1
   retq

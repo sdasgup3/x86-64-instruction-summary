@@ -1,15 +1,15 @@
-code: pdepq (%rax), %rcx, %rbx
+code: pdepq (%rdx), %rcx, %rbx
 
-  maybe read:      { %rax %rcx }
-  must read:       { %rax %rcx }
+  maybe read:      { %rcx %rdx }
+  must read:       { %rcx %rdx }
   maybe write:     { %rbx }
   must write:      { %rbx }
   maybe undef:     { }
   must undef:      { }
   required flags:  { bmi2 }
 
-pdepq (%rax), %rcx, %rbx: Hindex2(10)
-pdepq (%rax), %rcx, %rbx: Hindex2(10)
+pdepq (%rdx), %rcx, %rbx: Hindex2(10)
+pdepq (%rdx), %rcx, %rbx: Hindex2(10)
 Formula:
 
 %rbx   : (let ((a!1 (ite (= ((_ extract 1 1) TMP_BV_64_0) #b1)
@@ -16446,7 +16446,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+    was read at address %rdx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

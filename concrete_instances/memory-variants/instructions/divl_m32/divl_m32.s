@@ -1,3 +1,3 @@
 .target:
-  divl (%rax)
+  divl (%rbx)
   retq

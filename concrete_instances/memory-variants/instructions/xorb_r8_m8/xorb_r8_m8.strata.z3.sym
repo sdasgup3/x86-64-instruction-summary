@@ -1,15 +1,15 @@
-code: xorb (%rax), %bl
+code: xorb (%rcx), %bl
 
-  maybe read:      { %rax %bl }
-  must read:       { %rax %bl }
+  maybe read:      { %rcx %bl }
+  must read:       { %rcx %bl }
   maybe write:     { %bl %cf %pf %zf %sf %of }
   must write:      { %bl %cf %pf %zf %sf %of }
   maybe undef:     { %af }
   must undef:      { %af }
   required flags:  { }
 
-xorb (%rax), %bl: Hindex0(10)
-xorb (%rax), %bl: Hindex0(10)
+xorb (%rcx), %bl: Hindex0(10)
+xorb (%rcx), %bl: Hindex0(10)
 movb %cl, %bh: Hindex5(9)
 movq $0x40, %rbx: Hindex5(9)
 movb %ah, %bl: Hindex5(9)
@@ -50,25 +50,25 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_8_0 (1 bytes)
-    was read at address %rax.
+    was read at address %rcx.
   Value TMP_BV_8_1 (1 bytes)
-    was read at address %rax.
+    was read at address %rcx.
   Value TMP_BV_8_2 (1 bytes)
-    was read at address %rax.
+    was read at address %rcx.
   Value TMP_BV_8_3 (1 bytes)
-    was read at address %rax.
+    was read at address %rcx.
   Value TMP_BV_8_4 (1 bytes)
-    was read at address %rax.
+    was read at address %rcx.
   Value TMP_BV_8_5 (1 bytes)
-    was read at address %rax.
+    was read at address %rcx.
   Value TMP_BV_8_6 (1 bytes)
-    was read at address %rax.
+    was read at address %rcx.
   Value TMP_BV_8_7 (1 bytes)
-    was read at address %rax.
+    was read at address %rcx.
   Value TMP_BV_8_8 (1 bytes)
-    was read at address %rax.
+    was read at address %rcx.
   Value TMP_BV_8_9 (1 bytes)
-    was read at address %rax.
+    was read at address %rcx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

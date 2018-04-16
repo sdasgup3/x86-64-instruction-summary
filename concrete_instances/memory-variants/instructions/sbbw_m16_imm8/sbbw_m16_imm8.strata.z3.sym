@@ -1,15 +1,15 @@
-code: sbbw $0x0, (%rax)
+code: sbbw $0x0, (%rbx)
 
-  maybe read:      { %rax %cf }
-  must read:       { %rax %cf }
+  maybe read:      { %rbx %cf }
+  must read:       { %rbx %cf }
   maybe write:     { %cf %pf %af %zf %sf %of }
   must write:      { %cf %pf %af %zf %sf %of }
   maybe undef:     { }
   must undef:      { }
   required flags:  { }
 
-sbbw $0x0, (%rax): Hindex0(10)
-sbbw $0x0, (%rax): Hindex0(10)
+sbbw $0x0, (%rbx): Hindex0(10)
+sbbw $0x0, (%rbx): Hindex0(10)
 callq .read_cf_into_rbx: Hindex8(9)
 callq .move_064_032_rbx_r8d_r9d: Hindex8(9)
 callq .move_r8b_to_byte_5_of_rbx: Hindex8(9)
@@ -268,16 +268,16 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_16_0 (2 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_16_1 (2 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_16_2 (2 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_16_3 (2 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 Information about memory writes:
-  Address %rax was updated to
+  Address %rbx was updated to
     (let ((a!1 (= ((_ extract 8 8)
                 (bvadd (ite %cf #b000000000 #b011111111)
                        (ite %cf #b000000000 #b011111111)))

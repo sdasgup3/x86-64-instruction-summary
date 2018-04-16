@@ -1,3 +1,3 @@
 .target:
-  andnpd (%rax), %xmm1
+  andnpd (%rbx), %xmm1
   retq

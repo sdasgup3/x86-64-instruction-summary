@@ -1,3 +1,3 @@
 .target:
-  subss (%rax), %xmm1
+  subss (%rbx), %xmm1
   retq

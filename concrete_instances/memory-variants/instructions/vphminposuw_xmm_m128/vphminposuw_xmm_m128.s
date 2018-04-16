@@ -1,3 +1,3 @@
 .target:
-  vphminposuw (%rax), %xmm1
+  vphminposuw (%rbx), %xmm1
   retq

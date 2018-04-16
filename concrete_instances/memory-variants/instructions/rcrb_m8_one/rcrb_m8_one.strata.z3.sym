@@ -1,15 +1,15 @@
-code: rcrb $0x1, (%rax)
+code: rcrb $0x1, (%rbx)
 
-  maybe read:      { %rax %cf }
-  must read:       { %rax %cf }
+  maybe read:      { %rbx %cf }
+  must read:       { %rbx %cf }
   maybe write:     { %cf %of }
   must write:      { %cf %of }
   maybe undef:     { }
   must undef:      { }
   required flags:  { }
 
-rcrb $0x1, (%rax): Hindex8(10)
-rcrb $0x1, (%rax): Hindex8(10)
+rcrb $0x1, (%rbx): Hindex8(10)
+rcrb $0x1, (%rbx): Hindex8(10)
 Formula:
 
 %cf    : (let ((a!1 ((_ extract 8 8)
@@ -27,10 +27,10 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_8_0 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 Information about memory writes:
-  Address %rax was updated to
+  Address %rbx was updated to
     ((_ extract 7 0)
   (ext_rotate_right (concat (ite %cf #b1 #b0) TMP_BV_8_0) #b000000001)) (1 bytes).
 

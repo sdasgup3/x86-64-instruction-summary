@@ -1,3 +1,3 @@
 .target:
-  vpmulhrsw (%rax), %xmm2, %xmm1
+  vpmulhrsw (%rbx), %xmm2, %xmm1
   retq

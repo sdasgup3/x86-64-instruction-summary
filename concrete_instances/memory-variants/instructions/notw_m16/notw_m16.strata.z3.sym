@@ -1,15 +1,15 @@
-code: notw (%rax)
+code: notw (%rbx)
 
-  maybe read:      { %rax }
-  must read:       { %rax }
+  maybe read:      { %rbx }
+  must read:       { %rbx }
   maybe write:     { }
   must write:      { }
   maybe undef:     { }
   must undef:      { }
   required flags:  { }
 
-notw (%rax): Hindex0(10)
-notw (%rax): Hindex0(10)
+notw (%rbx): Hindex0(10)
+notw (%rbx): Hindex0(10)
 movq $0xffffffffffffffff, %r14: Hindex5(9)
 movswq %bx, %r12: Hindex5(9)
 callq .move_016_008_cx_r8b_r9b: Hindex8(9)
@@ -26,12 +26,12 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_16_0 (2 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_16_1 (2 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 Information about memory writes:
-  Address %rax was updated to
+  Address %rbx was updated to
     (bvxor TMP_BV_16_1 #xffff) (2 bytes).
 
 sigfpe  : sigfpe

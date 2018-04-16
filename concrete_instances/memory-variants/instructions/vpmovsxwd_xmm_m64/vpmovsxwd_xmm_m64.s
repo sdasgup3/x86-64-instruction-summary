@@ -1,3 +1,3 @@
 .target:
-  vpmovsxwd (%rax), %xmm1
+  vpmovsxwd (%rbx), %xmm1
   retq

@@ -1,3 +1,3 @@
 .target:
-  sarb $0x1, (%rax)
+  sarb $0x1, (%rbx)
   retq

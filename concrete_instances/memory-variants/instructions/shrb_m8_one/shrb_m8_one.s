@@ -1,3 +1,3 @@
 .target:
-  shrb $0x1, (%rax)
+  shrb $0x1, (%rbx)
   retq

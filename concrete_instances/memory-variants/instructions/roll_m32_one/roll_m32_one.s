@@ -1,3 +1,3 @@
 .target:
-  roll $0x1, (%rax)
+  roll $0x1, (%rbx)
   retq

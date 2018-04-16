@@ -1,3 +1,3 @@
 .target:
-  notq (%rax)
+  notq (%rbx)
   retq

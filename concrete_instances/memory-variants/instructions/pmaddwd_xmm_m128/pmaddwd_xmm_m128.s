@@ -1,3 +1,3 @@
 .target:
-  pmaddwd (%rax), %xmm1
+  pmaddwd (%rbx), %xmm1
   retq

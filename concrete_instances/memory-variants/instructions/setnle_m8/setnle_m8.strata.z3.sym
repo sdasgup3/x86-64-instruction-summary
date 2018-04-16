@@ -1,15 +1,15 @@
-code: setnle (%rax)
+code: setnle (%rbx)
 
-  maybe read:      { %rax %zf %sf %of }
-  must read:       { %rax %zf %sf %of }
+  maybe read:      { %rbx %zf %sf %of }
+  must read:       { %rbx %zf %sf %of }
   maybe write:     { }
   must write:      { }
   maybe undef:     { }
   must undef:      { }
   required flags:  { }
 
-setnle (%rax): Hindex0(10)
-setnle (%rax): Hindex0(10)
+setnle (%rbx): Hindex0(10)
+setnle (%rbx): Hindex0(10)
 callq .read_of_into_rbx: Hindex8(9)
 callq .set_cf: Hindex8(9)
 callq .read_of_into_rcx: Hindex8(9)
@@ -78,10 +78,10 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_8_0 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 Information about memory writes:
-  Address %rax was updated to
+  Address %rbx was updated to
     (ite %zf #x00 (bvxor #x01 (ite %of #x01 #x00) (ite %sf #x01 #x00))) (1 bytes).
 
 sigfpe  : sigfpe

@@ -1,3 +1,3 @@
 .target:
-  maxss (%rax), %xmm1
+  maxss (%rbx), %xmm1
   retq

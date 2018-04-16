@@ -1,15 +1,15 @@
-code: cvtss2sd (%rax), %xmm1
+code: cvtss2sd (%rbx), %xmm1
 
-  maybe read:      { %rax %xmm1 %mxcsr::rc[0] }
-  must read:       { %rax %xmm1 %mxcsr::rc[0] }
+  maybe read:      { %rbx %xmm1 %mxcsr::rc[0] }
+  must read:       { %rbx %xmm1 %mxcsr::rc[0] }
   maybe write:     { %xmm1 }
   must write:      { %xmm1 }
   maybe undef:     { }
   must undef:      { }
   required flags:  { sse2 }
 
-cvtss2sd (%rax), %xmm1: Hindex0(10)
-cvtss2sd (%rax), %xmm1: Hindex0(10)
+cvtss2sd (%rbx), %xmm1: Hindex0(10)
+cvtss2sd (%rbx), %xmm1: Hindex0(10)
 callq .move_128_64_xmm1_xmm12_xmm13: Hindex8(9)
 vcvtps2pd %xmm2, %ymm12: Hindex0(9)
 callq .move_64_128_xmm12_xmm13_xmm1: Hindex8(9)
@@ -20,7 +20,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_32_0 (4 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

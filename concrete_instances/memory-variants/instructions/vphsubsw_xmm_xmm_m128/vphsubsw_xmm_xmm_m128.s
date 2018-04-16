@@ -1,3 +1,3 @@
 .target:
-  vphsubsw (%rax), %xmm2, %xmm1
+  vphsubsw (%rbx), %xmm2, %xmm1
   retq

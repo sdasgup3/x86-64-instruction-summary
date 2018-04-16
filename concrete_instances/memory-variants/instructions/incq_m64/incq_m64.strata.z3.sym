@@ -1,15 +1,15 @@
-code: incq (%rax)
+code: incq (%rbx)
 
-  maybe read:      { %rax }
-  must read:       { %rax }
+  maybe read:      { %rbx }
+  must read:       { %rbx }
   maybe write:     { %pf %af %zf %sf %of }
   must write:      { %pf %af %zf %sf %of }
   maybe undef:     { }
   must undef:      { }
   required flags:  { }
 
-incq (%rax): Hindex0(10)
-incq (%rax): Hindex0(10)
+incq (%rbx): Hindex0(10)
+incq (%rbx): Hindex0(10)
 callq .move_128_064_xmm3_r12_r13: Hindex8(9)
 callq .move_128_064_xmm2_r8_r9: Hindex8(9)
 vzeroall : Hindex1(9)
@@ -110,14 +110,14 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_64_1 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_64_2 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 Information about memory writes:
-  Address %rax was updated to
+  Address %rbx was updated to
     ((_ extract 63 0)
   (bvadd (concat #b0 #x0000000000000001) (concat #b0 TMP_BV_64_0))) (8 bytes).
 

@@ -1,3 +1,3 @@
 .target:
-  orps (%rax), %xmm1
+  orps (%rbx), %xmm1
   retq

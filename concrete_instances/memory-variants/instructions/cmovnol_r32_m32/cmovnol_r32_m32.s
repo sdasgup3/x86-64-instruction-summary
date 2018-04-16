@@ -1,3 +1,3 @@
 .target:
-  cmovnol (%rax), %ebx
+  cmovnol (%rcx), %ebx
   retq

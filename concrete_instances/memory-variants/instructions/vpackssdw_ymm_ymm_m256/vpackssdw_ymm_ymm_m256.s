@@ -1,3 +1,3 @@
 .target:
-  vpackssdw (%rax), %ymm2, %ymm1
+  vpackssdw (%rbx), %ymm2, %ymm1
   retq

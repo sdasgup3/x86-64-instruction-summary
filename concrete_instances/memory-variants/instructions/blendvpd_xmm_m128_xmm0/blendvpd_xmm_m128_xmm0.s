@@ -1,3 +1,3 @@
 .target:
-  blendvpd %xmm0, (%rax), %xmm1
+  blendvpd %xmm0, (%rbx), %xmm1
   retq

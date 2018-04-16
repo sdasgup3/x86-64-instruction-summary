@@ -1,15 +1,15 @@
-code: vpermilps (%rax), %xmm2, %xmm1
+code: vpermilps (%rbx), %xmm2, %xmm1
 
-  maybe read:      { %rax %xmm2 }
-  must read:       { %rax %xmm2 }
+  maybe read:      { %rbx %xmm2 }
+  must read:       { %rbx %xmm2 }
   maybe write:     { %ymm1 }
   must write:      { %ymm1 }
   maybe undef:     { }
   must undef:      { }
   required flags:  { avx }
 
-vpermilps (%rax), %xmm2, %xmm1: Hindex2(10)
-vpermilps (%rax), %xmm2, %xmm1: Hindex2(10)
+vpermilps (%rbx), %xmm2, %xmm1: Hindex2(10)
+vpermilps (%rbx), %xmm2, %xmm1: Hindex2(10)
 Formula:
 
 %ymm1  : (let ((a!1 (ite (= ((_ extract 97 96) TMP_BV_128_0) #b01)
@@ -50,7 +50,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_128_0 (16 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

@@ -1,18 +1,18 @@
-code: leaw (%rax), %bx
+code: leaw (%rcx), %bx
 
-  maybe read:      { %rax }
-  must read:       { %rax }
+  maybe read:      { %rcx }
+  must read:       { %rcx }
   maybe write:     { %bx }
   must write:      { %bx }
   maybe undef:     { }
   must undef:      { }
   required flags:  { }
 
-leaw (%rax), %bx: Hindex5(10)
-leaw (%rax), %bx: Hindex5(10)
+leaw (%rcx), %bx: Hindex5(10)
+leaw (%rcx), %bx: Hindex5(10)
 Formula:
 
-%rbx   : (concat ((_ extract 63 16) %rbx) ((_ extract 15 0) %rax))
+%rbx   : (concat ((_ extract 63 16) %rbx) ((_ extract 15 0) %rcx))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

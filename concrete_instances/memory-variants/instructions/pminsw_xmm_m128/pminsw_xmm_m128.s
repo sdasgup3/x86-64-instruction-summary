@@ -1,3 +1,3 @@
 .target:
-  pminsw (%rax), %xmm1
+  pminsw (%rbx), %xmm1
   retq

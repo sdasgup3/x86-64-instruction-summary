@@ -1,7 +1,7 @@
 {
-  "def_in": "{ %rax %mxcsr::rc[0] }",
+  "def_in": "{ %rbx %mxcsr::rc[0] }",
   "live_out": "{ %ymm1 }",
-  "def_in_formal": "{ %rax %mxcsr::rc[0] }",
+  "def_in_formal": "{ %rbx %mxcsr::rc[0] }",
   "live_out_formal": "{ %ymm1 }",
   "search_without_uif": false,
   "delim": 0

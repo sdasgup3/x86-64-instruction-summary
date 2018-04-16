@@ -1,15 +1,15 @@
-code: seta (%rax)
+code: seta (%rbx)
 
-  maybe read:      { %rax %cf %zf }
-  must read:       { %rax %cf %zf }
+  maybe read:      { %rbx %cf %zf }
+  must read:       { %rbx %cf %zf }
   maybe write:     { }
   must write:      { }
   maybe undef:     { }
   must undef:      { }
   required flags:  { }
 
-seta (%rax): Hindex0(10)
-seta (%rax): Hindex0(10)
+seta (%rbx): Hindex0(10)
+seta (%rbx): Hindex0(10)
 callq .read_zf_into_rbx: Hindex8(9)
 callq .read_cf_into_rbx: Hindex8(9)
 movq $0xffffffffffffffff, %r9: Hindex5(9)
@@ -35,10 +35,10 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_8_0 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 Information about memory writes:
-  Address %rax was updated to
+  Address %rbx was updated to
     (ite (= (ite %zf #x00 #xff) #x00) #x00 (ite %cf #x00 #x01)) (1 bytes).
 
 sigfpe  : sigfpe

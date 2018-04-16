@@ -1,3 +1,3 @@
 .target:
-  setnz (%rax)
+  setnz (%rbx)
   retq

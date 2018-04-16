@@ -1,15 +1,15 @@
-code: decl (%rax)
+code: decl (%rbx)
 
-  maybe read:      { %rax }
-  must read:       { %rax }
+  maybe read:      { %rbx }
+  must read:       { %rbx }
   maybe write:     { %pf %af %zf %sf %of }
   must write:      { %pf %af %zf %sf %of }
   maybe undef:     { }
   must undef:      { }
   required flags:  { }
 
-decl (%rax): Hindex0(10)
-decl (%rax): Hindex0(10)
+decl (%rbx): Hindex0(10)
+decl (%rbx): Hindex0(10)
 movq $0xffffffffffffffff, %rcx: Hindex5(9)
 movswq %bx, %r10: Hindex5(9)
 movslq %ebx, %rbx: Hindex5(9)
@@ -78,14 +78,14 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_32_0 (4 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_32_1 (4 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_32_2 (4 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 Information about memory writes:
-  Address %rax was updated to
+  Address %rbx was updated to
     ((_ extract 31 0)
   (bvadd (concat #b0 TMP_BV_32_0) #b011111111111111111111111111111111)) (4 bytes).
 

@@ -1,3 +1,3 @@
 .target:
-  vpshufb (%rax), %ymm2, %ymm1
+  vpshufb (%rbx), %ymm2, %ymm1
   retq

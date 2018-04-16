@@ -1,15 +1,15 @@
-code: psllq (%rax), %xmm1
+code: psllq (%rbx), %xmm1
 
-  maybe read:      { %rax %xmm1 }
-  must read:       { %rax %xmm1 }
+  maybe read:      { %rbx %xmm1 }
+  must read:       { %rbx %xmm1 }
   maybe write:     { %xmm1 }
   must write:      { %xmm1 }
   maybe undef:     { }
   must undef:      { }
   required flags:  { sse2 }
 
-psllq (%rax), %xmm1: Hindex2(10)
-psllq (%rax), %xmm1: Hindex2(10)
+psllq (%rbx), %xmm1: Hindex2(10)
+psllq (%rbx), %xmm1: Hindex2(10)
 Formula:
 
 %ymm1  : (let ((a!1 (ite (bvugt ((_ extract 63 0) TMP_BV_128_0) #x000000000000003f)
@@ -22,7 +22,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_128_0 (16 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

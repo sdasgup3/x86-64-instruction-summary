@@ -1,15 +1,15 @@
-code: andl (%rax), %ebx
+code: andl (%rcx), %ebx
 
-  maybe read:      { %rax %ebx }
-  must read:       { %rax %ebx }
+  maybe read:      { %rcx %ebx }
+  must read:       { %rcx %ebx }
   maybe write:     { %rbx %cf %pf %zf %sf %of }
   must write:      { %rbx %cf %pf %zf %sf %of }
   maybe undef:     { %af }
   must undef:      { %af }
   required flags:  { }
 
-andl (%rax), %ebx: Hindex0(10)
-andl (%rax), %ebx: Hindex0(10)
+andl (%rcx), %ebx: Hindex0(10)
+andl (%rcx), %ebx: Hindex0(10)
 movslq %edx, %rbx: Hindex5(9)
 movq $0x0, %rbx: Hindex5(9)
 movswq %bx, %r10: Hindex5(9)
@@ -127,45 +127,45 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_32_0 (4 bytes)
-    was read at address %rax.
+    was read at address %rcx.
   Value TMP_BV_32_1 (4 bytes)
-    was read at address %rax.
+    was read at address %rcx.
   Value TMP_BV_32_2 (4 bytes)
-    was read at address %rax.
+    was read at address %rcx.
   Value TMP_BV_32_3 (4 bytes)
-    was read at address %rax.
+    was read at address %rcx.
   Value TMP_BV_32_4 (4 bytes)
-    was read at address %rax.
+    was read at address %rcx.
   Value TMP_BV_32_5 (4 bytes)
-    was read at address %rax.
+    was read at address %rcx.
   Value TMP_BV_32_6 (4 bytes)
-    was read at address %rax.
+    was read at address %rcx.
   Value TMP_BV_32_7 (4 bytes)
-    was read at address %rax.
+    was read at address %rcx.
   Value TMP_BV_32_8 (4 bytes)
-    was read at address %rax.
+    was read at address %rcx.
   Value TMP_BV_32_9 (4 bytes)
-    was read at address %rax.
+    was read at address %rcx.
   Value TMP_BV_32_10 (4 bytes)
-    was read at address %rax.
+    was read at address %rcx.
   Value TMP_BV_32_11 (4 bytes)
-    was read at address %rax.
+    was read at address %rcx.
   Value TMP_BV_32_12 (4 bytes)
-    was read at address %rax.
+    was read at address %rcx.
   Value TMP_BV_32_13 (4 bytes)
-    was read at address %rax.
+    was read at address %rcx.
   Value TMP_BV_32_14 (4 bytes)
-    was read at address %rax.
+    was read at address %rcx.
   Value TMP_BV_32_15 (4 bytes)
-    was read at address %rax.
+    was read at address %rcx.
   Value TMP_BV_32_16 (4 bytes)
-    was read at address %rax.
+    was read at address %rcx.
   Value TMP_BV_32_17 (4 bytes)
-    was read at address %rax.
+    was read at address %rcx.
   Value TMP_BV_32_18 (4 bytes)
-    was read at address %rax.
+    was read at address %rcx.
   Value TMP_BV_32_19 (4 bytes)
-    was read at address %rax.
+    was read at address %rcx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

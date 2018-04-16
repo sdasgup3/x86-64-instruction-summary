@@ -1,3 +1,3 @@
 .target:
-  vtestpd (%rax), %xmm1
+  vtestpd (%rbx), %xmm1
   retq

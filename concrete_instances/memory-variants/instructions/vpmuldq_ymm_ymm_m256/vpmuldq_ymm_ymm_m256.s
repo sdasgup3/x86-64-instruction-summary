@@ -1,3 +1,3 @@
 .target:
-  vpmuldq (%rax), %ymm2, %ymm1
+  vpmuldq (%rbx), %ymm2, %ymm1
   retq

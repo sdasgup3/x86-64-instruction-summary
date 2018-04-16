@@ -1,3 +1,3 @@
 .target:
-  psignb (%rax), %xmm1
+  psignb (%rbx), %xmm1
   retq

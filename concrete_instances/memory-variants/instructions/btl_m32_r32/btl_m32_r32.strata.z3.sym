@@ -1,15 +1,15 @@
-code: btl %ebx, (%rax)
+code: btl %ecx, (%rbx)
 
-  maybe read:      { %rax %ebx }
-  must read:       { %rax %ebx }
+  maybe read:      { %ecx %rbx }
+  must read:       { %ecx %rbx }
   maybe write:     { %cf }
   must write:      { %cf }
   maybe undef:     { %pf %af %sf %of }
   must undef:      { %pf %af %sf %of }
   required flags:  { }
 
-btl %ebx, (%rax): Hindex0(10)
-btl %ebx, (%rax): Hindex0(10)
+btl %ecx, (%rbx): Hindex0(10)
+btl %ecx, (%rbx): Hindex0(10)
 vzeroall : Hindex1(9)
 callq .move_016_008_bx_r8b_r9b: Hindex8(9)
 callq .move_r8b_to_byte_0_of_ymm1: Hindex8(9)
@@ -552,7 +552,7 @@ Formula:
 (let ((a!89 ((_ extract 7 0)
               (bvadd (concat #b0 ((_ extract 31 0) a!88))
                      #b011111111111111111111111111111111))))
-(let ((a!90 (bvand (bvxor (bvor ((_ extract 7 0) %rbx) a!89) a!89) #x3f)))
+(let ((a!90 (bvand (bvxor (bvor ((_ extract 7 0) %rcx) a!89) a!89) #x3f)))
 (let ((a!91 ((_ extract 64 1)
               (bvlshr (concat (concat #x00000000 TMP_BV_32_0) #b0)
                       (concat #b000000000000000000000000000000000000000000000000000000000
@@ -570,7 +570,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_32_0 (4 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

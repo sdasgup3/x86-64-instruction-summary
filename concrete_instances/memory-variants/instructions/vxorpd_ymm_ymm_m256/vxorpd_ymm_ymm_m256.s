@@ -1,3 +1,3 @@
 .target:
-  vxorpd (%rax), %ymm2, %ymm1
+  vxorpd (%rbx), %ymm2, %ymm1
   retq

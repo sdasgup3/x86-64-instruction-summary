@@ -1,3 +1,3 @@
 .target:
-  andnq (%rax), %rcx, %rbx
+  andnq (%rdx), %rcx, %rbx
   retq

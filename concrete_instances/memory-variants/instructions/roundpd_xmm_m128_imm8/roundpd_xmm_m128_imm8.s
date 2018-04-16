@@ -1,3 +1,3 @@
 .target:
-  roundpd $0x0, (%rax), %xmm1
+  roundpd $0x0, (%rbx), %xmm1
   retq

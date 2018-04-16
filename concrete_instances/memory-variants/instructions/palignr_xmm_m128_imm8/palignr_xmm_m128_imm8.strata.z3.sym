@@ -1,15 +1,15 @@
-code: palignr $0x0, (%rax), %xmm1
+code: palignr $0x0, (%rbx), %xmm1
 
-  maybe read:      { %rax %xmm1 }
-  must read:       { %rax %xmm1 }
+  maybe read:      { %rbx %xmm1 }
+  must read:       { %rbx %xmm1 }
   maybe write:     { %xmm1 }
   must write:      { %xmm1 }
   maybe undef:     { }
   must undef:      { }
   required flags:  { ssse3 }
 
-palignr $0x0, (%rax), %xmm1: Hindex2(10)
-palignr $0x0, (%rax), %xmm1: Hindex2(10)
+palignr $0x0, (%rbx), %xmm1: Hindex2(10)
+palignr $0x0, (%rbx), %xmm1: Hindex2(10)
 Formula:
 
 %ymm1  : (let ((a!1 ((_ extract 127 0)
@@ -19,7 +19,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_128_0 (16 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

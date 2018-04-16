@@ -1,15 +1,15 @@
-code: vmovd %xmm1, (%rax)
+code: vmovd %xmm1, (%rbx)
 
-  maybe read:      { %rax %xmm1 }
-  must read:       { %rax %xmm1 }
+  maybe read:      { %rbx %xmm1 }
+  must read:       { %rbx %xmm1 }
   maybe write:     { }
   must write:      { }
   maybe undef:     { }
   must undef:      { }
   required flags:  { avx }
 
-vmovd %xmm1, (%rax): Hindex0(10)
-vmovd %xmm1, (%rax): Hindex0(10)
+vmovd %xmm1, (%rbx): Hindex0(10)
+vmovd %xmm1, (%rbx): Hindex0(10)
 callq .move_128_032_xmm1_r10d_r11d_r12d_r13d: Hindex8(9)
 callq .move_032_064_r10d_r11d_rbx: Hindex8(9)
 movq %r10, %rbx: Hindex5(9)
@@ -18,7 +18,7 @@ callq .move_016_032_r8w_r9w_ebx: Hindex8(9)
 Formula:
 
 Information about memory writes:
-  Address %rax was updated to
+  Address %rbx was updated to
     ((_ extract 31 0) %ymm1) (4 bytes).
 
 sigfpe  : sigfpe

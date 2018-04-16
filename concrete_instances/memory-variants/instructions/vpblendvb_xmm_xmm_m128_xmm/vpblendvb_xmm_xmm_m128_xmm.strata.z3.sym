@@ -1,15 +1,15 @@
-code: vpblendvb %xmm3, (%rax), %xmm2, %xmm1
+code: vpblendvb %xmm3, (%rbx), %xmm2, %xmm1
 
-  maybe read:      { %rax %xmm2 %xmm3 }
-  must read:       { %rax %xmm2 %xmm3 }
+  maybe read:      { %rbx %xmm2 %xmm3 }
+  must read:       { %rbx %xmm2 %xmm3 }
   maybe write:     { %ymm1 }
   must write:      { %ymm1 }
   maybe undef:     { }
   must undef:      { }
   required flags:  { avx }
 
-vpblendvb %xmm3, (%rax), %xmm2, %xmm1: Hindex2(10)
-vpblendvb %xmm3, (%rax), %xmm2, %xmm1: Hindex2(10)
+vpblendvb %xmm3, (%rbx), %xmm2, %xmm1: Hindex2(10)
+vpblendvb %xmm3, (%rbx), %xmm2, %xmm1: Hindex2(10)
 Formula:
 
 %ymm1  : (let ((a!1 (concat (ite (= ((_ extract 15 15) %ymm3) #b1)
@@ -78,7 +78,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_128_0 (16 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

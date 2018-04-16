@@ -1,3 +1,3 @@
 .target:
-  psllq (%rax), %xmm1
+  psllq (%rbx), %xmm1
   retq

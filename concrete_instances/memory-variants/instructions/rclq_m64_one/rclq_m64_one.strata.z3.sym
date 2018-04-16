@@ -1,15 +1,15 @@
-code: rclq $0x1, (%rax)
+code: rclq $0x1, (%rbx)
 
-  maybe read:      { %rax %cf }
-  must read:       { %rax %cf }
+  maybe read:      { %rbx %cf }
+  must read:       { %rbx %cf }
   maybe write:     { %cf %of }
   must write:      { %cf %of }
   maybe undef:     { }
   must undef:      { }
   required flags:  { }
 
-rclq $0x1, (%rax): Hindex0(10)
-rclq $0x1, (%rax): Hindex0(10)
+rclq $0x1, (%rbx): Hindex0(10)
+rclq $0x1, (%rbx): Hindex0(10)
 adcq %rbx, %rbx: Hindex2(9)
 Formula:
 
@@ -32,16 +32,16 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_64_1 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_64_2 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_64_3 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 Information about memory writes:
-  Address %rax was updated to
+  Address %rbx was updated to
     (let ((a!1 (bvadd (ite %cf
                        (bvadd (concat #b0 TMP_BV_64_0)
                               #b00000000000000000000000000000000000000000000000000000000000000001)

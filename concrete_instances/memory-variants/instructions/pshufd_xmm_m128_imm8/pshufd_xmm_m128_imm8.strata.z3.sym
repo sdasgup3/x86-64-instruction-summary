@@ -1,15 +1,15 @@
-code: pshufd $0x0, (%rax), %xmm1
+code: pshufd $0x0, (%rbx), %xmm1
 
-  maybe read:      { %rax }
-  must read:       { %rax }
+  maybe read:      { %rbx }
+  must read:       { %rbx }
   maybe write:     { %xmm1 }
   must write:      { %xmm1 }
   maybe undef:     { }
   must undef:      { }
   required flags:  { sse2 }
 
-pshufd $0x0, (%rax), %xmm1: Hindex2(10)
-pshufd $0x0, (%rax), %xmm1: Hindex2(10)
+pshufd $0x0, (%rbx), %xmm1: Hindex2(10)
+pshufd $0x0, (%rbx), %xmm1: Hindex2(10)
 Formula:
 
 %ymm1  : (let ((a!1 (concat ((_ extract 31 0)
@@ -27,7 +27,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_128_0 (16 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

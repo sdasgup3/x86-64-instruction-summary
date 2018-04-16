@@ -1,3 +1,3 @@
 .target:
-  pextq (%rax), %rcx, %rbx
+  pextq (%rdx), %rcx, %rbx
   retq

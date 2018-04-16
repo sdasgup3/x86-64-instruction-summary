@@ -1,27 +1,27 @@
-code: popq (%rax)
+code: popq (%rbx)
 
-  maybe read:      { %rax %rsp }
-  must read:       { %rax %rsp }
+  maybe read:      { %rbx %rsp }
+  must read:       { %rbx %rsp }
   maybe write:     { %rsp }
   must write:      { %rsp }
   maybe undef:     { }
   must undef:      { }
   required flags:  { }
 
-popq (%rax): Hindex2(10)
-popq (%rax): Hindex2(10)
+popq (%rbx): Hindex2(10)
+popq (%rbx): Hindex2(10)
 Formula:
 
 %rsp   : (bvadd %rsp #x0000000000000008)
 
 Information about memory reads:
   Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_64_1 (8 bytes)
     was read at address %rsp.
 
 Information about memory writes:
-  Address %rax was updated to
+  Address %rbx was updated to
     TMP_BV_64_1 (8 bytes).
 
 sigfpe  : sigfpe

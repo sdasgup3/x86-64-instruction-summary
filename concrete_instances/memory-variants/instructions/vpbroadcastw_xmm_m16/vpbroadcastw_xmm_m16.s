@@ -1,3 +1,3 @@
 .target:
-  vpbroadcastw (%rax), %xmm1
+  vpbroadcastw (%rbx), %xmm1
   retq

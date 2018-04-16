@@ -1,15 +1,15 @@
-code: vfnmadd213ss (%rax), %xmm2, %xmm1
+code: vfnmadd213ss (%rbx), %xmm2, %xmm1
 
-  maybe read:      { %rax %xmm1 %xmm2 }
-  must read:       { %rax %xmm1 %xmm2 }
+  maybe read:      { %rbx %xmm1 %xmm2 }
+  must read:       { %rbx %xmm1 %xmm2 }
   maybe write:     { %ymm1 }
   must write:      { %ymm1 }
   maybe undef:     { }
   must undef:      { }
   required flags:  { fma }
 
-vfnmadd213ss (%rax), %xmm2, %xmm1: Hindex0(10)
-vfnmadd213ss (%rax), %xmm2, %xmm1: Hindex0(10)
+vfnmadd213ss (%rbx), %xmm2, %xmm1: Hindex0(10)
+vfnmadd213ss (%rbx), %xmm2, %xmm1: Hindex0(10)
 callq .move_128_032_xmm2_xmm8_xmm9_xmm10_xmm11: Hindex8(9)
 callq .move_128_032_xmm2_eax_edx_r8d_r9d: Hindex8(9)
 movslq %edx, %r11: Hindex5(9)
@@ -167,7 +167,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_32_0 (4 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

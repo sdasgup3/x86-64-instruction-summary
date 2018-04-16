@@ -1,3 +1,3 @@
 .target:
-  comisd (%rax), %xmm1
+  comisd (%rbx), %xmm1
   retq

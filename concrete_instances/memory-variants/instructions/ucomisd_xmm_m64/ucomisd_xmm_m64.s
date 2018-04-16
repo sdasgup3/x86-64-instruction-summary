@@ -1,3 +1,3 @@
 .target:
-  ucomisd (%rax), %xmm1
+  ucomisd (%rbx), %xmm1
   retq

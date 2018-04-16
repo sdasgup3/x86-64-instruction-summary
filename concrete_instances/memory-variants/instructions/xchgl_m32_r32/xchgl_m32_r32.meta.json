@@ -1,8 +1,8 @@
 {
-  "def_in": "{ %rax %ebx }",
-  "live_out": "{ %rbx }",
-  "def_in_formal": "{ %rax %ebx }",
-  "live_out_formal": "{ %rbx }",
+  "def_in": "{ %ecx %rbx }",
+  "live_out": "{ %rcx }",
+  "def_in_formal": "{ %ecx %rbx }",
+  "live_out_formal": "{ %rcx }",
   "search_without_uif": false,
   "delim": 0
 }

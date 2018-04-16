@@ -1,3 +1,3 @@
 .target:
-  subq (%rax), %rbx
+  subq (%rcx), %rbx
   retq

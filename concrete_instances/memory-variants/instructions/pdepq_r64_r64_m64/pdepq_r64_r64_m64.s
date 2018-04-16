@@ -1,3 +1,3 @@
 .target:
-  pdepq (%rax), %rcx, %rbx
+  pdepq (%rdx), %rcx, %rbx
   retq

@@ -1,7 +1,7 @@
-code: movb (%rax), %ah
+code: movb (%rbx), %ah
 
-  maybe read:      { %rax }
-  must read:       { %rax }
+  maybe read:      { %rbx }
+  must read:       { %rbx }
   maybe write:     { %ah }
   must write:      { %ah }
   maybe undef:     { }
@@ -9,9 +9,9 @@ code: movb (%rax), %ah
   required flags:  { }
 
 Base Instruction!!
-movb (%rax), %ah: Hindex0(10)
+movb (%rbx), %ah: Hindex0(10)
 Base Instruction!!
-movb (%rax), %ah: Hindex0(10)
+movb (%rbx), %ah: Hindex0(10)
 movb %bl, %ah: Hindex5(9)
 Formula:
 
@@ -19,7 +19,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_8_0 (1 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

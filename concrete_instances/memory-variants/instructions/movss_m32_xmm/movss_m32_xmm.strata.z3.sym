@@ -1,15 +1,15 @@
-code: movss %xmm1, (%rax)
+code: movss %xmm1, (%rbx)
 
-  maybe read:      { %rax %xmm1 }
-  must read:       { %rax %xmm1 }
+  maybe read:      { %rbx %xmm1 }
+  must read:       { %rbx %xmm1 }
   maybe write:     { }
   must write:      { }
   maybe undef:     { }
   must undef:      { }
   required flags:  { sse }
 
-movss %xmm1, (%rax): Hindex0(10)
-movss %xmm1, (%rax): Hindex0(10)
+movss %xmm1, (%rbx): Hindex0(10)
+movss %xmm1, (%rbx): Hindex0(10)
 callq .move_128_032_xmm1_xmm8_xmm9_xmm10_xmm11: Hindex8(9)
 callq .move_128_064_xmm2_r8_r9: Hindex8(9)
 vzeroall : Hindex1(9)
@@ -22,12 +22,12 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_32_0 (4 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_32_1 (4 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 Information about memory writes:
-  Address %rax was updated to
+  Address %rbx was updated to
     ((_ extract 31 0) %ymm1) (4 bytes).
 
 sigfpe  : sigfpe

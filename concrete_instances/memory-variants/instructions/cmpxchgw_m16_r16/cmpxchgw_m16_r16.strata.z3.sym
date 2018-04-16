@@ -1,15 +1,15 @@
-code: cmpxchgw %bx, (%rax)
+code: cmpxchgw %cx, (%rbx)
 
-  maybe read:      { %rax %bx }
-  must read:       { %rax %bx }
+  maybe read:      { %ax %cx %rbx }
+  must read:       { %ax %cx %rbx }
   maybe write:     { %ax %cf %pf %af %zf %sf %of }
   must write:      { %cf %pf %af %zf %sf %of }
   maybe undef:     { }
   must undef:      { }
   required flags:  { }
 
-cmpxchgw %bx, (%rax): Hindex0(10)
-cmpxchgw %bx, (%rax): Hindex0(10)
+cmpxchgw %cx, (%rbx): Hindex0(10)
+cmpxchgw %cx, (%rbx): Hindex0(10)
 movq $0x20, %rbx: Hindex5(9)
 callq .move_016_008_cx_r12b_r13b: Hindex8(9)
 callq .move_008_016_r12b_r13b_bx: Hindex8(9)
@@ -498,23 +498,23 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_16_0 (2 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_16_1 (2 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_16_2 (2 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_16_3 (2 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_16_4 (2 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 Information about memory writes:
-  Address (concat ((_ extract 63 16) %rax) TMP_BV_16_0) was updated to
+  Address %rbx was updated to
     (let ((a!1 ((_ extract 15 0)
              (bvadd (concat #b0 ((_ extract 15 0) %rax))
                     #b00000000000000001
                     (concat #b0 (bvxor TMP_BV_16_0 #xffff))))))
-  (ite (= a!1 #x0000) ((_ extract 15 0) %rbx) TMP_BV_16_2)) (2 bytes).
+  (ite (= a!1 #x0000) ((_ extract 15 0) %rcx) TMP_BV_16_2)) (2 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

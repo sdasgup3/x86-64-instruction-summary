@@ -1,3 +1,3 @@
 .target:
-  minps (%rax), %xmm1
+  minps (%rbx), %xmm1
   retq

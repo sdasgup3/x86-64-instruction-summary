@@ -1,15 +1,15 @@
-code: vinsertps $0x0, (%rax), %xmm2, %xmm1
+code: vinsertps $0x0, (%rbx), %xmm2, %xmm1
 
-  maybe read:      { %rax %xmm1 %xmm2 }
-  must read:       { %rax %xmm1 %xmm2 }
+  maybe read:      { %rbx %xmm1 %xmm2 }
+  must read:       { %rbx %xmm1 %xmm2 }
   maybe write:     { %ymm1 %xmm2 }
   must write:      { %ymm1 %xmm2 }
   maybe undef:     { }
   must undef:      { }
   required flags:  { avx }
 
-vinsertps $0x0, (%rax), %xmm2, %xmm1: Hindex1(10)
-vinsertps $0x0, (%rax), %xmm2, %xmm1: Hindex1(10)
+vinsertps $0x0, (%rbx), %xmm2, %xmm1: Hindex1(10)
+vinsertps $0x0, (%rbx), %xmm2, %xmm1: Hindex1(10)
 Formula:
 
 %ymm1  : (concat #x00000000000000000000000000000000
@@ -17,7 +17,7 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_32_0 (4 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus

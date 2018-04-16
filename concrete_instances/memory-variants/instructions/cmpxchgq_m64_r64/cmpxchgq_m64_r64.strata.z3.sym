@@ -1,15 +1,15 @@
-code: cmpxchgq %rbx, (%rax)
+code: cmpxchgq %rcx, (%rbx)
 
-  maybe read:      { %rax %rbx }
-  must read:       { %rax %rbx }
+  maybe read:      { %rax %rcx %rbx }
+  must read:       { %rax %rcx %rbx }
   maybe write:     { %rax %cf %pf %af %zf %sf %of }
   must write:      { %rax %cf %pf %af %zf %sf %of }
   maybe undef:     { }
   must undef:      { }
   required flags:  { }
 
-cmpxchgq %rbx, (%rax): Hindex0(10)
-cmpxchgq %rbx, (%rax): Hindex0(10)
+cmpxchgq %rcx, (%rbx): Hindex0(10)
+cmpxchgq %rcx, (%rbx): Hindex0(10)
 callq .set_cf: Hindex8(9)
 movq $0xfffffffffffffffe, %rdx: Hindex5(9)
 xorq %rax, %rax: Hindex1(9)
@@ -199,30 +199,23 @@ Formula:
 
 Information about memory reads:
   Value TMP_BV_64_0 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_64_1 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_64_2 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_64_3 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
   Value TMP_BV_64_4 (8 bytes)
-    was read at address %rax.
+    was read at address %rbx.
 
 Information about memory writes:
-  Address (let ((a!1 ((_ extract 63 0)
-             (bvadd (concat #b0 (bvxor TMP_BV_64_0 #xffffffffffffffff))
-                    #b00000000000000000000000000000000000000000000000000000000000000001
-                    (concat #b0 %rax)))))
-(let ((a!2 ((_ extract 7 0)
-             (bvadd (ite (= a!1 #x0000000000000000) #b000000001 #b000000000)
-                    (ite (= a!1 #x0000000000000000) #b000000001 #b000000000)))))
-  (ite (= a!2 #x00) TMP_BV_64_1 %rax))) was updated to
+  Address %rbx was updated to
     (let ((a!1 ((_ extract 63 0)
              (bvadd (concat #b0 (bvxor TMP_BV_64_0 #xffffffffffffffff))
                     #b00000000000000000000000000000000000000000000000000000000000000001
                     (concat #b0 %rax)))))
-  (ite (= a!1 #x0000000000000000) %rbx TMP_BV_64_2)) (8 bytes).
+  (ite (= a!1 #x0000000000000000) %rcx TMP_BV_64_2)) (8 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

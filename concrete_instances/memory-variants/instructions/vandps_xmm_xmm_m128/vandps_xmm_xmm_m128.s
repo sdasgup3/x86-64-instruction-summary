@@ -1,3 +1,3 @@
 .target:
-  vandps (%rax), %xmm2, %xmm1
+  vandps (%rbx), %xmm2, %xmm1
   retq

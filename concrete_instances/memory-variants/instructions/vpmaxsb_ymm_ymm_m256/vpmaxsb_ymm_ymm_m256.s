@@ -1,3 +1,3 @@
 .target:
-  vpmaxsb (%rax), %ymm2, %ymm1
+  vpmaxsb (%rbx), %ymm2, %ymm1
   retq
