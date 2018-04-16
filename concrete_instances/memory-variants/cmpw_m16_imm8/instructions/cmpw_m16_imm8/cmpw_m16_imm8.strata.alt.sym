@@ -1,0 +1,59 @@
+code: cmpw $0x0, (%rbx)
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { %cf %pf %af %zf %sf %of }
+  must write:      { %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+cmpw $0x0, (%rbx): Hindex2(9)
+cmpw $0x0, (%rbx): Hindex2(9)
+Formula:
+
+%cf    : (let ((a!1 (= ((_ extract 16 16)
+                (bvadd #b10000000000000000 (concat #b0 TMP_BV_16_0)))
+              #b1)))
+  (not a!1))
+%pf    : (let ((a!1 (= ((_ extract 0 0)
+                (bvadd #b10000000000000000 (concat #b0 TMP_BV_16_0)))
+              #b1))
+      (a!2 (= ((_ extract 1 1)
+                (bvadd #b10000000000000000 (concat #b0 TMP_BV_16_0)))
+              #b1))
+      (a!3 (= ((_ extract 2 2)
+                (bvadd #b10000000000000000 (concat #b0 TMP_BV_16_0)))
+              #b1))
+      (a!4 (= ((_ extract 3 3)
+                (bvadd #b10000000000000000 (concat #b0 TMP_BV_16_0)))
+              #b1))
+      (a!5 (= ((_ extract 4 4)
+                (bvadd #b10000000000000000 (concat #b0 TMP_BV_16_0)))
+              #b1))
+      (a!6 (= ((_ extract 5 5)
+                (bvadd #b10000000000000000 (concat #b0 TMP_BV_16_0)))
+              #b1))
+      (a!7 (= ((_ extract 6 6)
+                (bvadd #b10000000000000000 (concat #b0 TMP_BV_16_0)))
+              #b1))
+      (a!8 (= ((_ extract 7 7)
+                (bvadd #b10000000000000000 (concat #b0 TMP_BV_16_0)))
+              #b1)))
+  (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)))
+%af    : false
+%zf    : (= ((_ extract 15 0) (bvadd #b10000000000000000 (concat #b0 TMP_BV_16_0)))
+   #x0000)
+%sf    : (= ((_ extract 15 15) (bvadd #b10000000000000000 (concat #b0 TMP_BV_16_0))) #b1)
+%of    : (let ((a!1 (= ((_ extract 15 15)
+                (bvadd #b10000000000000000 (concat #b0 TMP_BV_16_0)))
+              #b1)))
+  (and (= true (= ((_ extract 15 15) TMP_BV_16_0) #b1)) (not (= true a!1))))
+
+Information about memory reads:
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

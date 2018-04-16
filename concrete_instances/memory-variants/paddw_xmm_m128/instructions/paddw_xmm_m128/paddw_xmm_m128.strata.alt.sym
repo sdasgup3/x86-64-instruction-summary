@@ -1,0 +1,42 @@
+code: paddw (%rbx), %xmm1
+
+  maybe read:      { %rbx %xmm1 }
+  must read:       { %rbx %xmm1 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+paddw (%rbx), %xmm1: Hindex0(9)
+paddw (%rbx), %xmm1: Hindex0(9)
+Formula:
+
+%ymm1  : (let ((a!1 (concat (bvadd ((_ extract 47 32) %ymm1)
+                          ((_ extract 47 32) TMP_BV_128_0))
+                   (concat (bvadd ((_ extract 31 16) %ymm1)
+                                  ((_ extract 31 16) TMP_BV_128_0))
+                           (bvadd ((_ extract 15 0) %ymm1)
+                                  ((_ extract 15 0) TMP_BV_128_0))))))
+(let ((a!2 (concat (bvadd ((_ extract 79 64) %ymm1)
+                          ((_ extract 79 64) TMP_BV_128_0))
+                   (concat (bvadd ((_ extract 63 48) %ymm1)
+                                  ((_ extract 63 48) TMP_BV_128_0))
+                           a!1))))
+(let ((a!3 (concat (bvadd ((_ extract 111 96) %ymm1)
+                          ((_ extract 111 96) TMP_BV_128_0))
+                   (concat (bvadd ((_ extract 95 80) %ymm1)
+                                  ((_ extract 95 80) TMP_BV_128_0))
+                           a!2))))
+  (concat ((_ extract 255 128) %ymm1)
+          (concat (bvadd ((_ extract 127 112) %ymm1)
+                         ((_ extract 127 112) TMP_BV_128_0))
+                  a!3)))))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

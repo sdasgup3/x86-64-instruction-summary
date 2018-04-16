@@ -1,0 +1,25 @@
+code: pmovzxdq (%rbx), %xmm1
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse4_1 }
+
+pmovzxdq (%rbx), %xmm1: Hindex0(9)
+pmovzxdq (%rbx), %xmm1: Hindex0(9)
+Formula:
+
+%ymm1  : (concat ((_ extract 255 128) %ymm1)
+        (concat (concat #x00000000 ((_ extract 63 32) TMP_BV_64_0))
+                (concat #x00000000 ((_ extract 31 0) TMP_BV_64_0))))
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

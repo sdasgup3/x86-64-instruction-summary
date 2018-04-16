@@ -1,0 +1,33 @@
+code: vpsllq (%rbx), %ymm2, %ymm1
+
+  maybe read:      { %rbx %ymm2 }
+  must read:       { %rbx %ymm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+vpsllq (%rbx), %ymm2, %ymm1: Hindex1(9)
+vpsllq (%rbx), %ymm2, %ymm1: Hindex1(9)
+Formula:
+
+%ymm1  : (let ((a!1 (concat (bvshl ((_ extract 191 128) %ymm2)
+                          ((_ extract 63 0) TMP_BV_128_0))
+                   (concat (bvshl ((_ extract 127 64) %ymm2)
+                                  ((_ extract 63 0) TMP_BV_128_0))
+                           (bvshl ((_ extract 63 0) %ymm2)
+                                  ((_ extract 63 0) TMP_BV_128_0))))))
+  (ite (bvugt ((_ extract 63 0) TMP_BV_128_0) #x000000000000003f)
+       #x0000000000000000000000000000000000000000000000000000000000000000
+       (concat (bvshl ((_ extract 255 192) %ymm2)
+                      ((_ extract 63 0) TMP_BV_128_0))
+               a!1)))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))
