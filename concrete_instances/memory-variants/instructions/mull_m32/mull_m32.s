@@ -1,3 +1,0 @@
-.target:
-  mull (%rbx)
-  retq

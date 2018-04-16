@@ -1,3 +1,0 @@
-.target:
-  setns (%rbx)
-  retq

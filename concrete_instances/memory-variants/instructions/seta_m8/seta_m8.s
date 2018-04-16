@@ -1,3 +1,0 @@
-.target:
-  seta (%rbx)
-  retq
