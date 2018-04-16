@@ -1,3 +1,0 @@
-.target:
-  setnp (%rbx)
-  retq

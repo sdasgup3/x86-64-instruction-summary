@@ -1,3 +1,0 @@
-.target:
-  setp (%rbx)
-  retq

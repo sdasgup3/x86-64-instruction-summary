@@ -1,3 +1,0 @@
-.target:
-  imulb (%rbx)
-  retq

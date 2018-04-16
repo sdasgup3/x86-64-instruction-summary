@@ -1,3 +1,0 @@
-.target:
-  pushw (%rbx)
-  retq
