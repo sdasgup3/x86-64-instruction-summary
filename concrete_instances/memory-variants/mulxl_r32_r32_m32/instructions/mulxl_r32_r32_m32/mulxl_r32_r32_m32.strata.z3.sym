@@ -1,0 +1,28 @@
+code: mulxl (%rdx), %ecx, %ebx
+
+  maybe read:      { %rdx }
+  must read:       { %rdx }
+  maybe write:     { %rcx %rbx }
+  must write:      { %rcx %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { bmi2 }
+
+Formula:
+
+%rcx   : (let ((a!1 ((_ extract 31 0)
+             (bvmul (concat #x00000000 ((_ extract 31 0) %rdx))
+                    (concat #x00000000 TMP_BV_32_0)))))
+  (concat #x00000000 a!1))
+%rbx   : (let ((a!1 ((_ extract 63 32)
+             (bvmul (concat #x00000000 ((_ extract 31 0) %rdx))
+                    (concat #x00000000 TMP_BV_32_0)))))
+  (concat #x00000000 a!1))
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rdx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

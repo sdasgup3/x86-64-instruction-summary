@@ -1,0 +1,3 @@
+.target:
+  incl (%rbx)
+  retq

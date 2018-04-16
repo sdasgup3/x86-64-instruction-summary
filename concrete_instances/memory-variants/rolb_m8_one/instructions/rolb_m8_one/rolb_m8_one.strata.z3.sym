@@ -1,0 +1,57 @@
+code: rolb $0x1, (%rbx)
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { %cf %of }
+  must write:      { %cf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%cf    : (let ((a!1 (= ((_ extract 8 8)
+                (bvadd (concat #b0 TMP_BV_8_1) (concat #b0 TMP_BV_8_1)))
+              #b1)))
+(let ((a!2 (bvadd (ite a!1
+                       (bvadd (concat #b0 TMP_BV_8_1) #b000000001)
+                       (concat #b0 TMP_BV_8_1))
+                  (concat #b0 TMP_BV_8_1))))
+  (= ((_ extract 8 8) a!2) #b1)))
+%of    : (let ((a!1 (= ((_ extract 8 8)
+                (bvadd (concat #b0 TMP_BV_8_1) (concat #b0 TMP_BV_8_1)))
+              #b1)))
+(let ((a!2 (bvadd (ite a!1
+                       (bvadd (concat #b0 TMP_BV_8_1) #b000000001)
+                       (concat #b0 TMP_BV_8_1))
+                  (concat #b0 TMP_BV_8_1))))
+(let ((a!3 (not (= (= ((_ extract 7 7) TMP_BV_8_2) #b1)
+                   (= ((_ extract 7 7) a!2) #b1)))))
+  (and (= (= ((_ extract 7 7) TMP_BV_8_2) #b1)
+          (= ((_ extract 7 7) TMP_BV_8_3) #b1))
+       a!3))))
+
+Information about memory reads:
+  Value TMP_BV_8_0 (1 bytes)
+    was read at address %rbx.
+  Value TMP_BV_8_1 (1 bytes)
+    was read at address %rbx.
+  Value TMP_BV_8_2 (1 bytes)
+    was read at address %rbx.
+  Value TMP_BV_8_3 (1 bytes)
+    was read at address %rbx.
+
+Information about memory writes:
+  Address %rbx was updated to
+    (let ((a!1 (= ((_ extract 8 8)
+                (bvadd (concat #b0 TMP_BV_8_1) (concat #b0 TMP_BV_8_1)))
+              #b1)))
+(let ((a!2 (bvadd (ite a!1
+                       (bvadd (concat #b0 TMP_BV_8_1) #b000000001)
+                       (concat #b0 TMP_BV_8_1))
+                  (concat #b0 TMP_BV_8_1))))
+  ((_ extract 7 0) a!2))) (1 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

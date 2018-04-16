@@ -1,0 +1,33 @@
+code: cmovgq (%rcx), %rbx
+
+  maybe read:      { %rcx %zf %sf %of }
+  must read:       { %rcx %zf %sf %of }
+  maybe write:     { %rbx }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { cmov }
+
+Formula:
+
+%rbx   : (let ((a!1 ((_ sign_extend 56)
+             (ite %zf #x00 (bvxor #x01 (ite %of #x01 #x00) (ite %sf #x01 #x00))))))
+(let ((a!2 (= ((_ extract 0 0)
+                (bvashr (concat a!1 #b0)
+                        (concat #b000000000000000000000000000000000000000000000000000000000
+                                #x01)))
+              #b1)))
+(let ((a!3 (= (ite (or (and true a!2) false) #x00000100 #x00000000) #x00000000)))
+(let ((a!4 (= ((_ extract 7 0)
+                (bvadd (ite a!3 #b000000001 #b000000000)
+                       (ite a!3 #b000000001 #b000000000)))
+              #x00)))
+  (ite a!4 TMP_BV_64_0 %rbx)))))
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rcx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

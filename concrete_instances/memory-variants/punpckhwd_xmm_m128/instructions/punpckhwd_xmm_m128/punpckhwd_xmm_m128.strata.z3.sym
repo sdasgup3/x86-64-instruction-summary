@@ -1,0 +1,51 @@
+code: punpckhwd (%rbx), %xmm1
+
+  maybe read:      { %rbx %xmm1 }
+  must read:       { %rbx %xmm1 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+Formula:
+
+%ymm1  : (let ((a!1 (bvor (concat ((_ extract 127 96) TMP_BV_128_1)
+                         (concat ((_ extract 111 96) TMP_BV_128_2)
+                                 ((_ extract 111 96) TMP_BV_128_3)))
+                 (concat (concat #x0000 ((_ extract 111 96) TMP_BV_128_0))
+                         (concat #x0000 ((_ extract 111 96) TMP_BV_128_0)))))
+      (a!3 (bvor (concat ((_ extract 95 64) TMP_BV_128_5)
+                         (concat ((_ extract 79 64) TMP_BV_128_4)
+                                 ((_ extract 79 64) TMP_BV_128_4)))
+                 (concat (concat #x0000 ((_ extract 79 64) TMP_BV_128_4))
+                         (concat #x0000 ((_ extract 79 64) TMP_BV_128_4))))))
+(let ((a!2 (bvxor (concat (concat #x0000 ((_ extract 127 112) %ymm1))
+                          (concat #x0000 ((_ extract 111 96) %ymm1)))
+                  (concat (concat #x0000 ((_ extract 111 96) TMP_BV_128_0))
+                          (concat #x0000 ((_ extract 111 96) TMP_BV_128_0)))
+                  a!1))
+      (a!4 (bvxor (concat (concat #x0000 ((_ extract 95 80) %ymm1))
+                          (concat #x0000 ((_ extract 79 64) %ymm1)))
+                  (concat (concat #x0000 ((_ extract 79 64) TMP_BV_128_4))
+                          (concat #x0000 ((_ extract 79 64) TMP_BV_128_4)))
+                  a!3)))
+  (concat ((_ extract 255 128) %ymm1) (concat a!2 a!4))))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+  Value TMP_BV_128_1 (16 bytes)
+    was read at address %rbx.
+  Value TMP_BV_128_2 (16 bytes)
+    was read at address %rbx.
+  Value TMP_BV_128_3 (16 bytes)
+    was read at address %rbx.
+  Value TMP_BV_128_4 (16 bytes)
+    was read at address %rbx.
+  Value TMP_BV_128_5 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

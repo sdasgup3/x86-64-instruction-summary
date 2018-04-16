@@ -1,0 +1,137 @@
+code: sbbl $0x0, (%rbx)
+
+  maybe read:      { %rbx %cf }
+  must read:       { %rbx %cf }
+  maybe write:     { %cf %pf %af %zf %sf %of }
+  must write:      { %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%cf    : (let ((a!1 (= ((_ extract 8 8)
+                (bvadd (ite %cf #b000000000 #b011111111)
+                       (ite %cf #b000000000 #b011111111)))
+              #b1)))
+(let ((a!2 (= ((_ extract 32 32)
+                (bvadd (ite a!1
+                            #b100000000000000000000000000000000
+                            #b011111111111111111111111111111111)
+                       (concat #b0 TMP_BV_32_0)))
+              #b1)))
+  (= ((_ extract 8 8)
+       (bvadd (ite a!2 #b000000000 #b011111111)
+              (ite a!2 #b000000000 #b011111111)))
+     #b1)))
+%pf    : (let ((a!1 (= ((_ extract 8 8)
+                (bvadd (ite %cf #b000000000 #b011111111)
+                       (ite %cf #b000000000 #b011111111)))
+              #b1)))
+(let ((a!2 (= ((_ extract 0 0)
+                (bvadd (ite a!1
+                            #b100000000000000000000000000000000
+                            #b011111111111111111111111111111111)
+                       (concat #b0 TMP_BV_32_0)))
+              #b1))
+      (a!3 (= ((_ extract 1 1)
+                (bvadd (ite a!1
+                            #b100000000000000000000000000000000
+                            #b011111111111111111111111111111111)
+                       (concat #b0 TMP_BV_32_0)))
+              #b1))
+      (a!4 (= ((_ extract 2 2)
+                (bvadd (ite a!1
+                            #b100000000000000000000000000000000
+                            #b011111111111111111111111111111111)
+                       (concat #b0 TMP_BV_32_0)))
+              #b1))
+      (a!5 (= ((_ extract 3 3)
+                (bvadd (ite a!1
+                            #b100000000000000000000000000000000
+                            #b011111111111111111111111111111111)
+                       (concat #b0 TMP_BV_32_0)))
+              #b1))
+      (a!6 (= ((_ extract 4 4)
+                (bvadd (ite a!1
+                            #b100000000000000000000000000000000
+                            #b011111111111111111111111111111111)
+                       (concat #b0 TMP_BV_32_0)))
+              #b1))
+      (a!7 (= ((_ extract 5 5)
+                (bvadd (ite a!1
+                            #b100000000000000000000000000000000
+                            #b011111111111111111111111111111111)
+                       (concat #b0 TMP_BV_32_0)))
+              #b1))
+      (a!8 (= ((_ extract 6 6)
+                (bvadd (ite a!1
+                            #b100000000000000000000000000000000
+                            #b011111111111111111111111111111111)
+                       (concat #b0 TMP_BV_32_0)))
+              #b1))
+      (a!9 (= ((_ extract 7 7)
+                (bvadd (ite a!1
+                            #b100000000000000000000000000000000
+                            #b011111111111111111111111111111111)
+                       (concat #b0 TMP_BV_32_0)))
+              #b1)))
+  (not (xor a!2 a!3 a!4 a!5 a!6 a!7 a!8 a!9))))
+%af    : (let ((a!1 ((_ extract 4 4)
+             (bvadd #b01111 (concat #b0 ((_ extract 3 0) TMP_BV_32_1))))))
+  (= a!1 #b1))
+%zf    : (let ((a!1 (= ((_ extract 8 8)
+                (bvadd (ite %cf #b000000000 #b011111111)
+                       (ite %cf #b000000000 #b011111111)))
+              #b1)))
+  (= ((_ extract 31 0)
+       (bvadd (ite a!1
+                   #b100000000000000000000000000000000
+                   #b011111111111111111111111111111111)
+              (concat #b0 TMP_BV_32_0)))
+     #x00000000))
+%sf    : (let ((a!1 (= ((_ extract 8 8)
+                (bvadd (ite %cf #b000000000 #b011111111)
+                       (ite %cf #b000000000 #b011111111)))
+              #b1)))
+  (= ((_ extract 31 31)
+       (bvadd (ite a!1
+                   #b100000000000000000000000000000000
+                   #b011111111111111111111111111111111)
+              (concat #b0 TMP_BV_32_0)))
+     #b1))
+%of    : (let ((a!1 (= ((_ extract 8 8)
+                (bvadd (ite %cf #b000000000 #b011111111)
+                       (ite %cf #b000000000 #b011111111)))
+              #b1)))
+(let ((a!2 (= ((_ extract 31 31)
+                (bvadd (ite a!1
+                            #b100000000000000000000000000000000
+                            #b011111111111111111111111111111111)
+                       (concat #b0 TMP_BV_32_0)))
+              #b1)))
+  (and (= true (= ((_ extract 31 31) TMP_BV_32_2) #b1)) (not (= true a!2)))))
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rbx.
+  Value TMP_BV_32_1 (4 bytes)
+    was read at address %rbx.
+  Value TMP_BV_32_2 (4 bytes)
+    was read at address %rbx.
+
+Information about memory writes:
+  Address %rbx was updated to
+    (let ((a!1 (= ((_ extract 8 8)
+                (bvadd (ite %cf #b000000000 #b011111111)
+                       (ite %cf #b000000000 #b011111111)))
+              #b1)))
+  ((_ extract 31 0)
+    (bvadd (ite a!1
+                #b100000000000000000000000000000000
+                #b011111111111111111111111111111111)
+           (concat #b0 TMP_BV_32_0)))) (4 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

@@ -1,0 +1,26 @@
+code: cmoval (%rcx), %ebx
+
+  maybe read:      { %rcx %cf %zf }
+  must read:       { %rcx %cf %zf }
+  maybe write:     { %rbx }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { cmov }
+
+Formula:
+
+%rbx   : (let ((a!1 (ite %zf
+                ((_ extract 31 0) %rbx)
+                (ite (= (ite %cf #x0100 #x0000) #x0000)
+                     TMP_BV_32_0
+                     ((_ extract 31 0) %rbx)))))
+  (concat #x00000000 a!1))
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rcx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

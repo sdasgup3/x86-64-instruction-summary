@@ -1,0 +1,37 @@
+code: cmovnoq (%rcx), %rbx
+
+  maybe read:      { %rcx %of }
+  must read:       { %rcx %of }
+  maybe write:     { %rbx }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { cmov }
+
+Formula:
+
+%rbx   : (let ((a!1 (= ((_ extract 8 8)
+                (bvadd (ite %of #b011111111 #b000000000)
+                       (ite %of #b000000001 #b000000000)))
+              #b1)))
+(let ((a!2 (= ((_ extract 8 8)
+                (bvadd (ite a!1 #b000000000 #b011111111)
+                       (ite a!1 #b000000000 #b011111111)))
+              #b1)))
+(let ((a!3 (ite a!2
+                (bvadd (concat #b0 ((_ extract 15 0) TMP_BV_64_0))
+                       #b00000000000000001)
+                (concat #b0 ((_ extract 15 0) TMP_BV_64_0)))))
+(let ((a!4 (bvadd a!3
+                  (concat #b0 (bvxor ((_ extract 15 0) TMP_BV_64_0) #xffff)))))
+  (ite (= ((_ extract 15 0) a!4) #x0000) TMP_BV_64_1 %rbx)))))
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rcx.
+  Value TMP_BV_64_1 (8 bytes)
+    was read at address %rcx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

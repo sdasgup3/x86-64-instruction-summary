@@ -1,0 +1,24 @@
+code: sarxq %rdx, (%rcx), %rbx
+
+  maybe read:      { %rcx %rdx }
+  must read:       { %rcx %rdx }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { bmi2 }
+
+Formula:
+
+%rbx   : (let ((a!1 (bvashr (concat TMP_BV_64_0 #b0)
+                   (concat #b000000000000000000000000000000000000000000000000000000000
+                           (bvand ((_ extract 7 0) %rdx) #x3f)))))
+  ((_ extract 64 1) a!1))
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rcx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

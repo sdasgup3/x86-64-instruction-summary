@@ -1,0 +1,64 @@
+code: cmpq (%rcx), %rbx
+
+  maybe read:      { %rcx %rbx }
+  must read:       { %rcx %rbx }
+  maybe write:     { %cf %pf %af %zf %sf %of }
+  must write:      { %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%cf    : (let ((a!1 ((_ extract 64 64)
+             (bvadd (concat #b0 (bvxor TMP_BV_64_0 #xffffffffffffffff))
+                    #b00000000000000000000000000000000000000000000000000000000000000001
+                    (concat #b0 %rbx)))))
+(let ((a!2 ((_ extract 8 8)
+             (bvadd (ite (= a!1 #b1) #b000000000 #b011111111)
+                    (ite (= a!1 #b1) #b000000000 #b011111111)))))
+  (= a!2 #b1)))
+%pf    : (let ((a!1 (bvadd (concat #b0 (bvxor TMP_BV_64_0 #xffffffffffffffff))
+                  #b00000000000000000000000000000000000000000000000000000000000000001
+                  (concat #b0 %rbx))))
+  (not (xor (= ((_ extract 0 0) a!1) #b1)
+            (= ((_ extract 1 1) a!1) #b1)
+            (= ((_ extract 2 2) a!1) #b1)
+            (= ((_ extract 3 3) a!1) #b1)
+            (= ((_ extract 4 4) a!1) #b1)
+            (= ((_ extract 5 5) a!1) #b1)
+            (= ((_ extract 6 6) a!1) #b1)
+            (= ((_ extract 7 7) a!1) #b1))))
+%af    : (let ((a!1 (bvadd (concat #b0 (bvxor ((_ extract 3 0) TMP_BV_64_1) #xf))
+                  (concat #b0 ((_ extract 3 0) %rbx)))))
+  (= ((_ extract 4 4) a!1) #b1))
+%zf    : (let ((a!1 ((_ extract 63 0)
+             (bvadd (concat #b0 (bvxor TMP_BV_64_0 #xffffffffffffffff))
+                    #b00000000000000000000000000000000000000000000000000000000000000001
+                    (concat #b0 %rbx)))))
+  (= a!1 #x0000000000000000))
+%sf    : (let ((a!1 ((_ extract 63 63)
+             (bvadd (concat #b0 (bvxor TMP_BV_64_0 #xffffffffffffffff))
+                    #b00000000000000000000000000000000000000000000000000000000000000001
+                    (concat #b0 %rbx)))))
+  (= a!1 #b1))
+%of    : (let ((a!1 (= (= (bvxor ((_ extract 63 63) TMP_BV_64_2) #b1) #b1)
+              (= ((_ extract 63 63) %rbx) #b1)))
+      (a!2 ((_ extract 63 63)
+             (bvadd (concat #b0 (bvxor TMP_BV_64_0 #xffffffffffffffff))
+                    #b00000000000000000000000000000000000000000000000000000000000000001
+                    (concat #b0 %rbx)))))
+(let ((a!3 (= (= (bvxor ((_ extract 63 63) TMP_BV_64_2) #b1) #b1) (= a!2 #b1))))
+  (and a!1 (not a!3))))
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rcx.
+  Value TMP_BV_64_1 (8 bytes)
+    was read at address %rcx.
+  Value TMP_BV_64_2 (8 bytes)
+    was read at address %rcx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

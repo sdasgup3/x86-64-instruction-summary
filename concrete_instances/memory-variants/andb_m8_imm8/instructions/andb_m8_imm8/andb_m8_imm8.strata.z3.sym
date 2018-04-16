@@ -1,0 +1,103 @@
+code: andb $0x0, (%rbx)
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { %cf %pf %zf %sf %of }
+  must write:      { %cf %pf %zf %sf %of }
+  maybe undef:     { %af }
+  must undef:      { %af }
+  required flags:  { }
+
+Formula:
+
+%cf    : false
+%pf    : (let ((a!1 (= (bvxor (bvor ((_ extract 0 0) TMP_BV_8_2) #b0)
+                     #b0
+                     ((_ extract 0 0) TMP_BV_8_3))
+              #b1))
+      (a!2 (= (bvxor (bvor ((_ extract 1 1) TMP_BV_8_4) #b0)
+                     #b0
+                     ((_ extract 1 1) TMP_BV_8_5))
+              #b1))
+      (a!3 (= (bvxor (bvor ((_ extract 2 2) TMP_BV_8_6) #b0)
+                     #b0
+                     ((_ extract 2 2) TMP_BV_8_7))
+              #b1))
+      (a!4 (= (bvxor (bvor ((_ extract 3 3) TMP_BV_8_8) #b0)
+                     #b0
+                     ((_ extract 3 3) TMP_BV_8_9))
+              #b1))
+      (a!5 (= (bvxor (bvor ((_ extract 4 4) TMP_BV_8_10) #b0)
+                     #b0
+                     ((_ extract 4 4) TMP_BV_8_11))
+              #b1))
+      (a!6 (= (bvxor (bvor ((_ extract 5 5) TMP_BV_8_12) #b0)
+                     #b0
+                     ((_ extract 5 5) TMP_BV_8_13))
+              #b1))
+      (a!7 (= (bvxor (bvor ((_ extract 6 6) TMP_BV_8_14) #b0)
+                     #b0
+                     ((_ extract 6 6) TMP_BV_8_15))
+              #b1))
+      (a!8 (= (bvxor (bvor ((_ extract 7 7) TMP_BV_8_16) #b0)
+                     #b0
+                     ((_ extract 7 7) TMP_BV_8_17))
+              #b1)))
+  (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)))
+%af    : TMP_BOOL_10
+%zf    : (let ((a!1 (bvxor (bvor ((_ extract 31 0) ((_ sign_extend 56) TMP_BV_8_1))
+                        #x00000000)
+                  #x00000000
+                  ((_ extract 31 0) ((_ sign_extend 56) TMP_BV_8_1)))))
+  (= a!1 #x00000000))
+%sf    : (let ((a!1 (bvxor (bvor ((_ extract 31 31) ((_ sign_extend 56) TMP_BV_8_1)) #b0)
+                  #b0
+                  ((_ extract 31 31) ((_ sign_extend 56) TMP_BV_8_1)))))
+  (= a!1 #b1))
+%of    : false
+
+Information about memory reads:
+  Value TMP_BV_8_0 (1 bytes)
+    was read at address %rbx.
+  Value TMP_BV_8_1 (1 bytes)
+    was read at address %rbx.
+  Value TMP_BV_8_2 (1 bytes)
+    was read at address %rbx.
+  Value TMP_BV_8_3 (1 bytes)
+    was read at address %rbx.
+  Value TMP_BV_8_4 (1 bytes)
+    was read at address %rbx.
+  Value TMP_BV_8_5 (1 bytes)
+    was read at address %rbx.
+  Value TMP_BV_8_6 (1 bytes)
+    was read at address %rbx.
+  Value TMP_BV_8_7 (1 bytes)
+    was read at address %rbx.
+  Value TMP_BV_8_8 (1 bytes)
+    was read at address %rbx.
+  Value TMP_BV_8_9 (1 bytes)
+    was read at address %rbx.
+  Value TMP_BV_8_10 (1 bytes)
+    was read at address %rbx.
+  Value TMP_BV_8_11 (1 bytes)
+    was read at address %rbx.
+  Value TMP_BV_8_12 (1 bytes)
+    was read at address %rbx.
+  Value TMP_BV_8_13 (1 bytes)
+    was read at address %rbx.
+  Value TMP_BV_8_14 (1 bytes)
+    was read at address %rbx.
+  Value TMP_BV_8_15 (1 bytes)
+    was read at address %rbx.
+  Value TMP_BV_8_16 (1 bytes)
+    was read at address %rbx.
+  Value TMP_BV_8_17 (1 bytes)
+    was read at address %rbx.
+
+Information about memory writes:
+  Address %rbx was updated to
+    (bvxor (bvor TMP_BV_8_1 #x00) #x00 TMP_BV_8_1) (1 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

@@ -1,0 +1,66 @@
+code: xorb %cl, (%rbx)
+
+  maybe read:      { %cl %rbx }
+  must read:       { %cl %rbx }
+  maybe write:     { %cf %pf %zf %sf %of }
+  must write:      { %cf %pf %zf %sf %of }
+  maybe undef:     { %af }
+  must undef:      { %af }
+  required flags:  { }
+
+Formula:
+
+%cf    : false
+%pf    : (let ((a!1 (xor (= (bvxor ((_ extract 0 0) TMP_BV_8_2) ((_ extract 0 0) %rcx))
+                   #b1)
+                (= (bvxor ((_ extract 1 1) TMP_BV_8_3) ((_ extract 1 1) %rcx))
+                   #b1)
+                (= (bvxor ((_ extract 2 2) TMP_BV_8_4) ((_ extract 2 2) %rcx))
+                   #b1)
+                (= (bvxor ((_ extract 3 3) TMP_BV_8_5) ((_ extract 3 3) %rcx))
+                   #b1)
+                (= (bvxor ((_ extract 4 4) TMP_BV_8_6) ((_ extract 4 4) %rcx))
+                   #b1)
+                (= (bvxor ((_ extract 5 5) TMP_BV_8_7) ((_ extract 5 5) %rcx))
+                   #b1)
+                (= (bvxor ((_ extract 6 6) TMP_BV_8_8) ((_ extract 6 6) %rcx))
+                   #b1)
+                (= (bvxor ((_ extract 7 7) TMP_BV_8_9) ((_ extract 7 7) %rcx))
+                   #b1))))
+  (not a!1))
+%af    : TMP_BOOL_4
+%zf    : (= (bvxor TMP_BV_8_1 ((_ extract 7 0) %rcx)) #x00)
+%sf    : (= (bvxor ((_ extract 7 7) TMP_BV_8_10) ((_ extract 7 7) %rcx)) #b1)
+%of    : false
+
+Information about memory reads:
+  Value TMP_BV_8_0 (1 bytes)
+    was read at address %rbx.
+  Value TMP_BV_8_1 (1 bytes)
+    was read at address %rbx.
+  Value TMP_BV_8_2 (1 bytes)
+    was read at address %rbx.
+  Value TMP_BV_8_3 (1 bytes)
+    was read at address %rbx.
+  Value TMP_BV_8_4 (1 bytes)
+    was read at address %rbx.
+  Value TMP_BV_8_5 (1 bytes)
+    was read at address %rbx.
+  Value TMP_BV_8_6 (1 bytes)
+    was read at address %rbx.
+  Value TMP_BV_8_7 (1 bytes)
+    was read at address %rbx.
+  Value TMP_BV_8_8 (1 bytes)
+    was read at address %rbx.
+  Value TMP_BV_8_9 (1 bytes)
+    was read at address %rbx.
+  Value TMP_BV_8_10 (1 bytes)
+    was read at address %rbx.
+
+Information about memory writes:
+  Address %rbx was updated to
+    (bvxor TMP_BV_8_1 ((_ extract 7 0) %rcx)) (1 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))
