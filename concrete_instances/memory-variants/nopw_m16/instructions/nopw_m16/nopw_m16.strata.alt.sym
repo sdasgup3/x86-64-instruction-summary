@@ -1,0 +1,17 @@
+code: nopw (%rbx)
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { nopl }
+
+nopw (%rbx): Hindex1(9)
+nopw (%rbx): Hindex1(9)
+Formula:
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

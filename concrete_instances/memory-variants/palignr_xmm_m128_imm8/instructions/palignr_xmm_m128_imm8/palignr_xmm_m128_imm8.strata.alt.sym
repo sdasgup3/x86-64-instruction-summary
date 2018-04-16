@@ -1,0 +1,26 @@
+code: palignr $0x0, (%rbx), %xmm1
+
+  maybe read:      { %rbx %xmm1 }
+  must read:       { %rbx %xmm1 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { ssse3 }
+
+palignr $0x0, (%rbx), %xmm1: Hindex1(9)
+palignr $0x0, (%rbx), %xmm1: Hindex1(9)
+Formula:
+
+%ymm1  : (let ((a!1 ((_ extract 127 0)
+             (bvlshr (concat ((_ extract 127 0) %ymm1) TMP_BV_128_0)
+                     #x0000000000000000000000000000000000000000000000000000000000000000))))
+  (concat ((_ extract 255 128) %ymm1) a!1))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

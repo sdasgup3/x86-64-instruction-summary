@@ -1,0 +1,24 @@
+code: orps (%rbx), %xmm1
+
+  maybe read:      { %rbx %xmm1 }
+  must read:       { %rbx %xmm1 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse }
+
+orps (%rbx), %xmm1: Hindex0(9)
+orps (%rbx), %xmm1: Hindex0(9)
+Formula:
+
+%ymm1  : (concat ((_ extract 255 128) %ymm1)
+        (bvor ((_ extract 127 0) %ymm1) TMP_BV_128_0))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

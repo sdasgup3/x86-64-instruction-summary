@@ -1,0 +1,41 @@
+code: pmaxud (%rbx), %xmm1
+
+  maybe read:      { %rbx %xmm1 }
+  must read:       { %rbx %xmm1 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse4_1 }
+
+pmaxud (%rbx), %xmm1: Hindex0(9)
+pmaxud (%rbx), %xmm1: Hindex0(9)
+Formula:
+
+%ymm1  : (let ((a!1 (concat (ite (bvugt ((_ extract 63 32) %ymm1)
+                               ((_ extract 63 32) TMP_BV_128_0))
+                        ((_ extract 63 32) %ymm1)
+                        ((_ extract 63 32) TMP_BV_128_0))
+                   (ite (bvugt ((_ extract 31 0) %ymm1)
+                               ((_ extract 31 0) TMP_BV_128_0))
+                        ((_ extract 31 0) %ymm1)
+                        ((_ extract 31 0) TMP_BV_128_0)))))
+(let ((a!2 (concat (ite (bvugt ((_ extract 95 64) %ymm1)
+                               ((_ extract 95 64) TMP_BV_128_0))
+                        ((_ extract 95 64) %ymm1)
+                        ((_ extract 95 64) TMP_BV_128_0))
+                   a!1)))
+(let ((a!3 (concat (ite (bvugt ((_ extract 127 96) %ymm1)
+                               ((_ extract 127 96) TMP_BV_128_0))
+                        ((_ extract 127 96) %ymm1)
+                        ((_ extract 127 96) TMP_BV_128_0))
+                   a!2)))
+  (concat ((_ extract 255 128) %ymm1) a!3))))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

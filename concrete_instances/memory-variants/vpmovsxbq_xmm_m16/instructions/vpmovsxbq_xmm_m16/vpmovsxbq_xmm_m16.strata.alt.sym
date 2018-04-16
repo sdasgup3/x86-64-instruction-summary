@@ -1,0 +1,25 @@
+code: vpmovsxbq (%rbx), %xmm1
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+vpmovsxbq (%rbx), %xmm1: Hindex0(9)
+vpmovsxbq (%rbx), %xmm1: Hindex0(9)
+Formula:
+
+%ymm1  : (concat #x00000000000000000000000000000000
+        (concat ((_ sign_extend 56) ((_ extract 15 8) TMP_BV_16_0))
+                ((_ sign_extend 56) ((_ extract 7 0) TMP_BV_16_0))))
+
+Information about memory reads:
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

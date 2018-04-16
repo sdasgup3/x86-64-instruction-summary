@@ -1,0 +1,19 @@
+code: leaw (%rcx), %bx
+
+  maybe read:      { %rcx }
+  must read:       { %rcx }
+  maybe write:     { %bx }
+  must write:      { %bx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+leaw (%rcx), %bx: Hindex4(9)
+leaw (%rcx), %bx: Hindex4(9)
+Formula:
+
+%rbx   : (concat ((_ extract 63 16) %rbx) ((_ extract 15 0) %rcx))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

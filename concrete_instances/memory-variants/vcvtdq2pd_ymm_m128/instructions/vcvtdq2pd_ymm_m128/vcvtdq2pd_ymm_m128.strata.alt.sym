@@ -1,0 +1,28 @@
+code: vcvtdq2pd (%rbx), %ymm1
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+vcvtdq2pd (%rbx), %ymm1: Hindex8(9)
+vcvtdq2pd (%rbx), %ymm1: Hindex8(9)
+vcvtdq2pd %xmm2, %ymm1: Hindex0(9)
+Formula:
+
+%ymm1  : (let ((a!1 (concat (cvt_int32_to_double ((_ extract 95 64) TMP_BV_128_0))
+                   (concat (cvt_int32_to_double
+                             ((_ extract 63 32) TMP_BV_128_0))
+                           (cvt_int32_to_double ((_ extract 31 0) TMP_BV_128_0))))))
+  (concat (cvt_int32_to_double ((_ extract 127 96) TMP_BV_128_0)) a!1))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv
