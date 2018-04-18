@@ -1,0 +1,6 @@
+[4m[1m[34mFiring Last 1[0m
+Thread 1 start: vpmaskmovd_m128_xmm_xmm
+Modiy /home/sdasgup3/Github/strata-data/data-regs/testcases.tc using %rbx
+Modiied: concrete_instances/memory-variants/vpmaskmovd_m128_xmm_xmm/instructions/../testcases.09.tc
+/home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --target concrete_instances/memory-variants/vpmaskmovd_m128_xmm_xmm/instructions/vpmaskmovd_m128_xmm_xmm/vpmaskmovd_m128_xmm_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/vpmaskmovd_m128_xmm_xmm/instructions/../testcases.09.tc --def_in "{ %rbx %xmm1 %xmm2 }" --live_out "{ }" 
+Thread 1 done!: vpmaskmovd_m128_xmm_xmm
