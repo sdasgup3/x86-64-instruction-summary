@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "vfnmadd213ps_xmm_xmm_m128::ymm1")
 (assert (not (=
 (let ((a!1 (concat (vfnmadd132_single #x00000000 #x00000000 #x00000000)
@@ -154,6 +155,7 @@ a!2)))
 (concat a!1 a!3)))
 )))
 (check-sat)
+( pop )
 
 
 

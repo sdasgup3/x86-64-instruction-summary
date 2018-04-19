@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "divq_m64::af")
 (assert (not (=
 TMP_BOOL
@@ -100,9 +101,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "divq_m64::cf")
 (assert (not (=
 TMP_BOOL
@@ -110,9 +113,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "divq_m64::of")
 (assert (not (=
 TMP_BOOL
@@ -120,9 +125,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "divq_m64::pf")
 (assert (not (=
 TMP_BOOL
@@ -130,9 +137,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "divq_m64::rax")
 (assert (not (=
 (div_quotient_int64 (concat rdx rax) TMP_BV_64)
@@ -140,9 +149,11 @@ TMP_BOOL
 (div_quotient_int64 (concat rdx rax) TMP_BV_64)
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "divq_m64::rdx")
 (assert (not (=
 (div_remainder_int64 (concat rdx rax) TMP_BV_64)
@@ -150,9 +161,11 @@ TMP_BOOL
 (div_remainder_int64 (concat rdx rax) TMP_BV_64)
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "divq_m64::sf")
 (assert (not (=
 TMP_BOOL
@@ -160,9 +173,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "divq_m64::zf")
 (assert (not (=
 TMP_BOOL
@@ -170,6 +185,7 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 

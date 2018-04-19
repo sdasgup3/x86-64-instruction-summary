@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "rcrq_m64_imm8::WA")
 (assert (not (=
 rbx
@@ -100,9 +101,11 @@ rbx
 rbx
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "rcrq_m64_imm8::WD")
 (assert (not (=
 
@@ -120,9 +123,11 @@ rbx
 #b00000000000000000000000000000000000000000000000000000000001000001))) 
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "rcrq_m64_imm8::cf")
 (assert (not (=
 (let ((a!1 ((_ extract 64 64)
@@ -140,9 +145,11 @@ rbx
 (= a!1 #b1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "rcrq_m64_imm8::of")
 (assert (not (=
 (let ((a!1 (= ((_ extract 7 0)
@@ -186,6 +193,7 @@ rbx
 (or a!3 (and (not a!1) a!5))))
 )))
 (check-sat)
+( pop )
 
 
 

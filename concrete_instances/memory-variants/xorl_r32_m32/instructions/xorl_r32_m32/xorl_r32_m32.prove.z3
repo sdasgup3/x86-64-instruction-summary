@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "xorl_r32_m32::af")
 (assert (not (=
 TMP_BOOL
@@ -100,9 +101,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "xorl_r32_m32::cf")
 (assert (not (=
 false
@@ -110,9 +113,11 @@ false
 false
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "xorl_r32_m32::of")
 (assert (not (=
 false
@@ -120,9 +125,11 @@ false
 false
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "xorl_r32_m32::pf")
 (assert (not (=
 (let ((a!1 (xor (= (bvxor ((_ extract 0 0) TMP_BV_32) ((_ extract 0 0) rbx))
@@ -162,9 +169,11 @@ false
 (not a!1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "xorl_r32_m32::rbx")
 (assert (not (=
 (bvxor (concat #x00000000 TMP_BV_32)
@@ -173,9 +182,11 @@ false
 (concat #x00000000 (bvxor ((_ extract 31 0) rbx) TMP_BV_32))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "xorl_r32_m32::sf")
 (assert (not (=
 (= (bvxor ((_ extract 31 31) TMP_BV_32) ((_ extract 31 31) rbx)) #b1)
@@ -183,9 +194,11 @@ false
 (= (bvxor ((_ extract 31 31) rbx) ((_ extract 31 31) TMP_BV_32)) #b1)
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "xorl_r32_m32::zf")
 (assert (not (=
 (= (bvxor TMP_BV_32 ((_ extract 31 0) rbx)) #x00000000)
@@ -193,6 +206,7 @@ false
 (= (bvxor ((_ extract 31 0) rbx) TMP_BV_32) #x00000000)
 )))
 (check-sat)
+( pop )
 
 
 

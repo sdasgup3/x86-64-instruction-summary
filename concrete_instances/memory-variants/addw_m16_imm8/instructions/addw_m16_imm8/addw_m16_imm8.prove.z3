@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "addw_m16_imm8::WA")
 (assert (not (=
 rbx
@@ -100,9 +101,11 @@ rbx
 rbx
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "addw_m16_imm8::WD")
 (assert (not (=
 
@@ -112,9 +115,11 @@ TMP_BV_16
 TMP_BV_16 
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "addw_m16_imm8::af")
 (assert (not (=
 false
@@ -122,9 +127,11 @@ false
 false
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "addw_m16_imm8::cf")
 (assert (not (=
 false
@@ -132,9 +139,11 @@ false
 false
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "addw_m16_imm8::of")
 (assert (not (=
 (let ((a!1 (not (= false (= ((_ extract 15 15) TMP_BV_16) #b1)))))
@@ -144,9 +153,11 @@ false
 (and (= false (= ((_ extract 15 15) TMP_BV_16) #b1)) a!1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "addw_m16_imm8::pf")
 (assert (not (=
 (not (xor (= ((_ extract 0 0) TMP_BV_16) #b1)
@@ -168,9 +179,11 @@ false
 (= ((_ extract 7 7) TMP_BV_16) #b1)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "addw_m16_imm8::sf")
 (assert (not (=
 (= ((_ extract 15 15) TMP_BV_16) #b1)
@@ -178,9 +191,11 @@ false
 (= ((_ extract 15 15) TMP_BV_16) #b1)
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "addw_m16_imm8::zf")
 (assert (not (=
 (= TMP_BV_16 #x0000)
@@ -188,6 +203,7 @@ false
 (= TMP_BV_16 #x0000)
 )))
 (check-sat)
+( pop )
 
 
 

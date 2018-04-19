@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "shufps_xmm_m128_imm8::ymm1")
 (assert (not (=
 (let ((a!1 (concat ((_ extract 31 0) TMP_BV_128)
@@ -108,6 +109,7 @@
 (concat ((_ extract 255 128) ymm1) a!1))
 )))
 (check-sat)
+( pop )
 
 
 

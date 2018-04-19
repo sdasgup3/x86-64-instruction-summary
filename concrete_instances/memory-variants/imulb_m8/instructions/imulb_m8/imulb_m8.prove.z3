@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "imulb_m8::af")
 (assert (not (=
 TMP_BOOL
@@ -100,9 +101,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "imulb_m8::cf")
 (assert (not (=
 (let ((a!1 ((_ extract 7 0)
@@ -122,9 +125,11 @@ TMP_BOOL
 (not a!2)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "imulb_m8::of")
 (assert (not (=
 (let ((a!1 ((_ extract 7 0)
@@ -144,9 +149,11 @@ TMP_BOOL
 (not a!2)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "imulb_m8::pf")
 (assert (not (=
 TMP_BOOL
@@ -154,9 +161,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "imulb_m8::rax")
 (assert (not (=
 (concat ((_ extract 63 16) rax)
@@ -168,9 +177,11 @@ TMP_BOOL
 ((_ sign_extend 8) ((_ extract 7 0) rax))))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "imulb_m8::sf")
 (assert (not (=
 (let ((a!1 ((_ extract 7 7)
@@ -184,9 +195,11 @@ TMP_BOOL
 (= a!1 #b1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "imulb_m8::zf")
 (assert (not (=
 TMP_BOOL
@@ -194,6 +207,7 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 

@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "imull_r32_m32_imm32::af")
 (assert (not (=
 TMP_BOOL
@@ -100,9 +101,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "imull_r32_m32_imm32::cf")
 (assert (not (=
 (let ((a!1 ((_ sign_extend 32)
@@ -116,9 +119,11 @@ TMP_BOOL
 (not (= (bvmul ((_ sign_extend 32) TMP_BV_32) #x0000000000000000) a!1)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "imull_r32_m32_imm32::of")
 (assert (not (=
 (let ((a!1 ((_ sign_extend 32)
@@ -132,9 +137,11 @@ TMP_BOOL
 (not (= (bvmul ((_ sign_extend 32) TMP_BV_32) #x0000000000000000) a!1)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "imull_r32_m32_imm32::pf")
 (assert (not (=
 TMP_BOOL
@@ -142,9 +149,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "imull_r32_m32_imm32::rbx")
 (assert (not (=
 (concat #x00000000
@@ -156,9 +165,11 @@ TMP_BOOL
 (bvmul ((_ sign_extend 32) TMP_BV_32) #x0000000000000000)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "imull_r32_m32_imm32::sf")
 (assert (not (=
 (= ((_ extract 31 31)
@@ -170,9 +181,11 @@ TMP_BOOL
 #b1)
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "imull_r32_m32_imm32::zf")
 (assert (not (=
 TMP_BOOL
@@ -180,6 +193,7 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 

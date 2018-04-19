@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "testb_m8_rh::af")
 (assert (not (=
 TMP_BOOL
@@ -100,9 +101,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "testb_m8_rh::cf")
 (assert (not (=
 false
@@ -110,9 +113,11 @@ false
 false
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "testb_m8_rh::of")
 (assert (not (=
 false
@@ -120,9 +125,11 @@ false
 false
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "testb_m8_rh::pf")
 (assert (not (=
 (let ((a!1 (= (bvxor (bvor ((_ extract 8 8) rax) ((_ extract 0 0) TMP_BV_8))
@@ -184,9 +191,11 @@ false
 (not a!1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "testb_m8_rh::sf")
 (assert (not (=
 (let ((a!1 (bvor ((_ extract 31 31)
@@ -201,9 +210,11 @@ false
 (= (bvand ((_ extract 7 7) TMP_BV_8) ((_ extract 15 15) rax)) #b1)
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "testb_m8_rh::zf")
 (assert (not (=
 (let ((a!1 (bvor ((_ extract 31 0) ((_ sign_extend 56) ((_ extract 15 8) rax)))
@@ -217,6 +228,7 @@ false
 (= (bvand TMP_BV_8 ((_ extract 15 8) rax)) #x00)
 )))
 (check-sat)
+( pop )
 
 
 

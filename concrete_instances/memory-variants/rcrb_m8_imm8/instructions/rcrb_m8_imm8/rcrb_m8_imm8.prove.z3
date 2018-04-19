@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "rcrb_m8_imm8::WA")
 (assert (not (=
 rbx
@@ -100,9 +101,11 @@ rbx
 rbx
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "rcrb_m8_imm8::WD")
 (assert (not (=
 
@@ -114,9 +117,11 @@ rbx
 (ext_rotate_right (concat (ite cf #b1 #b0) TMP_BV_8) #b000000000)) 
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "rcrb_m8_imm8::cf")
 (assert (not (=
 (let ((a!1 ((_ extract 8 8)
@@ -130,9 +135,11 @@ rbx
 (= a!1 #b1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "rcrb_m8_imm8::of")
 (assert (not (=
 (let ((a!1 ((_ extract 7 7)
@@ -154,6 +161,7 @@ rbx
 (and true (or (and false of) (and true TMP_BOOL)))))
 )))
 (check-sat)
+( pop )
 
 
 

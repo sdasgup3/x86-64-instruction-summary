@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "rcrw_m16_one::WA")
 (assert (not (=
 rbx
@@ -100,9 +101,11 @@ rbx
 rbx
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "rcrw_m16_one::WD")
 (assert (not (=
 
@@ -114,9 +117,11 @@ rbx
 (ext_rotate_right (concat (ite cf #b1 #b0) TMP_BV_16) #b00000000000000001)) 
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "rcrw_m16_one::cf")
 (assert (not (=
 (let ((a!1 ((_ extract 16 16)
@@ -130,9 +135,11 @@ rbx
 (= a!1 #b1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "rcrw_m16_one::of")
 (assert (not (=
 (let ((a!1 ((_ extract 15 15)
@@ -154,6 +161,7 @@ rbx
 (and false (or (and true of) (and false TMP_BOOL)))))
 )))
 (check-sat)
+( pop )
 
 
 

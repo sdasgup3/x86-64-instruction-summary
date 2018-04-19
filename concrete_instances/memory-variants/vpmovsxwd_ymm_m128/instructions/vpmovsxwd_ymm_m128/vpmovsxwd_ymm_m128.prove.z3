@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "vpmovsxwd_ymm_m128::ymm1")
 (assert (not (=
 (let ((a!1 (bvxor (concat (concat #x0000 ((_ extract 127 112) TMP_BV_128))
@@ -183,6 +184,7 @@ a!2))))
 (concat ((_ sign_extend 16) ((_ extract 127 112) TMP_BV_128)) a!3))))
 )))
 (check-sat)
+( pop )
 
 
 

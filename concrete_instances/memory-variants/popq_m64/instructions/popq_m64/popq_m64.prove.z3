@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "popq_m64::WA")
 (assert (not (=
 rbx
@@ -100,9 +101,11 @@ rbx
 rbx
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "popq_m64::WD")
 (assert (not (=
 
@@ -112,9 +115,11 @@ TMP_BV_64
 TMP_BV_64 
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "popq_m64::rsp")
 (assert (not (=
 (bvadd rsp #x0000000000000008)
@@ -122,6 +127,7 @@ TMP_BV_64
 (bvadd rsp #x0000000000000008)
 )))
 (check-sat)
+( pop )
 
 
 

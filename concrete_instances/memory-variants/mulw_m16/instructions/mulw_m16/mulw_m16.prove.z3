@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "mulw_m16::af")
 (assert (not (=
 TMP_BOOL
@@ -100,9 +101,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "mulw_m16::cf")
 (assert (not (=
 (let ((a!1 ((_ extract 31 16)
@@ -116,9 +119,11 @@ TMP_BOOL
 (not (= a!1 #x0000)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "mulw_m16::of")
 (assert (not (=
 (let ((a!1 ((_ extract 31 16)
@@ -132,9 +137,11 @@ TMP_BOOL
 (not (= a!1 #x0000)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "mulw_m16::pf")
 (assert (not (=
 TMP_BOOL
@@ -142,9 +149,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "mulw_m16::rax")
 (assert (not (=
 (let ((a!1 ((_ extract 15 0)
@@ -158,9 +167,11 @@ TMP_BOOL
 (concat ((_ extract 63 16) rax) a!1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "mulw_m16::rdx")
 (assert (not (=
 (let ((a!1 ((_ extract 31 16)
@@ -174,9 +185,11 @@ TMP_BOOL
 (concat ((_ extract 63 16) rdx) a!1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "mulw_m16::sf")
 (assert (not (=
 TMP_BOOL
@@ -184,9 +197,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "mulw_m16::zf")
 (assert (not (=
 TMP_BOOL
@@ -194,6 +209,7 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 

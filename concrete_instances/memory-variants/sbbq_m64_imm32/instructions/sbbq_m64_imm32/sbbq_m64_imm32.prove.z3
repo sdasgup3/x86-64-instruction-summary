@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "sbbq_m64_imm32::WA")
 (assert (not (=
 rbx
@@ -100,9 +101,11 @@ rbx
 rbx
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "sbbq_m64_imm32::WD")
 (assert (not (=
 
@@ -126,9 +129,11 @@ rbx
 ((_ extract 63 0) a!1)) 
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "sbbq_m64_imm32::af")
 (assert (not (=
 (let ((a!1 ((_ extract 4 4)
@@ -138,9 +143,11 @@ rbx
 false
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "sbbq_m64_imm32::cf")
 (assert (not (=
 (let ((a!1 (= ((_ extract 8 8)
@@ -164,9 +171,11 @@ false
 (not (= ((_ extract 64 64) a!1) #b1)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "sbbq_m64_imm32::of")
 (assert (not (=
 (let ((a!1 (= ((_ extract 8 8)
@@ -190,9 +199,11 @@ false
 (and (= true (= ((_ extract 63 63) TMP_BV_64) #b1)) a!2)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "sbbq_m64_imm32::pf")
 (assert (not (=
 (let ((a!1 (= ((_ extract 8 8)
@@ -228,9 +239,11 @@ false
 (= ((_ extract 7 7) a!1) #b1))))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "sbbq_m64_imm32::sf")
 (assert (not (=
 (let ((a!1 (= ((_ extract 8 8)
@@ -252,9 +265,11 @@ false
 (= ((_ extract 63 63) a!1) #b1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "sbbq_m64_imm32::zf")
 (assert (not (=
 (let ((a!1 (= ((_ extract 8 8)
@@ -276,6 +291,7 @@ false
 (= ((_ extract 63 0) a!1) #x0000000000000000))
 )))
 (check-sat)
+( pop )
 
 
 

@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "andl_m32_imm8::WA")
 (assert (not (=
 rbx
@@ -100,9 +101,11 @@ rbx
 rbx
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "andl_m32_imm8::WD")
 (assert (not (=
 
@@ -112,9 +115,11 @@ rbx
 (bvand TMP_BV_32 #x00000000) 
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "andl_m32_imm8::af")
 (assert (not (=
 TMP_BOOL
@@ -122,9 +127,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "andl_m32_imm8::cf")
 (assert (not (=
 false
@@ -132,9 +139,11 @@ false
 false
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "andl_m32_imm8::of")
 (assert (not (=
 false
@@ -142,9 +151,11 @@ false
 false
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "andl_m32_imm8::pf")
 (assert (not (=
 (let ((a!1 (= (bvxor (bvor #b0 ((_ extract 0 0) TMP_BV_32))
@@ -192,9 +203,11 @@ false
 (not a!1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "andl_m32_imm8::sf")
 (assert (not (=
 (= (bvxor (bvor #b0 ((_ extract 31 31) TMP_BV_32))
@@ -205,9 +218,11 @@ false
 (= (bvand ((_ extract 31 31) TMP_BV_32) #b0) #b1)
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "andl_m32_imm8::zf")
 (assert (not (=
 (= (bvxor (bvor #x00000000 TMP_BV_32) TMP_BV_32 #x00000000) #x00000000)
@@ -215,6 +230,7 @@ false
 (= (bvand TMP_BV_32 #x00000000) #x00000000)
 )))
 (check-sat)
+( pop )
 
 
 

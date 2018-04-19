@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "adcq_r64_m64::af")
 (assert (not (=
 (let ((a!1 ((_ extract 4 4)
@@ -106,9 +107,11 @@
 (= a!1 #b1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "adcq_r64_m64::cf")
 (assert (not (=
 (let ((a!1 (bvadd (ite cf
@@ -126,9 +129,11 @@
 (= ((_ extract 64 64) a!1) #b1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "adcq_r64_m64::of")
 (assert (not (=
 (let ((a!1 (bvadd (ite cf
@@ -154,9 +159,11 @@ a!2)))
 a!2)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "adcq_r64_m64::pf")
 (assert (not (=
 (let ((a!1 (bvadd (ite cf
@@ -188,9 +195,11 @@ a!2)))
 (= ((_ extract 7 7) a!1) #b1))))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "adcq_r64_m64::rbx")
 (assert (not (=
 (let ((a!1 (bvadd (ite cf
@@ -208,9 +217,11 @@ a!2)))
 ((_ extract 63 0) a!1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "adcq_r64_m64::sf")
 (assert (not (=
 (let ((a!1 (bvadd (ite cf
@@ -228,9 +239,11 @@ a!2)))
 (= ((_ extract 63 63) a!1) #b1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "adcq_r64_m64::zf")
 (assert (not (=
 (let ((a!1 (bvadd (ite cf
@@ -248,6 +261,7 @@ a!2)))
 (= ((_ extract 63 0) a!1) #x0000000000000000))
 )))
 (check-sat)
+( pop )
 
 
 

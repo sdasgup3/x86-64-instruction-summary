@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "movhps_m64_xmm::WA")
 (assert (not (=
 rbx
@@ -100,9 +101,11 @@ rbx
 rbx
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "movhps_m64_xmm::WD")
 (assert (not (=
 
@@ -112,6 +115,7 @@ rbx
 ((_ extract 127 64) ymm1) 
 )))
 (check-sat)
+( pop )
 
 
 

@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "minpd_xmm_m128::ymm1")
 (assert (not (=
 (let ((a!1 (ite (= (mincmp_double ((_ extract 127 64) ymm1)
@@ -120,6 +121,7 @@
 (concat ((_ extract 255 128) ymm1) (concat a!1 a!2)))
 )))
 (check-sat)
+( pop )
 
 
 

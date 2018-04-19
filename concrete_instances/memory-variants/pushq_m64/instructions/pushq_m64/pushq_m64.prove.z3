@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "pushq_m64::WA")
 (assert (not (=
 (bvsub rsp #x0000000000000008)
@@ -100,9 +101,11 @@
 (bvsub rsp #x0000000000000008)
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "pushq_m64::WD")
 (assert (not (=
 
@@ -112,9 +115,11 @@
 ((_ sign_extend 0) TMP_BV_64) 
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "pushq_m64::rsp")
 (assert (not (=
 (bvsub rsp #x0000000000000008)
@@ -122,6 +127,7 @@
 (bvsub rsp #x0000000000000008)
 )))
 (check-sat)
+( pop )
 
 
 

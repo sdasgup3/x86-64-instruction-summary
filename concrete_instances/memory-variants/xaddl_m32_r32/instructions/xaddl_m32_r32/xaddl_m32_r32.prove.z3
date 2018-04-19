@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "xaddl_m32_r32::WA")
 (assert (not (=
 rbx
@@ -100,9 +101,11 @@ rbx
 rbx
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "xaddl_m32_r32::WD")
 (assert (not (=
 
@@ -114,9 +117,11 @@ rbx
 (bvadd (concat #b0 ((_ extract 31 0) rcx)) (concat #b0 TMP_BV_32))) 
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "xaddl_m32_r32::af")
 (assert (not (=
 (let ((a!1 ((_ extract 4 4)
@@ -130,9 +135,11 @@ rbx
 (= a!1 #b1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "xaddl_m32_r32::cf")
 (assert (not (=
 (let ((a!1 ((_ extract 32 32)
@@ -146,9 +153,11 @@ rbx
 (= a!1 #b1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "xaddl_m32_r32::of")
 (assert (not (=
 (let ((a!1 ((_ extract 31 31)
@@ -168,9 +177,11 @@ a!2)))
 a!2)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "xaddl_m32_r32::pf")
 (assert (not (=
 (let ((a!1 ((_ extract 0 0)
@@ -240,9 +251,11 @@ a!2)))
 (= a!8 #b1))))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "xaddl_m32_r32::rcx")
 (assert (not (=
 (concat ((_ extract 63 32) rcx) TMP_BV_32)
@@ -250,9 +263,11 @@ a!2)))
 (concat #x00000000 TMP_BV_32)
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "xaddl_m32_r32::sf")
 (assert (not (=
 (let ((a!1 ((_ extract 31 31)
@@ -266,9 +281,11 @@ a!2)))
 (= a!1 #b1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "xaddl_m32_r32::zf")
 (assert (not (=
 (let ((a!1 ((_ extract 31 0)
@@ -282,6 +299,7 @@ a!2)))
 (= a!1 #x00000000))
 )))
 (check-sat)
+( pop )
 
 
 

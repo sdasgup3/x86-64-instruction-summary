@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "decl_m32::WA")
 (assert (not (=
 rbx
@@ -100,9 +101,11 @@ rbx
 rbx
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "decl_m32::WD")
 (assert (not (=
 
@@ -113,9 +116,11 @@ rbx
 (bvsub TMP_BV_32 #x00000001) 
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "decl_m32::af")
 (assert (not (=
 (let ((a!1 ((_ extract 4 4)
@@ -125,9 +130,11 @@ rbx
 (= ((_ extract 3 0) TMP_BV_32) #x0)
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "decl_m32::of")
 (assert (not (=
 (let ((a!1 (= ((_ extract 31 31)
@@ -141,9 +148,11 @@ rbx
 (= ((_ extract 30 0) TMP_BV_32) #b0000000000000000000000000000000))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "decl_m32::pf")
 (assert (not (=
 (let ((a!1 (= ((_ extract 0 0)
@@ -191,9 +200,11 @@ rbx
 (not a!1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "decl_m32::sf")
 (assert (not (=
 (= ((_ extract 31 31)
@@ -203,9 +214,11 @@ rbx
 (= ((_ extract 31 31) (bvsub TMP_BV_32 #x00000001)) #b1)
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "decl_m32::zf")
 (assert (not (=
 (= ((_ extract 31 0)
@@ -215,6 +228,7 @@ rbx
 (= (bvsub TMP_BV_32 #x00000001) #x00000000)
 )))
 (check-sat)
+( pop )
 
 
 

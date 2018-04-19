@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "blsrl_r32_m32::af")
 (assert (not (=
 TMP_BOOL
@@ -100,9 +101,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "blsrl_r32_m32::cf")
 (assert (not (=
 (let ((a!1 ((_ extract 47 40)
@@ -113,9 +116,11 @@ TMP_BOOL
 (= TMP_BV_32 #x00000000)
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "blsrl_r32_m32::of")
 (assert (not (=
 (let ((a!1 ((_ extract 47 47)
@@ -130,9 +135,11 @@ TMP_BOOL
 false
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "blsrl_r32_m32::pf")
 (assert (not (=
 TMP_BOOL
@@ -140,9 +147,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "blsrl_r32_m32::rbx")
 (assert (not (=
 (let ((a!1 ((_ extract 31 0)
@@ -153,9 +162,11 @@ TMP_BOOL
 (concat #x00000000 (bvand (bvsub TMP_BV_32 #x00000001) TMP_BV_32))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "blsrl_r32_m32::sf")
 (assert (not (=
 (let ((a!1 ((_ extract 31 31)
@@ -171,9 +182,11 @@ a!1
 #b1)
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "blsrl_r32_m32::zf")
 (assert (not (=
 (let ((a!1 ((_ extract 31 0)
@@ -184,6 +197,7 @@ a!1
 (= (bvand (bvsub TMP_BV_32 #x00000001) TMP_BV_32) #x00000000)
 )))
 (check-sat)
+( pop )
 
 
 

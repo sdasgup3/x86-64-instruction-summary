@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "movq_m64_imm32::WA")
 (assert (not (=
 rbx
@@ -100,9 +101,11 @@ rbx
 rbx
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "movq_m64_imm32::WD")
 (assert (not (=
 
@@ -112,6 +115,7 @@ rbx
 #x0000000000000000 
 )))
 (check-sat)
+( pop )
 
 
 

@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "movsbl_r32_m8::rbx")
 (assert (not (=
 (concat #x00000000 ((_ extract 31 0) ((_ sign_extend 56) TMP_BV_8)))
@@ -100,6 +101,7 @@
 (concat #x00000000 ((_ sign_extend 24) TMP_BV_8))
 )))
 (check-sat)
+( pop )
 
 
 

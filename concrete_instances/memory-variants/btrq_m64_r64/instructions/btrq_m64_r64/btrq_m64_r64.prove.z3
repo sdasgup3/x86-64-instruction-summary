@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "btrq_m64_r64::WA")
 (assert (not (=
 (bvadd rbx (concat #b000 ((_ extract 63 3) rcx)))
@@ -100,9 +101,11 @@
 (bvadd rbx (concat #b000 ((_ extract 63 3) rcx)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "btrq_m64_r64::WD")
 (assert (not (=
 
@@ -114,9 +117,11 @@
 (bvand TMP_BV_8 a!1)) 
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "btrq_m64_r64::af")
 (assert (not (=
 TMP_BOOL
@@ -124,9 +129,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "btrq_m64_r64::cf")
 (assert (not (=
 (let ((a!1 ((_ extract 0 0)
@@ -138,9 +145,11 @@ TMP_BOOL
 (= a!1 #b1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "btrq_m64_r64::of")
 (assert (not (=
 TMP_BOOL
@@ -148,9 +157,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "btrq_m64_r64::pf")
 (assert (not (=
 TMP_BOOL
@@ -158,9 +169,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "btrq_m64_r64::sf")
 (assert (not (=
 TMP_BOOL
@@ -168,6 +181,7 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 

@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "subl_m32_r32::WA")
 (assert (not (=
 rbx
@@ -100,9 +101,11 @@ rbx
 rbx
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "subl_m32_r32::WD")
 (assert (not (=
 
@@ -118,9 +121,11 @@ rbx
 ((_ extract 31 0) a!1)) 
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "subl_m32_r32::af")
 (assert (not (=
 (let ((a!1 (bvadd (concat #b0 (bvxor ((_ extract 3 0) rcx) #xf))
@@ -133,9 +138,11 @@ rbx
 (= a!1 #b1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "subl_m32_r32::cf")
 (assert (not (=
 (let ((a!1 (bvadd (concat #b0 (bvxor ((_ extract 31 0) rcx) #xffffffff))
@@ -151,9 +158,11 @@ rbx
 (not (= ((_ extract 32 32) a!1) #b1)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "subl_m32_r32::of")
 (assert (not (=
 (let ((a!1 (= (= (bvxor ((_ extract 31 31) rcx) #b1) #b1)
@@ -175,9 +184,11 @@ rbx
 (and a!1 (not a!3))))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "subl_m32_r32::pf")
 (assert (not (=
 (let ((a!1 (bvadd (concat #b0 (bvxor ((_ extract 31 0) rcx) #xffffffff))
@@ -205,9 +216,11 @@ rbx
 (= ((_ extract 7 7) a!1) #b1))))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "subl_m32_r32::sf")
 (assert (not (=
 (let ((a!1 (bvadd (concat #b0 (bvxor ((_ extract 31 0) rcx) #xffffffff))
@@ -221,9 +234,11 @@ rbx
 (= ((_ extract 31 31) a!1) #b1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "subl_m32_r32::zf")
 (assert (not (=
 (let ((a!1 (bvadd (concat #b0 (bvxor ((_ extract 31 0) rcx) #xffffffff))
@@ -237,6 +252,7 @@ rbx
 (= ((_ extract 31 0) a!1) #x00000000))
 )))
 (check-sat)
+( pop )
 
 
 

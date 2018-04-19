@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "rclq_m64_one::WA")
 (assert (not (=
 rbx
@@ -100,9 +101,11 @@ rbx
 rbx
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "rclq_m64_one::WD")
 (assert (not (=
 
@@ -121,9 +124,11 @@ rbx
 #b00000000000000000000000000000000000000000000000000000000001000001))) 
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "rclq_m64_one::cf")
 (assert (not (=
 (let ((a!1 (bvadd (ite cf
@@ -141,9 +146,11 @@ rbx
 (= a!1 #b1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "rclq_m64_one::of")
 (assert (not (=
 (let ((a!1 (bvadd (ite cf
@@ -178,6 +185,7 @@ a!2)))
 (or a!3 (and (not a!1) a!5))))
 )))
 (check-sat)
+( pop )
 
 
 

@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "incw_m16::WA")
 (assert (not (=
 rbx
@@ -100,9 +101,11 @@ rbx
 rbx
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "incw_m16::WD")
 (assert (not (=
 
@@ -112,9 +115,11 @@ rbx
 (bvadd TMP_BV_16 #x0001) 
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "incw_m16::af")
 (assert (not (=
 false
@@ -122,9 +127,11 @@ false
 (= ((_ extract 3 0) TMP_BV_16) #xf)
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "incw_m16::of")
 (assert (not (=
 (let ((a!1 (= ((_ extract 15 15)
@@ -136,9 +143,11 @@ false
 (= ((_ extract 14 0) TMP_BV_16) #b111111111111111))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "incw_m16::pf")
 (assert (not (=
 (let ((a!1 (= ((_ extract 0 0)
@@ -178,9 +187,11 @@ false
 (not a!1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "incw_m16::sf")
 (assert (not (=
 (= ((_ extract 15 15) (bvadd #b00000000000000001 (concat #b0 TMP_BV_16))) #b1)
@@ -188,9 +199,11 @@ false
 (= ((_ extract 15 15) (bvadd TMP_BV_16 #x0001)) #b1)
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "incw_m16::zf")
 (assert (not (=
 (= ((_ extract 15 0) (bvadd #b00000000000000001 (concat #b0 TMP_BV_16)))
@@ -199,6 +212,7 @@ false
 (= (bvadd TMP_BV_16 #x0001) #x0000)
 )))
 (check-sat)
+( pop )
 
 
 

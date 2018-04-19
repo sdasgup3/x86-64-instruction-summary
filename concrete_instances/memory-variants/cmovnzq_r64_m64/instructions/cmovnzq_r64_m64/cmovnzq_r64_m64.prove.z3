@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "cmovnzq_r64_m64::rbx")
 (assert (not (=
 (let ((a!1 (= ((_ extract 7 0)
@@ -104,6 +105,7 @@
 (ite (not zf) TMP_BV_64 rbx)
 )))
 (check-sat)
+( pop )
 
 
 

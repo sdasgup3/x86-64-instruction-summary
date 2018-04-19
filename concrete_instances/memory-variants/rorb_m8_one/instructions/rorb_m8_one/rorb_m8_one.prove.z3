@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "rorb_m8_one::WA")
 (assert (not (=
 rbx
@@ -100,9 +101,11 @@ rbx
 rbx
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "rorb_m8_one::WD")
 (assert (not (=
 
@@ -116,9 +119,11 @@ rbx
 (ext_rotate_right TMP_BV_8 #x01) 
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "rorb_m8_one::cf")
 (assert (not (=
 (let ((a!1 (bvashr (concat ((_ sign_extend 48) (concat TMP_BV_8 TMP_BV_8))
@@ -135,9 +140,11 @@ rbx
 (or a!1 (and false cf)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "rorb_m8_one::of")
 (assert (not (=
 (let ((a!1 (bvashr (concat ((_ sign_extend 48) (concat TMP_BV_8 TMP_BV_8))
@@ -155,6 +162,7 @@ rbx
 (or (and true a!1) (and false TMP_BOOL)))
 )))
 (check-sat)
+( pop )
 
 
 

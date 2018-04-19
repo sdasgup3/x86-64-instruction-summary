@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "vmovd_m32_xmm::WA")
 (assert (not (=
 rbx
@@ -100,9 +101,11 @@ rbx
 rbx
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "vmovd_m32_xmm::WD")
 (assert (not (=
 
@@ -112,6 +115,7 @@ rbx
 ((_ extract 31 0) ymm1) 
 )))
 (check-sat)
+( pop )
 
 
 

@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "movhps_xmm_m64::ymm1")
 (assert (not (=
 (concat ((_ extract 255 128) ymm1)
@@ -102,6 +103,7 @@
 (concat TMP_BV_64 ((_ extract 63 0) ymm1)))
 )))
 (check-sat)
+( pop )
 
 
 

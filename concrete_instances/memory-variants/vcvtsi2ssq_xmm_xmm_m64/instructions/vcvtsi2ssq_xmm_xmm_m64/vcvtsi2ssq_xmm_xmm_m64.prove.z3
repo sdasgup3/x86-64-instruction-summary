@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "vcvtsi2ssq_xmm_xmm_m64::ymm1")
 (assert (not (=
 (concat #x00000000000000000000000000000000
@@ -102,6 +103,7 @@
 (concat ((_ extract 127 32) ymm2) (cvt_int64_to_single TMP_BV_64)))
 )))
 (check-sat)
+( pop )
 
 
 

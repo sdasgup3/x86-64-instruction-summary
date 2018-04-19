@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "maxsd_xmm_m64::ymm1")
 (assert (not (=
 (let ((a!1 (ite (= (maxcmp_double ((_ extract 63 0) ymm1) TMP_BV_64) #b1)
@@ -106,6 +107,7 @@ TMP_BV_64)))
 (concat ((_ extract 255 128) ymm1) (concat ((_ extract 127 64) ymm1) a!1)))
 )))
 (check-sat)
+( pop )
 
 
 

@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "vfnmadd213ss_xmm_xmm_m32::ymm1")
 (assert (not (=
 (concat #x00000000000000000000000000000000
@@ -110,6 +111,7 @@
 ((_ extract 31 0) ymm1))))
 )))
 (check-sat)
+( pop )
 
 
 

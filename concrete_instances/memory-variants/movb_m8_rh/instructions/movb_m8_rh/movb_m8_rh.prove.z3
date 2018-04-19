@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "movb_m8_rh::WA")
 (assert (not (=
 rbx
@@ -100,9 +101,11 @@ rbx
 rbx
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "movb_m8_rh::WD")
 (assert (not (=
 
@@ -112,6 +115,7 @@ rbx
 ((_ extract 15 8) rax) 
 )))
 (check-sat)
+( pop )
 
 
 

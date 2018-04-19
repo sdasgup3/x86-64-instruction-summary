@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "vcvttps2dq_xmm_m128::ymm1")
 (assert (not (=
 (let ((a!1 (cvt_single_to_int32_truncate
@@ -126,6 +127,7 @@
 (concat #x00000000 (concat #x00000000 (concat #x00000000 a!5)))))
 )))
 (check-sat)
+( pop )
 
 
 

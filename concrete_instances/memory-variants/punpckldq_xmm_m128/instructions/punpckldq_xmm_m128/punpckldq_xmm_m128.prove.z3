@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "punpckldq_xmm_m128::ymm1")
 (assert (not (=
 (concat ((_ extract 255 128) ymm1)
@@ -108,6 +109,7 @@
 ((_ extract 31 0) ymm1))))
 )))
 (check-sat)
+( pop )
 
 
 

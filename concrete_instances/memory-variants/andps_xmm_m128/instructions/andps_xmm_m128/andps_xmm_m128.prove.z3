@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "andps_xmm_m128::ymm1")
 (assert (not (=
 (let ((a!1 (bvxor (bvxor ((_ extract 127 64) TMP_BV_128)
@@ -111,6 +112,7 @@
 (bvand ((_ extract 127 0) ymm1) TMP_BV_128))
 )))
 (check-sat)
+( pop )
 
 
 

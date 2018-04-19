@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "psrlq_xmm_m128::ymm1")
 (assert (not (=
 (let ((a!1 (ite (bvugt ((_ extract 63 0) TMP_BV_128) #x000000000000003f)
@@ -112,6 +113,7 @@
 (concat ((_ extract 255 128) ymm1) a!1))
 )))
 (check-sat)
+( pop )
 
 
 

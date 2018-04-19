@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "rorl_m32_one::WA")
 (assert (not (=
 rbx
@@ -100,9 +101,11 @@ rbx
 rbx
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "rorl_m32_one::WD")
 (assert (not (=
 
@@ -112,9 +115,11 @@ rbx
 (ext_rotate_right TMP_BV_32 #x00000001) 
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "rorl_m32_one::cf")
 (assert (not (=
 (let ((a!1 (and true
@@ -128,9 +133,11 @@ rbx
 (or a!1 (and false cf)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "rorl_m32_one::of")
 (assert (not (=
 (let ((a!1 (xor (= ((_ extract 31 31) (ext_rotate_right TMP_BV_32 #x00000001))
@@ -146,6 +153,7 @@ rbx
 (or (and true a!1) (and false TMP_BOOL)))
 )))
 (check-sat)
+( pop )
 
 
 

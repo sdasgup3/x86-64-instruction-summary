@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "cmpb_m8_imm8::af")
 (assert (not (=
 (let ((a!1 ((_ extract 4 4)
@@ -102,9 +103,11 @@
 false
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "cmpb_m8_imm8::cf")
 (assert (not (=
 (let ((a!1 (= ((_ extract 8 8)
@@ -119,9 +122,11 @@ false
 (not a!1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "cmpb_m8_imm8::of")
 (assert (not (=
 (let ((a!1 (= ((_ extract 7 7)
@@ -134,9 +139,11 @@ false
 (and (= true (= ((_ extract 7 7) TMP_BV_8) #b1)) (not (= true a!1))))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "cmpb_m8_imm8::pf")
 (assert (not (=
 (let ((a!1 (= ((_ extract 0 0)
@@ -176,9 +183,11 @@ false
 (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "cmpb_m8_imm8::sf")
 (assert (not (=
 (= ((_ extract 7 7) (bvadd (concat #b0 TMP_BV_8) #b000000001 #b011111111))
@@ -187,9 +196,11 @@ false
 (= ((_ extract 7 7) (bvadd #b100000000 (concat #b0 TMP_BV_8))) #b1)
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "cmpb_m8_imm8::zf")
 (assert (not (=
 (= ((_ extract 7 0) (bvadd (concat #b0 TMP_BV_8) #b000000001 #b011111111))
@@ -198,6 +209,7 @@ false
 (= ((_ extract 7 0) (bvadd #b100000000 (concat #b0 TMP_BV_8))) #x00)
 )))
 (check-sat)
+( pop )
 
 
 

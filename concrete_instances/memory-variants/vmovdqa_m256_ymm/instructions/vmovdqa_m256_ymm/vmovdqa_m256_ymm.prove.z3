@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "vmovdqa_m256_ymm::WA")
 (assert (not (=
 rbx
@@ -100,9 +101,11 @@ rbx
 rbx
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "vmovdqa_m256_ymm::WD")
 (assert (not (=
 
@@ -112,6 +115,7 @@ ymm1
 ymm1 
 )))
 (check-sat)
+( pop )
 
 
 

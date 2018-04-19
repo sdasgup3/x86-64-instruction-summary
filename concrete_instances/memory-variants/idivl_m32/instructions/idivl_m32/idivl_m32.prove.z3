@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "idivl_m32::af")
 (assert (not (=
 TMP_BOOL
@@ -100,9 +101,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "idivl_m32::cf")
 (assert (not (=
 TMP_BOOL
@@ -110,9 +113,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "idivl_m32::of")
 (assert (not (=
 TMP_BOOL
@@ -120,9 +125,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "idivl_m32::pf")
 (assert (not (=
 TMP_BOOL
@@ -130,9 +137,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "idivl_m32::rax")
 (assert (not (=
 (concat #x00000000
@@ -146,9 +155,11 @@ TMP_BV_32))
 TMP_BV_32))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "idivl_m32::rdx")
 (assert (not (=
 (concat #x00000000
@@ -162,9 +173,11 @@ TMP_BV_32))
 TMP_BV_32))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "idivl_m32::sf")
 (assert (not (=
 TMP_BOOL
@@ -172,9 +185,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "idivl_m32::zf")
 (assert (not (=
 TMP_BOOL
@@ -182,6 +197,7 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 

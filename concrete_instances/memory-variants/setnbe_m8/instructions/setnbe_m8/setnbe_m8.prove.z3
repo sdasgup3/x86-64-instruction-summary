@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "setnbe_m8::WA")
 (assert (not (=
 rbx
@@ -100,9 +101,11 @@ rbx
 rbx
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "setnbe_m8::WD")
 (assert (not (=
 
@@ -114,6 +117,7 @@ rbx
 (ite (and (not cf) (not zf)) #x01 #x00) 
 )))
 (check-sat)
+( pop )
 
 
 

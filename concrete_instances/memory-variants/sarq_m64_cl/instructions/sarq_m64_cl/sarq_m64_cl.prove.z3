@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "sarq_m64_cl::WA")
 (assert (not (=
 rbx
@@ -100,9 +101,11 @@ rbx
 rbx
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "sarq_m64_cl::WD")
 (assert (not (=
 
@@ -118,9 +121,11 @@ rbx
 ((_ extract 64 1) a!1)) 
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "sarq_m64_cl::cf")
 (assert (not (=
 (let ((a!1 (not (= (bvand ((_ extract 7 0) rcx) #x3f) #x00)))
@@ -136,9 +141,11 @@ rbx
 (or (and a!1 (= ((_ extract 0 0) a!2) #b1)) (and (not a!1) cf)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "sarq_m64_cl::of")
 (assert (not (=
 (let ((a!1 (and (= (bvand ((_ extract 7 0) rcx) #x3f) #x01) false))
@@ -150,9 +157,11 @@ rbx
 (or a!1 (and a!2 of)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "sarq_m64_cl::pf")
 (assert (not (=
 (let ((a!1 (not (= (bvand ((_ extract 7 0) rcx) #x3f) #x00)))
@@ -184,9 +193,11 @@ rbx
 (or (and a!1 a!3) (and (not a!1) pf))))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "sarq_m64_cl::sf")
 (assert (not (=
 (let ((a!1 (not (= (bvand ((_ extract 7 0) rcx) #x3f) #x00)))
@@ -202,9 +213,11 @@ rbx
 (or (and a!1 (= ((_ extract 64 64) a!2) #b1)) (and (not a!1) sf)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "sarq_m64_cl::zf")
 (assert (not (=
 (let ((a!1 (not (= (bvand ((_ extract 7 0) rcx) #x3f) #x00)))
@@ -222,6 +235,7 @@ rbx
 (and (not a!1) zf)))
 )))
 (check-sat)
+( pop )
 
 
 
