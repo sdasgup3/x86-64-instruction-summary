@@ -1,0 +1,11 @@
+[4m[1m[34mFiring Last 1[0m
+Thread 1 start: idivb_m8
+Modiy /home/sdasgup3/TYLER/strata-data/data-regs/testcases.tc using %rbx
+Modiied: /home/sdasgup3/Junk/LOCKER/idivb_m8.tc
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target concrete_instances/memory-variants/idivb_m8/instructions/idivb_m8/idivb_m8.s --functions /home/sdasgup3/TYLER/strata-data/data-regs/functions --testcases /home/sdasgup3/Junk/LOCKER/idivb_m8.tc --def_in "{ %ax %rbx }" --live_out "{ %ax }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Sandbox did not finish normally: idivb_m8 8
+Thread 1 done!: idivb_m8
