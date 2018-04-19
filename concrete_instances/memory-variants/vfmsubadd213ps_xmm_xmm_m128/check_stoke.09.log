@@ -1,0 +1,5 @@
+[4m[1m[34mFiring Last 1[0m
+Thread 1 start: vfmsubadd213ps_xmm_xmm_m128
+Modiy /home/sdasgup3/TYLER/strata-data/data-regs/testcases.tc using %rbx
+Modiied: /home/sdasgup3/Junk/LOCKER/vfmsubadd213ps_xmm_xmm_m128.tc
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target concrete_instances/memory-variants/vfmsubadd213ps_xmm_xmm_m128/instructions/vfmsubadd213ps_xmm_xmm_m128/vfmsubadd213ps_xmm_xmm_m128.s --functions /home/sdasgup3/TYLER/strata-data/data-regs/functions --testcases /home/sdasgup3/Junk/LOCKER/vfmsubadd213ps_xmm_xmm_m128.tc --def_in "{ %rbx %xmm1 %xmm2 }" --live_out "{ %ymm1 }" 

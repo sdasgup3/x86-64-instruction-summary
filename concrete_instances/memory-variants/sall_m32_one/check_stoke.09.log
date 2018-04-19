@@ -1,0 +1,18 @@
+[4m[1m[34mFiring Last 1[0m
+Thread 1 start: sall_m32_one
+Modiy /home/sdasgup3/TYLER/strata-data/data-regs/testcases.tc using %rbx
+Modiied: /home/sdasgup3/Junk/LOCKER/sall_m32_one.tc
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target concrete_instances/memory-variants/sall_m32_one/instructions/sall_m32_one/sall_m32_one.s --functions /home/sdasgup3/TYLER/strata-data/data-regs/functions --testcases /home/sdasgup3/Junk/LOCKER/sall_m32_one.tc --def_in "{ %rbx }" --live_out "{ %cf %pf %zf %sf %of }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Strata Combo Handler
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Thread 1 done!: sall_m32_one
