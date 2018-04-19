@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "xorw_r16_m16::af")
 (assert (not (=
 TMP_BOOL
@@ -100,9 +101,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "xorw_r16_m16::cf")
 (assert (not (=
 false
@@ -110,9 +113,11 @@ false
 false
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "xorw_r16_m16::of")
 (assert (not (=
 false
@@ -120,9 +125,11 @@ false
 false
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "xorw_r16_m16::pf")
 (assert (not (=
 (let ((a!1 (xor (= (bvxor ((_ extract 0 0) rbx) ((_ extract 0 0) TMP_BV_16))
@@ -162,9 +169,11 @@ false
 (not a!1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "xorw_r16_m16::rbx")
 (assert (not (=
 (concat ((_ extract 63 16) rbx) (bvxor ((_ extract 15 0) rbx) TMP_BV_16))
@@ -172,9 +181,11 @@ false
 (concat ((_ extract 63 16) rbx) (bvxor ((_ extract 15 0) rbx) TMP_BV_16))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "xorw_r16_m16::sf")
 (assert (not (=
 (= (bvxor ((_ extract 15 15) rbx) ((_ extract 15 15) TMP_BV_16)) #b1)
@@ -182,9 +193,11 @@ false
 (= (bvxor ((_ extract 15 15) rbx) ((_ extract 15 15) TMP_BV_16)) #b1)
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "xorw_r16_m16::zf")
 (assert (not (=
 (= (bvxor ((_ extract 15 0) rbx) TMP_BV_16) #x0000)
@@ -192,6 +205,7 @@ false
 (= (bvxor ((_ extract 15 0) rbx) TMP_BV_16) #x0000)
 )))
 (check-sat)
+( pop )
 
 
 

@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "imulw_r16_m16_imm16::af")
 (assert (not (=
 TMP_BOOL
@@ -100,9 +101,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "imulw_r16_m16_imm16::cf")
 (assert (not (=
 (let ((a!1 ((_ sign_extend 16)
@@ -116,9 +119,11 @@ TMP_BOOL
 (not (= (bvmul ((_ sign_extend 16) TMP_BV_16) #x00000000) a!1)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "imulw_r16_m16_imm16::of")
 (assert (not (=
 (let ((a!1 ((_ sign_extend 16)
@@ -132,9 +137,11 @@ TMP_BOOL
 (not (= (bvmul ((_ sign_extend 16) TMP_BV_16) #x00000000) a!1)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "imulw_r16_m16_imm16::pf")
 (assert (not (=
 TMP_BOOL
@@ -142,9 +149,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "imulw_r16_m16_imm16::rbx")
 (assert (not (=
 (concat ((_ extract 63 16) rbx)
@@ -154,9 +163,11 @@ TMP_BOOL
 ((_ extract 15 0) (bvmul ((_ sign_extend 16) TMP_BV_16) #x00000000)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "imulw_r16_m16_imm16::sf")
 (assert (not (=
 (= ((_ extract 15 15) (bvmul ((_ sign_extend 16) TMP_BV_16) #x00000000)) #b1)
@@ -164,9 +175,11 @@ TMP_BOOL
 (= ((_ extract 15 15) (bvmul ((_ sign_extend 16) TMP_BV_16) #x00000000)) #b1)
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "imulw_r16_m16_imm16::zf")
 (assert (not (=
 TMP_BOOL
@@ -174,6 +187,7 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 

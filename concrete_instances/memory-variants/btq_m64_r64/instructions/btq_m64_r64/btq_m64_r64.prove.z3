@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "btq_m64_r64::af")
 (assert (not (=
 TMP_BOOL
@@ -100,9 +101,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "btq_m64_r64::cf")
 (assert (not (=
 (let ((a!1 (bvashr (concat TMP_BV_64 #b0)
@@ -119,9 +122,11 @@ TMP_BOOL
 (= a!1 #b1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "btq_m64_r64::of")
 (assert (not (=
 TMP_BOOL
@@ -129,9 +134,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "btq_m64_r64::pf")
 (assert (not (=
 TMP_BOOL
@@ -139,9 +146,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "btq_m64_r64::sf")
 (assert (not (=
 TMP_BOOL
@@ -149,6 +158,7 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 

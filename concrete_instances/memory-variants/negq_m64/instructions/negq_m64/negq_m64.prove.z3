@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "negq_m64::WA")
 (assert (not (=
 rbx
@@ -100,9 +101,11 @@ rbx
 rbx
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "negq_m64::WD")
 (assert (not (=
 
@@ -115,9 +118,11 @@ rbx
 (bvneg TMP_BV_64) 
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "negq_m64::af")
 (assert (not (=
 false
@@ -126,9 +131,11 @@ false
 (= ((_ extract 3 3) (bvneg TMP_BV_64)) #b1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "negq_m64::cf")
 (assert (not (=
 (let ((a!1 ((_ extract 64 64)
@@ -143,9 +150,11 @@ false
 (not (= TMP_BV_64 #x0000000000000000))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "negq_m64::of")
 (assert (not (=
 (let ((a!1 (= (= (bvxor ((_ extract 63 63) TMP_BV_64) #b1) #b1) false))
@@ -160,9 +169,11 @@ false
 (= ((_ extract 63 63) (bvneg TMP_BV_64)) #b1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "negq_m64::pf")
 (assert (not (=
 (let ((a!1 (bvadd (concat #b0 (bvxor TMP_BV_64 #xffffffffffffffff))
@@ -188,9 +199,11 @@ false
 (not a!1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "negq_m64::sf")
 (assert (not (=
 (let ((a!1 ((_ extract 63 63)
@@ -202,9 +215,11 @@ false
 (= ((_ extract 63 63) (bvneg TMP_BV_64)) #b1)
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "negq_m64::zf")
 (assert (not (=
 (let ((a!1 ((_ extract 63 0)
@@ -216,6 +231,7 @@ false
 (= (bvneg TMP_BV_64) #x0000000000000000)
 )))
 (check-sat)
+( pop )
 
 
 

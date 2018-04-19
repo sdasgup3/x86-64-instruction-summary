@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "addl_r32_m32::af")
 (assert (not (=
 (let ((a!1 ((_ extract 4 4)
@@ -106,9 +107,11 @@
 (= a!1 #b1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "addl_r32_m32::cf")
 (assert (not (=
 (let ((a!1 ((_ extract 32 32)
@@ -122,9 +125,11 @@
 (= a!1 #b1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "addl_r32_m32::of")
 (assert (not (=
 (let ((a!1 ((_ extract 31 31)
@@ -144,9 +149,11 @@ a!2)))
 a!2)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "addl_r32_m32::pf")
 (assert (not (=
 (let ((a!1 ((_ extract 0 0)
@@ -216,9 +223,11 @@ a!2)))
 (= a!8 #b1))))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "addl_r32_m32::rbx")
 (assert (not (=
 (let ((a!1 ((_ extract 31 0)
@@ -232,9 +241,11 @@ a!2)))
 (concat #x00000000 a!1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "addl_r32_m32::sf")
 (assert (not (=
 (let ((a!1 ((_ extract 31 31)
@@ -248,9 +259,11 @@ a!2)))
 (= a!1 #b1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "addl_r32_m32::zf")
 (assert (not (=
 (let ((a!1 ((_ extract 31 0)
@@ -264,6 +277,7 @@ a!2)))
 (= a!1 #x00000000))
 )))
 (check-sat)
+( pop )
 
 
 

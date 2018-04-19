@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "orq_r64_m64::af")
 (assert (not (=
 TMP_BOOL
@@ -100,9 +101,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "orq_r64_m64::cf")
 (assert (not (=
 false
@@ -110,9 +113,11 @@ false
 false
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "orq_r64_m64::of")
 (assert (not (=
 false
@@ -120,9 +125,11 @@ false
 false
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "orq_r64_m64::pf")
 (assert (not (=
 (let ((a!1 (xor (= (bvor ((_ extract 0 0) rbx) ((_ extract 0 0) TMP_BV_64))
@@ -162,9 +169,11 @@ false
 (not a!1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "orq_r64_m64::rbx")
 (assert (not (=
 (bvor rbx TMP_BV_64)
@@ -172,9 +181,11 @@ false
 (bvor rbx TMP_BV_64)
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "orq_r64_m64::sf")
 (assert (not (=
 (= (bvor ((_ extract 63 63) rbx) ((_ extract 63 63) TMP_BV_64)) #b1)
@@ -182,9 +193,11 @@ false
 (= (bvor ((_ extract 63 63) rbx) ((_ extract 63 63) TMP_BV_64)) #b1)
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "orq_r64_m64::zf")
 (assert (not (=
 (= (bvor rbx TMP_BV_64) #x0000000000000000)
@@ -192,6 +205,7 @@ false
 (= (bvor rbx TMP_BV_64) #x0000000000000000)
 )))
 (check-sat)
+( pop )
 
 
 

@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "rsqrtps_xmm_m128::ymm1")
 (assert (not (=
 (let ((a!1 (concat (approx_reciprocal_sqrt_single
@@ -118,6 +119,7 @@ a!1)))
 a!1)))
 )))
 (check-sat)
+( pop )
 
 
 

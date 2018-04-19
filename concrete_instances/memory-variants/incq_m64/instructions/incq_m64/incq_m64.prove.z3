@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "incq_m64::WA")
 (assert (not (=
 rbx
@@ -100,9 +101,11 @@ rbx
 rbx
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "incq_m64::WD")
 (assert (not (=
 
@@ -113,9 +116,11 @@ rbx
 (bvadd TMP_BV_64 #x0000000000000001) 
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "incq_m64::af")
 (assert (not (=
 (let ((a!1 ((_ extract 4 4)
@@ -125,9 +130,11 @@ rbx
 (= ((_ extract 3 0) TMP_BV_64) #xf)
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "incq_m64::of")
 (assert (not (=
 (let ((a!1 (= ((_ extract 63 63)
@@ -140,9 +147,11 @@ rbx
 #b111111111111111111111111111111111111111111111111111111111111111))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "incq_m64::pf")
 (assert (not (=
 (let ((a!1 (= ((_ extract 0 0)
@@ -182,9 +191,11 @@ rbx
 (not a!1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "incq_m64::sf")
 (assert (not (=
 (= ((_ extract 63 63)
@@ -194,9 +205,11 @@ rbx
 (= ((_ extract 63 63) (bvadd TMP_BV_64 #x0000000000000001)) #b1)
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "incq_m64::zf")
 (assert (not (=
 (= ((_ extract 63 0)
@@ -206,6 +219,7 @@ rbx
 (= (bvadd TMP_BV_64 #x0000000000000001) #x0000000000000000)
 )))
 (check-sat)
+( pop )
 
 
 

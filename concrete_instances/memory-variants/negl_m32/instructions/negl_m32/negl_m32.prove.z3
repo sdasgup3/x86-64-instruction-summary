@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "negl_m32::WA")
 (assert (not (=
 rbx
@@ -100,9 +101,11 @@ rbx
 rbx
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "negl_m32::WD")
 (assert (not (=
 
@@ -114,9 +117,11 @@ rbx
 (bvneg TMP_BV_32) 
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "negl_m32::af")
 (assert (not (=
 (let ((a!1 (bvadd (concat #b0 (bvxor ((_ extract 3 0) TMP_BV_32) #xf))
@@ -127,9 +132,11 @@ rbx
 (= ((_ extract 3 3) (bvneg TMP_BV_32)) #b1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "negl_m32::cf")
 (assert (not (=
 (let ((a!1 ((_ extract 32 32)
@@ -143,9 +150,11 @@ rbx
 (not (= TMP_BV_32 #x00000000))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "negl_m32::of")
 (assert (not (=
 (let ((a!1 (= (= (bvxor ((_ extract 31 31) TMP_BV_32) #b1) #b1) false))
@@ -159,9 +168,11 @@ rbx
 (= ((_ extract 31 31) (bvneg TMP_BV_32)) #b1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "negl_m32::pf")
 (assert (not (=
 (let ((a!1 ((_ extract 0 0)
@@ -208,9 +219,11 @@ rbx
 (not a!1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "negl_m32::sf")
 (assert (not (=
 (let ((a!1 ((_ extract 31 31)
@@ -221,9 +234,11 @@ rbx
 (= ((_ extract 31 31) (bvneg TMP_BV_32)) #b1)
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "negl_m32::zf")
 (assert (not (=
 (let ((a!1 ((_ extract 31 0)
@@ -234,6 +249,7 @@ rbx
 (= (bvneg TMP_BV_32) #x00000000)
 )))
 (check-sat)
+( pop )
 
 
 

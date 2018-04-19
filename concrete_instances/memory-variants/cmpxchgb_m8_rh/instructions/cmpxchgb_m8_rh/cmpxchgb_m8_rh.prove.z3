@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "cmpxchgb_m8_rh::WA")
 (assert (not (=
 rbx
@@ -100,9 +101,11 @@ rbx
 rbx
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "cmpxchgb_m8_rh::WD")
 (assert (not (=
 
@@ -120,9 +123,11 @@ rbx
 (ite (= a!1 #x00) ((_ extract 15 8) rax) TMP_BV_8)) 
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "cmpxchgb_m8_rh::af")
 (assert (not (=
 (let ((a!1 (bvadd (concat #b0 ((_ extract 3 0) rax))
@@ -134,9 +139,11 @@ rbx
 (= ((_ extract 4 4) a!1) #b1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "cmpxchgb_m8_rh::cf")
 (assert (not (=
 (let ((a!1 ((_ extract 8 8)
@@ -158,9 +165,11 @@ rbx
 (= a!2 #b1)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "cmpxchgb_m8_rh::of")
 (assert (not (=
 (let ((a!1 (= (= ((_ extract 7 7) rax) #b1)
@@ -182,9 +191,11 @@ rbx
 (and a!1 a!3)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "cmpxchgb_m8_rh::pf")
 (assert (not (=
 (let ((a!1 (bvadd (concat #b0 ((_ extract 7 0) rax))
@@ -212,9 +223,11 @@ rbx
 (= ((_ extract 7 7) a!1) #b1))))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "cmpxchgb_m8_rh::rax")
 (assert (not (=
 (concat ((_ extract 63 8) rax) TMP_BV_8)
@@ -222,9 +235,11 @@ rbx
 (concat ((_ extract 63 8) rax) TMP_BV_8)
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "cmpxchgb_m8_rh::sf")
 (assert (not (=
 (let ((a!1 ((_ extract 7 7)
@@ -240,9 +255,11 @@ rbx
 (= a!1 #b1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "cmpxchgb_m8_rh::zf")
 (assert (not (=
 (let ((a!1 ((_ extract 7 0)
@@ -258,6 +275,7 @@ rbx
 (= a!1 #x00))
 )))
 (check-sat)
+( pop )
 
 
 

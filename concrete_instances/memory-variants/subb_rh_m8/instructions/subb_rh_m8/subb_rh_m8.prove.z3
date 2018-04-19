@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "subb_rh_m8::af")
 (assert (not (=
 (let ((a!1 (bvadd (concat #b0 ((_ extract 11 8) rax))
@@ -105,9 +106,11 @@
 (= a!1 #b1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "subb_rh_m8::cf")
 (assert (not (=
 (let ((a!1 ((_ extract 8 8)
@@ -126,9 +129,11 @@
 (not (= a!1 #b1)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "subb_rh_m8::of")
 (assert (not (=
 (let ((a!1 (= (= ((_ extract 15 15) rax) #b1)
@@ -150,9 +155,11 @@
 (and a!1 (not a!3))))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "subb_rh_m8::pf")
 (assert (not (=
 (let ((a!1 (bvadd (concat #b0 ((_ extract 15 8) rax))
@@ -180,9 +187,11 @@
 (= ((_ extract 7 7) a!1) #b1))))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "subb_rh_m8::rax")
 (assert (not (=
 (let ((a!1 ((_ extract 7 0)
@@ -198,9 +207,11 @@
 (concat (concat ((_ extract 63 16) rax) a!1) ((_ extract 7 0) rax)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "subb_rh_m8::sf")
 (assert (not (=
 (let ((a!1 ((_ extract 7 7)
@@ -216,9 +227,11 @@
 (= a!1 #b1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "subb_rh_m8::zf")
 (assert (not (=
 (let ((a!1 ((_ extract 7 0)
@@ -234,6 +247,7 @@
 (= a!1 #x00))
 )))
 (check-sat)
+( pop )
 
 
 

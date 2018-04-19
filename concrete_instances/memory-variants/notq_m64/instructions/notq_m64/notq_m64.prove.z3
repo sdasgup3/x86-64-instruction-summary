@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "notq_m64::WA")
 (assert (not (=
 rbx
@@ -100,9 +101,11 @@ rbx
 rbx
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "notq_m64::WD")
 (assert (not (=
 
@@ -112,6 +115,7 @@ rbx
 (bvnot TMP_BV_64) 
 )))
 (check-sat)
+( pop )
 
 
 

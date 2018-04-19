@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "mulq_m64::af")
 (assert (not (=
 TMP_BOOL
@@ -100,9 +101,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "mulq_m64::cf")
 (assert (not (=
 (let ((a!1 (= ((_ extract 127 64)
@@ -118,9 +121,11 @@ TMP_BOOL
 (not a!1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "mulq_m64::of")
 (assert (not (=
 (let ((a!1 (= ((_ extract 127 64)
@@ -136,9 +141,11 @@ TMP_BOOL
 (not a!1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "mulq_m64::pf")
 (assert (not (=
 TMP_BOOL
@@ -146,9 +153,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "mulq_m64::rax")
 (assert (not (=
 ((_ extract 63 0)
@@ -160,9 +169,11 @@ TMP_BOOL
 (concat #x0000000000000000 rax)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "mulq_m64::rdx")
 (assert (not (=
 ((_ extract 127 64)
@@ -174,9 +185,11 @@ TMP_BOOL
 (concat #x0000000000000000 rax)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "mulq_m64::sf")
 (assert (not (=
 TMP_BOOL
@@ -184,9 +197,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "mulq_m64::zf")
 (assert (not (=
 TMP_BOOL
@@ -194,6 +209,7 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 

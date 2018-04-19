@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "shrxq_r64_m64_r64::rbx")
 (assert (not (=
 (let ((a!1 (bvlshr (concat TMP_BV_64 #b0)
@@ -106,6 +107,7 @@
 ((_ extract 64 1) a!1))
 )))
 (check-sat)
+( pop )
 
 
 

@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "vrcpps_ymm_m256::ymm1")
 (assert (not (=
 (let ((a!1 (concat (approx_reciprocal_single ((_ extract 95 64) TMP_BV_256))
@@ -126,6 +127,7 @@ a!2))))
 (concat (approx_reciprocal_single ((_ extract 255 224) TMP_BV_256)) a!3))))
 )))
 (check-sat)
+( pop )
 
 
 

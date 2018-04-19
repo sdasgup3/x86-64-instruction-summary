@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "imulq_m64::af")
 (assert (not (=
 TMP_BOOL
@@ -100,9 +101,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "imulq_m64::cf")
 (assert (not (=
 (let ((a!1 ((_ sign_extend 64)
@@ -120,9 +123,11 @@ a!1)))
 a!1)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "imulq_m64::of")
 (assert (not (=
 (let ((a!1 ((_ sign_extend 64)
@@ -140,9 +145,11 @@ a!1)))
 a!1)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "imulq_m64::pf")
 (assert (not (=
 TMP_BOOL
@@ -150,9 +157,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "imulq_m64::rax")
 (assert (not (=
 ((_ extract 63 0)
@@ -162,9 +171,11 @@ TMP_BOOL
 (bvmul ((_ sign_extend 64) TMP_BV_64) ((_ sign_extend 64) rax)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "imulq_m64::rdx")
 (assert (not (=
 ((_ extract 127 64)
@@ -174,9 +185,11 @@ TMP_BOOL
 (bvmul ((_ sign_extend 64) TMP_BV_64) ((_ sign_extend 64) rax)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "imulq_m64::sf")
 (assert (not (=
 (= ((_ extract 63 63)
@@ -188,9 +201,11 @@ TMP_BOOL
 #b1)
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "imulq_m64::zf")
 (assert (not (=
 TMP_BOOL
@@ -198,6 +213,7 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 

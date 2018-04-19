@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "leal_r32_m64::rbx")
 (assert (not (=
 (concat #x00000000 ((_ extract 31 0) rcx))
@@ -100,6 +101,7 @@
 (concat #x00000000 ((_ extract 31 0) rcx))
 )))
 (check-sat)
+( pop )
 
 
 

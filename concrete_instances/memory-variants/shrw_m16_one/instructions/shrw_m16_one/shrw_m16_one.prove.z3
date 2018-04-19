@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "shrw_m16_one::WA")
 (assert (not (=
 rbx
@@ -100,9 +101,11 @@ rbx
 rbx
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "shrw_m16_one::WD")
 (assert (not (=
 
@@ -112,9 +115,11 @@ rbx
 ((_ extract 16 1) (bvlshr (concat TMP_BV_16 #b0) #b00000000000000001)) 
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "shrw_m16_one::af")
 (assert (not (=
 (or (and true TMP_BOOL) (and false af))
@@ -122,9 +127,11 @@ rbx
 (or (and true TMP_BOOL) (and false af))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "shrw_m16_one::cf")
 (assert (not (=
 (let ((a!1 (= ((_ extract 0 0)
@@ -138,9 +145,11 @@ rbx
 (or (and false TMP_BOOL) (and true (or (and true a!1) (and false cf)))))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "shrw_m16_one::of")
 (assert (not (=
 (or (and true (= ((_ extract 15 15) TMP_BV_16) #b1)) (and false of))
@@ -148,9 +157,11 @@ rbx
 (or (and true (= ((_ extract 15 15) TMP_BV_16) #b1)) (and false of))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "shrw_m16_one::pf")
 (assert (not (=
 (let ((a!1 (= ((_ extract 1 1)
@@ -206,9 +217,11 @@ rbx
 (or (and true (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8))) (and false pf)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "shrw_m16_one::sf")
 (assert (not (=
 (let ((a!1 (= ((_ extract 16 16)
@@ -222,9 +235,11 @@ rbx
 (or (and true a!1) (and false sf)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "shrw_m16_one::zf")
 (assert (not (=
 (let ((a!1 (= ((_ extract 16 1)
@@ -238,6 +253,7 @@ rbx
 (or (and true a!1) (and false zf)))
 )))
 (check-sat)
+( pop )
 
 
 

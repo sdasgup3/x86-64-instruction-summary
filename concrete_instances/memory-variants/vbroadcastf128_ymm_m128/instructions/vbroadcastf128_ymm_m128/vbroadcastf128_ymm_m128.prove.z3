@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "vbroadcastf128_ymm_m128::ymm1")
 (assert (not (=
 (concat TMP_BV_128 TMP_BV_128)
@@ -100,6 +101,7 @@
 (concat TMP_BV_128 TMP_BV_128)
 )))
 (check-sat)
+( pop )
 
 
 

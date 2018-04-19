@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "testq_m64_r64::af")
 (assert (not (=
 TMP_BOOL
@@ -100,9 +101,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "testq_m64_r64::cf")
 (assert (not (=
 (let ((a!1 (bvadd (concat #b0
@@ -118,9 +121,11 @@ rcx
 false
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "testq_m64_r64::of")
 (assert (not (=
 (let ((a!1 (= (bvxor (bvor ((_ extract 63 63) TMP_BV_64)
@@ -140,9 +145,11 @@ rcx
 false
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "testq_m64_r64::pf")
 (assert (not (=
 (let ((a!1 (bvadd (concat #b0
@@ -179,9 +186,11 @@ rcx
 (not a!1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "testq_m64_r64::sf")
 (assert (not (=
 (let ((a!1 (bvadd (concat #b0
@@ -195,9 +204,11 @@ rcx
 (= (bvand ((_ extract 63 63) TMP_BV_64) ((_ extract 63 63) rcx)) #b1)
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "testq_m64_r64::zf")
 (assert (not (=
 (let ((a!1 (bvadd (concat #b0
@@ -211,6 +222,7 @@ rcx
 (= (bvand TMP_BV_64 rcx) #x0000000000000000)
 )))
 (check-sat)
+( pop )
 
 
 

@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "haddps_xmm_m128::ymm1")
 (assert (not (=
 (let ((a!1 (concat (concat (add_single ((_ extract 95 64) TMP_BV_128)
@@ -118,6 +119,7 @@
 ((_ extract 63 32) ymm1)))))
 )))
 (check-sat)
+( pop )
 
 
 

@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "blsrq_r64_m64::cf")
 (assert (not (=
 (= TMP_BV_64 #x0000000000000000)
@@ -100,9 +101,11 @@
 (= TMP_BV_64 #x0000000000000000)
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "blsrq_r64_m64::of")
 (assert (not (=
 false
@@ -110,9 +113,11 @@ false
 false
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "blsrq_r64_m64::rbx")
 (assert (not (=
 (bvand (bvsub TMP_BV_64 #x0000000000000001) TMP_BV_64)
@@ -120,9 +125,11 @@ false
 (bvand (bvsub TMP_BV_64 #x0000000000000001) TMP_BV_64)
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "blsrq_r64_m64::sf")
 (assert (not (=
 (= (bvand ((_ extract 63 63) (bvsub TMP_BV_64 #x0000000000000001))
@@ -134,9 +141,11 @@ false
 #b1)
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "blsrq_r64_m64::zf")
 (assert (not (=
 (= (bvand (bvsub TMP_BV_64 #x0000000000000001) TMP_BV_64)
@@ -146,6 +155,7 @@ false
 #x0000000000000000)
 )))
 (check-sat)
+( pop )
 
 
 

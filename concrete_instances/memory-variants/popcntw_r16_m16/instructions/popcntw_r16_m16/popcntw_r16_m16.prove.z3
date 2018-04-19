@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "popcntw_r16_m16::af")
 (assert (not (=
 false
@@ -100,9 +101,11 @@ false
 false
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "popcntw_r16_m16::cf")
 (assert (not (=
 false
@@ -110,9 +113,11 @@ false
 false
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "popcntw_r16_m16::of")
 (assert (not (=
 false
@@ -120,9 +125,11 @@ false
 false
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "popcntw_r16_m16::pf")
 (assert (not (=
 false
@@ -130,9 +137,11 @@ false
 false
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "popcntw_r16_m16::rbx")
 (assert (not (=
 (let ((a!1 (concat #b00
@@ -200,9 +209,11 @@ false
 (concat ((_ extract 63 16) rbx) (bvadd a!5 a!10))))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "popcntw_r16_m16::sf")
 (assert (not (=
 false
@@ -210,9 +221,11 @@ false
 false
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "popcntw_r16_m16::zf")
 (assert (not (=
 (= (concat #x000000000000 TMP_BV_16) #x0000000000000000)
@@ -220,6 +233,7 @@ false
 (= TMP_BV_16 #x0000)
 )))
 (check-sat)
+( pop )
 
 
 

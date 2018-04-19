@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "tzcntw_r16_m16::af")
 (assert (not (=
 TMP_BOOL
@@ -100,9 +101,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "tzcntw_r16_m16::cf")
 (assert (not (=
 (let ((a!1 (concat #b0
@@ -154,9 +157,11 @@ a!3)))
 (= ((_ extract 8 8) (bvadd (concat #b0 a!7) (concat #b0 a!7))) #b1)))))))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "tzcntw_r16_m16::of")
 (assert (not (=
 TMP_BOOL
@@ -164,9 +169,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "tzcntw_r16_m16::pf")
 (assert (not (=
 TMP_BOOL
@@ -174,9 +181,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "tzcntw_r16_m16::rbx")
 (assert (not (=
 (let ((a!1 (concat #b0
@@ -492,9 +501,11 @@ a!3)))
 (concat ((_ extract 63 16) rbx) a!94))))))))))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "tzcntw_r16_m16::sf")
 (assert (not (=
 TMP_BOOL
@@ -502,9 +513,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "tzcntw_r16_m16::zf")
 (assert (not (=
 (let ((a!1 (concat #b0
@@ -802,6 +815,7 @@ a!3)))
 #x00000000)))))))))
 )))
 (check-sat)
+( pop )
 
 
 

@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "xchgq_m64_r64::WA")
 (assert (not (=
 rbx
@@ -100,9 +101,11 @@ rbx
 rbx
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "xchgq_m64_r64::WD")
 (assert (not (=
 
@@ -112,9 +115,11 @@ rcx
 rcx 
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "xchgq_m64_r64::rcx")
 (assert (not (=
 TMP_BV_64
@@ -122,6 +127,7 @@ TMP_BV_64
 TMP_BV_64
 )))
 (check-sat)
+( pop )
 
 
 

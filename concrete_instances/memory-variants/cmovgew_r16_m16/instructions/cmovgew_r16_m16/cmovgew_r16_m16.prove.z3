@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "cmovgew_r16_m16::rbx")
 (assert (not (=
 (let ((a!1 (= (concat #x00000000000000
@@ -105,6 +106,7 @@
 (ite (= sf of) TMP_BV_16 ((_ extract 15 0) rbx)))
 )))
 (check-sat)
+( pop )
 
 
 

@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "cmovll_r32_m32::rbx")
 (assert (not (=
 (let ((a!1 (ite (= (bvxor #x01 (ite of #x01 #x00) (ite sf #x01 #x00)) #x00)
@@ -103,6 +104,7 @@ TMP_BV_32
 (concat #x00000000 (ite (not (= sf of)) TMP_BV_32 ((_ extract 31 0) rbx)))
 )))
 (check-sat)
+( pop )
 
 
 

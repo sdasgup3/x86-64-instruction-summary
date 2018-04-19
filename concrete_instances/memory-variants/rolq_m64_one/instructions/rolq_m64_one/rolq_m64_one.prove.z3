@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "rolq_m64_one::WA")
 (assert (not (=
 rbx
@@ -100,9 +101,11 @@ rbx
 rbx
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "rolq_m64_one::WD")
 (assert (not (=
 
@@ -120,9 +123,11 @@ rbx
 (ext_rotate_left TMP_BV_64 #x0000000000000001) 
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "rolq_m64_one::cf")
 (assert (not (=
 (let ((a!1 (= ((_ extract 64 64)
@@ -142,9 +147,11 @@ rbx
 (or a!1 (and false cf)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "rolq_m64_one::of")
 (assert (not (=
 (let ((a!1 (= ((_ extract 64 64)
@@ -170,6 +177,7 @@ a!3))))
 (or (and true a!1) (and false TMP_BOOL)))
 )))
 (check-sat)
+( pop )
 
 
 

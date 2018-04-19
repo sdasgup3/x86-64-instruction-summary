@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "vsqrtpd_ymm_m256::ymm1")
 (assert (not (=
 (let ((a!1 (concat (sqrt_double ((_ extract 191 128) TMP_BV_256))
@@ -106,6 +107,7 @@
 (concat (sqrt_double ((_ extract 255 192) TMP_BV_256)) a!1))
 )))
 (check-sat)
+( pop )
 
 
 

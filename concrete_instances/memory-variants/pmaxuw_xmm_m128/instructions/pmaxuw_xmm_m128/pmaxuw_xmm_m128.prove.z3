@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "pmaxuw_xmm_m128::ymm1")
 (assert (not (=
 (let ((a!1 (concat (ite (bvugt ((_ extract 31 16) ymm1)
@@ -176,6 +177,7 @@ a!6)))
 (concat ((_ extract 255 128) ymm1) a!7))))))))
 )))
 (check-sat)
+( pop )
 
 
 

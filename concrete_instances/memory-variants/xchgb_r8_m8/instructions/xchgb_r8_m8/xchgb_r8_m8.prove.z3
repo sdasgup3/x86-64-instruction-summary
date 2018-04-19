@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "xchgb_r8_m8::WA")
 (assert (not (=
 rcx
@@ -100,9 +101,11 @@ rcx
 rcx
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "xchgb_r8_m8::WD")
 (assert (not (=
 
@@ -112,9 +115,11 @@ rcx
 ((_ extract 7 0) rbx) 
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "xchgb_r8_m8::rbx")
 (assert (not (=
 (concat ((_ extract 63 8) rbx) TMP_BV_8)
@@ -122,6 +127,7 @@ rcx
 (concat ((_ extract 63 8) rbx) TMP_BV_8)
 )))
 (check-sat)
+( pop )
 
 
 

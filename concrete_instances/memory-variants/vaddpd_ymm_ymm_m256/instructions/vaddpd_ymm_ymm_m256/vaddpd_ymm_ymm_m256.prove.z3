@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "vaddpd_ymm_ymm_m256::ymm1")
 (assert (not (=
 (let ((a!1 (concat (add_double ((_ extract 191 128) ymm2)
@@ -116,6 +117,7 @@ a!1))
 a!1))
 )))
 (check-sat)
+( pop )
 
 
 

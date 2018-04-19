@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "salb_m8_one::WA")
 (assert (not (=
 rbx
@@ -100,9 +101,11 @@ rbx
 rbx
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "salb_m8_one::WD")
 (assert (not (=
 
@@ -112,9 +115,11 @@ rbx
 ((_ extract 7 0) (bvshl (concat #b0 TMP_BV_8) #b000000001)) 
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "salb_m8_one::af")
 (assert (not (=
 TMP_BOOL
@@ -122,9 +127,11 @@ TMP_BOOL
 (or (and true TMP_BOOL) (and false af))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "salb_m8_one::cf")
 (assert (not (=
 (= ((_ extract 8 8) (bvadd (concat #b0 TMP_BV_8) (concat #b0 TMP_BV_8)))
@@ -134,9 +141,11 @@ TMP_BOOL
 (or (and false TMP_BOOL) (and true (or (and true a!1) (and false cf)))))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "salb_m8_one::of")
 (assert (not (=
 (let ((a!1 (= ((_ extract 7 7)
@@ -154,9 +163,11 @@ a!2)))
 (or (and true (not (= a!2 a!3))) (and false of))))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "salb_m8_one::pf")
 (assert (not (=
 (let ((a!1 (= ((_ extract 0 0)
@@ -196,9 +207,11 @@ a!2)))
 (or (and true (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8))) (and false pf)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "salb_m8_one::sf")
 (assert (not (=
 (= ((_ extract 7 7) (bvadd (concat #b0 TMP_BV_8) (concat #b0 TMP_BV_8)))
@@ -208,9 +221,11 @@ a!2)))
 (or (and true a!1) (and false sf)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "salb_m8_one::zf")
 (assert (not (=
 (= ((_ extract 7 0) (bvadd (concat #b0 TMP_BV_8) (concat #b0 TMP_BV_8)))
@@ -221,6 +236,7 @@ a!2)))
 (or (and true a!1) (and false zf)))
 )))
 (check-sat)
+( pop )
 
 
 

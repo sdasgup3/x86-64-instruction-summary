@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "btl_m32_imm8::af")
 (assert (not (=
 TMP_BOOL
@@ -100,9 +101,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "btl_m32_imm8::cf")
 (assert (not (=
 (let ((a!1 (concat #b0
@@ -306,9 +309,11 @@ TMP_BOOL
 (= ((_ extract 0 0) (bvlshr TMP_BV_8 #x00)) #b1)
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "btl_m32_imm8::of")
 (assert (not (=
 TMP_BOOL
@@ -316,9 +321,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "btl_m32_imm8::pf")
 (assert (not (=
 TMP_BOOL
@@ -326,9 +333,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "btl_m32_imm8::sf")
 (assert (not (=
 TMP_BOOL
@@ -336,6 +345,7 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 

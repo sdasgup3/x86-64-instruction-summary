@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "cmovnaeq_r64_m64::rbx")
 (assert (not (=
 (let ((a!1 (bvadd (ite (= (ite cf #x00000100 #x00000000) #x00000000)
@@ -106,6 +107,7 @@
 (ite cf TMP_BV_64 rbx)
 )))
 (check-sat)
+( pop )
 
 
 

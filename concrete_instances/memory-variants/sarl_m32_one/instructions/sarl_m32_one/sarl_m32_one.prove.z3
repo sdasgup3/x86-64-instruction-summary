@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "sarl_m32_one::WA")
 (assert (not (=
 rbx
@@ -100,9 +101,11 @@ rbx
 rbx
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "sarl_m32_one::WD")
 (assert (not (=
 
@@ -116,9 +119,11 @@ rbx
 (bvashr (concat TMP_BV_32 #b0) #b000000000000000000000000000000001)) 
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "sarl_m32_one::af")
 (assert (not (=
 TMP_BOOL
@@ -126,9 +131,11 @@ TMP_BOOL
 (or (and true TMP_BOOL) (and false af))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "sarl_m32_one::cf")
 (assert (not (=
 (let ((a!1 ((_ extract 0 0)
@@ -144,9 +151,11 @@ TMP_BOOL
 (or (and true a!1) (and false cf)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "sarl_m32_one::of")
 (assert (not (=
 false
@@ -154,9 +163,11 @@ false
 (or false (and false of))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "sarl_m32_one::pf")
 (assert (not (=
 (let ((a!1 ((_ extract 1 1)
@@ -235,9 +246,11 @@ false
 (or (and true (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8))) (and false pf)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "sarl_m32_one::sf")
 (assert (not (=
 (let ((a!1 ((_ extract 64 64)
@@ -253,9 +266,11 @@ false
 (or (and true a!1) (and false sf)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "sarl_m32_one::zf")
 (assert (not (=
 (let ((a!1 ((_ extract 64 1)
@@ -271,6 +286,7 @@ false
 (or (and true a!1) (and false zf)))
 )))
 (check-sat)
+( pop )
 
 
 

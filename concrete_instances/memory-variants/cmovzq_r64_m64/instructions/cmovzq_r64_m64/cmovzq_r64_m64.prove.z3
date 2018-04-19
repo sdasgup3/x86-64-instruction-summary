@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "cmovzq_r64_m64::rbx")
 (assert (not (=
 (ite zf TMP_BV_64 rbx)
@@ -100,6 +101,7 @@
 (ite zf TMP_BV_64 rbx)
 )))
 (check-sat)
+( pop )
 
 
 

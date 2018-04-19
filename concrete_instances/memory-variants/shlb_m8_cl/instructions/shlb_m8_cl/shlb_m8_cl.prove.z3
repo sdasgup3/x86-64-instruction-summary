@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "shlb_m8_cl::WA")
 (assert (not (=
 rbx
@@ -100,9 +101,11 @@ rbx
 rbx
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "shlb_m8_cl::WD")
 (assert (not (=
 
@@ -116,9 +119,11 @@ rbx
 ((_ extract 7 0) a!1)) 
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "shlb_m8_cl::af")
 (assert (not (=
 (let ((a!1 (not (= (bvand ((_ extract 7 0) rcx) #x1f) #x00))))
@@ -128,9 +133,11 @@ rbx
 (or (and a!1 TMP_BOOL) (and (not a!1) af)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "shlb_m8_cl::cf")
 (assert (not (=
 (let ((a!1 (and (bvuge (bvand ((_ extract 7 0) rcx) #x1f) #x08) TMP_BOOL))
@@ -150,9 +157,11 @@ rbx
 (or a!1 (and a!2 a!5))))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "shlb_m8_cl::of")
 (assert (not (=
 (let ((a!1 (and (bvuge (bvand ((_ extract 7 0) rcx) #x1f) #x08) TMP_BOOL))
@@ -178,9 +187,11 @@ rbx
 (or a!7 (and a!8 of))))))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "shlb_m8_cl::pf")
 (assert (not (=
 (let ((a!1 (not (= (bvand ((_ extract 7 0) rcx) #x1f) #x00)))
@@ -210,9 +221,11 @@ rbx
 (or (and a!1 a!3) (and (not a!1) pf))))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "shlb_m8_cl::sf")
 (assert (not (=
 (let ((a!1 (not (= (bvand ((_ extract 7 0) rcx) #x1f) #x00)))
@@ -226,9 +239,11 @@ rbx
 (or (and a!1 (= ((_ extract 7 7) a!2) #b1)) (and (not a!1) sf)))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "shlb_m8_cl::zf")
 (assert (not (=
 (let ((a!1 (not (= (bvand ((_ extract 7 0) rcx) #x1f) #x00)))
@@ -242,6 +257,7 @@ rbx
 (or (and a!1 (= ((_ extract 7 0) a!2) #x00)) (and (not a!1) zf)))
 )))
 (check-sat)
+( pop )
 
 
 

@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "andnq_r64_r64_m64::af")
 (assert (not (=
 TMP_BOOL
@@ -100,9 +101,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "andnq_r64_r64_m64::cf")
 (assert (not (=
 false
@@ -110,9 +113,11 @@ false
 false
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "andnq_r64_r64_m64::of")
 (assert (not (=
 false
@@ -120,9 +125,11 @@ false
 false
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "andnq_r64_r64_m64::pf")
 (assert (not (=
 TMP_BOOL
@@ -130,9 +137,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "andnq_r64_r64_m64::rbx")
 (assert (not (=
 (bvxor (bvor TMP_BV_64 rcx) rcx)
@@ -140,9 +149,11 @@ TMP_BOOL
 (bvand (bvnot rcx) TMP_BV_64)
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "andnq_r64_r64_m64::sf")
 (assert (not (=
 (= (bvxor (bvor ((_ extract 63 63) TMP_BV_64) ((_ extract 63 63) rcx))
@@ -152,9 +163,11 @@ TMP_BOOL
 (= (bvand (bvnot ((_ extract 63 63) rcx)) ((_ extract 63 63) TMP_BV_64)) #b1)
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "andnq_r64_r64_m64::zf")
 (assert (not (=
 (= (bvxor (bvor TMP_BV_64 rcx) rcx) #x0000000000000000)
@@ -162,6 +175,7 @@ TMP_BOOL
 (= (bvand (bvnot rcx) TMP_BV_64) #x0000000000000000)
 )))
 (check-sat)
+( pop )
 
 
 

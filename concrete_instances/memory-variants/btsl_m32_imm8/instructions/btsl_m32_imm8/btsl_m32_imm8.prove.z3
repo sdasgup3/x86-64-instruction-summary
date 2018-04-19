@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "btsl_m32_imm8::WA")
 (assert (not (=
 rbx
@@ -100,9 +101,11 @@ rbx
 rbx
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "btsl_m32_imm8::WD")
 (assert (not (=
 
@@ -112,9 +115,11 @@ rbx
 (bvor TMP_BV_8 (bvshl #x01 #x00)) 
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "btsl_m32_imm8::af")
 (assert (not (=
 TMP_BOOL
@@ -122,9 +127,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "btsl_m32_imm8::cf")
 (assert (not (=
 (= ((_ extract 0 0) (bvlshr TMP_BV_8 #x00)) #b1)
@@ -132,9 +139,11 @@ TMP_BOOL
 (= ((_ extract 0 0) (bvlshr TMP_BV_8 #x00)) #b1)
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "btsl_m32_imm8::of")
 (assert (not (=
 TMP_BOOL
@@ -142,9 +151,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "btsl_m32_imm8::pf")
 (assert (not (=
 TMP_BOOL
@@ -152,9 +163,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "btsl_m32_imm8::sf")
 (assert (not (=
 TMP_BOOL
@@ -162,6 +175,7 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 

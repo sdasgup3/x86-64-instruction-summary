@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "popcntl_r32_m32::af")
 (assert (not (=
 false
@@ -100,9 +101,11 @@ false
 false
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "popcntl_r32_m32::cf")
 (assert (not (=
 false
@@ -110,9 +113,11 @@ false
 false
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "popcntl_r32_m32::of")
 (assert (not (=
 false
@@ -120,9 +125,11 @@ false
 false
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "popcntl_r32_m32::pf")
 (assert (not (=
 false
@@ -130,9 +137,11 @@ false
 false
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "popcntl_r32_m32::rbx")
 (assert (not (=
 (let ((a!1 (concat #b00
@@ -264,9 +273,11 @@ false
 (concat #x0000 (bvadd a!15 a!20))))))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "popcntl_r32_m32::sf")
 (assert (not (=
 false
@@ -274,9 +285,11 @@ false
 false
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "popcntl_r32_m32::zf")
 (assert (not (=
 (= (concat #x00000000 TMP_BV_32) #x0000000000000000)
@@ -284,6 +297,7 @@ false
 (= TMP_BV_32 #x00000000)
 )))
 (check-sat)
+( pop )
 
 
 

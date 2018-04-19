@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "vhaddpd_ymm_ymm_m256::ymm1")
 (assert (not (=
 (concat (concat (add_double ((_ extract 191 128) TMP_BV_256)
@@ -112,6 +113,7 @@
 (add_double ((_ extract 63 0) ymm2) ((_ extract 127 64) ymm2))))
 )))
 (check-sat)
+( pop )
 
 
 

@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "cmovnbel_r32_m32::rbx")
 (assert (not (=
 (concat #x00000000
@@ -104,6 +105,7 @@
 (ite (and (not cf) (not zf)) TMP_BV_32 ((_ extract 31 0) rbx)))
 )))
 (check-sat)
+( pop )
 
 
 

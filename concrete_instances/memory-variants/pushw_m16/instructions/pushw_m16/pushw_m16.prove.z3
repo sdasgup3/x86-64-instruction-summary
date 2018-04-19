@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "pushw_m16::WA")
 (assert (not (=
 (bvsub rsp #x0000000000000002)
@@ -100,9 +101,11 @@
 (bvsub rsp #x0000000000000002)
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "pushw_m16::WD")
 (assert (not (=
 
@@ -112,9 +115,11 @@
 ((_ sign_extend 0) TMP_BV_16) 
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "pushw_m16::rsp")
 (assert (not (=
 (bvsub rsp #x0000000000000002)
@@ -122,6 +127,7 @@
 (bvsub rsp #x0000000000000002)
 )))
 (check-sat)
+( pop )
 
 
 

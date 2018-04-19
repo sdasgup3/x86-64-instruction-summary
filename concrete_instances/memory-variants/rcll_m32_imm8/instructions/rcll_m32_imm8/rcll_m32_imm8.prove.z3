@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "rcll_m32_imm8::WA")
 (assert (not (=
 rbx
@@ -100,9 +101,11 @@ rbx
 rbx
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "rcll_m32_imm8::WD")
 (assert (not (=
 
@@ -116,9 +119,11 @@ rbx
 #b000000000000000000000000000000000)) 
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "rcll_m32_imm8::cf")
 (assert (not (=
 (let ((a!1 ((_ extract 32 32)
@@ -132,9 +137,11 @@ rbx
 (= a!1 #b1))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "rcll_m32_imm8::of")
 (assert (not (=
 (let ((a!1 ((_ extract 32 32)
@@ -156,6 +163,7 @@ rbx
 (and true (or (and false of) (and true TMP_BOOL)))))
 )))
 (check-sat)
+( pop )
 
 
 

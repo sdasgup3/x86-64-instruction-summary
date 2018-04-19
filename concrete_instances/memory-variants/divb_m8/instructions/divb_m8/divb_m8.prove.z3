@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "divb_m8::af")
 (assert (not (=
 TMP_BOOL
@@ -100,9 +101,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "divb_m8::cf")
 (assert (not (=
 TMP_BOOL
@@ -110,9 +113,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "divb_m8::of")
 (assert (not (=
 TMP_BOOL
@@ -120,9 +125,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "divb_m8::pf")
 (assert (not (=
 TMP_BOOL
@@ -130,9 +137,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "divb_m8::rax")
 (assert (not (=
 (concat (concat ((_ extract 63 16) rax)
@@ -144,9 +153,11 @@ TMP_BOOL
 (div_quotient_int8 ((_ extract 15 0) rax) TMP_BV_8))
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "divb_m8::sf")
 (assert (not (=
 TMP_BOOL
@@ -154,9 +165,11 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "divb_m8::zf")
 (assert (not (=
 TMP_BOOL
@@ -164,6 +177,7 @@ TMP_BOOL
 TMP_BOOL
 )))
 (check-sat)
+( pop )
 
 
 

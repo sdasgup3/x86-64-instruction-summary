@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "orps_xmm_m128::ymm1")
 (assert (not (=
 (concat ((_ extract 255 128) ymm1)
@@ -104,6 +105,7 @@
 (bvor ((_ extract 127 0) ymm1) TMP_BV_128))
 )))
 (check-sat)
+( pop )
 
 
 

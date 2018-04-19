@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "setle_m8::WA")
 (assert (not (=
 rbx
@@ -100,9 +101,11 @@ rbx
 rbx
 )))
 (check-sat)
+( pop )
 
 
 
+( push )
 ( echo "setle_m8::WD")
 (assert (not (=
 
@@ -115,6 +118,7 @@ rbx
 (ite (or zf (not (= sf of))) #x01 #x00) 
 )))
 (check-sat)
+( pop )
 
 
 

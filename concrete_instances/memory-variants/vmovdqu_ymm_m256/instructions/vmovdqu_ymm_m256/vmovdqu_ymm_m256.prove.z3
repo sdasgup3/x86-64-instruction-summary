@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "vmovdqu_ymm_m256::ymm1")
 (assert (not (=
 TMP_BV_256
@@ -100,6 +101,7 @@ TMP_BV_256
 TMP_BV_256
 )))
 (check-sat)
+( pop )
 
 
 

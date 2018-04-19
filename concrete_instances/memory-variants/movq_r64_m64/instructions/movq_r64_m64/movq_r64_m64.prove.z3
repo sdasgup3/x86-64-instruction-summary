@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "movq_r64_m64::rbx")
 (assert (not (=
 TMP_BV_64
@@ -100,6 +101,7 @@ TMP_BV_64
 TMP_BV_64
 )))
 (check-sat)
+( pop )
 
 
 

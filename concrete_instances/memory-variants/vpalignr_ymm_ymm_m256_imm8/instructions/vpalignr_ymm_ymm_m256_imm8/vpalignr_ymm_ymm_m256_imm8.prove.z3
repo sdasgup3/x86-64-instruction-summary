@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "vpalignr_ymm_ymm_m256_imm8::ymm1")
 (assert (not (=
 (let ((a!1 ((_ extract 127 0)
@@ -116,6 +117,7 @@
 (concat a!1 a!2))
 )))
 (check-sat)
+( pop )
 
 
 

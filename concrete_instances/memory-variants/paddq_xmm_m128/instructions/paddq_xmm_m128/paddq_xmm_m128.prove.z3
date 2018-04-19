@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "paddq_xmm_m128::ymm1")
 (assert (not (=
 (let ((a!1 ((_ extract 63 0)
@@ -109,6 +110,7 @@
 (bvadd ((_ extract 63 0) ymm1) ((_ extract 63 0) TMP_BV_128))))
 )))
 (check-sat)
+( pop )
 
 
 

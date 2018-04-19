@@ -93,6 +93,7 @@
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
+( push )
 ( echo "shrxl_r32_m32_r32::rbx")
 (assert (not (=
 (let ((a!1 (concat #b0
@@ -482,6 +483,7 @@ a!90)))))))))))
 a!90)))))))))))
 )))
 (check-sat)
+( pop )
 
 
 
