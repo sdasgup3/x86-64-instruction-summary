@@ -3,4 +3,16 @@ Thread 1 start: vpmaskmovq_xmm_xmm_m128
 Modiy /home/sdasgup3/Github/strata-data/data-regs/testcases.tc using %rbx
 Modiied: concrete_instances/memory-variants/vpmaskmovq_xmm_xmm_m128/instructions/../testcases.09.tc
 /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --target concrete_instances/memory-variants/vpmaskmovq_xmm_xmm_m128/instructions/vpmaskmovq_xmm_xmm_m128/vpmaskmovq_xmm_xmm_m128.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/vpmaskmovq_xmm_xmm_m128/instructions/../testcases.09.tc --def_in "{ %rbx %xmm2 }" --live_out "{ %ymm1 }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Strata Combo Handler
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
 Thread 1 done!: vpmaskmovq_xmm_xmm_m128
