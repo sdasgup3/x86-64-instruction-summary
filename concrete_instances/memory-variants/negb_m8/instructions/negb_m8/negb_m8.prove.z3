@@ -109,9 +109,7 @@ rbx
 ( echo "negb_m8::WD")
 (assert (not (=
 
-(let ((a!1 (bvadd #b00000000000000001
-(concat #b0 (bvxor (concat #x00 TMP_BV_8) #xffff)))))
-((_ extract 7 0) a!1)) 
+(bvneg TMP_BV_8) 
 
 
 (bvneg TMP_BV_8) 
@@ -124,12 +122,8 @@ rbx
 ( push )
 ( echo "negb_m8::af")
 (assert (not (=
-(let ((a!1 (bvadd #b00000000000000001
-(concat #b0 (bvxor (concat #x00 TMP_BV_8) #xffff)))))
-(let ((a!2 ((_ extract 4 4)
-(bvadd (concat #b0 ((_ extract 3 0) a!1))
-(concat #b0 ((_ extract 3 0) TMP_BV_8))))))
-(= a!2 #b1)))
+(and (= ((_ extract 3 3) TMP_BV_8) #b1)
+(= ((_ extract 3 3) (bvneg TMP_BV_8)) #b1))
 
 (and (= ((_ extract 3 3) TMP_BV_8) #b1)
 (= ((_ extract 3 3) (bvneg TMP_BV_8)) #b1))
@@ -142,11 +136,7 @@ rbx
 ( push )
 ( echo "negb_m8::cf")
 (assert (not (=
-(let ((a!1 (bvadd #b00000000000000001
-(concat #b0 (bvxor (concat #x00 TMP_BV_8) #xffff)))))
-(let ((a!2 ((_ extract 8 8)
-(bvadd (concat #b0 ((_ extract 7 0) a!1)) (concat #b0 TMP_BV_8)))))
-(= a!2 #b1)))
+(not (= TMP_BV_8 #x00))
 
 (not (= TMP_BV_8 #x00))
 )))
@@ -158,13 +148,8 @@ rbx
 ( push )
 ( echo "negb_m8::of")
 (assert (not (=
-(let ((a!1 (bvadd #b00000000000000001
-(concat #b0 (bvxor (concat #x00 TMP_BV_8) #xffff)))))
-(let ((a!2 ((_ extract 7 7)
-(bvadd (concat #b0 ((_ extract 7 0) a!1)) (concat #b0 TMP_BV_8)))))
-(let ((a!3 (not (= (= ((_ extract 7 7) a!1) #b1) (= a!2 #b1)))))
-(and (= (= ((_ extract 7 7) a!1) #b1) (= ((_ extract 7 7) TMP_BV_8) #b1))
-a!3))))
+(and (= ((_ extract 7 7) TMP_BV_8) #b1)
+(= ((_ extract 7 7) (bvneg TMP_BV_8)) #b1))
 
 (and (= ((_ extract 7 7) TMP_BV_8) #b1)
 (= ((_ extract 7 7) (bvneg TMP_BV_8)) #b1))
@@ -177,16 +162,15 @@ a!3))))
 ( push )
 ( echo "negb_m8::pf")
 (assert (not (=
-(let ((a!1 (bvadd #b00000000000000001
-(concat #b0 (bvxor (concat #x00 TMP_BV_8) #xffff)))))
-(not (xor (= ((_ extract 0 0) a!1) #b1)
-(= ((_ extract 1 1) a!1) #b1)
-(= ((_ extract 2 2) a!1) #b1)
-(= ((_ extract 3 3) a!1) #b1)
-(= ((_ extract 4 4) a!1) #b1)
-(= ((_ extract 5 5) a!1) #b1)
-(= ((_ extract 6 6) a!1) #b1)
-(= ((_ extract 7 7) a!1) #b1))))
+(let ((a!1 (xor (= ((_ extract 0 0) (bvneg TMP_BV_8)) #b1)
+(= ((_ extract 1 1) (bvneg TMP_BV_8)) #b1)
+(= ((_ extract 2 2) (bvneg TMP_BV_8)) #b1)
+(= ((_ extract 3 3) (bvneg TMP_BV_8)) #b1)
+(= ((_ extract 4 4) (bvneg TMP_BV_8)) #b1)
+(= ((_ extract 5 5) (bvneg TMP_BV_8)) #b1)
+(= ((_ extract 6 6) (bvneg TMP_BV_8)) #b1)
+(= ((_ extract 7 7) (bvneg TMP_BV_8)) #b1))))
+(not a!1))
 
 (let ((a!1 (xor (= ((_ extract 0 0) (bvneg TMP_BV_8)) #b1)
 (= ((_ extract 1 1) (bvneg TMP_BV_8)) #b1)
@@ -206,9 +190,7 @@ a!3))))
 ( push )
 ( echo "negb_m8::sf")
 (assert (not (=
-(let ((a!1 (bvadd #b00000000000000001
-(concat #b0 (bvxor (concat #x00 TMP_BV_8) #xffff)))))
-(= ((_ extract 7 7) a!1) #b1))
+(= ((_ extract 7 7) (bvneg TMP_BV_8)) #b1)
 
 (= ((_ extract 7 7) (bvneg TMP_BV_8)) #b1)
 )))
@@ -220,9 +202,7 @@ a!3))))
 ( push )
 ( echo "negb_m8::zf")
 (assert (not (=
-(let ((a!1 (bvadd #b00000000000000001
-(concat #b0 (bvxor (concat #x00 TMP_BV_8) #xffff)))))
-(= ((_ extract 7 0) a!1) #x00))
+(= (bvneg TMP_BV_8) #x00)
 
 (= (bvneg TMP_BV_8) #x00)
 )))

@@ -14,10 +14,7 @@ Formula:
                 (bvadd #b100000000000000000000000000000000
                        (concat #b0 TMP_BV_32_0)))
               #b1)))
-  (= ((_ extract 8 8)
-       (bvadd (ite a!1 #b000000000 #b011111111)
-              (ite a!1 #b000000000 #b011111111)))
-     #b1))
+  (not a!1))
 %pf    : (let ((a!1 (= ((_ extract 0 0)
                 (bvadd #b100000000000000000000000000000000
                        (concat #b0 TMP_BV_32_0)))
@@ -51,9 +48,7 @@ Formula:
                        (concat #b0 TMP_BV_32_0)))
               #b1)))
   (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)))
-%af    : (let ((a!1 ((_ extract 4 4)
-             (bvadd #b01111 (concat #b0 ((_ extract 3 0) TMP_BV_32_1))))))
-  (= a!1 #b1))
+%af    : false
 %zf    : (= ((_ extract 31 0)
      (bvadd #b100000000000000000000000000000000 (concat #b0 TMP_BV_32_0)))
    #x00000000)
@@ -64,16 +59,12 @@ Formula:
                 (bvadd #b100000000000000000000000000000000
                        (concat #b0 TMP_BV_32_0)))
               #b1)))
-  (and (= true (= ((_ extract 31 31) TMP_BV_32_2) #b1)) (not (= true a!1))))
+  (and (= true (= ((_ extract 31 31) TMP_BV_32_0) #b1)) (not (= true a!1))))
 
 Information about memory reads:
   Value TMP_BV_32_0 (4 bytes)
     was read at address %rbx.
-  Value TMP_BV_32_1 (4 bytes)
-    was read at address %rbx.
-  Value TMP_BV_32_2 (4 bytes)
-    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus
-sigsegv : sigsegv
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

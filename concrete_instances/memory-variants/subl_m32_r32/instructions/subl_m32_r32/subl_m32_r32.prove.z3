@@ -109,7 +109,7 @@ rbx
 ( echo "subl_m32_r32::WD")
 (assert (not (=
 
-(let ((a!1 (bvadd (concat #b0 (bvxor ((_ extract 31 0) rcx) #xffffffff))
+(let ((a!1 (bvadd (concat #b0 (bvnot ((_ extract 31 0) rcx)))
 #b000000000000000000000000000000001
 (concat #b0 TMP_BV_32))))
 ((_ extract 31 0) a!1)) 
@@ -128,9 +128,10 @@ rbx
 ( push )
 ( echo "subl_m32_r32::af")
 (assert (not (=
-(let ((a!1 (bvadd (concat #b0 (bvxor ((_ extract 3 0) rcx) #xf))
-(concat #b0 ((_ extract 3 0) TMP_BV_32)))))
-(= ((_ extract 4 4) a!1) #b1))
+(let ((a!1 ((_ extract 4 4)
+(bvadd (concat #b0 ((_ extract 3 0) rcx))
+(concat #b0 ((_ extract 3 0) TMP_BV_32))))))
+(= a!1 #b1))
 
 (let ((a!1 ((_ extract 4 4)
 (bvadd (concat #b0 ((_ extract 3 0) rcx))
@@ -145,12 +146,10 @@ rbx
 ( push )
 ( echo "subl_m32_r32::cf")
 (assert (not (=
-(let ((a!1 (bvadd (concat #b0 (bvxor ((_ extract 31 0) rcx) #xffffffff))
+(let ((a!1 (bvadd (concat #b0 (bvnot ((_ extract 31 0) rcx)))
 #b000000000000000000000000000000001
 (concat #b0 TMP_BV_32))))
-(let ((a!2 (bvadd (ite (= ((_ extract 32 32) a!1) #b1) #b000000000 #b011111111)
-(ite (= ((_ extract 32 32) a!1) #b1) #b000000000 #b011111111))))
-(= ((_ extract 8 8) a!2) #b1)))
+(not (= ((_ extract 32 32) a!1) #b1)))
 
 (let ((a!1 (bvadd (concat #b0 (bvnot ((_ extract 31 0) rcx)))
 #b000000000000000000000000000000001
@@ -165,12 +164,12 @@ rbx
 ( push )
 ( echo "subl_m32_r32::of")
 (assert (not (=
-(let ((a!1 (= (= (bvxor ((_ extract 31 31) rcx) #b1) #b1)
+(let ((a!1 (= (= (bvnot ((_ extract 31 31) rcx)) #b1)
 (= ((_ extract 31 31) TMP_BV_32) #b1)))
-(a!2 (bvadd (concat #b0 (bvxor ((_ extract 31 0) rcx) #xffffffff))
+(a!2 (bvadd (concat #b0 (bvnot ((_ extract 31 0) rcx)))
 #b000000000000000000000000000000001
 (concat #b0 TMP_BV_32))))
-(let ((a!3 (= (= (bvxor ((_ extract 31 31) rcx) #b1) #b1)
+(let ((a!3 (= (= (bvnot ((_ extract 31 31) rcx)) #b1)
 (= ((_ extract 31 31) a!2) #b1))))
 (and a!1 (not a!3))))
 
@@ -191,7 +190,7 @@ rbx
 ( push )
 ( echo "subl_m32_r32::pf")
 (assert (not (=
-(let ((a!1 (bvadd (concat #b0 (bvxor ((_ extract 31 0) rcx) #xffffffff))
+(let ((a!1 (bvadd (concat #b0 (bvnot ((_ extract 31 0) rcx)))
 #b000000000000000000000000000000001
 (concat #b0 TMP_BV_32))))
 (not (xor (= ((_ extract 0 0) a!1) #b1)
@@ -223,7 +222,7 @@ rbx
 ( push )
 ( echo "subl_m32_r32::sf")
 (assert (not (=
-(let ((a!1 (bvadd (concat #b0 (bvxor ((_ extract 31 0) rcx) #xffffffff))
+(let ((a!1 (bvadd (concat #b0 (bvnot ((_ extract 31 0) rcx)))
 #b000000000000000000000000000000001
 (concat #b0 TMP_BV_32))))
 (= ((_ extract 31 31) a!1) #b1))
@@ -241,7 +240,7 @@ rbx
 ( push )
 ( echo "subl_m32_r32::zf")
 (assert (not (=
-(let ((a!1 (bvadd (concat #b0 (bvxor ((_ extract 31 0) rcx) #xffffffff))
+(let ((a!1 (bvadd (concat #b0 (bvnot ((_ extract 31 0) rcx)))
 #b000000000000000000000000000000001
 (concat #b0 TMP_BV_32))))
 (= ((_ extract 31 0) a!1) #x00000000))

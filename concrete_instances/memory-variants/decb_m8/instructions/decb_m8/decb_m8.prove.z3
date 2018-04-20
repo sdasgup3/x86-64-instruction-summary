@@ -109,7 +109,7 @@ rbx
 ( echo "decb_m8::WD")
 (assert (not (=
 
-((_ extract 7 0) (bvadd #b011111111 (concat #b0 TMP_BV_8))) 
+(bvsub TMP_BV_8 #x01) 
 
 
 (bvsub TMP_BV_8 #x01) 
@@ -122,9 +122,7 @@ rbx
 ( push )
 ( echo "decb_m8::af")
 (assert (not (=
-(let ((a!1 ((_ extract 4 4)
-(bvadd #b01111 (concat #b0 ((_ extract 3 0) TMP_BV_8))))))
-(= a!1 #b1))
+(= ((_ extract 3 0) TMP_BV_8) #x0)
 
 (= ((_ extract 3 0) TMP_BV_8) #x0)
 )))
@@ -136,8 +134,8 @@ rbx
 ( push )
 ( echo "decb_m8::of")
 (assert (not (=
-(let ((a!1 (= ((_ extract 7 7) (bvadd #b011111111 (concat #b0 TMP_BV_8))) #b1)))
-(and (= true (= ((_ extract 7 7) TMP_BV_8) #b1)) (not (= true a!1))))
+(and (= ((_ extract 7 7) TMP_BV_8) #b1)
+(= ((_ extract 6 0) TMP_BV_8) #b0000000))
 
 (and (= ((_ extract 7 7) TMP_BV_8) #b1)
 (= ((_ extract 6 0) TMP_BV_8) #b0000000))
@@ -150,15 +148,15 @@ rbx
 ( push )
 ( echo "decb_m8::pf")
 (assert (not (=
-(let ((a!1 (= ((_ extract 0 0) (bvadd #b011111111 (concat #b0 TMP_BV_8))) #b1))
-(a!2 (= ((_ extract 1 1) (bvadd #b011111111 (concat #b0 TMP_BV_8))) #b1))
-(a!3 (= ((_ extract 2 2) (bvadd #b011111111 (concat #b0 TMP_BV_8))) #b1))
-(a!4 (= ((_ extract 3 3) (bvadd #b011111111 (concat #b0 TMP_BV_8))) #b1))
-(a!5 (= ((_ extract 4 4) (bvadd #b011111111 (concat #b0 TMP_BV_8))) #b1))
-(a!6 (= ((_ extract 5 5) (bvadd #b011111111 (concat #b0 TMP_BV_8))) #b1))
-(a!7 (= ((_ extract 6 6) (bvadd #b011111111 (concat #b0 TMP_BV_8))) #b1))
-(a!8 (= ((_ extract 7 7) (bvadd #b011111111 (concat #b0 TMP_BV_8))) #b1)))
-(not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)))
+(let ((a!1 (xor (= ((_ extract 0 0) (bvsub TMP_BV_8 #x01)) #b1)
+(= ((_ extract 1 1) (bvsub TMP_BV_8 #x01)) #b1)
+(= ((_ extract 2 2) (bvsub TMP_BV_8 #x01)) #b1)
+(= ((_ extract 3 3) (bvsub TMP_BV_8 #x01)) #b1)
+(= ((_ extract 4 4) (bvsub TMP_BV_8 #x01)) #b1)
+(= ((_ extract 5 5) (bvsub TMP_BV_8 #x01)) #b1)
+(= ((_ extract 6 6) (bvsub TMP_BV_8 #x01)) #b1)
+(= ((_ extract 7 7) (bvsub TMP_BV_8 #x01)) #b1))))
+(not a!1))
 
 (let ((a!1 (xor (= ((_ extract 0 0) (bvsub TMP_BV_8 #x01)) #b1)
 (= ((_ extract 1 1) (bvsub TMP_BV_8 #x01)) #b1)
@@ -178,7 +176,7 @@ rbx
 ( push )
 ( echo "decb_m8::sf")
 (assert (not (=
-(= ((_ extract 7 7) (bvadd #b011111111 (concat #b0 TMP_BV_8))) #b1)
+(= ((_ extract 7 7) (bvsub TMP_BV_8 #x01)) #b1)
 
 (= ((_ extract 7 7) (bvsub TMP_BV_8 #x01)) #b1)
 )))
@@ -190,7 +188,7 @@ rbx
 ( push )
 ( echo "decb_m8::zf")
 (assert (not (=
-(= ((_ extract 7 0) (bvadd #b011111111 (concat #b0 TMP_BV_8))) #x00)
+(= (bvsub TMP_BV_8 #x01) #x00)
 
 (= (bvsub TMP_BV_8 #x01) #x00)
 )))

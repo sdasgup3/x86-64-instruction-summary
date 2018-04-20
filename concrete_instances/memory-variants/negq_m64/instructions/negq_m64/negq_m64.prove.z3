@@ -109,10 +109,7 @@ rbx
 ( echo "negq_m64::WD")
 (assert (not (=
 
-((_ extract 63 0)
-(bvadd (concat #b0 (bvxor TMP_BV_64 #xffffffffffffffff))
-#b00000000000000000000000000000000000000000000000000000000000000001
-(concat #b0 #x0000000000000000))) 
+(bvneg TMP_BV_64) 
 
 
 (bvneg TMP_BV_64) 
@@ -125,7 +122,8 @@ rbx
 ( push )
 ( echo "negq_m64::af")
 (assert (not (=
-false
+(and (= ((_ extract 3 3) TMP_BV_64) #b1)
+(= ((_ extract 3 3) (bvneg TMP_BV_64)) #b1))
 
 (and (= ((_ extract 3 3) TMP_BV_64) #b1)
 (= ((_ extract 3 3) (bvneg TMP_BV_64)) #b1))
@@ -138,14 +136,7 @@ false
 ( push )
 ( echo "negq_m64::cf")
 (assert (not (=
-(let ((a!1 ((_ extract 64 64)
-(bvadd (concat #b0 (bvxor TMP_BV_64 #xffffffffffffffff))
-#b00000000000000000000000000000000000000000000000000000000000000001
-(concat #b0 #x0000000000000000)))))
-(let ((a!2 ((_ extract 8 8)
-(bvadd (ite (= a!1 #b1) #b000000000 #b011111111)
-(ite (= a!1 #b1) #b000000000 #b011111111)))))
-(= a!2 #b1)))
+(not (= TMP_BV_64 #x0000000000000000))
 
 (not (= TMP_BV_64 #x0000000000000000))
 )))
@@ -157,13 +148,8 @@ false
 ( push )
 ( echo "negq_m64::of")
 (assert (not (=
-(let ((a!1 (= (= (bvxor ((_ extract 63 63) TMP_BV_64) #b1) #b1) false))
-(a!2 ((_ extract 63 63)
-(bvadd (concat #b0 (bvxor TMP_BV_64 #xffffffffffffffff))
-#b00000000000000000000000000000000000000000000000000000000000000001
-(concat #b0 #x0000000000000000)))))
-(let ((a!3 (= (= (bvxor ((_ extract 63 63) TMP_BV_64) #b1) #b1) (= a!2 #b1))))
-(and a!1 (not a!3))))
+(and (= ((_ extract 63 63) TMP_BV_64) #b1)
+(= ((_ extract 63 63) (bvneg TMP_BV_64)) #b1))
 
 (and (= ((_ extract 63 63) TMP_BV_64) #b1)
 (= ((_ extract 63 63) (bvneg TMP_BV_64)) #b1))
@@ -176,17 +162,15 @@ false
 ( push )
 ( echo "negq_m64::pf")
 (assert (not (=
-(let ((a!1 (bvadd (concat #b0 (bvxor TMP_BV_64 #xffffffffffffffff))
-#b00000000000000000000000000000000000000000000000000000000000000001
-(concat #b0 #x0000000000000000))))
-(not (xor (= ((_ extract 0 0) a!1) #b1)
-(= ((_ extract 1 1) a!1) #b1)
-(= ((_ extract 2 2) a!1) #b1)
-(= ((_ extract 3 3) a!1) #b1)
-(= ((_ extract 4 4) a!1) #b1)
-(= ((_ extract 5 5) a!1) #b1)
-(= ((_ extract 6 6) a!1) #b1)
-(= ((_ extract 7 7) a!1) #b1))))
+(let ((a!1 (xor (= ((_ extract 0 0) (bvneg TMP_BV_64)) #b1)
+(= ((_ extract 1 1) (bvneg TMP_BV_64)) #b1)
+(= ((_ extract 2 2) (bvneg TMP_BV_64)) #b1)
+(= ((_ extract 3 3) (bvneg TMP_BV_64)) #b1)
+(= ((_ extract 4 4) (bvneg TMP_BV_64)) #b1)
+(= ((_ extract 5 5) (bvneg TMP_BV_64)) #b1)
+(= ((_ extract 6 6) (bvneg TMP_BV_64)) #b1)
+(= ((_ extract 7 7) (bvneg TMP_BV_64)) #b1))))
+(not a!1))
 
 (let ((a!1 (xor (= ((_ extract 0 0) (bvneg TMP_BV_64)) #b1)
 (= ((_ extract 1 1) (bvneg TMP_BV_64)) #b1)
@@ -206,11 +190,7 @@ false
 ( push )
 ( echo "negq_m64::sf")
 (assert (not (=
-(let ((a!1 ((_ extract 63 63)
-(bvadd (concat #b0 (bvxor TMP_BV_64 #xffffffffffffffff))
-#b00000000000000000000000000000000000000000000000000000000000000001
-(concat #b0 #x0000000000000000)))))
-(= a!1 #b1))
+(= ((_ extract 63 63) (bvneg TMP_BV_64)) #b1)
 
 (= ((_ extract 63 63) (bvneg TMP_BV_64)) #b1)
 )))
@@ -222,11 +202,7 @@ false
 ( push )
 ( echo "negq_m64::zf")
 (assert (not (=
-(let ((a!1 ((_ extract 63 0)
-(bvadd (concat #b0 (bvxor TMP_BV_64 #xffffffffffffffff))
-#b00000000000000000000000000000000000000000000000000000000000000001
-(concat #b0 #x0000000000000000)))))
-(= a!1 #x0000000000000000))
+(= (bvneg TMP_BV_64) #x0000000000000000)
 
 (= (bvneg TMP_BV_64) #x0000000000000000)
 )))

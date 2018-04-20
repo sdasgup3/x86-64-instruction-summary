@@ -109,8 +109,7 @@ rbx
 ( echo "subw_m16_imm8::WD")
 (assert (not (=
 
-((_ extract 15 0)
-(bvadd (concat #b0 TMP_BV_16) #b00000000000000001 #b01111111111111111)) 
+((_ extract 15 0) (bvadd #b10000000000000000 (concat #b0 TMP_BV_16))) 
 
 
 ((_ extract 15 0) (bvadd #b10000000000000000 (concat #b0 TMP_BV_16))) 
@@ -123,9 +122,7 @@ rbx
 ( push )
 ( echo "subw_m16_imm8::af")
 (assert (not (=
-(let ((a!1 ((_ extract 4 4)
-(bvadd (concat #b0 ((_ extract 3 0) TMP_BV_16)) #b01111))))
-(= a!1 #b1))
+false
 
 false
 )))
@@ -138,14 +135,9 @@ false
 ( echo "subw_m16_imm8::cf")
 (assert (not (=
 (let ((a!1 (= ((_ extract 16 16)
-(bvadd (concat #b0 TMP_BV_16)
-#b00000000000000001
-#b01111111111111111))
+(bvadd #b10000000000000000 (concat #b0 TMP_BV_16)))
 #b1)))
-(= ((_ extract 8 8)
-(bvadd (ite a!1 #b000000000 #b011111111)
-(ite a!1 #b000000000 #b011111111)))
-#b1))
+(not a!1))
 
 (let ((a!1 (= ((_ extract 16 16)
 (bvadd #b10000000000000000 (concat #b0 TMP_BV_16)))
@@ -161,12 +153,9 @@ false
 ( echo "subw_m16_imm8::of")
 (assert (not (=
 (let ((a!1 (= ((_ extract 15 15)
-(bvadd (concat #b0 TMP_BV_16)
-#b00000000000000001
-#b01111111111111111))
+(bvadd #b10000000000000000 (concat #b0 TMP_BV_16)))
 #b1)))
-(let ((a!2 (not (= (= ((_ extract 15 15) TMP_BV_16) #b1) a!1))))
-(and (= (= ((_ extract 15 15) TMP_BV_16) #b1) true) a!2)))
+(and (= true (= ((_ extract 15 15) TMP_BV_16) #b1)) (not (= true a!1))))
 
 (let ((a!1 (= ((_ extract 15 15)
 (bvadd #b10000000000000000 (concat #b0 TMP_BV_16)))
@@ -182,44 +171,28 @@ false
 ( echo "subw_m16_imm8::pf")
 (assert (not (=
 (let ((a!1 (= ((_ extract 0 0)
-(bvadd (concat #b0 TMP_BV_16)
-#b00000000000000001
-#b01111111111111111))
+(bvadd #b10000000000000000 (concat #b0 TMP_BV_16)))
 #b1))
 (a!2 (= ((_ extract 1 1)
-(bvadd (concat #b0 TMP_BV_16)
-#b00000000000000001
-#b01111111111111111))
+(bvadd #b10000000000000000 (concat #b0 TMP_BV_16)))
 #b1))
 (a!3 (= ((_ extract 2 2)
-(bvadd (concat #b0 TMP_BV_16)
-#b00000000000000001
-#b01111111111111111))
+(bvadd #b10000000000000000 (concat #b0 TMP_BV_16)))
 #b1))
 (a!4 (= ((_ extract 3 3)
-(bvadd (concat #b0 TMP_BV_16)
-#b00000000000000001
-#b01111111111111111))
+(bvadd #b10000000000000000 (concat #b0 TMP_BV_16)))
 #b1))
 (a!5 (= ((_ extract 4 4)
-(bvadd (concat #b0 TMP_BV_16)
-#b00000000000000001
-#b01111111111111111))
+(bvadd #b10000000000000000 (concat #b0 TMP_BV_16)))
 #b1))
 (a!6 (= ((_ extract 5 5)
-(bvadd (concat #b0 TMP_BV_16)
-#b00000000000000001
-#b01111111111111111))
+(bvadd #b10000000000000000 (concat #b0 TMP_BV_16)))
 #b1))
 (a!7 (= ((_ extract 6 6)
-(bvadd (concat #b0 TMP_BV_16)
-#b00000000000000001
-#b01111111111111111))
+(bvadd #b10000000000000000 (concat #b0 TMP_BV_16)))
 #b1))
 (a!8 (= ((_ extract 7 7)
-(bvadd (concat #b0 TMP_BV_16)
-#b00000000000000001
-#b01111111111111111))
+(bvadd #b10000000000000000 (concat #b0 TMP_BV_16)))
 #b1)))
 (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)))
 
@@ -257,9 +230,7 @@ false
 ( push )
 ( echo "subw_m16_imm8::sf")
 (assert (not (=
-(= ((_ extract 15 15)
-(bvadd (concat #b0 TMP_BV_16) #b00000000000000001 #b01111111111111111))
-#b1)
+(= ((_ extract 15 15) (bvadd #b10000000000000000 (concat #b0 TMP_BV_16))) #b1)
 
 (= ((_ extract 15 15) (bvadd #b10000000000000000 (concat #b0 TMP_BV_16))) #b1)
 )))
@@ -271,8 +242,7 @@ false
 ( push )
 ( echo "subw_m16_imm8::zf")
 (assert (not (=
-(= ((_ extract 15 0)
-(bvadd (concat #b0 TMP_BV_16) #b00000000000000001 #b01111111111111111))
+(= ((_ extract 15 0) (bvadd #b10000000000000000 (concat #b0 TMP_BV_16)))
 #x0000)
 
 (= ((_ extract 15 0) (bvadd #b10000000000000000 (concat #b0 TMP_BV_16)))

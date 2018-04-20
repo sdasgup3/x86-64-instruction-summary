@@ -128,9 +128,7 @@ rbx
 ( push )
 ( echo "subq_m64_imm32::af")
 (assert (not (=
-(let ((a!1 ((_ extract 4 4)
-(bvadd #b01111 (concat #b0 ((_ extract 3 0) TMP_BV_64))))))
-(= a!1 #b1))
+false
 
 false
 )))
@@ -147,10 +145,7 @@ false
 #b00000000000000000000000000000000000000000000000000000000000000001
 (concat #b0 TMP_BV_64)))
 #b1)))
-(= ((_ extract 8 8)
-(bvadd (ite a!1 #b000000000 #b011111111)
-(ite a!1 #b000000000 #b011111111)))
-#b1))
+(not a!1))
 
 (let ((a!1 (= ((_ extract 64 64)
 (bvadd (concat #b0 #xffffffffffffffff)
