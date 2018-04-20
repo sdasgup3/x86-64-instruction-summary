@@ -1,15 +1,14 @@
 [4m[1m[34mFiring Last 1[0m
 Thread 1 start: cmpq_m64_r64
-Modiy /home/sdasgup3/TYLER/strata-data/data-regs/testcases.tc using %rbx
-Modiied: /home/sdasgup3/Junk/LOCKER/cmpq_m64_r64.tc
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target concrete_instances/memory-variants/cmpq_m64_r64/instructions/cmpq_m64_r64/cmpq_m64_r64.s --functions /home/sdasgup3/TYLER/strata-data/data-regs/functions --testcases /home/sdasgup3/Junk/LOCKER/cmpq_m64_r64.tc --def_in "{ %rcx %rbx }" --live_out "{ %cf %pf %zf %sf %of }" 
+Modiy /home/sdasgup3/Github/strata-data/data-regs/testcases.tc using %rbx
+Modiied: concrete_instances/memory-variants/cmpq_m64_r64/instructions/../testcases.09.tc
+/home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/cmpq_m64_r64/instructions/cmpq_m64_r64/cmpq_m64_r64.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/cmpq_m64_r64/instructions/../testcases.09.tc --def_in "{ %rcx %rbx }" --live_out "{ %cf %pf %zf %sf %of }" 
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Strata Combo Handler
 Check Equivalence
 Completed 1000cases
 Completed 2000cases
 Completed 3000cases
-Thread 1 done!: cmpq_m64_r64
+Completed 4000cases
