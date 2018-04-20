@@ -109,8 +109,7 @@ rbx
 ( echo "negw_m16::WD")
 (assert (not (=
 
-((_ extract 15 0)
-(bvadd #b00000000000000001 (concat #b0 (bvxor TMP_BV_16 #xffff)))) 
+(bvneg TMP_BV_16) 
 
 
 (bvneg TMP_BV_16) 
@@ -123,7 +122,8 @@ rbx
 ( push )
 ( echo "negw_m16::af")
 (assert (not (=
-false
+(and (= ((_ extract 3 3) TMP_BV_16) #b1)
+(= ((_ extract 3 3) (bvneg TMP_BV_16)) #b1))
 
 (and (= ((_ extract 3 3) TMP_BV_16) #b1)
 (= ((_ extract 3 3) (bvneg TMP_BV_16)) #b1))
@@ -136,7 +136,7 @@ false
 ( push )
 ( echo "negw_m16::cf")
 (assert (not (=
-(= ((_ extract 16 16) (bvadd (concat #b0 TMP_BV_16) #b01111111111111111)) #b1)
+(not (= TMP_BV_16 #x0000))
 
 (not (= TMP_BV_16 #x0000))
 )))
@@ -148,10 +148,8 @@ false
 ( push )
 ( echo "negw_m16::of")
 (assert (not (=
-(let ((a!1 (= false (= (bvxor ((_ extract 15 15) TMP_BV_16) #b1) #b1)))
-(a!2 ((_ extract 15 15)
-(bvadd #b00000000000000001 (concat #b0 (bvxor TMP_BV_16 #xffff))))))
-(and a!1 (not (= false (= a!2 #b1)))))
+(and (= ((_ extract 15 15) TMP_BV_16) #b1)
+(= ((_ extract 15 15) (bvneg TMP_BV_16)) #b1))
 
 (and (= ((_ extract 15 15) TMP_BV_16) #b1)
 (= ((_ extract 15 15) (bvneg TMP_BV_16)) #b1))
@@ -164,30 +162,15 @@ false
 ( push )
 ( echo "negw_m16::pf")
 (assert (not (=
-(let ((a!1 ((_ extract 0 0)
-(bvadd #b00000000000000001 (concat #b0 (bvxor TMP_BV_16 #xffff)))))
-(a!2 ((_ extract 1 1)
-(bvadd #b00000000000000001 (concat #b0 (bvxor TMP_BV_16 #xffff)))))
-(a!3 ((_ extract 2 2)
-(bvadd #b00000000000000001 (concat #b0 (bvxor TMP_BV_16 #xffff)))))
-(a!4 ((_ extract 3 3)
-(bvadd #b00000000000000001 (concat #b0 (bvxor TMP_BV_16 #xffff)))))
-(a!5 ((_ extract 4 4)
-(bvadd #b00000000000000001 (concat #b0 (bvxor TMP_BV_16 #xffff)))))
-(a!6 ((_ extract 5 5)
-(bvadd #b00000000000000001 (concat #b0 (bvxor TMP_BV_16 #xffff)))))
-(a!7 ((_ extract 6 6)
-(bvadd #b00000000000000001 (concat #b0 (bvxor TMP_BV_16 #xffff)))))
-(a!8 ((_ extract 7 7)
-(bvadd #b00000000000000001 (concat #b0 (bvxor TMP_BV_16 #xffff))))))
-(not (xor (= a!1 #b1)
-(= a!2 #b1)
-(= a!3 #b1)
-(= a!4 #b1)
-(= a!5 #b1)
-(= a!6 #b1)
-(= a!7 #b1)
-(= a!8 #b1))))
+(let ((a!1 (xor (= ((_ extract 0 0) (bvneg TMP_BV_16)) #b1)
+(= ((_ extract 1 1) (bvneg TMP_BV_16)) #b1)
+(= ((_ extract 2 2) (bvneg TMP_BV_16)) #b1)
+(= ((_ extract 3 3) (bvneg TMP_BV_16)) #b1)
+(= ((_ extract 4 4) (bvneg TMP_BV_16)) #b1)
+(= ((_ extract 5 5) (bvneg TMP_BV_16)) #b1)
+(= ((_ extract 6 6) (bvneg TMP_BV_16)) #b1)
+(= ((_ extract 7 7) (bvneg TMP_BV_16)) #b1))))
+(not a!1))
 
 (let ((a!1 (xor (= ((_ extract 0 0) (bvneg TMP_BV_16)) #b1)
 (= ((_ extract 1 1) (bvneg TMP_BV_16)) #b1)
@@ -207,9 +190,7 @@ false
 ( push )
 ( echo "negw_m16::sf")
 (assert (not (=
-(let ((a!1 ((_ extract 15 15)
-(bvadd #b00000000000000001 (concat #b0 (bvxor TMP_BV_16 #xffff))))))
-(= a!1 #b1))
+(= ((_ extract 15 15) (bvneg TMP_BV_16)) #b1)
 
 (= ((_ extract 15 15) (bvneg TMP_BV_16)) #b1)
 )))
@@ -221,9 +202,7 @@ false
 ( push )
 ( echo "negw_m16::zf")
 (assert (not (=
-(let ((a!1 ((_ extract 15 0)
-(bvadd #b00000000000000001 (concat #b0 (bvxor TMP_BV_16 #xffff))))))
-(= a!1 #x0000))
+(= (bvneg TMP_BV_16) #x0000)
 
 (= (bvneg TMP_BV_16) #x0000)
 )))

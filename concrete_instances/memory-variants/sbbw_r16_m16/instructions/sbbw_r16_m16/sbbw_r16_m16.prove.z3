@@ -96,9 +96,10 @@
 ( push )
 ( echo "sbbw_r16_m16::af")
 (assert (not (=
-(let ((a!1 (bvadd (concat #b0 ((_ extract 3 0) rbx))
-(concat #b0 (bvxor ((_ extract 3 0) TMP_BV_16) #xf)))))
-(= ((_ extract 4 4) a!1) #b1))
+(let ((a!1 ((_ extract 4 4)
+(bvadd (concat #b0 ((_ extract 3 0) TMP_BV_16))
+(concat #b0 ((_ extract 3 0) rbx))))))
+(= a!1 #b1))
 
 (let ((a!1 ((_ extract 4 4)
 (bvadd (concat #b0 ((_ extract 3 0) TMP_BV_16))
@@ -113,19 +114,11 @@
 ( push )
 ( echo "sbbw_r16_m16::cf")
 (assert (not (=
-(let ((a!1 (= ((_ extract 8 8)
-(bvadd (ite cf #b000000000 #b011111111)
-(ite cf #b000000000 #b011111111)))
-#b1)))
-(let ((a!2 (ite a!1
-(bvadd (concat #b0 ((_ extract 15 0) rbx)) #b00000000000000001)
-(concat #b0 ((_ extract 15 0) rbx)))))
-(let ((a!3 ((_ extract 16 16)
-(bvadd a!2 (concat #b0 (bvxor TMP_BV_16 #xffff))))))
-(let ((a!4 ((_ extract 8 8)
-(bvadd (ite (= a!3 #b1) #b000000000 #b011111111)
-(ite (= a!3 #b1) #b000000000 #b011111111)))))
-(= a!4 #b1)))))
+(let ((a!1 (ite cf
+(concat #b0 (bvnot TMP_BV_16))
+(bvadd (concat #b0 (bvnot TMP_BV_16)) #b00000000000000001))))
+(let ((a!2 ((_ extract 16 16) (bvadd a!1 (concat #b0 ((_ extract 15 0) rbx))))))
+(not (= a!2 #b1))))
 
 (let ((a!1 (ite cf
 (concat #b0 (bvnot TMP_BV_16))
@@ -141,19 +134,14 @@
 ( push )
 ( echo "sbbw_r16_m16::of")
 (assert (not (=
-(let ((a!1 (= (= ((_ extract 15 15) rbx) #b1)
-(= (bvxor ((_ extract 15 15) TMP_BV_16) #b1) #b1)))
-(a!2 (= ((_ extract 8 8)
-(bvadd (ite cf #b000000000 #b011111111)
-(ite cf #b000000000 #b011111111)))
-#b1)))
-(let ((a!3 (ite a!2
-(bvadd (concat #b0 ((_ extract 15 0) rbx)) #b00000000000000001)
-(concat #b0 ((_ extract 15 0) rbx)))))
-(let ((a!4 ((_ extract 15 15)
-(bvadd a!3 (concat #b0 (bvxor TMP_BV_16 #xffff))))))
-(let ((a!5 (not (= (= ((_ extract 15 15) rbx) #b1) (= a!4 #b1)))))
-(and a!1 a!5)))))
+(let ((a!1 (= (= (bvnot ((_ extract 15 15) TMP_BV_16)) #b1)
+(= ((_ extract 15 15) rbx) #b1)))
+(a!2 (ite cf
+(concat #b0 (bvnot TMP_BV_16))
+(bvadd (concat #b0 (bvnot TMP_BV_16)) #b00000000000000001))))
+(let ((a!3 ((_ extract 15 15) (bvadd a!2 (concat #b0 ((_ extract 15 0) rbx))))))
+(let ((a!4 (= (= (bvnot ((_ extract 15 15) TMP_BV_16)) #b1) (= a!3 #b1))))
+(and a!1 (not a!4)))))
 
 (let ((a!1 (= (= (bvnot ((_ extract 15 15) TMP_BV_16)) #b1)
 (= ((_ extract 15 15) rbx) #b1)))
@@ -172,30 +160,25 @@
 ( push )
 ( echo "sbbw_r16_m16::pf")
 (assert (not (=
-(let ((a!1 (= ((_ extract 8 8)
-(bvadd (ite cf #b000000000 #b011111111)
-(ite cf #b000000000 #b011111111)))
-#b1)))
-(let ((a!2 (ite a!1
-(bvadd (concat #b0 ((_ extract 15 0) rbx)) #b00000000000000001)
-(concat #b0 ((_ extract 15 0) rbx)))))
-(let ((a!3 ((_ extract 0 0) (bvadd a!2 (concat #b0 (bvxor TMP_BV_16 #xffff)))))
-(a!4 ((_ extract 1 1) (bvadd a!2 (concat #b0 (bvxor TMP_BV_16 #xffff)))))
-(a!5 ((_ extract 2 2) (bvadd a!2 (concat #b0 (bvxor TMP_BV_16 #xffff)))))
-(a!6 ((_ extract 3 3) (bvadd a!2 (concat #b0 (bvxor TMP_BV_16 #xffff)))))
-(a!7 ((_ extract 4 4) (bvadd a!2 (concat #b0 (bvxor TMP_BV_16 #xffff)))))
-(a!8 ((_ extract 5 5) (bvadd a!2 (concat #b0 (bvxor TMP_BV_16 #xffff)))))
-(a!9 ((_ extract 6 6) (bvadd a!2 (concat #b0 (bvxor TMP_BV_16 #xffff)))))
-(a!10 ((_ extract 7 7)
-(bvadd a!2 (concat #b0 (bvxor TMP_BV_16 #xffff))))))
-(not (xor (= a!3 #b1)
+(let ((a!1 (ite cf
+(concat #b0 (bvnot TMP_BV_16))
+(bvadd (concat #b0 (bvnot TMP_BV_16)) #b00000000000000001))))
+(let ((a!2 ((_ extract 0 0) (bvadd a!1 (concat #b0 ((_ extract 15 0) rbx)))))
+(a!3 ((_ extract 1 1) (bvadd a!1 (concat #b0 ((_ extract 15 0) rbx)))))
+(a!4 ((_ extract 2 2) (bvadd a!1 (concat #b0 ((_ extract 15 0) rbx)))))
+(a!5 ((_ extract 3 3) (bvadd a!1 (concat #b0 ((_ extract 15 0) rbx)))))
+(a!6 ((_ extract 4 4) (bvadd a!1 (concat #b0 ((_ extract 15 0) rbx)))))
+(a!7 ((_ extract 5 5) (bvadd a!1 (concat #b0 ((_ extract 15 0) rbx)))))
+(a!8 ((_ extract 6 6) (bvadd a!1 (concat #b0 ((_ extract 15 0) rbx)))))
+(a!9 ((_ extract 7 7) (bvadd a!1 (concat #b0 ((_ extract 15 0) rbx))))))
+(not (xor (= a!2 #b1)
+(= a!3 #b1)
 (= a!4 #b1)
 (= a!5 #b1)
 (= a!6 #b1)
 (= a!7 #b1)
 (= a!8 #b1)
-(= a!9 #b1)
-(= a!10 #b1))))))
+(= a!9 #b1)))))
 
 (let ((a!1 (ite cf
 (concat #b0 (bvnot TMP_BV_16))
@@ -225,16 +208,11 @@
 ( push )
 ( echo "sbbw_r16_m16::rbx")
 (assert (not (=
-(let ((a!1 (= ((_ extract 8 8)
-(bvadd (ite cf #b000000000 #b011111111)
-(ite cf #b000000000 #b011111111)))
-#b1)))
-(let ((a!2 (ite a!1
-(bvadd (concat #b0 ((_ extract 15 0) rbx)) #b00000000000000001)
-(concat #b0 ((_ extract 15 0) rbx)))))
-(let ((a!3 ((_ extract 15 0)
-(bvadd a!2 (concat #b0 (bvxor TMP_BV_16 #xffff))))))
-(concat ((_ extract 63 16) rbx) a!3))))
+(let ((a!1 (ite cf
+(concat #b0 (bvnot TMP_BV_16))
+(bvadd (concat #b0 (bvnot TMP_BV_16)) #b00000000000000001))))
+(let ((a!2 ((_ extract 15 0) (bvadd a!1 (concat #b0 ((_ extract 15 0) rbx))))))
+(concat ((_ extract 63 16) rbx) a!2)))
 
 (let ((a!1 (ite cf
 (concat #b0 (bvnot TMP_BV_16))
@@ -250,16 +228,11 @@
 ( push )
 ( echo "sbbw_r16_m16::sf")
 (assert (not (=
-(let ((a!1 (= ((_ extract 8 8)
-(bvadd (ite cf #b000000000 #b011111111)
-(ite cf #b000000000 #b011111111)))
-#b1)))
-(let ((a!2 (ite a!1
-(bvadd (concat #b0 ((_ extract 15 0) rbx)) #b00000000000000001)
-(concat #b0 ((_ extract 15 0) rbx)))))
-(let ((a!3 ((_ extract 15 15)
-(bvadd a!2 (concat #b0 (bvxor TMP_BV_16 #xffff))))))
-(= a!3 #b1))))
+(let ((a!1 (ite cf
+(concat #b0 (bvnot TMP_BV_16))
+(bvadd (concat #b0 (bvnot TMP_BV_16)) #b00000000000000001))))
+(let ((a!2 ((_ extract 15 15) (bvadd a!1 (concat #b0 ((_ extract 15 0) rbx))))))
+(= a!2 #b1)))
 
 (let ((a!1 (ite cf
 (concat #b0 (bvnot TMP_BV_16))
@@ -275,16 +248,11 @@
 ( push )
 ( echo "sbbw_r16_m16::zf")
 (assert (not (=
-(let ((a!1 (= ((_ extract 8 8)
-(bvadd (ite cf #b000000000 #b011111111)
-(ite cf #b000000000 #b011111111)))
-#b1)))
-(let ((a!2 (ite a!1
-(bvadd (concat #b0 ((_ extract 15 0) rbx)) #b00000000000000001)
-(concat #b0 ((_ extract 15 0) rbx)))))
-(let ((a!3 ((_ extract 15 0)
-(bvadd a!2 (concat #b0 (bvxor TMP_BV_16 #xffff))))))
-(= a!3 #x0000))))
+(let ((a!1 (ite cf
+(concat #b0 (bvnot TMP_BV_16))
+(bvadd (concat #b0 (bvnot TMP_BV_16)) #b00000000000000001))))
+(let ((a!2 ((_ extract 15 0) (bvadd a!1 (concat #b0 ((_ extract 15 0) rbx))))))
+(= a!2 #x0000)))
 
 (let ((a!1 (ite cf
 (concat #b0 (bvnot TMP_BV_16))

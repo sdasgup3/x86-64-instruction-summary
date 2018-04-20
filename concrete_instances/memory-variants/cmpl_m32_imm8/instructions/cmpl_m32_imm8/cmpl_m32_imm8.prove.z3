@@ -96,9 +96,7 @@
 ( push )
 ( echo "cmpl_m32_imm8::af")
 (assert (not (=
-(let ((a!1 ((_ extract 4 4)
-(bvadd #b01111 (concat #b0 ((_ extract 3 0) TMP_BV_32))))))
-(= a!1 #b1))
+false
 
 false
 )))
@@ -114,10 +112,7 @@ false
 (bvadd #b100000000000000000000000000000000
 (concat #b0 TMP_BV_32)))
 #b1)))
-(= ((_ extract 8 8)
-(bvadd (ite a!1 #b000000000 #b011111111)
-(ite a!1 #b000000000 #b011111111)))
-#b1))
+(not a!1))
 
 (let ((a!1 (= ((_ extract 32 32)
 (bvadd #b100000000000000000000000000000000

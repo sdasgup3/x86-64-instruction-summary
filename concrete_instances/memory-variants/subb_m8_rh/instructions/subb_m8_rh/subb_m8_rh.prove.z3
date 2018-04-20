@@ -109,9 +109,9 @@ rbx
 ( echo "subb_m8_rh::WD")
 (assert (not (=
 
-(let ((a!1 (bvadd (concat #b0 TMP_BV_8)
+(let ((a!1 (bvadd (concat #b0 (bvnot ((_ extract 15 8) rax)))
 #b000000001
-(concat #b0 (bvxor ((_ extract 15 8) rax) #xff)))))
+(concat #b0 TMP_BV_8))))
 ((_ extract 7 0) a!1)) 
 
 
@@ -128,9 +128,10 @@ rbx
 ( push )
 ( echo "subb_m8_rh::af")
 (assert (not (=
-(let ((a!1 (bvadd (concat #b0 ((_ extract 3 0) TMP_BV_8))
-(concat #b0 (bvxor ((_ extract 11 8) rax) #xf)))))
-(= ((_ extract 4 4) a!1) #b1))
+(let ((a!1 ((_ extract 4 4)
+(bvadd (concat #b0 ((_ extract 11 8) rax))
+(concat #b0 ((_ extract 3 0) TMP_BV_8))))))
+(= a!1 #b1))
 
 (let ((a!1 ((_ extract 4 4)
 (bvadd (concat #b0 ((_ extract 11 8) rax))
@@ -145,12 +146,10 @@ rbx
 ( push )
 ( echo "subb_m8_rh::cf")
 (assert (not (=
-(let ((a!1 (bvadd (concat #b0 TMP_BV_8)
+(let ((a!1 (bvadd (concat #b0 (bvnot ((_ extract 15 8) rax)))
 #b000000001
-(concat #b0 (bvxor ((_ extract 15 8) rax) #xff)))))
-(let ((a!2 (bvadd (ite (= ((_ extract 8 8) a!1) #b1) #b000000000 #b011111111)
-(ite (= ((_ extract 8 8) a!1) #b1) #b000000000 #b011111111))))
-(= ((_ extract 8 8) a!2) #b1)))
+(concat #b0 TMP_BV_8))))
+(not (= ((_ extract 8 8) a!1) #b1)))
 
 (let ((a!1 (bvadd (concat #b0 (bvnot ((_ extract 15 8) rax)))
 #b000000001
@@ -165,14 +164,14 @@ rbx
 ( push )
 ( echo "subb_m8_rh::of")
 (assert (not (=
-(let ((a!1 (= (= ((_ extract 7 7) TMP_BV_8) #b1)
-(= (bvxor ((_ extract 15 15) rax) #b1) #b1)))
-(a!2 (bvadd (concat #b0 TMP_BV_8)
+(let ((a!1 (= (= (bvnot ((_ extract 15 15) rax)) #b1)
+(= ((_ extract 7 7) TMP_BV_8) #b1)))
+(a!2 (bvadd (concat #b0 (bvnot ((_ extract 15 8) rax)))
 #b000000001
-(concat #b0 (bvxor ((_ extract 15 8) rax) #xff)))))
-(let ((a!3 (not (= (= ((_ extract 7 7) TMP_BV_8) #b1)
-(= ((_ extract 7 7) a!2) #b1)))))
-(and a!1 a!3)))
+(concat #b0 TMP_BV_8))))
+(let ((a!3 (= (= (bvnot ((_ extract 15 15) rax)) #b1)
+(= ((_ extract 7 7) a!2) #b1))))
+(and a!1 (not a!3))))
 
 (let ((a!1 (= (= (bvnot ((_ extract 15 15) rax)) #b1)
 (= ((_ extract 7 7) TMP_BV_8) #b1)))
@@ -191,9 +190,9 @@ rbx
 ( push )
 ( echo "subb_m8_rh::pf")
 (assert (not (=
-(let ((a!1 (bvadd (concat #b0 TMP_BV_8)
+(let ((a!1 (bvadd (concat #b0 (bvnot ((_ extract 15 8) rax)))
 #b000000001
-(concat #b0 (bvxor ((_ extract 15 8) rax) #xff)))))
+(concat #b0 TMP_BV_8))))
 (not (xor (= ((_ extract 0 0) a!1) #b1)
 (= ((_ extract 1 1) a!1) #b1)
 (= ((_ extract 2 2) a!1) #b1)
@@ -223,9 +222,9 @@ rbx
 ( push )
 ( echo "subb_m8_rh::sf")
 (assert (not (=
-(let ((a!1 (bvadd (concat #b0 TMP_BV_8)
+(let ((a!1 (bvadd (concat #b0 (bvnot ((_ extract 15 8) rax)))
 #b000000001
-(concat #b0 (bvxor ((_ extract 15 8) rax) #xff)))))
+(concat #b0 TMP_BV_8))))
 (= ((_ extract 7 7) a!1) #b1))
 
 (let ((a!1 (bvadd (concat #b0 (bvnot ((_ extract 15 8) rax)))
@@ -241,9 +240,9 @@ rbx
 ( push )
 ( echo "subb_m8_rh::zf")
 (assert (not (=
-(let ((a!1 (bvadd (concat #b0 TMP_BV_8)
+(let ((a!1 (bvadd (concat #b0 (bvnot ((_ extract 15 8) rax)))
 #b000000001
-(concat #b0 (bvxor ((_ extract 15 8) rax) #xff)))))
+(concat #b0 TMP_BV_8))))
 (= ((_ extract 7 0) a!1) #x00))
 
 (let ((a!1 (bvadd (concat #b0 (bvnot ((_ extract 15 8) rax)))

@@ -96,9 +96,10 @@
 ( push )
 ( echo "cmpq_r64_m64::af")
 (assert (not (=
-(let ((a!1 (bvadd (concat #b0 (bvxor ((_ extract 3 0) TMP_BV_64) #xf))
-(concat #b0 ((_ extract 3 0) rbx)))))
-(= ((_ extract 4 4) a!1) #b1))
+(let ((a!1 ((_ extract 4 4)
+(bvadd (concat #b0 ((_ extract 3 0) TMP_BV_64))
+(concat #b0 ((_ extract 3 0) rbx))))))
+(= a!1 #b1))
 
 (let ((a!1 ((_ extract 4 4)
 (bvadd (concat #b0 ((_ extract 3 0) TMP_BV_64))
@@ -114,13 +115,10 @@
 ( echo "cmpq_r64_m64::cf")
 (assert (not (=
 (let ((a!1 ((_ extract 64 64)
-(bvadd (concat #b0 (bvxor TMP_BV_64 #xffffffffffffffff))
+(bvadd (concat #b0 (bvnot TMP_BV_64))
 #b00000000000000000000000000000000000000000000000000000000000000001
 (concat #b0 rbx)))))
-(let ((a!2 ((_ extract 8 8)
-(bvadd (ite (= a!1 #b1) #b000000000 #b011111111)
-(ite (= a!1 #b1) #b000000000 #b011111111)))))
-(= a!2 #b1)))
+(not (= a!1 #b1)))
 
 (let ((a!1 ((_ extract 64 64)
 (bvadd (concat #b0 (bvnot TMP_BV_64))
@@ -136,13 +134,13 @@
 ( push )
 ( echo "cmpq_r64_m64::of")
 (assert (not (=
-(let ((a!1 (= (= (bvxor ((_ extract 63 63) TMP_BV_64) #b1) #b1)
+(let ((a!1 (= (= (bvnot ((_ extract 63 63) TMP_BV_64)) #b1)
 (= ((_ extract 63 63) rbx) #b1)))
 (a!2 ((_ extract 63 63)
-(bvadd (concat #b0 (bvxor TMP_BV_64 #xffffffffffffffff))
+(bvadd (concat #b0 (bvnot TMP_BV_64))
 #b00000000000000000000000000000000000000000000000000000000000000001
 (concat #b0 rbx)))))
-(let ((a!3 (= (= (bvxor ((_ extract 63 63) TMP_BV_64) #b1) #b1) (= a!2 #b1))))
+(let ((a!3 (= (= (bvnot ((_ extract 63 63) TMP_BV_64)) #b1) (= a!2 #b1))))
 (and a!1 (not a!3))))
 
 (let ((a!1 (= (= (bvnot ((_ extract 63 63) TMP_BV_64)) #b1)
@@ -162,17 +160,46 @@
 ( push )
 ( echo "cmpq_r64_m64::pf")
 (assert (not (=
-(let ((a!1 (bvadd (concat #b0 (bvxor TMP_BV_64 #xffffffffffffffff))
+(let ((a!1 ((_ extract 0 0)
+(bvadd (concat #b0 (bvnot TMP_BV_64))
 #b00000000000000000000000000000000000000000000000000000000000000001
 (concat #b0 rbx))))
-(not (xor (= ((_ extract 0 0) a!1) #b1)
-(= ((_ extract 1 1) a!1) #b1)
-(= ((_ extract 2 2) a!1) #b1)
-(= ((_ extract 3 3) a!1) #b1)
-(= ((_ extract 4 4) a!1) #b1)
-(= ((_ extract 5 5) a!1) #b1)
-(= ((_ extract 6 6) a!1) #b1)
-(= ((_ extract 7 7) a!1) #b1))))
+(a!2 ((_ extract 1 1)
+(bvadd (concat #b0 (bvnot TMP_BV_64))
+#b00000000000000000000000000000000000000000000000000000000000000001
+(concat #b0 rbx))))
+(a!3 ((_ extract 2 2)
+(bvadd (concat #b0 (bvnot TMP_BV_64))
+#b00000000000000000000000000000000000000000000000000000000000000001
+(concat #b0 rbx))))
+(a!4 ((_ extract 3 3)
+(bvadd (concat #b0 (bvnot TMP_BV_64))
+#b00000000000000000000000000000000000000000000000000000000000000001
+(concat #b0 rbx))))
+(a!5 ((_ extract 4 4)
+(bvadd (concat #b0 (bvnot TMP_BV_64))
+#b00000000000000000000000000000000000000000000000000000000000000001
+(concat #b0 rbx))))
+(a!6 ((_ extract 5 5)
+(bvadd (concat #b0 (bvnot TMP_BV_64))
+#b00000000000000000000000000000000000000000000000000000000000000001
+(concat #b0 rbx))))
+(a!7 ((_ extract 6 6)
+(bvadd (concat #b0 (bvnot TMP_BV_64))
+#b00000000000000000000000000000000000000000000000000000000000000001
+(concat #b0 rbx))))
+(a!8 ((_ extract 7 7)
+(bvadd (concat #b0 (bvnot TMP_BV_64))
+#b00000000000000000000000000000000000000000000000000000000000000001
+(concat #b0 rbx)))))
+(not (xor (= a!1 #b1)
+(= a!2 #b1)
+(= a!3 #b1)
+(= a!4 #b1)
+(= a!5 #b1)
+(= a!6 #b1)
+(= a!7 #b1)
+(= a!8 #b1))))
 
 (let ((a!1 ((_ extract 0 0)
 (bvadd (concat #b0 (bvnot TMP_BV_64))
@@ -224,7 +251,7 @@
 ( echo "cmpq_r64_m64::sf")
 (assert (not (=
 (let ((a!1 ((_ extract 63 63)
-(bvadd (concat #b0 (bvxor TMP_BV_64 #xffffffffffffffff))
+(bvadd (concat #b0 (bvnot TMP_BV_64))
 #b00000000000000000000000000000000000000000000000000000000000000001
 (concat #b0 rbx)))))
 (= a!1 #b1))
@@ -244,7 +271,7 @@
 ( echo "cmpq_r64_m64::zf")
 (assert (not (=
 (let ((a!1 ((_ extract 63 0)
-(bvadd (concat #b0 (bvxor TMP_BV_64 #xffffffffffffffff))
+(bvadd (concat #b0 (bvnot TMP_BV_64))
 #b00000000000000000000000000000000000000000000000000000000000000001
 (concat #b0 rbx)))))
 (= a!1 #x0000000000000000))

@@ -10,52 +10,31 @@ code: incw (%rbx)
 
 Formula:
 
-%pf    : (let ((a!1 (= ((_ extract 0 0)
-                (bvadd #b00000000000000001 (concat #b0 TMP_BV_16_1)))
-              #b1))
-      (a!2 (= ((_ extract 1 1)
-                (bvadd #b00000000000000001 (concat #b0 TMP_BV_16_1)))
-              #b1))
-      (a!3 (= ((_ extract 2 2)
-                (bvadd #b00000000000000001 (concat #b0 TMP_BV_16_1)))
-              #b1))
-      (a!4 (= ((_ extract 3 3)
-                (bvadd #b00000000000000001 (concat #b0 TMP_BV_16_1)))
-              #b1))
-      (a!5 (= ((_ extract 4 4)
-                (bvadd #b00000000000000001 (concat #b0 TMP_BV_16_1)))
-              #b1))
-      (a!6 (= ((_ extract 5 5)
-                (bvadd #b00000000000000001 (concat #b0 TMP_BV_16_1)))
-              #b1))
-      (a!7 (= ((_ extract 6 6)
-                (bvadd #b00000000000000001 (concat #b0 TMP_BV_16_1)))
-              #b1))
-      (a!8 (= ((_ extract 7 7)
-                (bvadd #b00000000000000001 (concat #b0 TMP_BV_16_1)))
-              #b1)))
-  (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)))
-%af    : false
-%zf    : (= ((_ extract 15 0) (bvadd #b00000000000000001 (concat #b0 TMP_BV_16_1)))
-   #x0000)
-%sf    : (= ((_ extract 15 15) (bvadd #b00000000000000001 (concat #b0 TMP_BV_16_1))) #b1)
-%of    : (let ((a!1 (= ((_ extract 15 15)
-                (bvadd #b00000000000000001 (concat #b0 TMP_BV_16_1)))
-              #b1)))
-  (and (= false (= ((_ extract 15 15) TMP_BV_16_2) #b1)) (not (= false a!1))))
+%pf    : (let ((a!1 (xor (= ((_ extract 0 0) (bvadd TMP_BV_16_0 #x0001)) #b1)
+                (= ((_ extract 1 1) (bvadd TMP_BV_16_0 #x0001)) #b1)
+                (= ((_ extract 2 2) (bvadd TMP_BV_16_0 #x0001)) #b1)
+                (= ((_ extract 3 3) (bvadd TMP_BV_16_0 #x0001)) #b1)
+                (= ((_ extract 4 4) (bvadd TMP_BV_16_0 #x0001)) #b1)
+                (= ((_ extract 5 5) (bvadd TMP_BV_16_0 #x0001)) #b1)
+                (= ((_ extract 6 6) (bvadd TMP_BV_16_0 #x0001)) #b1)
+                (= ((_ extract 7 7) (bvadd TMP_BV_16_0 #x0001)) #b1))))
+  (not a!1))
+%af    : (= ((_ extract 3 0) TMP_BV_16_0) #xf)
+%zf    : (= (bvadd TMP_BV_16_0 #x0001) #x0000)
+%sf    : (= ((_ extract 15 15) (bvadd TMP_BV_16_0 #x0001)) #b1)
+%of    : (and (not (= ((_ extract 15 15) TMP_BV_16_0) #b1))
+     (= ((_ extract 14 0) TMP_BV_16_0) #b111111111111111))
 
 Information about memory reads:
   Value TMP_BV_16_0 (2 bytes)
     was read at address %rbx.
-  Value TMP_BV_16_1 (2 bytes)
-    was read at address %rbx.
-  Value TMP_BV_16_2 (2 bytes)
-    was read at address %rbx.
 
 Information about memory writes:
   Address %rbx was updated to
-    ((_ extract 15 0) (bvadd #b00000000000000001 (concat #b0 TMP_BV_16_1))) (2 bytes).
+    (bvadd TMP_BV_16_0 #x0001) (2 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus
-sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))
+sigsegv : (or sigsegv
+    (and (not sigfpe) (not sigbus) false)
+    (and (not sigfpe) (not sigbus) false))
