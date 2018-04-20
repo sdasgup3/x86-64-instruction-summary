@@ -96,11 +96,12 @@
 ( push )
 ( echo "vcvtpd2dq_xmm_m256::ymm1")
 (assert (not (=
-(let ((a!1 (concat (cvt_double_to_int32 ((_ extract 191 128) ymm1))
-(concat (cvt_double_to_int32 ((_ extract 127 64) ymm1))
-(cvt_double_to_int32 ((_ extract 63 0) ymm1))))))
+(let ((a!1 (concat (cvt_double_to_int32 ((_ extract 191 128) TMP_BV_256))
+(concat (cvt_double_to_int32
+((_ extract 127 64) TMP_BV_256))
+(cvt_double_to_int32 ((_ extract 63 0) TMP_BV_256))))))
 (concat #x00000000000000000000000000000000
-(concat (cvt_double_to_int32 ((_ extract 255 192) ymm1)) a!1)))
+(concat (cvt_double_to_int32 ((_ extract 255 192) TMP_BV_256)) a!1)))
 
 (let ((a!1 (concat (cvt_double_to_int32 ((_ extract 191 128) ymm1))
 (concat (cvt_double_to_int32 ((_ extract 127 64) ymm1))
