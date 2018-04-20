@@ -1,16 +1,12 @@
 [4m[1m[34mFiring Last 1[0m
+Use of uninitialized value $kutils::strata_path in concatenation (.) or string at /home/sdasgup3/x86-semantics/scripts/process_spec.pl line 547.
 Thread 1 start: negq_m64
-Modiy /home/sdasgup3/TYLER/strata-data/data-regs/testcases.tc using %rbx
-Modiied: /home/sdasgup3/Junk/LOCKER/negq_m64.tc
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target concrete_instances/memory-variants/negq_m64/instructions/negq_m64/negq_m64.s --functions /home/sdasgup3/TYLER/strata-data/data-regs/functions --testcases /home/sdasgup3/Junk/LOCKER/negq_m64.tc --def_in "{ %rbx }" --live_out "{ %cf %pf %zf %sf %of }" 
-Reading the Testsuit
-Preparing Sandbox
-Run 6630 tests
-Collect Results
-Build Strata Combo Handler
-Check Equivalence
-Completed 1000cases
-Completed 2000cases
-Completed 3000cases
-Completed 4000cases
+Modiy /home/sdasgup3/Github/strata-data/data-regs/testcases.tc using %rbx
+Modiied: concrete_instances/memory-variants/negq_m64/instructions/../testcases.09.tc
+/home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path  --target concrete_instances/memory-variants/negq_m64/instructions/negq_m64/negq_m64.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/negq_m64/instructions/../testcases.09.tc --def_in "{ %rbx }" --live_out "{ %cf %pf %zf %sf %of }" 
+
+Errors:
+
+  --strata_path <path/to/dir>
+      Error reading value: No argument provided!
 Thread 1 done!: negq_m64
