@@ -1,8 +1,8 @@
 [4m[1m[34mFiring Last 1[0m
 Thread 1 start: divb_m8
-Modiy /home/sdasgup3/TYLER/strata-data/data-regs/testcases.tc using %rbx
-Modiied: /home/sdasgup3/Junk/LOCKER/divb_m8.tc
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target concrete_instances/memory-variants/divb_m8/instructions/divb_m8/divb_m8.s --functions /home/sdasgup3/TYLER/strata-data/data-regs/functions --testcases /home/sdasgup3/Junk/LOCKER/divb_m8.tc --def_in "{ %ax %rbx }" --live_out "{ %ax }" 
+Modiy /home/sdasgup3/Github/strata-data/data-regs/testcases.tc using %rbx
+Modiied: concrete_instances/memory-variants/divb_m8/instructions/../testcases.09.tc
+/home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/divb_m8/instructions/divb_m8/divb_m8.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/divb_m8/instructions/../testcases.09.tc --def_in "{ %ax %rbx }" --live_out "{ %ax }" 
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
