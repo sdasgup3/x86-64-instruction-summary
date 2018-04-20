@@ -108,17 +108,7 @@ TMP_BOOL
 ( push )
 ( echo "btq_m64_imm8::cf")
 (assert (not (=
-(let ((a!1 (concat ((_ extract 64 1)
-(bvashr (concat TMP_BV_64 #b0)
-(concat #b000000000000000000000000000000000000000000000000000000000
-#x00)))
-#b0)))
-(let ((a!2 (= ((_ extract 0 0)
-(bvashr a!1
-(concat #b000000000000000000000000000000000000000000000000000000000
-#x01)))
-#b1)))
-(or (and true a!2) false)))
+(= ((_ extract 0 0) (bvlshr TMP_BV_8 #x00)) #b1)
 
 (= ((_ extract 0 0) (bvlshr TMP_BV_8 #x00)) #b1)
 )))
