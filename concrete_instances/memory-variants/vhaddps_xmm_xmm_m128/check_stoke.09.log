@@ -1,5 +1,6 @@
 [4m[1m[34mFiring Last 1[0m
 Thread 1 start: vhaddps_xmm_xmm_m128
+<<<<<<< Updated upstream
 Modiy /home/sdasgup3/TYLER/strata-data/data-regs/testcases.tc using %rbx
 Modiied: concrete_instances/memory-variants/vhaddps_xmm_xmm_m128/instructions/../testcases.09.tc
 /home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/TYLER/strata-data/circuits --target concrete_instances/memory-variants/vhaddps_xmm_xmm_m128/instructions/vhaddps_xmm_xmm_m128/vhaddps_xmm_xmm_m128.s --functions /home/sdasgup3/TYLER/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/vhaddps_xmm_xmm_m128/instructions/../testcases.09.tc --def_in "{ %rbx %xmm2 }" --live_out "{ %ymm1 }" 
@@ -134,3 +135,6 @@ Sandbox and validator do not agree for 'vhaddps (%rbx), %xmm2, %xmm1' (opcode vh
         #xdeb5f71b00000000)
 
 Thread 1 done!: vhaddps_xmm_xmm_m128
+=======
+/home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/vhaddps_xmm_xmm_m128/instructions/vhaddps_xmm_xmm_m128/vhaddps_xmm_xmm_m128.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/vhaddps_xmm_xmm_m128/instructions/../testcases.09.tc --def_in "{ %rbx %xmm2 }" --live_out "{ %ymm1 }" 
+>>>>>>> Stashed changes
