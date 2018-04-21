@@ -1,14 +1,18 @@
 [4m[1m[34mFiring Last 1[0m
 Thread 1 start: haddps_xmm_m128
+<<<<<<< Updated upstream
 Modiy /home/sdasgup3/TYLER/strata-data/data-regs/testcases.tc using %rbx
 Modiied: concrete_instances/memory-variants/haddps_xmm_m128/instructions/../testcases.09.tc
 /home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/TYLER/strata-data/circuits --target concrete_instances/memory-variants/haddps_xmm_m128/instructions/haddps_xmm_m128/haddps_xmm_m128.s --functions /home/sdasgup3/TYLER/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/haddps_xmm_m128/instructions/../testcases.09.tc --def_in "{ %rbx %xmm1 }" --live_out "{ %xmm1 }" 
+=======
+/home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/haddps_xmm_m128/instructions/haddps_xmm_m128/haddps_xmm_m128.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/haddps_xmm_m128/instructions/../testcases.09.tc --def_in "{ %rbx %xmm1 }" --live_out "{ %xmm1 }" 
+>>>>>>> Stashed changes
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Strata Combo Handler
 Check Equivalence
+<<<<<<< Updated upstream
 Completed 1000cases
 Completed 2000cases
 SIGNAL 0 [normal exit]
@@ -132,3 +136,61 @@ Sandbox and validator do not agree for 'haddps (%rbx), %xmm1' (opcode haddps_xmm
     sandbox:   (concat #x5c67c78cf40e6fab #x7adc096200000000)
 
 Thread 1 done!: haddps_xmm_m128
+=======
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+>>>>>>> Stashed changes
