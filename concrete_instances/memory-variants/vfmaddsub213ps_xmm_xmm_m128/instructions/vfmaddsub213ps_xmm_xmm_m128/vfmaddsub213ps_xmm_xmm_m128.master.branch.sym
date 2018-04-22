@@ -198,24 +198,21 @@ callq .move_064_128_r8_r9_xmm1: Hindex8(9)
 callq .move_128_256_xmm8_xmm9_ymm1: Hindex8(9)
 Formula:
 
-%ymm1  : (let ((a!1 (bvor (concat (vfmsub132_single #x00000000 #x00000000 #x00000000)
-                         (vfmsub132_single #x00000000 #x00000000 #x00000000))
-                 #x0000000000000000))
-      (a!2 (bvor #x00000000
+%ymm1  : (let ((a!1 (bvor #x00000000
                  (bvxor #x00000000
                         (add_single (vfnmsub132_single
                                       #x00000000
                                       #x00000000
                                       #x00000000)
                                     ((_ extract 127 96) TMP_BV_128_0)))))
-      (a!5 (bvor #x00000000
+      (a!4 (bvor #x00000000
                  (bvxor #x00000000
                         (sub_single (vfnmsub132_single
                                       #x00000000
                                       #x00000000
                                       #x00000000)
                                     ((_ extract 95 64) TMP_BV_128_1)))))
-      (a!8 (bvxor #x0000000000000000
+      (a!7 (bvxor #x0000000000000000
                   (concat (add_single (vfnmsub132_single
                                         #x00000000
                                         #x00000000
@@ -226,21 +223,21 @@ Formula:
                                         #x00000000
                                         #x00000000)
                                       ((_ extract 95 64) TMP_BV_128_1)))))
-      (a!9 (bvor #x00000000
+      (a!8 (bvor #x00000000
                  (bvxor #x00000000
                         (add_single (vfnmsub132_single
                                       #x00000000
                                       #x00000000
                                       #x00000000)
                                     ((_ extract 63 32) TMP_BV_128_2)))))
-      (a!12 (bvor #x00000000
+      (a!11 (bvor #x00000000
                   (bvxor #x00000000
                          (sub_single (vfnmsub132_single
                                        #x00000000
                                        #x00000000
                                        #x00000000)
                                      ((_ extract 31 0) TMP_BV_128_3)))))
-      (a!15 (bvxor #x0000000000000000
+      (a!14 (bvxor #x0000000000000000
                    (concat (add_single (vfnmsub132_single
                                          #x00000000
                                          #x00000000
@@ -251,37 +248,37 @@ Formula:
                                          #x00000000
                                          #x00000000)
                                        ((_ extract 31 0) TMP_BV_128_3))))))
-(let ((a!3 (bvxor (bvxor #x00000000
+(let ((a!2 (bvxor (bvxor #x00000000
                          (add_single (vfnmsub132_single
                                        #x00000000
                                        #x00000000
                                        #x00000000)
                                      ((_ extract 127 96) TMP_BV_128_0)))
-                  a!2))
-      (a!6 (bvxor (bvxor #x00000000
+                  a!1))
+      (a!5 (bvxor (bvxor #x00000000
                          (sub_single (vfnmsub132_single
                                        #x00000000
                                        #x00000000
                                        #x00000000)
                                      ((_ extract 95 64) TMP_BV_128_1)))
-                  a!5))
-      (a!10 (bvxor (bvxor #x00000000
-                          (add_single (vfnmsub132_single
-                                        #x00000000
-                                        #x00000000
-                                        #x00000000)
-                                      ((_ extract 63 32) TMP_BV_128_2)))
-                   a!9))
-      (a!13 (bvxor (bvxor #x00000000
+                  a!4))
+      (a!9 (bvxor (bvxor #x00000000
+                         (add_single (vfnmsub132_single
+                                       #x00000000
+                                       #x00000000
+                                       #x00000000)
+                                     ((_ extract 63 32) TMP_BV_128_2)))
+                  a!8))
+      (a!12 (bvxor (bvxor #x00000000
                           (sub_single (vfnmsub132_single
                                         #x00000000
                                         #x00000000
                                         #x00000000)
                                       ((_ extract 31 0) TMP_BV_128_3)))
-                   a!12)))
-(let ((a!4 (vfmsub132_single ((_ extract 127 96) %ymm2)
+                   a!11)))
+(let ((a!3 (vfmsub132_single ((_ extract 127 96) %ymm2)
                              (vfnmsub132_single
-                               a!3
+                               a!2
                                (add_single (vfnmsub132_single
                                              #x00000000
                                              #x00000000
@@ -293,9 +290,9 @@ Formula:
                                              #x00000000)
                                            ((_ extract 127 96) TMP_BV_128_0)))
                              ((_ extract 127 96) %ymm1)))
-      (a!7 (vfmsub132_single ((_ extract 95 64) %ymm2)
+      (a!6 (vfmsub132_single ((_ extract 95 64) %ymm2)
                              (vfnmsub132_single
-                               a!6
+                               a!5
                                (sub_single (vfnmsub132_single
                                              #x00000000
                                              #x00000000
@@ -307,9 +304,9 @@ Formula:
                                              #x00000000)
                                            ((_ extract 95 64) TMP_BV_128_1)))
                              ((_ extract 95 64) %ymm1)))
-      (a!11 (vfmsub132_single ((_ extract 63 32) %ymm2)
+      (a!10 (vfmsub132_single ((_ extract 63 32) %ymm2)
                               (vfnmsub132_single
-                                a!10
+                                a!9
                                 (add_single (vfnmsub132_single
                                               #x00000000
                                               #x00000000
@@ -321,9 +318,9 @@ Formula:
                                               #x00000000)
                                             ((_ extract 63 32) TMP_BV_128_2)))
                               ((_ extract 63 32) %ymm1)))
-      (a!14 (vfmsub132_single ((_ extract 31 0) %ymm2)
+      (a!13 (vfmsub132_single ((_ extract 31 0) %ymm2)
                               (vfnmsub132_single
-                                a!13
+                                a!12
                                 (sub_single (vfnmsub132_single
                                               #x00000000
                                               #x00000000
@@ -335,11 +332,11 @@ Formula:
                                               #x00000000)
                                             ((_ extract 31 0) TMP_BV_128_3)))
                               ((_ extract 31 0) %ymm1))))
-(let ((a!16 (concat (bvor (concat a!4 a!7)
-                          (bvxor a!8 (bvor #x0000000000000000 a!8)))
-                    (bvor (concat a!11 a!14)
-                          (bvxor a!15 (bvor #x0000000000000000 a!15))))))
-  (concat (concat a!1 a!1) a!16)))))
+(let ((a!15 (concat (bvor (concat a!3 a!6)
+                          (bvxor a!7 (bvor #x0000000000000000 a!7)))
+                    (bvor (concat a!10 a!13)
+                          (bvxor a!14 (bvor #x0000000000000000 a!14))))))
+  (concat (concat #x0000000000000000 #x0000000000000000) a!15)))))
 
 Information about memory reads:
   Value TMP_BV_128_0 (16 bytes)

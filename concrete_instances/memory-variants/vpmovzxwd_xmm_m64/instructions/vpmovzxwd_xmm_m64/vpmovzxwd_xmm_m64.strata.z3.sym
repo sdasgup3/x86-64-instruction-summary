@@ -10,22 +10,16 @@ code: vpmovzxwd (%rbx), %xmm1
 
 Formula:
 
-%ymm1  : (let ((a!1 (concat (concat (concat #x0000 ((_ extract 63 48) TMP_BV_64_0))
-                           (concat #x0000 ((_ extract 47 32) TMP_BV_64_1)))
-                   (concat (concat #x0000 ((_ extract 31 16) TMP_BV_64_2))
-                           (concat #x0000 ((_ extract 15 0) TMP_BV_64_3))))))
-  (concat #x00000000000000000000000000000000 a!1))
+%ymm1  : (let ((a!1 (concat (concat #x0000 ((_ extract 47 32) TMP_BV_64_0))
+                   (concat (concat #x0000 ((_ extract 31 16) TMP_BV_64_0))
+                           (concat #x0000 ((_ extract 15 0) TMP_BV_64_0))))))
+  (concat #x00000000000000000000000000000000
+          (concat (concat #x0000 ((_ extract 63 48) TMP_BV_64_0)) a!1)))
 
 Information about memory reads:
   Value TMP_BV_64_0 (8 bytes)
     was read at address %rbx.
-  Value TMP_BV_64_1 (8 bytes)
-    was read at address %rbx.
-  Value TMP_BV_64_2 (8 bytes)
-    was read at address %rbx.
-  Value TMP_BV_64_3 (8 bytes)
-    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus
-sigsegv : sigsegv
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

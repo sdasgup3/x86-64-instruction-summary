@@ -85,8 +85,16 @@
 ; Uninterpreted ternary function declaration
 (declare-fun vfmadd132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfmadd231_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfmadd213_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfmsub231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfmsub231_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfmsub213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfmsub213_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmadd132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
@@ -96,15 +104,12 @@
 ( push )
 ( echo "vpmovzxwq_ymm_m64::ymm1")
 (assert (not (=
-(let ((a!1 (concat (concat #x00000000
-(concat #x0000 ((_ extract 31 16) TMP_BV_64)))
-(concat #x00000000
-(concat #x0000 ((_ extract 15 0) TMP_BV_64))))))
-(let ((a!2 (concat (concat #x00000000
-(concat #x0000 ((_ extract 47 32) TMP_BV_64)))
-a!1)))
-(concat (concat #x00000000 (concat #x0000 ((_ extract 63 48) TMP_BV_64)))
-a!2)))
+(let ((a!1 (concat (concat #x000000000000 ((_ extract 47 32) TMP_BV_64))
+(concat (concat #x000000000000
+((_ extract 31 16) TMP_BV_64))
+(concat #x000000000000
+((_ extract 15 0) TMP_BV_64))))))
+(concat (concat #x000000000000 ((_ extract 63 48) TMP_BV_64)) a!1))
 
 (let ((a!1 (concat (concat #x000000000000 ((_ extract 47 32) TMP_BV_64))
 (concat (concat #x000000000000

@@ -85,8 +85,16 @@
 ; Uninterpreted ternary function declaration
 (declare-fun vfmadd132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfmadd231_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfmadd213_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfmsub231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfmsub231_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfmsub213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfmsub213_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmadd132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
@@ -96,6 +104,20 @@
 ( push )
 ( echo "vfmaddsub213ps_xmm_xmm_m128::ymm1")
 (assert (not (=
+(let ((a!1 (concat (concat (vfmadd213_single ((_ extract 127 96) ymm1)
+((_ extract 127 96) ymm2)
+((_ extract 127 96) TMP_BV_128))
+(vfmsub213_single ((_ extract 95 64) ymm1)
+((_ extract 95 64) ymm2)
+((_ extract 95 64) TMP_BV_128)))
+(concat (vfmadd213_single ((_ extract 63 32) ymm1)
+((_ extract 63 32) ymm2)
+((_ extract 63 32) TMP_BV_128))
+(vfmsub213_single ((_ extract 31 0) ymm1)
+((_ extract 31 0) ymm2)
+((_ extract 31 0) TMP_BV_128))))))
+(concat #x00000000000000000000000000000000 a!1))
+
 (let ((a!1 (bvor #x00000000
 (bvxor #x00000000
 (add_single (vfnmsub132_single
@@ -235,149 +257,6 @@ a!12
 (bvor (concat a!10 a!13)
 (bvxor a!14 (bvor #x0000000000000000 a!14))))))
 (concat (concat #x0000000000000000 #x0000000000000000) a!15)))))
-
-(let ((a!1 (bvor (concat (vfmsub132_single #x00000000 #x00000000 #x00000000)
-(vfmsub132_single #x00000000 #x00000000 #x00000000))
-#x0000000000000000))
-(a!2 (bvor #x00000000
-(bvxor #x00000000
-(add_single (vfnmsub132_single
-#x00000000
-#x00000000
-#x00000000)
-((_ extract 127 96) TMP_BV_128)))))
-(a!5 (bvor #x00000000
-(bvxor #x00000000
-(sub_single (vfnmsub132_single
-#x00000000
-#x00000000
-#x00000000)
-((_ extract 95 64) TMP_BV_128)))))
-(a!8 (bvxor #x0000000000000000
-(concat (add_single (vfnmsub132_single
-#x00000000
-#x00000000
-#x00000000)
-((_ extract 127 96) TMP_BV_128))
-(sub_single (vfnmsub132_single
-#x00000000
-#x00000000
-#x00000000)
-((_ extract 95 64) TMP_BV_128)))))
-(a!9 (bvor #x00000000
-(bvxor #x00000000
-(add_single (vfnmsub132_single
-#x00000000
-#x00000000
-#x00000000)
-((_ extract 63 32) TMP_BV_128)))))
-(a!12 (bvor #x00000000
-(bvxor #x00000000
-(sub_single (vfnmsub132_single
-#x00000000
-#x00000000
-#x00000000)
-((_ extract 31 0) TMP_BV_128)))))
-(a!15 (bvxor #x0000000000000000
-(concat (add_single (vfnmsub132_single
-#x00000000
-#x00000000
-#x00000000)
-((_ extract 63 32) TMP_BV_128))
-(sub_single (vfnmsub132_single
-#x00000000
-#x00000000
-#x00000000)
-((_ extract 31 0) TMP_BV_128))))))
-(let ((a!3 (bvxor (bvxor #x00000000
-(add_single (vfnmsub132_single
-#x00000000
-#x00000000
-#x00000000)
-((_ extract 127 96) TMP_BV_128)))
-a!2))
-(a!6 (bvxor (bvxor #x00000000
-(sub_single (vfnmsub132_single
-#x00000000
-#x00000000
-#x00000000)
-((_ extract 95 64) TMP_BV_128)))
-a!5))
-(a!10 (bvxor (bvxor #x00000000
-(add_single (vfnmsub132_single
-#x00000000
-#x00000000
-#x00000000)
-((_ extract 63 32) TMP_BV_128)))
-a!9))
-(a!13 (bvxor (bvxor #x00000000
-(sub_single (vfnmsub132_single
-#x00000000
-#x00000000
-#x00000000)
-((_ extract 31 0) TMP_BV_128)))
-a!12)))
-(let ((a!4 (vfmsub132_single ((_ extract 127 96) ymm2)
-(vfnmsub132_single
-a!3
-(add_single (vfnmsub132_single
-#x00000000
-#x00000000
-#x00000000)
-((_ extract 127 96) TMP_BV_128))
-(add_single (vfnmsub132_single
-#x00000000
-#x00000000
-#x00000000)
-((_ extract 127 96) TMP_BV_128)))
-((_ extract 127 96) ymm1)))
-(a!7 (vfmsub132_single ((_ extract 95 64) ymm2)
-(vfnmsub132_single
-a!6
-(sub_single (vfnmsub132_single
-#x00000000
-#x00000000
-#x00000000)
-((_ extract 95 64) TMP_BV_128))
-(sub_single (vfnmsub132_single
-#x00000000
-#x00000000
-#x00000000)
-((_ extract 95 64) TMP_BV_128)))
-((_ extract 95 64) ymm1)))
-(a!11 (vfmsub132_single ((_ extract 63 32) ymm2)
-(vfnmsub132_single
-a!10
-(add_single (vfnmsub132_single
-#x00000000
-#x00000000
-#x00000000)
-((_ extract 63 32) TMP_BV_128))
-(add_single (vfnmsub132_single
-#x00000000
-#x00000000
-#x00000000)
-((_ extract 63 32) TMP_BV_128)))
-((_ extract 63 32) ymm1)))
-(a!14 (vfmsub132_single ((_ extract 31 0) ymm2)
-(vfnmsub132_single
-a!13
-(sub_single (vfnmsub132_single
-#x00000000
-#x00000000
-#x00000000)
-((_ extract 31 0) TMP_BV_128))
-(sub_single (vfnmsub132_single
-#x00000000
-#x00000000
-#x00000000)
-((_ extract 31 0) TMP_BV_128)))
-((_ extract 31 0) ymm1))))
-(let ((a!16 (concat (bvor (concat a!4 a!7)
-(bvxor a!8 (bvor #x0000000000000000 a!8)))
-(bvor (concat a!11 a!14)
-(bvxor a!15 (bvor #x0000000000000000 a!15))))))
-(concat (concat a!1 a!1) a!16)))))
 )))
 (check-sat)
 ( pop )

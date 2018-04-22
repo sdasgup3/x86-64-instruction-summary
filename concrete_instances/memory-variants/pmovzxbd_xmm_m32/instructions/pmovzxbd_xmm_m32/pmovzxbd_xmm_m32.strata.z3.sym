@@ -10,22 +10,16 @@ code: pmovzxbd (%rbx), %xmm1
 
 Formula:
 
-%ymm1  : (let ((a!1 (concat (concat (concat #x000000 ((_ extract 31 24) TMP_BV_32_0))
-                           (concat #x000000 ((_ extract 23 16) TMP_BV_32_1)))
-                   (concat (concat #x000000 ((_ extract 15 8) TMP_BV_32_2))
-                           (concat #x000000 ((_ extract 7 0) TMP_BV_32_3))))))
-  (concat ((_ extract 255 128) %ymm1) a!1))
+%ymm1  : (let ((a!1 (concat (concat #x000000 ((_ extract 23 16) TMP_BV_32_0))
+                   (concat (concat #x000000 ((_ extract 15 8) TMP_BV_32_0))
+                           (concat #x000000 ((_ extract 7 0) TMP_BV_32_0))))))
+  (concat ((_ extract 255 128) %ymm1)
+          (concat (concat #x000000 ((_ extract 31 24) TMP_BV_32_0)) a!1)))
 
 Information about memory reads:
   Value TMP_BV_32_0 (4 bytes)
     was read at address %rbx.
-  Value TMP_BV_32_1 (4 bytes)
-    was read at address %rbx.
-  Value TMP_BV_32_2 (4 bytes)
-    was read at address %rbx.
-  Value TMP_BV_32_3 (4 bytes)
-    was read at address %rbx.
 
 sigfpe  : sigfpe
 sigbus  : sigbus
-sigsegv : sigsegv
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

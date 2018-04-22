@@ -31,15 +31,12 @@ Formula:
                            (vfmsub132_single ((_ extract 31 0) %ymm1)
                                              ((_ extract 31 0) %ymm2)
                                              ((_ extract 31 0) TMP_BV_128_3))))))
-(let ((a!2 (concat (vfmsub132_single #x00000000 #x00000000 #x00000000)
+(let ((a!2 (concat #x00000000
                    (concat (vfmsub132_single ((_ extract 127 96) %ymm1)
                                              ((_ extract 127 96) %ymm2)
                                              ((_ extract 127 96) TMP_BV_128_0))
                            a!1))))
-  (concat (vfmsub132_single #x00000000 #x00000000 #x00000000)
-          (concat (vfmsub132_single #x00000000 #x00000000 #x00000000)
-                  (concat (vfmsub132_single #x00000000 #x00000000 #x00000000)
-                          a!2)))))
+  (concat #x00000000 (concat #x00000000 (concat #x00000000 a!2)))))
 
 Information about memory reads:
   Value TMP_BV_128_0 (16 bytes)
