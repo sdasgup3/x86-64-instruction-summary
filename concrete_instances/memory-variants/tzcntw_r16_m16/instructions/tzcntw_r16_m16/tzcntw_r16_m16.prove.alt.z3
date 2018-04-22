@@ -1,0 +1,572 @@
+
+
+
+
+(declare-const TMP_BV_8 (_ BitVec 8))
+(declare-const TMP_BV_16 (_ BitVec 16))
+(declare-const TMP_BV_32 (_ BitVec 32))
+(declare-const TMP_BV_64 (_ BitVec 64))
+(declare-const TMP_BV_128 (_ BitVec 128))
+(declare-const TMP_BV_256 (_ BitVec 256))
+(declare-const TMP_BOOL Bool)
+(declare-const rbx (_ BitVec 64))
+(declare-const rax (_ BitVec 64))
+(declare-const rcx (_ BitVec 64))
+(declare-const rdx (_ BitVec 64))
+(declare-const rsp (_ BitVec 64))
+(declare-const rip (_ BitVec 64))
+(declare-const ymm1 (_ BitVec 256))
+(declare-const ymm2 (_ BitVec 256))
+(declare-const ymm3 (_ BitVec 256))
+(declare-const ymm0 (_ BitVec 256))
+(declare-const zf Bool)
+(declare-const sf Bool)
+(declare-const cf Bool)
+(declare-const pf Bool)
+(declare-const af Bool)
+(declare-const of Bool)
+
+
+
+; Uninterpreted binary function declaration
+(declare-fun add_double ((_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun add_single ((_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun sub_double ((_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun sub_single ((_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun div_double ((_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun div_single ((_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun mul_double ((_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun mul_single ((_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun maxcmp_double ((_ BitVec 64) (_ BitVec 64)) (_ BitVec 1))
+(declare-fun maxcmp_single ((_ BitVec 32) (_ BitVec 32)) (_ BitVec 1))
+(declare-fun mincmp_double ((_ BitVec 64) (_ BitVec 64)) (_ BitVec 1))
+(declare-fun mincmp_single ((_ BitVec 32) (_ BitVec 32)) (_ BitVec 1))
+
+(declare-fun idiv_quotient_int8   ((_ BitVec 16) (_ BitVec 8)) (_ BitVec 8))
+(declare-fun idiv_remainder_int8  ((_ BitVec 16) (_ BitVec 8)) (_ BitVec 8))
+(declare-fun idiv_quotient_int16  ((_ BitVec 32) (_ BitVec 16)) (_ BitVec 16))
+(declare-fun idiv_remainder_int16 ((_ BitVec 32) (_ BitVec 16)) (_ BitVec 16))
+(declare-fun idiv_quotient_int32  ((_ BitVec 64) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun idiv_remainder_int32 ((_ BitVec 64) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun idiv_quotient_int64  ((_ BitVec 128) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun idiv_remainder_int64 ((_ BitVec 128) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun div_quotient_int8   ((_ BitVec 16) (_ BitVec 8)) (_ BitVec 8))
+(declare-fun div_remainder_int8  ((_ BitVec 16) (_ BitVec 8)) (_ BitVec 8))
+(declare-fun div_quotient_int16  ((_ BitVec 32) (_ BitVec 16)) (_ BitVec 16))
+(declare-fun div_remainder_int16 ((_ BitVec 32) (_ BitVec 16)) (_ BitVec 16))
+(declare-fun div_quotient_int32  ((_ BitVec 64) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun div_remainder_int32 ((_ BitVec 64) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun div_quotient_int64  ((_ BitVec 128) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun div_remainder_int64 ((_ BitVec 128) (_ BitVec 64)) (_ BitVec 64))
+
+; Uninterpreted unary function declaration
+(declare-fun approx_reciprocal_double       ((_ BitVec 64)) (_ BitVec 64) )
+(declare-fun approx_reciprocal_single       ((_ BitVec 32)) (_ BitVec 32) )
+(declare-fun sqrt_double                    ((_ BitVec 64)) (_ BitVec 64) )
+(declare-fun sqrt_single                    ((_ BitVec 32)) (_ BitVec 32) )
+(declare-fun approx_reciprocal_sqrt_double  ((_ BitVec 64)) (_ BitVec 64) )
+(declare-fun approx_reciprocal_sqrt_single  ((_ BitVec 32)) (_ BitVec 32) )
+
+(declare-fun cvt_single_to_double           ((_ BitVec 32)) (_ BitVec 64) )
+(declare-fun cvt_double_to_single           ((_ BitVec 64)) (_ BitVec 32) )
+
+(declare-fun cvt_single_to_int32            ((_ BitVec 32)) (_ BitVec 32) )
+(declare-fun cvt_single_to_int32_truncate   ((_ BitVec 32)) (_ BitVec 32) )
+(declare-fun cvt_single_to_int64            ((_ BitVec 32)) (_ BitVec 64) )
+(declare-fun cvt_double_to_int32            ((_ BitVec 64)) (_ BitVec 32) )
+(declare-fun cvt_double_to_int32_truncate   ((_ BitVec 64)) (_ BitVec 32) )
+(declare-fun cvt_double_to_int64            ((_ BitVec 64)) (_ BitVec 64) )
+
+(declare-fun cvt_int32_to_single            ((_ BitVec 32)) (_ BitVec 32) )
+(declare-fun cvt_int32_to_double            ((_ BitVec 32)) (_ BitVec 64) )
+(declare-fun cvt_int64_to_single            ((_ BitVec 64)) (_ BitVec 32) )
+(declare-fun cvt_int64_to_double            ((_ BitVec 64)) (_ BitVec 64) )
+
+; Uninterpreted ternary function declaration
+(declare-fun vfmadd132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+
+
+( push )
+( echo "tzcntw_r16_m16::af")
+(assert (not (=
+TMP_BOOL
+
+TMP_BOOL
+)))
+(check-sat)
+( pop )
+
+
+
+( push )
+( echo "tzcntw_r16_m16::cf")
+(assert (not (=
+(let ((a!1 (concat #b0
+(concat #x00000000
+((_ extract 31 0) ((_ sign_extend 48) TMP_BV_16))))))
+(let ((a!2 (concat #b0
+((_ extract 47 40)
+(bvadd (concat #b0 #xffffffffffffffff) a!1))))
+(a!3 (concat #x00000000
+((_ extract 31 0)
+(bvadd (concat #b0 #xffffffffffffffff) a!1)))))
+(let ((a!4 (bvxor (concat #x00000000
+((_ extract 31 0) ((_ sign_extend 48) TMP_BV_16)))
+a!3)))
+(let ((a!5 (ite (= ((_ extract 8 8) (bvadd a!2 a!2)) #b1)
+(bvadd (concat #b0 a!4)
+#b00000000000000000000000000000000000000000000000000000000000000001)
+(concat #b0 a!4))))
+(let ((a!6 (concat ((_ extract 7 0) (bvadd a!5 (concat #b0 a!4)))
+((_ extract 7 0) (bvadd a!5 (concat #b0 a!4))))))
+(let ((a!7 ((_ extract 8 1)
+(bvashr (concat ((_ sign_extend 48) a!6) #b0)
+(concat #b000000000000000000000000000000000000000000000000000000000
+#x01)))))
+(= ((_ extract 8 8) (bvadd (concat #b0 a!7) (concat #b0 a!7))) #b1)))))))
+
+(let ((a!1 (ite (= ((_ extract 14 14) TMP_BV_16) #b1)
+#x000e
+(ite (= ((_ extract 15 15) TMP_BV_16) #b1) #x000f #x0010))))
+(let ((a!2 (ite (= ((_ extract 12 12) TMP_BV_16) #b1)
+#x000c
+(ite (= ((_ extract 13 13) TMP_BV_16) #b1) #x000d a!1))))
+(let ((a!3 (ite (= ((_ extract 10 10) TMP_BV_16) #b1)
+#x000a
+(ite (= ((_ extract 11 11) TMP_BV_16) #b1) #x000b a!2))))
+(let ((a!4 (ite (= ((_ extract 8 8) TMP_BV_16) #b1)
+#x0008
+(ite (= ((_ extract 9 9) TMP_BV_16) #b1) #x0009 a!3))))
+(let ((a!5 (ite (= ((_ extract 6 6) TMP_BV_16) #b1)
+#x0006
+(ite (= ((_ extract 7 7) TMP_BV_16) #b1) #x0007 a!4))))
+(let ((a!6 (ite (= ((_ extract 4 4) TMP_BV_16) #b1)
+#x0004
+(ite (= ((_ extract 5 5) TMP_BV_16) #b1) #x0005 a!5))))
+(let ((a!7 (ite (= ((_ extract 2 2) TMP_BV_16) #b1)
+#x0002
+(ite (= ((_ extract 3 3) TMP_BV_16) #b1) #x0003 a!6))))
+(let ((a!8 (ite (= ((_ extract 0 0) TMP_BV_16) #b1)
+#x0000
+(ite (= ((_ extract 1 1) TMP_BV_16) #b1) #x0001 a!7))))
+(= a!8 #x0010)))))))))
+)))
+(check-sat)
+( pop )
+
+
+
+( push )
+( echo "tzcntw_r16_m16::of")
+(assert (not (=
+TMP_BOOL
+
+TMP_BOOL
+)))
+(check-sat)
+( pop )
+
+
+
+( push )
+( echo "tzcntw_r16_m16::pf")
+(assert (not (=
+TMP_BOOL
+
+TMP_BOOL
+)))
+(check-sat)
+( pop )
+
+
+
+( push )
+( echo "tzcntw_r16_m16::rbx")
+(assert (not (=
+(let ((a!1 (concat #b0
+(concat #x00000000
+((_ extract 31 0) ((_ sign_extend 48) TMP_BV_16))))))
+(let ((a!2 (concat #b0
+((_ extract 47 40)
+(bvadd (concat #b0 #xffffffffffffffff) a!1))))
+(a!3 (concat #x00000000
+((_ extract 31 0)
+(bvadd (concat #b0 #xffffffffffffffff) a!1)))))
+(let ((a!4 (bvxor (concat #x00000000
+((_ extract 31 0) ((_ sign_extend 48) TMP_BV_16)))
+a!3)))
+(let ((a!5 (ite (= ((_ extract 8 8) (bvadd a!2 a!2)) #b1)
+(bvadd (concat #b0 a!4)
+#b00000000000000000000000000000000000000000000000000000000000000001)
+(concat #b0 a!4))))
+(let ((a!6 (concat ((_ extract 7 0) (bvadd a!5 (concat #b0 a!4)))
+((_ extract 7 0) (bvadd a!5 (concat #b0 a!4)))))
+(a!9 (concat #b0 ((_ extract 63 63) (bvadd a!5 (concat #b0 a!4)))))
+(a!10 (concat #b0 ((_ extract 62 62) (bvadd a!5 (concat #b0 a!4)))))
+(a!11 (concat #b0 ((_ extract 61 61) (bvadd a!5 (concat #b0 a!4)))))
+(a!12 (concat #b0 ((_ extract 60 60) (bvadd a!5 (concat #b0 a!4)))))
+(a!14 (concat #b0 ((_ extract 59 59) (bvadd a!5 (concat #b0 a!4)))))
+(a!15 (concat #b0 ((_ extract 58 58) (bvadd a!5 (concat #b0 a!4)))))
+(a!16 (concat #b0 ((_ extract 57 57) (bvadd a!5 (concat #b0 a!4)))))
+(a!17 (concat #b0 ((_ extract 56 56) (bvadd a!5 (concat #b0 a!4)))))
+(a!19 (concat #b0 ((_ extract 55 55) (bvadd a!5 (concat #b0 a!4)))))
+(a!20 (concat #b0 ((_ extract 54 54) (bvadd a!5 (concat #b0 a!4)))))
+(a!21 (concat #b0 ((_ extract 53 53) (bvadd a!5 (concat #b0 a!4)))))
+(a!22 (concat #b0 ((_ extract 52 52) (bvadd a!5 (concat #b0 a!4)))))
+(a!24 (concat #b0 ((_ extract 51 51) (bvadd a!5 (concat #b0 a!4)))))
+(a!25 (concat #b0 ((_ extract 50 50) (bvadd a!5 (concat #b0 a!4)))))
+(a!26 (concat #b0 ((_ extract 49 49) (bvadd a!5 (concat #b0 a!4)))))
+(a!27 (concat #b0 ((_ extract 48 48) (bvadd a!5 (concat #b0 a!4)))))
+(a!30 (concat #b0 ((_ extract 47 47) (bvadd a!5 (concat #b0 a!4)))))
+(a!31 (concat #b0 ((_ extract 46 46) (bvadd a!5 (concat #b0 a!4)))))
+(a!32 (concat #b0 ((_ extract 45 45) (bvadd a!5 (concat #b0 a!4)))))
+(a!33 (concat #b0 ((_ extract 44 44) (bvadd a!5 (concat #b0 a!4)))))
+(a!35 (concat #b0 ((_ extract 43 43) (bvadd a!5 (concat #b0 a!4)))))
+(a!36 (concat #b0 ((_ extract 42 42) (bvadd a!5 (concat #b0 a!4)))))
+(a!37 (concat #b0 ((_ extract 41 41) (bvadd a!5 (concat #b0 a!4)))))
+(a!38 (concat #b0 ((_ extract 40 40) (bvadd a!5 (concat #b0 a!4)))))
+(a!40 (concat #b0 ((_ extract 39 39) (bvadd a!5 (concat #b0 a!4)))))
+(a!41 (concat #b0 ((_ extract 38 38) (bvadd a!5 (concat #b0 a!4)))))
+(a!42 (concat #b0 ((_ extract 37 37) (bvadd a!5 (concat #b0 a!4)))))
+(a!43 (concat #b0 ((_ extract 36 36) (bvadd a!5 (concat #b0 a!4)))))
+(a!45 (concat #b0 ((_ extract 35 35) (bvadd a!5 (concat #b0 a!4)))))
+(a!46 (concat #b0 ((_ extract 34 34) (bvadd a!5 (concat #b0 a!4)))))
+(a!47 (concat #b0 ((_ extract 33 33) (bvadd a!5 (concat #b0 a!4)))))
+(a!48 (concat #b0 ((_ extract 32 32) (bvadd a!5 (concat #b0 a!4)))))
+(a!51 (concat #b0 ((_ extract 31 31) (bvadd a!5 (concat #b0 a!4)))))
+(a!52 (concat #b0 ((_ extract 30 30) (bvadd a!5 (concat #b0 a!4)))))
+(a!53 (concat #b0 ((_ extract 29 29) (bvadd a!5 (concat #b0 a!4)))))
+(a!54 (concat #b0 ((_ extract 28 28) (bvadd a!5 (concat #b0 a!4)))))
+(a!56 (concat #b0 ((_ extract 27 27) (bvadd a!5 (concat #b0 a!4)))))
+(a!57 (concat #b0 ((_ extract 26 26) (bvadd a!5 (concat #b0 a!4)))))
+(a!58 (concat #b0 ((_ extract 25 25) (bvadd a!5 (concat #b0 a!4)))))
+(a!59 (concat #b0 ((_ extract 24 24) (bvadd a!5 (concat #b0 a!4)))))
+(a!61 (concat #b0 ((_ extract 23 23) (bvadd a!5 (concat #b0 a!4)))))
+(a!62 (concat #b0 ((_ extract 22 22) (bvadd a!5 (concat #b0 a!4)))))
+(a!63 (concat #b0 ((_ extract 21 21) (bvadd a!5 (concat #b0 a!4)))))
+(a!64 (concat #b0 ((_ extract 20 20) (bvadd a!5 (concat #b0 a!4)))))
+(a!66 (concat #b0 ((_ extract 19 19) (bvadd a!5 (concat #b0 a!4)))))
+(a!67 (concat #b0 ((_ extract 18 18) (bvadd a!5 (concat #b0 a!4)))))
+(a!68 (concat #b0 ((_ extract 17 17) (bvadd a!5 (concat #b0 a!4)))))
+(a!69 (concat #b0 ((_ extract 16 16) (bvadd a!5 (concat #b0 a!4)))))
+(a!72 (concat #b0 ((_ extract 15 15) (bvadd a!5 (concat #b0 a!4)))))
+(a!73 (concat #b0 ((_ extract 14 14) (bvadd a!5 (concat #b0 a!4)))))
+(a!74 (concat #b0 ((_ extract 13 13) (bvadd a!5 (concat #b0 a!4)))))
+(a!75 (concat #b0 ((_ extract 12 12) (bvadd a!5 (concat #b0 a!4)))))
+(a!77 (concat #b0 ((_ extract 11 11) (bvadd a!5 (concat #b0 a!4)))))
+(a!78 (concat #b0 ((_ extract 10 10) (bvadd a!5 (concat #b0 a!4)))))
+(a!79 (concat #b0 ((_ extract 9 9) (bvadd a!5 (concat #b0 a!4)))))
+(a!80 (concat #b0 ((_ extract 8 8) (bvadd a!5 (concat #b0 a!4)))))
+(a!82 (concat #b0 ((_ extract 7 7) (bvadd a!5 (concat #b0 a!4)))))
+(a!83 (concat #b0 ((_ extract 6 6) (bvadd a!5 (concat #b0 a!4)))))
+(a!84 (concat #b0 ((_ extract 5 5) (bvadd a!5 (concat #b0 a!4)))))
+(a!85 (concat #b0 ((_ extract 4 4) (bvadd a!5 (concat #b0 a!4)))))
+(a!87 (concat #b0 ((_ extract 3 3) (bvadd a!5 (concat #b0 a!4)))))
+(a!88 (concat #b0 ((_ extract 2 2) (bvadd a!5 (concat #b0 a!4)))))
+(a!89 (concat #b0 ((_ extract 1 1) (bvadd a!5 (concat #b0 a!4)))))
+(a!90 (concat #b0 ((_ extract 0 0) (bvadd a!5 (concat #b0 a!4))))))
+(let ((a!7 ((_ extract 8 1)
+(bvashr (concat ((_ sign_extend 48) a!6) #b0)
+(concat #b000000000000000000000000000000000000000000000000000000000
+#x01))))
+(a!13 (concat #x0
+(bvadd (concat #b00 (bvadd a!9 a!10))
+(concat #b00 (bvadd a!11 a!12)))))
+(a!18 (concat #x0
+(bvadd (concat #b00 (bvadd a!14 a!15))
+(concat #b00 (bvadd a!16 a!17)))))
+(a!23 (concat #x0
+(bvadd (concat #b00 (bvadd a!19 a!20))
+(concat #b00 (bvadd a!21 a!22)))))
+(a!28 (concat #x0
+(bvadd (concat #b00 (bvadd a!24 a!25))
+(concat #b00 (bvadd a!26 a!27)))))
+(a!34 (concat #x0
+(bvadd (concat #b00 (bvadd a!30 a!31))
+(concat #b00 (bvadd a!32 a!33)))))
+(a!39 (concat #x0
+(bvadd (concat #b00 (bvadd a!35 a!36))
+(concat #b00 (bvadd a!37 a!38)))))
+(a!44 (concat #x0
+(bvadd (concat #b00 (bvadd a!40 a!41))
+(concat #b00 (bvadd a!42 a!43)))))
+(a!49 (concat #x0
+(bvadd (concat #b00 (bvadd a!45 a!46))
+(concat #b00 (bvadd a!47 a!48)))))
+(a!55 (concat #x0
+(bvadd (concat #b00 (bvadd a!51 a!52))
+(concat #b00 (bvadd a!53 a!54)))))
+(a!60 (concat #x0
+(bvadd (concat #b00 (bvadd a!56 a!57))
+(concat #b00 (bvadd a!58 a!59)))))
+(a!65 (concat #x0
+(bvadd (concat #b00 (bvadd a!61 a!62))
+(concat #b00 (bvadd a!63 a!64)))))
+(a!70 (concat #x0
+(bvadd (concat #b00 (bvadd a!66 a!67))
+(concat #b00 (bvadd a!68 a!69)))))
+(a!76 (concat #x0
+(bvadd (concat #b00 (bvadd a!72 a!73))
+(concat #b00 (bvadd a!74 a!75)))))
+(a!81 (concat #x0
+(bvadd (concat #b00 (bvadd a!77 a!78))
+(concat #b00 (bvadd a!79 a!80)))))
+(a!86 (concat #x0
+(bvadd (concat #b00 (bvadd a!82 a!83))
+(concat #b00 (bvadd a!84 a!85)))))
+(a!91 (concat #x0
+(bvadd (concat #b00 (bvadd a!87 a!88))
+(concat #b00 (bvadd a!89 a!90))))))
+(let ((a!8 (= ((_ extract 8 8) (bvadd (concat #b0 a!7) (concat #b0 a!7))) #b1))
+(a!29 (concat #x0000
+(bvadd (concat #x00 (bvadd a!13 a!18))
+(concat #x00 (bvadd a!23 a!28)))))
+(a!50 (concat #x0000
+(bvadd (concat #x00 (bvadd a!34 a!39))
+(concat #x00 (bvadd a!44 a!49)))))
+(a!71 (concat #x0000
+(bvadd (concat #x00 (bvadd a!55 a!60))
+(concat #x00 (bvadd a!65 a!70)))))
+(a!92 (concat #x0000
+(bvadd (concat #x00 (bvadd a!76 a!81))
+(concat #x00 (bvadd a!86 a!91))))))
+(let ((a!93 ((_ extract 31 0)
+(bvadd (concat #x00000000 (bvadd a!29 a!50))
+(concat #x00000000 (bvadd a!71 a!92))))))
+(let ((a!94 (ite (= (ite a!8 #x0100 #x0000) #x0000)
+((_ extract 15 0)
+(bvadd (concat #b0 a!93) #b011111111111111111111111111111111))
+#x0010)))
+(concat ((_ extract 63 16) rbx) a!94))))))))))
+
+(let ((a!1 (ite (= ((_ extract 14 14) TMP_BV_16) #b1)
+#x000e
+(ite (= ((_ extract 15 15) TMP_BV_16) #b1) #x000f #x0010))))
+(let ((a!2 (ite (= ((_ extract 12 12) TMP_BV_16) #b1)
+#x000c
+(ite (= ((_ extract 13 13) TMP_BV_16) #b1) #x000d a!1))))
+(let ((a!3 (ite (= ((_ extract 10 10) TMP_BV_16) #b1)
+#x000a
+(ite (= ((_ extract 11 11) TMP_BV_16) #b1) #x000b a!2))))
+(let ((a!4 (ite (= ((_ extract 8 8) TMP_BV_16) #b1)
+#x0008
+(ite (= ((_ extract 9 9) TMP_BV_16) #b1) #x0009 a!3))))
+(let ((a!5 (ite (= ((_ extract 6 6) TMP_BV_16) #b1)
+#x0006
+(ite (= ((_ extract 7 7) TMP_BV_16) #b1) #x0007 a!4))))
+(let ((a!6 (ite (= ((_ extract 4 4) TMP_BV_16) #b1)
+#x0004
+(ite (= ((_ extract 5 5) TMP_BV_16) #b1) #x0005 a!5))))
+(let ((a!7 (ite (= ((_ extract 2 2) TMP_BV_16) #b1)
+#x0002
+(ite (= ((_ extract 3 3) TMP_BV_16) #b1) #x0003 a!6))))
+(let ((a!8 (ite (= ((_ extract 0 0) TMP_BV_16) #b1)
+#x0000
+(ite (= ((_ extract 1 1) TMP_BV_16) #b1) #x0001 a!7))))
+(concat ((_ extract 63 16) rbx) a!8)))))))))
+)))
+(check-sat)
+( pop )
+
+
+
+( push )
+( echo "tzcntw_r16_m16::sf")
+(assert (not (=
+TMP_BOOL
+
+TMP_BOOL
+)))
+(check-sat)
+( pop )
+
+
+
+( push )
+( echo "tzcntw_r16_m16::zf")
+(assert (not (=
+(let ((a!1 (concat #b0
+(concat #x00000000
+((_ extract 31 0) ((_ sign_extend 48) TMP_BV_16))))))
+(let ((a!2 (concat #b0
+((_ extract 47 40)
+(bvadd (concat #b0 #xffffffffffffffff) a!1))))
+(a!3 (concat #x00000000
+((_ extract 31 0)
+(bvadd (concat #b0 #xffffffffffffffff) a!1)))))
+(let ((a!4 (bvxor (concat #x00000000
+((_ extract 31 0) ((_ sign_extend 48) TMP_BV_16)))
+a!3)))
+(let ((a!5 (ite (= ((_ extract 8 8) (bvadd a!2 a!2)) #b1)
+(bvadd (concat #b0 a!4)
+#b00000000000000000000000000000000000000000000000000000000000000001)
+(concat #b0 a!4))))
+(let ((a!6 (concat #b0 ((_ extract 63 63) (bvadd a!5 (concat #b0 a!4)))))
+(a!7 (concat #b0 ((_ extract 62 62) (bvadd a!5 (concat #b0 a!4)))))
+(a!8 (concat #b0 ((_ extract 61 61) (bvadd a!5 (concat #b0 a!4)))))
+(a!9 (concat #b0 ((_ extract 60 60) (bvadd a!5 (concat #b0 a!4)))))
+(a!11 (concat #b0 ((_ extract 59 59) (bvadd a!5 (concat #b0 a!4)))))
+(a!12 (concat #b0 ((_ extract 58 58) (bvadd a!5 (concat #b0 a!4)))))
+(a!13 (concat #b0 ((_ extract 57 57) (bvadd a!5 (concat #b0 a!4)))))
+(a!14 (concat #b0 ((_ extract 56 56) (bvadd a!5 (concat #b0 a!4)))))
+(a!16 (concat #b0 ((_ extract 55 55) (bvadd a!5 (concat #b0 a!4)))))
+(a!17 (concat #b0 ((_ extract 54 54) (bvadd a!5 (concat #b0 a!4)))))
+(a!18 (concat #b0 ((_ extract 53 53) (bvadd a!5 (concat #b0 a!4)))))
+(a!19 (concat #b0 ((_ extract 52 52) (bvadd a!5 (concat #b0 a!4)))))
+(a!21 (concat #b0 ((_ extract 51 51) (bvadd a!5 (concat #b0 a!4)))))
+(a!22 (concat #b0 ((_ extract 50 50) (bvadd a!5 (concat #b0 a!4)))))
+(a!23 (concat #b0 ((_ extract 49 49) (bvadd a!5 (concat #b0 a!4)))))
+(a!24 (concat #b0 ((_ extract 48 48) (bvadd a!5 (concat #b0 a!4)))))
+(a!27 (concat #b0 ((_ extract 47 47) (bvadd a!5 (concat #b0 a!4)))))
+(a!28 (concat #b0 ((_ extract 46 46) (bvadd a!5 (concat #b0 a!4)))))
+(a!29 (concat #b0 ((_ extract 45 45) (bvadd a!5 (concat #b0 a!4)))))
+(a!30 (concat #b0 ((_ extract 44 44) (bvadd a!5 (concat #b0 a!4)))))
+(a!32 (concat #b0 ((_ extract 43 43) (bvadd a!5 (concat #b0 a!4)))))
+(a!33 (concat #b0 ((_ extract 42 42) (bvadd a!5 (concat #b0 a!4)))))
+(a!34 (concat #b0 ((_ extract 41 41) (bvadd a!5 (concat #b0 a!4)))))
+(a!35 (concat #b0 ((_ extract 40 40) (bvadd a!5 (concat #b0 a!4)))))
+(a!37 (concat #b0 ((_ extract 39 39) (bvadd a!5 (concat #b0 a!4)))))
+(a!38 (concat #b0 ((_ extract 38 38) (bvadd a!5 (concat #b0 a!4)))))
+(a!39 (concat #b0 ((_ extract 37 37) (bvadd a!5 (concat #b0 a!4)))))
+(a!40 (concat #b0 ((_ extract 36 36) (bvadd a!5 (concat #b0 a!4)))))
+(a!42 (concat #b0 ((_ extract 35 35) (bvadd a!5 (concat #b0 a!4)))))
+(a!43 (concat #b0 ((_ extract 34 34) (bvadd a!5 (concat #b0 a!4)))))
+(a!44 (concat #b0 ((_ extract 33 33) (bvadd a!5 (concat #b0 a!4)))))
+(a!45 (concat #b0 ((_ extract 32 32) (bvadd a!5 (concat #b0 a!4)))))
+(a!48 (concat #b0 ((_ extract 31 31) (bvadd a!5 (concat #b0 a!4)))))
+(a!49 (concat #b0 ((_ extract 30 30) (bvadd a!5 (concat #b0 a!4)))))
+(a!50 (concat #b0 ((_ extract 29 29) (bvadd a!5 (concat #b0 a!4)))))
+(a!51 (concat #b0 ((_ extract 28 28) (bvadd a!5 (concat #b0 a!4)))))
+(a!53 (concat #b0 ((_ extract 27 27) (bvadd a!5 (concat #b0 a!4)))))
+(a!54 (concat #b0 ((_ extract 26 26) (bvadd a!5 (concat #b0 a!4)))))
+(a!55 (concat #b0 ((_ extract 25 25) (bvadd a!5 (concat #b0 a!4)))))
+(a!56 (concat #b0 ((_ extract 24 24) (bvadd a!5 (concat #b0 a!4)))))
+(a!58 (concat #b0 ((_ extract 23 23) (bvadd a!5 (concat #b0 a!4)))))
+(a!59 (concat #b0 ((_ extract 22 22) (bvadd a!5 (concat #b0 a!4)))))
+(a!60 (concat #b0 ((_ extract 21 21) (bvadd a!5 (concat #b0 a!4)))))
+(a!61 (concat #b0 ((_ extract 20 20) (bvadd a!5 (concat #b0 a!4)))))
+(a!63 (concat #b0 ((_ extract 19 19) (bvadd a!5 (concat #b0 a!4)))))
+(a!64 (concat #b0 ((_ extract 18 18) (bvadd a!5 (concat #b0 a!4)))))
+(a!65 (concat #b0 ((_ extract 17 17) (bvadd a!5 (concat #b0 a!4)))))
+(a!66 (concat #b0 ((_ extract 16 16) (bvadd a!5 (concat #b0 a!4)))))
+(a!69 (concat #b0 ((_ extract 15 15) (bvadd a!5 (concat #b0 a!4)))))
+(a!70 (concat #b0 ((_ extract 14 14) (bvadd a!5 (concat #b0 a!4)))))
+(a!71 (concat #b0 ((_ extract 13 13) (bvadd a!5 (concat #b0 a!4)))))
+(a!72 (concat #b0 ((_ extract 12 12) (bvadd a!5 (concat #b0 a!4)))))
+(a!74 (concat #b0 ((_ extract 11 11) (bvadd a!5 (concat #b0 a!4)))))
+(a!75 (concat #b0 ((_ extract 10 10) (bvadd a!5 (concat #b0 a!4)))))
+(a!76 (concat #b0 ((_ extract 9 9) (bvadd a!5 (concat #b0 a!4)))))
+(a!77 (concat #b0 ((_ extract 8 8) (bvadd a!5 (concat #b0 a!4)))))
+(a!79 (concat #b0 ((_ extract 7 7) (bvadd a!5 (concat #b0 a!4)))))
+(a!80 (concat #b0 ((_ extract 6 6) (bvadd a!5 (concat #b0 a!4)))))
+(a!81 (concat #b0 ((_ extract 5 5) (bvadd a!5 (concat #b0 a!4)))))
+(a!82 (concat #b0 ((_ extract 4 4) (bvadd a!5 (concat #b0 a!4)))))
+(a!84 (concat #b0 ((_ extract 3 3) (bvadd a!5 (concat #b0 a!4)))))
+(a!85 (concat #b0 ((_ extract 2 2) (bvadd a!5 (concat #b0 a!4)))))
+(a!86 (concat #b0 ((_ extract 1 1) (bvadd a!5 (concat #b0 a!4)))))
+(a!87 (concat #b0 ((_ extract 0 0) (bvadd a!5 (concat #b0 a!4))))))
+(let ((a!10 (concat #x0
+(bvadd (concat #b00 (bvadd a!6 a!7))
+(concat #b00 (bvadd a!8 a!9)))))
+(a!15 (concat #x0
+(bvadd (concat #b00 (bvadd a!11 a!12))
+(concat #b00 (bvadd a!13 a!14)))))
+(a!20 (concat #x0
+(bvadd (concat #b00 (bvadd a!16 a!17))
+(concat #b00 (bvadd a!18 a!19)))))
+(a!25 (concat #x0
+(bvadd (concat #b00 (bvadd a!21 a!22))
+(concat #b00 (bvadd a!23 a!24)))))
+(a!31 (concat #x0
+(bvadd (concat #b00 (bvadd a!27 a!28))
+(concat #b00 (bvadd a!29 a!30)))))
+(a!36 (concat #x0
+(bvadd (concat #b00 (bvadd a!32 a!33))
+(concat #b00 (bvadd a!34 a!35)))))
+(a!41 (concat #x0
+(bvadd (concat #b00 (bvadd a!37 a!38))
+(concat #b00 (bvadd a!39 a!40)))))
+(a!46 (concat #x0
+(bvadd (concat #b00 (bvadd a!42 a!43))
+(concat #b00 (bvadd a!44 a!45)))))
+(a!52 (concat #x0
+(bvadd (concat #b00 (bvadd a!48 a!49))
+(concat #b00 (bvadd a!50 a!51)))))
+(a!57 (concat #x0
+(bvadd (concat #b00 (bvadd a!53 a!54))
+(concat #b00 (bvadd a!55 a!56)))))
+(a!62 (concat #x0
+(bvadd (concat #b00 (bvadd a!58 a!59))
+(concat #b00 (bvadd a!60 a!61)))))
+(a!67 (concat #x0
+(bvadd (concat #b00 (bvadd a!63 a!64))
+(concat #b00 (bvadd a!65 a!66)))))
+(a!73 (concat #x0
+(bvadd (concat #b00 (bvadd a!69 a!70))
+(concat #b00 (bvadd a!71 a!72)))))
+(a!78 (concat #x0
+(bvadd (concat #b00 (bvadd a!74 a!75))
+(concat #b00 (bvadd a!76 a!77)))))
+(a!83 (concat #x0
+(bvadd (concat #b00 (bvadd a!79 a!80))
+(concat #b00 (bvadd a!81 a!82)))))
+(a!88 (concat #x0
+(bvadd (concat #b00 (bvadd a!84 a!85))
+(concat #b00 (bvadd a!86 a!87))))))
+(let ((a!26 (concat #x0000
+(bvadd (concat #x00 (bvadd a!10 a!15))
+(concat #x00 (bvadd a!20 a!25)))))
+(a!47 (concat #x0000
+(bvadd (concat #x00 (bvadd a!31 a!36))
+(concat #x00 (bvadd a!41 a!46)))))
+(a!68 (concat #x0000
+(bvadd (concat #x00 (bvadd a!52 a!57))
+(concat #x00 (bvadd a!62 a!67)))))
+(a!89 (concat #x0000
+(bvadd (concat #x00 (bvadd a!73 a!78))
+(concat #x00 (bvadd a!83 a!88))))))
+(let ((a!90 ((_ extract 31 0)
+(bvadd (concat #x00000000 (bvadd a!26 a!47))
+(concat #x00000000 (bvadd a!68 a!89))))))
+(= ((_ extract 31 0)
+(bvadd (concat #b0 a!90) #b011111111111111111111111111111111))
+#x00000000)))))))))
+
+(let ((a!1 (ite (= ((_ extract 14 14) TMP_BV_16) #b1)
+#x000e
+(ite (= ((_ extract 15 15) TMP_BV_16) #b1) #x000f #x0010))))
+(let ((a!2 (ite (= ((_ extract 12 12) TMP_BV_16) #b1)
+#x000c
+(ite (= ((_ extract 13 13) TMP_BV_16) #b1) #x000d a!1))))
+(let ((a!3 (ite (= ((_ extract 10 10) TMP_BV_16) #b1)
+#x000a
+(ite (= ((_ extract 11 11) TMP_BV_16) #b1) #x000b a!2))))
+(let ((a!4 (ite (= ((_ extract 8 8) TMP_BV_16) #b1)
+#x0008
+(ite (= ((_ extract 9 9) TMP_BV_16) #b1) #x0009 a!3))))
+(let ((a!5 (ite (= ((_ extract 6 6) TMP_BV_16) #b1)
+#x0006
+(ite (= ((_ extract 7 7) TMP_BV_16) #b1) #x0007 a!4))))
+(let ((a!6 (ite (= ((_ extract 4 4) TMP_BV_16) #b1)
+#x0004
+(ite (= ((_ extract 5 5) TMP_BV_16) #b1) #x0005 a!5))))
+(let ((a!7 (ite (= ((_ extract 2 2) TMP_BV_16) #b1)
+#x0002
+(ite (= ((_ extract 3 3) TMP_BV_16) #b1) #x0003 a!6))))
+(let ((a!8 (ite (= ((_ extract 0 0) TMP_BV_16) #b1)
+#x0000
+(ite (= ((_ extract 1 1) TMP_BV_16) #b1) #x0001 a!7))))
+(= a!8 #x0000)))))))))
+)))
+(check-sat)
+( pop )
+
+
+

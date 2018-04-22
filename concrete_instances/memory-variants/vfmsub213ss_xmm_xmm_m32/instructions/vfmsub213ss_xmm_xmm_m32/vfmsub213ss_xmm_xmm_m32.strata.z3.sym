@@ -10,14 +10,16 @@ code: vfmsub213ss (%rbx), %xmm2, %xmm1
 
 Formula:
 
-%ymm1  : (let ((a!1 (vfmadd132_single ((_ extract 31 0) %ymm2)
-                             (vfnmsub132_single
-                               TMP_BV_32_0
-                               TMP_BV_32_1
-                               (concat #x000000 ((_ extract 7 0) TMP_BV_32_2)))
-                             ((_ extract 31 0) %ymm1))))
+%ymm1  : (let ((a!1 (vfnmsub132_single
+             TMP_BV_32_0
+             TMP_BV_32_1
+             (add_single (concat #x000000 ((_ extract 7 0) TMP_BV_32_2))
+                         #x00000000))))
   (concat #x00000000000000000000000000000000
-          (concat ((_ extract 127 32) %ymm1) a!1)))
+          (concat ((_ extract 127 32) %ymm1)
+                  (vfmadd132_single ((_ extract 31 0) %ymm2)
+                                    a!1
+                                    ((_ extract 31 0) %ymm1)))))
 
 Information about memory reads:
   Value TMP_BV_32_0 (4 bytes)

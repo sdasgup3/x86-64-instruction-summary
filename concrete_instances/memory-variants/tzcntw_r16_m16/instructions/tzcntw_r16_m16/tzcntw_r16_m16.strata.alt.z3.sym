@@ -1,0 +1,100 @@
+code: tzcntw (%rcx), %bx
+
+  maybe read:      { %rcx }
+  must read:       { %rcx }
+  maybe write:     { %bx %cf %zf }
+  must write:      { %bx %cf %zf }
+  maybe undef:     { %pf %af %sf %of }
+  must undef:      { %pf %af %sf %of }
+  required flags:  { bmi1 }
+
+Formula:
+
+%rbx   : (let ((a!1 (ite (= ((_ extract 14 14) TMP_BV_16_0) #b1)
+                #x000e
+                (ite (= ((_ extract 15 15) TMP_BV_16_0) #b1) #x000f #x0010))))
+(let ((a!2 (ite (= ((_ extract 12 12) TMP_BV_16_0) #b1)
+                #x000c
+                (ite (= ((_ extract 13 13) TMP_BV_16_0) #b1) #x000d a!1))))
+(let ((a!3 (ite (= ((_ extract 10 10) TMP_BV_16_0) #b1)
+                #x000a
+                (ite (= ((_ extract 11 11) TMP_BV_16_0) #b1) #x000b a!2))))
+(let ((a!4 (ite (= ((_ extract 8 8) TMP_BV_16_0) #b1)
+                #x0008
+                (ite (= ((_ extract 9 9) TMP_BV_16_0) #b1) #x0009 a!3))))
+(let ((a!5 (ite (= ((_ extract 6 6) TMP_BV_16_0) #b1)
+                #x0006
+                (ite (= ((_ extract 7 7) TMP_BV_16_0) #b1) #x0007 a!4))))
+(let ((a!6 (ite (= ((_ extract 4 4) TMP_BV_16_0) #b1)
+                #x0004
+                (ite (= ((_ extract 5 5) TMP_BV_16_0) #b1) #x0005 a!5))))
+(let ((a!7 (ite (= ((_ extract 2 2) TMP_BV_16_0) #b1)
+                #x0002
+                (ite (= ((_ extract 3 3) TMP_BV_16_0) #b1) #x0003 a!6))))
+(let ((a!8 (ite (= ((_ extract 0 0) TMP_BV_16_0) #b1)
+                #x0000
+                (ite (= ((_ extract 1 1) TMP_BV_16_0) #b1) #x0001 a!7))))
+  (concat ((_ extract 63 16) %rbx) a!8)))))))))
+
+%cf    : (let ((a!1 (ite (= ((_ extract 14 14) TMP_BV_16_0) #b1)
+                #x000e
+                (ite (= ((_ extract 15 15) TMP_BV_16_0) #b1) #x000f #x0010))))
+(let ((a!2 (ite (= ((_ extract 12 12) TMP_BV_16_0) #b1)
+                #x000c
+                (ite (= ((_ extract 13 13) TMP_BV_16_0) #b1) #x000d a!1))))
+(let ((a!3 (ite (= ((_ extract 10 10) TMP_BV_16_0) #b1)
+                #x000a
+                (ite (= ((_ extract 11 11) TMP_BV_16_0) #b1) #x000b a!2))))
+(let ((a!4 (ite (= ((_ extract 8 8) TMP_BV_16_0) #b1)
+                #x0008
+                (ite (= ((_ extract 9 9) TMP_BV_16_0) #b1) #x0009 a!3))))
+(let ((a!5 (ite (= ((_ extract 6 6) TMP_BV_16_0) #b1)
+                #x0006
+                (ite (= ((_ extract 7 7) TMP_BV_16_0) #b1) #x0007 a!4))))
+(let ((a!6 (ite (= ((_ extract 4 4) TMP_BV_16_0) #b1)
+                #x0004
+                (ite (= ((_ extract 5 5) TMP_BV_16_0) #b1) #x0005 a!5))))
+(let ((a!7 (ite (= ((_ extract 2 2) TMP_BV_16_0) #b1)
+                #x0002
+                (ite (= ((_ extract 3 3) TMP_BV_16_0) #b1) #x0003 a!6))))
+(let ((a!8 (ite (= ((_ extract 0 0) TMP_BV_16_0) #b1)
+                #x0000
+                (ite (= ((_ extract 1 1) TMP_BV_16_0) #b1) #x0001 a!7))))
+  (= a!8 #x0010)))))))))
+%pf    : TMP_BOOL_2
+%af    : TMP_BOOL_3
+%zf    : (let ((a!1 (ite (= ((_ extract 14 14) TMP_BV_16_0) #b1)
+                #x000e
+                (ite (= ((_ extract 15 15) TMP_BV_16_0) #b1) #x000f #x0010))))
+(let ((a!2 (ite (= ((_ extract 12 12) TMP_BV_16_0) #b1)
+                #x000c
+                (ite (= ((_ extract 13 13) TMP_BV_16_0) #b1) #x000d a!1))))
+(let ((a!3 (ite (= ((_ extract 10 10) TMP_BV_16_0) #b1)
+                #x000a
+                (ite (= ((_ extract 11 11) TMP_BV_16_0) #b1) #x000b a!2))))
+(let ((a!4 (ite (= ((_ extract 8 8) TMP_BV_16_0) #b1)
+                #x0008
+                (ite (= ((_ extract 9 9) TMP_BV_16_0) #b1) #x0009 a!3))))
+(let ((a!5 (ite (= ((_ extract 6 6) TMP_BV_16_0) #b1)
+                #x0006
+                (ite (= ((_ extract 7 7) TMP_BV_16_0) #b1) #x0007 a!4))))
+(let ((a!6 (ite (= ((_ extract 4 4) TMP_BV_16_0) #b1)
+                #x0004
+                (ite (= ((_ extract 5 5) TMP_BV_16_0) #b1) #x0005 a!5))))
+(let ((a!7 (ite (= ((_ extract 2 2) TMP_BV_16_0) #b1)
+                #x0002
+                (ite (= ((_ extract 3 3) TMP_BV_16_0) #b1) #x0003 a!6))))
+(let ((a!8 (ite (= ((_ extract 0 0) TMP_BV_16_0) #b1)
+                #x0000
+                (ite (= ((_ extract 1 1) TMP_BV_16_0) #b1) #x0001 a!7))))
+  (= a!8 #x0000)))))))))
+%sf    : TMP_BOOL_1
+%of    : TMP_BOOL_0
+
+Information about memory reads:
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rcx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))
