@@ -1,0 +1,36 @@
+code: cmpxchg8b (%rbx)
+
+  maybe read:      { %eax %edx %rbx }
+  must read:       { %eax %edx %rbx }
+  maybe write:     { %rax %rcx %rdx %rbx %zf }
+  must write:      { %zf }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { cx8 }
+
+Formula:
+
+%rax   : (ite (= (concat ((_ extract 31 0) %rdx) ((_ extract 31 0) %rax)) TMP_BV_64_0)
+     %rax
+     (concat #x00000000 ((_ extract 31 0) TMP_BV_64_0)))
+%rdx   : (ite (= (concat ((_ extract 31 0) %rdx) ((_ extract 31 0) %rax)) TMP_BV_64_0)
+     %rdx
+     (concat #x00000000 ((_ extract 63 32) TMP_BV_64_0)))
+
+%zf    : (= (concat ((_ extract 31 0) %rdx) ((_ extract 31 0) %rax)) TMP_BV_64_0)
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rbx.
+
+Information about memory writes:
+  Address %rbx was updated to
+    (ite (= (concat ((_ extract 31 0) %rdx) ((_ extract 31 0) %rax)) TMP_BV_64_0)
+     (concat ((_ extract 31 0) %rcx) ((_ extract 31 0) %rbx))
+     TMP_BV_64_0) (8 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv
+    (and (not sigfpe) (not sigbus) false)
+    (and (not sigfpe) (not sigbus) false))

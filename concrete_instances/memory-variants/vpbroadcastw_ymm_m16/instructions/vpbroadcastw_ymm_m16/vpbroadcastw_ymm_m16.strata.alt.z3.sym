@@ -1,0 +1,30 @@
+code: vpbroadcastw (%rbx), %ymm1
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+Formula:
+
+%ymm1  : (let ((a!1 (concat TMP_BV_16_0
+                   (concat TMP_BV_16_0
+                           (concat TMP_BV_16_0 (concat TMP_BV_16_0 TMP_BV_16_0))))))
+(let ((a!2 (concat TMP_BV_16_0
+                   (concat TMP_BV_16_0
+                           (concat TMP_BV_16_0 (concat TMP_BV_16_0 a!1))))))
+(let ((a!3 (concat TMP_BV_16_0
+                   (concat TMP_BV_16_0
+                           (concat TMP_BV_16_0 (concat TMP_BV_16_0 a!2))))))
+  (concat TMP_BV_16_0 (concat TMP_BV_16_0 (concat TMP_BV_16_0 a!3))))))
+
+Information about memory reads:
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

@@ -1,0 +1,46 @@
+code: imulw (%rcx), %bx
+
+  maybe read:      { %rcx %bx }
+  must read:       { %rcx %bx }
+  maybe write:     { %bx %cf %of }
+  must write:      { %bx %cf %of }
+  maybe undef:     { %pf %af %zf %sf }
+  must undef:      { %pf %af %zf %sf }
+  required flags:  { }
+
+Formula:
+
+%rbx   : (let ((a!1 ((_ extract 15 0)
+             (bvmul ((_ sign_extend 16) ((_ extract 15 0) %rbx))
+                    ((_ sign_extend 16) TMP_BV_16_0)))))
+  (concat ((_ extract 63 16) %rbx) a!1))
+
+%cf    : (let ((a!1 ((_ extract 15 0)
+             (bvmul ((_ sign_extend 16) ((_ extract 15 0) %rbx))
+                    ((_ sign_extend 16) TMP_BV_16_0)))))
+(let ((a!2 (= (bvmul ((_ sign_extend 16) ((_ extract 15 0) %rbx))
+                     ((_ sign_extend 16) TMP_BV_16_0))
+              ((_ sign_extend 16) a!1))))
+  (not a!2)))
+%pf    : TMP_BOOL_2
+%af    : TMP_BOOL_1
+%zf    : TMP_BOOL_0
+%sf    : (let ((a!1 ((_ extract 15 15)
+             (bvmul ((_ sign_extend 16) ((_ extract 15 0) %rbx))
+                    ((_ sign_extend 16) TMP_BV_16_0)))))
+  (= a!1 #b1))
+%of    : (let ((a!1 ((_ extract 15 0)
+             (bvmul ((_ sign_extend 16) ((_ extract 15 0) %rbx))
+                    ((_ sign_extend 16) TMP_BV_16_0)))))
+(let ((a!2 (= (bvmul ((_ sign_extend 16) ((_ extract 15 0) %rbx))
+                     ((_ sign_extend 16) TMP_BV_16_0))
+              ((_ sign_extend 16) a!1))))
+  (not a!2)))
+
+Information about memory reads:
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rcx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

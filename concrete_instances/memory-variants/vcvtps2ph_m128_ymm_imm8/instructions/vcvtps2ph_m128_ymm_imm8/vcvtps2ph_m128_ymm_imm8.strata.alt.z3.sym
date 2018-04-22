@@ -1,0 +1,40 @@
+code: vcvtps2ph $0x0, %ymm1, (%rbx)
+
+  maybe read:      { %rbx %ymm1 %mxcsr::rc[0] }
+  must read:       { %rbx %ymm1 %mxcsr::rc[0] }
+  maybe write:     { }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { f16c }
+
+Formula:
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+Information about memory writes:
+  Address %rbx was updated to
+    (let ((a!1 (concat (cvt_single_to_fp16_rm ((_ extract 95 64) %ymm1) #x00)
+                   (concat (cvt_single_to_fp16_rm
+                             ((_ extract 63 32) %ymm1)
+                             #x00)
+                           (cvt_single_to_fp16_rm ((_ extract 31 0) %ymm1) #x00)))))
+(let ((a!2 (concat (cvt_single_to_fp16_rm ((_ extract 159 128) %ymm1) #x00)
+                   (concat (cvt_single_to_fp16_rm
+                             ((_ extract 127 96) %ymm1)
+                             #x00)
+                           a!1))))
+(let ((a!3 (concat (cvt_single_to_fp16_rm ((_ extract 223 192) %ymm1) #x00)
+                   (concat (cvt_single_to_fp16_rm
+                             ((_ extract 191 160) %ymm1)
+                             #x00)
+                           a!2))))
+  (concat (cvt_single_to_fp16_rm ((_ extract 255 224) %ymm1) #x00) a!3)))) (16 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv
+    (and (not sigfpe) (not sigbus) false)
+    (and (not sigfpe) (not sigbus) false))

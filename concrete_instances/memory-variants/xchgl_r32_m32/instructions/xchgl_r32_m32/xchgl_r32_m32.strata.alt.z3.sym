@@ -1,0 +1,27 @@
+code: xchgl (%rcx), %ebx
+
+  maybe read:      { %rcx %ebx }
+  must read:       { %rcx %ebx }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rbx   : (concat #x00000000 TMP_BV_32_0)
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rcx.
+
+Information about memory writes:
+  Address %rcx was updated to
+    ((_ extract 31 0) %rbx) (4 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv
+    (and (not sigfpe) (not sigbus) false)
+    (and (not sigfpe) (not sigbus) false))

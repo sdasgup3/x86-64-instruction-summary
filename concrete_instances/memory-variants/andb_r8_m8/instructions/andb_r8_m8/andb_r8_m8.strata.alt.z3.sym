@@ -1,0 +1,44 @@
+code: andb (%rcx), %bl
+
+  maybe read:      { %rcx %bl }
+  must read:       { %rcx %bl }
+  maybe write:     { %bl %cf %pf %zf %sf %of }
+  must write:      { %bl %cf %pf %zf %sf %of }
+  maybe undef:     { %af }
+  must undef:      { %af }
+  required flags:  { }
+
+Formula:
+
+%rbx   : (concat ((_ extract 63 8) %rbx) (bvand ((_ extract 7 0) %rbx) TMP_BV_8_0))
+
+%cf    : false
+%pf    : (let ((a!1 (xor (= (bvand ((_ extract 0 0) %rbx) ((_ extract 0 0) TMP_BV_8_0))
+                   #b1)
+                (= (bvand ((_ extract 1 1) %rbx) ((_ extract 1 1) TMP_BV_8_0))
+                   #b1)
+                (= (bvand ((_ extract 2 2) %rbx) ((_ extract 2 2) TMP_BV_8_0))
+                   #b1)
+                (= (bvand ((_ extract 3 3) %rbx) ((_ extract 3 3) TMP_BV_8_0))
+                   #b1)
+                (= (bvand ((_ extract 4 4) %rbx) ((_ extract 4 4) TMP_BV_8_0))
+                   #b1)
+                (= (bvand ((_ extract 5 5) %rbx) ((_ extract 5 5) TMP_BV_8_0))
+                   #b1)
+                (= (bvand ((_ extract 6 6) %rbx) ((_ extract 6 6) TMP_BV_8_0))
+                   #b1)
+                (= (bvand ((_ extract 7 7) %rbx) ((_ extract 7 7) TMP_BV_8_0))
+                   #b1))))
+  (not a!1))
+%af    : TMP_BOOL_0
+%zf    : (= (bvand ((_ extract 7 0) %rbx) TMP_BV_8_0) #x00)
+%sf    : (= (bvand ((_ extract 7 7) %rbx) ((_ extract 7 7) TMP_BV_8_0)) #b1)
+%of    : false
+
+Information about memory reads:
+  Value TMP_BV_8_0 (1 bytes)
+    was read at address %rcx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

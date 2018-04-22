@@ -1,0 +1,46 @@
+code: btcl %ecx, (%rbx)
+
+  maybe read:      { %ecx %rbx }
+  must read:       { %ecx %rbx }
+  maybe write:     { %cf }
+  must write:      { %cf }
+  maybe undef:     { %pf %af %sf %of }
+  must undef:      { %pf %af %sf %of }
+  required flags:  { }
+
+Formula:
+
+%cf    : (let ((a!1 ((_ extract 0 0)
+             (bvlshr TMP_BV_8_1 (concat #b00000 ((_ extract 2 0) %rcx))))))
+  (= a!1 #b1))
+%pf    : TMP_BOOL_3
+%af    : TMP_BOOL_2
+%sf    : TMP_BOOL_1
+%of    : TMP_BOOL_0
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rbx.
+  Value TMP_BV_8_1info: Loc Size Mismatch
+
+info: Loc Address Mismatch
+
+ (1 bytes)
+    was read at address (let ((a!1 (concat #b000
+                   ((_ extract 63 3)
+                     ((_ sign_extend 32) ((_ extract 31 0) %rcx))))))
+  (bvadd %rbx a!1)).
+
+Information about memory writes:
+  Address (let ((a!1 (concat #b000
+                   ((_ extract 63 3)
+                     ((_ sign_extend 32) ((_ extract 31 0) %rcx))))))
+  (bvadd %rbx a!1)) was updated to
+    (bvxor TMP_BV_8_1 (bvshl #x01 (concat #b00000 ((_ extract 2 0) %rcx)))) (1 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv
+    (and (not sigfpe) (not sigbus) false)
+    (and (not sigfpe) (not sigbus) false)
+    (and (not sigfpe) (not sigbus) false))

@@ -1,0 +1,28 @@
+code: andnq (%rdx), %rcx, %rbx
+
+  maybe read:      { %rcx %rdx }
+  must read:       { %rcx %rdx }
+  maybe write:     { %rbx %cf %zf %sf %of }
+  must write:      { %rbx %cf %zf %sf %of }
+  maybe undef:     { %pf %af }
+  must undef:      { %pf %af }
+  required flags:  { bmi1 }
+
+Formula:
+
+%rbx   : (bvand (bvnot %rcx) TMP_BV_64_0)
+
+%cf    : false
+%pf    : TMP_BOOL_1
+%af    : TMP_BOOL_0
+%zf    : (= (bvand (bvnot %rcx) TMP_BV_64_0) #x0000000000000000)
+%sf    : (= (bvand (bvnot ((_ extract 63 63) %rcx)) ((_ extract 63 63) TMP_BV_64_0)) #b1)
+%of    : false
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rdx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))
