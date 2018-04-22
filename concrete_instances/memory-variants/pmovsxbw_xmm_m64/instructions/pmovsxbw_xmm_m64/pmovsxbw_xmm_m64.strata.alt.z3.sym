@@ -1,0 +1,31 @@
+code: pmovsxbw (%rbx), %xmm1
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse4_1 }
+
+Formula:
+
+%ymm1  : (let ((a!1 (concat ((_ sign_extend 8) ((_ extract 23 16) TMP_BV_64_0))
+                   (concat ((_ sign_extend 8) ((_ extract 15 8) TMP_BV_64_0))
+                           ((_ sign_extend 8) ((_ extract 7 0) TMP_BV_64_0))))))
+(let ((a!2 (concat ((_ sign_extend 8) ((_ extract 39 32) TMP_BV_64_0))
+                   (concat ((_ sign_extend 8) ((_ extract 31 24) TMP_BV_64_0))
+                           a!1))))
+(let ((a!3 (concat ((_ sign_extend 8) ((_ extract 55 48) TMP_BV_64_0))
+                   (concat ((_ sign_extend 8) ((_ extract 47 40) TMP_BV_64_0))
+                           a!2))))
+  (concat ((_ extract 255 128) %ymm1)
+          (concat ((_ sign_extend 8) ((_ extract 63 56) TMP_BV_64_0)) a!3)))))
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

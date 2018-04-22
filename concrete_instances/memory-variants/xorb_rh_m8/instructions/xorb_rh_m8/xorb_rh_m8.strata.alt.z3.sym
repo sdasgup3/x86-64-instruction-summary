@@ -1,0 +1,46 @@
+code: xorb (%rbx), %ah
+
+  maybe read:      { %ah %rbx }
+  must read:       { %ah %rbx }
+  maybe write:     { %ah %cf %pf %zf %sf %of }
+  must write:      { %ah %cf %pf %zf %sf %of }
+  maybe undef:     { %af }
+  must undef:      { %af }
+  required flags:  { }
+
+Formula:
+
+%rax   : (concat (concat ((_ extract 63 16) %rax)
+                (bvxor ((_ extract 15 8) %rax) TMP_BV_8_0))
+        ((_ extract 7 0) %rax))
+
+%cf    : false
+%pf    : (let ((a!1 (xor (= (bvxor ((_ extract 8 8) %rax) ((_ extract 0 0) TMP_BV_8_0))
+                   #b1)
+                (= (bvxor ((_ extract 9 9) %rax) ((_ extract 1 1) TMP_BV_8_0))
+                   #b1)
+                (= (bvxor ((_ extract 10 10) %rax) ((_ extract 2 2) TMP_BV_8_0))
+                   #b1)
+                (= (bvxor ((_ extract 11 11) %rax) ((_ extract 3 3) TMP_BV_8_0))
+                   #b1)
+                (= (bvxor ((_ extract 12 12) %rax) ((_ extract 4 4) TMP_BV_8_0))
+                   #b1)
+                (= (bvxor ((_ extract 13 13) %rax) ((_ extract 5 5) TMP_BV_8_0))
+                   #b1)
+                (= (bvxor ((_ extract 14 14) %rax) ((_ extract 6 6) TMP_BV_8_0))
+                   #b1)
+                (= (bvxor ((_ extract 15 15) %rax) ((_ extract 7 7) TMP_BV_8_0))
+                   #b1))))
+  (not a!1))
+%af    : TMP_BOOL_0
+%zf    : (= (bvxor ((_ extract 15 8) %rax) TMP_BV_8_0) #x00)
+%sf    : (= (bvxor ((_ extract 15 15) %rax) ((_ extract 7 7) TMP_BV_8_0)) #b1)
+%of    : false
+
+Information about memory reads:
+  Value TMP_BV_8_0 (1 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

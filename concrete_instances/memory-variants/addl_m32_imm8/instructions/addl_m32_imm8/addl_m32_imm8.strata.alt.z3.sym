@@ -1,0 +1,40 @@
+code: addl $0x0, (%rbx)
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { %cf %pf %af %zf %sf %of }
+  must write:      { %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%cf    : false
+%pf    : (not (xor (= ((_ extract 0 0) TMP_BV_32_0) #b1)
+          (= ((_ extract 1 1) TMP_BV_32_0) #b1)
+          (= ((_ extract 2 2) TMP_BV_32_0) #b1)
+          (= ((_ extract 3 3) TMP_BV_32_0) #b1)
+          (= ((_ extract 4 4) TMP_BV_32_0) #b1)
+          (= ((_ extract 5 5) TMP_BV_32_0) #b1)
+          (= ((_ extract 6 6) TMP_BV_32_0) #b1)
+          (= ((_ extract 7 7) TMP_BV_32_0) #b1)))
+%af    : false
+%zf    : (= TMP_BV_32_0 #x00000000)
+%sf    : (= ((_ extract 31 31) TMP_BV_32_0) #b1)
+%of    : (let ((a!1 (not (= false (= ((_ extract 31 31) TMP_BV_32_0) #b1)))))
+  (and (= false (= ((_ extract 31 31) TMP_BV_32_0) #b1)) a!1))
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rbx.
+
+Information about memory writes:
+  Address %rbx was updated to
+    TMP_BV_32_0 (4 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv
+    (and (not sigfpe) (not sigbus) false)
+    (and (not sigfpe) (not sigbus) false))

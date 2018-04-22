@@ -1,0 +1,21 @@
+code: cmovoq (%rcx), %rbx
+
+  maybe read:      { %rcx %of }
+  must read:       { %rcx %of }
+  maybe write:     { %rbx }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { cmov }
+
+Formula:
+
+%rbx   : (ite %of TMP_BV_64_0 %rbx)
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rcx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

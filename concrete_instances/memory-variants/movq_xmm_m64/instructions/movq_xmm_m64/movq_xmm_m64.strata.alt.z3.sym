@@ -1,0 +1,25 @@
+code: movq (%rbx), %xmm1
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+Formula:
+
+%ymm1  : (concat ((_ extract 255 128) %ymm1) (concat #x0000000000000000 TMP_BV_64_1))
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rbx.
+  Value TMP_BV_64_1 (8 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv
+    (and (not sigfpe) (not sigbus) false)
+    (and (not sigfpe) (not sigbus) false))

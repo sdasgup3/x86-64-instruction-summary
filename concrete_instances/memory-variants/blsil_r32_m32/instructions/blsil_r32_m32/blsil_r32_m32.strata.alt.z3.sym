@@ -1,0 +1,30 @@
+code: blsil (%rcx), %ebx
+
+  maybe read:      { %rcx %ebx }
+  must read:       { %rcx %ebx }
+  maybe write:     { %rbx %cf %zf %sf %of }
+  must write:      { %rbx %cf %zf %sf %of }
+  maybe undef:     { %pf %af }
+  must undef:      { %pf %af }
+  required flags:  { bmi1 }
+
+Formula:
+
+%rbx   : (concat #x00000000 (bvand (bvneg TMP_BV_32_0) TMP_BV_32_0))
+
+%cf    : (not (= TMP_BV_32_0 #x00000000))
+%pf    : TMP_BOOL_0
+%af    : TMP_BOOL_1
+%zf    : (= (bvand (bvneg TMP_BV_32_0) TMP_BV_32_0) #x00000000)
+%sf    : (= (bvand ((_ extract 31 31) (bvneg TMP_BV_32_0))
+          ((_ extract 31 31) TMP_BV_32_0))
+   #b1)
+%of    : false
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rcx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

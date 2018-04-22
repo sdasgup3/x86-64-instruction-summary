@@ -1,0 +1,28 @@
+code: vphsubd (%rbx), %xmm2, %xmm1
+
+  maybe read:      { %rbx %xmm2 }
+  must read:       { %rbx %xmm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%ymm1  : (let ((a!1 (concat (concat (bvsub ((_ extract 95 64) TMP_BV_128_0)
+                                  ((_ extract 127 96) TMP_BV_128_0))
+                           (bvsub ((_ extract 31 0) TMP_BV_128_0)
+                                  ((_ extract 63 32) TMP_BV_128_0)))
+                   (bvsub ((_ extract 95 64) %ymm2) ((_ extract 127 96) %ymm2)))))
+  (concat #x00000000000000000000000000000000
+          (concat a!1
+                  (bvsub ((_ extract 31 0) %ymm2) ((_ extract 63 32) %ymm2)))))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))
