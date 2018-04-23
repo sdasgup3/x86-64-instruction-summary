@@ -1,0 +1,39 @@
+code: rcrb $0x1, %ah
+
+  maybe read:      { %ah %cf }
+  must read:       { %ah %cf }
+  maybe write:     { %ah %cf %of }
+  must write:      { %ah %cf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+rcrb $0x1, %ah: Hindex7(9)
+rcrb $0x1, %ah: Hindex7(9)
+Formula:
+
+%rax   : (let ((a!1 ((_ extract 7 0)
+             (ext_rotate_right (concat (ite %cf #b1 #b0)
+                                       ((_ extract 15 8) %rax))
+                               #b000000001))))
+  (concat (concat ((_ extract 63 16) %rax) a!1) ((_ extract 7 0) %rax)))
+
+%cf    : (let ((a!1 ((_ extract 8 8)
+             (ext_rotate_right (concat (ite %cf #b1 #b0)
+                                       ((_ extract 15 8) %rax))
+                               #b000000001))))
+  (= a!1 #b1))
+%of    : (let ((a!1 ((_ extract 7 7)
+             (ext_rotate_right (concat (ite %cf #b1 #b0)
+                                       ((_ extract 15 8) %rax))
+                               #b000000001)))
+      (a!2 ((_ extract 6 6)
+             (ext_rotate_right (concat (ite %cf #b1 #b0)
+                                       ((_ extract 15 8) %rax))
+                               #b000000001))))
+  (or (and true (xor (= a!1 #b1) (= a!2 #b1)))
+      (and false (or (and true %of) (and false TMP_BOOL_0)))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

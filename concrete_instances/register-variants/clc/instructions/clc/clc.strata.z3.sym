@@ -1,0 +1,17 @@
+code: clc 
+
+  maybe read:      { }
+  must read:       { }
+  maybe write:     { %cf }
+  must write:      { %cf }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%cf    : false
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

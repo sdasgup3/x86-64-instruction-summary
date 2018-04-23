@@ -1,0 +1,20 @@
+code: xchgl %eax, %ebx
+
+  maybe read:      { %eax %ebx }
+  must read:       { %eax %ebx }
+  maybe write:     { %rax %rbx }
+  must write:      { %rax %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+xchgl %eax, %ebx: Hindex1(9)
+xchgl %eax, %ebx: Hindex1(9)
+Formula:
+
+%rax   : (concat #x00000000 ((_ extract 31 0) %rbx))
+%rbx   : (concat #x00000000 ((_ extract 31 0) %rax))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

@@ -1,0 +1,17 @@
+code: nopl %ebx
+
+  maybe read:      { }
+  must read:       { }
+  maybe write:     { }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { nopl }
+
+nopl %ebx: Hindex1(9)
+nopl %ebx: Hindex1(9)
+Formula:
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

@@ -1,0 +1,21 @@
+code: clc
+
+  maybe read:      { }
+  must read:       { }
+  maybe write:     { %cf }
+  must write:      { %cf }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+clc: Hindex8(9)
+clc: Hindex8(9)
+xorq %rax, %rax: Hindex1(9)
+adcb %al, %al: Hindex2(9)
+Formula:
+
+%cf    : false
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

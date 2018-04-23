@@ -1,0 +1,21 @@
+code: setg %ah
+
+  maybe read:      { %zf %sf %of }
+  must read:       { %zf %sf %of }
+  maybe write:     { %ah }
+  must write:      { %ah }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+setg %ah: Hindex3(9)
+setg %ah: Hindex3(9)
+Formula:
+
+%rax   : (let ((a!1 (concat ((_ extract 63 16) %rax)
+                   (ite (and (not %zf) (= %sf %of)) #x01 #x00))))
+  (concat a!1 ((_ extract 7 0) %rax)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

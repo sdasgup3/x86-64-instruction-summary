@@ -1,0 +1,21 @@
+code: vmovq %xmm1, %rbx
+
+  maybe read:      { %xmm1 }
+  must read:       { %xmm1 }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+vmovq %xmm1, %rbx: Hindex8(9)
+vmovq %xmm1, %rbx: Hindex8(9)
+callq .move_128_032_xmm1_r10d_r11d_r12d_r13d: Hindex8(9)
+callq .move_032_064_r10d_r11d_rbx: Hindex8(9)
+Formula:
+
+%rbx   : ((_ extract 63 0) %ymm1)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

@@ -1,0 +1,18 @@
+code: cwtd 
+
+  maybe read:      { %ax }
+  must read:       { %ax }
+  maybe write:     { %dx }
+  must write:      { %dx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rdx   : (concat ((_ extract 63 16) %rdx)
+        ((_ extract 31 16) ((_ sign_extend 16) ((_ extract 15 0) %rax))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

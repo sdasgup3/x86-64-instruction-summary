@@ -1,0 +1,19 @@
+code: shlxl %edx, %ecx, %ebx
+
+  maybe read:      { %ecx %edx }
+  must read:       { %ecx %edx }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { bmi2 }
+
+Formula:
+
+%rbx   : (concat #x00000000
+        (bvshl ((_ extract 31 0) %rcx)
+               (bvand ((_ extract 31 0) %rdx) #x0000001f)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

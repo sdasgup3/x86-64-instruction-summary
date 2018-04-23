@@ -1,0 +1,53 @@
+code: vphaddw %ymm3, %ymm2, %ymm1
+
+  maybe read:      { %ymm2 %ymm3 }
+  must read:       { %ymm2 %ymm3 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+vphaddw %ymm3, %ymm2, %ymm1: Hindex0(9)
+vphaddw %ymm3, %ymm2, %ymm1: Hindex0(9)
+Formula:
+
+%ymm1  : (let ((a!1 (concat (concat (bvadd ((_ extract 255 240) %ymm3)
+                                  ((_ extract 239 224) %ymm3))
+                           (bvadd ((_ extract 223 208) %ymm3)
+                                  ((_ extract 207 192) %ymm3)))
+                   (bvadd ((_ extract 191 176) %ymm3)
+                          ((_ extract 175 160) %ymm3))))
+      (a!4 (concat (concat (bvadd ((_ extract 127 112) %ymm3)
+                                  ((_ extract 111 96) %ymm3))
+                           (bvadd ((_ extract 95 80) %ymm3)
+                                  ((_ extract 79 64) %ymm3)))
+                   (bvadd ((_ extract 63 48) %ymm3) ((_ extract 47 32) %ymm3)))))
+(let ((a!2 (concat (concat a!1
+                           (bvadd ((_ extract 159 144) %ymm3)
+                                  ((_ extract 143 128) %ymm3)))
+                   (bvadd ((_ extract 255 240) %ymm2)
+                          ((_ extract 239 224) %ymm2))))
+      (a!5 (concat (concat a!4
+                           (bvadd ((_ extract 31 16) %ymm3)
+                                  ((_ extract 15 0) %ymm3)))
+                   (bvadd ((_ extract 127 112) %ymm2)
+                          ((_ extract 111 96) %ymm2)))))
+(let ((a!3 (concat (concat a!2
+                           (bvadd ((_ extract 223 208) %ymm2)
+                                  ((_ extract 207 192) %ymm2)))
+                   (bvadd ((_ extract 191 176) %ymm2)
+                          ((_ extract 175 160) %ymm2))))
+      (a!6 (concat (concat a!5
+                           (bvadd ((_ extract 95 80) %ymm2)
+                                  ((_ extract 79 64) %ymm2)))
+                   (bvadd ((_ extract 63 48) %ymm2) ((_ extract 47 32) %ymm2)))))
+  (concat (concat a!3
+                  (bvadd ((_ extract 159 144) %ymm2)
+                         ((_ extract 143 128) %ymm2)))
+          (concat a!6
+                  (bvadd ((_ extract 31 16) %ymm2) ((_ extract 15 0) %ymm2)))))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

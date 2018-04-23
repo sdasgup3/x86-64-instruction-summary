@@ -1,0 +1,32 @@
+code: decl %ebx
+
+  maybe read:      { %ebx }
+  must read:       { %ebx }
+  maybe write:     { %rbx %pf %af %zf %sf %of }
+  must write:      { %rbx %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rbx   : (concat #x00000000 (bvsub ((_ extract 31 0) %rbx) #x00000001))
+
+%pf    : (let ((a!1 (= ((_ extract 0 0) (bvsub ((_ extract 31 0) %rbx) #x00000001)) #b1))
+      (a!2 (= ((_ extract 1 1) (bvsub ((_ extract 31 0) %rbx) #x00000001)) #b1))
+      (a!3 (= ((_ extract 2 2) (bvsub ((_ extract 31 0) %rbx) #x00000001)) #b1))
+      (a!4 (= ((_ extract 3 3) (bvsub ((_ extract 31 0) %rbx) #x00000001)) #b1))
+      (a!5 (= ((_ extract 4 4) (bvsub ((_ extract 31 0) %rbx) #x00000001)) #b1))
+      (a!6 (= ((_ extract 5 5) (bvsub ((_ extract 31 0) %rbx) #x00000001)) #b1))
+      (a!7 (= ((_ extract 6 6) (bvsub ((_ extract 31 0) %rbx) #x00000001)) #b1))
+      (a!8 (= ((_ extract 7 7) (bvsub ((_ extract 31 0) %rbx) #x00000001)) #b1)))
+  (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)))
+%af    : (= ((_ extract 3 0) %rbx) #x0)
+%zf    : (= (bvsub ((_ extract 31 0) %rbx) #x00000001) #x00000000)
+%sf    : (= ((_ extract 31 31) (bvsub ((_ extract 31 0) %rbx) #x00000001)) #b1)
+%of    : (and (= ((_ extract 31 31) %rbx) #b1)
+     (= ((_ extract 30 0) %rbx) #b0000000000000000000000000000000))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

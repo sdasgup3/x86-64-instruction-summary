@@ -1,0 +1,42 @@
+code: imulw %cx, %bx
+
+  maybe read:      { %cx %bx }
+  must read:       { %cx %bx }
+  maybe write:     { %bx %cf %of }
+  must write:      { %bx %cf %of }
+  maybe undef:     { %pf %af %zf %sf }
+  must undef:      { %pf %af %zf %sf }
+  required flags:  { }
+
+Formula:
+
+%rbx   : (let ((a!1 ((_ extract 15 0)
+             (bvmul ((_ sign_extend 16) ((_ extract 15 0) %rbx))
+                    ((_ sign_extend 16) ((_ extract 15 0) %rcx))))))
+  (concat ((_ extract 63 16) %rbx) a!1))
+
+%cf    : (let ((a!1 ((_ extract 15 0)
+             (bvmul ((_ sign_extend 16) ((_ extract 15 0) %rbx))
+                    ((_ sign_extend 16) ((_ extract 15 0) %rcx))))))
+(let ((a!2 (= (bvmul ((_ sign_extend 16) ((_ extract 15 0) %rbx))
+                     ((_ sign_extend 16) ((_ extract 15 0) %rcx)))
+              ((_ sign_extend 16) a!1))))
+  (not a!2)))
+%pf    : TMP_BOOL_2
+%af    : TMP_BOOL_1
+%zf    : TMP_BOOL_0
+%sf    : (let ((a!1 ((_ extract 15 15)
+             (bvmul ((_ sign_extend 16) ((_ extract 15 0) %rbx))
+                    ((_ sign_extend 16) ((_ extract 15 0) %rcx))))))
+  (= a!1 #b1))
+%of    : (let ((a!1 ((_ extract 15 0)
+             (bvmul ((_ sign_extend 16) ((_ extract 15 0) %rbx))
+                    ((_ sign_extend 16) ((_ extract 15 0) %rcx))))))
+(let ((a!2 (= (bvmul ((_ sign_extend 16) ((_ extract 15 0) %rbx))
+                     ((_ sign_extend 16) ((_ extract 15 0) %rcx)))
+              ((_ sign_extend 16) a!1))))
+  (not a!2)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

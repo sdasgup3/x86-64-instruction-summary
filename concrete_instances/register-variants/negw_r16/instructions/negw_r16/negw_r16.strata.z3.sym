@@ -1,0 +1,45 @@
+code: negw %bx
+
+  maybe read:      { %bx }
+  must read:       { %bx }
+  maybe write:     { %bx %cf %pf %af %zf %sf %of }
+  must write:      { %bx %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rbx   : (let ((a!1 (bvadd #b00000000000000001
+                  (concat #b0 (bvxor ((_ extract 15 0) %rbx) #xffff)))))
+  (concat ((_ extract 63 16) %rbx) ((_ extract 15 0) a!1)))
+
+%cf    : (let ((a!1 ((_ extract 16 16)
+             (bvadd (concat #b0 ((_ extract 15 0) %rbx)) #b01111111111111111))))
+  (= a!1 #b1))
+%pf    : (let ((a!1 (bvadd #b00000000000000001
+                  (concat #b0 (bvxor ((_ extract 15 0) %rbx) #xffff)))))
+  (not (xor (= ((_ extract 0 0) a!1) #b1)
+            (= ((_ extract 1 1) a!1) #b1)
+            (= ((_ extract 2 2) a!1) #b1)
+            (= ((_ extract 3 3) a!1) #b1)
+            (= ((_ extract 4 4) a!1) #b1)
+            (= ((_ extract 5 5) a!1) #b1)
+            (= ((_ extract 6 6) a!1) #b1)
+            (= ((_ extract 7 7) a!1) #b1))))
+%af    : false
+%zf    : (let ((a!1 (bvadd #b00000000000000001
+                  (concat #b0 (bvxor ((_ extract 15 0) %rbx) #xffff)))))
+  (= ((_ extract 15 0) a!1) #x0000))
+%sf    : (let ((a!1 (bvadd #b00000000000000001
+                  (concat #b0 (bvxor ((_ extract 15 0) %rbx) #xffff)))))
+  (= ((_ extract 15 15) a!1) #b1))
+%of    : (let ((a!1 (= false (= (bvxor ((_ extract 15 15) %rbx) #b1) #b1)))
+      (a!2 (bvadd #b00000000000000001
+                  (concat #b0 (bvxor ((_ extract 15 0) %rbx) #xffff)))))
+(let ((a!3 (not (= false (= ((_ extract 15 15) a!2) #b1)))))
+  (and a!1 a!3)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

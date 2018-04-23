@@ -1,0 +1,19 @@
+code: vmovd %ebx, %xmm1
+
+  maybe read:      { %ebx }
+  must read:       { %ebx }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%ymm1  : (concat (concat #x00000000000000000000000000000000000000000000000000000000
+                ((_ extract 31 24) %rbx))
+        ((_ extract 23 0) %rbx))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

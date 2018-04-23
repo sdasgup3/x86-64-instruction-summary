@@ -1,0 +1,30 @@
+code: testb %cl, %bl
+
+  maybe read:      { %cl %bl }
+  must read:       { %cl %bl }
+  maybe write:     { %cf %pf %zf %sf %of }
+  must write:      { %cf %pf %zf %sf %of }
+  maybe undef:     { %af }
+  must undef:      { %af }
+  required flags:  { }
+
+Formula:
+
+%cf    : false
+%pf    : (let ((a!1 (xor (= (bvand ((_ extract 0 0) %rbx) ((_ extract 0 0) %rcx)) #b1)
+                (= (bvand ((_ extract 1 1) %rbx) ((_ extract 1 1) %rcx)) #b1)
+                (= (bvand ((_ extract 2 2) %rbx) ((_ extract 2 2) %rcx)) #b1)
+                (= (bvand ((_ extract 3 3) %rbx) ((_ extract 3 3) %rcx)) #b1)
+                (= (bvand ((_ extract 4 4) %rbx) ((_ extract 4 4) %rcx)) #b1)
+                (= (bvand ((_ extract 5 5) %rbx) ((_ extract 5 5) %rcx)) #b1)
+                (= (bvand ((_ extract 6 6) %rbx) ((_ extract 6 6) %rcx)) #b1)
+                (= (bvand ((_ extract 7 7) %rbx) ((_ extract 7 7) %rcx)) #b1))))
+  (not a!1))
+%af    : TMP_BOOL_0
+%zf    : (= (bvand ((_ extract 7 0) %rbx) ((_ extract 7 0) %rcx)) #x00)
+%sf    : (= (bvand ((_ extract 7 7) %rbx) ((_ extract 7 7) %rcx)) #b1)
+%of    : false
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

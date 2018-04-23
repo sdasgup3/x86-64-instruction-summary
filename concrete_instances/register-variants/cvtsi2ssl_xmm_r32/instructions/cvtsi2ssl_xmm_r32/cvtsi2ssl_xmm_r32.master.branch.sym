@@ -1,0 +1,21 @@
+code: cvtsi2ssl %ebx, %xmm1
+
+  maybe read:      { %ebx %xmm1 %mxcsr::rc[0] }
+  must read:       { %ebx %xmm1 %mxcsr::rc[0] }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse }
+
+cvtsi2ssl %ebx, %xmm1: Hindex1(9)
+cvtsi2ssl %ebx, %xmm1: Hindex1(9)
+Formula:
+
+%ymm1  : (concat ((_ extract 255 128) %ymm1)
+        (concat ((_ extract 127 32) %ymm1)
+                (cvt_int32_to_single ((_ extract 31 0) %rbx))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

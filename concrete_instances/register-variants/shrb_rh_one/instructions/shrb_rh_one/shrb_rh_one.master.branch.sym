@@ -1,0 +1,60 @@
+code: shrb $0x1, %ah
+
+  maybe read:      { %ah }
+  must read:       { %ah }
+  maybe write:     { %ah %cf %pf %zf %sf %of }
+  must write:      { %ah %cf %pf %zf %sf %of }
+  maybe undef:     { %af }
+  must undef:      { %af }
+  required flags:  { }
+
+shrb $0x1, %ah: Hindex7(9)
+shrb $0x1, %ah: Hindex7(9)
+Formula:
+
+%rax   : (let ((a!1 ((_ extract 8 1)
+             (bvlshr (concat ((_ extract 15 8) %rax) #b0) #b000000001))))
+  (concat (concat ((_ extract 63 16) %rax) a!1) ((_ extract 7 0) %rax)))
+
+%cf    : (let ((a!1 ((_ extract 0 0)
+             (bvlshr (concat ((_ extract 15 8) %rax) #b0) #b000000001))))
+(let ((a!2 (and true (or (and true (= a!1 #b1)) (and false %cf)))))
+  (or (and false TMP_BOOL_0) a!2)))
+%pf    : (let ((a!1 ((_ extract 1 1)
+             (bvlshr (concat ((_ extract 15 8) %rax) #b0) #b000000001)))
+      (a!2 ((_ extract 2 2)
+             (bvlshr (concat ((_ extract 15 8) %rax) #b0) #b000000001)))
+      (a!3 ((_ extract 3 3)
+             (bvlshr (concat ((_ extract 15 8) %rax) #b0) #b000000001)))
+      (a!4 ((_ extract 4 4)
+             (bvlshr (concat ((_ extract 15 8) %rax) #b0) #b000000001)))
+      (a!5 ((_ extract 5 5)
+             (bvlshr (concat ((_ extract 15 8) %rax) #b0) #b000000001)))
+      (a!6 ((_ extract 6 6)
+             (bvlshr (concat ((_ extract 15 8) %rax) #b0) #b000000001)))
+      (a!7 ((_ extract 7 7)
+             (bvlshr (concat ((_ extract 15 8) %rax) #b0) #b000000001)))
+      (a!8 ((_ extract 8 8)
+             (bvlshr (concat ((_ extract 15 8) %rax) #b0) #b000000001))))
+(let ((a!9 (and true
+                (not (xor (= a!1 #b1)
+                          (= a!2 #b1)
+                          (= a!3 #b1)
+                          (= a!4 #b1)
+                          (= a!5 #b1)
+                          (= a!6 #b1)
+                          (= a!7 #b1)
+                          (= a!8 #b1))))))
+  (or a!9 (and false %pf))))
+%af    : (or (and true TMP_BOOL_1) (and false %af))
+%zf    : (let ((a!1 ((_ extract 8 1)
+             (bvlshr (concat ((_ extract 15 8) %rax) #b0) #b000000001))))
+  (or (and true (= a!1 #x00)) (and false %zf)))
+%sf    : (let ((a!1 ((_ extract 8 8)
+             (bvlshr (concat ((_ extract 15 8) %rax) #b0) #b000000001))))
+  (or (and true (= a!1 #b1)) (and false %sf)))
+%of    : (or (and true (= ((_ extract 15 15) %rax) #b1)) (and false %of))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

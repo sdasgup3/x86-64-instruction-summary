@@ -1,0 +1,36 @@
+code: rolb %cl, %ah
+
+  maybe read:      { %ah %cl }
+  must read:       { %ah %cl }
+  maybe write:     { %ah %cf %of }
+  must write:      { %ah }
+  maybe undef:     { %of }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rax   : (let ((a!1 (concat ((_ extract 63 16) %rax)
+                   (ext_rotate_left ((_ extract 15 8) %rax)
+                                    (bvand ((_ extract 7 0) %rcx) #x1f)))))
+  (concat a!1 ((_ extract 7 0) %rax)))
+
+%cf    : (let ((a!1 (not (= (bvand ((_ extract 7 0) %rcx) #x1f) #x00)))
+      (a!2 ((_ extract 0 0)
+             (ext_rotate_left ((_ extract 15 8) %rax)
+                              (bvand ((_ extract 7 0) %rcx) #x1f)))))
+  (or (and a!1 (= a!2 #b1)) (and (not a!1) %cf)))
+%of    : (let ((a!1 ((_ extract 7 7)
+             (ext_rotate_left ((_ extract 15 8) %rax)
+                              (bvand ((_ extract 7 0) %rcx) #x1f))))
+      (a!2 ((_ extract 0 0)
+             (ext_rotate_left ((_ extract 15 8) %rax)
+                              (bvand ((_ extract 7 0) %rcx) #x1f))))
+      (a!4 (not (= (bvand ((_ extract 7 0) %rcx) #x1f) #x01))))
+(let ((a!3 (and (= (bvand ((_ extract 7 0) %rcx) #x1f) #x01)
+                (xor (= a!1 #b1) (= a!2 #b1)))))
+  (or a!3 (and a!4 TMP_BOOL_0))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

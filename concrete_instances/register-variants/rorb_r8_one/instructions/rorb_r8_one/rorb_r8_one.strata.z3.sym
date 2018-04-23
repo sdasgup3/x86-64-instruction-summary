@@ -1,0 +1,49 @@
+code: rorb $0x1, %bl
+
+  maybe read:      { %bl }
+  must read:       { %bl }
+  maybe write:     { %bl %cf %of }
+  must write:      { %bl %cf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rbx   : (let ((a!1 (concat ((_ sign_extend 48)
+                     (concat ((_ extract 7 0) %rbx) ((_ extract 7 0) %rbx)))
+                   #b0)))
+  (concat ((_ extract 63 8) %rbx)
+          ((_ extract 8 1)
+            (bvashr a!1
+                    (concat #b000000000000000000000000000000000000000000000000000000000
+                            #x01)))))
+
+%cf    : (let ((a!1 (concat ((_ sign_extend 48)
+                     (concat ((_ extract 7 0) %rbx) ((_ extract 7 0) %rbx)))
+                   #b0)))
+(let ((a!2 (concat #b0
+                   ((_ extract 8 1)
+                     (bvashr a!1
+                             (concat #b000000000000000000000000000000000000000000000000000000000
+                                     #x01))))))
+  (= ((_ extract 8 8) (bvadd a!2 a!2)) #b1)))
+%of    : (let ((a!1 (concat ((_ sign_extend 48)
+                     (concat ((_ extract 7 0) %rbx) ((_ extract 7 0) %rbx)))
+                   #b0)))
+(let ((a!2 (= ((_ extract 8 8)
+                (bvashr a!1
+                        (concat #b000000000000000000000000000000000000000000000000000000000
+                                #x01)))
+              #b1))
+      (a!3 (concat #b0
+                   ((_ extract 8 1)
+                     (bvashr a!1
+                             (concat #b000000000000000000000000000000000000000000000000000000000
+                                     #x01))))))
+(let ((a!4 (= a!2 (= ((_ extract 7 7) (bvadd a!3 a!3)) #b1))))
+  (and (= a!2 a!2) (not a!4)))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

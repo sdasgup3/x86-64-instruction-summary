@@ -1,0 +1,19 @@
+code: addsd %xmm2, %xmm1
+
+  maybe read:      { %xmm1 %xmm2 }
+  must read:       { %xmm1 %xmm2 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+Formula:
+
+%ymm1  : (concat ((_ extract 255 128) %ymm1)
+        (concat ((_ extract 127 64) %ymm1)
+                (add_double ((_ extract 63 0) %ymm1) ((_ extract 63 0) %ymm2))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

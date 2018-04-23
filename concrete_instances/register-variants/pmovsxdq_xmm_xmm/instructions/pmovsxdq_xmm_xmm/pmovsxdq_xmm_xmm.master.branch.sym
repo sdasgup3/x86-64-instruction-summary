@@ -1,0 +1,21 @@
+code: pmovsxdq %xmm2, %xmm1
+
+  maybe read:      { %xmm2 }
+  must read:       { %xmm2 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse4_1 }
+
+pmovsxdq %xmm2, %xmm1: Hindex0(9)
+pmovsxdq %xmm2, %xmm1: Hindex0(9)
+Formula:
+
+%ymm1  : (concat ((_ extract 255 128) %ymm1)
+        (concat ((_ sign_extend 32) ((_ extract 63 32) %ymm2))
+                ((_ sign_extend 32) ((_ extract 31 0) %ymm2))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

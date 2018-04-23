@@ -1,0 +1,25 @@
+code: btw %cx, %bx
+
+  maybe read:      { %cx %bx }
+  must read:       { %cx %bx }
+  maybe write:     { %cf }
+  must write:      { %cf }
+  maybe undef:     { %pf %af %sf %of }
+  must undef:      { %pf %af %sf %of }
+  required flags:  { }
+
+btw %cx, %bx: Hindex1(9)
+btw %cx, %bx: Hindex1(9)
+Formula:
+
+%cf    : (let ((a!1 (bvlshr ((_ extract 15 0) %rbx)
+                   ((_ sign_extend 0) (bvand ((_ extract 15 0) %rcx) #x000f)))))
+  (= ((_ extract 0 0) a!1) #b1))
+%pf    : TMP_BOOL_3
+%af    : TMP_BOOL_2
+%sf    : TMP_BOOL_1
+%of    : TMP_BOOL_0
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

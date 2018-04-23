@@ -1,0 +1,19 @@
+code: notb %bl
+
+  maybe read:      { %bl }
+  must read:       { %bl }
+  maybe write:     { %bl }
+  must write:      { %bl }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+notb %bl: Hindex1(9)
+notb %bl: Hindex1(9)
+Formula:
+
+%rbx   : (concat ((_ extract 63 8) %rbx) (bvnot ((_ extract 7 0) %rbx)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

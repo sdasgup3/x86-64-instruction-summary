@@ -1,0 +1,19 @@
+code: setnp %ah
+
+  maybe read:      { %pf }
+  must read:       { %pf }
+  maybe write:     { %ah }
+  must write:      { %ah }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rax   : (let ((a!1 (concat ((_ extract 63 16) %rax)
+                   (ite (= (ite %pf #x0001 #x0000) #x0000) #x01 #x00))))
+  (concat a!1 ((_ extract 7 0) %rax)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

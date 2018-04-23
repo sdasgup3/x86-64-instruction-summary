@@ -1,0 +1,40 @@
+code: andb %bh, %ah
+
+  maybe read:      { %ah %bh }
+  must read:       { %ah %bh }
+  maybe write:     { %ah %cf %pf %zf %sf %of }
+  must write:      { %ah %cf %pf %zf %sf %of }
+  maybe undef:     { %af }
+  must undef:      { %af }
+  required flags:  { }
+
+Formula:
+
+%rax   : (concat (concat ((_ extract 63 16) %rax)
+                (bvand ((_ extract 15 8) %rax) ((_ extract 15 8) %rbx)))
+        ((_ extract 7 0) %rax))
+
+%cf    : false
+%pf    : (let ((a!1 (xor (= (bvand ((_ extract 8 8) %rax) ((_ extract 8 8) %rbx)) #b1)
+                (= (bvand ((_ extract 9 9) %rax) ((_ extract 9 9) %rbx)) #b1)
+                (= (bvand ((_ extract 10 10) %rax) ((_ extract 10 10) %rbx))
+                   #b1)
+                (= (bvand ((_ extract 11 11) %rax) ((_ extract 11 11) %rbx))
+                   #b1)
+                (= (bvand ((_ extract 12 12) %rax) ((_ extract 12 12) %rbx))
+                   #b1)
+                (= (bvand ((_ extract 13 13) %rax) ((_ extract 13 13) %rbx))
+                   #b1)
+                (= (bvand ((_ extract 14 14) %rax) ((_ extract 14 14) %rbx))
+                   #b1)
+                (= (bvand ((_ extract 15 15) %rax) ((_ extract 15 15) %rbx))
+                   #b1))))
+  (not a!1))
+%af    : TMP_BOOL_0
+%zf    : (= (bvand ((_ extract 15 8) %rax) ((_ extract 15 8) %rbx)) #x00)
+%sf    : (= (bvand ((_ extract 15 15) %rax) ((_ extract 15 15) %rbx)) #b1)
+%of    : false
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

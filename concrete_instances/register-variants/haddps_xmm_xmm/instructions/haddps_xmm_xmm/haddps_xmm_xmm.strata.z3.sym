@@ -1,0 +1,26 @@
+code: haddps %xmm2, %xmm1
+
+  maybe read:      { %xmm1 %xmm2 }
+  must read:       { %xmm1 %xmm2 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { pni }
+
+Formula:
+
+%ymm1  : (let ((a!1 (concat (concat (add_single ((_ extract 95 64) %ymm2)
+                                       ((_ extract 127 96) %ymm2))
+                           (add_single ((_ extract 31 0) %ymm2)
+                                       ((_ extract 63 32) %ymm2)))
+                   (add_single ((_ extract 95 64) %ymm1)
+                               ((_ extract 127 96) %ymm1)))))
+  (concat ((_ extract 255 128) %ymm1)
+          (concat a!1
+                  (add_single ((_ extract 31 0) %ymm1)
+                              ((_ extract 63 32) %ymm1)))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

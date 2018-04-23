@@ -1,0 +1,20 @@
+code: stc
+
+  maybe read:      { }
+  must read:       { }
+  maybe write:     { %cf }
+  must write:      { %cf }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+stc: Hindex8(9)
+stc: Hindex8(9)
+callq .set_cf: Hindex8(9)
+Formula:
+
+%cf    : true
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

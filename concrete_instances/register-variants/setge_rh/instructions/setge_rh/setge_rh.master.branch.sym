@@ -1,0 +1,20 @@
+code: setge %ah
+
+  maybe read:      { %sf %of }
+  must read:       { %sf %of }
+  maybe write:     { %ah }
+  must write:      { %ah }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+setge %ah: Hindex3(9)
+setge %ah: Hindex3(9)
+Formula:
+
+%rax   : (concat (concat ((_ extract 63 16) %rax) (ite (= %sf %of) #x01 #x00))
+        ((_ extract 7 0) %rax))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

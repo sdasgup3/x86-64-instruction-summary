@@ -1,0 +1,32 @@
+code: decb %ah
+
+  maybe read:      { %ah }
+  must read:       { %ah }
+  maybe write:     { %ah %pf %af %zf %sf %of }
+  must write:      { %ah %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rax   : (concat (concat ((_ extract 63 16) %rax) (bvsub ((_ extract 15 8) %rax) #x01))
+        ((_ extract 7 0) %rax))
+
+%pf    : (let ((a!1 (= ((_ extract 0 0) (bvsub ((_ extract 15 8) %rax) #x01)) #b1))
+      (a!2 (= ((_ extract 1 1) (bvsub ((_ extract 15 8) %rax) #x01)) #b1))
+      (a!3 (= ((_ extract 2 2) (bvsub ((_ extract 15 8) %rax) #x01)) #b1))
+      (a!4 (= ((_ extract 3 3) (bvsub ((_ extract 15 8) %rax) #x01)) #b1))
+      (a!5 (= ((_ extract 4 4) (bvsub ((_ extract 15 8) %rax) #x01)) #b1))
+      (a!6 (= ((_ extract 5 5) (bvsub ((_ extract 15 8) %rax) #x01)) #b1))
+      (a!7 (= ((_ extract 6 6) (bvsub ((_ extract 15 8) %rax) #x01)) #b1))
+      (a!8 (= ((_ extract 7 7) (bvsub ((_ extract 15 8) %rax) #x01)) #b1)))
+  (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)))
+%af    : (= ((_ extract 11 8) %rax) #x0)
+%zf    : (= (bvsub ((_ extract 15 8) %rax) #x01) #x00)
+%sf    : (= ((_ extract 7 7) (bvsub ((_ extract 15 8) %rax) #x01)) #b1)
+%of    : (and (= ((_ extract 15 15) %rax) #b1) (= ((_ extract 14 8) %rax) #b0000000))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

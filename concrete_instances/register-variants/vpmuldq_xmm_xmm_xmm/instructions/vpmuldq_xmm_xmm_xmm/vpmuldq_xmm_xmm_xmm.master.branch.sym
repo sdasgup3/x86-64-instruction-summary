@@ -1,0 +1,23 @@
+code: vpmuldq %xmm3, %xmm2, %xmm1
+
+  maybe read:      { %xmm2 %xmm3 }
+  must read:       { %xmm2 %xmm3 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+vpmuldq %xmm3, %xmm2, %xmm1: Hindex0(9)
+vpmuldq %xmm3, %xmm2, %xmm1: Hindex0(9)
+Formula:
+
+%ymm1  : (let ((a!1 (concat (bvmul ((_ sign_extend 32) ((_ extract 95 64) %ymm2))
+                          ((_ sign_extend 32) ((_ extract 95 64) %ymm3)))
+                   (bvmul ((_ sign_extend 32) ((_ extract 31 0) %ymm2))
+                          ((_ sign_extend 32) ((_ extract 31 0) %ymm3))))))
+  (concat #x00000000000000000000000000000000 a!1))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

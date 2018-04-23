@@ -1,0 +1,27 @@
+code: vpmovsxbw %xmm2, %xmm1
+
+  maybe read:      { %xmm2 }
+  must read:       { %xmm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+vpmovsxbw %xmm2, %xmm1: Hindex0(9)
+vpmovsxbw %xmm2, %xmm1: Hindex0(9)
+Formula:
+
+%ymm1  : (let ((a!1 (concat ((_ sign_extend 8) ((_ extract 23 16) %ymm2))
+                   (concat ((_ sign_extend 8) ((_ extract 15 8) %ymm2))
+                           ((_ sign_extend 8) ((_ extract 7 0) %ymm2))))))
+(let ((a!2 (concat ((_ sign_extend 8) ((_ extract 39 32) %ymm2))
+                   (concat ((_ sign_extend 8) ((_ extract 31 24) %ymm2)) a!1))))
+(let ((a!3 (concat ((_ sign_extend 8) ((_ extract 55 48) %ymm2))
+                   (concat ((_ sign_extend 8) ((_ extract 47 40) %ymm2)) a!2))))
+  (concat #x00000000000000000000000000000000
+          (concat ((_ sign_extend 8) ((_ extract 63 56) %ymm2)) a!3)))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

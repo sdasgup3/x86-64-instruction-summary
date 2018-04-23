@@ -1,0 +1,33 @@
+code: rclb $0x1, %bl
+
+  maybe read:      { %bl %cf }
+  must read:       { %bl %cf }
+  maybe write:     { %bl %cf %of }
+  must write:      { %bl %cf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rbx   : (let ((a!1 (ite %cf
+                (bvadd (concat #b0 ((_ extract 7 0) %rbx)) #b000000001)
+                (concat #b0 ((_ extract 7 0) %rbx)))))
+(let ((a!2 ((_ extract 7 0) (bvadd a!1 (concat #b0 ((_ extract 7 0) %rbx))))))
+  (concat ((_ extract 63 8) %rbx) a!2)))
+
+%cf    : (let ((a!1 (ite %cf
+                (bvadd (concat #b0 ((_ extract 7 0) %rbx)) #b000000001)
+                (concat #b0 ((_ extract 7 0) %rbx)))))
+(let ((a!2 ((_ extract 8 8) (bvadd a!1 (concat #b0 ((_ extract 7 0) %rbx))))))
+  (= a!2 #b1)))
+%of    : (let ((a!1 (ite %cf
+                (bvadd (concat #b0 ((_ extract 7 0) %rbx)) #b000000001)
+                (concat #b0 ((_ extract 7 0) %rbx)))))
+(let ((a!2 ((_ extract 7 7) (bvadd a!1 (concat #b0 ((_ extract 7 0) %rbx))))))
+(let ((a!3 (not (= (= ((_ extract 7 7) %rbx) #b1) (= a!2 #b1)))))
+  (and (= (= ((_ extract 7 7) %rbx) #b1) (= ((_ extract 7 7) %rbx) #b1)) a!3))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

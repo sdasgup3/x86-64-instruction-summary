@@ -1,0 +1,23 @@
+code: movd %xmm1, %ebx
+
+  maybe read:      { %xmm1 }
+  must read:       { %xmm1 }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+movd %xmm1, %ebx: Hindex8(9)
+movd %xmm1, %ebx: Hindex8(9)
+callq .move_128_032_xmm1_xmm8_xmm9_xmm10_xmm11: Hindex8(9)
+callq .move_128_256_xmm8_xmm9_ymm1: Hindex8(9)
+callq .move_128_064_xmm1_r10_r11: Hindex8(9)
+callq .move_032_064_r10d_r11d_rbx: Hindex8(9)
+Formula:
+
+%rbx   : (concat #x00000000 ((_ extract 31 0) %ymm1))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

@@ -1,0 +1,20 @@
+code: bswap %rbx
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rbx   : (concat (concat (concat ((_ extract 7 0) %rbx) ((_ extract 15 8) %rbx))
+                (concat ((_ extract 23 16) %rbx) ((_ extract 31 24) %rbx)))
+        (concat (concat ((_ extract 39 32) %rbx) ((_ extract 47 40) %rbx))
+                (concat ((_ extract 55 48) %rbx) ((_ extract 63 56) %rbx))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

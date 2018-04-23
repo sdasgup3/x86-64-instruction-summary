@@ -1,0 +1,35 @@
+code: punpckhbw %xmm2, %xmm1
+
+  maybe read:      { %xmm1 %xmm2 }
+  must read:       { %xmm1 %xmm2 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+Formula:
+
+%ymm1  : (let ((a!1 (concat (concat ((_ extract 87 80) %ymm2) ((_ extract 87 80) %ymm1))
+                   (concat (concat ((_ extract 79 72) %ymm2)
+                                   ((_ extract 79 72) %ymm1))
+                           (concat ((_ extract 71 64) %ymm2)
+                                   ((_ extract 71 64) %ymm1))))))
+(let ((a!2 (concat (concat ((_ extract 103 96) %ymm2)
+                           ((_ extract 103 96) %ymm1))
+                   (concat (concat ((_ extract 95 88) %ymm2)
+                                   ((_ extract 95 88) %ymm1))
+                           a!1))))
+(let ((a!3 (concat (concat ((_ extract 119 112) %ymm2)
+                           ((_ extract 119 112) %ymm1))
+                   (concat (concat ((_ extract 111 104) %ymm2)
+                                   ((_ extract 111 104) %ymm1))
+                           a!2))))
+  (concat ((_ extract 255 128) %ymm1)
+          (concat (concat ((_ extract 127 120) %ymm2)
+                          ((_ extract 127 120) %ymm1))
+                  a!3)))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

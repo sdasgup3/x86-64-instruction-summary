@@ -1,0 +1,19 @@
+code: seto %bl
+
+  maybe read:      { %of }
+  must read:       { %of }
+  maybe write:     { %bl }
+  must write:      { %bl }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+seto %bl: Hindex3(9)
+seto %bl: Hindex3(9)
+Formula:
+
+%rbx   : (concat ((_ extract 63 8) %rbx) (ite %of #x01 #x00))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

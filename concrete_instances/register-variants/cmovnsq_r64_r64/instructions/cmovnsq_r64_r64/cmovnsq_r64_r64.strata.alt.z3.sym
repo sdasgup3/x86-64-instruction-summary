@@ -1,0 +1,17 @@
+code: cmovnsq %rcx, %rbx
+
+  maybe read:      { %rcx %sf }
+  must read:       { %rcx %sf }
+  maybe write:     { %rbx }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { cmov }
+
+Formula:
+
+%rbx   : (ite (not %sf) %rcx %rbx)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

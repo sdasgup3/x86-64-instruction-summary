@@ -1,0 +1,20 @@
+code: vcvtpd2ps %xmm2, %xmm1
+
+  maybe read:      { %xmm2 %mxcsr::rc[0] }
+  must read:       { %xmm2 %mxcsr::rc[0] }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%ymm1  : (let ((a!1 (concat ((_ extract 127 64) %ymm1)
+                   (concat (cvt_double_to_single ((_ extract 127 64) %ymm2))
+                           (cvt_double_to_single ((_ extract 63 0) %ymm2))))))
+  (concat #x00000000000000000000000000000000 a!1))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

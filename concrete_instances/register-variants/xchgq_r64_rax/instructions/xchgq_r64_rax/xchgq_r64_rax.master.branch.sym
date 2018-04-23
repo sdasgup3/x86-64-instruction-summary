@@ -1,0 +1,20 @@
+code: xchgq %rax, %rbx
+
+  maybe read:      { %rax %rbx }
+  must read:       { %rax %rbx }
+  maybe write:     { %rax %rbx }
+  must write:      { %rax %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+xchgq %rax, %rbx: Hindex1(9)
+xchgq %rax, %rbx: Hindex1(9)
+Formula:
+
+%rax   : %rbx
+%rbx   : %rax
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

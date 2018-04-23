@@ -1,0 +1,35 @@
+code: decq %rbx
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { %rbx %pf %af %zf %sf %of }
+  must write:      { %rbx %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+decq %rbx: Hindex1(9)
+decq %rbx: Hindex1(9)
+Formula:
+
+%rbx   : (bvsub %rbx #x0000000000000001)
+
+%pf    : (let ((a!1 (xor (= ((_ extract 0 0) (bvsub %rbx #x0000000000000001)) #b1)
+                (= ((_ extract 1 1) (bvsub %rbx #x0000000000000001)) #b1)
+                (= ((_ extract 2 2) (bvsub %rbx #x0000000000000001)) #b1)
+                (= ((_ extract 3 3) (bvsub %rbx #x0000000000000001)) #b1)
+                (= ((_ extract 4 4) (bvsub %rbx #x0000000000000001)) #b1)
+                (= ((_ extract 5 5) (bvsub %rbx #x0000000000000001)) #b1)
+                (= ((_ extract 6 6) (bvsub %rbx #x0000000000000001)) #b1)
+                (= ((_ extract 7 7) (bvsub %rbx #x0000000000000001)) #b1))))
+  (not a!1))
+%af    : (= ((_ extract 3 0) %rbx) #x0)
+%zf    : (= (bvsub %rbx #x0000000000000001) #x0000000000000000)
+%sf    : (= ((_ extract 63 63) (bvsub %rbx #x0000000000000001)) #b1)
+%of    : (and (= ((_ extract 63 63) %rbx) #b1)
+     (= ((_ extract 62 0) %rbx)
+        #b000000000000000000000000000000000000000000000000000000000000000))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

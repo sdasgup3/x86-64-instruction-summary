@@ -1,0 +1,20 @@
+code: setng %bl
+
+  maybe read:      { %zf %sf %of }
+  must read:       { %zf %sf %of }
+  maybe write:     { %bl }
+  must write:      { %bl }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rbx   : (let ((a!1 (= (concat (bvxor (ite %of #x01 #x00) (ite %sf #x01 #x00))
+                      (ite %zf #x01 #x00))
+              #x0000)))
+  (concat ((_ extract 63 8) %rbx) (ite a!1 #x00 #x01)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

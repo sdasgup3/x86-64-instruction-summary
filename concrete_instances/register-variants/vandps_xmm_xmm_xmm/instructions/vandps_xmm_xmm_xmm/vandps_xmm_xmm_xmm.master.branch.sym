@@ -1,0 +1,20 @@
+code: vandps %xmm3, %xmm2, %xmm1
+
+  maybe read:      { %xmm2 %xmm3 }
+  must read:       { %xmm2 %xmm3 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+vandps %xmm3, %xmm2, %xmm1: Hindex0(9)
+vandps %xmm3, %xmm2, %xmm1: Hindex0(9)
+Formula:
+
+%ymm1  : (concat #x00000000000000000000000000000000
+        (bvand ((_ extract 127 0) %ymm2) ((_ extract 127 0) %ymm3)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

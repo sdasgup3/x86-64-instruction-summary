@@ -1,0 +1,37 @@
+code: psllw %xmm2, %xmm1
+
+  maybe read:      { %xmm1 %xmm2 }
+  must read:       { %xmm1 %xmm2 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+psllw %xmm2, %xmm1: Hindex1(9)
+psllw %xmm2, %xmm1: Hindex1(9)
+Formula:
+
+%ymm1  : (let ((a!1 (concat (bvshl ((_ extract 47 32) %ymm1) ((_ extract 15 0) %ymm2))
+                   (concat (bvshl ((_ extract 31 16) %ymm1)
+                                  ((_ extract 15 0) %ymm2))
+                           (bvshl ((_ extract 15 0) %ymm1)
+                                  ((_ extract 15 0) %ymm2))))))
+(let ((a!2 (concat (bvshl ((_ extract 79 64) %ymm1) ((_ extract 15 0) %ymm2))
+                   (concat (bvshl ((_ extract 63 48) %ymm1)
+                                  ((_ extract 15 0) %ymm2))
+                           a!1))))
+(let ((a!3 (concat (bvshl ((_ extract 111 96) %ymm1) ((_ extract 15 0) %ymm2))
+                   (concat (bvshl ((_ extract 95 80) %ymm1)
+                                  ((_ extract 15 0) %ymm2))
+                           a!2))))
+(let ((a!4 (ite (bvugt ((_ extract 63 0) %ymm2) #x000000000000000f)
+                #x00000000000000000000000000000000
+                (concat (bvshl ((_ extract 127 112) %ymm1)
+                               ((_ extract 15 0) %ymm2))
+                        a!3))))
+  (concat ((_ extract 255 128) %ymm1) a!4)))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

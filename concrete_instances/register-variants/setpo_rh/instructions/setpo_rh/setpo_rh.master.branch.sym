@@ -1,0 +1,20 @@
+code: setpo %ah
+
+  maybe read:      { %pf }
+  must read:       { %pf }
+  maybe write:     { %ah }
+  must write:      { %ah }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+setpo %ah: Hindex3(9)
+setpo %ah: Hindex3(9)
+Formula:
+
+%rax   : (concat (concat ((_ extract 63 16) %rax) (ite (not %pf) #x01 #x00))
+        ((_ extract 7 0) %rax))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv
