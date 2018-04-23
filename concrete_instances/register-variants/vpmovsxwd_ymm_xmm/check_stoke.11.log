@@ -1,0 +1,5 @@
+[4m[1m[34mFiring Last 1[0m
+Thread 1 start: vpmovsxwd_ymm_xmm
+timeout 15m  /home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/TYLER/strata-data/circuits --target concrete_instances/register-variants/vpmovsxwd_ymm_xmm/instructions/vpmovsxwd_ymm_xmm/vpmovsxwd_ymm_xmm.s --functions /home/sdasgup3/TYLER/strata-data/data-regs/functions --testcases /home/sdasgup3/TYLER/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 }" --live_out "{ %ymm1 }" 
+Execution time vpmovsxwd_ymm_xmm: 901 s
+Thread 1 done!: vpmovsxwd_ymm_xmm
