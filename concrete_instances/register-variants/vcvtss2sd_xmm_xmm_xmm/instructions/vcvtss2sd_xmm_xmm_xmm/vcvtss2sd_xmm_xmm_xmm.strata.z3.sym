@@ -1,0 +1,19 @@
+code: vcvtss2sd %xmm3, %xmm2, %xmm1
+
+  maybe read:      { %xmm2 %xmm3 %mxcsr::rc[0] }
+  must read:       { %xmm2 %xmm3 %mxcsr::rc[0] }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%ymm1  : (concat #x00000000000000000000000000000000
+        (concat ((_ extract 127 64) %ymm2)
+                (cvt_single_to_double ((_ extract 31 0) %ymm3))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

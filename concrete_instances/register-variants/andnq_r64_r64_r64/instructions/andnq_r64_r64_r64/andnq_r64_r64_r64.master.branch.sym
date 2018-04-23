@@ -1,0 +1,26 @@
+code: andnq %rdx, %rcx, %rbx
+
+  maybe read:      { %rcx %rdx }
+  must read:       { %rcx %rdx }
+  maybe write:     { %rbx %cf %zf %sf %of }
+  must write:      { %rbx %cf %zf %sf %of }
+  maybe undef:     { %pf %af }
+  must undef:      { %pf %af }
+  required flags:  { bmi1 }
+
+andnq %rdx, %rcx, %rbx: Hindex1(9)
+andnq %rdx, %rcx, %rbx: Hindex1(9)
+Formula:
+
+%rbx   : (bvand (bvnot %rcx) %rdx)
+
+%cf    : false
+%pf    : TMP_BOOL_1
+%af    : TMP_BOOL_0
+%zf    : (= (bvand (bvnot %rcx) %rdx) #x0000000000000000)
+%sf    : (= (bvand (bvnot ((_ extract 63 63) %rcx)) ((_ extract 63 63) %rdx)) #b1)
+%of    : false
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

@@ -1,0 +1,33 @@
+code: idivl %ebx
+
+  maybe read:      { %eax %edx %ebx }
+  must read:       { %eax %edx %ebx }
+  maybe write:     { %rax %rdx }
+  must write:      { %rax %rdx }
+  maybe undef:     { %cf %pf %af %zf %sf %of }
+  must undef:      { %cf %pf %af %zf %sf %of }
+  required flags:  { }
+
+idivl %ebx: Hindex1(9)
+idivl %ebx: Hindex1(9)
+Formula:
+
+%rax   : (concat #x00000000
+        (idiv_quotient_int32
+          (concat ((_ extract 31 0) %rdx) ((_ extract 31 0) %rax))
+          ((_ extract 31 0) %rbx)))
+%rdx   : (concat #x00000000
+        (idiv_remainder_int32
+          (concat ((_ extract 31 0) %rdx) ((_ extract 31 0) %rax))
+          ((_ extract 31 0) %rbx)))
+
+%cf    : TMP_BOOL_5
+%pf    : TMP_BOOL_2
+%af    : TMP_BOOL_1
+%zf    : TMP_BOOL_0
+%sf    : TMP_BOOL_3
+%of    : TMP_BOOL_4
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

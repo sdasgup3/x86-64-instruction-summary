@@ -1,0 +1,22 @@
+code: vpmovzxwq %xmm2, %ymm1
+
+  maybe read:      { %xmm2 }
+  must read:       { %xmm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+vpmovzxwq %xmm2, %ymm1: Hindex0(9)
+vpmovzxwq %xmm2, %ymm1: Hindex0(9)
+Formula:
+
+%ymm1  : (let ((a!1 (concat (concat #x000000000000 ((_ extract 47 32) %ymm2))
+                   (concat (concat #x000000000000 ((_ extract 31 16) %ymm2))
+                           (concat #x000000000000 ((_ extract 15 0) %ymm2))))))
+  (concat (concat #x000000000000 ((_ extract 63 48) %ymm2)) a!1))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

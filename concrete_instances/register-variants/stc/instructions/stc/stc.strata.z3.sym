@@ -1,0 +1,17 @@
+code: stc 
+
+  maybe read:      { }
+  must read:       { }
+  maybe write:     { %cf }
+  must write:      { %cf }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%cf    : true
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

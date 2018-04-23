@@ -1,0 +1,30 @@
+code: cmovgeq %rcx, %rbx
+
+  maybe read:      { %rcx %sf %of }
+  must read:       { %rcx %sf %of }
+  maybe write:     { %rbx }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { cmov }
+
+Formula:
+
+%rbx   : (let ((a!1 (bvxor (concat #x00 (bvxor (ite %of #x01 #x00) (ite %sf #x01 #x00)))
+                  #xffff)))
+(let ((a!2 (concat #b0
+                   ((_ extract 7 0)
+                     (bvadd #b00000000000000001 (concat #b0 a!1))))))
+(let ((a!3 (bvadd a!2
+                  (concat #b0 (bvxor (ite %of #x01 #x00) (ite %sf #x01 #x00))))))
+(let ((a!4 (bvadd (ite (= ((_ extract 8 8) a!3) #b1) #b000000000 #b011111111)
+                  (ite (= ((_ extract 8 8) a!3) #b1) #b000000000 #b011111111))))
+(let ((a!5 (ite (= ((_ extract 8 8) a!4) #b1)
+                (bvadd (concat #b0 ((_ extract 15 0) %rcx)) #b00000000000000001)
+                (concat #b0 ((_ extract 15 0) %rcx)))))
+(let ((a!6 (bvadd a!5 (concat #b0 (bvxor ((_ extract 15 0) %rcx) #xffff)))))
+  (ite (= ((_ extract 15 0) a!6) #x0000) %rcx %rbx)))))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

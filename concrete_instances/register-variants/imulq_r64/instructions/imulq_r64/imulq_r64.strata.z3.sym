@@ -1,0 +1,33 @@
+code: imulq %rbx
+
+  maybe read:      { %rax %rbx }
+  must read:       { %rax %rbx }
+  maybe write:     { %rax %rdx %cf %of }
+  must write:      { %rax %rdx %cf %of }
+  maybe undef:     { %pf %af %zf %sf }
+  must undef:      { %pf %af %zf %sf }
+  required flags:  { }
+
+Formula:
+
+%rax   : ((_ extract 63 0) (bvmul ((_ sign_extend 64) %rbx) ((_ sign_extend 64) %rax)))
+%rdx   : ((_ extract 127 64) (bvmul ((_ sign_extend 64) %rbx) ((_ sign_extend 64) %rax)))
+
+%cf    : (let ((a!1 ((_ sign_extend 64)
+             ((_ extract 63 0)
+               (bvmul ((_ sign_extend 64) %rbx) ((_ sign_extend 64) %rax))))))
+  (not (= (bvmul ((_ sign_extend 64) %rbx) ((_ sign_extend 64) %rax)) a!1)))
+%pf    : TMP_BOOL_2
+%af    : TMP_BOOL_1
+%zf    : TMP_BOOL_0
+%sf    : (= ((_ extract 63 63)
+     (bvmul ((_ sign_extend 64) %rbx) ((_ sign_extend 64) %rax)))
+   #b1)
+%of    : (let ((a!1 ((_ sign_extend 64)
+             ((_ extract 63 0)
+               (bvmul ((_ sign_extend 64) %rbx) ((_ sign_extend 64) %rax))))))
+  (not (= (bvmul ((_ sign_extend 64) %rbx) ((_ sign_extend 64) %rax)) a!1)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

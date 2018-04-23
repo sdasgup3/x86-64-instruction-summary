@@ -1,0 +1,20 @@
+code: sete %ah
+
+  maybe read:      { %zf }
+  must read:       { %zf }
+  maybe write:     { %ah }
+  must write:      { %ah }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+sete %ah: Hindex3(9)
+sete %ah: Hindex3(9)
+Formula:
+
+%rax   : (concat (concat ((_ extract 63 16) %rax) (ite %zf #x01 #x00))
+        ((_ extract 7 0) %rax))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

@@ -1,0 +1,42 @@
+code: maxpd %xmm2, %xmm1
+
+  maybe read:      { %xmm1 %xmm2 }
+  must read:       { %xmm1 %xmm2 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+maxpd %xmm2, %xmm1: Hindex8(9)
+maxpd %xmm2, %xmm1: Hindex8(9)
+callq .move_128_064_xmm2_r8_r9: Hindex8(9)
+vzeroall: Hindex1(9)
+callq .move_064_128_r8_r9_xmm1: Hindex8(9)
+callq .move_128_064_xmm2_r12_r13: Hindex8(9)
+vzeroall: Hindex1(9)
+callq .move_064_128_r12_r13_xmm1: Hindex8(9)
+callq .move_128_064_xmm2_r12_r13: Hindex8(9)
+vzeroall: Hindex1(9)
+callq .move_064_128_r12_r13_xmm1: Hindex8(9)
+vmaxps %ymm3, %ymm11, %ymm1: Hindex0(9)
+vmaxpd %ymm5, %ymm11, %ymm1: Hindex0(9)
+callq .move_128_032_xmm3_xmm4_xmm5_xmm6_xmm7: Hindex8(9)
+callq .move_032_128_xmm4_xmm5_xmm6_xmm7_xmm1: Hindex8(9)
+Formula:
+
+%ymm1  : (let ((a!1 (ite (= (maxcmp_double ((_ extract 127 64) %ymm1)
+                                  ((_ extract 127 64) %ymm2))
+                   #b1)
+                ((_ extract 127 64) %ymm1)
+                ((_ extract 127 64) %ymm2)))
+      (a!2 (ite (= (maxcmp_double ((_ extract 63 0) %ymm1)
+                                  ((_ extract 63 0) %ymm2))
+                   #b1)
+                ((_ extract 63 0) %ymm1)
+                ((_ extract 63 0) %ymm2))))
+  (concat ((_ extract 255 128) %ymm1) (concat a!1 a!2)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

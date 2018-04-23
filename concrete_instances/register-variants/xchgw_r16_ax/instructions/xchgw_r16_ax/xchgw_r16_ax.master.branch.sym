@@ -1,0 +1,20 @@
+code: xchgw %ax, %bx
+
+  maybe read:      { %ax %bx }
+  must read:       { %ax %bx }
+  maybe write:     { %ax %bx }
+  must write:      { %ax %bx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+xchgw %ax, %bx: Hindex1(9)
+xchgw %ax, %bx: Hindex1(9)
+Formula:
+
+%rax   : (concat ((_ extract 63 16) %rax) ((_ extract 15 0) %rbx))
+%rbx   : (concat ((_ extract 63 16) %rbx) ((_ extract 15 0) %rax))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

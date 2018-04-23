@@ -1,0 +1,37 @@
+code: rcll $0x1, %ebx
+
+  maybe read:      { %ebx %cf }
+  must read:       { %ebx %cf }
+  maybe write:     { %rbx %cf %of }
+  must write:      { %rbx %cf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rbx   : (let ((a!1 (ite %cf
+                (bvadd (concat #b0 ((_ extract 31 0) %rbx))
+                       #b000000000000000000000000000000001)
+                (concat #b0 ((_ extract 31 0) %rbx)))))
+(let ((a!2 ((_ extract 31 0) (bvadd a!1 (concat #b0 ((_ extract 31 0) %rbx))))))
+  (concat #x00000000 a!2)))
+
+%cf    : (let ((a!1 (ite %cf
+                (bvadd (concat #b0 ((_ extract 31 0) %rbx))
+                       #b000000000000000000000000000000001)
+                (concat #b0 ((_ extract 31 0) %rbx)))))
+(let ((a!2 ((_ extract 32 32) (bvadd a!1 (concat #b0 ((_ extract 31 0) %rbx))))))
+  (= a!2 #b1)))
+%of    : (let ((a!1 (ite %cf
+                (bvadd (concat #b0 ((_ extract 31 0) %rbx))
+                       #b000000000000000000000000000000001)
+                (concat #b0 ((_ extract 31 0) %rbx)))))
+(let ((a!2 ((_ extract 31 31) (bvadd a!1 (concat #b0 ((_ extract 31 0) %rbx))))))
+(let ((a!3 (not (= (= ((_ extract 31 31) %rbx) #b1) (= a!2 #b1)))))
+  (and (= (= ((_ extract 31 31) %rbx) #b1) (= ((_ extract 31 31) %rbx) #b1))
+       a!3))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

@@ -1,0 +1,33 @@
+code: phaddd %xmm2, %xmm1
+
+  maybe read:      { %xmm1 %xmm2 }
+  must read:       { %xmm1 %xmm2 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { ssse3 }
+
+Formula:
+
+%ymm1  : (let ((a!1 (bvadd (concat #b0 (concat #x00000000 ((_ extract 127 96) %ymm2)))
+                  (concat #b0 (concat #x00000000 ((_ extract 95 64) %ymm2)))))
+      (a!2 (bvadd (concat #b0 ((_ extract 63 0) %ymm2))
+                  (concat #b0 (concat #x00000000 ((_ extract 63 32) %ymm2)))))
+      (a!3 (bvadd (concat #b0
+                          (concat ((_ extract 127 96) %ymm1)
+                                  ((_ extract 127 96) %ymm1)))
+                  (concat #b0 ((_ extract 127 64) %ymm1))))
+      (a!4 (bvadd (concat #b0
+                          (concat ((_ extract 63 32) %ymm1)
+                                  ((_ extract 63 32) %ymm1)))
+                  (concat #b0 ((_ extract 63 0) %ymm1)))))
+(let ((a!5 (concat (concat (concat ((_ extract 31 0) a!1)
+                                   ((_ extract 31 0) a!2))
+                           ((_ extract 31 0) a!3))
+                   ((_ extract 31 0) a!4))))
+  (concat ((_ extract 255 128) %ymm1) a!5)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

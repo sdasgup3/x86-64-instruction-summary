@@ -1,0 +1,34 @@
+code: rorq %cl, %rbx
+
+  maybe read:      { %cl %rbx }
+  must read:       { %cl %rbx }
+  maybe write:     { %rbx %cf %of }
+  must write:      { %rbx }
+  maybe undef:     { %of }
+  must undef:      { }
+  required flags:  { }
+
+rorq %cl, %rbx: Hindex7(9)
+rorq %cl, %rbx: Hindex7(9)
+Formula:
+
+%rbx   : (ext_rotate_right %rbx
+                  (concat #x00000000000000 (bvand ((_ extract 7 0) %rcx) #x3f)))
+
+%cf    : (let ((a!1 (not (= (bvand ((_ extract 7 0) %rcx) #x3f) #x00)))
+      (a!2 (ext_rotate_right %rbx
+                             (concat #x00000000000000
+                                     (bvand ((_ extract 7 0) %rcx) #x3f)))))
+  (or (and a!1 (= ((_ extract 63 63) a!2) #b1)) (and (not a!1) %cf)))
+%of    : (let ((a!1 (ext_rotate_right %rbx
+                             (concat #x00000000000000
+                                     (bvand ((_ extract 7 0) %rcx) #x3f))))
+      (a!3 (not (= (bvand ((_ extract 7 0) %rcx) #x3f) #x01))))
+(let ((a!2 (and (= (bvand ((_ extract 7 0) %rcx) #x3f) #x01)
+                (xor (= ((_ extract 63 63) a!1) #b1)
+                     (= ((_ extract 62 62) a!1) #b1)))))
+  (or a!2 (and a!3 TMP_BOOL_0))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

@@ -1,0 +1,21 @@
+code: vrcpps %xmm2, %xmm1
+
+  maybe read:      { %xmm2 }
+  must read:       { %xmm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%ymm1  : (let ((a!1 (concat (approx_reciprocal_single ((_ extract 95 64) %ymm2))
+                   (concat (approx_reciprocal_single ((_ extract 63 32) %ymm2))
+                           (approx_reciprocal_single ((_ extract 31 0) %ymm2))))))
+  (concat #x00000000000000000000000000000000
+          (concat (approx_reciprocal_single ((_ extract 127 96) %ymm2)) a!1)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

@@ -1,0 +1,21 @@
+code: vcvtph2ps %xmm2, %xmm1
+
+  maybe read:      { %xmm2 %mxcsr::rc[0] }
+  must read:       { %xmm2 %mxcsr::rc[0] }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { f16c }
+
+Formula:
+
+%ymm1  : (let ((a!1 (concat (cvt_half_to_single ((_ extract 47 32) %ymm2))
+                   (concat (cvt_half_to_single ((_ extract 31 16) %ymm2))
+                           (cvt_half_to_single ((_ extract 15 0) %ymm2))))))
+  (concat #x00000000000000000000000000000000
+          (concat (cvt_half_to_single ((_ extract 63 48) %ymm2)) a!1)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

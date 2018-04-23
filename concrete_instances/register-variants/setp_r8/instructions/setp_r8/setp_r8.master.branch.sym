@@ -1,0 +1,19 @@
+code: setp %bl
+
+  maybe read:      { %pf }
+  must read:       { %pf }
+  maybe write:     { %bl }
+  must write:      { %bl }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+setp %bl: Hindex3(9)
+setp %bl: Hindex3(9)
+Formula:
+
+%rbx   : (concat ((_ extract 63 8) %rbx) (ite %pf #x01 #x00))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

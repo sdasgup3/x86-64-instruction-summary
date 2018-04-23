@@ -1,0 +1,19 @@
+code: movzwq %cx, %rbx
+
+  maybe read:      { %cx }
+  must read:       { %cx }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+movzwq %cx, %rbx: Hindex5(9)
+movzwq %cx, %rbx: Hindex5(9)
+Formula:
+
+%rbx   : (concat #x000000000000 ((_ extract 15 0) %rcx))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

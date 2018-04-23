@@ -1,0 +1,51 @@
+code: negb %ah
+
+  maybe read:      { %ah }
+  must read:       { %ah }
+  maybe write:     { %ah %cf %pf %af %zf %sf %of }
+  must write:      { %ah %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rax   : (let ((a!1 (concat #b0 (bvxor (concat #x00 ((_ extract 15 8) %rax)) #xffff))))
+  (concat (concat ((_ extract 63 16) %rax)
+                  ((_ extract 7 0) (bvadd #b00000000000000001 a!1)))
+          ((_ extract 7 0) %rax)))
+
+%cf    : (let ((a!1 (concat #b0 (bvxor (concat #x00 ((_ extract 15 8) %rax)) #xffff))))
+(let ((a!2 (bvadd (concat #b0 ((_ extract 7 0) (bvadd #b00000000000000001 a!1)))
+                  (concat #b0 ((_ extract 15 8) %rax)))))
+  (= ((_ extract 8 8) a!2) #b1)))
+%pf    : (let ((a!1 (concat #b0 (bvxor (concat #x00 ((_ extract 15 8) %rax)) #xffff))))
+(let ((a!2 (xor (= ((_ extract 0 0) (bvadd #b00000000000000001 a!1)) #b1)
+                (= ((_ extract 1 1) (bvadd #b00000000000000001 a!1)) #b1)
+                (= ((_ extract 2 2) (bvadd #b00000000000000001 a!1)) #b1)
+                (= ((_ extract 3 3) (bvadd #b00000000000000001 a!1)) #b1)
+                (= ((_ extract 4 4) (bvadd #b00000000000000001 a!1)) #b1)
+                (= ((_ extract 5 5) (bvadd #b00000000000000001 a!1)) #b1)
+                (= ((_ extract 6 6) (bvadd #b00000000000000001 a!1)) #b1)
+                (= ((_ extract 7 7) (bvadd #b00000000000000001 a!1)) #b1))))
+  (not a!2)))
+%af    : (let ((a!1 (concat #b0 (bvxor (concat #x00 ((_ extract 15 8) %rax)) #xffff))))
+(let ((a!2 (bvadd (concat #b0 ((_ extract 3 0) (bvadd #b00000000000000001 a!1)))
+                  (concat #b0 ((_ extract 11 8) %rax)))))
+  (= ((_ extract 4 4) a!2) #b1)))
+%zf    : (let ((a!1 (concat #b0 (bvxor (concat #x00 ((_ extract 15 8) %rax)) #xffff))))
+  (= ((_ extract 7 0) (bvadd #b00000000000000001 a!1)) #x00))
+%sf    : (let ((a!1 (concat #b0 (bvxor (concat #x00 ((_ extract 15 8) %rax)) #xffff))))
+  (= ((_ extract 7 7) (bvadd #b00000000000000001 a!1)) #b1))
+%of    : (let ((a!1 (concat #b0 (bvxor (concat #x00 ((_ extract 15 8) %rax)) #xffff))))
+(let ((a!2 (= (= ((_ extract 7 7) (bvadd #b00000000000000001 a!1)) #b1)
+              (= ((_ extract 15 15) %rax) #b1)))
+      (a!3 (bvadd (concat #b0 ((_ extract 7 0) (bvadd #b00000000000000001 a!1)))
+                  (concat #b0 ((_ extract 15 8) %rax)))))
+(let ((a!4 (= (= ((_ extract 7 7) (bvadd #b00000000000000001 a!1)) #b1)
+              (= ((_ extract 7 7) a!3) #b1))))
+  (and a!2 (not a!4)))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

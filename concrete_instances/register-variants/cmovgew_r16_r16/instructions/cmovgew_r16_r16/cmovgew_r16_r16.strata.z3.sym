@@ -1,0 +1,21 @@
+code: cmovgew %cx, %bx
+
+  maybe read:      { %cx %sf %of }
+  must read:       { %cx %sf %of }
+  maybe write:     { %bx }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { cmov }
+
+Formula:
+
+%rbx   : (let ((a!1 (= (concat #x00000000000000
+                      (bvxor #x01 (ite %of #x01 #x00) (ite %sf #x01 #x00)))
+              #x0000000000000000)))
+  (concat ((_ extract 63 16) %rbx)
+          (ite a!1 ((_ extract 15 0) %rbx) ((_ extract 15 0) %rcx))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

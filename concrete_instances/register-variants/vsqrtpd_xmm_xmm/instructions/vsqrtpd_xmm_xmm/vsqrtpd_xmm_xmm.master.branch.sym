@@ -1,0 +1,30 @@
+code: vsqrtpd %xmm2, %xmm1
+
+  maybe read:      { %xmm2 }
+  must read:       { %xmm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+vsqrtpd %xmm2, %xmm1: Hindex8(9)
+vsqrtpd %xmm2, %xmm1: Hindex8(9)
+callq .move_128_064_xmm2_r8_r9: Hindex8(9)
+callq .move_064_128_r8_r9_xmm3: Hindex8(9)
+callq .move_128_064_xmm2_r10_r11: Hindex8(9)
+vzeroall: Hindex1(9)
+callq .move_064_128_r10_r11_xmm3: Hindex8(9)
+callq .move_256_128_ymm3_xmm12_xmm13: Hindex8(9)
+callq .move_128_256_xmm12_xmm13_ymm1: Hindex8(9)
+vsqrtpd %ymm2, %ymm1: Hindex0(9)
+Formula:
+
+%ymm1  : (let ((a!1 (concat #x0000000000000000
+                   (concat (sqrt_double ((_ extract 127 64) %ymm2))
+                           (sqrt_double ((_ extract 63 0) %ymm2))))))
+  (concat #x0000000000000000 a!1))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

@@ -1,0 +1,39 @@
+code: vpsrlw %xmm3, %xmm2, %xmm1
+
+  maybe read:      { %xmm2 %xmm3 }
+  must read:       { %xmm2 %xmm3 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+vpsrlw %xmm3, %xmm2, %xmm1: Hindex1(9)
+vpsrlw %xmm3, %xmm2, %xmm1: Hindex1(9)
+Formula:
+
+%ymm1  : (let ((a!1 (concat (bvlshr ((_ extract 47 32) %ymm2) ((_ extract 15 0) %ymm3))
+                   (concat (bvlshr ((_ extract 31 16) %ymm2)
+                                   ((_ extract 15 0) %ymm3))
+                           (bvlshr ((_ extract 15 0) %ymm2)
+                                   ((_ extract 15 0) %ymm3))))))
+(let ((a!2 (concat (bvlshr ((_ extract 79 64) %ymm2) ((_ extract 15 0) %ymm3))
+                   (concat (bvlshr ((_ extract 63 48) %ymm2)
+                                   ((_ extract 15 0) %ymm3))
+                           a!1))))
+(let ((a!3 (concat (bvlshr ((_ extract 111 96) %ymm2) ((_ extract 15 0) %ymm3))
+                   (concat (bvlshr ((_ extract 95 80) %ymm2)
+                                   ((_ extract 15 0) %ymm3))
+                           a!2))))
+(let ((a!4 (concat #x00000000000000000000000000000000
+                   (concat (bvlshr ((_ extract 127 112) %ymm2)
+                                   ((_ extract 15 0) %ymm3))
+                           a!3))))
+  (ite (bvugt ((_ extract 63 0) %ymm3) #x000000000000000f)
+       (concat #x00000000000000000000000000000000
+               #x00000000000000000000000000000000)
+       a!4)))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

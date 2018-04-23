@@ -1,0 +1,69 @@
+code: psubd %xmm2, %xmm1
+
+  maybe read:      { %xmm1 %xmm2 }
+  must read:       { %xmm1 %xmm2 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+Formula:
+
+%ymm1  : (let ((a!1 (concat #b0
+                   (bvxor (concat ((_ extract 127 96) %ymm2)
+                                  ((_ extract 127 96) %ymm1))
+                          #xffffffffffffffff)))
+      (a!4 (concat #b0
+                   (bvxor (concat ((_ extract 95 64) %ymm2)
+                                  ((_ extract 95 64) %ymm1))
+                          #xffffffffffffffff)))
+      (a!7 (concat #b0
+                   (bvxor (concat ((_ extract 63 32) %ymm2)
+                                  ((_ extract 63 32) %ymm1))
+                          #xffffffffffffffff)))
+      (a!10 (concat #b0
+                    (bvxor (concat ((_ extract 31 0) %ymm2)
+                                   ((_ extract 31 0) %ymm1))
+                           #xffffffffffffffff))))
+(let ((a!2 (bvadd a!1
+                  #b00000000000000000000000000000000000000000000000000000000000000001
+                  (concat #b0
+                          (concat ((_ extract 127 96) %ymm1)
+                                  ((_ extract 127 96) %ymm1)))))
+      (a!5 (bvadd a!4
+                  #b00000000000000000000000000000000000000000000000000000000000000001
+                  (concat #b0
+                          (concat ((_ extract 95 64) %ymm1)
+                                  ((_ extract 95 64) %ymm1)))))
+      (a!8 (bvadd a!7
+                  #b00000000000000000000000000000000000000000000000000000000000000001
+                  (concat #b0
+                          (concat ((_ extract 63 32) %ymm1)
+                                  ((_ extract 63 32) %ymm1)))))
+      (a!11 (bvadd a!10
+                   #b00000000000000000000000000000000000000000000000000000000000000001
+                   (concat #b0
+                           (concat ((_ extract 31 0) %ymm1)
+                                   ((_ extract 31 0) %ymm1))))))
+(let ((a!3 (bvadd (concat #b0 (concat #x00000000 ((_ extract 63 32) a!2)))
+                  (concat #b0 (concat #x00000000 ((_ extract 31 0) a!2)))))
+      (a!6 (bvadd (concat #b0 ((_ extract 63 0) a!5))
+                  (concat #b0 (concat #x00000000 ((_ extract 63 32) a!5)))))
+      (a!9 (bvadd (concat #b0
+                          (concat ((_ extract 63 32) a!8)
+                                  ((_ extract 63 32) a!8)))
+                  (concat #b0 ((_ extract 63 0) a!8))))
+      (a!12 (bvadd (concat #b0
+                           (concat ((_ extract 63 32) a!11)
+                                   ((_ extract 63 32) a!11)))
+                   (concat #b0 ((_ extract 63 0) a!11)))))
+(let ((a!13 (concat (concat (concat ((_ extract 31 0) a!3)
+                                    ((_ extract 31 0) a!6))
+                            ((_ extract 31 0) a!9))
+                    ((_ extract 31 0) a!12))))
+  (concat ((_ extract 255 128) %ymm1) a!13)))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

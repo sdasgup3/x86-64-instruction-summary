@@ -1,0 +1,20 @@
+code: xchgb %cl, %bl
+
+  maybe read:      { %cl %bl }
+  must read:       { %cl %bl }
+  maybe write:     { %cl %bl }
+  must write:      { %cl %bl }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+xchgb %cl, %bl: Hindex1(9)
+xchgb %cl, %bl: Hindex1(9)
+Formula:
+
+%rcx   : (concat ((_ extract 63 8) %rcx) ((_ extract 7 0) %rbx))
+%rbx   : (concat ((_ extract 63 8) %rbx) ((_ extract 7 0) %rcx))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

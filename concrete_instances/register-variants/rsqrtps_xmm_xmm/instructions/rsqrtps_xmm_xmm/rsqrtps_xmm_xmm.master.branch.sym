@@ -1,0 +1,33 @@
+code: rsqrtps %xmm2, %xmm1
+
+  maybe read:      { %xmm2 }
+  must read:       { %xmm2 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse }
+
+rsqrtps %xmm2, %xmm1: Hindex8(9)
+rsqrtps %xmm2, %xmm1: Hindex8(9)
+callq .move_128_064_xmm2_r8_r9: Hindex8(9)
+vzeroall: Hindex1(9)
+callq .move_064_128_r8_r9_xmm3: Hindex8(9)
+vrsqrtps %ymm3, %ymm12: Hindex0(9)
+callq .move_128_256_xmm12_xmm13_ymm1: Hindex8(9)
+callq .move_128_064_xmm2_r12_r13: Hindex8(9)
+callq .move_064_128_r12_r13_xmm1: Hindex8(9)
+Formula:
+
+%ymm1  : (let ((a!1 (concat (approx_reciprocal_sqrt_single ((_ extract 95 64) %ymm2))
+                   (concat (approx_reciprocal_sqrt_single
+                             ((_ extract 63 32) %ymm2))
+                           (approx_reciprocal_sqrt_single
+                             ((_ extract 31 0) %ymm2))))))
+  (concat ((_ extract 255 128) %ymm1)
+          (concat (approx_reciprocal_sqrt_single ((_ extract 127 96) %ymm2))
+                  a!1)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

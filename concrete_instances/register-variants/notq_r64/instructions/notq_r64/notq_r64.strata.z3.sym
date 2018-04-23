@@ -1,0 +1,17 @@
+code: notq %rbx
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rbx   : (bvxor %rbx #xffffffffffffffff)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

@@ -1,0 +1,42 @@
+code: punpckhwd %xmm2, %xmm1
+
+  maybe read:      { %xmm1 %xmm2 }
+  must read:       { %xmm1 %xmm2 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+Formula:
+
+%ymm1  : (let ((a!1 (concat (sub_single (concat #x0000 ((_ extract 127 112) %ymm1))
+                               #x00000000)
+                   (sub_single (concat #x0000 ((_ extract 111 96) %ymm1))
+                               #x00000000)))
+      (a!2 (concat (sub_single (concat #x0000 ((_ extract 111 96) %ymm2))
+                               #x00000000)
+                   (sub_single (concat #x0000 ((_ extract 111 96) %ymm2))
+                               #x00000000)))
+      (a!4 (concat (sub_single (concat #x0000 ((_ extract 95 80) %ymm1))
+                               #x00000000)
+                   (sub_single (concat #x0000 ((_ extract 79 64) %ymm1))
+                               #x00000000)))
+      (a!5 (concat (sub_single (concat #x0000 ((_ extract 79 64) %ymm2))
+                               #x00000000)
+                   (sub_single (concat #x0000 ((_ extract 79 64) %ymm2))
+                               #x00000000)))
+      (a!6 ((_ extract 15 0)
+             (sub_single (concat #x0000 ((_ extract 79 64) %ymm2)) #x00000000))))
+(let ((a!3 (bvor (concat ((_ extract 127 96) %ymm2)
+                         (concat ((_ extract 111 96) %ymm2)
+                                 ((_ extract 111 96) %ymm2)))
+                 a!2))
+      (a!7 (bvxor a!4
+                  a!5
+                  (bvor (concat ((_ extract 95 64) %ymm2) (concat a!6 a!6)) a!5))))
+  (concat ((_ extract 255 128) %ymm1) (concat (bvxor a!1 a!2 a!3) a!7))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

@@ -1,0 +1,59 @@
+code: shrq %cl, %rbx
+
+  maybe read:      { %cl %rbx }
+  must read:       { %cl %rbx }
+  maybe write:     { %rbx %cf %pf %zf %sf %of }
+  must write:      { %rbx }
+  maybe undef:     { %cf %af %of }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rbx   : (let ((a!1 (bvlshr (concat %rbx #b0)
+                   (concat #b000000000000000000000000000000000000000000000000000000000
+                           (bvand ((_ extract 7 0) %rcx) #x3f)))))
+  ((_ extract 64 1) a!1))
+
+%cf    : (let ((a!1 (and (bvuge (bvand ((_ extract 7 0) %rcx) #x3f) #x40) TMP_BOOL_0))
+      (a!2 (not (bvuge (bvand ((_ extract 7 0) %rcx) #x3f) #x40)))
+      (a!3 (not (= (bvand ((_ extract 7 0) %rcx) #x3f) #x00)))
+      (a!4 (bvlshr (concat %rbx #b0)
+                   (concat #b000000000000000000000000000000000000000000000000000000000
+                           (bvand ((_ extract 7 0) %rcx) #x3f)))))
+(let ((a!5 (or (and a!3 (= ((_ extract 0 0) a!4) #b1)) (and (not a!3) %cf))))
+  (or a!1 (and a!2 a!5))))
+%pf    : (let ((a!1 (not (= (bvand ((_ extract 7 0) %rcx) #x3f) #x00)))
+      (a!2 (bvlshr (concat %rbx #b0)
+                   (concat #b000000000000000000000000000000000000000000000000000000000
+                           (bvand ((_ extract 7 0) %rcx) #x3f)))))
+(let ((a!3 (not (xor (= ((_ extract 1 1) a!2) #b1)
+                     (= ((_ extract 2 2) a!2) #b1)
+                     (= ((_ extract 3 3) a!2) #b1)
+                     (= ((_ extract 4 4) a!2) #b1)
+                     (= ((_ extract 5 5) a!2) #b1)
+                     (= ((_ extract 6 6) a!2) #b1)
+                     (= ((_ extract 7 7) a!2) #b1)
+                     (= ((_ extract 8 8) a!2) #b1)))))
+  (or (and a!1 a!3) (and (not a!1) %pf))))
+%af    : (let ((a!1 (not (= (bvand ((_ extract 7 0) %rcx) #x3f) #x00))))
+  (or (and a!1 TMP_BOOL_1) (and (not a!1) %af)))
+%zf    : (let ((a!1 (not (= (bvand ((_ extract 7 0) %rcx) #x3f) #x00)))
+      (a!2 (bvlshr (concat %rbx #b0)
+                   (concat #b000000000000000000000000000000000000000000000000000000000
+                           (bvand ((_ extract 7 0) %rcx) #x3f)))))
+  (or (and a!1 (= ((_ extract 64 1) a!2) #x0000000000000000))
+      (and (not a!1) %zf)))
+%sf    : (let ((a!1 (not (= (bvand ((_ extract 7 0) %rcx) #x3f) #x00)))
+      (a!2 (bvlshr (concat %rbx #b0)
+                   (concat #b000000000000000000000000000000000000000000000000000000000
+                           (bvand ((_ extract 7 0) %rcx) #x3f)))))
+  (or (and a!1 (= ((_ extract 64 64) a!2) #b1)) (and (not a!1) %sf)))
+%of    : (let ((a!1 (and (= (bvand ((_ extract 7 0) %rcx) #x3f) #x01)
+                (= ((_ extract 63 63) %rbx) #b1)))
+      (a!2 (not (= (bvand ((_ extract 7 0) %rcx) #x3f) #x01))))
+  (or a!1 (and a!2 %of)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

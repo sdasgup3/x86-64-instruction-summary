@@ -1,0 +1,19 @@
+code: pmovzxbq %xmm2, %xmm1
+
+  maybe read:      { %xmm2 }
+  must read:       { %xmm2 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse4_1 }
+
+Formula:
+
+%ymm1  : (concat ((_ extract 255 128) %ymm1)
+        (concat (concat #x00000000000000 ((_ extract 15 8) %ymm2))
+                (concat #x00000000000000 ((_ extract 7 0) %ymm2))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

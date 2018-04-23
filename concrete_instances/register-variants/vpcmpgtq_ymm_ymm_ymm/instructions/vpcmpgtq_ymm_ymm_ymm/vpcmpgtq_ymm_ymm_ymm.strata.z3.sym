@@ -1,0 +1,17 @@
+code: vpcmpgtq %ymm3, %ymm2, %ymm1
+
+  maybe read:      { %ymm2 %ymm3 }
+  must read:       { %ymm2 %ymm3 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+Formula:
+
+%ymm1  : (%ymm2[255:192] > %ymm3[255:192] ? 0xffffffffffffffff₆₄ : 0x0₆₄) ∘ ((%ymm2[191:128] > %ymm3[191:128] ? 0xffffffffffffffff₆₄ : 0x0₆₄) ∘ ((%ymm2[127:64] > %ymm3[127:64] ? 0xffffffffffffffff₆₄ : 0x0₆₄) ∘ (%ymm2[63:0] > %ymm3[63:0] ? 0xffffffffffffffff₆₄ : 0x0₆₄)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

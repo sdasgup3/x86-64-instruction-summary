@@ -1,0 +1,19 @@
+code: movsbq %cl, %rbx
+
+  maybe read:      { %cl }
+  must read:       { %cl }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+movsbq %cl, %rbx: Hindex5(9)
+movsbq %cl, %rbx: Hindex5(9)
+Formula:
+
+%rbx   : ((_ sign_extend 56) ((_ extract 7 0) %rcx))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

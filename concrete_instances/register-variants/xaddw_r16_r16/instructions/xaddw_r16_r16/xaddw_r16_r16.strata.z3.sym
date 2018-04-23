@@ -1,0 +1,76 @@
+code: xaddw %cx, %bx
+
+  maybe read:      { %cx %bx }
+  must read:       { %cx %bx }
+  maybe write:     { %cx %bx %cf %pf %af %zf %sf %of }
+  must write:      { %cx %bx %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rcx   : (concat ((_ extract 63 16) %rcx) ((_ extract 15 0) %rbx))
+%rbx   : (let ((a!1 ((_ extract 15 0)
+             (bvadd (concat #b0 ((_ extract 15 0) %rbx))
+                    (concat #b0 ((_ extract 15 0) %rcx))))))
+  (concat ((_ extract 63 16) %rbx) a!1))
+
+%cf    : (let ((a!1 ((_ extract 16 16)
+             (bvadd (concat #b0 ((_ extract 15 0) %rbx))
+                    (concat #b0 ((_ extract 15 0) %rcx))))))
+  (= a!1 #b1))
+%pf    : (let ((a!1 ((_ extract 0 0)
+             (bvadd (concat #b0 ((_ extract 15 0) %rbx))
+                    (concat #b0 ((_ extract 15 0) %rcx)))))
+      (a!2 ((_ extract 1 1)
+             (bvadd (concat #b0 ((_ extract 15 0) %rbx))
+                    (concat #b0 ((_ extract 15 0) %rcx)))))
+      (a!3 ((_ extract 2 2)
+             (bvadd (concat #b0 ((_ extract 15 0) %rbx))
+                    (concat #b0 ((_ extract 15 0) %rcx)))))
+      (a!4 ((_ extract 3 3)
+             (bvadd (concat #b0 ((_ extract 15 0) %rbx))
+                    (concat #b0 ((_ extract 15 0) %rcx)))))
+      (a!5 ((_ extract 4 4)
+             (bvadd (concat #b0 ((_ extract 15 0) %rbx))
+                    (concat #b0 ((_ extract 15 0) %rcx)))))
+      (a!6 ((_ extract 5 5)
+             (bvadd (concat #b0 ((_ extract 15 0) %rbx))
+                    (concat #b0 ((_ extract 15 0) %rcx)))))
+      (a!7 ((_ extract 6 6)
+             (bvadd (concat #b0 ((_ extract 15 0) %rbx))
+                    (concat #b0 ((_ extract 15 0) %rcx)))))
+      (a!8 ((_ extract 7 7)
+             (bvadd (concat #b0 ((_ extract 15 0) %rbx))
+                    (concat #b0 ((_ extract 15 0) %rcx))))))
+  (not (xor (= a!1 #b1)
+            (= a!2 #b1)
+            (= a!3 #b1)
+            (= a!4 #b1)
+            (= a!5 #b1)
+            (= a!6 #b1)
+            (= a!7 #b1)
+            (= a!8 #b1))))
+%af    : (let ((a!1 ((_ extract 4 4)
+             (bvadd (concat #b0 ((_ extract 3 0) %rbx))
+                    (concat #b0 ((_ extract 3 0) %rcx))))))
+  (= a!1 #b1))
+%zf    : (let ((a!1 ((_ extract 15 0)
+             (bvadd (concat #b0 ((_ extract 15 0) %rbx))
+                    (concat #b0 ((_ extract 15 0) %rcx))))))
+  (= a!1 #x0000))
+%sf    : (let ((a!1 ((_ extract 15 15)
+             (bvadd (concat #b0 ((_ extract 15 0) %rbx))
+                    (concat #b0 ((_ extract 15 0) %rcx))))))
+  (= a!1 #b1))
+%of    : (let ((a!1 ((_ extract 15 15)
+             (bvadd (concat #b0 ((_ extract 15 0) %rbx))
+                    (concat #b0 ((_ extract 15 0) %rcx))))))
+(let ((a!2 (not (= (= ((_ extract 15 15) %rbx) #b1) (= a!1 #b1)))))
+  (and (= (= ((_ extract 15 15) %rbx) #b1) (= ((_ extract 15 15) %rcx) #b1))
+       a!2)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

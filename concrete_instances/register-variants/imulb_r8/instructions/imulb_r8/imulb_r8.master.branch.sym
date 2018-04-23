@@ -1,0 +1,43 @@
+code: imulb %bl
+
+  maybe read:      { %al %bl }
+  must read:       { %al %bl }
+  maybe write:     { %ax %cf %of }
+  must write:      { %ax %cf %of }
+  maybe undef:     { %pf %af %zf %sf }
+  must undef:      { %pf %af %zf %sf }
+  required flags:  { }
+
+imulb %bl: Hindex1(9)
+imulb %bl: Hindex1(9)
+Formula:
+
+%rax   : (concat ((_ extract 63 16) %rax)
+        (bvmul ((_ sign_extend 8) ((_ extract 7 0) %rbx))
+               ((_ sign_extend 8) ((_ extract 7 0) %rax))))
+
+%cf    : (let ((a!1 ((_ extract 7 0)
+             (bvmul ((_ sign_extend 8) ((_ extract 7 0) %rbx))
+                    ((_ sign_extend 8) ((_ extract 7 0) %rax))))))
+(let ((a!2 (= (bvmul ((_ sign_extend 8) ((_ extract 7 0) %rbx))
+                     ((_ sign_extend 8) ((_ extract 7 0) %rax)))
+              ((_ sign_extend 8) a!1))))
+  (not a!2)))
+%pf    : TMP_BOOL_2
+%af    : TMP_BOOL_1
+%zf    : TMP_BOOL_0
+%sf    : (let ((a!1 ((_ extract 7 7)
+             (bvmul ((_ sign_extend 8) ((_ extract 7 0) %rbx))
+                    ((_ sign_extend 8) ((_ extract 7 0) %rax))))))
+  (= a!1 #b1))
+%of    : (let ((a!1 ((_ extract 7 0)
+             (bvmul ((_ sign_extend 8) ((_ extract 7 0) %rbx))
+                    ((_ sign_extend 8) ((_ extract 7 0) %rax))))))
+(let ((a!2 (= (bvmul ((_ sign_extend 8) ((_ extract 7 0) %rbx))
+                     ((_ sign_extend 8) ((_ extract 7 0) %rax)))
+              ((_ sign_extend 8) a!1))))
+  (not a!2)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

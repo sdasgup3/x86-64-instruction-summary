@@ -1,0 +1,19 @@
+code: cmovbeq %rcx, %rbx
+
+  maybe read:      { %rcx %cf %zf }
+  must read:       { %rcx %cf %zf }
+  maybe write:     { %rbx }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { cmov }
+
+cmovbeq %rcx, %rbx: Hindex3(9)
+cmovbeq %rcx, %rbx: Hindex3(9)
+Formula:
+
+%rbx   : (ite (or %cf %zf) %rcx %rbx)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

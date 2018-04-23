@@ -1,0 +1,41 @@
+code: rclb %cl, %bl
+
+  maybe read:      { %cl %bl %cf }
+  must read:       { %cl %bl %cf }
+  maybe write:     { %bl %cf %of }
+  must write:      { %bl }
+  maybe undef:     { %of }
+  must undef:      { }
+  required flags:  { }
+
+rclb %cl, %bl: Hindex7(9)
+rclb %cl, %bl: Hindex7(9)
+Formula:
+
+%rbx   : (let ((a!1 (bvurem (concat #b0 (bvand ((_ extract 7 0) %rcx) #x1f)) #b000001001)))
+(let ((a!2 ((_ extract 7 0)
+             (ext_rotate_left (concat (ite %cf #b1 #b0) ((_ extract 7 0) %rbx))
+                              a!1))))
+  (concat ((_ extract 63 8) %rbx) a!2)))
+
+%cf    : (let ((a!1 (bvurem (concat #b0 (bvand ((_ extract 7 0) %rcx) #x1f)) #b000001001)))
+(let ((a!2 ((_ extract 8 8)
+             (ext_rotate_left (concat (ite %cf #b1 #b0) ((_ extract 7 0) %rbx))
+                              a!1))))
+  (= a!2 #b1)))
+%of    : (let ((a!1 (bvurem (concat #b0 (bvand ((_ extract 7 0) %rcx) #x1f)) #b000001001)))
+(let ((a!2 ((_ extract 8 8)
+             (ext_rotate_left (concat (ite %cf #b1 #b0) ((_ extract 7 0) %rbx))
+                              a!1)))
+      (a!3 ((_ extract 7 7)
+             (ext_rotate_left (concat (ite %cf #b1 #b0) ((_ extract 7 0) %rbx))
+                              a!1)))
+      (a!4 (and (not (= ((_ extract 7 0) a!1) #x00)) %of))
+      (a!5 (not (not (= ((_ extract 7 0) a!1) #x00)))))
+(let ((a!6 (and (not (= ((_ extract 7 0) a!1) #x01))
+                (or a!4 (and a!5 TMP_BOOL_0)))))
+  (or (and (= ((_ extract 7 0) a!1) #x01) (xor (= a!2 #b1) (= a!3 #b1))) a!6))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv
