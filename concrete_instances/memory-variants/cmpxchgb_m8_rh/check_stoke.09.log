@@ -1,14 +1,16 @@
 [4m[1m[34mFiring Last 1[0m
 Thread 1 start: cmpxchgb_m8_rh
-Modiy /home/sdasgup3/TYLER/strata-data/data-regs/testcases.tc using %rbx
-Modiied: concrete_instances/memory-variants/cmpxchgb_m8_rh/instructions/../testcases.09.tc
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/TYLER/strata-data/circuits --target concrete_instances/memory-variants/cmpxchgb_m8_rh/instructions/cmpxchgb_m8_rh/cmpxchgb_m8_rh.s --functions /home/sdasgup3/TYLER/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/cmpxchgb_m8_rh/instructions/../testcases.09.tc --def_in "{ %ax %rbx %cf %pf %zf %sf %of }" --live_out "{ %al %cf %pf %zf %sf %of }" 
+timeout 30m  /home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/TYLER/strata-data/circuits --target concrete_instances/memory-variants/cmpxchgb_m8_rh/instructions/cmpxchgb_m8_rh/cmpxchgb_m8_rh.s --functions /home/sdasgup3/TYLER/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/cmpxchgb_m8_rh/instructions/../testcases.09.tc --def_in "{ %ax %rbx %cf %pf %zf %sf %of }" --live_out "{ %al %cf %pf %zf %sf %of }" 
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Strata Combo Handler
 Check Equivalence
 Completed 1000cases
 Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time cmpxchgb_m8_rh: 247 s
 Thread 1 done!: cmpxchgb_m8_rh
