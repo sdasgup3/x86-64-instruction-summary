@@ -1,0 +1,16 @@
+[4m[1m[34mFiring Last 1[0m
+Thread 1 start: shrl_r32_cl
+timeout 15m  /home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/TYLER/strata-data/circuits --target concrete_instances/register-variants/shrl_r32_cl/instructions/shrl_r32_cl/shrl_r32_cl.s --functions /home/sdasgup3/TYLER/strata-data/data-regs/functions --testcases /home/sdasgup3/TYLER/strata-data/data-regs/testcases.tc --def_in "{ %cl %rbx %cf %pf %zf %sf %of }" --live_out "{ %rbx %pf %zf %sf }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time shrl_r32_cl: 145 s
+Thread 1 done!: shrl_r32_cl
