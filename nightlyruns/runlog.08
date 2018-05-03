@@ -1,0 +1,654 @@
+Warn: [4m[1m[35mYou may like to provide testid[0m
+
+
+ Running adcb_al_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/adcb_al_imm8/check_stoke.txt --instructions_path imm_instructions/adcb_al_imm8/instructions 1>imm_instructions/adcb_al_imm8/check_stoke.log 2>&1 
+
+
+ Running adcb_r8_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/adcb_r8_imm8/check_stoke.txt --instructions_path imm_instructions/adcb_r8_imm8/instructions 1>imm_instructions/adcb_r8_imm8/check_stoke.log 2>&1 
+
+
+ Running adcb_rh_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/adcb_rh_imm8/check_stoke.txt --instructions_path imm_instructions/adcb_rh_imm8/instructions 1>imm_instructions/adcb_rh_imm8/check_stoke.log 2>&1 
+
+
+ Running adcl_eax_imm32
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/adcl_eax_imm32/check_stoke.txt --instructions_path imm_instructions/adcl_eax_imm32/instructions 1>imm_instructions/adcl_eax_imm32/check_stoke.log 2>&1 
+
+
+ Running adcl_r32_imm32
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/adcl_r32_imm32/check_stoke.txt --instructions_path imm_instructions/adcl_r32_imm32/instructions 1>imm_instructions/adcl_r32_imm32/check_stoke.log 2>&1 
+
+
+ Running adcl_r32_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/adcl_r32_imm8/check_stoke.txt --instructions_path imm_instructions/adcl_r32_imm8/instructions 1>imm_instructions/adcl_r32_imm8/check_stoke.log 2>&1 
+
+
+ Running adcq_r64_imm32
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/adcq_r64_imm32/check_stoke.txt --instructions_path imm_instructions/adcq_r64_imm32/instructions 1>imm_instructions/adcq_r64_imm32/check_stoke.log 2>&1 
+
+
+ Running adcq_r64_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/adcq_r64_imm8/check_stoke.txt --instructions_path imm_instructions/adcq_r64_imm8/instructions 1>imm_instructions/adcq_r64_imm8/check_stoke.log 2>&1 
+
+
+ Running adcq_rax_imm32
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/adcq_rax_imm32/check_stoke.txt --instructions_path imm_instructions/adcq_rax_imm32/instructions 1>imm_instructions/adcq_rax_imm32/check_stoke.log 2>&1 
+
+
+ Running adcw_ax_imm16
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/adcw_ax_imm16/check_stoke.txt --instructions_path imm_instructions/adcw_ax_imm16/instructions 1>imm_instructions/adcw_ax_imm16/check_stoke.log 2>&1 
+
+
+ Running adcw_r16_imm16
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/adcw_r16_imm16/check_stoke.txt --instructions_path imm_instructions/adcw_r16_imm16/instructions 1>imm_instructions/adcw_r16_imm16/check_stoke.log 2>&1 
+
+
+ Running adcw_r16_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/adcw_r16_imm8/check_stoke.txt --instructions_path imm_instructions/adcw_r16_imm8/instructions 1>imm_instructions/adcw_r16_imm8/check_stoke.log 2>&1 
+
+
+ Running addb_al_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/addb_al_imm8/check_stoke.txt --instructions_path imm_instructions/addb_al_imm8/instructions 1>imm_instructions/addb_al_imm8/check_stoke.log 2>&1 
+
+
+ Running addb_al_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/addb_al_imm8/check_stoke.08.txt --instructions_path imm_instructions/addb_al_imm8/instructions 1>imm_instructions/addb_al_imm8/check_stoke.08.log 2>&1 
+
+
+ Running addb_r8_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/addb_r8_imm8/check_stoke.08.txt --instructions_path imm_instructions/addb_r8_imm8/instructions 1>imm_instructions/addb_r8_imm8/check_stoke.08.log 2>&1 
+
+
+ Running addb_rh_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/addb_rh_imm8/check_stoke.08.txt --instructions_path imm_instructions/addb_rh_imm8/instructions 1>imm_instructions/addb_rh_imm8/check_stoke.08.log 2>&1 
+
+
+ Running addl_eax_imm32
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/addl_eax_imm32/check_stoke.08.txt --instructions_path imm_instructions/addl_eax_imm32/instructions 1>imm_instructions/addl_eax_imm32/check_stoke.08.log 2>&1 
+
+
+ Running addl_r32_imm32
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/addl_r32_imm32/check_stoke.08.txt --instructions_path imm_instructions/addl_r32_imm32/instructions 1>imm_instructions/addl_r32_imm32/check_stoke.08.log 2>&1 
+
+
+ Running addl_r32_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/addl_r32_imm8/check_stoke.08.txt --instructions_path imm_instructions/addl_r32_imm8/instructions 1>imm_instructions/addl_r32_imm8/check_stoke.08.log 2>&1 
+
+
+ Running addq_r64_imm32
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/addq_r64_imm32/check_stoke.08.txt --instructions_path imm_instructions/addq_r64_imm32/instructions 1>imm_instructions/addq_r64_imm32/check_stoke.08.log 2>&1 
+
+
+ Running addq_r64_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/addq_r64_imm8/check_stoke.08.txt --instructions_path imm_instructions/addq_r64_imm8/instructions 1>imm_instructions/addq_r64_imm8/check_stoke.08.log 2>&1 
+
+
+ Running addq_rax_imm32
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/addq_rax_imm32/check_stoke.08.txt --instructions_path imm_instructions/addq_rax_imm32/instructions 1>imm_instructions/addq_rax_imm32/check_stoke.08.log 2>&1 
+
+
+ Running addw_ax_imm16
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/addw_ax_imm16/check_stoke.08.txt --instructions_path imm_instructions/addw_ax_imm16/instructions 1>imm_instructions/addw_ax_imm16/check_stoke.08.log 2>&1 
+
+
+ Running addw_r16_imm16
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/addw_r16_imm16/check_stoke.08.txt --instructions_path imm_instructions/addw_r16_imm16/instructions 1>imm_instructions/addw_r16_imm16/check_stoke.08.log 2>&1 
+
+
+ Running addw_r16_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/addw_r16_imm8/check_stoke.08.txt --instructions_path imm_instructions/addw_r16_imm8/instructions 1>imm_instructions/addw_r16_imm8/check_stoke.08.log 2>&1 
+
+
+ Running andb_al_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/andb_al_imm8/check_stoke.08.txt --instructions_path imm_instructions/andb_al_imm8/instructions 1>imm_instructions/andb_al_imm8/check_stoke.08.log 2>&1 
+
+
+ Running andb_r8_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/andb_r8_imm8/check_stoke.08.txt --instructions_path imm_instructions/andb_r8_imm8/instructions 1>imm_instructions/andb_r8_imm8/check_stoke.08.log 2>&1 
+
+
+ Running andb_rh_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/andb_rh_imm8/check_stoke.08.txt --instructions_path imm_instructions/andb_rh_imm8/instructions 1>imm_instructions/andb_rh_imm8/check_stoke.08.log 2>&1 
+
+
+ Running andl_eax_imm32
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/andl_eax_imm32/check_stoke.08.txt --instructions_path imm_instructions/andl_eax_imm32/instructions 1>imm_instructions/andl_eax_imm32/check_stoke.08.log 2>&1 
+
+
+ Running andl_r32_imm32
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/andl_r32_imm32/check_stoke.08.txt --instructions_path imm_instructions/andl_r32_imm32/instructions 1>imm_instructions/andl_r32_imm32/check_stoke.08.log 2>&1 
+
+
+ Running andl_r32_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/andl_r32_imm8/check_stoke.08.txt --instructions_path imm_instructions/andl_r32_imm8/instructions 1>imm_instructions/andl_r32_imm8/check_stoke.08.log 2>&1 
+
+
+ Running andq_r64_imm32
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/andq_r64_imm32/check_stoke.08.txt --instructions_path imm_instructions/andq_r64_imm32/instructions 1>imm_instructions/andq_r64_imm32/check_stoke.08.log 2>&1 
+
+
+ Running andq_r64_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/andq_r64_imm8/check_stoke.08.txt --instructions_path imm_instructions/andq_r64_imm8/instructions 1>imm_instructions/andq_r64_imm8/check_stoke.08.log 2>&1 
+
+
+ Running andq_rax_imm32
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/andq_rax_imm32/check_stoke.08.txt --instructions_path imm_instructions/andq_rax_imm32/instructions 1>imm_instructions/andq_rax_imm32/check_stoke.08.log 2>&1 
+
+
+ Running andw_ax_imm16
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/andw_ax_imm16/check_stoke.08.txt --instructions_path imm_instructions/andw_ax_imm16/instructions 1>imm_instructions/andw_ax_imm16/check_stoke.08.log 2>&1 
+
+
+ Running andw_r16_imm16
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/andw_r16_imm16/check_stoke.08.txt --instructions_path imm_instructions/andw_r16_imm16/instructions 1>imm_instructions/andw_r16_imm16/check_stoke.08.log 2>&1 
+
+
+ Running andw_r16_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/andw_r16_imm8/check_stoke.08.txt --instructions_path imm_instructions/andw_r16_imm8/instructions 1>imm_instructions/andw_r16_imm8/check_stoke.08.log 2>&1 
+
+
+ Running btcl_r32_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/btcl_r32_imm8/check_stoke.08.txt --instructions_path imm_instructions/btcl_r32_imm8/instructions 1>imm_instructions/btcl_r32_imm8/check_stoke.08.log 2>&1 
+
+
+ Running btcq_r64_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/btcq_r64_imm8/check_stoke.08.txt --instructions_path imm_instructions/btcq_r64_imm8/instructions 1>imm_instructions/btcq_r64_imm8/check_stoke.08.log 2>&1 
+
+
+ Running btcw_r16_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/btcw_r16_imm8/check_stoke.08.txt --instructions_path imm_instructions/btcw_r16_imm8/instructions 1>imm_instructions/btcw_r16_imm8/check_stoke.08.log 2>&1 
+
+
+ Running btl_r32_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/btl_r32_imm8/check_stoke.08.txt --instructions_path imm_instructions/btl_r32_imm8/instructions 1>imm_instructions/btl_r32_imm8/check_stoke.08.log 2>&1 
+
+
+ Running btq_r64_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/btq_r64_imm8/check_stoke.08.txt --instructions_path imm_instructions/btq_r64_imm8/instructions 1>imm_instructions/btq_r64_imm8/check_stoke.08.log 2>&1 
+
+
+ Running btrl_r32_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/btrl_r32_imm8/check_stoke.08.txt --instructions_path imm_instructions/btrl_r32_imm8/instructions 1>imm_instructions/btrl_r32_imm8/check_stoke.08.log 2>&1 
+
+
+ Running btrq_r64_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/btrq_r64_imm8/check_stoke.08.txt --instructions_path imm_instructions/btrq_r64_imm8/instructions 1>imm_instructions/btrq_r64_imm8/check_stoke.08.log 2>&1 
+
+
+ Running btrw_r16_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/btrw_r16_imm8/check_stoke.08.txt --instructions_path imm_instructions/btrw_r16_imm8/instructions 1>imm_instructions/btrw_r16_imm8/check_stoke.08.log 2>&1 
+
+
+ Running btsl_r32_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/btsl_r32_imm8/check_stoke.08.txt --instructions_path imm_instructions/btsl_r32_imm8/instructions 1>imm_instructions/btsl_r32_imm8/check_stoke.08.log 2>&1 
+
+
+ Running btsq_r64_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/btsq_r64_imm8/check_stoke.08.txt --instructions_path imm_instructions/btsq_r64_imm8/instructions 1>imm_instructions/btsq_r64_imm8/check_stoke.08.log 2>&1 
+
+
+ Running btsw_r16_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/btsw_r16_imm8/check_stoke.08.txt --instructions_path imm_instructions/btsw_r16_imm8/instructions 1>imm_instructions/btsw_r16_imm8/check_stoke.08.log 2>&1 
+
+
+ Running btw_r16_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/btw_r16_imm8/check_stoke.08.txt --instructions_path imm_instructions/btw_r16_imm8/instructions 1>imm_instructions/btw_r16_imm8/check_stoke.08.log 2>&1 
+
+
+ Running cmpb_al_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/cmpb_al_imm8/check_stoke.08.txt --instructions_path imm_instructions/cmpb_al_imm8/instructions 1>imm_instructions/cmpb_al_imm8/check_stoke.08.log 2>&1 
+
+
+ Running cmpb_r8_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/cmpb_r8_imm8/check_stoke.08.txt --instructions_path imm_instructions/cmpb_r8_imm8/instructions 1>imm_instructions/cmpb_r8_imm8/check_stoke.08.log 2>&1 
+
+
+ Running cmpb_rh_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/cmpb_rh_imm8/check_stoke.08.txt --instructions_path imm_instructions/cmpb_rh_imm8/instructions 1>imm_instructions/cmpb_rh_imm8/check_stoke.08.log 2>&1 
+
+
+ Running cmpl_eax_imm32
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/cmpl_eax_imm32/check_stoke.08.txt --instructions_path imm_instructions/cmpl_eax_imm32/instructions 1>imm_instructions/cmpl_eax_imm32/check_stoke.08.log 2>&1 
+
+
+ Running cmpl_r32_imm32
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/cmpl_r32_imm32/check_stoke.08.txt --instructions_path imm_instructions/cmpl_r32_imm32/instructions 1>imm_instructions/cmpl_r32_imm32/check_stoke.08.log 2>&1 
+
+
+ Running cmpl_r32_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/cmpl_r32_imm8/check_stoke.08.txt --instructions_path imm_instructions/cmpl_r32_imm8/instructions 1>imm_instructions/cmpl_r32_imm8/check_stoke.08.log 2>&1 
+
+
+ Running cmpq_r64_imm32
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/cmpq_r64_imm32/check_stoke.08.txt --instructions_path imm_instructions/cmpq_r64_imm32/instructions 1>imm_instructions/cmpq_r64_imm32/check_stoke.08.log 2>&1 
+
+
+ Running cmpq_r64_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/cmpq_r64_imm8/check_stoke.08.txt --instructions_path imm_instructions/cmpq_r64_imm8/instructions 1>imm_instructions/cmpq_r64_imm8/check_stoke.08.log 2>&1 
+
+
+ Running cmpq_rax_imm32
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/cmpq_rax_imm32/check_stoke.08.txt --instructions_path imm_instructions/cmpq_rax_imm32/instructions 1>imm_instructions/cmpq_rax_imm32/check_stoke.08.log 2>&1 
+
+
+ Running cmpw_ax_imm16
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/cmpw_ax_imm16/check_stoke.08.txt --instructions_path imm_instructions/cmpw_ax_imm16/instructions 1>imm_instructions/cmpw_ax_imm16/check_stoke.08.log 2>&1 
+
+
+ Running cmpw_r16_imm16
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/cmpw_r16_imm16/check_stoke.08.txt --instructions_path imm_instructions/cmpw_r16_imm16/instructions 1>imm_instructions/cmpw_r16_imm16/check_stoke.08.log 2>&1 
+
+
+ Running cmpw_r16_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/cmpw_r16_imm8/check_stoke.08.txt --instructions_path imm_instructions/cmpw_r16_imm8/instructions 1>imm_instructions/cmpw_r16_imm8/check_stoke.08.log 2>&1 
+
+
+ Running movb_r8_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/movb_r8_imm8/check_stoke.08.txt --instructions_path imm_instructions/movb_r8_imm8/instructions 1>imm_instructions/movb_r8_imm8/check_stoke.08.log 2>&1 
+
+
+ Running movb_rh_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/movb_rh_imm8/check_stoke.08.txt --instructions_path imm_instructions/movb_rh_imm8/instructions 1>imm_instructions/movb_rh_imm8/check_stoke.08.log 2>&1 
+
+
+ Running movl_r32_imm32
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/movl_r32_imm32/check_stoke.08.txt --instructions_path imm_instructions/movl_r32_imm32/instructions 1>imm_instructions/movl_r32_imm32/check_stoke.08.log 2>&1 
+
+
+ Running movq_r64_imm32
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/movq_r64_imm32/check_stoke.08.txt --instructions_path imm_instructions/movq_r64_imm32/instructions 1>imm_instructions/movq_r64_imm32/check_stoke.08.log 2>&1 
+
+
+ Running movw_r16_imm16
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/movw_r16_imm16/check_stoke.08.txt --instructions_path imm_instructions/movw_r16_imm16/instructions 1>imm_instructions/movw_r16_imm16/check_stoke.08.log 2>&1 
+
+
+ Running orb_al_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/orb_al_imm8/check_stoke.08.txt --instructions_path imm_instructions/orb_al_imm8/instructions 1>imm_instructions/orb_al_imm8/check_stoke.08.log 2>&1 
+
+
+ Running orb_r8_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/orb_r8_imm8/check_stoke.08.txt --instructions_path imm_instructions/orb_r8_imm8/instructions 1>imm_instructions/orb_r8_imm8/check_stoke.08.log 2>&1 
+
+
+ Running orb_rh_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/orb_rh_imm8/check_stoke.08.txt --instructions_path imm_instructions/orb_rh_imm8/instructions 1>imm_instructions/orb_rh_imm8/check_stoke.08.log 2>&1 
+
+
+ Running orl_eax_imm32
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/orl_eax_imm32/check_stoke.08.txt --instructions_path imm_instructions/orl_eax_imm32/instructions 1>imm_instructions/orl_eax_imm32/check_stoke.08.log 2>&1 
+
+
+ Running orl_r32_imm32
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/orl_r32_imm32/check_stoke.08.txt --instructions_path imm_instructions/orl_r32_imm32/instructions 1>imm_instructions/orl_r32_imm32/check_stoke.08.log 2>&1 
+
+
+ Running orl_r32_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/orl_r32_imm8/check_stoke.08.txt --instructions_path imm_instructions/orl_r32_imm8/instructions 1>imm_instructions/orl_r32_imm8/check_stoke.08.log 2>&1 
+
+
+ Running orq_r64_imm32
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/orq_r64_imm32/check_stoke.08.txt --instructions_path imm_instructions/orq_r64_imm32/instructions 1>imm_instructions/orq_r64_imm32/check_stoke.08.log 2>&1 
+
+
+ Running orq_r64_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/orq_r64_imm8/check_stoke.08.txt --instructions_path imm_instructions/orq_r64_imm8/instructions 1>imm_instructions/orq_r64_imm8/check_stoke.08.log 2>&1 
+
+
+ Running orq_rax_imm32
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/orq_rax_imm32/check_stoke.08.txt --instructions_path imm_instructions/orq_rax_imm32/instructions 1>imm_instructions/orq_rax_imm32/check_stoke.08.log 2>&1 
+
+
+ Running orw_ax_imm16
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/orw_ax_imm16/check_stoke.08.txt --instructions_path imm_instructions/orw_ax_imm16/instructions 1>imm_instructions/orw_ax_imm16/check_stoke.08.log 2>&1 
+
+
+ Running orw_r16_imm16
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/orw_r16_imm16/check_stoke.08.txt --instructions_path imm_instructions/orw_r16_imm16/instructions 1>imm_instructions/orw_r16_imm16/check_stoke.08.log 2>&1 
+
+
+ Running orw_r16_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/orw_r16_imm8/check_stoke.08.txt --instructions_path imm_instructions/orw_r16_imm8/instructions 1>imm_instructions/orw_r16_imm8/check_stoke.08.log 2>&1 
+
+
+ Running rclb_r8_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/rclb_r8_imm8/check_stoke.08.txt --instructions_path imm_instructions/rclb_r8_imm8/instructions 1>imm_instructions/rclb_r8_imm8/check_stoke.08.log 2>&1 
+
+
+ Running rclb_rh_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/rclb_rh_imm8/check_stoke.08.txt --instructions_path imm_instructions/rclb_rh_imm8/instructions 1>imm_instructions/rclb_rh_imm8/check_stoke.08.log 2>&1 
+
+
+ Running rcll_r32_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/rcll_r32_imm8/check_stoke.08.txt --instructions_path imm_instructions/rcll_r32_imm8/instructions 1>imm_instructions/rcll_r32_imm8/check_stoke.08.log 2>&1 
+
+
+ Running rclq_r64_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/rclq_r64_imm8/check_stoke.08.txt --instructions_path imm_instructions/rclq_r64_imm8/instructions 1>imm_instructions/rclq_r64_imm8/check_stoke.08.log 2>&1 
+
+
+ Running rclw_r16_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/rclw_r16_imm8/check_stoke.08.txt --instructions_path imm_instructions/rclw_r16_imm8/instructions 1>imm_instructions/rclw_r16_imm8/check_stoke.08.log 2>&1 
+
+
+ Running rcrb_r8_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/rcrb_r8_imm8/check_stoke.08.txt --instructions_path imm_instructions/rcrb_r8_imm8/instructions 1>imm_instructions/rcrb_r8_imm8/check_stoke.08.log 2>&1 
+
+
+ Running rcrb_rh_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/rcrb_rh_imm8/check_stoke.08.txt --instructions_path imm_instructions/rcrb_rh_imm8/instructions 1>imm_instructions/rcrb_rh_imm8/check_stoke.08.log 2>&1 
+
+
+ Running rcrl_r32_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/rcrl_r32_imm8/check_stoke.08.txt --instructions_path imm_instructions/rcrl_r32_imm8/instructions 1>imm_instructions/rcrl_r32_imm8/check_stoke.08.log 2>&1 
+
+
+ Running rcrq_r64_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/rcrq_r64_imm8/check_stoke.08.txt --instructions_path imm_instructions/rcrq_r64_imm8/instructions 1>imm_instructions/rcrq_r64_imm8/check_stoke.08.log 2>&1 
+
+
+ Running rcrw_r16_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/rcrw_r16_imm8/check_stoke.08.txt --instructions_path imm_instructions/rcrw_r16_imm8/instructions 1>imm_instructions/rcrw_r16_imm8/check_stoke.08.log 2>&1 
+
+
+ Running rolb_r8_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/rolb_r8_imm8/check_stoke.08.txt --instructions_path imm_instructions/rolb_r8_imm8/instructions 1>imm_instructions/rolb_r8_imm8/check_stoke.08.log 2>&1 
+
+
+ Running rolb_rh_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/rolb_rh_imm8/check_stoke.08.txt --instructions_path imm_instructions/rolb_rh_imm8/instructions 1>imm_instructions/rolb_rh_imm8/check_stoke.08.log 2>&1 
+
+
+ Running roll_r32_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/roll_r32_imm8/check_stoke.08.txt --instructions_path imm_instructions/roll_r32_imm8/instructions 1>imm_instructions/roll_r32_imm8/check_stoke.08.log 2>&1 
+
+
+ Running rolq_r64_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/rolq_r64_imm8/check_stoke.08.txt --instructions_path imm_instructions/rolq_r64_imm8/instructions 1>imm_instructions/rolq_r64_imm8/check_stoke.08.log 2>&1 
+
+
+ Running rolw_r16_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/rolw_r16_imm8/check_stoke.08.txt --instructions_path imm_instructions/rolw_r16_imm8/instructions 1>imm_instructions/rolw_r16_imm8/check_stoke.08.log 2>&1 
+
+
+ Running rorb_r8_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/rorb_r8_imm8/check_stoke.08.txt --instructions_path imm_instructions/rorb_r8_imm8/instructions 1>imm_instructions/rorb_r8_imm8/check_stoke.08.log 2>&1 
+
+
+ Running rorb_rh_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/rorb_rh_imm8/check_stoke.08.txt --instructions_path imm_instructions/rorb_rh_imm8/instructions 1>imm_instructions/rorb_rh_imm8/check_stoke.08.log 2>&1 
+
+
+ Running rorl_r32_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/rorl_r32_imm8/check_stoke.08.txt --instructions_path imm_instructions/rorl_r32_imm8/instructions 1>imm_instructions/rorl_r32_imm8/check_stoke.08.log 2>&1 
+
+
+ Running rorq_r64_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/rorq_r64_imm8/check_stoke.08.txt --instructions_path imm_instructions/rorq_r64_imm8/instructions 1>imm_instructions/rorq_r64_imm8/check_stoke.08.log 2>&1 
+
+
+ Running rorw_r16_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/rorw_r16_imm8/check_stoke.08.txt --instructions_path imm_instructions/rorw_r16_imm8/instructions 1>imm_instructions/rorw_r16_imm8/check_stoke.08.log 2>&1 
+
+
+ Running salb_r8_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/salb_r8_imm8/check_stoke.08.txt --instructions_path imm_instructions/salb_r8_imm8/instructions 1>imm_instructions/salb_r8_imm8/check_stoke.08.log 2>&1 
+
+
+ Running salb_rh_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/salb_rh_imm8/check_stoke.08.txt --instructions_path imm_instructions/salb_rh_imm8/instructions 1>imm_instructions/salb_rh_imm8/check_stoke.08.log 2>&1 
+
+
+ Running sall_r32_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/sall_r32_imm8/check_stoke.08.txt --instructions_path imm_instructions/sall_r32_imm8/instructions 1>imm_instructions/sall_r32_imm8/check_stoke.08.log 2>&1 
+
+
+ Running salq_r64_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/salq_r64_imm8/check_stoke.08.txt --instructions_path imm_instructions/salq_r64_imm8/instructions 1>imm_instructions/salq_r64_imm8/check_stoke.08.log 2>&1 
+
+
+ Running salw_r16_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/salw_r16_imm8/check_stoke.08.txt --instructions_path imm_instructions/salw_r16_imm8/instructions 1>imm_instructions/salw_r16_imm8/check_stoke.08.log 2>&1 
+
+
+ Running sarb_r8_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/sarb_r8_imm8/check_stoke.08.txt --instructions_path imm_instructions/sarb_r8_imm8/instructions 1>imm_instructions/sarb_r8_imm8/check_stoke.08.log 2>&1 
+
+
+ Running sarb_rh_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/sarb_rh_imm8/check_stoke.08.txt --instructions_path imm_instructions/sarb_rh_imm8/instructions 1>imm_instructions/sarb_rh_imm8/check_stoke.08.log 2>&1 
+
+
+ Running sarl_r32_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/sarl_r32_imm8/check_stoke.08.txt --instructions_path imm_instructions/sarl_r32_imm8/instructions 1>imm_instructions/sarl_r32_imm8/check_stoke.08.log 2>&1 
+
+
+ Running sarq_r64_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/sarq_r64_imm8/check_stoke.08.txt --instructions_path imm_instructions/sarq_r64_imm8/instructions 1>imm_instructions/sarq_r64_imm8/check_stoke.08.log 2>&1 
+
+
+ Running sarw_r16_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/sarw_r16_imm8/check_stoke.08.txt --instructions_path imm_instructions/sarw_r16_imm8/instructions 1>imm_instructions/sarw_r16_imm8/check_stoke.08.log 2>&1 
+
+
+ Running sbbb_al_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/sbbb_al_imm8/check_stoke.08.txt --instructions_path imm_instructions/sbbb_al_imm8/instructions 1>imm_instructions/sbbb_al_imm8/check_stoke.08.log 2>&1 
+
+
+ Running sbbb_r8_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/sbbb_r8_imm8/check_stoke.08.txt --instructions_path imm_instructions/sbbb_r8_imm8/instructions 1>imm_instructions/sbbb_r8_imm8/check_stoke.08.log 2>&1 
+
+
+ Running sbbb_rh_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/sbbb_rh_imm8/check_stoke.08.txt --instructions_path imm_instructions/sbbb_rh_imm8/instructions 1>imm_instructions/sbbb_rh_imm8/check_stoke.08.log 2>&1 
+
+
+ Running sbbl_eax_imm32
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/sbbl_eax_imm32/check_stoke.08.txt --instructions_path imm_instructions/sbbl_eax_imm32/instructions 1>imm_instructions/sbbl_eax_imm32/check_stoke.08.log 2>&1 
+
+
+ Running sbbl_r32_imm32
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/sbbl_r32_imm32/check_stoke.08.txt --instructions_path imm_instructions/sbbl_r32_imm32/instructions 1>imm_instructions/sbbl_r32_imm32/check_stoke.08.log 2>&1 
+
+
+ Running sbbl_r32_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/sbbl_r32_imm8/check_stoke.08.txt --instructions_path imm_instructions/sbbl_r32_imm8/instructions 1>imm_instructions/sbbl_r32_imm8/check_stoke.08.log 2>&1 
+
+
+ Running sbbq_r64_imm32
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/sbbq_r64_imm32/check_stoke.08.txt --instructions_path imm_instructions/sbbq_r64_imm32/instructions 1>imm_instructions/sbbq_r64_imm32/check_stoke.08.log 2>&1 
+
+
+ Running sbbq_r64_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/sbbq_r64_imm8/check_stoke.08.txt --instructions_path imm_instructions/sbbq_r64_imm8/instructions 1>imm_instructions/sbbq_r64_imm8/check_stoke.08.log 2>&1 
+
+
+ Running sbbq_rax_imm32
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/sbbq_rax_imm32/check_stoke.08.txt --instructions_path imm_instructions/sbbq_rax_imm32/instructions 1>imm_instructions/sbbq_rax_imm32/check_stoke.08.log 2>&1 
+
+
+ Running sbbw_ax_imm16
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/sbbw_ax_imm16/check_stoke.08.txt --instructions_path imm_instructions/sbbw_ax_imm16/instructions 1>imm_instructions/sbbw_ax_imm16/check_stoke.08.log 2>&1 
+
+
+ Running sbbw_r16_imm16
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/sbbw_r16_imm16/check_stoke.08.txt --instructions_path imm_instructions/sbbw_r16_imm16/instructions 1>imm_instructions/sbbw_r16_imm16/check_stoke.08.log 2>&1 
+
+
+ Running sbbw_r16_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/sbbw_r16_imm8/check_stoke.08.txt --instructions_path imm_instructions/sbbw_r16_imm8/instructions 1>imm_instructions/sbbw_r16_imm8/check_stoke.08.log 2>&1 
+
+
+ Running shlb_r8_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/shlb_r8_imm8/check_stoke.08.txt --instructions_path imm_instructions/shlb_r8_imm8/instructions 1>imm_instructions/shlb_r8_imm8/check_stoke.08.log 2>&1 
+
+
+ Running shlb_rh_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/shlb_rh_imm8/check_stoke.08.txt --instructions_path imm_instructions/shlb_rh_imm8/instructions 1>imm_instructions/shlb_rh_imm8/check_stoke.08.log 2>&1 
+
+
+ Running shll_r32_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/shll_r32_imm8/check_stoke.08.txt --instructions_path imm_instructions/shll_r32_imm8/instructions 1>imm_instructions/shll_r32_imm8/check_stoke.08.log 2>&1 
+
+
+ Running shlq_r64_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/shlq_r64_imm8/check_stoke.08.txt --instructions_path imm_instructions/shlq_r64_imm8/instructions 1>imm_instructions/shlq_r64_imm8/check_stoke.08.log 2>&1 
+
+
+ Running shlw_r16_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/shlw_r16_imm8/check_stoke.08.txt --instructions_path imm_instructions/shlw_r16_imm8/instructions 1>imm_instructions/shlw_r16_imm8/check_stoke.08.log 2>&1 
+
+
+ Running shrb_r8_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/shrb_r8_imm8/check_stoke.08.txt --instructions_path imm_instructions/shrb_r8_imm8/instructions 1>imm_instructions/shrb_r8_imm8/check_stoke.08.log 2>&1 
+
+
+ Running shrb_rh_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/shrb_rh_imm8/check_stoke.08.txt --instructions_path imm_instructions/shrb_rh_imm8/instructions 1>imm_instructions/shrb_rh_imm8/check_stoke.08.log 2>&1 
+
+
+ Running shrl_r32_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/shrl_r32_imm8/check_stoke.08.txt --instructions_path imm_instructions/shrl_r32_imm8/instructions 1>imm_instructions/shrl_r32_imm8/check_stoke.08.log 2>&1 
+
+
+ Running shrq_r64_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/shrq_r64_imm8/check_stoke.08.txt --instructions_path imm_instructions/shrq_r64_imm8/instructions 1>imm_instructions/shrq_r64_imm8/check_stoke.08.log 2>&1 
+
+
+ Running shrw_r16_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/shrw_r16_imm8/check_stoke.08.txt --instructions_path imm_instructions/shrw_r16_imm8/instructions 1>imm_instructions/shrw_r16_imm8/check_stoke.08.log 2>&1 
+
+
+ Running subb_al_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/subb_al_imm8/check_stoke.08.txt --instructions_path imm_instructions/subb_al_imm8/instructions 1>imm_instructions/subb_al_imm8/check_stoke.08.log 2>&1 
+
+
+ Running subb_r8_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/subb_r8_imm8/check_stoke.08.txt --instructions_path imm_instructions/subb_r8_imm8/instructions 1>imm_instructions/subb_r8_imm8/check_stoke.08.log 2>&1 
+
+
+ Running subb_rh_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/subb_rh_imm8/check_stoke.08.txt --instructions_path imm_instructions/subb_rh_imm8/instructions 1>imm_instructions/subb_rh_imm8/check_stoke.08.log 2>&1 
+
+
+ Running subl_eax_imm32
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/subl_eax_imm32/check_stoke.08.txt --instructions_path imm_instructions/subl_eax_imm32/instructions 1>imm_instructions/subl_eax_imm32/check_stoke.08.log 2>&1 
+
+
+ Running subl_r32_imm32
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/subl_r32_imm32/check_stoke.08.txt --instructions_path imm_instructions/subl_r32_imm32/instructions 1>imm_instructions/subl_r32_imm32/check_stoke.08.log 2>&1 
+
+
+ Running subl_r32_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/subl_r32_imm8/check_stoke.08.txt --instructions_path imm_instructions/subl_r32_imm8/instructions 1>imm_instructions/subl_r32_imm8/check_stoke.08.log 2>&1 
+
+
+ Running subq_r64_imm32
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/subq_r64_imm32/check_stoke.08.txt --instructions_path imm_instructions/subq_r64_imm32/instructions 1>imm_instructions/subq_r64_imm32/check_stoke.08.log 2>&1 
+
+
+ Running subq_r64_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/subq_r64_imm8/check_stoke.08.txt --instructions_path imm_instructions/subq_r64_imm8/instructions 1>imm_instructions/subq_r64_imm8/check_stoke.08.log 2>&1 
+
+
+ Running subq_rax_imm32
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/subq_rax_imm32/check_stoke.08.txt --instructions_path imm_instructions/subq_rax_imm32/instructions 1>imm_instructions/subq_rax_imm32/check_stoke.08.log 2>&1 
+
+
+ Running subw_ax_imm16
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/subw_ax_imm16/check_stoke.08.txt --instructions_path imm_instructions/subw_ax_imm16/instructions 1>imm_instructions/subw_ax_imm16/check_stoke.08.log 2>&1 
+
+
+ Running subw_r16_imm16
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/subw_r16_imm16/check_stoke.08.txt --instructions_path imm_instructions/subw_r16_imm16/instructions 1>imm_instructions/subw_r16_imm16/check_stoke.08.log 2>&1 
+
+
+ Running subw_r16_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/subw_r16_imm8/check_stoke.08.txt --instructions_path imm_instructions/subw_r16_imm8/instructions 1>imm_instructions/subw_r16_imm8/check_stoke.08.log 2>&1 
+
+
+ Running testb_al_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/testb_al_imm8/check_stoke.08.txt --instructions_path imm_instructions/testb_al_imm8/instructions 1>imm_instructions/testb_al_imm8/check_stoke.08.log 2>&1 
+
+
+ Running testb_r8_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/testb_r8_imm8/check_stoke.08.txt --instructions_path imm_instructions/testb_r8_imm8/instructions 1>imm_instructions/testb_r8_imm8/check_stoke.08.log 2>&1 
+
+
+ Running testb_rh_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/testb_rh_imm8/check_stoke.08.txt --instructions_path imm_instructions/testb_rh_imm8/instructions 1>imm_instructions/testb_rh_imm8/check_stoke.08.log 2>&1 
+
+
+ Running testl_eax_imm32
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/testl_eax_imm32/check_stoke.08.txt --instructions_path imm_instructions/testl_eax_imm32/instructions 1>imm_instructions/testl_eax_imm32/check_stoke.08.log 2>&1 
+
+
+ Running testl_r32_imm32
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/testl_r32_imm32/check_stoke.08.txt --instructions_path imm_instructions/testl_r32_imm32/instructions 1>imm_instructions/testl_r32_imm32/check_stoke.08.log 2>&1 
+
+
+ Running testq_r64_imm32
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/testq_r64_imm32/check_stoke.08.txt --instructions_path imm_instructions/testq_r64_imm32/instructions 1>imm_instructions/testq_r64_imm32/check_stoke.08.log 2>&1 
+
+
+ Running testq_rax_imm32
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/testq_rax_imm32/check_stoke.08.txt --instructions_path imm_instructions/testq_rax_imm32/instructions 1>imm_instructions/testq_rax_imm32/check_stoke.08.log 2>&1 
+
+
+ Running testw_ax_imm16
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/testw_ax_imm16/check_stoke.08.txt --instructions_path imm_instructions/testw_ax_imm16/instructions 1>imm_instructions/testw_ax_imm16/check_stoke.08.log 2>&1 
+
+
+ Running testw_r16_imm16
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/testw_r16_imm16/check_stoke.08.txt --instructions_path imm_instructions/testw_r16_imm16/instructions 1>imm_instructions/testw_r16_imm16/check_stoke.08.log 2>&1 
+
+
+ Running xorb_al_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/xorb_al_imm8/check_stoke.08.txt --instructions_path imm_instructions/xorb_al_imm8/instructions 1>imm_instructions/xorb_al_imm8/check_stoke.08.log 2>&1 
+
+
+ Running xorb_r8_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/xorb_r8_imm8/check_stoke.08.txt --instructions_path imm_instructions/xorb_r8_imm8/instructions 1>imm_instructions/xorb_r8_imm8/check_stoke.08.log 2>&1 
+
+
+ Running xorb_rh_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/xorb_rh_imm8/check_stoke.08.txt --instructions_path imm_instructions/xorb_rh_imm8/instructions 1>imm_instructions/xorb_rh_imm8/check_stoke.08.log 2>&1 
+
+
+ Running xorl_eax_imm32
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/xorl_eax_imm32/check_stoke.08.txt --instructions_path imm_instructions/xorl_eax_imm32/instructions 1>imm_instructions/xorl_eax_imm32/check_stoke.08.log 2>&1 
+
+
+ Running xorl_r32_imm32
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/xorl_r32_imm32/check_stoke.08.txt --instructions_path imm_instructions/xorl_r32_imm32/instructions 1>imm_instructions/xorl_r32_imm32/check_stoke.08.log 2>&1 
+
+
+ Running xorl_r32_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/xorl_r32_imm8/check_stoke.08.txt --instructions_path imm_instructions/xorl_r32_imm8/instructions 1>imm_instructions/xorl_r32_imm8/check_stoke.08.log 2>&1 
+
+
+ Running xorq_r64_imm32
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/xorq_r64_imm32/check_stoke.08.txt --instructions_path imm_instructions/xorq_r64_imm32/instructions 1>imm_instructions/xorq_r64_imm32/check_stoke.08.log 2>&1 
+
+
+ Running xorq_r64_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/xorq_r64_imm8/check_stoke.08.txt --instructions_path imm_instructions/xorq_r64_imm8/instructions 1>imm_instructions/xorq_r64_imm8/check_stoke.08.log 2>&1 
+
+
+ Running xorq_rax_imm32
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/xorq_rax_imm32/check_stoke.08.txt --instructions_path imm_instructions/xorq_rax_imm32/instructions 1>imm_instructions/xorq_rax_imm32/check_stoke.08.log 2>&1 
+
+
+ Running xorw_ax_imm16
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/xorw_ax_imm16/check_stoke.08.txt --instructions_path imm_instructions/xorw_ax_imm16/instructions 1>imm_instructions/xorw_ax_imm16/check_stoke.08.log 2>&1 
+
+
+ Running xorw_r16_imm16
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/xorw_r16_imm16/check_stoke.08.txt --instructions_path imm_instructions/xorw_r16_imm16/instructions 1>imm_instructions/xorw_r16_imm16/check_stoke.08.log 2>&1 
+
+
+ Running xorw_r16_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/xorw_r16_imm8/check_stoke.08.txt --instructions_path imm_instructions/xorw_r16_imm8/instructions 1>imm_instructions/xorw_r16_imm8/check_stoke.08.log 2>&1 
+Execution time: 323471 s

@@ -1,0 +1,705 @@
+[4m[1m[34mFiring 30.[0m
+Thread 1 start: pmovmskb_r32_xmm
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//pmovmskb_r32_xmm/pmovmskb_r32_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 }" --live_out "{ %rbx }" 
+Thread 2 start: pmovmskb_r64_xmm
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//pmovmskb_r64_xmm/pmovmskb_r64_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 }" --live_out "{ %rbx }" 
+Thread 3 start: vpmovmskb_r32_xmm
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//vpmovmskb_r32_xmm/vpmovmskb_r32_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 }" --live_out "{ %rbx }" 
+Thread 4 start: vpmovmskb_r32_ymm
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//vpmovmskb_r32_ymm/vpmovmskb_r32_ymm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ymm1 }" --live_out "{ %rbx }" 
+Thread 5 start: vpmovmskb_r64_xmm
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//vpmovmskb_r64_xmm/vpmovmskb_r64_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 }" --live_out "{ %rbx }" 
+Thread 6 start: vpmovmskb_r64_ymm
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//vpmovmskb_r64_ymm/vpmovmskb_r64_ymm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ymm1 }" --live_out "{ %rbx }" 
+Thread 7 start: vpshufb_xmm_xmm_xmm
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//vpshufb_xmm_xmm_xmm/vpshufb_xmm_xmm_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 8 start: vpshufb_ymm_ymm_ymm
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//vpshufb_ymm_ymm_ymm/vpshufb_ymm_ymm_ymm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ymm2 %ymm3 }" --live_out "{ %ymm1 }" 
+Thread 9 start: pslld_xmm_xmm
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//pslld_xmm_xmm/pslld_xmm_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 10 start: vpslld_xmm_xmm_xmm
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//vpslld_xmm_xmm_xmm/vpslld_xmm_xmm_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 11 start: vpslld_ymm_ymm_xmm
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//vpslld_ymm_ymm_xmm/vpslld_ymm_ymm_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ymm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 12 start: psllq_xmm_xmm
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//psllq_xmm_xmm/psllq_xmm_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 13 start: vpsllq_xmm_xmm_xmm
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//vpsllq_xmm_xmm_xmm/vpsllq_xmm_xmm_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 14 start: vpsllq_ymm_ymm_xmm
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//vpsllq_ymm_ymm_xmm/vpsllq_ymm_ymm_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ymm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 15 start: psllw_xmm_xmm
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//psllw_xmm_xmm/psllw_xmm_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 16 start: vpsllw_xmm_xmm_xmm
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//vpsllw_xmm_xmm_xmm/vpsllw_xmm_xmm_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 17 start: vpsllw_ymm_ymm_xmm
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//vpsllw_ymm_ymm_xmm/vpsllw_ymm_ymm_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ymm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 18 start: psrld_xmm_xmm
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//psrld_xmm_xmm/psrld_xmm_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 19 start: vpsrld_xmm_xmm_xmm
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//vpsrld_xmm_xmm_xmm/vpsrld_xmm_xmm_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 20 start: vpsrld_ymm_ymm_xmm
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//vpsrld_ymm_ymm_xmm/vpsrld_ymm_ymm_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ymm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 21 start: psrlq_xmm_xmm
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//psrlq_xmm_xmm/psrlq_xmm_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 22 start: vpsrlq_xmm_xmm_xmm
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//vpsrlq_xmm_xmm_xmm/vpsrlq_xmm_xmm_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 23 start: vpsrlq_ymm_ymm_xmm
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//vpsrlq_ymm_ymm_xmm/vpsrlq_ymm_ymm_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ymm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 24 start: psrlw_xmm_xmm
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//psrlw_xmm_xmm/psrlw_xmm_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Thread 25 start: vpsrlw_xmm_xmm_xmm
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//vpsrlw_xmm_xmm_xmm/vpsrlw_xmm_xmm_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 26 start: vpsrlw_ymm_ymm_xmm
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//vpsrlw_ymm_ymm_xmm/vpsrlw_ymm_ymm_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ymm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 27 start: vpsrlvd_xmm_xmm_xmm
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//vpsrlvd_xmm_xmm_xmm/vpsrlvd_xmm_xmm_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 28 start: vpsrlvd_ymm_ymm_ymm
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//vpsrlvd_ymm_ymm_ymm/vpsrlvd_ymm_ymm_ymm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ymm2 %ymm3 }" --live_out "{ %ymm1 }" 
+Thread 29 start: vpsrlvq_xmm_xmm_xmm
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//vpsrlvq_xmm_xmm_xmm/vpsrlvq_xmm_xmm_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 30 start: vpsrlvq_ymm_ymm_ymm
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//vpsrlvq_ymm_ymm_ymm/vpsrlvq_ymm_ymm_ymm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ymm2 %ymm3 }" --live_out "{ %ymm1 }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 3000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 3000cases
+Completed 3000cases
+Completed 4000cases
+Completed 2000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 4000cases
+Completed 4000cases
+Completed 5000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 2000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 5000cases
+Completed 4000cases
+Completed 4000cases
+Completed 3000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 6000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Thread 29 done!: vpsrlvq_xmm_xmm_xmm
+Completed 5000cases
+Thread 1 done!: pmovmskb_r32_xmm
+Completed 5000cases
+Completed 5000cases
+Completed 6000cases
+Completed 4000cases
+Completed 6000cases
+Completed 3000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Thread 11 done!: vpslld_ymm_ymm_xmm
+Completed 6000cases
+Completed 6000cases
+Thread 28 done!: vpsrlvd_ymm_ymm_ymm
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Thread 12 done!: psllq_xmm_xmm
+Thread 21 done!: psrlq_xmm_xmm
+Thread 25 done!: vpsrlw_xmm_xmm_xmm
+Thread 5 done!: vpmovmskb_r64_xmm
+Thread 9 done!: pslld_xmm_xmm
+Thread 30 done!: vpsrlvq_ymm_ymm_ymm
+Thread 2 done!: pmovmskb_r64_xmm
+Thread 13 done!: vpsllq_xmm_xmm_xmm
+Thread 19 done!: vpsrld_xmm_xmm_xmm
+Thread 3 done!: vpmovmskb_r32_xmm
+Thread 15 done!: psllw_xmm_xmm
+Thread 17 done!: vpsllw_ymm_ymm_xmm
+Thread 23 done!: vpsrlq_ymm_ymm_xmm
+Thread 18 done!: psrld_xmm_xmm
+Thread 22 done!: vpsrlq_xmm_xmm_xmm
+Thread 14 done!: vpsllq_ymm_ymm_xmm
+Thread 10 done!: vpslld_xmm_xmm_xmm
+Completed 5000cases
+Thread 16 done!: vpsllw_xmm_xmm_xmm
+Thread 4 done!: vpmovmskb_r32_ymm
+Thread 27 done!: vpsrlvd_xmm_xmm_xmm
+Thread 6 done!: vpmovmskb_r64_ymm
+Thread 20 done!: vpsrld_ymm_ymm_xmm
+Thread 24 done!: psrlw_xmm_xmm
+Thread 26 done!: vpsrlw_ymm_ymm_xmm
+Completed 4000cases
+Completed 6000cases
+Completed 5000cases
+Thread 7 done!: vpshufb_xmm_xmm_xmm
+Completed 6000cases
+Thread 8 done!: vpshufb_ymm_ymm_ymm
+[4m[1m[34mFiring Last 4[0m
+Thread 31 start: vpsllvd_xmm_xmm_xmm
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//vpsllvd_xmm_xmm_xmm/vpsllvd_xmm_xmm_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 34 start: vpsllvq_ymm_ymm_ymm
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//vpsllvq_ymm_ymm_ymm/vpsllvq_ymm_ymm_ymm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ymm2 %ymm3 }" --live_out "{ %ymm1 }" 
+Thread 33 start: vpsllvq_xmm_xmm_xmm
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//vpsllvq_xmm_xmm_xmm/vpsllvq_xmm_xmm_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Thread 32 start: vpsllvd_ymm_ymm_ymm
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//vpsllvd_ymm_ymm_ymm/vpsllvd_ymm_ymm_ymm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ymm2 %ymm3 }" --live_out "{ %ymm1 }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Thread 32 done!: vpsllvd_ymm_ymm_ymm
+Thread 34 done!: vpsllvq_ymm_ymm_ymm
+Thread 33 done!: vpsllvq_xmm_xmm_xmm
+Thread 31 done!: vpsllvd_xmm_xmm_xmm
+[24m[0m[37m[40m[39;49m[?1000h[?1000l[?1000h[?1049h[?1h=[1;61r[34l[34h[?25h[23m[24m[0m[37m[40m[?1000l[39;49m[?1l>[?1049l[?1049h[?1h=[23m[24m[0m[37m[40m[1;61r[?1000h[?25l[61;1H[1m[37m[41mE325: ATTENTION[0m[37m[40m                                                                                                                                                                                              
+                                                                                                                                                                                                             [60;206H [61;1HFound a swap file by the name "~/Junk/.log.swp"
+                                                                                                                                                                                                             [60;206H [61;11Howned by: sdasgup3   dated: Thu Aug 13 16:52:55 2015
+                                                                                                                                                                                                             [60;206H [61;10Hfile name: ~sdasgup3/Junk/log
+                                                                                                                                                                                                             [60;206H [61;11Hmodified: YES
+                                                                                                                                                                                                             [60;206H [61;10Huser name: sdasgup3   host name: commando.cs.illinois.edu
+                                                                                                                                                                                                             [60;206H [61;9Hprocess ID: 21759
+                                                                                                                                                                                                             [60;206H [61;1HWhile opening file "/home/sdasgup3/Junk/log"
+                                                                                                                                                                                                             [60;206H [61;14Hdated: Wed Apr  4 15:54:44 2018
+                                                                                                                                                                                                             [60;206H [61;7HNEWER than swap file!
+                                                                                                                                                                                                             [60;206H [61;1H
+                                                                                                                                                                                                             [60;206H [61;1H(1) Another program may be editing the same file.  If this is the case,
+                                                                                                                                                                                                             [60;206H [61;5Hbe careful not to end up with two different instances of the same
+                                                                                                                                                                                                             [60;206H [61;5Hfile when making changes.  Quit, or continue with caution.
+                                                                                                                                                                                                             [60;206H [61;1H(2) An edit session for this file crashed.
+                                                                                                                                                                                                             [60;206H [61;5HIf this is the case, use ":recover" or "vim -r /home/sdasgup3/Junk/log"
+                                                                                                                                                                                                             [60;206H [61;5Hto recover the changes (see ":help recovery").
+                                                                                                                                                                                                             [60;206H [61;5HIf you did this already, delete the swap file "/home/sdasgup3/Junk/.log.swp"
+                                                                                                                                                                                                             [60;206H [61;5Hto avoid this message.
+                                                                                                                                                                                                             [60;206H [?1000l[61;1H
+                                                                                                                                                                                                             [60;206H [61;1H[1m[32mSwap file "~/Junk/.log.swp" already exists![0m[37m[40m
+                                                                                                                                                                                                             [60;206H [61;1H[1m[32m[O]pen Read-Only, (E)dit anyway, (R)ecover, (D)elete it, (Q)uit, (A)bort: [34h[?25h[?1000h[0m[37m[40m                                                                          [?25l"~/Junk/log" [readonly] 151L, 6234C[1;1H[1m[33m  1 [0m[37m[40m[1m[34m^[[0m[37m[40m[4m[1m[34m^[[0m[37m[40m[1m[1m[34m^[[0m[37m[40m[34mFiring Last 10[1m[34m^[[0m[37m[40m[0m                                                                                                                                                                       [2;1H[1m[33m  2 [0m[37m[40mThread 1 start: btcl_r32_r32                                                                                                                                                                              [3;1H[1m[33m  3 [0m[37m[40m/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//btcl_r32_r32/btcl_r32_r32.s --functions /home/sdasgup3/Github/strata-data/dd[4;1H[1m[33m    [0m[37m[40mata-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ecx %ebx }" --live_out "{ %rbx %cf }"                                                                [5;1H[1m[33m  4 [0m[37m[40mThread 2 start: btcq_r64_r64                                                                                                                                                                              [6;1H[1m[33m  5 [0m[37m[40m/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//btcq_r64_r64/btcq_r64_r64.s --functions /home/sdasgup3/Github/strata-data/dd[7;1H[1m[33m    [0m[37m[40mata-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %rcx %rbx }" --live_out "{ %rbx %cf }"                                                                [8;1H[1m[33m  6 [0m[37m[40mThread 3 start: btcw_r16_r16                                                                                                                                                                              [9;1H[1m[33m  7 [0m[37m[40m/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//btcw_r16_r16/btcw_r16_r16.s --functions /home/sdasgup3/Github/strata-data/dd[10;1H[1m[33m    [0m[37m[40mata-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %cx %bx }" --live_out "{ %bx %cf }"                                                                   [11;1H[1m[33m  8 [0m[37m[40mThread 4 start: btrl_r32_r32                                                                                                                                                                              [12;1H[1m[33m  9 [0m[37m[40m/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//btrl_r32_r32/btrl_r32_r32.s --functions /home/sdasgup3/Github/strata-data/dd[13;1H[1m[33m    [0m[37m[40mata-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ecx %ebx }" --live_out "{ %rbx %cf }"                                                                [14;1H[1m[33m 10 [0m[37m[40mThread 5 start: btrq_r64_r64                                                                                                                                                                              [15;1H[1m[33m 11 [0m[37m[40m/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//btrq_r64_r64/btrq_r64_r64.s --functions /home/sdasgup3/Github/strata-data/dd[16;1H[1m[33m    [0m[37m[40mata-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %rcx %rbx }" --live_out "{ %rbx %cf }"                                                                [17;1H[1m[33m 12 [0m[37m[40mThread 6 start: btrw_r16_r16                                                                                                                                                                              [18;1H[1m[33m 13 [0m[37m[40m/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//btrw_r16_r16/btrw_r16_r16.s --functions /home/sdasgup3/Github/strata-data/dd[19;1H[1m[33m    [0m[37m[40mata-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %cx %bx }" --live_out "{ %bx %cf }"                                                                   [20;1H[1m[33m 14 [0m[37m[40mThread 7 start: btsl_r32_r32                                                                                                                                                                              [21;1H[1m[33m 15 [0m[37m[40m/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//btsl_r32_r32/btsl_r32_r32.s --functions /home/sdasgup3/Github/strata-data/dd[22;1H[1m[33m    [0m[37m[40mata-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ecx %ebx }" --live_out "{ %rbx %cf }"                                                                [23;1H[1m[33m 16 [0m[37m[40mThread 8 start: btsq_r64_r64                                                                                                                                                                              [24;1H[1m[33m 17 [0m[37m[40m/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//btsq_r64_r64/btsq_r64_r64.s --functions /home/sdasgup3/Github/strata-data/dd[25;1H[1m[33m    [0m[37m[40mata-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %rcx %rbx }" --live_out "{ %rbx %cf }"                                                                [26;1H[1m[33m 18 [0m[37m[40mThread 9 start: btsw_r16_r16                                                                                                                                                                              [27;1H[1m[33m 19 [0m[37m[40m/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//btsw_r16_r16/btsw_r16_r16.s --functions /home/sdasgup3/Github/strata-data/dd[28;1H[1m[33m    [0m[37m[40mata-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %cx %bx }" --live_out "{ %bx %cf }"                                                                   [29;1H[1m[33m 20 [0m[37m[40mThread 10 start: btw_r16_r16                                                                                                                                                                              [30;1H[1m[33m 21 [0m[37m[40m/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//btw_r16_r16/btw_r16_r16.s --functions /home/sdasgup3/Github/strata-data/datt[31;1H[1m[33m    [0m[37m[40ma-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %cx %bx }" --live_out "{ %cf }"                                                                         [32;1H[1m[33m 22 [0m[37m[40mReading the Testsuit                                                                                                                                                                                      [33;1H[1m[33m 23 [0m[37m[40mPreparing Sandbox                                                                                                                                                                                         [34;1H[1m[33m 24 [0m[37m[40mRun 6630 tests                                                                                                                                                                                            [35;1H[1m[33m 25 [0m[37m[40mCollect Results                                                                                                                                                                                           [36;1H[1m[33m 26 [0m[37m[40mBuild Handler                                                                                                                                                                                             [37;1H[1m[33m 27 [0m[37m[40mCheck Equivalence                                                                                                                                                                                         [38;1H[1m[33m 28 [0m[37m[40mCompleted 1000cases                                                                                                                                                                                       [39;1H[1m[33m 29 [0m[37m[40mReading the Testsuit                                                                                                                                                                                      [40;1H[1m[33m 30 [0m[37m[40mPreparing Sandbox
+[1m[33m 31 [0m[37m[40mRun 6630 tests                             
+[1m[33m 32 [0m[37m[40mCollect Results                                           
+[1m[33m 33 [0m[37m[40mBuild Handler                     
+[1m[33m 34 [0m[37m[40mCheck Equivalence  
+[1m[33m 35 [0m[37m[40mCompleted 1000cases                                           
+[1m[33m 36 [0m[37m[40mReading the Testsuit 
+[1m[33m 37 [0m[37m[40mPreparing Sandbox                       
+[1m[33m 38 [0m[37m[40mRun 6630 tests                          
+[1m[33m 39 [0m[37m[40mCollect Results        
+[1m[33m 40 [0m[37m[40mBuild Handler
+[1m[33m 41 [0m[37m[40mCheck Equivalence                                                  
+[1m[33m 42 [0m[37m[40mCompleted 1000cases                                              
+[1m[33m 43 [0m[37m[40mReading the Testsuit                                      
+[1m[33m 44 [0m[37m[40mPreparing Sandbox                     
+[1m[33m 45 [0m[37m[40mRun 6630 tests                                                         
+[1m[33m 46 [0m[37m[40mCollect Results                               
+[1m[33m 47 [0m[37m[40mBuild Handler                                                               
+[1m[33m 48 [0m[37m[40mCheck Equivalence     
+[1m[33m 49 [0m[37m[40mCompleted 1000cases
+[1m[33m 50 [0m[37m[40mReading the Testsuit                   [61;189H22,1[10CTop[32;5H[34h[?25h[?25l[61;190H3[33;5H[34h[?25h[?25l[61;190H4[34;5H[34h[?25h[?25l[61;1HType  :quit<Enter>  to exit Vim    [153C    [10C   [61;189H24,1[10CTop[34;5H[34h[?25h[?25l[61;189H    [10C   [61;189H24,1[10CTop[34;5H[34h[?25h[61;1H
+[39;49m[?1l>[?1049l[?1000l[4m[1m[34mFiring Last 10[0m
+Thread 1 start: btcl_r32_r32
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//btcl_r32_r32/btcl_r32_r32.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ecx %ebx }" --live_out "{ %rbx %cf }" 
+Thread 2 start: btcq_r64_r64
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//btcq_r64_r64/btcq_r64_r64.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %rcx %rbx }" --live_out "{ %rbx %cf }" 
+Thread 3 start: btcw_r16_r16
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//btcw_r16_r16/btcw_r16_r16.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %cx %bx }" --live_out "{ %bx %cf }" 
+Thread 4 start: btrl_r32_r32
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//btrl_r32_r32/btrl_r32_r32.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ecx %ebx }" --live_out "{ %rbx %cf }" 
+Thread 5 start: btrq_r64_r64
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//btrq_r64_r64/btrq_r64_r64.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %rcx %rbx }" --live_out "{ %rbx %cf }" 
+Thread 6 start: btrw_r16_r16
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//btrw_r16_r16/btrw_r16_r16.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %cx %bx }" --live_out "{ %bx %cf }" 
+Thread 7 start: btsl_r32_r32
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//btsl_r32_r32/btsl_r32_r32.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ecx %ebx }" --live_out "{ %rbx %cf }" 
+Thread 8 start: btsq_r64_r64
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//btsq_r64_r64/btsq_r64_r64.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %rcx %rbx }" --live_out "{ %rbx %cf }" 
+Thread 9 start: btsw_r16_r16
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//btsw_r16_r16/btsw_r16_r16.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %cx %bx }" --live_out "{ %bx %cf }" 
+Thread 10 start: btw_r16_r16
+/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target /home/sdasgup3/Github/strata-data/data-regs/instructions//btw_r16_r16/btw_r16_r16.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %cx %bx }" --live_out "{ %cf }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Build Handler
+Check Equivalence
+Completed 1000cases
+Completed 3000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 4000cases
+Completed 2000cases
+Completed 2000cases
+Completed 5000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 6000cases
+Completed 3000cases
+Thread 10 done!: btw_r16_r16
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 6000cases
+Completed 5000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Thread 9 done!: btsw_r16_r16
+Thread 2 done!: btcq_r64_r64
+Thread 7 done!: btsl_r32_r32
+Thread 6 done!: btrw_r16_r16
+Thread 3 done!: btcw_r16_r16
+Thread 5 done!: btrq_r64_r64
+Completed 6000cases
+Thread 8 done!: btsq_r64_r64
+Thread 4 done!: btrl_r32_r32
+Thread 1 done!: btcl_r32_r32
