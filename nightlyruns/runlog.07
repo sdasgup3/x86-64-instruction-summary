@@ -1,0 +1,52 @@
+
+
+ Running pslld_xmm_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/pslld_xmm_imm8/check_stoke.07.txt --instructions_path imm_instructions/pslld_xmm_imm8/instructions 1>imm_instructions/pslld_xmm_imm8/check_stoke.07.log 2>&1 
+
+
+ Running vpslld_xmm_xmm_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/vpslld_xmm_xmm_imm8/check_stoke.07.txt --instructions_path imm_instructions/vpslld_xmm_xmm_imm8/instructions 1>imm_instructions/vpslld_xmm_xmm_imm8/check_stoke.07.log 2>&1 
+
+
+ Running vpslld_ymm_ymm_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/vpslld_ymm_ymm_imm8/check_stoke.07.txt --instructions_path imm_instructions/vpslld_ymm_ymm_imm8/instructions 1>imm_instructions/vpslld_ymm_ymm_imm8/check_stoke.07.log 2>&1 
+
+
+ Running psllq_xmm_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/psllq_xmm_imm8/check_stoke.07.txt --instructions_path imm_instructions/psllq_xmm_imm8/instructions 1>imm_instructions/psllq_xmm_imm8/check_stoke.07.log 2>&1 
+
+
+ Running vpsllq_xmm_xmm_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/vpsllq_xmm_xmm_imm8/check_stoke.07.txt --instructions_path imm_instructions/vpsllq_xmm_xmm_imm8/instructions 1>imm_instructions/vpsllq_xmm_xmm_imm8/check_stoke.07.log 2>&1 
+
+
+ Running vpsllq_ymm_ymm_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/vpsllq_ymm_ymm_imm8/check_stoke.07.txt --instructions_path imm_instructions/vpsllq_ymm_ymm_imm8/instructions 1>imm_instructions/vpsllq_ymm_ymm_imm8/check_stoke.07.log 2>&1 
+
+
+ Running psllw_xmm_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/psllw_xmm_imm8/check_stoke.07.txt --instructions_path imm_instructions/psllw_xmm_imm8/instructions 1>imm_instructions/psllw_xmm_imm8/check_stoke.07.log 2>&1 
+
+
+ Running vpsllw_xmm_xmm_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/vpsllw_xmm_xmm_imm8/check_stoke.07.txt --instructions_path imm_instructions/vpsllw_xmm_xmm_imm8/instructions 1>imm_instructions/vpsllw_xmm_xmm_imm8/check_stoke.07.log 2>&1 
+
+
+ Running vpsllw_ymm_ymm_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/vpsllw_ymm_ymm_imm8/check_stoke.07.txt --instructions_path imm_instructions/vpsllw_ymm_ymm_imm8/instructions 1>imm_instructions/vpsllw_ymm_ymm_imm8/check_stoke.07.log 2>&1 
+
+
+ Running psrld_xmm_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/psrld_xmm_imm8/check_stoke.07.txt --instructions_path imm_instructions/psrld_xmm_imm8/instructions 1>imm_instructions/psrld_xmm_imm8/check_stoke.07.log 2>&1 
+
+
+ Running vpsrld_xmm_xmm_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/vpsrld_xmm_xmm_imm8/check_stoke.07.txt --instructions_path imm_instructions/vpsrld_xmm_xmm_imm8/instructions 1>imm_instructions/vpsrld_xmm_xmm_imm8/check_stoke.07.log 2>&1 
+
+
+ Running vpsrld_ymm_ymm_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/vpsrld_ymm_ymm_imm8/check_stoke.07.txt --instructions_path imm_instructions/vpsrld_ymm_ymm_imm8/instructions 1>imm_instructions/vpsrld_ymm_ymm_imm8/check_stoke.07.log 2>&1 
+
+
+ Running psrlq_xmm_imm8
+~/x86-semantics/scripts/process_spec.pl --check_stoke --file imm_instructions/psrlq_xmm_imm8/check_stoke.07.txt --instructions_path imm_instructions/psrlq_xmm_imm8/instructions 1>imm_instructions/psrlq_xmm_imm8/check_stoke.07.log 2>&1 
