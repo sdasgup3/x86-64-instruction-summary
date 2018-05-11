@@ -1,0 +1,569 @@
+The instr like 
+	adcw m16_imm16
+	adcw m16_imm8
+as there is no way to distinguish the imm of different widths.
+
+adcw->
+IMap Array
+	0:r16_r16
+	1:m16_imm16
+	2:m16_imm8
+	3:m16_r16
+	4:r16_m16
+	5:ax_imm16
+	6:r16_imm16
+	7:r16_imm8
+
+adcl->
+IMap Array
+	0:r32_r32
+	1:m32_imm32
+	2:m32_imm8
+	3:m32_r32
+	4:r32_m32
+	5:eax_imm32
+	6:r32_imm32
+	7:r32_imm8
+
+adcq->
+IMap Array
+	0:r64_r64
+	1:m64_imm32
+	2:m64_imm8
+	3:m64_r64
+	4:r64_m64
+	5:r64_imm32
+	6:r64_imm8
+	7:rax_imm32
+
+addw->
+IMap Array
+	0:r16_r16
+	1:m16_imm16
+	2:m16_imm8
+	3:m16_r16
+	4:r16_m16
+	5:ax_imm16
+	6:r16_imm16
+	7:r16_imm8
+
+addl->
+IMap Array
+	0:r32_r32
+	1:m32_imm32
+	2:m32_imm8
+	3:m32_r32
+	4:r32_m32
+	5:eax_imm32
+	6:r32_imm32
+	7:r32_imm8
+
+addq->
+IMap Array
+	0:r64_r64
+	1:m64_imm32
+	2:m64_imm8
+	3:m64_r64
+	4:r64_m64
+	5:r64_imm32
+	6:r64_imm8
+	7:rax_imm32
+
+andw->
+IMap Array
+	0:r16_r16
+	1:m16_imm16
+	2:m16_imm8
+	3:m16_r16
+	4:r16_m16
+	5:ax_imm16
+	6:r16_imm16
+	7:r16_imm8
+
+andl->
+IMap Array
+	0:r32_r32
+	1:m32_imm32
+	2:m32_imm8
+	3:m32_r32
+	4:r32_m32
+	5:eax_imm32
+	6:r32_imm32
+	7:r32_imm8
+
+andq->
+IMap Array
+	0:r64_r64
+	1:m64_imm32
+	2:m64_imm8
+	3:m64_r64
+	4:r64_m64
+	5:r64_imm32
+	6:r64_imm8
+	7:rax_imm32
+
+cmpw->
+IMap Array
+	0:r16_r16
+	1:m16_imm16
+	2:m16_imm8
+	3:m16_r16
+	4:r16_m16
+	5:ax_imm16
+	6:r16_imm16
+	7:r16_imm8
+
+cmpl->
+IMap Array
+	0:r32_r32
+	1:m32_imm32
+	2:m32_imm8
+	3:m32_r32
+	4:r32_m32
+	5:eax_imm32
+	6:r32_imm32
+	7:r32_imm8
+
+cmpq->
+IMap Array
+	0:r64_r64
+	1:m64_imm32
+	2:m64_imm8
+	3:m64_r64
+	4:r64_m64
+	5:r64_imm32
+	6:r64_imm8
+	7:rax_imm32
+
+orw->
+IMap Array
+	0:r16_r16
+	1:m16_imm16
+	2:m16_imm8
+	3:m16_r16
+	4:r16_m16
+	5:ax_imm16
+	6:r16_imm16
+	7:r16_imm8
+
+orl->
+IMap Array
+	0:r32_r32
+	1:m32_imm32
+	2:m32_imm8
+	3:m32_r32
+	4:r32_m32
+	5:eax_imm32
+	6:r32_imm32
+	7:r32_imm8
+
+orq->
+IMap Array
+	0:r64_r64
+	1:m64_imm32
+	2:m64_imm8
+	3:m64_r64
+	4:r64_m64
+	5:r64_imm32
+	6:r64_imm8
+	7:rax_imm32
+
+sbbw->
+IMap Array
+	0:r16_r16
+	1:m16_imm16
+	2:m16_imm8
+	3:m16_r16
+	4:r16_m16
+	5:ax_imm16
+	6:r16_imm16
+	7:r16_imm8
+
+sbbl->
+IMap Array
+	0:r32_r32
+	1:m32_imm32
+	2:m32_imm8
+	3:m32_r32
+	4:r32_m32
+	5:eax_imm32
+	6:r32_imm32
+	7:r32_imm8
+
+sbbq->
+IMap Array
+	0:r64_r64
+	1:m64_imm32
+	2:m64_imm8
+	3:m64_r64
+	4:r64_m64
+	5:r64_imm32
+	6:r64_imm8
+	7:rax_imm32
+
+subw->
+IMap Array
+	0:r16_r16
+	1:m16_imm16
+	2:m16_imm8
+	3:m16_r16
+	4:r16_m16
+	5:ax_imm16
+	6:r16_imm16
+	7:r16_imm8
+
+subl->
+IMap Array
+	0:r32_r32
+	1:m32_imm32
+	2:m32_imm8
+	3:m32_r32
+	4:r32_m32
+	5:eax_imm32
+	6:r32_imm32
+	7:r32_imm8
+
+subq->
+IMap Array
+	0:r64_r64
+	1:m64_imm32
+	2:m64_imm8
+	3:m64_r64
+	4:r64_m64
+	5:r64_imm32
+	6:r64_imm8
+	7:rax_imm32
+
+xorw->
+IMap Array
+	0:r16_r16
+	1:m16_imm16
+	2:m16_imm8
+	3:m16_r16
+	4:r16_m16
+	5:ax_imm16
+	6:r16_imm16
+	7:r16_imm8
+
+xorl->
+IMap Array
+	0:r32_r32
+	1:m32_imm32
+	2:m32_imm8
+	3:m32_r32
+	4:r32_m32
+	5:eax_imm32
+	6:r32_imm32
+	7:r32_imm8
+
+xorq->
+IMap Array
+	0:r64_r64
+	1:m64_imm32
+	2:m64_imm8
+	3:m64_r64
+	4:r64_m64
+	5:r64_imm32
+	6:r64_imm8
+	7:rax_imm32
+
+adcw->
+IMap Array
+	0:r16_r16
+	1:m16_imm16
+	2:m16_imm8
+	3:m16_r16
+	4:r16_m16
+	5:ax_imm16
+	6:r16_imm16
+	7:r16_imm8
+
+adcl->
+IMap Array
+	0:r32_r32
+	1:m32_imm32
+	2:m32_imm8
+	3:m32_r32
+	4:r32_m32
+	5:eax_imm32
+	6:r32_imm32
+	7:r32_imm8
+
+adcq->
+IMap Array
+	0:r64_r64
+	1:m64_imm32
+	2:m64_imm8
+	3:m64_r64
+	4:r64_m64
+	5:r64_imm32
+	6:r64_imm8
+	7:rax_imm32
+
+addw->
+IMap Array
+	0:r16_r16
+	1:m16_imm16
+	2:m16_imm8
+	3:m16_r16
+	4:r16_m16
+	5:ax_imm16
+	6:r16_imm16
+	7:r16_imm8
+
+addl->
+IMap Array
+	0:r32_r32
+	1:m32_imm32
+	2:m32_imm8
+	3:m32_r32
+	4:r32_m32
+	5:eax_imm32
+	6:r32_imm32
+	7:r32_imm8
+
+addq->
+IMap Array
+	0:r64_r64
+	1:m64_imm32
+	2:m64_imm8
+	3:m64_r64
+	4:r64_m64
+	5:r64_imm32
+	6:r64_imm8
+	7:rax_imm32
+
+andw->
+IMap Array
+	0:r16_r16
+	1:m16_imm16
+	2:m16_imm8
+	3:m16_r16
+	4:r16_m16
+	5:ax_imm16
+	6:r16_imm16
+	7:r16_imm8
+
+andl->
+IMap Array
+	0:r32_r32
+	1:m32_imm32
+	2:m32_imm8
+	3:m32_r32
+	4:r32_m32
+	5:eax_imm32
+	6:r32_imm32
+	7:r32_imm8
+
+andq->
+IMap Array
+	0:r64_r64
+	1:m64_imm32
+	2:m64_imm8
+	3:m64_r64
+	4:r64_m64
+	5:r64_imm32
+	6:r64_imm8
+	7:rax_imm32
+
+cmpw->
+IMap Array
+	0:r16_r16
+	1:m16_imm16
+	2:m16_imm8
+	3:m16_r16
+	4:r16_m16
+	5:ax_imm16
+	6:r16_imm16
+	7:r16_imm8
+
+cmpl->
+IMap Array
+	0:r32_r32
+	1:m32_imm32
+	2:m32_imm8
+	3:m32_r32
+	4:r32_m32
+	5:eax_imm32
+	6:r32_imm32
+	7:r32_imm8
+
+cmpq->
+IMap Array
+	0:r64_r64
+	1:m64_imm32
+	2:m64_imm8
+	3:m64_r64
+	4:r64_m64
+	5:r64_imm32
+	6:r64_imm8
+	7:rax_imm32
+
+movq->
+IMap Array
+	0:r64_imm64
+	1:r64_r64
+	2:r64_xmm
+	3:xmm_r64
+	4:xmm_xmm
+	5:m64_imm32
+	6:m64_r64
+	7:r64_m64
+	8:m64_xmm
+	9:xmm_m64
+	10:r64_imm32
+
+orw->
+IMap Array
+	0:r16_r16
+	1:m16_imm16
+	2:m16_imm8
+	3:m16_r16
+	4:r16_m16
+	5:ax_imm16
+	6:r16_imm16
+	7:r16_imm8
+
+orl->
+IMap Array
+	0:r32_r32
+	1:m32_imm32
+	2:m32_imm8
+	3:m32_r32
+	4:r32_m32
+	5:eax_imm32
+	6:r32_imm32
+	7:r32_imm8
+
+orq->
+IMap Array
+	0:r64_r64
+	1:m64_imm32
+	2:m64_imm8
+	3:m64_r64
+	4:r64_m64
+	5:r64_imm32
+	6:r64_imm8
+	7:rax_imm32
+
+pushq->
+IMap Array
+	0:m64
+	1:imm16
+	2:imm32
+	3:imm8
+
+pushq->
+IMap Array
+	0:m64
+	1:imm16
+	2:imm32
+	3:imm8
+
+pushq->
+IMap Array
+	0:m64
+	1:imm16
+	2:imm32
+	3:imm8
+
+sbbw->
+IMap Array
+	0:r16_r16
+	1:m16_imm16
+	2:m16_imm8
+	3:m16_r16
+	4:r16_m16
+	5:ax_imm16
+	6:r16_imm16
+	7:r16_imm8
+
+sbbl->
+IMap Array
+	0:r32_r32
+	1:m32_imm32
+	2:m32_imm8
+	3:m32_r32
+	4:r32_m32
+	5:eax_imm32
+	6:r32_imm32
+	7:r32_imm8
+
+sbbq->
+IMap Array
+	0:r64_r64
+	1:m64_imm32
+	2:m64_imm8
+	3:m64_r64
+	4:r64_m64
+	5:r64_imm32
+	6:r64_imm8
+	7:rax_imm32
+
+subw->
+IMap Array
+	0:r16_r16
+	1:m16_imm16
+	2:m16_imm8
+	3:m16_r16
+	4:r16_m16
+	5:ax_imm16
+	6:r16_imm16
+	7:r16_imm8
+
+subl->
+IMap Array
+	0:r32_r32
+	1:m32_imm32
+	2:m32_imm8
+	3:m32_r32
+	4:r32_m32
+	5:eax_imm32
+	6:r32_imm32
+	7:r32_imm8
+
+subq->
+IMap Array
+	0:r64_r64
+	1:m64_imm32
+	2:m64_imm8
+	3:m64_r64
+	4:r64_m64
+	5:r64_imm32
+	6:r64_imm8
+	7:rax_imm32
+
+xorw->
+IMap Array
+	0:r16_r16
+	1:m16_imm16
+	2:m16_imm8
+	3:m16_r16
+	4:r16_m16
+	5:ax_imm16
+	6:r16_imm16
+	7:r16_imm8
+
+xorl->
+IMap Array
+	0:r32_r32
+	1:m32_imm32
+	2:m32_imm8
+	3:m32_r32
+	4:r32_m32
+	5:eax_imm32
+	6:r32_imm32
+	7:r32_imm8
+
+xorq->
+IMap Array
+	0:r64_r64
+	1:m64_imm32
+	2:m64_imm8
+	3:m64_r64
+	4:r64_m64
+	5:r64_imm32
+	6:r64_imm8
+	7:rax_imm32
+
+Results: 52
