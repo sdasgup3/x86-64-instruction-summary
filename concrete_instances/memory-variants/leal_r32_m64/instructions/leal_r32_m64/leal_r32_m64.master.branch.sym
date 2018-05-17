@@ -1,0 +1,19 @@
+code: leal (%rcx), %ebx
+
+  maybe read:      { %rcx }
+  must read:       { %rcx }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+leal (%rcx), %ebx: Hindex4(9)
+leal (%rcx), %ebx: Hindex4(9)
+Formula:
+
+%rbx   : (concat #x00000000 ((_ extract 31 0) %rcx))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

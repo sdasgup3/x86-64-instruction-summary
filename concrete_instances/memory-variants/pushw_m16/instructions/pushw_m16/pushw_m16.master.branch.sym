@@ -1,0 +1,29 @@
+code: pushw (%rbx)
+
+  maybe read:      { %rbx %rsp }
+  must read:       { %rbx %rsp }
+  maybe write:     { %rsp }
+  must write:      { %rsp }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+pushw (%rbx): Hindex1(9)
+pushw (%rbx): Hindex1(9)
+Formula:
+
+%rsp   : (bvsub %rsp #x0000000000000002)
+
+Information about memory reads:
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rbx.
+
+Information about memory writes:
+  Address (bvsub %rsp #x0000000000000002) was updated to
+    ((_ sign_extend 0) TMP_BV_16_0) (2 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv
+    (and (not sigfpe) (not sigbus) false)
+    (and (not sigfpe) (not sigbus) false))

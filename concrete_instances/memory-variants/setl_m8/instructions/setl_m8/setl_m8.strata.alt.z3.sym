@@ -1,0 +1,19 @@
+code: setl (%rbx)
+
+  maybe read:      { %rbx %sf %of }
+  must read:       { %rbx %sf %of }
+  maybe write:     { }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+Information about memory writes:
+  Address %rbx was updated to
+    (ite (not (= %sf %of)) #x01 #x00) (1 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

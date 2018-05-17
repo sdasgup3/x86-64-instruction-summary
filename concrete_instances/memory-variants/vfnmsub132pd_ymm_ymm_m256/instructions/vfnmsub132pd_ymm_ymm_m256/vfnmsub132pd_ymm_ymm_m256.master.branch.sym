@@ -1,0 +1,46 @@
+code: vfnmsub132pd (%rbx), %ymm2, %ymm1
+
+  maybe read:      { %rbx %ymm1 %ymm2 }
+  must read:       { %rbx %ymm1 %ymm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { fma }
+
+vfnmsub132pd (%rbx), %ymm2, %ymm1: Hindex8(9)
+vfnmsub132pd (%rbx), %ymm2, %ymm1: Hindex8(9)
+vfnmsub132pd %ymm3, %ymm2, %ymm1: Hindex1(9)
+Formula:
+
+%ymm1  : (let ((a!1 (concat (vfnmsub132_double
+                     ((_ extract 191 128) %ymm1)
+                     ((_ extract 191 128) %ymm2)
+                     ((_ extract 191 128) TMP_BV_256_1))
+                   (concat (vfnmsub132_double
+                             ((_ extract 127 64) %ymm1)
+                             ((_ extract 127 64) %ymm2)
+                             ((_ extract 127 64) TMP_BV_256_2))
+                           (vfnmsub132_double
+                             ((_ extract 63 0) %ymm1)
+                             ((_ extract 63 0) %ymm2)
+                             ((_ extract 63 0) TMP_BV_256_3))))))
+  (concat (vfnmsub132_double
+            ((_ extract 255 192) %ymm1)
+            ((_ extract 255 192) %ymm2)
+            ((_ extract 255 192) TMP_BV_256_0))
+          a!1))
+
+Information about memory reads:
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rbx.
+  Value TMP_BV_256_1 (32 bytes)
+    was read at address %rbx.
+  Value TMP_BV_256_2 (32 bytes)
+    was read at address %rbx.
+  Value TMP_BV_256_3 (32 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

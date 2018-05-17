@@ -1,0 +1,29 @@
+code: vtestpd %xmm2, %xmm1
+
+  maybe read:      { %xmm1 %xmm2 }
+  must read:       { %xmm1 %xmm2 }
+  maybe write:     { %cf %pf %af %zf %sf %of }
+  must write:      { %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%cf    : (let ((a!1 (= (bvand (bvnot ((_ extract 63 63) %ymm1))
+                     ((_ extract 63 63) %ymm2))
+              #b0))
+      (a!2 (= (bvand (bvnot ((_ extract 127 127) %ymm1))
+                     ((_ extract 127 127) %ymm2))
+              #b0)))
+  (and a!1 a!2))
+%pf    : false
+%af    : false
+%zf    : (and (= (bvand ((_ extract 63 63) %ymm1) ((_ extract 63 63) %ymm2)) #b0)
+     (= (bvand ((_ extract 127 127) %ymm1) ((_ extract 127 127) %ymm2)) #b0))
+%sf    : false
+%of    : false
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

@@ -1,0 +1,23 @@
+code: vmovaps (%rbx), %ymm1
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%ymm1  : TMP_BV_256_0
+
+Information about memory reads:
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (let ((a!1 (and (and (not sigfpe) (not sigbus))
+                (not (= ((_ extract 4 0) %rbx) #b00000)))))
+  (or sigsegv (and (and (not sigfpe) (not sigbus)) false) a!1))

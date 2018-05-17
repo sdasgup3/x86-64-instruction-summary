@@ -1,3 +1,0 @@
-.target:
-  sets (%rax)
-  retq

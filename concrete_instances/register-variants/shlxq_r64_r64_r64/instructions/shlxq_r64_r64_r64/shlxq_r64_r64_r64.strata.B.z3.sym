@@ -1,0 +1,17 @@
+code: shlxq %rdx, %rcx, %rbx
+
+  maybe read:      { %rcx %rdx }
+  must read:       { %rcx %rdx }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { bmi2 }
+
+Formula:
+
+%rbx   : (bvshl %rcx (bvand %rdx #x000000000000003f))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

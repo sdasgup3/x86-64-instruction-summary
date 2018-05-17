@@ -1,0 +1,3 @@
+.target:
+  setpe (%rbx)
+  retq

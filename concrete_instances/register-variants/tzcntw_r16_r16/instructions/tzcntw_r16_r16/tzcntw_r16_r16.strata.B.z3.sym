@@ -1,0 +1,96 @@
+code: tzcntw %cx, %bx
+
+  maybe read:      { %cx }
+  must read:       { %cx }
+  maybe write:     { %bx %cf %zf }
+  must write:      { %bx %cf %zf }
+  maybe undef:     { %pf %af %sf %of }
+  must undef:      { %pf %af %sf %of }
+  required flags:  { bmi1 }
+
+Formula:
+
+%rbx   : (let ((a!1 (ite (= ((_ extract 14 14) %rcx) #b1)
+                #x000e
+                (ite (= ((_ extract 15 15) %rcx) #b1) #x000f #x0010))))
+(let ((a!2 (ite (= ((_ extract 12 12) %rcx) #b1)
+                #x000c
+                (ite (= ((_ extract 13 13) %rcx) #b1) #x000d a!1))))
+(let ((a!3 (ite (= ((_ extract 10 10) %rcx) #b1)
+                #x000a
+                (ite (= ((_ extract 11 11) %rcx) #b1) #x000b a!2))))
+(let ((a!4 (ite (= ((_ extract 8 8) %rcx) #b1)
+                #x0008
+                (ite (= ((_ extract 9 9) %rcx) #b1) #x0009 a!3))))
+(let ((a!5 (ite (= ((_ extract 6 6) %rcx) #b1)
+                #x0006
+                (ite (= ((_ extract 7 7) %rcx) #b1) #x0007 a!4))))
+(let ((a!6 (ite (= ((_ extract 4 4) %rcx) #b1)
+                #x0004
+                (ite (= ((_ extract 5 5) %rcx) #b1) #x0005 a!5))))
+(let ((a!7 (ite (= ((_ extract 2 2) %rcx) #b1)
+                #x0002
+                (ite (= ((_ extract 3 3) %rcx) #b1) #x0003 a!6))))
+(let ((a!8 (ite (= ((_ extract 0 0) %rcx) #b1)
+                #x0000
+                (ite (= ((_ extract 1 1) %rcx) #b1) #x0001 a!7))))
+  (concat ((_ extract 63 16) %rbx) a!8)))))))))
+
+%cf    : (let ((a!1 (ite (= ((_ extract 14 14) %rcx) #b1)
+                #x000e
+                (ite (= ((_ extract 15 15) %rcx) #b1) #x000f #x0010))))
+(let ((a!2 (ite (= ((_ extract 12 12) %rcx) #b1)
+                #x000c
+                (ite (= ((_ extract 13 13) %rcx) #b1) #x000d a!1))))
+(let ((a!3 (ite (= ((_ extract 10 10) %rcx) #b1)
+                #x000a
+                (ite (= ((_ extract 11 11) %rcx) #b1) #x000b a!2))))
+(let ((a!4 (ite (= ((_ extract 8 8) %rcx) #b1)
+                #x0008
+                (ite (= ((_ extract 9 9) %rcx) #b1) #x0009 a!3))))
+(let ((a!5 (ite (= ((_ extract 6 6) %rcx) #b1)
+                #x0006
+                (ite (= ((_ extract 7 7) %rcx) #b1) #x0007 a!4))))
+(let ((a!6 (ite (= ((_ extract 4 4) %rcx) #b1)
+                #x0004
+                (ite (= ((_ extract 5 5) %rcx) #b1) #x0005 a!5))))
+(let ((a!7 (ite (= ((_ extract 2 2) %rcx) #b1)
+                #x0002
+                (ite (= ((_ extract 3 3) %rcx) #b1) #x0003 a!6))))
+(let ((a!8 (ite (= ((_ extract 0 0) %rcx) #b1)
+                #x0000
+                (ite (= ((_ extract 1 1) %rcx) #b1) #x0001 a!7))))
+  (= a!8 #x0010)))))))))
+%pf    : TMP_BOOL_2
+%af    : TMP_BOOL_3
+%zf    : (let ((a!1 (ite (= ((_ extract 14 14) %rcx) #b1)
+                #x000e
+                (ite (= ((_ extract 15 15) %rcx) #b1) #x000f #x0010))))
+(let ((a!2 (ite (= ((_ extract 12 12) %rcx) #b1)
+                #x000c
+                (ite (= ((_ extract 13 13) %rcx) #b1) #x000d a!1))))
+(let ((a!3 (ite (= ((_ extract 10 10) %rcx) #b1)
+                #x000a
+                (ite (= ((_ extract 11 11) %rcx) #b1) #x000b a!2))))
+(let ((a!4 (ite (= ((_ extract 8 8) %rcx) #b1)
+                #x0008
+                (ite (= ((_ extract 9 9) %rcx) #b1) #x0009 a!3))))
+(let ((a!5 (ite (= ((_ extract 6 6) %rcx) #b1)
+                #x0006
+                (ite (= ((_ extract 7 7) %rcx) #b1) #x0007 a!4))))
+(let ((a!6 (ite (= ((_ extract 4 4) %rcx) #b1)
+                #x0004
+                (ite (= ((_ extract 5 5) %rcx) #b1) #x0005 a!5))))
+(let ((a!7 (ite (= ((_ extract 2 2) %rcx) #b1)
+                #x0002
+                (ite (= ((_ extract 3 3) %rcx) #b1) #x0003 a!6))))
+(let ((a!8 (ite (= ((_ extract 0 0) %rcx) #b1)
+                #x0000
+                (ite (= ((_ extract 1 1) %rcx) #b1) #x0001 a!7))))
+  (= a!8 #x0000)))))))))
+%sf    : TMP_BOOL_1
+%of    : TMP_BOOL_0
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

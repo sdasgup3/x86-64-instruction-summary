@@ -1,0 +1,29 @@
+code: pcmpeqq (%rbx), %xmm1
+
+  maybe read:      { %rbx %xmm1 }
+  must read:       { %rbx %xmm1 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse4_1 }
+
+Formula:
+
+%ymm1  : (let ((a!1 (concat (ite (= ((_ extract 127 64) %ymm1)
+                           ((_ extract 127 64) TMP_BV_128_0))
+                        #xffffffffffffffff
+                        #x0000000000000000)
+                   (ite (= ((_ extract 63 0) %ymm1)
+                           ((_ extract 63 0) TMP_BV_128_0))
+                        #xffffffffffffffff
+                        #x0000000000000000))))
+  (concat ((_ extract 255 128) %ymm1) a!1))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

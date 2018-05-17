@@ -1,3 +1,0 @@
-.target:
-  negq (%rax)
-  retq

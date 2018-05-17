@@ -1,0 +1,19 @@
+code: movb %cl, %bl
+
+  maybe read:      { %cl }
+  must read:       { %cl }
+  maybe write:     { %bl }
+  must write:      { %bl }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+movb %cl, %bl: Hindex5(9)
+movb %cl, %bl: Hindex5(9)
+Formula:
+
+%rbx   : (concat ((_ extract 63 8) %rbx) ((_ extract 7 0) %rcx))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

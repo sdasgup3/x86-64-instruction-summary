@@ -1,0 +1,34 @@
+code: negq %rbx
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { %rbx %cf %pf %af %zf %sf %of }
+  must write:      { %rbx %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+negq %rbx: Hindex1(9)
+negq %rbx: Hindex1(9)
+Formula:
+
+%rbx   : (bvneg %rbx)
+
+%cf    : (not (= %rbx #x0000000000000000))
+%pf    : (let ((a!1 (xor (= ((_ extract 0 0) (bvneg %rbx)) #b1)
+                (= ((_ extract 1 1) (bvneg %rbx)) #b1)
+                (= ((_ extract 2 2) (bvneg %rbx)) #b1)
+                (= ((_ extract 3 3) (bvneg %rbx)) #b1)
+                (= ((_ extract 4 4) (bvneg %rbx)) #b1)
+                (= ((_ extract 5 5) (bvneg %rbx)) #b1)
+                (= ((_ extract 6 6) (bvneg %rbx)) #b1)
+                (= ((_ extract 7 7) (bvneg %rbx)) #b1))))
+  (not a!1))
+%af    : (and (= ((_ extract 3 3) %rbx) #b1) (= ((_ extract 3 3) (bvneg %rbx)) #b1))
+%zf    : (= (bvneg %rbx) #x0000000000000000)
+%sf    : (= ((_ extract 63 63) (bvneg %rbx)) #b1)
+%of    : (and (= ((_ extract 63 63) %rbx) #b1) (= ((_ extract 63 63) (bvneg %rbx)) #b1))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

@@ -1,0 +1,38 @@
+code: pmaddwd (%rbx), %xmm1
+
+  maybe read:      { %rbx %xmm1 }
+  must read:       { %rbx %xmm1 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+Formula:
+
+%ymm1  : (let ((a!1 (bvadd (bvmul ((_ sign_extend 16) ((_ extract 111 96) TMP_BV_128_0))
+                         ((_ sign_extend 16) ((_ extract 111 96) %ymm1)))
+                  (bvmul ((_ sign_extend 16) ((_ extract 127 112) TMP_BV_128_0))
+                         ((_ sign_extend 16) ((_ extract 127 112) %ymm1)))))
+      (a!2 (bvadd (bvmul ((_ sign_extend 16) ((_ extract 79 64) TMP_BV_128_0))
+                         ((_ sign_extend 16) ((_ extract 79 64) %ymm1)))
+                  (bvmul ((_ sign_extend 16) ((_ extract 95 80) TMP_BV_128_0))
+                         ((_ sign_extend 16) ((_ extract 95 80) %ymm1)))))
+      (a!3 (bvadd (bvmul ((_ sign_extend 16) ((_ extract 47 32) TMP_BV_128_0))
+                         ((_ sign_extend 16) ((_ extract 47 32) %ymm1)))
+                  (bvmul ((_ sign_extend 16) ((_ extract 63 48) TMP_BV_128_0))
+                         ((_ sign_extend 16) ((_ extract 63 48) %ymm1)))))
+      (a!4 (bvadd (bvmul ((_ sign_extend 16) ((_ extract 15 0) TMP_BV_128_0))
+                         ((_ sign_extend 16) ((_ extract 15 0) %ymm1)))
+                  (bvmul ((_ sign_extend 16) ((_ extract 31 16) TMP_BV_128_0))
+                         ((_ sign_extend 16) ((_ extract 31 16) %ymm1))))))
+  (concat ((_ extract 255 128) %ymm1)
+          (concat a!1 (concat a!2 (concat a!3 a!4)))))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

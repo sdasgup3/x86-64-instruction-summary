@@ -1,0 +1,37 @@
+code: vminpd %ymm3, %ymm2, %ymm1
+
+  maybe read:      { %ymm2 %ymm3 }
+  must read:       { %ymm2 %ymm3 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%ymm1  : (let ((a!1 (ite (= (mincmp_double ((_ extract 255 192) %ymm2)
+                                  ((_ extract 255 192) %ymm3))
+                   #b1)
+                ((_ extract 255 192) %ymm2)
+                ((_ extract 255 192) %ymm3)))
+      (a!2 (ite (= (mincmp_double ((_ extract 191 128) %ymm2)
+                                  ((_ extract 191 128) %ymm3))
+                   #b1)
+                ((_ extract 191 128) %ymm2)
+                ((_ extract 191 128) %ymm3)))
+      (a!3 (ite (= (mincmp_double ((_ extract 127 64) %ymm2)
+                                  ((_ extract 127 64) %ymm3))
+                   #b1)
+                ((_ extract 127 64) %ymm2)
+                ((_ extract 127 64) %ymm3)))
+      (a!4 (ite (= (mincmp_double ((_ extract 63 0) %ymm2)
+                                  ((_ extract 63 0) %ymm3))
+                   #b1)
+                ((_ extract 63 0) %ymm2)
+                ((_ extract 63 0) %ymm3))))
+  (concat a!1 (concat a!2 (concat a!3 a!4))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

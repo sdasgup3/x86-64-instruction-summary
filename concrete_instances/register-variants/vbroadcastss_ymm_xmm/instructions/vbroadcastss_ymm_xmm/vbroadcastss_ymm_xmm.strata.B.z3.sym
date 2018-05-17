@@ -1,0 +1,24 @@
+code: vbroadcastss %xmm2, %ymm1
+
+  maybe read:      { %xmm2 }
+  must read:       { %xmm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+Formula:
+
+%ymm1  : (let ((a!1 (concat (concat (concat ((_ extract 31 0) %ymm2)
+                                   ((_ extract 31 0) %ymm2))
+                           ((_ extract 31 0) %ymm2))
+                   ((_ extract 31 0) %ymm2))))
+(let ((a!2 (concat (concat (concat a!1 ((_ extract 31 0) %ymm2))
+                           ((_ extract 31 0) %ymm2))
+                   ((_ extract 31 0) %ymm2))))
+  (concat a!2 ((_ extract 31 0) %ymm2))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

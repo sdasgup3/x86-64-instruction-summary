@@ -1,0 +1,22 @@
+code: vcvtsi2ssl (%rbx), %xmm2, %xmm1
+
+  maybe read:      { %rbx %xmm2 %mxcsr::rc[0] }
+  must read:       { %rbx %xmm2 %mxcsr::rc[0] }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%ymm1  : (concat #x00000000000000000000000000000000
+        (concat ((_ extract 127 32) %ymm2) (cvt_int32_to_single TMP_BV_32_0)))
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

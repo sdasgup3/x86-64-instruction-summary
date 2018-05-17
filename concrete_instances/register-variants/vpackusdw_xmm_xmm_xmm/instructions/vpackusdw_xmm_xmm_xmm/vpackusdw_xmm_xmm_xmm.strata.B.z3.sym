@@ -1,0 +1,59 @@
+code: vpackusdw %xmm3, %xmm2, %xmm1
+
+  maybe read:      { %xmm2 %xmm3 }
+  must read:       { %xmm2 %xmm3 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%ymm1  : (let ((a!1 (ite (bvsgt ((_ extract 127 96) %ymm3) #x0000ffff)
+                #xffff
+                (ite (bvslt ((_ extract 127 96) %ymm3) #x00000000)
+                     #x0000
+                     ((_ extract 111 96) %ymm3))))
+      (a!2 (ite (bvsgt ((_ extract 95 64) %ymm3) #x0000ffff)
+                #xffff
+                (ite (bvslt ((_ extract 95 64) %ymm3) #x00000000)
+                     #x0000
+                     ((_ extract 79 64) %ymm3))))
+      (a!3 (ite (bvsgt ((_ extract 63 32) %ymm3) #x0000ffff)
+                #xffff
+                (ite (bvslt ((_ extract 63 32) %ymm3) #x00000000)
+                     #x0000
+                     ((_ extract 47 32) %ymm3))))
+      (a!4 (ite (bvsgt ((_ extract 31 0) %ymm3) #x0000ffff)
+                #xffff
+                (ite (bvslt ((_ extract 31 0) %ymm3) #x00000000)
+                     #x0000
+                     ((_ extract 15 0) %ymm3))))
+      (a!5 (ite (bvsgt ((_ extract 127 96) %ymm2) #x0000ffff)
+                #xffff
+                (ite (bvslt ((_ extract 127 96) %ymm2) #x00000000)
+                     #x0000
+                     ((_ extract 111 96) %ymm2))))
+      (a!6 (ite (bvsgt ((_ extract 95 64) %ymm2) #x0000ffff)
+                #xffff
+                (ite (bvslt ((_ extract 95 64) %ymm2) #x00000000)
+                     #x0000
+                     ((_ extract 79 64) %ymm2))))
+      (a!7 (ite (bvsgt ((_ extract 63 32) %ymm2) #x0000ffff)
+                #xffff
+                (ite (bvslt ((_ extract 63 32) %ymm2) #x00000000)
+                     #x0000
+                     ((_ extract 47 32) %ymm2))))
+      (a!8 (ite (bvsgt ((_ extract 31 0) %ymm2) #x0000ffff)
+                #xffff
+                (ite (bvslt ((_ extract 31 0) %ymm2) #x00000000)
+                     #x0000
+                     ((_ extract 15 0) %ymm2)))))
+(let ((a!9 (concat a!4 (concat a!5 (concat a!6 (concat a!7 a!8))))))
+  (concat #x00000000000000000000000000000000
+          (concat a!1 (concat a!2 (concat a!3 a!9))))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

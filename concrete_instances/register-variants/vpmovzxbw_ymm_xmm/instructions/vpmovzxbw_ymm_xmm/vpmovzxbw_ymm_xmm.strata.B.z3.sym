@@ -1,0 +1,32 @@
+code: vpmovzxbw %xmm2, %ymm1
+
+  maybe read:      { %xmm2 }
+  must read:       { %xmm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+Formula:
+
+%ymm1  : (let ((a!1 (concat (concat #x00 ((_ extract 23 16) %ymm2))
+                   (concat (concat #x00 ((_ extract 15 8) %ymm2))
+                           (concat #x00 ((_ extract 7 0) %ymm2))))))
+(let ((a!2 (concat (concat #x00 ((_ extract 39 32) %ymm2))
+                   (concat (concat #x00 ((_ extract 31 24) %ymm2)) a!1))))
+(let ((a!3 (concat (concat #x00 ((_ extract 55 48) %ymm2))
+                   (concat (concat #x00 ((_ extract 47 40) %ymm2)) a!2))))
+(let ((a!4 (concat (concat #x00 ((_ extract 71 64) %ymm2))
+                   (concat (concat #x00 ((_ extract 63 56) %ymm2)) a!3))))
+(let ((a!5 (concat (concat #x00 ((_ extract 87 80) %ymm2))
+                   (concat (concat #x00 ((_ extract 79 72) %ymm2)) a!4))))
+(let ((a!6 (concat (concat #x00 ((_ extract 103 96) %ymm2))
+                   (concat (concat #x00 ((_ extract 95 88) %ymm2)) a!5))))
+(let ((a!7 (concat (concat #x00 ((_ extract 119 112) %ymm2))
+                   (concat (concat #x00 ((_ extract 111 104) %ymm2)) a!6))))
+  (concat (concat #x00 ((_ extract 127 120) %ymm2)) a!7))))))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

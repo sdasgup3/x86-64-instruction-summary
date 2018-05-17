@@ -1,0 +1,22 @@
+code: cmoval %ecx, %ebx
+
+  maybe read:      { %ecx %cf %zf }
+  must read:       { %ecx %cf %zf }
+  maybe write:     { %rbx }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { cmov }
+
+cmoval %ecx, %ebx: Hindex3(9)
+cmoval %ecx, %ebx: Hindex3(9)
+Formula:
+
+%rbx   : (concat #x00000000
+        (ite (and (not %cf) (not %zf))
+             ((_ extract 31 0) %rcx)
+             ((_ extract 31 0) %rbx)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

@@ -1,0 +1,22 @@
+code: cmoval %ecx, %ebx
+
+  maybe read:      { %ecx %cf %zf }
+  must read:       { %ecx %cf %zf }
+  maybe write:     { %rbx }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { cmov }
+
+Formula:
+
+%rbx   : (let ((a!1 (ite %zf
+                ((_ extract 31 0) %rbx)
+                (ite (= (ite %cf #x0100 #x0000) #x0000)
+                     ((_ extract 31 0) %rcx)
+                     ((_ extract 31 0) %rbx)))))
+  (concat #x00000000 a!1))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

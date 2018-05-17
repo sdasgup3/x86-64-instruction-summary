@@ -1,0 +1,32 @@
+code: mulb %bh
+
+  maybe read:      { %al %bh }
+  must read:       { %al %bh }
+  maybe write:     { %ax %cf %of }
+  must write:      { %ax %cf %of }
+  maybe undef:     { %pf %af %zf %sf }
+  must undef:      { %pf %af %zf %sf }
+  required flags:  { }
+
+Formula:
+
+%rax   : (concat ((_ extract 63 16) %rax)
+        (bvmul (concat #x00 ((_ extract 15 8) %rbx))
+               (concat #x00 ((_ extract 7 0) %rax))))
+
+%cf    : (let ((a!1 ((_ extract 15 8)
+             (bvmul (concat #x00 ((_ extract 15 8) %rbx))
+                    (concat #x00 ((_ extract 7 0) %rax))))))
+  (not (= a!1 #x00)))
+%pf    : TMP_BOOL_2
+%af    : TMP_BOOL_1
+%zf    : TMP_BOOL_0
+%sf    : TMP_BOOL_3
+%of    : (let ((a!1 ((_ extract 15 8)
+             (bvmul (concat #x00 ((_ extract 15 8) %rbx))
+                    (concat #x00 ((_ extract 7 0) %rax))))))
+  (not (= a!1 #x00)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

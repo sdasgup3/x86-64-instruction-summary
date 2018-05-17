@@ -1,0 +1,40 @@
+code: psignd %xmm2, %xmm1
+
+  maybe read:      { %xmm1 %xmm2 }
+  must read:       { %xmm1 %xmm2 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { ssse3 }
+
+psignd %xmm2, %xmm1: Hindex0(9)
+psignd %xmm2, %xmm1: Hindex0(9)
+Formula:
+
+%ymm1  : (let ((a!1 (ite (bvsgt ((_ extract 127 96) %ymm2) #x00000000)
+                ((_ extract 127 96) %ymm1)
+                (ite (= ((_ extract 127 96) %ymm2) #x00000000)
+                     #x00000000
+                     (bvneg ((_ extract 127 96) %ymm1)))))
+      (a!2 (ite (bvsgt ((_ extract 95 64) %ymm2) #x00000000)
+                ((_ extract 95 64) %ymm1)
+                (ite (= ((_ extract 95 64) %ymm2) #x00000000)
+                     #x00000000
+                     (bvneg ((_ extract 95 64) %ymm1)))))
+      (a!3 (ite (bvsgt ((_ extract 63 32) %ymm2) #x00000000)
+                ((_ extract 63 32) %ymm1)
+                (ite (= ((_ extract 63 32) %ymm2) #x00000000)
+                     #x00000000
+                     (bvneg ((_ extract 63 32) %ymm1)))))
+      (a!4 (ite (bvsgt ((_ extract 31 0) %ymm2) #x00000000)
+                ((_ extract 31 0) %ymm1)
+                (ite (= ((_ extract 31 0) %ymm2) #x00000000)
+                     #x00000000
+                     (bvneg ((_ extract 31 0) %ymm1))))))
+  (concat ((_ extract 255 128) %ymm1)
+          (concat a!1 (concat a!2 (concat a!3 a!4)))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

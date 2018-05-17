@@ -1,0 +1,17 @@
+code: notl %ebx
+
+  maybe read:      { %ebx }
+  must read:       { %ebx }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rbx   : (bvxor (concat #x00000000 ((_ extract 31 0) %rbx)) #x00000000ffffffff)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

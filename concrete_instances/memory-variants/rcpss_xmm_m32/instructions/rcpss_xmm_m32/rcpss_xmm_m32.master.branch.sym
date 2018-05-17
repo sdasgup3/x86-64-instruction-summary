@@ -1,0 +1,35 @@
+code: rcpss (%rbx), %xmm1
+
+  maybe read:      { %rbx %xmm1 }
+  must read:       { %rbx %xmm1 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse }
+
+rcpss (%rbx), %xmm1: Hindex8(9)
+rcpss (%rbx), %xmm1: Hindex8(9)
+callq .move_128_064_xmm2_r12_r13: Hindex8(9)
+vzeroall: Hindex1(9)
+callq .move_064_128_r12_r13_xmm1: Hindex8(9)
+vrcpps %ymm1, %ymm10: Hindex0(9)
+callq .move_128_256_xmm10_xmm11_ymm1: Hindex8(9)
+callq .move_128_032_xmm1_xmm4_xmm5_xmm6_xmm7: Hindex8(9)
+callq .move_128_064_xmm2_r8_r9: Hindex8(9)
+vzeroall: Hindex1(9)
+callq .move_064_128_r8_r9_xmm1: Hindex8(9)
+callq .move_032_128_xmm4_xmm5_xmm6_xmm7_xmm1: Hindex8(9)
+Formula:
+
+%ymm1  : (concat ((_ extract 255 128) %ymm1)
+        (concat ((_ extract 127 32) %ymm1)
+                (approx_reciprocal_single TMP_BV_32_0)))
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

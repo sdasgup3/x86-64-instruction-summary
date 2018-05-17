@@ -1,0 +1,20 @@
+code: cmovzw %cx, %bx
+
+  maybe read:      { %cx %zf }
+  must read:       { %cx %zf }
+  maybe write:     { %bx }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { cmov }
+
+cmovzw %cx, %bx: Hindex3(9)
+cmovzw %cx, %bx: Hindex3(9)
+Formula:
+
+%rbx   : (concat ((_ extract 63 16) %rbx)
+        (ite %zf ((_ extract 15 0) %rcx) ((_ extract 15 0) %rbx)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

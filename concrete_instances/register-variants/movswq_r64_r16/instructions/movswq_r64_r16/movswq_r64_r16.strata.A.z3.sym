@@ -1,0 +1,17 @@
+code: movswq %cx, %rbx
+
+  maybe read:      { %cx }
+  must read:       { %cx }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rbx   : ((_ sign_extend 48) ((_ extract 15 0) %rcx))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

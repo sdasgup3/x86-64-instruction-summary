@@ -1,0 +1,3 @@
+.target:
+  negl (%rbx)
+  retq

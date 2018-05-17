@@ -1,0 +1,35 @@
+code: vpunpckhwd %ymm3, %ymm2, %ymm1
+
+  maybe read:      { %ymm2 %ymm3 }
+  must read:       { %ymm2 %ymm3 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+vpunpckhwd %ymm3, %ymm2, %ymm1: Hindex6(9)
+vpunpckhwd %ymm3, %ymm2, %ymm1: Hindex6(9)
+Formula:
+
+%ymm1  : (let ((a!1 (concat (concat ((_ extract 111 96) %ymm3)
+                           ((_ extract 111 96) %ymm2))
+                   (concat (concat ((_ extract 95 80) %ymm3)
+                                   ((_ extract 95 80) %ymm2))
+                           (concat ((_ extract 79 64) %ymm3)
+                                   ((_ extract 79 64) %ymm2))))))
+(let ((a!2 (concat (concat ((_ extract 207 192) %ymm3)
+                           ((_ extract 207 192) %ymm2))
+                   (concat (concat ((_ extract 127 112) %ymm3)
+                                   ((_ extract 127 112) %ymm2))
+                           a!1))))
+(let ((a!3 (concat (concat ((_ extract 239 224) %ymm3)
+                           ((_ extract 239 224) %ymm2))
+                   (concat (concat ((_ extract 223 208) %ymm3)
+                                   ((_ extract 223 208) %ymm2))
+                           a!2))))
+  (concat (concat ((_ extract 255 240) %ymm3) ((_ extract 255 240) %ymm2)) a!3))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

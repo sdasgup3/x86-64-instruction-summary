@@ -1,0 +1,34 @@
+code: vpmaddwd %xmm3, %xmm2, %xmm1
+
+  maybe read:      { %xmm2 %xmm3 }
+  must read:       { %xmm2 %xmm3 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%ymm1  : (let ((a!1 (bvadd (bvmul ((_ sign_extend 16) ((_ extract 111 96) %ymm3))
+                         ((_ sign_extend 16) ((_ extract 111 96) %ymm2)))
+                  (bvmul ((_ sign_extend 16) ((_ extract 127 112) %ymm3))
+                         ((_ sign_extend 16) ((_ extract 127 112) %ymm2)))))
+      (a!2 (bvadd (bvmul ((_ sign_extend 16) ((_ extract 79 64) %ymm3))
+                         ((_ sign_extend 16) ((_ extract 79 64) %ymm2)))
+                  (bvmul ((_ sign_extend 16) ((_ extract 95 80) %ymm3))
+                         ((_ sign_extend 16) ((_ extract 95 80) %ymm2)))))
+      (a!3 (bvadd (bvmul ((_ sign_extend 16) ((_ extract 47 32) %ymm3))
+                         ((_ sign_extend 16) ((_ extract 47 32) %ymm2)))
+                  (bvmul ((_ sign_extend 16) ((_ extract 63 48) %ymm3))
+                         ((_ sign_extend 16) ((_ extract 63 48) %ymm2)))))
+      (a!4 (bvadd (bvmul ((_ sign_extend 16) ((_ extract 15 0) %ymm3))
+                         ((_ sign_extend 16) ((_ extract 15 0) %ymm2)))
+                  (bvmul ((_ sign_extend 16) ((_ extract 31 16) %ymm3))
+                         ((_ sign_extend 16) ((_ extract 31 16) %ymm2))))))
+  (concat #x00000000000000000000000000000000
+          (concat a!1 (concat a!2 (concat a!3 a!4)))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

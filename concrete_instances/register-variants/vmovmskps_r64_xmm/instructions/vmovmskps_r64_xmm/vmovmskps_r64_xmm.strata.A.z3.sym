@@ -1,0 +1,66 @@
+code: vmovmskps %xmm1, %rbx
+
+  maybe read:      { %xmm1 }
+  must read:       { %xmm1 }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%rbx   : (let ((a!1 (concat #b0
+                   ((_ extract 63 32)
+                     ((_ sign_extend 32) ((_ extract 31 0) %ymm1)))))
+      (a!3 (concat #b0
+                   ((_ extract 63 32)
+                     ((_ sign_extend 32) ((_ extract 63 32) %ymm1)))))
+      (a!8 (concat #b0
+                   ((_ extract 63 32)
+                     ((_ sign_extend 32) ((_ extract 95 64) %ymm1)))))
+      (a!10 (concat #b0
+                    ((_ extract 63 32)
+                      ((_ sign_extend 32) ((_ extract 127 96) %ymm1))))))
+(let ((a!2 (ite (= ((_ extract 32 32) (bvadd a!1 a!1)) #b1)
+                (bvadd a!1 #b000000000000000000000000000000001)
+                a!1))
+      (a!4 (ite (= ((_ extract 32 32) (bvadd a!3 a!3)) #b1)
+                (bvadd a!3 #b000000000000000000000000000000001)
+                a!3))
+      (a!9 (ite (= ((_ extract 32 32) (bvadd a!8 a!8)) #b1)
+                (bvadd a!8 #b000000000000000000000000000000001)
+                a!8))
+      (a!11 (ite (= ((_ extract 32 32) (bvadd a!10 a!10)) #b1)
+                 (bvadd a!10 #b000000000000000000000000000000001)
+                 a!10)))
+(let ((a!5 (ite (= ((_ extract 32 32) (bvadd a!4 a!3)) #b1)
+                #b000000000000000000000000000000010
+                #b000000000000000000000000000000001))
+      (a!6 (ite (= ((_ extract 32 32) (bvadd a!4 a!3)) #b1)
+                #b000000000000000000000000000000001
+                #b000000000000000000000000000000000))
+      (a!12 (ite (= ((_ extract 32 32) (bvadd a!11 a!10)) #b1)
+                 #b000000000000000000000000000000010
+                 #b000000000000000000000000000000001))
+      (a!13 (ite (= ((_ extract 32 32) (bvadd a!11 a!10)) #b1)
+                 #b000000000000000000000000000000001
+                 #b000000000000000000000000000000000)))
+(let ((a!7 (ite (= ((_ extract 32 32) (bvadd a!2 a!1)) #b1) a!5 a!6))
+      (a!14 (ite (= ((_ extract 32 32) (bvadd a!9 a!8)) #b1) a!12 a!13)))
+(let ((a!15 (bvadd (concat #b0 ((_ extract 7 0) (bvadd a!14 a!13)))
+                   (concat #b0 ((_ extract 7 0) (bvadd a!14 a!13))))))
+(let ((a!16 (bvadd (concat #b0 ((_ extract 7 0) a!15))
+                   (concat #b0 ((_ extract 7 0) (bvadd a!7 a!6)))))
+      (a!18 (concat #b0
+                    (concat ((_ extract 15 8) (bvadd a!7 a!6))
+                            ((_ extract 7 0) a!15)))))
+(let ((a!17 (concat #b0
+                    (concat ((_ extract 15 8) (bvadd a!14 a!13))
+                            ((_ extract 7 0) a!16)))))
+  (concat (concat #x00000000 ((_ extract 31 16) (bvadd a!7 a!6)))
+          ((_ extract 15 0) (bvadd a!17 a!18))))))))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

@@ -1,0 +1,27 @@
+code: blsrl %ecx, %ebx
+
+  maybe read:      { %ecx }
+  must read:       { %ecx }
+  maybe write:     { %rbx %cf %zf %sf %of }
+  must write:      { %rbx %cf %zf %sf %of }
+  maybe undef:     { %pf %af }
+  must undef:      { %pf %af }
+  required flags:  { bmi1 }
+
+Formula:
+
+%rbx   : (concat #x00000000
+        (bvand (bvsub ((_ extract 31 0) %rcx) #x00000001)
+               ((_ extract 31 0) %rcx)))
+
+%cf    : (= ((_ extract 31 0) %rcx) #x00000000)
+%zf    : (= (bvand (bvsub ((_ extract 31 0) %rcx) #x00000001) ((_ extract 31 0) %rcx))
+   #x00000000)
+%sf    : (let ((a!1 (bvand ((_ extract 31 31) (bvsub ((_ extract 31 0) %rcx) #x00000001))
+                  ((_ extract 31 31) %rcx))))
+  (= a!1 #b1))
+%of    : false
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

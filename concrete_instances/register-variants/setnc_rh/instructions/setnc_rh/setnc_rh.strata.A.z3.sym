@@ -1,0 +1,18 @@
+code: setnc %ah
+
+  maybe read:      { %cf }
+  must read:       { %cf }
+  maybe write:     { %ah }
+  must write:      { %ah }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rax   : (concat (concat ((_ extract 63 16) %rax) (ite %cf #x00 #x01))
+        ((_ extract 7 0) %rax))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

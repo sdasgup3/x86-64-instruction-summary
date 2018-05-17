@@ -1,0 +1,21 @@
+code: setnz (%rbx)
+
+  maybe read:      { %rbx %zf }
+  must read:       { %rbx %zf }
+  maybe write:     { }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+setnz (%rbx): Hindex3(9)
+setnz (%rbx): Hindex3(9)
+Formula:
+
+Information about memory writes:
+  Address %rbx was updated to
+    (ite (not %zf) #x01 #x00) (1 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

@@ -1,0 +1,27 @@
+code: vmovlpd %xmm1, (%rbx)
+
+  maybe read:      { %rbx %xmm1 }
+  must read:       { %rbx %xmm1 }
+  maybe write:     { }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+vmovlpd %xmm1, (%rbx): Hindex1(9)
+vmovlpd %xmm1, (%rbx): Hindex1(9)
+Formula:
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rbx.
+
+Information about memory writes:
+  Address %rbx was updated to
+    ((_ extract 63 0) %ymm1) (8 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv
+    (and (not sigfpe) (not sigbus) false)
+    (and (not sigfpe) (not sigbus) false))

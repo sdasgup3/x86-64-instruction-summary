@@ -1,0 +1,18 @@
+code: vmovq %rbx, %xmm1
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%ymm1  : (concat #x00000000000000000000000000000000
+        (concat #x0000000000000000 (bvxor #x0000000000000000 %rbx)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

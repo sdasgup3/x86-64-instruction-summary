@@ -1,0 +1,28 @@
+code: movbeq (%rcx), %rbx
+
+  maybe read:      { %rcx }
+  must read:       { %rcx }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { movbe }
+
+Formula:
+
+%rbx   : (let ((a!1 (concat (concat (concat ((_ extract 7 0) TMP_BV_64_0)
+                                   ((_ extract 15 8) TMP_BV_64_0))
+                           ((_ extract 23 16) TMP_BV_64_0))
+                   ((_ extract 31 24) TMP_BV_64_0))))
+(let ((a!2 (concat (concat (concat a!1 ((_ extract 39 32) TMP_BV_64_0))
+                           ((_ extract 47 40) TMP_BV_64_0))
+                   ((_ extract 55 48) TMP_BV_64_0))))
+  (concat a!2 ((_ extract 63 56) TMP_BV_64_0))))
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rcx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

@@ -1,0 +1,17 @@
+code: vcvtsd2siq %xmm1, %rbx
+
+  maybe read:      { %xmm1 %mxcsr::rc[0] }
+  must read:       { %xmm1 %mxcsr::rc[0] }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%rbx   : (cvt_double_to_int64 ((_ extract 63 0) %ymm1))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

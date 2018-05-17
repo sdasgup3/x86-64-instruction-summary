@@ -1,0 +1,28 @@
+code: andnl (%rdx), %ecx, %ebx
+
+  maybe read:      { %ecx %rdx }
+  must read:       { %ecx %rdx }
+  maybe write:     { %rbx %cf %zf %sf %of }
+  must write:      { %rbx %cf %zf %sf %of }
+  maybe undef:     { %pf %af }
+  must undef:      { %pf %af }
+  required flags:  { bmi1 }
+
+Formula:
+
+%rbx   : (concat #x00000000 (bvand (bvnot ((_ extract 31 0) %rcx)) TMP_BV_32_0))
+
+%cf    : false
+%pf    : TMP_BOOL_1
+%af    : TMP_BOOL_0
+%zf    : (= (bvand (bvnot ((_ extract 31 0) %rcx)) TMP_BV_32_0) #x00000000)
+%sf    : (= (bvand (bvnot ((_ extract 31 31) %rcx)) ((_ extract 31 31) TMP_BV_32_0)) #b1)
+%of    : false
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rdx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

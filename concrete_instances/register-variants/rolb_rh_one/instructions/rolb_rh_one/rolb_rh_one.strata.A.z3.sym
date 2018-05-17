@@ -1,0 +1,42 @@
+code: rolb $0x1, %ah
+
+  maybe read:      { %ah }
+  must read:       { %ah }
+  maybe write:     { %ah %cf %of }
+  must write:      { %ah %cf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rax   : (let ((a!1 (bvadd (concat #b0
+                          (concat ((_ extract 15 8) %rax)
+                                  ((_ extract 15 8) %rax)))
+                  (concat #b0
+                          (concat ((_ extract 15 8) %rax)
+                                  ((_ extract 15 8) %rax))))))
+  (concat (concat ((_ extract 63 16) %rax) ((_ extract 15 8) a!1))
+          ((_ extract 7 0) %rax)))
+
+%cf    : (let ((a!1 (bvadd (concat #b0
+                          (concat ((_ extract 15 8) %rax)
+                                  ((_ extract 15 8) %rax)))
+                  (concat #b0
+                          (concat ((_ extract 15 8) %rax)
+                                  ((_ extract 15 8) %rax))))))
+  (= ((_ extract 16 16) a!1) #b1))
+%of    : (let ((a!1 (bvadd (concat #b0
+                          (concat ((_ extract 15 8) %rax)
+                                  ((_ extract 15 8) %rax)))
+                  (concat #b0
+                          (concat ((_ extract 15 8) %rax)
+                                  ((_ extract 15 8) %rax))))))
+(let ((a!2 (not (= (= ((_ extract 15 15) %rax) #b1)
+                   (= ((_ extract 15 15) a!1) #b1)))))
+  (and (= (= ((_ extract 15 15) %rax) #b1) (= ((_ extract 15 15) %rax) #b1))
+       a!2)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

@@ -1,0 +1,19 @@
+code: movb %cl, (%rbx)
+
+  maybe read:      { %cl %rbx }
+  must read:       { %cl %rbx }
+  maybe write:     { }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+Information about memory writes:
+  Address %rbx was updated to
+    ((_ extract 7 0) %rcx) (1 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

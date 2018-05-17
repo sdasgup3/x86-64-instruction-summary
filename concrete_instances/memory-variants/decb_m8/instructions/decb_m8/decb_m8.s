@@ -1,0 +1,3 @@
+.target:
+  decb (%rbx)
+  retq

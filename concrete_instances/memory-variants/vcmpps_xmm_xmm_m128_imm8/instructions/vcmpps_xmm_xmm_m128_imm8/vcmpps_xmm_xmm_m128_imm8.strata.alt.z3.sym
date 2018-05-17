@@ -1,0 +1,46 @@
+code: vcmpps $0x0, (%rbx), %xmm2, %xmm1
+
+  maybe read:      { %rbx %xmm2 }
+  must read:       { %rbx %xmm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%ymm1  : (let ((a!1 (ite (= (cmp_single_pred ((_ extract 127 96) %ymm2)
+                                    ((_ extract 127 96) TMP_BV_128_0)
+                                    #x00)
+                   #b1)
+                #xffffffff
+                #x00000000))
+      (a!2 (ite (= (cmp_single_pred ((_ extract 95 64) %ymm2)
+                                    ((_ extract 95 64) TMP_BV_128_0)
+                                    #x00)
+                   #b1)
+                #xffffffff
+                #x00000000))
+      (a!3 (ite (= (cmp_single_pred ((_ extract 63 32) %ymm2)
+                                    ((_ extract 63 32) TMP_BV_128_0)
+                                    #x00)
+                   #b1)
+                #xffffffff
+                #x00000000))
+      (a!4 (ite (= (cmp_single_pred ((_ extract 31 0) %ymm2)
+                                    ((_ extract 31 0) TMP_BV_128_0)
+                                    #x00)
+                   #b1)
+                #xffffffff
+                #x00000000)))
+  (concat #x00000000000000000000000000000000
+          (concat a!1 (concat a!2 (concat a!3 a!4)))))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

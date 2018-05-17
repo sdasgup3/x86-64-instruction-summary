@@ -1,0 +1,22 @@
+code: vsqrtpd %ymm2, %ymm1
+
+  maybe read:      { %ymm2 }
+  must read:       { %ymm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+vsqrtpd %ymm2, %ymm1: Hindex0(9)
+vsqrtpd %ymm2, %ymm1: Hindex0(9)
+Formula:
+
+%ymm1  : (let ((a!1 (concat (sqrt_double ((_ extract 191 128) %ymm2))
+                   (concat (sqrt_double ((_ extract 127 64) %ymm2))
+                           (sqrt_double ((_ extract 63 0) %ymm2))))))
+  (concat (sqrt_double ((_ extract 255 192) %ymm2)) a!1))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

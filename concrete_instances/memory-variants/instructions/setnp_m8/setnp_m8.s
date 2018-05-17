@@ -1,3 +1,0 @@
-.target:
-  setnp (%rax)
-  retq

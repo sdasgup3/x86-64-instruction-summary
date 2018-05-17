@@ -1,0 +1,24 @@
+code: blsiq %rcx, %rbx
+
+  maybe read:      { %rcx %rbx }
+  must read:       { %rcx %rbx }
+  maybe write:     { %rbx %cf %zf %sf %of }
+  must write:      { %rbx %cf %zf %sf %of }
+  maybe undef:     { %pf %af }
+  must undef:      { %pf %af }
+  required flags:  { bmi1 }
+
+Formula:
+
+%rbx   : (bvand (bvneg %rcx) %rcx)
+
+%cf    : (not (= %rcx #x0000000000000000))
+%pf    : TMP_BOOL_0
+%af    : TMP_BOOL_1
+%zf    : (= (bvand (bvneg %rcx) %rcx) #x0000000000000000)
+%sf    : (= (bvand ((_ extract 63 63) (bvneg %rcx)) ((_ extract 63 63) %rcx)) #b1)
+%of    : false
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

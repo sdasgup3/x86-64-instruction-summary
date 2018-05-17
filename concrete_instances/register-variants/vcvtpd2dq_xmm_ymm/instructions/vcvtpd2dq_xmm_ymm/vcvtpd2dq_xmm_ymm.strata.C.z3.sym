@@ -1,0 +1,23 @@
+code: vcvtpd2dq %ymm1, %xmm1
+
+  maybe read:      { %ymm1 %mxcsr::rc[0] }
+  must read:       { %ymm1 %mxcsr::rc[0] }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+vcvtpd2dq %ymm1, %xmm1: Hindex1(9)
+vcvtpd2dq %ymm1, %xmm1: Hindex1(9)
+Formula:
+
+%ymm1  : (let ((a!1 (concat (cvt_double_to_int32 ((_ extract 191 128) %ymm1))
+                   (concat (cvt_double_to_int32 ((_ extract 127 64) %ymm1))
+                           (cvt_double_to_int32 ((_ extract 63 0) %ymm1))))))
+  (concat #x00000000000000000000000000000000
+          (concat (cvt_double_to_int32 ((_ extract 255 192) %ymm1)) a!1)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

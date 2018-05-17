@@ -1,0 +1,30 @@
+code: rorw $0x1, %bx
+
+  maybe read:      { %bx }
+  must read:       { %bx }
+  maybe write:     { %bx %cf %of }
+  must write:      { %bx %cf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rbx   : (concat ((_ extract 63 16) %rbx)
+        (ext_rotate_right ((_ extract 15 0) %rbx) #x0001))
+
+%cf    : (let ((a!1 (= ((_ extract 15 15)
+                (ext_rotate_right ((_ extract 15 0) %rbx) #x0001))
+              #b1)))
+  (or (and true a!1) (and false %cf)))
+%of    : (let ((a!1 (= ((_ extract 15 15)
+                (ext_rotate_right ((_ extract 15 0) %rbx) #x0001))
+              #b1))
+      (a!2 (= ((_ extract 14 14)
+                (ext_rotate_right ((_ extract 15 0) %rbx) #x0001))
+              #b1)))
+  (or (and true (xor a!1 a!2)) (and false TMP_BOOL_0)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

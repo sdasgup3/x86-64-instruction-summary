@@ -1,3 +1,0 @@
-.target:
-  incw (%rax)
-  retq

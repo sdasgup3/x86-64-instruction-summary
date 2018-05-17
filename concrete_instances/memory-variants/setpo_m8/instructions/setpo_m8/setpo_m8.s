@@ -1,0 +1,3 @@
+.target:
+  setpo (%rbx)
+  retq

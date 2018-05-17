@@ -1,0 +1,34 @@
+code: vpermilpd (%rbx), %ymm2, %ymm1
+
+  maybe read:      { %rbx %ymm2 }
+  must read:       { %rbx %ymm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%ymm1  : (let ((a!1 (concat (ite (= ((_ extract 65 65) TMP_BV_256_0) #b0)
+                        ((_ extract 63 0) %ymm2)
+                        ((_ extract 127 64) %ymm2))
+                   (ite (= ((_ extract 1 1) TMP_BV_256_0) #b0)
+                        ((_ extract 63 0) %ymm2)
+                        ((_ extract 127 64) %ymm2)))))
+(let ((a!2 (concat (ite (= ((_ extract 129 129) TMP_BV_256_0) #b0)
+                        ((_ extract 191 128) %ymm2)
+                        ((_ extract 255 192) %ymm2))
+                   a!1)))
+  (concat (ite (= ((_ extract 193 193) TMP_BV_256_0) #b0)
+               ((_ extract 191 128) %ymm2)
+               ((_ extract 255 192) %ymm2))
+          a!2)))
+
+Information about memory reads:
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

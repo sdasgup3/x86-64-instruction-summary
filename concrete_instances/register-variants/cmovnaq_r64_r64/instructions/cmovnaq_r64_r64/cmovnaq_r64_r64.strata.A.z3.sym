@@ -1,0 +1,21 @@
+code: cmovnaq %rcx, %rbx
+
+  maybe read:      { %rcx %cf %zf }
+  must read:       { %rcx %cf %zf }
+  maybe write:     { %rbx }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { cmov }
+
+Formula:
+
+%rbx   : (let ((a!1 (ite (= (concat (ite %cf #x000001 #x000000) (ite %zf #x01 #x00))
+                   #x00000000)
+                #b000000001
+                #b000000000)))
+  (ite (= ((_ extract 7 0) (bvadd a!1 a!1)) #x00) %rcx %rbx))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

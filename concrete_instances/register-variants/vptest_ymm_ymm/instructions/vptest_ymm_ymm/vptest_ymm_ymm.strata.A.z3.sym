@@ -1,0 +1,24 @@
+code: vptest %ymm2, %ymm1
+
+  maybe read:      { %ymm1 %ymm2 }
+  must read:       { %ymm1 %ymm2 }
+  maybe write:     { %cf %pf %af %zf %sf %of }
+  must write:      { %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%cf    : (= (bvand (bvnot %ymm1) %ymm2)
+   #x0000000000000000000000000000000000000000000000000000000000000000)
+%pf    : false
+%af    : false
+%zf    : (= (bvand %ymm1 %ymm2)
+   #x0000000000000000000000000000000000000000000000000000000000000000)
+%sf    : false
+%of    : false
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

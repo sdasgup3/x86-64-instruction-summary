@@ -1,0 +1,29 @@
+code: divq (%rbx)
+
+  maybe read:      { %rax %rdx %rbx }
+  must read:       { %rax %rdx %rbx }
+  maybe write:     { %rax %rdx }
+  must write:      { %rax %rdx }
+  maybe undef:     { %cf %pf %af %zf %sf %of }
+  must undef:      { %cf %pf %af %zf %sf %of }
+  required flags:  { }
+
+Formula:
+
+%rax   : (div_quotient_int64 (concat %rdx %rax) TMP_BV_64_0)
+%rdx   : (div_remainder_int64 (concat %rdx %rax) TMP_BV_64_0)
+
+%cf    : TMP_BOOL_5
+%pf    : TMP_BOOL_2
+%af    : TMP_BOOL_1
+%zf    : TMP_BOOL_0
+%sf    : TMP_BOOL_3
+%of    : TMP_BOOL_4
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

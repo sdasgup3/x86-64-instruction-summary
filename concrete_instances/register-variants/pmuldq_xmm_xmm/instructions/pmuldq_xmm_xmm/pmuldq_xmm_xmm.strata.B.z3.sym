@@ -1,0 +1,21 @@
+code: pmuldq %xmm2, %xmm1
+
+  maybe read:      { %xmm1 %xmm2 }
+  must read:       { %xmm1 %xmm2 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse4_1 }
+
+Formula:
+
+%ymm1  : (let ((a!1 (concat (bvmul ((_ sign_extend 32) ((_ extract 95 64) %ymm1))
+                          ((_ sign_extend 32) ((_ extract 95 64) %ymm2)))
+                   (bvmul ((_ sign_extend 32) ((_ extract 31 0) %ymm1))
+                          ((_ sign_extend 32) ((_ extract 31 0) %ymm2))))))
+  (concat ((_ extract 255 128) %ymm1) a!1))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

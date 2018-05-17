@@ -1,0 +1,19 @@
+code: leaq (%rcx), %rbx
+
+  maybe read:      { %rcx }
+  must read:       { %rcx }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+leaq (%rcx), %rbx: Hindex4(9)
+leaq (%rcx), %rbx: Hindex4(9)
+Formula:
+
+%rbx   : %rcx
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

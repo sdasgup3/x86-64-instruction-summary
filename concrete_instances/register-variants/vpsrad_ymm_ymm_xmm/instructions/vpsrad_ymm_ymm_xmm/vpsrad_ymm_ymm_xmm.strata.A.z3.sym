@@ -1,0 +1,50 @@
+code: vpsrad %xmm3, %ymm2, %ymm1
+
+  maybe read:      { %ymm2 %xmm3 }
+  must read:       { %ymm2 %xmm3 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+Formula:
+
+%ymm1  : (let ((a!1 (bvashr ((_ extract 255 224) %ymm2)
+                   (ite (bvugt ((_ extract 63 0) %ymm3) #x000000000000001f)
+                        #x00000020
+                        ((_ extract 31 0) %ymm3))))
+      (a!2 (bvashr ((_ extract 223 192) %ymm2)
+                   (ite (bvugt ((_ extract 63 0) %ymm3) #x000000000000001f)
+                        #x00000020
+                        ((_ extract 31 0) %ymm3))))
+      (a!3 (bvashr ((_ extract 191 160) %ymm2)
+                   (ite (bvugt ((_ extract 63 0) %ymm3) #x000000000000001f)
+                        #x00000020
+                        ((_ extract 31 0) %ymm3))))
+      (a!4 (bvashr ((_ extract 159 128) %ymm2)
+                   (ite (bvugt ((_ extract 63 0) %ymm3) #x000000000000001f)
+                        #x00000020
+                        ((_ extract 31 0) %ymm3))))
+      (a!5 (bvashr ((_ extract 127 96) %ymm2)
+                   (ite (bvugt ((_ extract 63 0) %ymm3) #x000000000000001f)
+                        #x00000020
+                        ((_ extract 31 0) %ymm3))))
+      (a!6 (bvashr ((_ extract 95 64) %ymm2)
+                   (ite (bvugt ((_ extract 63 0) %ymm3) #x000000000000001f)
+                        #x00000020
+                        ((_ extract 31 0) %ymm3))))
+      (a!7 (bvashr ((_ extract 63 32) %ymm2)
+                   (ite (bvugt ((_ extract 63 0) %ymm3) #x000000000000001f)
+                        #x00000020
+                        ((_ extract 31 0) %ymm3))))
+      (a!8 (bvashr ((_ extract 31 0) %ymm2)
+                   (ite (bvugt ((_ extract 63 0) %ymm3) #x000000000000001f)
+                        #x00000020
+                        ((_ extract 31 0) %ymm3)))))
+(let ((a!9 (concat a!4 (concat a!5 (concat a!6 (concat a!7 a!8))))))
+  (concat a!1 (concat a!2 (concat a!3 a!9)))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

@@ -1,0 +1,205 @@
+code: tzcntl (%rcx), %ebx
+
+  maybe read:      { %rcx }
+  must read:       { %rcx }
+  maybe write:     { %rbx %cf %zf }
+  must write:      { %rbx %cf %zf }
+  maybe undef:     { %pf %af %sf %of }
+  must undef:      { %pf %af %sf %of }
+  required flags:  { bmi1 }
+
+Formula:
+
+%rbx   : (let ((a!1 (ite (= ((_ extract 30 30) TMP_BV_32_0) #b1)
+                #x000000000000001e
+                (ite (= ((_ extract 31 31) TMP_BV_32_0) #b1)
+                     #x000000000000001f
+                     #x0000000000000020))))
+(let ((a!2 (ite (= ((_ extract 28 28) TMP_BV_32_0) #b1)
+                #x000000000000001c
+                (ite (= ((_ extract 29 29) TMP_BV_32_0) #b1)
+                     #x000000000000001d
+                     a!1))))
+(let ((a!3 (ite (= ((_ extract 26 26) TMP_BV_32_0) #b1)
+                #x000000000000001a
+                (ite (= ((_ extract 27 27) TMP_BV_32_0) #b1)
+                     #x000000000000001b
+                     a!2))))
+(let ((a!4 (ite (= ((_ extract 24 24) TMP_BV_32_0) #b1)
+                #x0000000000000018
+                (ite (= ((_ extract 25 25) TMP_BV_32_0) #b1)
+                     #x0000000000000019
+                     a!3))))
+(let ((a!5 (ite (= ((_ extract 22 22) TMP_BV_32_0) #b1)
+                #x0000000000000016
+                (ite (= ((_ extract 23 23) TMP_BV_32_0) #b1)
+                     #x0000000000000017
+                     a!4))))
+(let ((a!6 (ite (= ((_ extract 20 20) TMP_BV_32_0) #b1)
+                #x0000000000000014
+                (ite (= ((_ extract 21 21) TMP_BV_32_0) #b1)
+                     #x0000000000000015
+                     a!5))))
+(let ((a!7 (ite (= ((_ extract 18 18) TMP_BV_32_0) #b1)
+                #x0000000000000012
+                (ite (= ((_ extract 19 19) TMP_BV_32_0) #b1)
+                     #x0000000000000013
+                     a!6))))
+(let ((a!8 (ite (= ((_ extract 16 16) TMP_BV_32_0) #b1)
+                #x0000000000000010
+                (ite (= ((_ extract 17 17) TMP_BV_32_0) #b1)
+                     #x0000000000000011
+                     a!7))))
+(let ((a!9 (ite (= ((_ extract 14 14) TMP_BV_32_0) #b1)
+                #x000000000000000e
+                (ite (= ((_ extract 15 15) TMP_BV_32_0) #b1)
+                     #x000000000000000f
+                     a!8))))
+(let ((a!10 (ite (= ((_ extract 12 12) TMP_BV_32_0) #b1)
+                 #x000000000000000c
+                 (ite (= ((_ extract 13 13) TMP_BV_32_0) #b1)
+                      #x000000000000000d
+                      a!9))))
+(let ((a!11 (ite (= ((_ extract 10 10) TMP_BV_32_0) #b1)
+                 #x000000000000000a
+                 (ite (= ((_ extract 11 11) TMP_BV_32_0) #b1)
+                      #x000000000000000b
+                      a!10))))
+(let ((a!12 (ite (= ((_ extract 8 8) TMP_BV_32_0) #b1)
+                 #x0000000000000008
+                 (ite (= ((_ extract 9 9) TMP_BV_32_0) #b1)
+                      #x0000000000000009
+                      a!11))))
+(let ((a!13 (ite (= ((_ extract 6 6) TMP_BV_32_0) #b1)
+                 #x0000000000000006
+                 (ite (= ((_ extract 7 7) TMP_BV_32_0) #b1)
+                      #x0000000000000007
+                      a!12))))
+(let ((a!14 (ite (= ((_ extract 4 4) TMP_BV_32_0) #b1)
+                 #x0000000000000004
+                 (ite (= ((_ extract 5 5) TMP_BV_32_0) #b1)
+                      #x0000000000000005
+                      a!13))))
+(let ((a!15 (ite (= ((_ extract 2 2) TMP_BV_32_0) #b1)
+                 #x0000000000000002
+                 (ite (= ((_ extract 3 3) TMP_BV_32_0) #b1)
+                      #x0000000000000003
+                      a!14))))
+  (ite (= ((_ extract 0 0) TMP_BV_32_0) #b1)
+       #x0000000000000000
+       (ite (= ((_ extract 1 1) TMP_BV_32_0) #b1) #x0000000000000001 a!15)))))))))))))))))
+
+%cf    : (let ((a!1 (ite (= ((_ extract 30 30) TMP_BV_32_0) #b1)
+                #x0000001e
+                (ite (= ((_ extract 31 31) TMP_BV_32_0) #b1)
+                     #x0000001f
+                     #x00000020))))
+(let ((a!2 (ite (= ((_ extract 28 28) TMP_BV_32_0) #b1)
+                #x0000001c
+                (ite (= ((_ extract 29 29) TMP_BV_32_0) #b1) #x0000001d a!1))))
+(let ((a!3 (ite (= ((_ extract 26 26) TMP_BV_32_0) #b1)
+                #x0000001a
+                (ite (= ((_ extract 27 27) TMP_BV_32_0) #b1) #x0000001b a!2))))
+(let ((a!4 (ite (= ((_ extract 24 24) TMP_BV_32_0) #b1)
+                #x00000018
+                (ite (= ((_ extract 25 25) TMP_BV_32_0) #b1) #x00000019 a!3))))
+(let ((a!5 (ite (= ((_ extract 22 22) TMP_BV_32_0) #b1)
+                #x00000016
+                (ite (= ((_ extract 23 23) TMP_BV_32_0) #b1) #x00000017 a!4))))
+(let ((a!6 (ite (= ((_ extract 20 20) TMP_BV_32_0) #b1)
+                #x00000014
+                (ite (= ((_ extract 21 21) TMP_BV_32_0) #b1) #x00000015 a!5))))
+(let ((a!7 (ite (= ((_ extract 18 18) TMP_BV_32_0) #b1)
+                #x00000012
+                (ite (= ((_ extract 19 19) TMP_BV_32_0) #b1) #x00000013 a!6))))
+(let ((a!8 (ite (= ((_ extract 16 16) TMP_BV_32_0) #b1)
+                #x00000010
+                (ite (= ((_ extract 17 17) TMP_BV_32_0) #b1) #x00000011 a!7))))
+(let ((a!9 (ite (= ((_ extract 14 14) TMP_BV_32_0) #b1)
+                #x0000000e
+                (ite (= ((_ extract 15 15) TMP_BV_32_0) #b1) #x0000000f a!8))))
+(let ((a!10 (ite (= ((_ extract 12 12) TMP_BV_32_0) #b1)
+                 #x0000000c
+                 (ite (= ((_ extract 13 13) TMP_BV_32_0) #b1) #x0000000d a!9))))
+(let ((a!11 (ite (= ((_ extract 10 10) TMP_BV_32_0) #b1)
+                 #x0000000a
+                 (ite (= ((_ extract 11 11) TMP_BV_32_0) #b1) #x0000000b a!10))))
+(let ((a!12 (ite (= ((_ extract 8 8) TMP_BV_32_0) #b1)
+                 #x00000008
+                 (ite (= ((_ extract 9 9) TMP_BV_32_0) #b1) #x00000009 a!11))))
+(let ((a!13 (ite (= ((_ extract 6 6) TMP_BV_32_0) #b1)
+                 #x00000006
+                 (ite (= ((_ extract 7 7) TMP_BV_32_0) #b1) #x00000007 a!12))))
+(let ((a!14 (ite (= ((_ extract 4 4) TMP_BV_32_0) #b1)
+                 #x00000004
+                 (ite (= ((_ extract 5 5) TMP_BV_32_0) #b1) #x00000005 a!13))))
+(let ((a!15 (ite (= ((_ extract 2 2) TMP_BV_32_0) #b1)
+                 #x00000002
+                 (ite (= ((_ extract 3 3) TMP_BV_32_0) #b1) #x00000003 a!14))))
+(let ((a!16 (ite (= ((_ extract 0 0) TMP_BV_32_0) #b1)
+                 #x00000000
+                 (ite (= ((_ extract 1 1) TMP_BV_32_0) #b1) #x00000001 a!15))))
+  (= a!16 #x00000020)))))))))))))))))
+%pf    : TMP_BOOL_2
+%af    : TMP_BOOL_3
+%zf    : (let ((a!1 (ite (= ((_ extract 30 30) TMP_BV_32_0) #b1)
+                #x0000001e
+                (ite (= ((_ extract 31 31) TMP_BV_32_0) #b1)
+                     #x0000001f
+                     #x00000020))))
+(let ((a!2 (ite (= ((_ extract 28 28) TMP_BV_32_0) #b1)
+                #x0000001c
+                (ite (= ((_ extract 29 29) TMP_BV_32_0) #b1) #x0000001d a!1))))
+(let ((a!3 (ite (= ((_ extract 26 26) TMP_BV_32_0) #b1)
+                #x0000001a
+                (ite (= ((_ extract 27 27) TMP_BV_32_0) #b1) #x0000001b a!2))))
+(let ((a!4 (ite (= ((_ extract 24 24) TMP_BV_32_0) #b1)
+                #x00000018
+                (ite (= ((_ extract 25 25) TMP_BV_32_0) #b1) #x00000019 a!3))))
+(let ((a!5 (ite (= ((_ extract 22 22) TMP_BV_32_0) #b1)
+                #x00000016
+                (ite (= ((_ extract 23 23) TMP_BV_32_0) #b1) #x00000017 a!4))))
+(let ((a!6 (ite (= ((_ extract 20 20) TMP_BV_32_0) #b1)
+                #x00000014
+                (ite (= ((_ extract 21 21) TMP_BV_32_0) #b1) #x00000015 a!5))))
+(let ((a!7 (ite (= ((_ extract 18 18) TMP_BV_32_0) #b1)
+                #x00000012
+                (ite (= ((_ extract 19 19) TMP_BV_32_0) #b1) #x00000013 a!6))))
+(let ((a!8 (ite (= ((_ extract 16 16) TMP_BV_32_0) #b1)
+                #x00000010
+                (ite (= ((_ extract 17 17) TMP_BV_32_0) #b1) #x00000011 a!7))))
+(let ((a!9 (ite (= ((_ extract 14 14) TMP_BV_32_0) #b1)
+                #x0000000e
+                (ite (= ((_ extract 15 15) TMP_BV_32_0) #b1) #x0000000f a!8))))
+(let ((a!10 (ite (= ((_ extract 12 12) TMP_BV_32_0) #b1)
+                 #x0000000c
+                 (ite (= ((_ extract 13 13) TMP_BV_32_0) #b1) #x0000000d a!9))))
+(let ((a!11 (ite (= ((_ extract 10 10) TMP_BV_32_0) #b1)
+                 #x0000000a
+                 (ite (= ((_ extract 11 11) TMP_BV_32_0) #b1) #x0000000b a!10))))
+(let ((a!12 (ite (= ((_ extract 8 8) TMP_BV_32_0) #b1)
+                 #x00000008
+                 (ite (= ((_ extract 9 9) TMP_BV_32_0) #b1) #x00000009 a!11))))
+(let ((a!13 (ite (= ((_ extract 6 6) TMP_BV_32_0) #b1)
+                 #x00000006
+                 (ite (= ((_ extract 7 7) TMP_BV_32_0) #b1) #x00000007 a!12))))
+(let ((a!14 (ite (= ((_ extract 4 4) TMP_BV_32_0) #b1)
+                 #x00000004
+                 (ite (= ((_ extract 5 5) TMP_BV_32_0) #b1) #x00000005 a!13))))
+(let ((a!15 (ite (= ((_ extract 2 2) TMP_BV_32_0) #b1)
+                 #x00000002
+                 (ite (= ((_ extract 3 3) TMP_BV_32_0) #b1) #x00000003 a!14))))
+(let ((a!16 (ite (= ((_ extract 0 0) TMP_BV_32_0) #b1)
+                 #x00000000
+                 (ite (= ((_ extract 1 1) TMP_BV_32_0) #b1) #x00000001 a!15))))
+  (= a!16 #x00000000)))))))))))))))))
+%sf    : TMP_BOOL_1
+%of    : TMP_BOOL_0
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rcx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

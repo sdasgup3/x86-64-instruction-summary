@@ -1,0 +1,43 @@
+code: mull (%rbx)
+
+  maybe read:      { %eax %rbx }
+  must read:       { %eax %rbx }
+  maybe write:     { %rax %rdx %cf %of }
+  must write:      { %rax %rdx %cf %of }
+  maybe undef:     { %pf %af %zf %sf }
+  must undef:      { %pf %af %zf %sf }
+  required flags:  { }
+
+mull (%rbx): Hindex1(9)
+mull (%rbx): Hindex1(9)
+Formula:
+
+%rax   : (let ((a!1 ((_ extract 31 0)
+             (bvmul (concat #x00000000 TMP_BV_32_0)
+                    (concat #x00000000 ((_ extract 31 0) %rax))))))
+  (concat #x00000000 a!1))
+%rdx   : (let ((a!1 ((_ extract 63 32)
+             (bvmul (concat #x00000000 TMP_BV_32_0)
+                    (concat #x00000000 ((_ extract 31 0) %rax))))))
+  (concat #x00000000 a!1))
+
+%cf    : (let ((a!1 ((_ extract 63 32)
+             (bvmul (concat #x00000000 TMP_BV_32_0)
+                    (concat #x00000000 ((_ extract 31 0) %rax))))))
+  (not (= a!1 #x00000000)))
+%pf    : TMP_BOOL_2
+%af    : TMP_BOOL_1
+%zf    : TMP_BOOL_0
+%sf    : TMP_BOOL_3
+%of    : (let ((a!1 ((_ extract 63 32)
+             (bvmul (concat #x00000000 TMP_BV_32_0)
+                    (concat #x00000000 ((_ extract 31 0) %rax))))))
+  (not (= a!1 #x00000000)))
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

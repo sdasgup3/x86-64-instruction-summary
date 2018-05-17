@@ -1,3 +1,0 @@
-.target:
-  mull (%rax)
-  retq

@@ -1,0 +1,45 @@
+code: vmovmskpd %xmm1, %rbx
+
+  maybe read:      { %xmm1 }
+  must read:       { %xmm1 }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%rbx   : (let ((a!1 ((_ extract 32 32)
+             (bvadd (concat #b0 ((_ extract 63 32) %ymm1))
+                    (concat #b0 ((_ extract 63 32) %ymm1)))))
+      (a!4 ((_ extract 32 32)
+             (bvadd (concat #b0 ((_ extract 127 96) %ymm1))
+                    (concat #b0 ((_ extract 127 96) %ymm1))))))
+(let ((a!2 (ite (= a!1 #b1)
+                (bvadd (concat #b0 ((_ extract 63 32) %ymm1))
+                       #b000000000000000000000000000000001)
+                (concat #b0 ((_ extract 63 32) %ymm1))))
+      (a!5 (ite (= a!4 #b1)
+                (bvadd (concat #b0 ((_ extract 127 96) %ymm1))
+                       #b000000000000000000000000000000001)
+                (concat #b0 ((_ extract 127 96) %ymm1)))))
+(let ((a!3 ((_ extract 32 32)
+             (bvadd a!2 (concat #b0 ((_ extract 63 32) %ymm1)))))
+      (a!6 ((_ extract 32 32)
+             (bvadd a!5 (concat #b0 ((_ extract 127 96) %ymm1))))))
+(let ((a!7 (bvadd (ite (= a!3 #b1)
+                       (ite (= a!6 #b1)
+                            #b000000000000000000000000000000010
+                            #b000000000000000000000000000000001)
+                       (ite (= a!6 #b1)
+                            #b000000000000000000000000000000001
+                            #b000000000000000000000000000000000))
+                  (ite (= a!6 #b1)
+                       #b000000000000000000000000000000001
+                       #b000000000000000000000000000000000))))
+  (concat #x00000000 ((_ extract 31 0) a!7))))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

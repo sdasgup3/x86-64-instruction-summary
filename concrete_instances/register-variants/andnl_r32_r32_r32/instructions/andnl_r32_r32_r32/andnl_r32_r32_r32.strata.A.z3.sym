@@ -1,0 +1,30 @@
+code: andnl %edx, %ecx, %ebx
+
+  maybe read:      { %ecx %edx }
+  must read:       { %ecx %edx }
+  maybe write:     { %rbx %cf %zf %sf %of }
+  must write:      { %rbx %cf %zf %sf %of }
+  maybe undef:     { %pf %af }
+  must undef:      { %pf %af }
+  required flags:  { bmi1 }
+
+Formula:
+
+%rbx   : (concat #x00000000
+        (bvxor (bvor ((_ extract 31 0) %rdx) ((_ extract 31 0) %rcx))
+               ((_ extract 31 0) %rcx)))
+
+%cf    : false
+%pf    : TMP_BOOL_4
+%af    : TMP_BOOL_5
+%zf    : (= (bvxor (bvor ((_ extract 31 0) %rdx) ((_ extract 31 0) %rcx))
+          ((_ extract 31 0) %rcx))
+   #x00000000)
+%sf    : (= (bvxor (bvor ((_ extract 31 31) %rdx) ((_ extract 31 31) %rcx))
+          ((_ extract 31 31) %rcx))
+   #b1)
+%of    : false
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

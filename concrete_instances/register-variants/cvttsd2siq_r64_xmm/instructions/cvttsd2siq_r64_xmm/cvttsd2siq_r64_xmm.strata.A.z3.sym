@@ -1,0 +1,17 @@
+code: cvttsd2siq %xmm1, %rbx
+
+  maybe read:      { %xmm1 }
+  must read:       { %xmm1 }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+Formula:
+
+%rbx   : (cvt_double_to_int64_truncate ((_ extract 63 0) %ymm1))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

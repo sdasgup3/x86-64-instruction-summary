@@ -1,0 +1,17 @@
+code: cltq 
+
+  maybe read:      { %eax }
+  must read:       { %eax }
+  maybe write:     { %rax }
+  must write:      { %rax }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rax   : ((_ sign_extend 32) ((_ extract 31 0) %rax))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

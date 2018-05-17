@@ -1,0 +1,51 @@
+code: cmpl %ecx, %ebx
+
+  maybe read:      { %ecx %ebx }
+  must read:       { %ecx %ebx }
+  maybe write:     { %cf %pf %af %zf %sf %of }
+  must write:      { %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%cf    : (let ((a!1 (bvadd (concat #b0 (bvnot ((_ extract 31 0) %rcx)))
+                  #b000000000000000000000000000000001
+                  (concat #b0 ((_ extract 31 0) %rbx)))))
+  (not (= ((_ extract 32 32) a!1) #b1)))
+%pf    : (let ((a!1 (bvadd (concat #b0 (bvnot ((_ extract 31 0) %rcx)))
+                  #b000000000000000000000000000000001
+                  (concat #b0 ((_ extract 31 0) %rbx)))))
+  (not (xor (= ((_ extract 0 0) a!1) #b1)
+            (= ((_ extract 1 1) a!1) #b1)
+            (= ((_ extract 2 2) a!1) #b1)
+            (= ((_ extract 3 3) a!1) #b1)
+            (= ((_ extract 4 4) a!1) #b1)
+            (= ((_ extract 5 5) a!1) #b1)
+            (= ((_ extract 6 6) a!1) #b1)
+            (= ((_ extract 7 7) a!1) #b1))))
+%af    : (let ((a!1 ((_ extract 4 4)
+             (bvadd (concat #b0 ((_ extract 3 0) %rcx))
+                    (concat #b0 ((_ extract 3 0) %rbx))))))
+  (= a!1 #b1))
+%zf    : (let ((a!1 (bvadd (concat #b0 (bvnot ((_ extract 31 0) %rcx)))
+                  #b000000000000000000000000000000001
+                  (concat #b0 ((_ extract 31 0) %rbx)))))
+  (= ((_ extract 31 0) a!1) #x00000000))
+%sf    : (let ((a!1 (bvadd (concat #b0 (bvnot ((_ extract 31 0) %rcx)))
+                  #b000000000000000000000000000000001
+                  (concat #b0 ((_ extract 31 0) %rbx)))))
+  (= ((_ extract 31 31) a!1) #b1))
+%of    : (let ((a!1 (= (= (bvnot ((_ extract 31 31) %rcx)) #b1)
+              (= ((_ extract 31 31) %rbx) #b1)))
+      (a!2 (bvadd (concat #b0 (bvnot ((_ extract 31 0) %rcx)))
+                  #b000000000000000000000000000000001
+                  (concat #b0 ((_ extract 31 0) %rbx)))))
+(let ((a!3 (= (= (bvnot ((_ extract 31 31) %rcx)) #b1)
+              (= ((_ extract 31 31) a!2) #b1))))
+  (and a!1 (not a!3))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

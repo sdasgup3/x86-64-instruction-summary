@@ -1,0 +1,34 @@
+code: vpmaskmovq (%rbx), %ymm2, %ymm1
+
+  maybe read:      { %rbx %ymm2 }
+  must read:       { %rbx %ymm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+Formula:
+
+%ymm1  : (let ((a!1 (concat (ite (= ((_ extract 127 127) %ymm2) #b1)
+                        ((_ extract 127 64) TMP_BV_256_0)
+                        #x0000000000000000)
+                   (ite (= ((_ extract 63 63) %ymm2) #b1)
+                        ((_ extract 63 0) TMP_BV_256_0)
+                        #x0000000000000000))))
+(let ((a!2 (concat (ite (= ((_ extract 191 191) %ymm2) #b1)
+                        ((_ extract 191 128) TMP_BV_256_0)
+                        #x0000000000000000)
+                   a!1)))
+  (concat (ite (= ((_ extract 255 255) %ymm2) #b1)
+               ((_ extract 255 192) TMP_BV_256_0)
+               #x0000000000000000)
+          a!2)))
+
+Information about memory reads:
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

@@ -1,0 +1,30 @@
+code: divb %bl
+
+  maybe read:      { %ax %bl }
+  must read:       { %ax %bl }
+  maybe write:     { %ax }
+  must write:      { %ax }
+  maybe undef:     { %cf %pf %af %zf %sf %of }
+  must undef:      { %cf %pf %af %zf %sf %of }
+  required flags:  { }
+
+divb %bl: Hindex1(9)
+divb %bl: Hindex1(9)
+Formula:
+
+%rax   : (concat (concat ((_ extract 63 16) %rax)
+                (div_remainder_int8
+                  ((_ extract 15 0) %rax)
+                  ((_ extract 7 0) %rbx)))
+        (div_quotient_int8 ((_ extract 15 0) %rax) ((_ extract 7 0) %rbx)))
+
+%cf    : TMP_BOOL_5
+%pf    : TMP_BOOL_2
+%af    : TMP_BOOL_1
+%zf    : TMP_BOOL_0
+%sf    : TMP_BOOL_3
+%of    : TMP_BOOL_4
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

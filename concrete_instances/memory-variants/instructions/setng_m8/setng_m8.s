@@ -1,3 +1,0 @@
-.target:
-  setng (%rax)
-  retq

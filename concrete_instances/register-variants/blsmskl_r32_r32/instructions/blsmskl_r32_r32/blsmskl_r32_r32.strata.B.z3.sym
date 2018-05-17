@@ -1,0 +1,28 @@
+code: blsmskl %ecx, %ebx
+
+  maybe read:      { %ecx %ebx }
+  must read:       { %ecx %ebx }
+  maybe write:     { %rbx %cf %zf %sf %of }
+  must write:      { %rbx %cf %zf %sf %of }
+  maybe undef:     { %pf %af }
+  must undef:      { %pf %af }
+  required flags:  { bmi1 }
+
+Formula:
+
+%rbx   : (concat #x00000000
+        (bvxor (bvsub ((_ extract 31 0) %rcx) #x00000001)
+               ((_ extract 31 0) %rcx)))
+
+%cf    : (= ((_ extract 31 0) %rcx) #x00000000)
+%pf    : TMP_BOOL_0
+%af    : TMP_BOOL_1
+%zf    : false
+%sf    : (let ((a!1 (bvxor ((_ extract 31 31) (bvsub ((_ extract 31 0) %rcx) #x00000001))
+                  ((_ extract 31 31) %rcx))))
+  (= a!1 #b1))
+%of    : false
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

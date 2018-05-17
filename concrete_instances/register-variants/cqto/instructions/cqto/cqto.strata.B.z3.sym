@@ -1,0 +1,17 @@
+code: cqto 
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %rdx }
+  must write:      { %rdx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rdx   : ((_ extract 127 64) ((_ sign_extend 64) %rax))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

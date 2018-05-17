@@ -1,0 +1,24 @@
+code: mulxl %ecx, %ebx, %eax
+
+  maybe read:      { %ecx %edx }
+  must read:       { %ecx %edx }
+  maybe write:     { %rax %rbx }
+  must write:      { %rax %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { bmi2 }
+
+Formula:
+
+%rax   : (let ((a!1 ((_ extract 63 32)
+             (bvmul (concat #x00000000 ((_ extract 31 0) %rdx))
+                    (concat #x00000000 ((_ extract 31 0) %rcx))))))
+  (concat #x00000000 a!1))
+%rbx   : (let ((a!1 ((_ extract 31 0)
+             (bvmul (concat #x00000000 ((_ extract 31 0) %rdx))
+                    (concat #x00000000 ((_ extract 31 0) %rcx))))))
+  (concat #x00000000 a!1))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

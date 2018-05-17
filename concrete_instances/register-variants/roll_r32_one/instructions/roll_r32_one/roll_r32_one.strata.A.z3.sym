@@ -1,0 +1,46 @@
+code: roll $0x1, %ebx
+
+  maybe read:      { %ebx }
+  must read:       { %ebx }
+  maybe write:     { %rbx %cf %of }
+  must write:      { %rbx %cf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rbx   : (let ((a!1 ((_ extract 32 32)
+             (bvadd (concat #b0 ((_ extract 31 0) %rbx))
+                    (concat #b0 ((_ extract 31 0) %rbx))))))
+(let ((a!2 (ite (= a!1 #b1)
+                (bvadd (concat #b0 ((_ extract 31 0) %rbx))
+                       #b000000000000000000000000000000001)
+                (concat #b0 ((_ extract 31 0) %rbx)))))
+(let ((a!3 ((_ extract 31 0) (bvadd a!2 (concat #b0 ((_ extract 31 0) %rbx))))))
+  (concat #x00000000 a!3))))
+
+%cf    : (let ((a!1 ((_ extract 32 32)
+             (bvadd (concat #b0 ((_ extract 31 0) %rbx))
+                    (concat #b0 ((_ extract 31 0) %rbx))))))
+(let ((a!2 (ite (= a!1 #b1)
+                (bvadd (concat #b0 ((_ extract 31 0) %rbx))
+                       #b000000000000000000000000000000001)
+                (concat #b0 ((_ extract 31 0) %rbx)))))
+(let ((a!3 ((_ extract 32 32) (bvadd a!2 (concat #b0 ((_ extract 31 0) %rbx))))))
+  (= a!3 #b1))))
+%of    : (let ((a!1 ((_ extract 32 32)
+             (bvadd (concat #b0 ((_ extract 31 0) %rbx))
+                    (concat #b0 ((_ extract 31 0) %rbx))))))
+(let ((a!2 (ite (= a!1 #b1)
+                (bvadd (concat #b0 ((_ extract 31 0) %rbx))
+                       #b000000000000000000000000000000001)
+                (concat #b0 ((_ extract 31 0) %rbx)))))
+(let ((a!3 ((_ extract 31 31) (bvadd a!2 (concat #b0 ((_ extract 31 0) %rbx))))))
+(let ((a!4 (not (= (= ((_ extract 31 31) %rbx) #b1) (= a!3 #b1)))))
+  (and (= (= ((_ extract 31 31) %rbx) #b1) (= ((_ extract 31 31) %rbx) #b1))
+       a!4)))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

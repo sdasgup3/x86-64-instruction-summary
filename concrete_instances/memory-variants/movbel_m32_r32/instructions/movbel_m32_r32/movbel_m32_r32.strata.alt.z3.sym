@@ -1,0 +1,27 @@
+code: movbel %ecx, (%rbx)
+
+  maybe read:      { %ecx %rbx }
+  must read:       { %ecx %rbx }
+  maybe write:     { }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { movbe }
+
+Formula:
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rbx.
+
+Information about memory writes:
+  Address %rbx was updated to
+    (concat (concat (concat ((_ extract 7 0) %rcx) ((_ extract 15 8) %rcx))
+                ((_ extract 23 16) %rcx))
+        ((_ extract 31 24) %rcx)) (4 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv
+    (and (not sigfpe) (not sigbus) false)
+    (and (not sigfpe) (not sigbus) false))

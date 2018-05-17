@@ -1,0 +1,53 @@
+code: vtestps %ymm2, %ymm1
+
+  maybe read:      { %ymm1 %ymm2 }
+  must read:       { %ymm1 %ymm2 }
+  maybe write:     { %cf %pf %af %zf %sf %of }
+  must write:      { %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%cf    : (let ((a!1 (= (bvand (bvnot ((_ extract 31 31) %ymm1))
+                     ((_ extract 31 31) %ymm2))
+              #b0))
+      (a!2 (= (bvand (bvnot ((_ extract 63 63) %ymm1))
+                     ((_ extract 63 63) %ymm2))
+              #b0))
+      (a!3 (= (bvand (bvnot ((_ extract 95 95) %ymm1))
+                     ((_ extract 95 95) %ymm2))
+              #b0))
+      (a!4 (= (bvand (bvnot ((_ extract 127 127) %ymm1))
+                     ((_ extract 127 127) %ymm2))
+              #b0))
+      (a!5 (= (bvand (bvnot ((_ extract 159 159) %ymm1))
+                     ((_ extract 159 159) %ymm2))
+              #b0))
+      (a!6 (= (bvand (bvnot ((_ extract 191 191) %ymm1))
+                     ((_ extract 191 191) %ymm2))
+              #b0))
+      (a!7 (= (bvand (bvnot ((_ extract 223 223) %ymm1))
+                     ((_ extract 223 223) %ymm2))
+              #b0))
+      (a!8 (= (bvand (bvnot ((_ extract 255 255) %ymm1))
+                     ((_ extract 255 255) %ymm2))
+              #b0)))
+  (and a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8))
+%pf    : false
+%af    : false
+%zf    : (and (= (bvand ((_ extract 31 31) %ymm1) ((_ extract 31 31) %ymm2)) #b0)
+     (= (bvand ((_ extract 63 63) %ymm1) ((_ extract 63 63) %ymm2)) #b0)
+     (= (bvand ((_ extract 95 95) %ymm1) ((_ extract 95 95) %ymm2)) #b0)
+     (= (bvand ((_ extract 127 127) %ymm1) ((_ extract 127 127) %ymm2)) #b0)
+     (= (bvand ((_ extract 159 159) %ymm1) ((_ extract 159 159) %ymm2)) #b0)
+     (= (bvand ((_ extract 191 191) %ymm1) ((_ extract 191 191) %ymm2)) #b0)
+     (= (bvand ((_ extract 223 223) %ymm1) ((_ extract 223 223) %ymm2)) #b0)
+     (= (bvand ((_ extract 255 255) %ymm1) ((_ extract 255 255) %ymm2)) #b0))
+%sf    : false
+%of    : false
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv
