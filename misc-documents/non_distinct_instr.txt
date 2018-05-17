@@ -1,6 +1,10 @@
 The instr like 
-	adcw m16_imm16
-	adcw m16_imm8
+	adcw_m16_imm16
+	adcw_m16_imm8
+
+adcq_r64_imm32
+adcq_r64_imm8
+	
 as there is no way to distinguish the imm of different widths.
 
 adcw->
