@@ -1,0 +1,23 @@
+code: roundpd $0x0, (%rbx), %xmm1
+
+  maybe read:      { %rbx %mxcsr::rc[0] }
+  must read:       { %rbx %mxcsr::rc[0] }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse4_1 }
+
+Formula:
+
+%ymm1  : (concat ((_ extract 255 128) %ymm1)
+        (concat (cvt_double_to_int64_rm ((_ extract 127 64) TMP_BV_128_0) #x00)
+                (cvt_double_to_int64_rm ((_ extract 63 0) TMP_BV_128_0) #x00)))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

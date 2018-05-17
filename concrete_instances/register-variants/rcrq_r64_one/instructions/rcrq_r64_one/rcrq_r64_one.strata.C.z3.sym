@@ -1,0 +1,49 @@
+code: rcrq $0x1, %rbx
+
+  maybe read:      { %rbx %cf }
+  must read:       { %rbx %cf }
+  maybe write:     { %rbx %cf %of }
+  must write:      { %rbx %cf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+rcrq $0x1, %rbx: Hindex7(9)
+rcrq $0x1, %rbx: Hindex7(9)
+Formula:
+
+%rbx   : ((_ extract 63 0)
+  (ext_rotate_right (concat (ite %cf #b1 #b0) %rbx)
+                    (bvurem (concat #b000000000000000000000000000000000000000000000000000000000
+                                    #x01)
+                            #b00000000000000000000000000000000000000000000000000000000001000001)))
+
+%cf    : (let ((a!1 ((_ extract 64 64)
+             (ext_rotate_right (concat (ite %cf #b1 #b0) %rbx)
+                               (bvurem (concat #b000000000000000000000000000000000000000000000000000000000
+                                               #x01)
+                                       #b00000000000000000000000000000000000000000000000000000000001000001)))))
+  (= a!1 #b1))
+%of    : (let ((a!1 (= ((_ extract 7 0)
+                (bvurem (concat #b000000000000000000000000000000000000000000000000000000000
+                                #x01)
+                        #b00000000000000000000000000000000000000000000000000000000001000001))
+              #x01))
+      (a!2 (ext_rotate_right (concat (ite %cf #b1 #b0) %rbx)
+                             (bvurem (concat #b000000000000000000000000000000000000000000000000000000000
+                                             #x01)
+                                     #b00000000000000000000000000000000000000000000000000000000001000001)))
+      (a!4 (= ((_ extract 7 0)
+                (bvurem (concat #b000000000000000000000000000000000000000000000000000000000
+                                #x01)
+                        #b00000000000000000000000000000000000000000000000000000000001000001))
+              #x00)))
+(let ((a!3 (and a!1
+                (xor (= ((_ extract 63 63) a!2) #b1)
+                     (= ((_ extract 62 62) a!2) #b1))))
+      (a!5 (or (and (not a!4) %of) (and (not (not a!4)) TMP_BOOL_0))))
+  (or a!3 (and (not a!1) a!5))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

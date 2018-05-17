@@ -1,0 +1,90 @@
+code: vpermilps (%rbx), %ymm2, %ymm1
+
+  maybe read:      { %rbx %ymm2 }
+  must read:       { %rbx %ymm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%ymm1  : (let ((a!1 (ite (= ((_ extract 225 224) TMP_BV_256_0) #b01)
+                ((_ extract 191 160) %ymm2)
+                (ite (= ((_ extract 225 224) TMP_BV_256_0) #b10)
+                     ((_ extract 223 192) %ymm2)
+                     ((_ extract 255 224) %ymm2))))
+      (a!2 (ite (= ((_ extract 193 192) TMP_BV_256_0) #b01)
+                ((_ extract 191 160) %ymm2)
+                (ite (= ((_ extract 193 192) TMP_BV_256_0) #b10)
+                     ((_ extract 223 192) %ymm2)
+                     ((_ extract 255 224) %ymm2))))
+      (a!3 (ite (= ((_ extract 161 160) TMP_BV_256_0) #b01)
+                ((_ extract 191 160) %ymm2)
+                (ite (= ((_ extract 161 160) TMP_BV_256_0) #b10)
+                     ((_ extract 223 192) %ymm2)
+                     ((_ extract 255 224) %ymm2))))
+      (a!4 (ite (= ((_ extract 129 128) TMP_BV_256_0) #b01)
+                ((_ extract 191 160) %ymm2)
+                (ite (= ((_ extract 129 128) TMP_BV_256_0) #b10)
+                     ((_ extract 223 192) %ymm2)
+                     ((_ extract 255 224) %ymm2))))
+      (a!5 (ite (= ((_ extract 97 96) TMP_BV_256_0) #b01)
+                ((_ extract 63 32) %ymm2)
+                (ite (= ((_ extract 97 96) TMP_BV_256_0) #b10)
+                     ((_ extract 95 64) %ymm2)
+                     ((_ extract 127 96) %ymm2))))
+      (a!6 (ite (= ((_ extract 65 64) TMP_BV_256_0) #b01)
+                ((_ extract 63 32) %ymm2)
+                (ite (= ((_ extract 65 64) TMP_BV_256_0) #b10)
+                     ((_ extract 95 64) %ymm2)
+                     ((_ extract 127 96) %ymm2))))
+      (a!7 (ite (= ((_ extract 33 32) TMP_BV_256_0) #b01)
+                ((_ extract 63 32) %ymm2)
+                (ite (= ((_ extract 33 32) TMP_BV_256_0) #b10)
+                     ((_ extract 95 64) %ymm2)
+                     ((_ extract 127 96) %ymm2))))
+      (a!8 (ite (= ((_ extract 1 0) TMP_BV_256_0) #b01)
+                ((_ extract 63 32) %ymm2)
+                (ite (= ((_ extract 1 0) TMP_BV_256_0) #b10)
+                     ((_ extract 95 64) %ymm2)
+                     ((_ extract 127 96) %ymm2)))))
+(let ((a!9 (concat (ite (= ((_ extract 33 32) TMP_BV_256_0) #b00)
+                        ((_ extract 31 0) %ymm2)
+                        a!7)
+                   (ite (= ((_ extract 1 0) TMP_BV_256_0) #b00)
+                        ((_ extract 31 0) %ymm2)
+                        a!8))))
+(let ((a!10 (concat (ite (= ((_ extract 65 64) TMP_BV_256_0) #b00)
+                         ((_ extract 31 0) %ymm2)
+                         a!6)
+                    a!9)))
+(let ((a!11 (concat (ite (= ((_ extract 97 96) TMP_BV_256_0) #b00)
+                         ((_ extract 31 0) %ymm2)
+                         a!5)
+                    a!10)))
+(let ((a!12 (concat (ite (= ((_ extract 129 128) TMP_BV_256_0) #b00)
+                         ((_ extract 159 128) %ymm2)
+                         a!4)
+                    a!11)))
+(let ((a!13 (concat (ite (= ((_ extract 161 160) TMP_BV_256_0) #b00)
+                         ((_ extract 159 128) %ymm2)
+                         a!3)
+                    a!12)))
+(let ((a!14 (concat (ite (= ((_ extract 193 192) TMP_BV_256_0) #b00)
+                         ((_ extract 159 128) %ymm2)
+                         a!2)
+                    a!13)))
+  (concat (ite (= ((_ extract 225 224) TMP_BV_256_0) #b00)
+               ((_ extract 159 128) %ymm2)
+               a!1)
+          a!14))))))))
+
+Information about memory reads:
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

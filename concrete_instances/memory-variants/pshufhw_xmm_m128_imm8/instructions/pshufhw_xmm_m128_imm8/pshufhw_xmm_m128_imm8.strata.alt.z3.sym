@@ -1,0 +1,28 @@
+code: pshufhw $0x0, (%rbx), %xmm1
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+Formula:
+
+%ymm1  : (let ((a!1 ((_ extract 79 64)
+             (bvlshr TMP_BV_128_0
+                     (bvshl (concat #b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+                                    #b00)
+                            #x00000000000000000000000000000004)))))
+(let ((a!2 (concat a!1
+                   (concat a!1 (concat a!1 ((_ extract 63 0) TMP_BV_128_0))))))
+  (concat ((_ extract 255 128) %ymm1) (concat a!1 a!2))))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

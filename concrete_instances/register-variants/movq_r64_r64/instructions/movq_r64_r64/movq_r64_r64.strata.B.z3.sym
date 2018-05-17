@@ -1,0 +1,17 @@
+code: movq %rcx, %rbx
+
+  maybe read:      { %rcx }
+  must read:       { %rcx }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rbx   : %rcx
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

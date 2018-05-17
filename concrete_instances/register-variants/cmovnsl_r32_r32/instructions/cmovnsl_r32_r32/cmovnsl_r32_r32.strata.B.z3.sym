@@ -1,0 +1,18 @@
+code: cmovnsl %ecx, %ebx
+
+  maybe read:      { %ecx %sf }
+  must read:       { %ecx %sf }
+  maybe write:     { %rbx }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { cmov }
+
+Formula:
+
+%rbx   : (concat #x00000000
+        (ite (not %sf) ((_ extract 31 0) %rcx) ((_ extract 31 0) %rbx)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

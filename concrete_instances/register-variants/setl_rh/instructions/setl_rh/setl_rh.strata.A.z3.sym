@@ -1,0 +1,19 @@
+code: setl %ah
+
+  maybe read:      { %sf %of }
+  must read:       { %sf %of }
+  maybe write:     { %ah }
+  must write:      { %ah }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rax   : (concat (concat ((_ extract 63 16) %rax)
+                (bvxor (ite %of #x01 #x00) (ite %sf #x01 #x00)))
+        ((_ extract 7 0) %rax))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

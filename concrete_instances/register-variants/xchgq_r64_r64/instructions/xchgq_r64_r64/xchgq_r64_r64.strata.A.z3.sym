@@ -1,0 +1,18 @@
+code: xchgq %rcx, %rbx
+
+  maybe read:      { %rcx %rbx }
+  must read:       { %rcx %rbx }
+  maybe write:     { %rcx %rbx }
+  must write:      { %rcx %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rcx   : %rbx
+%rbx   : %rcx
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

@@ -1,0 +1,19 @@
+code: notw %bx
+
+  maybe read:      { %bx }
+  must read:       { %bx }
+  maybe write:     { %bx }
+  must write:      { %bx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+notw %bx: Hindex1(9)
+notw %bx: Hindex1(9)
+Formula:
+
+%rbx   : (concat ((_ extract 63 16) %rbx) (bvnot ((_ extract 15 0) %rbx)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

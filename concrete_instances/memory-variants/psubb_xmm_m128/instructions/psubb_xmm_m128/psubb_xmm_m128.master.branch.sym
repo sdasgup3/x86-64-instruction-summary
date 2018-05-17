@@ -1,0 +1,62 @@
+code: psubb (%rbx), %xmm1
+
+  maybe read:      { %rbx %xmm1 }
+  must read:       { %rbx %xmm1 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+psubb (%rbx), %xmm1: Hindex0(9)
+psubb (%rbx), %xmm1: Hindex0(9)
+Formula:
+
+%ymm1  : (let ((a!1 (concat (bvsub ((_ extract 23 16) %ymm1)
+                          ((_ extract 23 16) TMP_BV_128_0))
+                   (concat (bvsub ((_ extract 15 8) %ymm1)
+                                  ((_ extract 15 8) TMP_BV_128_0))
+                           (bvsub ((_ extract 7 0) %ymm1)
+                                  ((_ extract 7 0) TMP_BV_128_0))))))
+(let ((a!2 (concat (bvsub ((_ extract 39 32) %ymm1)
+                          ((_ extract 39 32) TMP_BV_128_0))
+                   (concat (bvsub ((_ extract 31 24) %ymm1)
+                                  ((_ extract 31 24) TMP_BV_128_0))
+                           a!1))))
+(let ((a!3 (concat (bvsub ((_ extract 55 48) %ymm1)
+                          ((_ extract 55 48) TMP_BV_128_0))
+                   (concat (bvsub ((_ extract 47 40) %ymm1)
+                                  ((_ extract 47 40) TMP_BV_128_0))
+                           a!2))))
+(let ((a!4 (concat (bvsub ((_ extract 71 64) %ymm1)
+                          ((_ extract 71 64) TMP_BV_128_0))
+                   (concat (bvsub ((_ extract 63 56) %ymm1)
+                                  ((_ extract 63 56) TMP_BV_128_0))
+                           a!3))))
+(let ((a!5 (concat (bvsub ((_ extract 87 80) %ymm1)
+                          ((_ extract 87 80) TMP_BV_128_0))
+                   (concat (bvsub ((_ extract 79 72) %ymm1)
+                                  ((_ extract 79 72) TMP_BV_128_0))
+                           a!4))))
+(let ((a!6 (concat (bvsub ((_ extract 103 96) %ymm1)
+                          ((_ extract 103 96) TMP_BV_128_0))
+                   (concat (bvsub ((_ extract 95 88) %ymm1)
+                                  ((_ extract 95 88) TMP_BV_128_0))
+                           a!5))))
+(let ((a!7 (concat (bvsub ((_ extract 119 112) %ymm1)
+                          ((_ extract 119 112) TMP_BV_128_0))
+                   (concat (bvsub ((_ extract 111 104) %ymm1)
+                                  ((_ extract 111 104) TMP_BV_128_0))
+                           a!6))))
+  (concat ((_ extract 255 128) %ymm1)
+          (concat (bvsub ((_ extract 127 120) %ymm1)
+                         ((_ extract 127 120) TMP_BV_128_0))
+                  a!7)))))))))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

@@ -1,0 +1,32 @@
+code: psrld (%rbx), %xmm1
+
+  maybe read:      { %rbx %xmm1 }
+  must read:       { %rbx %xmm1 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+Formula:
+
+%ymm1  : (let ((a!1 (concat (bvlshr ((_ extract 95 64) %ymm1)
+                           ((_ extract 31 0) TMP_BV_128_0))
+                   (concat (bvlshr ((_ extract 63 32) %ymm1)
+                                   ((_ extract 31 0) TMP_BV_128_0))
+                           (bvlshr ((_ extract 31 0) %ymm1)
+                                   ((_ extract 31 0) TMP_BV_128_0))))))
+(let ((a!2 (ite (bvugt ((_ extract 63 0) TMP_BV_128_0) #x000000000000001f)
+                #x00000000000000000000000000000000
+                (concat (bvlshr ((_ extract 127 96) %ymm1)
+                                ((_ extract 31 0) TMP_BV_128_0))
+                        a!1))))
+  (concat ((_ extract 255 128) %ymm1) a!2)))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

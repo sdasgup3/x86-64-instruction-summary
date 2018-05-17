@@ -1,0 +1,85 @@
+code: cmpq %rcx, %rbx
+
+  maybe read:      { %rcx %rbx }
+  must read:       { %rcx %rbx }
+  maybe write:     { %cf %pf %af %zf %sf %of }
+  must write:      { %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+cmpq %rcx, %rbx: Hindex2(9)
+cmpq %rcx, %rbx: Hindex2(9)
+Formula:
+
+%cf    : (let ((a!1 ((_ extract 64 64)
+             (bvadd (concat #b0 (bvnot %rcx))
+                    #b00000000000000000000000000000000000000000000000000000000000000001
+                    (concat #b0 %rbx)))))
+  (not (= a!1 #b1)))
+%pf    : (let ((a!1 ((_ extract 0 0)
+             (bvadd (concat #b0 (bvnot %rcx))
+                    #b00000000000000000000000000000000000000000000000000000000000000001
+                    (concat #b0 %rbx))))
+      (a!2 ((_ extract 1 1)
+             (bvadd (concat #b0 (bvnot %rcx))
+                    #b00000000000000000000000000000000000000000000000000000000000000001
+                    (concat #b0 %rbx))))
+      (a!3 ((_ extract 2 2)
+             (bvadd (concat #b0 (bvnot %rcx))
+                    #b00000000000000000000000000000000000000000000000000000000000000001
+                    (concat #b0 %rbx))))
+      (a!4 ((_ extract 3 3)
+             (bvadd (concat #b0 (bvnot %rcx))
+                    #b00000000000000000000000000000000000000000000000000000000000000001
+                    (concat #b0 %rbx))))
+      (a!5 ((_ extract 4 4)
+             (bvadd (concat #b0 (bvnot %rcx))
+                    #b00000000000000000000000000000000000000000000000000000000000000001
+                    (concat #b0 %rbx))))
+      (a!6 ((_ extract 5 5)
+             (bvadd (concat #b0 (bvnot %rcx))
+                    #b00000000000000000000000000000000000000000000000000000000000000001
+                    (concat #b0 %rbx))))
+      (a!7 ((_ extract 6 6)
+             (bvadd (concat #b0 (bvnot %rcx))
+                    #b00000000000000000000000000000000000000000000000000000000000000001
+                    (concat #b0 %rbx))))
+      (a!8 ((_ extract 7 7)
+             (bvadd (concat #b0 (bvnot %rcx))
+                    #b00000000000000000000000000000000000000000000000000000000000000001
+                    (concat #b0 %rbx)))))
+  (not (xor (= a!1 #b1)
+            (= a!2 #b1)
+            (= a!3 #b1)
+            (= a!4 #b1)
+            (= a!5 #b1)
+            (= a!6 #b1)
+            (= a!7 #b1)
+            (= a!8 #b1))))
+%af    : (let ((a!1 ((_ extract 4 4)
+             (bvadd (concat #b0 ((_ extract 3 0) %rcx))
+                    (concat #b0 ((_ extract 3 0) %rbx))))))
+  (= a!1 #b1))
+%zf    : (let ((a!1 ((_ extract 63 0)
+             (bvadd (concat #b0 (bvnot %rcx))
+                    #b00000000000000000000000000000000000000000000000000000000000000001
+                    (concat #b0 %rbx)))))
+  (= a!1 #x0000000000000000))
+%sf    : (let ((a!1 ((_ extract 63 63)
+             (bvadd (concat #b0 (bvnot %rcx))
+                    #b00000000000000000000000000000000000000000000000000000000000000001
+                    (concat #b0 %rbx)))))
+  (= a!1 #b1))
+%of    : (let ((a!1 (= (= (bvnot ((_ extract 63 63) %rcx)) #b1)
+              (= ((_ extract 63 63) %rbx) #b1)))
+      (a!2 ((_ extract 63 63)
+             (bvadd (concat #b0 (bvnot %rcx))
+                    #b00000000000000000000000000000000000000000000000000000000000000001
+                    (concat #b0 %rbx)))))
+(let ((a!3 (= (= (bvnot ((_ extract 63 63) %rcx)) #b1) (= a!2 #b1))))
+  (and a!1 (not a!3))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

@@ -1,0 +1,33 @@
+code: pmovmskb %xmm1, %ebx
+
+  maybe read:      { %xmm1 }
+  must read:       { %xmm1 }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+Formula:
+
+%rbx   : (let ((a!1 (concat (ite (= ((_ extract 15 15) %ymm1) #b1) #b1 #b0)
+                   (ite (= ((_ extract 7 7) %ymm1) #b1) #b1 #b0))))
+(let ((a!2 (concat (ite (= ((_ extract 23 23) %ymm1) #b1) #b1 #b0) a!1)))
+(let ((a!3 (concat (ite (= ((_ extract 31 31) %ymm1) #b1) #b1 #b0) a!2)))
+(let ((a!4 (concat (ite (= ((_ extract 39 39) %ymm1) #b1) #b1 #b0) a!3)))
+(let ((a!5 (concat (ite (= ((_ extract 47 47) %ymm1) #b1) #b1 #b0) a!4)))
+(let ((a!6 (concat (ite (= ((_ extract 55 55) %ymm1) #b1) #b1 #b0) a!5)))
+(let ((a!7 (concat (ite (= ((_ extract 63 63) %ymm1) #b1) #b1 #b0) a!6)))
+(let ((a!8 (concat (ite (= ((_ extract 71 71) %ymm1) #b1) #b1 #b0) a!7)))
+(let ((a!9 (concat (ite (= ((_ extract 79 79) %ymm1) #b1) #b1 #b0) a!8)))
+(let ((a!10 (concat (ite (= ((_ extract 87 87) %ymm1) #b1) #b1 #b0) a!9)))
+(let ((a!11 (concat (ite (= ((_ extract 95 95) %ymm1) #b1) #b1 #b0) a!10)))
+(let ((a!12 (concat (ite (= ((_ extract 103 103) %ymm1) #b1) #b1 #b0) a!11)))
+(let ((a!13 (concat (ite (= ((_ extract 111 111) %ymm1) #b1) #b1 #b0) a!12)))
+(let ((a!14 (concat (ite (= ((_ extract 119 119) %ymm1) #b1) #b1 #b0) a!13)))
+(let ((a!15 (concat (ite (= ((_ extract 127 127) %ymm1) #b1) #b1 #b0) a!14)))
+  (concat #x00000000 (concat #x0000 a!15)))))))))))))))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

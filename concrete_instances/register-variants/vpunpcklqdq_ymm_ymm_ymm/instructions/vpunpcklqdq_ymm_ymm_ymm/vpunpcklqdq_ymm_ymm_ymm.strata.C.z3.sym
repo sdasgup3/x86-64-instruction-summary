@@ -1,0 +1,20 @@
+code: vpunpcklqdq %ymm3, %ymm2, %ymm1
+
+  maybe read:      { %ymm2 %ymm3 }
+  must read:       { %ymm2 %ymm3 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+vpunpcklqdq %ymm3, %ymm2, %ymm1: Hindex6(9)
+vpunpcklqdq %ymm3, %ymm2, %ymm1: Hindex6(9)
+Formula:
+
+%ymm1  : (concat (concat ((_ extract 191 128) %ymm3) ((_ extract 191 128) %ymm2))
+        (concat ((_ extract 63 0) %ymm3) ((_ extract 63 0) %ymm2)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

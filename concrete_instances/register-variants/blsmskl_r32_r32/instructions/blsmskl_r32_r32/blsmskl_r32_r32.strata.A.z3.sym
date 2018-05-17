@@ -1,0 +1,42 @@
+code: blsmskl %ecx, %ebx
+
+  maybe read:      { %ecx %ebx }
+  must read:       { %ecx %ebx }
+  maybe write:     { %rbx %cf %zf %sf %of }
+  must write:      { %rbx %cf %zf %sf %of }
+  maybe undef:     { %pf %af }
+  must undef:      { %pf %af }
+  required flags:  { bmi1 }
+
+Formula:
+
+%rbx   : (let ((a!1 (bvadd (concat #b0 #xffffffffffffffff)
+                  (concat #b0 (concat #x00000000 ((_ extract 31 0) %rcx))))))
+  (bvxor (concat #x00000000 ((_ extract 31 0) %rcx))
+         (concat #x00000000 ((_ extract 31 0) a!1))))
+
+%cf    : (let ((a!1 (bvadd (concat #b0 #xffffffffffffffff)
+                  (concat #b0 (concat #x00000000 ((_ extract 31 0) %rcx))))))
+(let ((a!2 ((_ extract 8 8)
+             (bvadd (concat #b0 ((_ extract 47 40) a!1))
+                    (concat #b0 ((_ extract 47 40) a!1))))))
+  (= a!2 #b1)))
+%pf    : TMP_BOOL_4
+%af    : TMP_BOOL_5
+%zf    : (let ((a!1 (bvadd (concat #b0 #xffffffffffffffff)
+                  (concat #b0 (concat #x00000000 ((_ extract 31 0) %rcx))))))
+  (= (bvxor ((_ extract 31 0) %rcx) ((_ extract 31 0) a!1)) #x00000000))
+%sf    : (let ((a!1 (bvadd (concat #b0 #xffffffffffffffff)
+                  (concat #b0 (concat #x00000000 ((_ extract 31 0) %rcx))))))
+  (= (bvxor ((_ extract 31 31) %rcx) ((_ extract 31 31) a!1)) #b1))
+%of    : (let ((a!1 (bvadd (concat #b0 #xffffffffffffffff)
+                  (concat #b0 (concat #x00000000 ((_ extract 31 0) %rcx))))))
+(let ((a!2 ((_ extract 7 7)
+             (bvadd (concat #b0 ((_ extract 47 40) a!1))
+                    (concat #b0 ((_ extract 47 40) a!1))))))
+(let ((a!3 (not (= (= ((_ extract 47 47) a!1) #b1) (= a!2 #b1)))))
+  (and (= (= ((_ extract 47 47) a!1) #b1) (= ((_ extract 47 47) a!1) #b1)) a!3))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

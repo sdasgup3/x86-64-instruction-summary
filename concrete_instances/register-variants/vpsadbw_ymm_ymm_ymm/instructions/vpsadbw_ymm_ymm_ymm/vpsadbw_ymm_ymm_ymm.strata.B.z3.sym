@@ -1,0 +1,258 @@
+code: vpsadbw %ymm3, %ymm2, %ymm1
+
+  maybe read:      { %ymm2 %ymm3 }
+  must read:       { %ymm2 %ymm3 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+Formula:
+
+%ymm1  : (let ((a!1 (concat #x00
+                   (ite (bvugt ((_ extract 255 248) %ymm2)
+                               ((_ extract 255 248) %ymm3))
+                        (bvsub ((_ extract 255 248) %ymm2)
+                               ((_ extract 255 248) %ymm3))
+                        (bvsub ((_ extract 255 248) %ymm3)
+                               ((_ extract 255 248) %ymm2)))))
+      (a!2 (concat #x00
+                   (ite (bvugt ((_ extract 247 240) %ymm2)
+                               ((_ extract 247 240) %ymm3))
+                        (bvsub ((_ extract 247 240) %ymm2)
+                               ((_ extract 247 240) %ymm3))
+                        (bvsub ((_ extract 247 240) %ymm3)
+                               ((_ extract 247 240) %ymm2)))))
+      (a!3 (concat #x00
+                   (ite (bvugt ((_ extract 239 232) %ymm2)
+                               ((_ extract 239 232) %ymm3))
+                        (bvsub ((_ extract 239 232) %ymm2)
+                               ((_ extract 239 232) %ymm3))
+                        (bvsub ((_ extract 239 232) %ymm3)
+                               ((_ extract 239 232) %ymm2)))))
+      (a!4 (concat #x00
+                   (ite (bvugt ((_ extract 231 224) %ymm2)
+                               ((_ extract 231 224) %ymm3))
+                        (bvsub ((_ extract 231 224) %ymm2)
+                               ((_ extract 231 224) %ymm3))
+                        (bvsub ((_ extract 231 224) %ymm3)
+                               ((_ extract 231 224) %ymm2)))))
+      (a!5 (concat #x00
+                   (ite (bvugt ((_ extract 223 216) %ymm2)
+                               ((_ extract 223 216) %ymm3))
+                        (bvsub ((_ extract 223 216) %ymm2)
+                               ((_ extract 223 216) %ymm3))
+                        (bvsub ((_ extract 223 216) %ymm3)
+                               ((_ extract 223 216) %ymm2)))))
+      (a!6 (concat #x00
+                   (ite (bvugt ((_ extract 215 208) %ymm2)
+                               ((_ extract 215 208) %ymm3))
+                        (bvsub ((_ extract 215 208) %ymm2)
+                               ((_ extract 215 208) %ymm3))
+                        (bvsub ((_ extract 215 208) %ymm3)
+                               ((_ extract 215 208) %ymm2)))))
+      (a!7 (concat #x00
+                   (ite (bvugt ((_ extract 207 200) %ymm2)
+                               ((_ extract 207 200) %ymm3))
+                        (bvsub ((_ extract 207 200) %ymm2)
+                               ((_ extract 207 200) %ymm3))
+                        (bvsub ((_ extract 207 200) %ymm3)
+                               ((_ extract 207 200) %ymm2)))))
+      (a!8 (concat #x00
+                   (ite (bvugt ((_ extract 199 192) %ymm2)
+                               ((_ extract 199 192) %ymm3))
+                        (bvsub ((_ extract 199 192) %ymm2)
+                               ((_ extract 199 192) %ymm3))
+                        (bvsub ((_ extract 199 192) %ymm3)
+                               ((_ extract 199 192) %ymm2)))))
+      (a!9 (concat #x00
+                   (ite (bvugt ((_ extract 191 184) %ymm2)
+                               ((_ extract 191 184) %ymm3))
+                        (bvsub ((_ extract 191 184) %ymm2)
+                               ((_ extract 191 184) %ymm3))
+                        (bvsub ((_ extract 191 184) %ymm3)
+                               ((_ extract 191 184) %ymm2)))))
+      (a!10 (concat #x00
+                    (ite (bvugt ((_ extract 183 176) %ymm2)
+                                ((_ extract 183 176) %ymm3))
+                         (bvsub ((_ extract 183 176) %ymm2)
+                                ((_ extract 183 176) %ymm3))
+                         (bvsub ((_ extract 183 176) %ymm3)
+                                ((_ extract 183 176) %ymm2)))))
+      (a!11 (concat #x00
+                    (ite (bvugt ((_ extract 175 168) %ymm2)
+                                ((_ extract 175 168) %ymm3))
+                         (bvsub ((_ extract 175 168) %ymm2)
+                                ((_ extract 175 168) %ymm3))
+                         (bvsub ((_ extract 175 168) %ymm3)
+                                ((_ extract 175 168) %ymm2)))))
+      (a!12 (concat #x00
+                    (ite (bvugt ((_ extract 167 160) %ymm2)
+                                ((_ extract 167 160) %ymm3))
+                         (bvsub ((_ extract 167 160) %ymm2)
+                                ((_ extract 167 160) %ymm3))
+                         (bvsub ((_ extract 167 160) %ymm3)
+                                ((_ extract 167 160) %ymm2)))))
+      (a!13 (concat #x00
+                    (ite (bvugt ((_ extract 159 152) %ymm2)
+                                ((_ extract 159 152) %ymm3))
+                         (bvsub ((_ extract 159 152) %ymm2)
+                                ((_ extract 159 152) %ymm3))
+                         (bvsub ((_ extract 159 152) %ymm3)
+                                ((_ extract 159 152) %ymm2)))))
+      (a!14 (concat #x00
+                    (ite (bvugt ((_ extract 151 144) %ymm2)
+                                ((_ extract 151 144) %ymm3))
+                         (bvsub ((_ extract 151 144) %ymm2)
+                                ((_ extract 151 144) %ymm3))
+                         (bvsub ((_ extract 151 144) %ymm3)
+                                ((_ extract 151 144) %ymm2)))))
+      (a!15 (concat #x00
+                    (ite (bvugt ((_ extract 143 136) %ymm2)
+                                ((_ extract 143 136) %ymm3))
+                         (bvsub ((_ extract 143 136) %ymm2)
+                                ((_ extract 143 136) %ymm3))
+                         (bvsub ((_ extract 143 136) %ymm3)
+                                ((_ extract 143 136) %ymm2)))))
+      (a!16 (concat #x00
+                    (ite (bvugt ((_ extract 135 128) %ymm2)
+                                ((_ extract 135 128) %ymm3))
+                         (bvsub ((_ extract 135 128) %ymm2)
+                                ((_ extract 135 128) %ymm3))
+                         (bvsub ((_ extract 135 128) %ymm3)
+                                ((_ extract 135 128) %ymm2)))))
+      (a!17 (concat #x00
+                    (ite (bvugt ((_ extract 127 120) %ymm2)
+                                ((_ extract 127 120) %ymm3))
+                         (bvsub ((_ extract 127 120) %ymm2)
+                                ((_ extract 127 120) %ymm3))
+                         (bvsub ((_ extract 127 120) %ymm3)
+                                ((_ extract 127 120) %ymm2)))))
+      (a!18 (concat #x00
+                    (ite (bvugt ((_ extract 119 112) %ymm2)
+                                ((_ extract 119 112) %ymm3))
+                         (bvsub ((_ extract 119 112) %ymm2)
+                                ((_ extract 119 112) %ymm3))
+                         (bvsub ((_ extract 119 112) %ymm3)
+                                ((_ extract 119 112) %ymm2)))))
+      (a!19 (concat #x00
+                    (ite (bvugt ((_ extract 111 104) %ymm2)
+                                ((_ extract 111 104) %ymm3))
+                         (bvsub ((_ extract 111 104) %ymm2)
+                                ((_ extract 111 104) %ymm3))
+                         (bvsub ((_ extract 111 104) %ymm3)
+                                ((_ extract 111 104) %ymm2)))))
+      (a!20 (concat #x00
+                    (ite (bvugt ((_ extract 103 96) %ymm2)
+                                ((_ extract 103 96) %ymm3))
+                         (bvsub ((_ extract 103 96) %ymm2)
+                                ((_ extract 103 96) %ymm3))
+                         (bvsub ((_ extract 103 96) %ymm3)
+                                ((_ extract 103 96) %ymm2)))))
+      (a!21 (concat #x00
+                    (ite (bvugt ((_ extract 95 88) %ymm2)
+                                ((_ extract 95 88) %ymm3))
+                         (bvsub ((_ extract 95 88) %ymm2)
+                                ((_ extract 95 88) %ymm3))
+                         (bvsub ((_ extract 95 88) %ymm3)
+                                ((_ extract 95 88) %ymm2)))))
+      (a!22 (concat #x00
+                    (ite (bvugt ((_ extract 87 80) %ymm2)
+                                ((_ extract 87 80) %ymm3))
+                         (bvsub ((_ extract 87 80) %ymm2)
+                                ((_ extract 87 80) %ymm3))
+                         (bvsub ((_ extract 87 80) %ymm3)
+                                ((_ extract 87 80) %ymm2)))))
+      (a!23 (concat #x00
+                    (ite (bvugt ((_ extract 79 72) %ymm2)
+                                ((_ extract 79 72) %ymm3))
+                         (bvsub ((_ extract 79 72) %ymm2)
+                                ((_ extract 79 72) %ymm3))
+                         (bvsub ((_ extract 79 72) %ymm3)
+                                ((_ extract 79 72) %ymm2)))))
+      (a!24 (concat #x00
+                    (ite (bvugt ((_ extract 71 64) %ymm2)
+                                ((_ extract 71 64) %ymm3))
+                         (bvsub ((_ extract 71 64) %ymm2)
+                                ((_ extract 71 64) %ymm3))
+                         (bvsub ((_ extract 71 64) %ymm3)
+                                ((_ extract 71 64) %ymm2)))))
+      (a!25 (concat #x00
+                    (ite (bvugt ((_ extract 63 56) %ymm2)
+                                ((_ extract 63 56) %ymm3))
+                         (bvsub ((_ extract 63 56) %ymm2)
+                                ((_ extract 63 56) %ymm3))
+                         (bvsub ((_ extract 63 56) %ymm3)
+                                ((_ extract 63 56) %ymm2)))))
+      (a!26 (concat #x00
+                    (ite (bvugt ((_ extract 55 48) %ymm2)
+                                ((_ extract 55 48) %ymm3))
+                         (bvsub ((_ extract 55 48) %ymm2)
+                                ((_ extract 55 48) %ymm3))
+                         (bvsub ((_ extract 55 48) %ymm3)
+                                ((_ extract 55 48) %ymm2)))))
+      (a!27 (concat #x00
+                    (ite (bvugt ((_ extract 47 40) %ymm2)
+                                ((_ extract 47 40) %ymm3))
+                         (bvsub ((_ extract 47 40) %ymm2)
+                                ((_ extract 47 40) %ymm3))
+                         (bvsub ((_ extract 47 40) %ymm3)
+                                ((_ extract 47 40) %ymm2)))))
+      (a!28 (concat #x00
+                    (ite (bvugt ((_ extract 39 32) %ymm2)
+                                ((_ extract 39 32) %ymm3))
+                         (bvsub ((_ extract 39 32) %ymm2)
+                                ((_ extract 39 32) %ymm3))
+                         (bvsub ((_ extract 39 32) %ymm3)
+                                ((_ extract 39 32) %ymm2)))))
+      (a!29 (concat #x00
+                    (ite (bvugt ((_ extract 31 24) %ymm2)
+                                ((_ extract 31 24) %ymm3))
+                         (bvsub ((_ extract 31 24) %ymm2)
+                                ((_ extract 31 24) %ymm3))
+                         (bvsub ((_ extract 31 24) %ymm3)
+                                ((_ extract 31 24) %ymm2)))))
+      (a!30 (concat #x00
+                    (ite (bvugt ((_ extract 23 16) %ymm2)
+                                ((_ extract 23 16) %ymm3))
+                         (bvsub ((_ extract 23 16) %ymm2)
+                                ((_ extract 23 16) %ymm3))
+                         (bvsub ((_ extract 23 16) %ymm3)
+                                ((_ extract 23 16) %ymm2)))))
+      (a!31 (concat #x00
+                    (ite (bvugt ((_ extract 15 8) %ymm2)
+                                ((_ extract 15 8) %ymm3))
+                         (bvsub ((_ extract 15 8) %ymm2)
+                                ((_ extract 15 8) %ymm3))
+                         (bvsub ((_ extract 15 8) %ymm3)
+                                ((_ extract 15 8) %ymm2)))))
+      (a!32 (concat #x00
+                    (ite (bvugt ((_ extract 7 0) %ymm2) ((_ extract 7 0) %ymm3))
+                         (bvsub ((_ extract 7 0) %ymm2) ((_ extract 7 0) %ymm3))
+                         (bvsub ((_ extract 7 0) %ymm3) ((_ extract 7 0) %ymm2))))))
+(let ((a!33 (concat (concat #x000000000000
+                            (bvadd a!9 a!10 a!11 a!12 a!13 a!14 a!15 a!16))
+                    (concat (concat #x000000000000
+                                    (bvadd a!17
+                                           a!18
+                                           a!19
+                                           a!20
+                                           a!21
+                                           a!22
+                                           a!23
+                                           a!24))
+                            (concat #x000000000000
+                                    (bvadd a!25
+                                           a!26
+                                           a!27
+                                           a!28
+                                           a!29
+                                           a!30
+                                           a!31
+                                           a!32))))))
+  (concat (concat #x000000000000 (bvadd a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)) a!33)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

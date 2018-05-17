@@ -1,0 +1,29 @@
+code: pandn (%rbx), %xmm1
+
+  maybe read:      { %rbx %xmm1 }
+  must read:       { %rbx %xmm1 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+Formula:
+
+%ymm1  : (let ((a!1 (concat (bvxor ((_ extract 127 64) %ymm1)
+                          (bvor ((_ extract 127 64) TMP_BV_128_0)
+                                ((_ extract 127 64) %ymm1)))
+                   (bvxor ((_ extract 63 0) %ymm1)
+                          (bvor ((_ extract 63 0) TMP_BV_128_1)
+                                ((_ extract 63 0) %ymm1))))))
+  (concat ((_ extract 255 128) %ymm1) a!1))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+  Value TMP_BV_128_1 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

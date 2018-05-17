@@ -1,0 +1,29 @@
+code: btrq %rcx, %rbx
+
+  maybe read:      { %rcx %rbx }
+  must read:       { %rcx %rbx }
+  maybe write:     { %rbx %cf }
+  must write:      { %rbx %cf }
+  maybe undef:     { %pf %af %sf %of }
+  must undef:      { %pf %af %sf %of }
+  required flags:  { }
+
+btrq %rcx, %rbx: Hindex1(9)
+btrq %rcx, %rbx: Hindex1(9)
+Formula:
+
+%rbx   : (let ((a!1 (bvnot (bvshl #x0000000000000001
+                         ((_ sign_extend 0) (bvand %rcx #x000000000000003f))))))
+  (bvand %rbx a!1))
+
+%cf    : (let ((a!1 ((_ extract 0 0)
+             (bvlshr %rbx ((_ sign_extend 0) (bvand %rcx #x000000000000003f))))))
+  (= a!1 #b1))
+%pf    : TMP_BOOL_3
+%af    : TMP_BOOL_2
+%sf    : TMP_BOOL_1
+%of    : TMP_BOOL_0
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

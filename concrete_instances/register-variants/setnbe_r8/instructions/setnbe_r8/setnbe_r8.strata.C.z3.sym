@@ -1,0 +1,19 @@
+code: setnbe %bl
+
+  maybe read:      { %cf %zf }
+  must read:       { %cf %zf }
+  maybe write:     { %bl }
+  must write:      { %bl }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+setnbe %bl: Hindex3(9)
+setnbe %bl: Hindex3(9)
+Formula:
+
+%rbx   : (concat ((_ extract 63 8) %rbx) (ite (and (not %cf) (not %zf)) #x01 #x00))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

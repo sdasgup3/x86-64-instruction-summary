@@ -1,0 +1,111 @@
+code: vpmaddubsw (%rbx), %xmm2, %xmm1
+
+  maybe read:      { %rbx %xmm2 }
+  must read:       { %rbx %xmm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%ymm1  : (let ((a!1 ((_ sign_extend 16)
+             (bvmul ((_ sign_extend 8) ((_ extract 119 112) TMP_BV_128_0))
+                    (concat #x00 ((_ extract 119 112) %ymm2)))))
+      (a!2 ((_ sign_extend 16)
+             (bvmul ((_ sign_extend 8) ((_ extract 127 120) TMP_BV_128_0))
+                    (concat #x00 ((_ extract 127 120) %ymm2)))))
+      (a!4 ((_ sign_extend 16)
+             (bvmul ((_ sign_extend 8) ((_ extract 103 96) TMP_BV_128_0))
+                    (concat #x00 ((_ extract 103 96) %ymm2)))))
+      (a!5 ((_ sign_extend 16)
+             (bvmul ((_ sign_extend 8) ((_ extract 111 104) TMP_BV_128_0))
+                    (concat #x00 ((_ extract 111 104) %ymm2)))))
+      (a!7 ((_ sign_extend 16)
+             (bvmul ((_ sign_extend 8) ((_ extract 87 80) TMP_BV_128_0))
+                    (concat #x00 ((_ extract 87 80) %ymm2)))))
+      (a!8 ((_ sign_extend 16)
+             (bvmul ((_ sign_extend 8) ((_ extract 95 88) TMP_BV_128_0))
+                    (concat #x00 ((_ extract 95 88) %ymm2)))))
+      (a!10 ((_ sign_extend 16)
+              (bvmul ((_ sign_extend 8) ((_ extract 71 64) TMP_BV_128_0))
+                     (concat #x00 ((_ extract 71 64) %ymm2)))))
+      (a!11 ((_ sign_extend 16)
+              (bvmul ((_ sign_extend 8) ((_ extract 79 72) TMP_BV_128_0))
+                     (concat #x00 ((_ extract 79 72) %ymm2)))))
+      (a!13 ((_ sign_extend 16)
+              (bvmul ((_ sign_extend 8) ((_ extract 55 48) TMP_BV_128_0))
+                     (concat #x00 ((_ extract 55 48) %ymm2)))))
+      (a!14 ((_ sign_extend 16)
+              (bvmul ((_ sign_extend 8) ((_ extract 63 56) TMP_BV_128_0))
+                     (concat #x00 ((_ extract 63 56) %ymm2)))))
+      (a!16 ((_ sign_extend 16)
+              (bvmul ((_ sign_extend 8) ((_ extract 39 32) TMP_BV_128_0))
+                     (concat #x00 ((_ extract 39 32) %ymm2)))))
+      (a!17 ((_ sign_extend 16)
+              (bvmul ((_ sign_extend 8) ((_ extract 47 40) TMP_BV_128_0))
+                     (concat #x00 ((_ extract 47 40) %ymm2)))))
+      (a!19 ((_ sign_extend 16)
+              (bvmul ((_ sign_extend 8) ((_ extract 23 16) TMP_BV_128_0))
+                     (concat #x00 ((_ extract 23 16) %ymm2)))))
+      (a!20 ((_ sign_extend 16)
+              (bvmul ((_ sign_extend 8) ((_ extract 31 24) TMP_BV_128_0))
+                     (concat #x00 ((_ extract 31 24) %ymm2)))))
+      (a!22 ((_ sign_extend 16)
+              (bvmul ((_ sign_extend 8) ((_ extract 7 0) TMP_BV_128_0))
+                     (concat #x00 ((_ extract 7 0) %ymm2)))))
+      (a!23 ((_ sign_extend 16)
+              (bvmul ((_ sign_extend 8) ((_ extract 15 8) TMP_BV_128_0))
+                     (concat #x00 ((_ extract 15 8) %ymm2))))))
+(let ((a!3 (ite (bvsgt (bvadd a!1 a!2) #x00007fff)
+                #x7fff
+                (ite (bvslt (bvadd a!1 a!2) #xffff8000)
+                     #x8000
+                     ((_ extract 15 0) (bvadd a!1 a!2)))))
+      (a!6 (ite (bvsgt (bvadd a!4 a!5) #x00007fff)
+                #x7fff
+                (ite (bvslt (bvadd a!4 a!5) #xffff8000)
+                     #x8000
+                     ((_ extract 15 0) (bvadd a!4 a!5)))))
+      (a!9 (ite (bvsgt (bvadd a!7 a!8) #x00007fff)
+                #x7fff
+                (ite (bvslt (bvadd a!7 a!8) #xffff8000)
+                     #x8000
+                     ((_ extract 15 0) (bvadd a!7 a!8)))))
+      (a!12 (ite (bvsgt (bvadd a!10 a!11) #x00007fff)
+                 #x7fff
+                 (ite (bvslt (bvadd a!10 a!11) #xffff8000)
+                      #x8000
+                      ((_ extract 15 0) (bvadd a!10 a!11)))))
+      (a!15 (ite (bvsgt (bvadd a!13 a!14) #x00007fff)
+                 #x7fff
+                 (ite (bvslt (bvadd a!13 a!14) #xffff8000)
+                      #x8000
+                      ((_ extract 15 0) (bvadd a!13 a!14)))))
+      (a!18 (ite (bvsgt (bvadd a!16 a!17) #x00007fff)
+                 #x7fff
+                 (ite (bvslt (bvadd a!16 a!17) #xffff8000)
+                      #x8000
+                      ((_ extract 15 0) (bvadd a!16 a!17)))))
+      (a!21 (ite (bvsgt (bvadd a!19 a!20) #x00007fff)
+                 #x7fff
+                 (ite (bvslt (bvadd a!19 a!20) #xffff8000)
+                      #x8000
+                      ((_ extract 15 0) (bvadd a!19 a!20)))))
+      (a!24 (ite (bvsgt (bvadd a!22 a!23) #x00007fff)
+                 #x7fff
+                 (ite (bvslt (bvadd a!22 a!23) #xffff8000)
+                      #x8000
+                      ((_ extract 15 0) (bvadd a!22 a!23))))))
+(let ((a!25 (concat a!12 (concat a!15 (concat a!18 (concat a!21 a!24))))))
+  (concat #x00000000000000000000000000000000
+          (concat a!3 (concat a!6 (concat a!9 a!25)))))))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

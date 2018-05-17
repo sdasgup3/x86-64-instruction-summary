@@ -1,0 +1,17 @@
+code: cvtss2sil %xmm1, %ebx
+
+  maybe read:      { %xmm1 }
+  must read:       { %xmm1 }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse }
+
+Formula:
+
+%rbx   : (concat #x00000000 (cvt_single_to_int32 ((_ extract 31 0) %ymm1)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

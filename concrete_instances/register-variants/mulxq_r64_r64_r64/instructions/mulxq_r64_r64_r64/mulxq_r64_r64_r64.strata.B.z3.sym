@@ -1,0 +1,20 @@
+code: mulxq %rcx, %rbx, %rax
+
+  maybe read:      { %rcx %rdx }
+  must read:       { %rcx %rdx }
+  maybe write:     { %rax %rbx }
+  must write:      { %rax %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { bmi2 }
+
+Formula:
+
+%rax   : ((_ extract 127 64)
+  (bvmul (concat #x0000000000000000 %rdx) (concat #x0000000000000000 %rcx)))
+%rbx   : ((_ extract 63 0)
+  (bvmul (concat #x0000000000000000 %rdx) (concat #x0000000000000000 %rcx)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

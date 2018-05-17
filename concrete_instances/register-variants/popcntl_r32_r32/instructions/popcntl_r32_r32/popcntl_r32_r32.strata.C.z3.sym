@@ -1,0 +1,88 @@
+code: popcntl %ecx, %ebx
+
+  maybe read:      { %ecx }
+  must read:       { %ecx }
+  maybe write:     { %rbx %cf %pf %af %zf %sf %of }
+  must write:      { %rbx %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { popcnt }
+
+popcntl %ecx, %ebx: Hindex1(9)
+popcntl %ecx, %ebx: Hindex1(9)
+Formula:
+
+%rbx   : (let ((a!1 (concat #b00
+                   (bvadd (concat #b0 ((_ extract 31 31) %rcx))
+                          (concat #b0 ((_ extract 30 30) %rcx)))))
+      (a!2 (concat #b00
+                   (bvadd (concat #b0 ((_ extract 29 29) %rcx))
+                          (concat #b0 ((_ extract 28 28) %rcx)))))
+      (a!3 (concat #b00
+                   (bvadd (concat #b0 ((_ extract 27 27) %rcx))
+                          (concat #b0 ((_ extract 26 26) %rcx)))))
+      (a!4 (concat #b00
+                   (bvadd (concat #b0 ((_ extract 25 25) %rcx))
+                          (concat #b0 ((_ extract 24 24) %rcx)))))
+      (a!6 (concat #b00
+                   (bvadd (concat #b0 ((_ extract 23 23) %rcx))
+                          (concat #b0 ((_ extract 22 22) %rcx)))))
+      (a!7 (concat #b00
+                   (bvadd (concat #b0 ((_ extract 21 21) %rcx))
+                          (concat #b0 ((_ extract 20 20) %rcx)))))
+      (a!8 (concat #b00
+                   (bvadd (concat #b0 ((_ extract 19 19) %rcx))
+                          (concat #b0 ((_ extract 18 18) %rcx)))))
+      (a!9 (concat #b00
+                   (bvadd (concat #b0 ((_ extract 17 17) %rcx))
+                          (concat #b0 ((_ extract 16 16) %rcx)))))
+      (a!11 (concat #b00
+                    (bvadd (concat #b0 ((_ extract 15 15) %rcx))
+                           (concat #b0 ((_ extract 14 14) %rcx)))))
+      (a!12 (concat #b00
+                    (bvadd (concat #b0 ((_ extract 13 13) %rcx))
+                           (concat #b0 ((_ extract 12 12) %rcx)))))
+      (a!13 (concat #b00
+                    (bvadd (concat #b0 ((_ extract 11 11) %rcx))
+                           (concat #b0 ((_ extract 10 10) %rcx)))))
+      (a!14 (concat #b00
+                    (bvadd (concat #b0 ((_ extract 9 9) %rcx))
+                           (concat #b0 ((_ extract 8 8) %rcx)))))
+      (a!16 (concat #b00
+                    (bvadd (concat #b0 ((_ extract 7 7) %rcx))
+                           (concat #b0 ((_ extract 6 6) %rcx)))))
+      (a!17 (concat #b00
+                    (bvadd (concat #b0 ((_ extract 5 5) %rcx))
+                           (concat #b0 ((_ extract 4 4) %rcx)))))
+      (a!18 (concat #b00
+                    (bvadd (concat #b0 ((_ extract 3 3) %rcx))
+                           (concat #b0 ((_ extract 2 2) %rcx)))))
+      (a!19 (concat #b00
+                    (bvadd (concat #b0 ((_ extract 1 1) %rcx))
+                           (concat #b0 ((_ extract 0 0) %rcx))))))
+(let ((a!5 (concat #x00
+                   (bvadd (concat #x0 (bvadd a!1 a!2))
+                          (concat #x0 (bvadd a!3 a!4)))))
+      (a!10 (concat #x00
+                    (bvadd (concat #x0 (bvadd a!6 a!7))
+                           (concat #x0 (bvadd a!8 a!9)))))
+      (a!15 (concat #x00
+                    (bvadd (concat #x0 (bvadd a!11 a!12))
+                           (concat #x0 (bvadd a!13 a!14)))))
+      (a!20 (concat #x00
+                    (bvadd (concat #x0 (bvadd a!16 a!17))
+                           (concat #x0 (bvadd a!18 a!19))))))
+  (concat #x00000000
+          (bvadd (concat #x0000 (bvadd a!5 a!10))
+                 (concat #x0000 (bvadd a!15 a!20))))))
+
+%cf    : false
+%pf    : false
+%af    : false
+%zf    : (= ((_ extract 31 0) %rcx) #x00000000)
+%sf    : false
+%of    : false
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

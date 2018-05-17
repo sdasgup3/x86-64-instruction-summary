@@ -1,0 +1,23 @@
+code: setbe (%rbx)
+
+  maybe read:      { %rbx %cf %zf }
+  must read:       { %rbx %cf %zf }
+  maybe write:     { }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+Information about memory reads:
+  Value TMP_BV_8_0 (1 bytes)
+    was read at address %rbx.
+
+Information about memory writes:
+  Address %rbx was updated to
+    (ite %zf (ite %zf #x01 #x00) (ite %cf #x01 #x00)) (1 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

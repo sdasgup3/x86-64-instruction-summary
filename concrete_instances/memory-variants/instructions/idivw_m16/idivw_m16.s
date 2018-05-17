@@ -1,3 +1,0 @@
-.target:
-  idivw (%rax)
-  retq

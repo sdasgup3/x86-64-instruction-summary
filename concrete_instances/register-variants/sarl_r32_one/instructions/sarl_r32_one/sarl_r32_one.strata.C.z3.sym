@@ -1,0 +1,71 @@
+code: sarl $0x1, %ebx
+
+  maybe read:      { %ebx }
+  must read:       { %ebx }
+  maybe write:     { %rbx %cf %pf %zf %sf %of }
+  must write:      { %rbx %cf %pf %zf %sf %of }
+  maybe undef:     { %af }
+  must undef:      { %af }
+  required flags:  { }
+
+sarl $0x1, %ebx: Hindex7(9)
+sarl $0x1, %ebx: Hindex7(9)
+Formula:
+
+%rbx   : (let ((a!1 ((_ extract 32 1)
+             (bvashr (concat ((_ extract 31 0) %rbx) #b0)
+                     #b000000000000000000000000000000001))))
+  (concat #x00000000 a!1))
+
+%cf    : (let ((a!1 ((_ extract 0 0)
+             (bvashr (concat ((_ extract 31 0) %rbx) #b0)
+                     #b000000000000000000000000000000001))))
+  (or (and true (= a!1 #b1)) (and false %cf)))
+%pf    : (let ((a!1 ((_ extract 1 1)
+             (bvashr (concat ((_ extract 31 0) %rbx) #b0)
+                     #b000000000000000000000000000000001)))
+      (a!2 ((_ extract 2 2)
+             (bvashr (concat ((_ extract 31 0) %rbx) #b0)
+                     #b000000000000000000000000000000001)))
+      (a!3 ((_ extract 3 3)
+             (bvashr (concat ((_ extract 31 0) %rbx) #b0)
+                     #b000000000000000000000000000000001)))
+      (a!4 ((_ extract 4 4)
+             (bvashr (concat ((_ extract 31 0) %rbx) #b0)
+                     #b000000000000000000000000000000001)))
+      (a!5 ((_ extract 5 5)
+             (bvashr (concat ((_ extract 31 0) %rbx) #b0)
+                     #b000000000000000000000000000000001)))
+      (a!6 ((_ extract 6 6)
+             (bvashr (concat ((_ extract 31 0) %rbx) #b0)
+                     #b000000000000000000000000000000001)))
+      (a!7 ((_ extract 7 7)
+             (bvashr (concat ((_ extract 31 0) %rbx) #b0)
+                     #b000000000000000000000000000000001)))
+      (a!8 ((_ extract 8 8)
+             (bvashr (concat ((_ extract 31 0) %rbx) #b0)
+                     #b000000000000000000000000000000001))))
+(let ((a!9 (and true
+                (not (xor (= a!1 #b1)
+                          (= a!2 #b1)
+                          (= a!3 #b1)
+                          (= a!4 #b1)
+                          (= a!5 #b1)
+                          (= a!6 #b1)
+                          (= a!7 #b1)
+                          (= a!8 #b1))))))
+  (or a!9 (and false %pf))))
+%af    : (or (and true TMP_BOOL_0) (and false %af))
+%zf    : (let ((a!1 ((_ extract 32 1)
+             (bvashr (concat ((_ extract 31 0) %rbx) #b0)
+                     #b000000000000000000000000000000001))))
+  (or (and true (= a!1 #x00000000)) (and false %zf)))
+%sf    : (let ((a!1 ((_ extract 32 32)
+             (bvashr (concat ((_ extract 31 0) %rbx) #b0)
+                     #b000000000000000000000000000000001))))
+  (or (and true (= a!1 #b1)) (and false %sf)))
+%of    : (or false (and false %of))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

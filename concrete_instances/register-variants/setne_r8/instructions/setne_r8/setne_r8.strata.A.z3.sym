@@ -1,0 +1,17 @@
+code: setne %bl
+
+  maybe read:      { %zf }
+  must read:       { %zf }
+  maybe write:     { %bl }
+  must write:      { %bl }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rbx   : (concat ((_ extract 63 8) %rbx) (ite %zf #x00 #x01))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

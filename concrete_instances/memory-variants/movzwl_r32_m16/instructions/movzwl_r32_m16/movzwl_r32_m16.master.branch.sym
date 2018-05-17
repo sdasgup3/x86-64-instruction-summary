@@ -1,0 +1,27 @@
+code: movzwl (%rcx), %ebx
+
+  maybe read:      { %rcx }
+  must read:       { %rcx }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+movzwl (%rcx), %ebx: Hindex5(9)
+movzwl (%rcx), %ebx: Hindex5(9)
+Formula:
+
+%rbx   : (concat #x00000000 (concat #x0000 TMP_BV_16_1))
+
+Information about memory reads:
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rcx.
+  Value TMP_BV_16_1 (2 bytes)
+    was read at address %rcx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv
+    (and (not sigfpe) (not sigbus) false)
+    (and (not sigfpe) (not sigbus) false))

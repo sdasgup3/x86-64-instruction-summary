@@ -1,0 +1,21 @@
+code: setnbe %bl
+
+  maybe read:      { %cf %zf }
+  must read:       { %cf %zf }
+  maybe write:     { %bl }
+  must write:      { %bl }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rbx   : (let ((a!1 (ite (= (concat (ite %cf #x000001 #x000000) (ite %zf #x01 #x00))
+                   #x00000000)
+                #x01
+                #x00)))
+  (concat ((_ extract 63 8) %rbx) a!1))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

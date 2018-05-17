@@ -1,0 +1,30 @@
+code: phsubd (%rbx), %xmm1
+
+  maybe read:      { %rbx %xmm1 }
+  must read:       { %rbx %xmm1 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { ssse3 }
+
+phsubd (%rbx), %xmm1: Hindex0(9)
+phsubd (%rbx), %xmm1: Hindex0(9)
+Formula:
+
+%ymm1  : (let ((a!1 (concat (concat (bvsub ((_ extract 95 64) TMP_BV_128_0)
+                                  ((_ extract 127 96) TMP_BV_128_0))
+                           (bvsub ((_ extract 31 0) TMP_BV_128_0)
+                                  ((_ extract 63 32) TMP_BV_128_0)))
+                   (bvsub ((_ extract 95 64) %ymm1) ((_ extract 127 96) %ymm1)))))
+  (concat ((_ extract 255 128) %ymm1)
+          (concat a!1
+                  (bvsub ((_ extract 31 0) %ymm1) ((_ extract 63 32) %ymm1)))))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

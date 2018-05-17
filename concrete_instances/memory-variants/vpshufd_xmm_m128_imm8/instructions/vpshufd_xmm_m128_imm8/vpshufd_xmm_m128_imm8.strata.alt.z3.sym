@@ -1,0 +1,32 @@
+code: vpshufd $0x0, (%rbx), %xmm1
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%ymm1  : (let ((a!1 (concat ((_ extract 31 0)
+                     (bvlshr TMP_BV_128_0 #x00000000000000000000000000000000))
+                   (concat ((_ extract 31 0)
+                             (bvlshr TMP_BV_128_0
+                                     #x00000000000000000000000000000000))
+                           ((_ extract 31 0)
+                             (bvlshr TMP_BV_128_0
+                                     #x00000000000000000000000000000000))))))
+  (concat #x00000000000000000000000000000000
+          (concat ((_ extract 31 0)
+                    (bvlshr TMP_BV_128_0 #x00000000000000000000000000000000))
+                  a!1)))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

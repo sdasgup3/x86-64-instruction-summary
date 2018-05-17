@@ -1,3 +1,0 @@
-.target:
-  imull (%rax)
-  retq

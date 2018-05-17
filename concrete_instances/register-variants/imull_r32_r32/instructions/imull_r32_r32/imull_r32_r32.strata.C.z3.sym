@@ -1,0 +1,44 @@
+code: imull %ecx, %ebx
+
+  maybe read:      { %ecx %ebx }
+  must read:       { %ecx %ebx }
+  maybe write:     { %rbx %cf %of }
+  must write:      { %rbx %cf %of }
+  maybe undef:     { %pf %af %zf %sf }
+  must undef:      { %pf %af %zf %sf }
+  required flags:  { }
+
+imull %ecx, %ebx: Hindex1(9)
+imull %ecx, %ebx: Hindex1(9)
+Formula:
+
+%rbx   : (let ((a!1 ((_ extract 31 0)
+             (bvmul ((_ sign_extend 32) ((_ extract 31 0) %rbx))
+                    ((_ sign_extend 32) ((_ extract 31 0) %rcx))))))
+  (concat #x00000000 a!1))
+
+%cf    : (let ((a!1 ((_ extract 31 0)
+             (bvmul ((_ sign_extend 32) ((_ extract 31 0) %rbx))
+                    ((_ sign_extend 32) ((_ extract 31 0) %rcx))))))
+(let ((a!2 (= (bvmul ((_ sign_extend 32) ((_ extract 31 0) %rbx))
+                     ((_ sign_extend 32) ((_ extract 31 0) %rcx)))
+              ((_ sign_extend 32) a!1))))
+  (not a!2)))
+%pf    : TMP_BOOL_2
+%af    : TMP_BOOL_1
+%zf    : TMP_BOOL_0
+%sf    : (let ((a!1 ((_ extract 31 31)
+             (bvmul ((_ sign_extend 32) ((_ extract 31 0) %rbx))
+                    ((_ sign_extend 32) ((_ extract 31 0) %rcx))))))
+  (= a!1 #b1))
+%of    : (let ((a!1 ((_ extract 31 0)
+             (bvmul ((_ sign_extend 32) ((_ extract 31 0) %rbx))
+                    ((_ sign_extend 32) ((_ extract 31 0) %rcx))))))
+(let ((a!2 (= (bvmul ((_ sign_extend 32) ((_ extract 31 0) %rbx))
+                     ((_ sign_extend 32) ((_ extract 31 0) %rcx)))
+              ((_ sign_extend 32) a!1))))
+  (not a!2)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

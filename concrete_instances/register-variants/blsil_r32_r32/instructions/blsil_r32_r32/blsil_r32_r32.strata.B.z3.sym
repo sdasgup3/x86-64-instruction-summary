@@ -1,0 +1,27 @@
+code: blsil %ecx, %ebx
+
+  maybe read:      { %ecx %ebx }
+  must read:       { %ecx %ebx }
+  maybe write:     { %rbx %cf %zf %sf %of }
+  must write:      { %rbx %cf %zf %sf %of }
+  maybe undef:     { %pf %af }
+  must undef:      { %pf %af }
+  required flags:  { bmi1 }
+
+Formula:
+
+%rbx   : (concat #x00000000
+        (bvand (bvneg ((_ extract 31 0) %rcx)) ((_ extract 31 0) %rcx)))
+
+%cf    : (not (= ((_ extract 31 0) %rcx) #x00000000))
+%pf    : TMP_BOOL_0
+%af    : TMP_BOOL_1
+%zf    : (= (bvand (bvneg ((_ extract 31 0) %rcx)) ((_ extract 31 0) %rcx)) #x00000000)
+%sf    : (let ((a!1 (bvand ((_ extract 31 31) (bvneg ((_ extract 31 0) %rcx)))
+                  ((_ extract 31 31) %rcx))))
+  (= a!1 #b1))
+%of    : false
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

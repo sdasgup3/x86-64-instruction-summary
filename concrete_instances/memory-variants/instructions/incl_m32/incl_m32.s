@@ -1,3 +1,0 @@
-.target:
-  incl (%rax)
-  retq

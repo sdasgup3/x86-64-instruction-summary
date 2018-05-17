@@ -1,0 +1,31 @@
+code: btw $0x0, (%rbx)
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { %cf }
+  must write:      { %cf }
+  maybe undef:     { %pf %af %sf %of }
+  must undef:      { %pf %af %sf %of }
+  required flags:  { }
+
+btw $0x0, (%rbx): Hindex1(9)
+btw $0x0, (%rbx): Hindex1(9)
+Formula:
+
+%cf    : (= ((_ extract 0 0) (bvlshr TMP_BV_8_1 #x00)) #b1)
+%pf    : TMP_BOOL_3
+%af    : TMP_BOOL_2
+%sf    : TMP_BOOL_1
+%of    : TMP_BOOL_0
+
+Information about memory reads:
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rbx.
+  Value TMP_BV_8_1 (1 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv
+    (and (not sigfpe) (not sigbus) false)
+    (and (not sigfpe) (not sigbus) false))

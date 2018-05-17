@@ -1,0 +1,51 @@
+code: sarb %cl, %bl
+
+  maybe read:      { %cl %bl }
+  must read:       { %cl %bl }
+  maybe write:     { %bl %cf %pf %zf %sf %of }
+  must write:      { %bl }
+  maybe undef:     { %af %of }
+  must undef:      { }
+  required flags:  { }
+
+sarb %cl, %bl: Hindex7(9)
+sarb %cl, %bl: Hindex7(9)
+Formula:
+
+%rbx   : (let ((a!1 (bvashr (concat ((_ extract 7 0) %rbx) #b0)
+                   (concat #b0 (bvand ((_ extract 7 0) %rcx) #x1f)))))
+  (concat ((_ extract 63 8) %rbx) ((_ extract 8 1) a!1)))
+
+%cf    : (let ((a!1 (not (= (bvand ((_ extract 7 0) %rcx) #x1f) #x00)))
+      (a!2 (bvashr (concat ((_ extract 7 0) %rbx) #b0)
+                   (concat #b0 (bvand ((_ extract 7 0) %rcx) #x1f)))))
+  (or (and a!1 (= ((_ extract 0 0) a!2) #b1)) (and (not a!1) %cf)))
+%pf    : (let ((a!1 (not (= (bvand ((_ extract 7 0) %rcx) #x1f) #x00)))
+      (a!2 (bvashr (concat ((_ extract 7 0) %rbx) #b0)
+                   (concat #b0 (bvand ((_ extract 7 0) %rcx) #x1f)))))
+(let ((a!3 (not (xor (= ((_ extract 1 1) a!2) #b1)
+                     (= ((_ extract 2 2) a!2) #b1)
+                     (= ((_ extract 3 3) a!2) #b1)
+                     (= ((_ extract 4 4) a!2) #b1)
+                     (= ((_ extract 5 5) a!2) #b1)
+                     (= ((_ extract 6 6) a!2) #b1)
+                     (= ((_ extract 7 7) a!2) #b1)
+                     (= ((_ extract 8 8) a!2) #b1)))))
+  (or (and a!1 a!3) (and (not a!1) %pf))))
+%af    : (let ((a!1 (not (= (bvand ((_ extract 7 0) %rcx) #x1f) #x00))))
+  (or (and a!1 TMP_BOOL_0) (and (not a!1) %af)))
+%zf    : (let ((a!1 (not (= (bvand ((_ extract 7 0) %rcx) #x1f) #x00)))
+      (a!2 (bvashr (concat ((_ extract 7 0) %rbx) #b0)
+                   (concat #b0 (bvand ((_ extract 7 0) %rcx) #x1f)))))
+  (or (and a!1 (= ((_ extract 8 1) a!2) #x00)) (and (not a!1) %zf)))
+%sf    : (let ((a!1 (not (= (bvand ((_ extract 7 0) %rcx) #x1f) #x00)))
+      (a!2 (bvashr (concat ((_ extract 7 0) %rbx) #b0)
+                   (concat #b0 (bvand ((_ extract 7 0) %rcx) #x1f)))))
+  (or (and a!1 (= ((_ extract 8 8) a!2) #b1)) (and (not a!1) %sf)))
+%of    : (let ((a!1 (and (= (bvand ((_ extract 7 0) %rcx) #x1f) #x01) false))
+      (a!2 (not (= (bvand ((_ extract 7 0) %rcx) #x1f) #x01))))
+  (or a!1 (and a!2 %of)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

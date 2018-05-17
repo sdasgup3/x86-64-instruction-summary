@@ -1,0 +1,20 @@
+code: vunpcklpd %xmm3, %xmm2, %xmm1
+
+  maybe read:      { %xmm2 %xmm3 }
+  must read:       { %xmm2 %xmm3 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+vunpcklpd %xmm3, %xmm2, %xmm1: Hindex0(9)
+vunpcklpd %xmm3, %xmm2, %xmm1: Hindex0(9)
+Formula:
+
+%ymm1  : (concat #x00000000000000000000000000000000
+        (concat ((_ extract 63 0) %ymm3) ((_ extract 63 0) %ymm2)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

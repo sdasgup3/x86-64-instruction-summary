@@ -1,0 +1,20 @@
+code: cmovgl %ecx, %ebx
+
+  maybe read:      { %ecx %zf %sf %of }
+  must read:       { %ecx %zf %sf %of }
+  maybe write:     { %rbx }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { cmov }
+
+Formula:
+
+%rbx   : (concat #x00000000
+        (ite (and (not %zf) (= %sf %of))
+             ((_ extract 31 0) %rcx)
+             ((_ extract 31 0) %rbx)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

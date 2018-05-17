@@ -1,0 +1,24 @@
+code: vmovmskps %ymm1, %ebx
+
+  maybe read:      { %ymm1 }
+  must read:       { %ymm1 }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%rbx   : (let ((a!1 (concat ((_ extract 127 127) %ymm1)
+                   (concat ((_ extract 95 95) %ymm1)
+                           (concat ((_ extract 63 63) %ymm1)
+                                   ((_ extract 31 31) %ymm1))))))
+(let ((a!2 (concat ((_ extract 223 223) %ymm1)
+                   (concat ((_ extract 191 191) %ymm1)
+                           (concat ((_ extract 159 159) %ymm1) a!1)))))
+  (concat #x00000000 (concat #x000000 (concat ((_ extract 255 255) %ymm1) a!2)))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

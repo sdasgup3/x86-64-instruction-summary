@@ -1,0 +1,20 @@
+code: cltd
+
+  maybe read:      { %eax }
+  must read:       { %eax }
+  maybe write:     { %rdx }
+  must write:      { %rdx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+cltd: Hindex1(9)
+cltd: Hindex1(9)
+Formula:
+
+%rdx   : (concat #x00000000
+        ((_ extract 63 32) ((_ sign_extend 32) ((_ extract 31 0) %rax))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

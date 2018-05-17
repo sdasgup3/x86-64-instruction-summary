@@ -1,3 +1,0 @@
-.target:
-  idivl (%rax)
-  retq

@@ -1,0 +1,19 @@
+code: setna %bl
+
+  maybe read:      { %cf %zf }
+  must read:       { %cf %zf }
+  maybe write:     { %bl }
+  must write:      { %bl }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+setna %bl: Hindex3(9)
+setna %bl: Hindex3(9)
+Formula:
+
+%rbx   : (concat ((_ extract 63 8) %rbx) (ite (or %cf %zf) #x01 #x00))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

@@ -1,0 +1,18 @@
+code: cwtl 
+
+  maybe read:      { %ax }
+  must read:       { %ax }
+  maybe write:     { %rax }
+  must write:      { %rax }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rax   : (concat #x00000000
+        ((_ extract 31 0) ((_ sign_extend 48) ((_ extract 15 0) %rax))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

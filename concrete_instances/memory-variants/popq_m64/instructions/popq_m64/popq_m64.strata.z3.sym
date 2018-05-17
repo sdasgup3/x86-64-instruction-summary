@@ -1,0 +1,30 @@
+code: popq (%rbx)
+
+  maybe read:      { %rbx %rsp }
+  must read:       { %rbx %rsp }
+  maybe write:     { %rsp }
+  must write:      { %rsp }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rsp   : (bvadd %rsp #x0000000000000008)
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rbx.
+  Value TMP_BV_64_1 (8 bytes)
+    was read at address %rsp.
+
+Information about memory writes:
+  Address %rbx was updated to
+    TMP_BV_64_1 (8 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv
+    (and (not sigfpe) (not sigbus) false)
+    (and (not sigfpe) (not sigbus) false)
+    (and (not sigfpe) (not sigbus) false))

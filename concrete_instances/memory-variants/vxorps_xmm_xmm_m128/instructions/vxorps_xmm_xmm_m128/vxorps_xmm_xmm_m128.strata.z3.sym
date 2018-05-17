@@ -1,0 +1,26 @@
+code: vxorps (%rbx), %xmm2, %xmm1
+
+  maybe read:      { %rbx %xmm2 }
+  must read:       { %rbx %xmm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%ymm1  : (concat #x00000000000000000000000000000000
+        (concat (bvxor ((_ extract 127 64) %ymm2)
+                       ((_ extract 127 64) TMP_BV_128_0))
+                (bvxor ((_ extract 63 0) %ymm2) ((_ extract 63 0) TMP_BV_128_1))))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+  Value TMP_BV_128_1 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

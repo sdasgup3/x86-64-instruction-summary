@@ -1,0 +1,35 @@
+code: paddw %xmm2, %xmm1
+
+  maybe read:      { %xmm1 %xmm2 }
+  must read:       { %xmm1 %xmm2 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+paddw %xmm2, %xmm1: Hindex0(9)
+paddw %xmm2, %xmm1: Hindex0(9)
+Formula:
+
+%ymm1  : (let ((a!1 (concat (bvadd ((_ extract 47 32) %ymm1) ((_ extract 47 32) %ymm2))
+                   (concat (bvadd ((_ extract 31 16) %ymm1)
+                                  ((_ extract 31 16) %ymm2))
+                           (bvadd ((_ extract 15 0) %ymm1)
+                                  ((_ extract 15 0) %ymm2))))))
+(let ((a!2 (concat (bvadd ((_ extract 79 64) %ymm1) ((_ extract 79 64) %ymm2))
+                   (concat (bvadd ((_ extract 63 48) %ymm1)
+                                  ((_ extract 63 48) %ymm2))
+                           a!1))))
+(let ((a!3 (concat (bvadd ((_ extract 111 96) %ymm1) ((_ extract 111 96) %ymm2))
+                   (concat (bvadd ((_ extract 95 80) %ymm1)
+                                  ((_ extract 95 80) %ymm2))
+                           a!2))))
+  (concat ((_ extract 255 128) %ymm1)
+          (concat (bvadd ((_ extract 127 112) %ymm1)
+                         ((_ extract 127 112) %ymm2))
+                  a!3)))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

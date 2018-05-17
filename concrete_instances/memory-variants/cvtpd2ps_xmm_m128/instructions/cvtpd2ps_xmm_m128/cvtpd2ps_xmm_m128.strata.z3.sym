@@ -1,0 +1,28 @@
+code: cvtpd2ps (%rbx), %xmm1
+
+  maybe read:      { %rbx %mxcsr::rc[0] }
+  must read:       { %rbx %mxcsr::rc[0] }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+Formula:
+
+%ymm1  : (let ((a!1 (concat #x0000000000000000
+                   (concat (cvt_double_to_single
+                             ((_ extract 127 64) TMP_BV_128_0))
+                           (cvt_double_to_single
+                             ((_ extract 63 0) TMP_BV_128_1))))))
+  (concat ((_ extract 255 128) %ymm1) a!1))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+  Value TMP_BV_128_1 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

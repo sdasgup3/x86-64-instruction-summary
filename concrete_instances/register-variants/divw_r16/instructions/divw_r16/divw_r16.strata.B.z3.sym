@@ -1,0 +1,31 @@
+code: divw %bx
+
+  maybe read:      { %ax %dx %bx }
+  must read:       { %ax %dx %bx }
+  maybe write:     { %ax %dx }
+  must write:      { %ax %dx }
+  maybe undef:     { %cf %pf %af %zf %sf %of }
+  must undef:      { %cf %pf %af %zf %sf %of }
+  required flags:  { }
+
+Formula:
+
+%rax   : (concat ((_ extract 63 16) %rax)
+        (div_quotient_int16
+          (concat ((_ extract 15 0) %rdx) ((_ extract 15 0) %rax))
+          ((_ extract 15 0) %rbx)))
+%rdx   : (concat ((_ extract 63 16) %rdx)
+        (div_remainder_int16
+          (concat ((_ extract 15 0) %rdx) ((_ extract 15 0) %rax))
+          ((_ extract 15 0) %rbx)))
+
+%cf    : TMP_BOOL_5
+%pf    : TMP_BOOL_2
+%af    : TMP_BOOL_1
+%zf    : TMP_BOOL_0
+%sf    : TMP_BOOL_3
+%of    : TMP_BOOL_4
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

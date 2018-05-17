@@ -1,0 +1,15 @@
+code: nopl (%rbx)
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { nopl }
+
+Formula:
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

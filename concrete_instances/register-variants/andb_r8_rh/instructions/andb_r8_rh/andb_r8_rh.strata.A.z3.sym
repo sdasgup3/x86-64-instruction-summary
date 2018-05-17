@@ -1,0 +1,64 @@
+code: andb %ah, %bl
+
+  maybe read:      { %ah %bl }
+  must read:       { %ah %bl }
+  maybe write:     { %bl %cf %pf %zf %sf %of }
+  must write:      { %bl %cf %pf %zf %sf %of }
+  maybe undef:     { %af }
+  must undef:      { %af }
+  required flags:  { }
+
+Formula:
+
+%rbx   : (let ((a!1 (bvxor (bvxor ((_ extract 7 0) %rbx) #xff)
+                  (bvor ((_ extract 15 8) %rax)
+                        (bvxor ((_ extract 7 0) %rbx) #xff)))))
+  (concat ((_ extract 63 8) %rbx) a!1))
+
+%cf    : false
+%pf    : (let ((a!1 (bvxor (bvxor ((_ extract 0 0) %rbx) #b1)
+                  (bvor ((_ extract 8 8) %rax)
+                        (bvxor ((_ extract 0 0) %rbx) #b1))))
+      (a!2 (bvxor (bvxor ((_ extract 1 1) %rbx) #b1)
+                  (bvor ((_ extract 9 9) %rax)
+                        (bvxor ((_ extract 1 1) %rbx) #b1))))
+      (a!3 (bvxor (bvxor ((_ extract 2 2) %rbx) #b1)
+                  (bvor ((_ extract 10 10) %rax)
+                        (bvxor ((_ extract 2 2) %rbx) #b1))))
+      (a!4 (bvxor (bvxor ((_ extract 3 3) %rbx) #b1)
+                  (bvor ((_ extract 11 11) %rax)
+                        (bvxor ((_ extract 3 3) %rbx) #b1))))
+      (a!5 (bvxor (bvxor ((_ extract 4 4) %rbx) #b1)
+                  (bvor ((_ extract 12 12) %rax)
+                        (bvxor ((_ extract 4 4) %rbx) #b1))))
+      (a!6 (bvxor (bvxor ((_ extract 5 5) %rbx) #b1)
+                  (bvor ((_ extract 13 13) %rax)
+                        (bvxor ((_ extract 5 5) %rbx) #b1))))
+      (a!7 (bvxor (bvxor ((_ extract 6 6) %rbx) #b1)
+                  (bvor ((_ extract 14 14) %rax)
+                        (bvxor ((_ extract 6 6) %rbx) #b1))))
+      (a!8 (bvxor (bvxor ((_ extract 7 7) %rbx) #b1)
+                  (bvor ((_ extract 15 15) %rax)
+                        (bvxor ((_ extract 7 7) %rbx) #b1)))))
+  (not (xor (= a!1 #b1)
+            (= a!2 #b1)
+            (= a!3 #b1)
+            (= a!4 #b1)
+            (= a!5 #b1)
+            (= a!6 #b1)
+            (= a!7 #b1)
+            (= a!8 #b1))))
+%af    : TMP_BOOL_13
+%zf    : (let ((a!1 (bvxor (bvxor ((_ extract 7 0) %rbx) #xff)
+                  (bvor ((_ extract 15 8) %rax)
+                        (bvxor ((_ extract 7 0) %rbx) #xff)))))
+  (= a!1 #x00))
+%sf    : (let ((a!1 (bvxor (bvxor ((_ extract 7 7) %rbx) #b1)
+                  (bvor ((_ extract 15 15) %rax)
+                        (bvxor ((_ extract 7 7) %rbx) #b1)))))
+  (= a!1 #b1))
+%of    : false
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

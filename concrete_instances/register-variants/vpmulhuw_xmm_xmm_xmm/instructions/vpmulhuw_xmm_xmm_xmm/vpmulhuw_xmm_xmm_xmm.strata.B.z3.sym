@@ -1,0 +1,43 @@
+code: vpmulhuw %xmm3, %xmm2, %xmm1
+
+  maybe read:      { %xmm2 %xmm3 }
+  must read:       { %xmm2 %xmm3 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%ymm1  : (let ((a!1 ((_ extract 31 16)
+             (bvmul (concat #x0000 ((_ extract 127 112) %ymm2))
+                    (concat #x0000 ((_ extract 127 112) %ymm3)))))
+      (a!2 ((_ extract 31 16)
+             (bvmul (concat #x0000 ((_ extract 111 96) %ymm2))
+                    (concat #x0000 ((_ extract 111 96) %ymm3)))))
+      (a!3 ((_ extract 31 16)
+             (bvmul (concat #x0000 ((_ extract 95 80) %ymm2))
+                    (concat #x0000 ((_ extract 95 80) %ymm3)))))
+      (a!4 ((_ extract 31 16)
+             (bvmul (concat #x0000 ((_ extract 79 64) %ymm2))
+                    (concat #x0000 ((_ extract 79 64) %ymm3)))))
+      (a!5 ((_ extract 31 16)
+             (bvmul (concat #x0000 ((_ extract 63 48) %ymm2))
+                    (concat #x0000 ((_ extract 63 48) %ymm3)))))
+      (a!6 ((_ extract 31 16)
+             (bvmul (concat #x0000 ((_ extract 47 32) %ymm2))
+                    (concat #x0000 ((_ extract 47 32) %ymm3)))))
+      (a!7 ((_ extract 31 16)
+             (bvmul (concat #x0000 ((_ extract 31 16) %ymm2))
+                    (concat #x0000 ((_ extract 31 16) %ymm3)))))
+      (a!8 ((_ extract 31 16)
+             (bvmul (concat #x0000 ((_ extract 15 0) %ymm2))
+                    (concat #x0000 ((_ extract 15 0) %ymm3))))))
+(let ((a!9 (concat a!4 (concat a!5 (concat a!6 (concat a!7 a!8))))))
+  (concat #x00000000000000000000000000000000
+          (concat a!1 (concat a!2 (concat a!3 a!9))))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

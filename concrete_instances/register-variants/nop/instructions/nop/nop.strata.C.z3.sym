@@ -1,0 +1,17 @@
+code: nop
+
+  maybe read:      { }
+  must read:       { }
+  maybe write:     { }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+nop: Hindex1(9)
+nop: Hindex1(9)
+Formula:
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

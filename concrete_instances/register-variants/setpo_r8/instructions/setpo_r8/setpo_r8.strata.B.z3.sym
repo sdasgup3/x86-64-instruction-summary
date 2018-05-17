@@ -1,0 +1,17 @@
+code: setpo %bl
+
+  maybe read:      { %pf }
+  must read:       { %pf }
+  maybe write:     { %bl }
+  must write:      { %bl }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rbx   : (concat ((_ extract 63 8) %rbx) (ite (not %pf) #x01 #x00))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

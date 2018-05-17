@@ -1,0 +1,35 @@
+code: rcll $0x1, %ebx
+
+  maybe read:      { %ebx %cf }
+  must read:       { %ebx %cf }
+  maybe write:     { %rbx %cf %of }
+  must write:      { %rbx %cf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+rcll $0x1, %ebx: Hindex7(9)
+rcll $0x1, %ebx: Hindex7(9)
+Formula:
+
+%rbx   : (let ((a!1 ((_ extract 31 0)
+             (ext_rotate_left (concat (ite %cf #b1 #b0) ((_ extract 31 0) %rbx))
+                              #b000000000000000000000000000000001))))
+  (concat #x00000000 a!1))
+
+%cf    : (let ((a!1 ((_ extract 32 32)
+             (ext_rotate_left (concat (ite %cf #b1 #b0) ((_ extract 31 0) %rbx))
+                              #b000000000000000000000000000000001))))
+  (= a!1 #b1))
+%of    : (let ((a!1 ((_ extract 32 32)
+             (ext_rotate_left (concat (ite %cf #b1 #b0) ((_ extract 31 0) %rbx))
+                              #b000000000000000000000000000000001)))
+      (a!2 ((_ extract 31 31)
+             (ext_rotate_left (concat (ite %cf #b1 #b0) ((_ extract 31 0) %rbx))
+                              #b000000000000000000000000000000001))))
+  (or (and true (xor (= a!1 #b1) (= a!2 #b1)))
+      (and false (or (and true %of) (and false TMP_BOOL_0)))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

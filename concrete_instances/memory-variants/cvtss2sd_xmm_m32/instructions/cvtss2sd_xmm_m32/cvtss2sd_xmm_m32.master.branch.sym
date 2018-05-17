@@ -1,0 +1,27 @@
+code: cvtss2sd (%rbx), %xmm1
+
+  maybe read:      { %rbx %xmm1 %mxcsr::rc[0] }
+  must read:       { %rbx %xmm1 %mxcsr::rc[0] }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+cvtss2sd (%rbx), %xmm1: Hindex8(9)
+cvtss2sd (%rbx), %xmm1: Hindex8(9)
+callq .move_128_64_xmm1_xmm12_xmm13: Hindex8(9)
+vcvtps2pd %xmm2, %ymm12: Hindex0(9)
+callq .move_64_128_xmm12_xmm13_xmm1: Hindex8(9)
+Formula:
+
+%ymm1  : (concat ((_ extract 255 128) %ymm1)
+        (concat ((_ extract 127 64) %ymm1) (cvt_single_to_double TMP_BV_32_0)))
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

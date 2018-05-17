@@ -1,0 +1,34 @@
+code: rolb $0x1, (%rbx)
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { %cf %of }
+  must write:      { %cf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+rolb $0x1, (%rbx): Hindex7(9)
+rolb $0x1, (%rbx): Hindex7(9)
+Formula:
+
+%cf    : (let ((a!1 (and true
+                (= ((_ extract 0 0) (ext_rotate_left TMP_BV_8_0 #x01)) #b1))))
+  (or a!1 (and false %cf)))
+%of    : (let ((a!1 (xor (= ((_ extract 7 7) (ext_rotate_left TMP_BV_8_0 #x01)) #b1)
+                (= ((_ extract 0 0) (ext_rotate_left TMP_BV_8_0 #x01)) #b1))))
+  (or (and true a!1) (and false TMP_BOOL_0)))
+
+Information about memory reads:
+  Value TMP_BV_8_0 (1 bytes)
+    was read at address %rbx.
+
+Information about memory writes:
+  Address %rbx was updated to
+    (ext_rotate_left TMP_BV_8_0 #x01) (1 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv
+    (and (not sigfpe) (not sigbus) false)
+    (and (not sigfpe) (not sigbus) false))

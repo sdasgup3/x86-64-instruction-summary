@@ -1,0 +1,18 @@
+code: cbtw 
+
+  maybe read:      { %al }
+  must read:       { %al }
+  maybe write:     { %ax }
+  must write:      { %ax }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rax   : (concat ((_ extract 63 16) %rax)
+        ((_ extract 15 0) ((_ sign_extend 56) ((_ extract 7 0) %rax))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

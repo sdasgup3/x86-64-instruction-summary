@@ -1,0 +1,15 @@
+code: nop 
+
+  maybe read:      { }
+  must read:       { }
+  maybe write:     { }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

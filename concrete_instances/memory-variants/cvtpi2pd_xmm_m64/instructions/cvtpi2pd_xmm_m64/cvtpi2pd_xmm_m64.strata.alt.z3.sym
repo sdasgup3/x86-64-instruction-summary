@@ -1,0 +1,23 @@
+code: cvtpi2pd (%rbx), %xmm1
+
+  maybe read:      { %rbx %mxcsr::rc[0] }
+  must read:       { %rbx %mxcsr::rc[0] }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%ymm1  : (concat ((_ extract 255 128) %ymm1)
+        (concat (cvt_int32_to_double ((_ extract 63 32) TMP_BV_64_0))
+                (cvt_int32_to_double ((_ extract 31 0) TMP_BV_64_0))))
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

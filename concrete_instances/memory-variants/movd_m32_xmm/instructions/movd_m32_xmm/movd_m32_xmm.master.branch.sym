@@ -1,0 +1,25 @@
+code: movd %xmm1, (%rbx)
+
+  maybe read:      { %rbx %xmm1 }
+  must read:       { %rbx %xmm1 }
+  maybe write:     { }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+movd %xmm1, (%rbx): Hindex8(9)
+movd %xmm1, (%rbx): Hindex8(9)
+callq .move_128_032_xmm1_xmm8_xmm9_xmm10_xmm11: Hindex8(9)
+callq .move_128_256_xmm8_xmm9_ymm1: Hindex8(9)
+callq .move_128_064_xmm1_r10_r11: Hindex8(9)
+callq .move_032_064_r10d_r11d_rbx: Hindex8(9)
+Formula:
+
+Information about memory writes:
+  Address %rbx was updated to
+    ((_ extract 31 0) %ymm1) (4 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

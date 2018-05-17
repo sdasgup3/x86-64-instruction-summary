@@ -1,0 +1,19 @@
+code: sqrtpd %xmm2, %xmm1
+
+  maybe read:      { %xmm2 }
+  must read:       { %xmm2 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+Formula:
+
+%ymm1  : (concat ((_ extract 255 128) %ymm1)
+        (concat (sqrt_double ((_ extract 127 64) %ymm2))
+                (sqrt_double ((_ extract 63 0) %ymm2))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

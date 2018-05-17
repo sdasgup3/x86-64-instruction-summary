@@ -1,0 +1,45 @@
+code: pmullw %xmm2, %xmm1
+
+  maybe read:      { %xmm1 %xmm2 }
+  must read:       { %xmm1 %xmm2 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+pmullw %xmm2, %xmm1: Hindex0(9)
+pmullw %xmm2, %xmm1: Hindex0(9)
+Formula:
+
+%ymm1  : (let ((a!1 ((_ extract 15 0)
+             (bvmul ((_ sign_extend 16) ((_ extract 127 112) %ymm1))
+                    ((_ sign_extend 16) ((_ extract 127 112) %ymm2)))))
+      (a!2 ((_ extract 15 0)
+             (bvmul ((_ sign_extend 16) ((_ extract 111 96) %ymm1))
+                    ((_ sign_extend 16) ((_ extract 111 96) %ymm2)))))
+      (a!3 ((_ extract 15 0)
+             (bvmul ((_ sign_extend 16) ((_ extract 95 80) %ymm1))
+                    ((_ sign_extend 16) ((_ extract 95 80) %ymm2)))))
+      (a!4 ((_ extract 15 0)
+             (bvmul ((_ sign_extend 16) ((_ extract 79 64) %ymm1))
+                    ((_ sign_extend 16) ((_ extract 79 64) %ymm2)))))
+      (a!5 ((_ extract 15 0)
+             (bvmul ((_ sign_extend 16) ((_ extract 63 48) %ymm1))
+                    ((_ sign_extend 16) ((_ extract 63 48) %ymm2)))))
+      (a!6 ((_ extract 15 0)
+             (bvmul ((_ sign_extend 16) ((_ extract 47 32) %ymm1))
+                    ((_ sign_extend 16) ((_ extract 47 32) %ymm2)))))
+      (a!7 ((_ extract 15 0)
+             (bvmul ((_ sign_extend 16) ((_ extract 31 16) %ymm1))
+                    ((_ sign_extend 16) ((_ extract 31 16) %ymm2)))))
+      (a!8 ((_ extract 15 0)
+             (bvmul ((_ sign_extend 16) ((_ extract 15 0) %ymm1))
+                    ((_ sign_extend 16) ((_ extract 15 0) %ymm2))))))
+(let ((a!9 (concat a!4 (concat a!5 (concat a!6 (concat a!7 a!8))))))
+  (concat ((_ extract 255 128) %ymm1)
+          (concat a!1 (concat a!2 (concat a!3 a!9))))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

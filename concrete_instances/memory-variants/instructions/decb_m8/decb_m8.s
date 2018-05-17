@@ -1,3 +1,0 @@
-.target:
-  decb (%rax)
-  retq

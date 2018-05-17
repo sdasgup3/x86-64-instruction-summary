@@ -1,0 +1,20 @@
+code: cmovnel %ecx, %ebx
+
+  maybe read:      { %ecx %zf }
+  must read:       { %ecx %zf }
+  maybe write:     { %rbx }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { cmov }
+
+cmovnel %ecx, %ebx: Hindex3(9)
+cmovnel %ecx, %ebx: Hindex3(9)
+Formula:
+
+%rbx   : (concat #x00000000
+        (ite (not %zf) ((_ extract 31 0) %rcx) ((_ extract 31 0) %rbx)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

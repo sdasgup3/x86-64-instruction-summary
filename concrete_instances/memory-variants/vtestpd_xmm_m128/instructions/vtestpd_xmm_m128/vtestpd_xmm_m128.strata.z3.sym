@@ -1,0 +1,34 @@
+code: vtestpd (%rbx), %xmm1
+
+  maybe read:      { %rbx %xmm1 }
+  must read:       { %rbx %xmm1 }
+  maybe write:     { %cf %pf %af %zf %sf %of }
+  must write:      { %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%cf    : (let ((a!1 (= (bvand (bvnot ((_ extract 63 63) %ymm1))
+                     ((_ extract 63 63) TMP_BV_128_0))
+              #b0))
+      (a!2 (= (bvand (bvnot ((_ extract 127 127) %ymm1))
+                     ((_ extract 127 127) TMP_BV_128_0))
+              #b0)))
+  (and a!1 a!2))
+%pf    : false
+%af    : false
+%zf    : (and (= (bvand ((_ extract 63 63) %ymm1) ((_ extract 63 63) TMP_BV_128_0)) #b0)
+     (= (bvand ((_ extract 127 127) %ymm1) ((_ extract 127 127) TMP_BV_128_0))
+        #b0))
+%sf    : false
+%of    : false
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

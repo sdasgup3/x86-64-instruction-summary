@@ -1,0 +1,76 @@
+code: vminps (%rbx), %ymm2, %ymm1
+
+  maybe read:      { %rbx %ymm2 }
+  must read:       { %rbx %ymm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%ymm1  : (let ((a!1 (ite (= (mincmp_single ((_ extract 255 224) %ymm2)
+                                  ((_ extract 255 224) TMP_BV_256_0))
+                   #b1)
+                ((_ extract 255 224) %ymm2)
+                ((_ extract 255 224) TMP_BV_256_0)))
+      (a!2 (ite (= (mincmp_single ((_ extract 223 192) %ymm2)
+                                  ((_ extract 223 192) TMP_BV_256_1))
+                   #b1)
+                ((_ extract 223 192) %ymm2)
+                ((_ extract 223 192) TMP_BV_256_1)))
+      (a!3 (ite (= (mincmp_single ((_ extract 191 160) %ymm2)
+                                  ((_ extract 191 160) TMP_BV_256_2))
+                   #b1)
+                ((_ extract 191 160) %ymm2)
+                ((_ extract 191 160) TMP_BV_256_2)))
+      (a!4 (ite (= (mincmp_single ((_ extract 159 128) %ymm2)
+                                  ((_ extract 159 128) TMP_BV_256_3))
+                   #b1)
+                ((_ extract 159 128) %ymm2)
+                ((_ extract 159 128) TMP_BV_256_3)))
+      (a!5 (ite (= (mincmp_single ((_ extract 127 96) %ymm2)
+                                  ((_ extract 127 96) TMP_BV_256_4))
+                   #b1)
+                ((_ extract 127 96) %ymm2)
+                ((_ extract 127 96) TMP_BV_256_4)))
+      (a!6 (ite (= (mincmp_single ((_ extract 95 64) %ymm2)
+                                  ((_ extract 95 64) TMP_BV_256_5))
+                   #b1)
+                ((_ extract 95 64) %ymm2)
+                ((_ extract 95 64) TMP_BV_256_5)))
+      (a!7 (ite (= (mincmp_single ((_ extract 63 32) %ymm2)
+                                  ((_ extract 63 32) TMP_BV_256_6))
+                   #b1)
+                ((_ extract 63 32) %ymm2)
+                ((_ extract 63 32) TMP_BV_256_6)))
+      (a!8 (ite (= (mincmp_single ((_ extract 31 0) %ymm2)
+                                  ((_ extract 31 0) TMP_BV_256_7))
+                   #b1)
+                ((_ extract 31 0) %ymm2)
+                ((_ extract 31 0) TMP_BV_256_7))))
+(let ((a!9 (concat a!4 (concat a!5 (concat a!6 (concat a!7 a!8))))))
+  (concat a!1 (concat a!2 (concat a!3 a!9)))))
+
+Information about memory reads:
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rbx.
+  Value TMP_BV_256_1 (32 bytes)
+    was read at address %rbx.
+  Value TMP_BV_256_2 (32 bytes)
+    was read at address %rbx.
+  Value TMP_BV_256_3 (32 bytes)
+    was read at address %rbx.
+  Value TMP_BV_256_4 (32 bytes)
+    was read at address %rbx.
+  Value TMP_BV_256_5 (32 bytes)
+    was read at address %rbx.
+  Value TMP_BV_256_6 (32 bytes)
+    was read at address %rbx.
+  Value TMP_BV_256_7 (32 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

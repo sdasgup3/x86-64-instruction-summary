@@ -1,0 +1,21 @@
+code: movw %cx, (%rbx)
+
+  maybe read:      { %cx %rbx }
+  must read:       { %cx %rbx }
+  maybe write:     { }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+movw %cx, (%rbx): Hindex5(9)
+movw %cx, (%rbx): Hindex5(9)
+Formula:
+
+Information about memory writes:
+  Address %rbx was updated to
+    ((_ extract 15 0) %rcx) (2 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

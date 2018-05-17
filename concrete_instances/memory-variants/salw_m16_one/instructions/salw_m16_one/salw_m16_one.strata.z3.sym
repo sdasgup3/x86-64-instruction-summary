@@ -1,0 +1,69 @@
+code: salw $0x1, (%rbx)
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { %cf %pf %zf %sf %of }
+  must write:      { %cf %pf %zf %sf %of }
+  maybe undef:     { %af }
+  must undef:      { %af }
+  required flags:  { }
+
+Formula:
+
+%cf    : (= ((_ extract 16 16) (bvadd (concat #b0 TMP_BV_16_1) (concat #b0 TMP_BV_16_1)))
+   #b1)
+%pf    : (let ((a!1 (= ((_ extract 0 0)
+                (bvadd (concat #b0 TMP_BV_16_1) (concat #b0 TMP_BV_16_1)))
+              #b1))
+      (a!2 (= ((_ extract 1 1)
+                (bvadd (concat #b0 TMP_BV_16_1) (concat #b0 TMP_BV_16_1)))
+              #b1))
+      (a!3 (= ((_ extract 2 2)
+                (bvadd (concat #b0 TMP_BV_16_1) (concat #b0 TMP_BV_16_1)))
+              #b1))
+      (a!4 (= ((_ extract 3 3)
+                (bvadd (concat #b0 TMP_BV_16_1) (concat #b0 TMP_BV_16_1)))
+              #b1))
+      (a!5 (= ((_ extract 4 4)
+                (bvadd (concat #b0 TMP_BV_16_1) (concat #b0 TMP_BV_16_1)))
+              #b1))
+      (a!6 (= ((_ extract 5 5)
+                (bvadd (concat #b0 TMP_BV_16_1) (concat #b0 TMP_BV_16_1)))
+              #b1))
+      (a!7 (= ((_ extract 6 6)
+                (bvadd (concat #b0 TMP_BV_16_1) (concat #b0 TMP_BV_16_1)))
+              #b1))
+      (a!8 (= ((_ extract 7 7)
+                (bvadd (concat #b0 TMP_BV_16_1) (concat #b0 TMP_BV_16_1)))
+              #b1)))
+  (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)))
+%af    : TMP_BOOL_10
+%zf    : (= ((_ extract 15 0) (bvadd (concat #b0 TMP_BV_16_1) (concat #b0 TMP_BV_16_1)))
+   #x0000)
+%sf    : (= ((_ extract 15 15) (bvadd (concat #b0 TMP_BV_16_1) (concat #b0 TMP_BV_16_1)))
+   #b1)
+%of    : (let ((a!1 (= ((_ extract 15 15)
+                (bvadd (concat #b0 TMP_BV_16_1) (concat #b0 TMP_BV_16_1)))
+              #b1)))
+(let ((a!2 (not (= (= ((_ extract 15 15) TMP_BV_16_2) #b1) a!1))))
+  (and (= (= ((_ extract 15 15) TMP_BV_16_2) #b1)
+          (= ((_ extract 15 15) TMP_BV_16_3) #b1))
+       a!2)))
+
+Information about memory reads:
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rbx.
+  Value TMP_BV_16_1 (2 bytes)
+    was read at address %rbx.
+  Value TMP_BV_16_2 (2 bytes)
+    was read at address %rbx.
+  Value TMP_BV_16_3 (2 bytes)
+    was read at address %rbx.
+
+Information about memory writes:
+  Address %rbx was updated to
+    ((_ extract 15 0) (bvadd (concat #b0 TMP_BV_16_1) (concat #b0 TMP_BV_16_1))) (2 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

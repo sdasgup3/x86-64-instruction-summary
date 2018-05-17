@@ -1,0 +1,23 @@
+code: addss (%rbx), %xmm1
+
+  maybe read:      { %rbx %xmm1 }
+  must read:       { %rbx %xmm1 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse }
+
+Formula:
+
+%ymm1  : (concat ((_ extract 255 128) %ymm1)
+        (concat ((_ extract 127 32) %ymm1)
+                (add_single ((_ extract 31 0) %ymm1) TMP_BV_32_0)))
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

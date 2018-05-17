@@ -1,0 +1,19 @@
+code: movq %xmm1, %rbx
+
+  maybe read:      { %xmm1 }
+  must read:       { %xmm1 }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+movq %xmm1, %rbx: Hindex5(9)
+movq %xmm1, %rbx: Hindex5(9)
+Formula:
+
+%rbx   : ((_ extract 63 0) %ymm1)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

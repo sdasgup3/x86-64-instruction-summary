@@ -1,0 +1,24 @@
+code: vucomiss %xmm2, %xmm1
+
+  maybe read:      { %xmm1 %xmm2 }
+  must read:       { %xmm1 %xmm2 }
+  maybe write:     { %cf %pf %af %zf %sf %of }
+  must write:      { %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%cf    : (or (= (comiss ((_ extract 31 0) %ymm1) ((_ extract 31 0) %ymm2)) #b00)
+    (= (comiss ((_ extract 31 0) %ymm1) ((_ extract 31 0) %ymm2)) #b10))
+%pf    : (= (comiss ((_ extract 31 0) %ymm1) ((_ extract 31 0) %ymm2)) #b00)
+%af    : false
+%zf    : (or (= (comiss ((_ extract 31 0) %ymm1) ((_ extract 31 0) %ymm2)) #b00)
+    (= (comiss ((_ extract 31 0) %ymm1) ((_ extract 31 0) %ymm2)) #b11))
+%sf    : false
+%of    : false
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

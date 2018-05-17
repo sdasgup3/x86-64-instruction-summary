@@ -1,0 +1,24 @@
+code: blsrq %rcx, %rbx
+
+  maybe read:      { %rcx }
+  must read:       { %rcx }
+  maybe write:     { %rbx %cf %zf %sf %of }
+  must write:      { %rbx %cf %zf %sf %of }
+  maybe undef:     { %pf %af }
+  must undef:      { %pf %af }
+  required flags:  { bmi1 }
+
+Formula:
+
+%rbx   : (bvand (bvsub %rcx #x0000000000000001) %rcx)
+
+%cf    : (= %rcx #x0000000000000000)
+%zf    : (= (bvand (bvsub %rcx #x0000000000000001) %rcx) #x0000000000000000)
+%sf    : (= (bvand ((_ extract 63 63) (bvsub %rcx #x0000000000000001))
+          ((_ extract 63 63) %rcx))
+   #b1)
+%of    : false
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

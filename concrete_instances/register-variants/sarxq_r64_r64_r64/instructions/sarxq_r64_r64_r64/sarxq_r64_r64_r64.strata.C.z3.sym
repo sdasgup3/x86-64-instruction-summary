@@ -1,0 +1,27 @@
+code: sarxq %rdx, %rcx, %rbx
+
+  maybe read:      { %rcx %rdx }
+  must read:       { %rcx %rdx }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { bmi2 }
+
+sarxq %rdx, %rcx, %rbx: Hindex8(9)
+sarxq %rdx, %rcx, %rbx: Hindex8(9)
+callq .move_064_032_rdx_r10d_r11d: Hindex8(9)
+callq .move_064_032_rcx_r8d_r9d: Hindex8(9)
+callq .move_008_016_r10b_r11b_cx: Hindex8(9)
+callq .move_032_064_r8d_r9d_rbx: Hindex8(9)
+sarq %cl, %rbx: Hindex7(9)
+Formula:
+
+%rbx   : (let ((a!1 (bvashr (concat %rcx #b0)
+                   (concat #b000000000000000000000000000000000000000000000000000000000
+                           (bvand ((_ extract 7 0) %rdx) #x3f)))))
+  ((_ extract 64 1) a!1))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

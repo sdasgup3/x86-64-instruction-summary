@@ -1,0 +1,41 @@
+code: imulq $0x0, (%rcx), %rbx
+
+  maybe read:      { %rcx }
+  must read:       { %rcx }
+  maybe write:     { %rbx %cf %of }
+  must write:      { %rbx %cf %of }
+  maybe undef:     { %pf %af %zf %sf }
+  must undef:      { %pf %af %zf %sf }
+  required flags:  { }
+
+Formula:
+
+%rbx   : ((_ extract 63 0)
+  (bvmul ((_ sign_extend 64) TMP_BV_64_0) ((_ sign_extend 120) #x00)))
+
+%cf    : (let ((a!1 ((_ sign_extend 64)
+             ((_ extract 63 0)
+               (bvmul ((_ sign_extend 64) TMP_BV_64_0)
+                      ((_ sign_extend 120) #x00))))))
+  (not (= (bvmul ((_ sign_extend 64) TMP_BV_64_0) ((_ sign_extend 120) #x00))
+          a!1)))
+%pf    : TMP_BOOL_2
+%af    : TMP_BOOL_1
+%zf    : TMP_BOOL_0
+%sf    : (= ((_ extract 63 63)
+     (bvmul ((_ sign_extend 64) TMP_BV_64_0) ((_ sign_extend 120) #x00)))
+   #b1)
+%of    : (let ((a!1 ((_ sign_extend 64)
+             ((_ extract 63 0)
+               (bvmul ((_ sign_extend 64) TMP_BV_64_0)
+                      ((_ sign_extend 120) #x00))))))
+  (not (= (bvmul ((_ sign_extend 64) TMP_BV_64_0) ((_ sign_extend 120) #x00))
+          a!1)))
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rcx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

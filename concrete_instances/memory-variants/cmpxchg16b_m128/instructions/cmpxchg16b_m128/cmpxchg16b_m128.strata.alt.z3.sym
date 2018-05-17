@@ -1,0 +1,30 @@
+code: cmpxchg16b (%rbx)
+
+  maybe read:      { %rax %rdx %rbx }
+  must read:       { %rax %rdx %rbx }
+  maybe write:     { %rax %rcx %rdx %rbx %zf }
+  must write:      { %zf }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { cx16 }
+
+Formula:
+
+%rax   : (ite (= (concat %rdx %rax) TMP_BV_128_0) %rax ((_ extract 63 0) TMP_BV_128_0))
+%rdx   : (ite (= (concat %rdx %rax) TMP_BV_128_0) %rdx ((_ extract 127 64) TMP_BV_128_0))
+
+%zf    : (= TMP_BV_128_0 (concat %rdx %rax))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+Information about memory writes:
+  Address %rbx was updated to
+    (ite (= (concat %rdx %rax) TMP_BV_128_0) (concat %rcx %rbx) TMP_BV_128_0) (16 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv
+    (and (not sigfpe) (not sigbus) false)
+    (and (not sigfpe) (not sigbus) false))

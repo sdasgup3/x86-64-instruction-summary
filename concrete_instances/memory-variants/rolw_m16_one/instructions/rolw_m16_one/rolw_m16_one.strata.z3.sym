@@ -1,0 +1,61 @@
+code: rolw $0x1, (%rbx)
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { %cf %of }
+  must write:      { %cf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%cf    : (let ((a!1 (= ((_ extract 16 16)
+                (bvadd (concat #b0 TMP_BV_16_1) (concat #b0 TMP_BV_16_1)))
+              #b1)))
+(let ((a!2 (bvadd (ite a!1
+                       (bvadd (concat #b0 TMP_BV_16_2) #b00000000000000001)
+                       (concat #b0 TMP_BV_16_2))
+                  (concat #b0 TMP_BV_16_3))))
+  (= ((_ extract 16 16) a!2) #b1)))
+%of    : (let ((a!1 (= ((_ extract 16 16)
+                (bvadd (concat #b0 TMP_BV_16_1) (concat #b0 TMP_BV_16_1)))
+              #b1)))
+(let ((a!2 (bvadd (ite a!1
+                       (bvadd (concat #b0 TMP_BV_16_2) #b00000000000000001)
+                       (concat #b0 TMP_BV_16_2))
+                  (concat #b0 TMP_BV_16_3))))
+(let ((a!3 (not (= (= ((_ extract 15 15) TMP_BV_16_4) #b1)
+                   (= ((_ extract 15 15) a!2) #b1)))))
+  (and (= (= ((_ extract 15 15) TMP_BV_16_4) #b1)
+          (= ((_ extract 15 15) TMP_BV_16_5) #b1))
+       a!3))))
+
+Information about memory reads:
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rbx.
+  Value TMP_BV_16_1 (2 bytes)
+    was read at address %rbx.
+  Value TMP_BV_16_2 (2 bytes)
+    was read at address %rbx.
+  Value TMP_BV_16_3 (2 bytes)
+    was read at address %rbx.
+  Value TMP_BV_16_4 (2 bytes)
+    was read at address %rbx.
+  Value TMP_BV_16_5 (2 bytes)
+    was read at address %rbx.
+
+Information about memory writes:
+  Address %rbx was updated to
+    (let ((a!1 (= ((_ extract 16 16)
+                (bvadd (concat #b0 TMP_BV_16_1) (concat #b0 TMP_BV_16_1)))
+              #b1)))
+(let ((a!2 (bvadd (ite a!1
+                       (bvadd (concat #b0 TMP_BV_16_2) #b00000000000000001)
+                       (concat #b0 TMP_BV_16_2))
+                  (concat #b0 TMP_BV_16_3))))
+  ((_ extract 15 0) a!2))) (2 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

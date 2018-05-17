@@ -1,0 +1,104 @@
+code: vfmadd213ps (%rbx), %xmm2, %xmm1
+
+  maybe read:      { %rbx %xmm1 %xmm2 }
+  must read:       { %rbx %xmm1 %xmm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { fma }
+
+Formula:
+
+%ymm1  : (let ((a!1 (bvxor #x00000000
+                  ((_ extract 127 96) TMP_BV_128_0)
+                  (bvor #x00000000
+                        (bvxor #x00000000 ((_ extract 127 96) TMP_BV_128_1)))))
+      (a!2 (bvxor #x00000000
+                  ((_ extract 95 64) TMP_BV_128_4)
+                  (bvor #x00000000
+                        (bvxor #x00000000 ((_ extract 95 64) TMP_BV_128_5)))))
+      (a!4 (bvxor (bvxor #x0000000000000000 ((_ extract 127 64) TMP_BV_128_8))
+                  (bvor #x0000000000000000
+                        (bvxor #x0000000000000000
+                               ((_ extract 127 64) TMP_BV_128_8)))))
+      (a!5 (bvxor #x00000000
+                  ((_ extract 63 32) TMP_BV_128_9)
+                  (bvor #x00000000
+                        (bvxor #x00000000 ((_ extract 63 32) TMP_BV_128_10)))))
+      (a!6 (bvxor #x00000000
+                  ((_ extract 31 0) TMP_BV_128_13)
+                  (bvor #x00000000
+                        (bvxor #x00000000 ((_ extract 31 0) TMP_BV_128_14)))))
+      (a!8 (bvxor (bvxor #x0000000000000000 ((_ extract 63 0) TMP_BV_128_17))
+                  (bvor #x0000000000000000
+                        (bvxor #x0000000000000000
+                               ((_ extract 63 0) TMP_BV_128_17))))))
+(let ((a!3 (concat (vfmsub132_single ((_ extract 127 96) %ymm2)
+                                     (vfnmsub132_single
+                                       a!1
+                                       ((_ extract 127 96) TMP_BV_128_2)
+                                       ((_ extract 127 96) TMP_BV_128_3))
+                                     ((_ extract 127 96) %ymm1))
+                   (vfmsub132_single ((_ extract 95 64) %ymm2)
+                                     (vfnmsub132_single
+                                       a!2
+                                       ((_ extract 95 64) TMP_BV_128_6)
+                                       ((_ extract 95 64) TMP_BV_128_7))
+                                     ((_ extract 95 64) %ymm1))))
+      (a!7 (concat (vfmsub132_single ((_ extract 63 32) %ymm2)
+                                     (vfnmsub132_single
+                                       a!5
+                                       ((_ extract 63 32) TMP_BV_128_11)
+                                       ((_ extract 63 32) TMP_BV_128_12))
+                                     ((_ extract 63 32) %ymm1))
+                   (vfmsub132_single ((_ extract 31 0) %ymm2)
+                                     (vfnmsub132_single
+                                       a!6
+                                       ((_ extract 31 0) TMP_BV_128_15)
+                                       ((_ extract 31 0) TMP_BV_128_16))
+                                     ((_ extract 31 0) %ymm1)))))
+  (concat (concat #x0000000000000000 #x0000000000000000)
+          (concat (bvor a!3 a!4) (bvor a!7 a!8)))))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+  Value TMP_BV_128_1 (16 bytes)
+    was read at address %rbx.
+  Value TMP_BV_128_2 (16 bytes)
+    was read at address %rbx.
+  Value TMP_BV_128_3 (16 bytes)
+    was read at address %rbx.
+  Value TMP_BV_128_4 (16 bytes)
+    was read at address %rbx.
+  Value TMP_BV_128_5 (16 bytes)
+    was read at address %rbx.
+  Value TMP_BV_128_6 (16 bytes)
+    was read at address %rbx.
+  Value TMP_BV_128_7 (16 bytes)
+    was read at address %rbx.
+  Value TMP_BV_128_8 (16 bytes)
+    was read at address %rbx.
+  Value TMP_BV_128_9 (16 bytes)
+    was read at address %rbx.
+  Value TMP_BV_128_10 (16 bytes)
+    was read at address %rbx.
+  Value TMP_BV_128_11 (16 bytes)
+    was read at address %rbx.
+  Value TMP_BV_128_12 (16 bytes)
+    was read at address %rbx.
+  Value TMP_BV_128_13 (16 bytes)
+    was read at address %rbx.
+  Value TMP_BV_128_14 (16 bytes)
+    was read at address %rbx.
+  Value TMP_BV_128_15 (16 bytes)
+    was read at address %rbx.
+  Value TMP_BV_128_16 (16 bytes)
+    was read at address %rbx.
+  Value TMP_BV_128_17 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

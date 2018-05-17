@@ -1,0 +1,105 @@
+code: vpacksswb (%rbx), %xmm2, %xmm1
+
+  maybe read:      { %rbx %xmm2 }
+  must read:       { %rbx %xmm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%ymm1  : (let ((a!1 (ite (bvsgt ((_ extract 127 112) TMP_BV_128_0) #x007f)
+                #x7f
+                (ite (bvslt ((_ extract 127 112) TMP_BV_128_0) #xff80)
+                     #x80
+                     ((_ extract 119 112) TMP_BV_128_0))))
+      (a!2 (ite (bvsgt ((_ extract 111 96) TMP_BV_128_0) #x007f)
+                #x7f
+                (ite (bvslt ((_ extract 111 96) TMP_BV_128_0) #xff80)
+                     #x80
+                     ((_ extract 103 96) TMP_BV_128_0))))
+      (a!3 (ite (bvsgt ((_ extract 95 80) TMP_BV_128_0) #x007f)
+                #x7f
+                (ite (bvslt ((_ extract 95 80) TMP_BV_128_0) #xff80)
+                     #x80
+                     ((_ extract 87 80) TMP_BV_128_0))))
+      (a!4 (ite (bvsgt ((_ extract 79 64) TMP_BV_128_0) #x007f)
+                #x7f
+                (ite (bvslt ((_ extract 79 64) TMP_BV_128_0) #xff80)
+                     #x80
+                     ((_ extract 71 64) TMP_BV_128_0))))
+      (a!5 (ite (bvsgt ((_ extract 63 48) TMP_BV_128_0) #x007f)
+                #x7f
+                (ite (bvslt ((_ extract 63 48) TMP_BV_128_0) #xff80)
+                     #x80
+                     ((_ extract 55 48) TMP_BV_128_0))))
+      (a!6 (ite (bvsgt ((_ extract 47 32) TMP_BV_128_0) #x007f)
+                #x7f
+                (ite (bvslt ((_ extract 47 32) TMP_BV_128_0) #xff80)
+                     #x80
+                     ((_ extract 39 32) TMP_BV_128_0))))
+      (a!7 (ite (bvsgt ((_ extract 31 16) TMP_BV_128_0) #x007f)
+                #x7f
+                (ite (bvslt ((_ extract 31 16) TMP_BV_128_0) #xff80)
+                     #x80
+                     ((_ extract 23 16) TMP_BV_128_0))))
+      (a!8 (ite (bvsgt ((_ extract 15 0) TMP_BV_128_0) #x007f)
+                #x7f
+                (ite (bvslt ((_ extract 15 0) TMP_BV_128_0) #xff80)
+                     #x80
+                     ((_ extract 7 0) TMP_BV_128_0))))
+      (a!9 (ite (bvsgt ((_ extract 127 112) %ymm2) #x007f)
+                #x7f
+                (ite (bvslt ((_ extract 127 112) %ymm2) #xff80)
+                     #x80
+                     ((_ extract 119 112) %ymm2))))
+      (a!10 (ite (bvsgt ((_ extract 111 96) %ymm2) #x007f)
+                 #x7f
+                 (ite (bvslt ((_ extract 111 96) %ymm2) #xff80)
+                      #x80
+                      ((_ extract 103 96) %ymm2))))
+      (a!11 (ite (bvsgt ((_ extract 95 80) %ymm2) #x007f)
+                 #x7f
+                 (ite (bvslt ((_ extract 95 80) %ymm2) #xff80)
+                      #x80
+                      ((_ extract 87 80) %ymm2))))
+      (a!12 (ite (bvsgt ((_ extract 79 64) %ymm2) #x007f)
+                 #x7f
+                 (ite (bvslt ((_ extract 79 64) %ymm2) #xff80)
+                      #x80
+                      ((_ extract 71 64) %ymm2))))
+      (a!13 (ite (bvsgt ((_ extract 63 48) %ymm2) #x007f)
+                 #x7f
+                 (ite (bvslt ((_ extract 63 48) %ymm2) #xff80)
+                      #x80
+                      ((_ extract 55 48) %ymm2))))
+      (a!14 (ite (bvsgt ((_ extract 47 32) %ymm2) #x007f)
+                 #x7f
+                 (ite (bvslt ((_ extract 47 32) %ymm2) #xff80)
+                      #x80
+                      ((_ extract 39 32) %ymm2))))
+      (a!15 (ite (bvsgt ((_ extract 31 16) %ymm2) #x007f)
+                 #x7f
+                 (ite (bvslt ((_ extract 31 16) %ymm2) #xff80)
+                      #x80
+                      ((_ extract 23 16) %ymm2))))
+      (a!16 (ite (bvsgt ((_ extract 15 0) %ymm2) #x007f)
+                 #x7f
+                 (ite (bvslt ((_ extract 15 0) %ymm2) #xff80)
+                      #x80
+                      ((_ extract 7 0) %ymm2)))))
+(let ((a!17 (concat a!12 (concat a!13 (concat a!14 (concat a!15 a!16))))))
+(let ((a!18 (concat a!8 (concat a!9 (concat a!10 (concat a!11 a!17))))))
+(let ((a!19 (concat a!4 (concat a!5 (concat a!6 (concat a!7 a!18))))))
+  (concat #x00000000000000000000000000000000
+          (concat a!1 (concat a!2 (concat a!3 a!19))))))))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

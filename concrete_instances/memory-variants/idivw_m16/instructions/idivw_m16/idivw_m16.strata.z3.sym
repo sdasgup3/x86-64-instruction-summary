@@ -1,0 +1,35 @@
+code: idivw (%rbx)
+
+  maybe read:      { %ax %dx %rbx }
+  must read:       { %ax %dx %rbx }
+  maybe write:     { %ax %dx }
+  must write:      { %ax %dx }
+  maybe undef:     { %cf %pf %af %zf %sf %of }
+  must undef:      { %cf %pf %af %zf %sf %of }
+  required flags:  { }
+
+Formula:
+
+%rax   : (concat ((_ extract 63 16) %rax)
+        (idiv_quotient_int16
+          (concat ((_ extract 15 0) %rdx) ((_ extract 15 0) %rax))
+          TMP_BV_16_0))
+%rdx   : (concat ((_ extract 63 16) %rdx)
+        (idiv_remainder_int16
+          (concat ((_ extract 15 0) %rdx) ((_ extract 15 0) %rax))
+          TMP_BV_16_0))
+
+%cf    : TMP_BOOL_5
+%pf    : TMP_BOOL_2
+%af    : TMP_BOOL_1
+%zf    : TMP_BOOL_0
+%sf    : TMP_BOOL_3
+%of    : TMP_BOOL_4
+
+Information about memory reads:
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

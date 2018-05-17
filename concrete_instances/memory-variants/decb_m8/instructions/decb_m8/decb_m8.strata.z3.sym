@@ -1,0 +1,40 @@
+code: decb (%rbx)
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { %pf %af %zf %sf %of }
+  must write:      { %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%pf    : (let ((a!1 (xor (= ((_ extract 0 0) (bvsub TMP_BV_8_0 #x01)) #b1)
+                (= ((_ extract 1 1) (bvsub TMP_BV_8_0 #x01)) #b1)
+                (= ((_ extract 2 2) (bvsub TMP_BV_8_0 #x01)) #b1)
+                (= ((_ extract 3 3) (bvsub TMP_BV_8_0 #x01)) #b1)
+                (= ((_ extract 4 4) (bvsub TMP_BV_8_0 #x01)) #b1)
+                (= ((_ extract 5 5) (bvsub TMP_BV_8_0 #x01)) #b1)
+                (= ((_ extract 6 6) (bvsub TMP_BV_8_0 #x01)) #b1)
+                (= ((_ extract 7 7) (bvsub TMP_BV_8_0 #x01)) #b1))))
+  (not a!1))
+%af    : (= ((_ extract 3 0) TMP_BV_8_0) #x0)
+%zf    : (= (bvsub TMP_BV_8_0 #x01) #x00)
+%sf    : (= ((_ extract 7 7) (bvsub TMP_BV_8_0 #x01)) #b1)
+%of    : (and (= ((_ extract 7 7) TMP_BV_8_0) #b1)
+     (= ((_ extract 6 0) TMP_BV_8_0) #b0000000))
+
+Information about memory reads:
+  Value TMP_BV_8_0 (1 bytes)
+    was read at address %rbx.
+
+Information about memory writes:
+  Address %rbx was updated to
+    (bvsub TMP_BV_8_0 #x01) (1 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv
+    (and (not sigfpe) (not sigbus) false)
+    (and (not sigfpe) (not sigbus) false))

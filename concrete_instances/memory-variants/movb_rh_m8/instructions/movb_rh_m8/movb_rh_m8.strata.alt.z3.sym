@@ -1,0 +1,21 @@
+code: movb (%rbx), %ah
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { %ah }
+  must write:      { %ah }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rax   : (concat (concat ((_ extract 63 16) %rax) TMP_BV_8_0) ((_ extract 7 0) %rax))
+
+Information about memory reads:
+  Value TMP_BV_8_0 (1 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))

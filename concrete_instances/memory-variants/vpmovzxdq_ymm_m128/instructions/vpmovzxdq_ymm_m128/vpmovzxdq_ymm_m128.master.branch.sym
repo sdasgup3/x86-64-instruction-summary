@@ -1,0 +1,26 @@
+code: vpmovzxdq (%rbx), %ymm1
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+vpmovzxdq (%rbx), %ymm1: Hindex0(9)
+vpmovzxdq (%rbx), %ymm1: Hindex0(9)
+Formula:
+
+%ymm1  : (let ((a!1 (concat (concat #x00000000 ((_ extract 95 64) TMP_BV_128_0))
+                   (concat (concat #x00000000 ((_ extract 63 32) TMP_BV_128_0))
+                           (concat #x00000000 ((_ extract 31 0) TMP_BV_128_0))))))
+  (concat (concat #x00000000 ((_ extract 127 96) TMP_BV_128_0)) a!1))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))
