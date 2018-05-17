@@ -1,32 +1,29 @@
-
+# Jobs Chart
 
 | Id  | Instr Category  | Date  | Purpose  | Count   | Input | Output | Command |
-|--|--|--|--|--|--|--|--|--|
-| 4 | register | 2 apr | not-stratified-not-stoked | 125 = 129 - 1 (mispelled) - 3 (pextl/q and cmpxchgl) | job.04 | runlog.04 | cd strata-data/output-strata/instruction-summary;   
-parallel -j6  -a nightlyruns/job.04  "~/x86-semantics/scripts/process_spec.pl --check_stoke --file concrete_instances/register-variants/{}/check_stoke.04.txt --instructions_path concrete_instances/register-variants/{}/instructions  --testid 04  |& tee ~/Junk/log |
+|--|--|--|--|--|--|--|--|
+| 4 | register | 2 apr | not-stratified-not-stoked | 125 = 129 - 1 (mispelled) - 3 (pextl/q and cmpxchgl) | job.04 |runlog.04 | 1 |
+| 5 | register | 2 apr | not-stratified-stoked |  count 218 = Stoked only by strata version of stoked; | job.05 | runlog.05 | 2 |
+| 6 | register | 2 apr | not-stratified-stoked |  count 44 = Stoked only by master stoke version; The strata stoke version lacks them. | job.06 | runlog.06 | 3 |
 
 
-## ./info.05
-2nd April: Registers Unstratified Stoked : check stoke : 
-count 218 = Stoked only by strata version of stoked; The master stoke version also have them, then we want to see if the strata's stoke are 
-good enough; that will prevent us from trying to build master stoke in tyler which is giving gcc comptinbiliy issues
+## Commands
+ 1. 
+ ```
+ cd strata-data/output-strata/instruction-summary;   parallel -j6  -a nightlyruns/job.04  "~/x86-semantics/scripts/process_spec.pl --check_stoke --file concrete_instances/register-variants/{}/check_stoke.04.txt --instructions_path concrete_instances/register-variants/{}/instructions  --testid 04  |& tee ~/Junk/log
+ ```
+ 2. 
+ ```
+ cd strata-data/output-strata/instruction-summary;   parallel -j6  -a nightlyruns/job.05  "~/x86-semantics/scripts/process_spec.pl --check_stoke --file concrete_instances/register-variants/{}/check_stoke.05.txt --instructions_path concrete_instances/register-variants/{}/instructions  --testid 05  |& tee ~/Junk/log
+ ```
+ 
+ 3. 
+ ```
+ cd strata-data/output-strata/instruction-summary;   parallel -j6  -a nightlyruns/job.06  "~/x86-semantics/scripts/process_spec.pl --check_stoke --file concrete_instances/register-variants/{}/check_stoke.06.txt --instructions_path concrete_instances/register-variants/{}/instructions  --testid 06  |& tee ~/Junk/log
+ ```
 
-Input:
-job.05
 
-Output:
-runlog.05
 
-done
-## ./info.06
-2nd April: Registers Unstratified Stoked : check stoke : 
-count 44 = Stoked only by master stoke version; The strata stoke version lacks them.
-
-Input:
-job.06
-
-Output:
-runlog.06
 
 ## ./info.11
 21 April: Register stratified istr  testing
