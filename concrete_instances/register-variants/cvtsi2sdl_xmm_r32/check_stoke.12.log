@@ -1,0 +1,12 @@
+[4m[1m[34mFiring Last 1[0m
+Thread 1 start: cvtsi2sdl_xmm_r32
+timeout 15m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/register-variants/cvtsi2sdl_xmm_r32/instructions/cvtsi2sdl_xmm_r32/cvtsi2sdl_xmm_r32.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm1 %mxcsr::rc[0] }" --live_out "{ %xmm1 }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Execution time cvtsi2sdl_xmm_r32: 900 s
+Thread 1 done!: cvtsi2sdl_xmm_r32
