@@ -6,7 +6,7 @@
 | 5 | register | 2 apr | not-stratified-stoked |  count 218 = Stoked only by strata version of stoked; | job.05 | runlog.05 | 5 |
 | 6 | register | 2 apr | not-stratified-stoked |  count 44 = Stoked only by master stoke version; The strata stoke version lacks them. | job.06 | runlog.06 | 6 |
 | 12 | register | 18 may | stratified |  743 = 51_692. To check the runtime. Help in choosing a simpler version if avaailable. | job.12 | runlog.12 | 12 |
-| 13 | register | 19 may | all |  1083 = 743_391. To know sat check with not (A==B) and ensure that the ones failing the check do involve uifs. | job.13 | runlog.13 | 13 |
+| 13 | register | 19 may | all |  1083 = 743_391. sat-check with `not (A==B)` and ensure that the ones failing the check do involve uifs. | job.13 | runlog.13 | 13 |
 
 
 ## Commands
