@@ -15,12 +15,12 @@
  ```
  5. 
  ```
- cd strata-data/output-strata/instruction-summary;   parallel -j6  -a nightlyruns/job.05  "~/x86-semantics/scripts/process_spec.pl --check_stoke --file concrete_instances/register-variants/{}/check_stoke.05.txt --instructions_path concrete_instances/register-variants/{}/instructions  --testid 05  |& tee ~/Junk/log
+ cd strata-data/output-strata/instruction-summary;   parallel -j6  -a nightlyruns/job.05  "~/x86-semantics/scripts/process_spec.pl --check_stoke --file concrete_instances/register-variants/{}/check_stoke.txt --instructions_path concrete_instances/register-variants/{}/instructions  --testid 05  |& tee concrete_instances/register-variants/{}/check_stoke.05.log"  |& tee nightlyruns/runlog.05
  ```
  
  6. 
  ```
- cd strata-data/output-strata/instruction-summary;   parallel -j6  -a nightlyruns/job.06  "~/x86-semantics/scripts/process_spec.pl --check_stoke --file concrete_instances/register-variants/{}/check_stoke.06.txt --instructions_path concrete_instances/register-variants/{}/instructions  --testid 06  |& tee ~/Junk/log
+ cd strata-data/output-strata/instruction-summary;   parallel -j6  -a nightlyruns/job.06  "~/x86-semantics/scripts/process_spec.pl --check_stoke --file concrete_instances/register-variants/{}/check_stoke.txt --instructions_path concrete_instances/register-variants/{}/instructions  --testid 06  |& tee concrete_instances/register-variants/{}/check_stoke.06.log"  |& tee nightlyruns/runlog.06
  ```
  
  12. 
