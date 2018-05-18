@@ -10,7 +10,7 @@
 ## Commands
  1. 
  ```
- cd strata-data/output-strata/instruction-summary;   parallel -j6  -a nightlyruns/job.04  "~/x86-semantics/scripts/process_spec.pl --check_stoke --file concrete_instances/register-variants/{}/check_stoke.04.txt --instructions_path concrete_instances/register-variants/{}/instructions  --testid 04  |& tee ~/Junk/log
+ cd strata-data/output-strata/instruction-summary;   parallel -j6  -a nightlyruns/job.04  "~/x86-semantics/scripts/process_spec.pl --check_stoke --file concrete_instances/register-variants/{}/check_stoke.txt --instructions_path concrete_instances/register-variants/{}/instructions  --testid 04 |& tee concrete_instances/register-variants/{}/check_stoke.04.log"  |& tee nightlyruns/runlog.04 
  ```
  2. 
  ```
