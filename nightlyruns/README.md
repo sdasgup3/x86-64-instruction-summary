@@ -2,26 +2,31 @@
 
 | Id  | Instr Category  | Date  | Purpose  | Count   | Input | Output | Command |
 |--|--|--|--|--|--|--|--|
-| 4 | register | 2 apr | not-stratified-not-stoked | 125 = 129 - 1 (mispelled) - 3 (pextl/q and cmpxchgl) | job.04 |runlog.04 | 1 |
-| 5 | register | 2 apr | not-stratified-stoked |  count 218 = Stoked only by strata version of stoked; | job.05 | runlog.05 | 2 |
-| 6 | register | 2 apr | not-stratified-stoked |  count 44 = Stoked only by master stoke version; The strata stoke version lacks them. | job.06 | runlog.06 | 3 |
+| 4 | register | 2 apr | not-stratified-not-stoked | 125 = 129 - 1 (mispelled) - 3 (pextl/q and cmpxchgl) | job.04 |runlog.04 | 4 |
+| 5 | register | 2 apr | not-stratified-stoked |  count 218 = Stoked only by strata version of stoked; | job.05 | runlog.05 | 5 |
+| 6 | register | 2 apr | not-stratified-stoked |  count 44 = Stoked only by master stoke version; The strata stoke version lacks them. | job.06 | runlog.06 | 6 |
+| 12 | register | 18 may | stratified |  743 = 51_692. To check the runtime. Help in choosing a simpler version if avaailable. | job.12 | runlog.12 | 12 |
 
 
 ## Commands
- 1. 
+ 4. 
  ```
  cd strata-data/output-strata/instruction-summary;   parallel -j6  -a nightlyruns/job.04  "~/x86-semantics/scripts/process_spec.pl --check_stoke --file concrete_instances/register-variants/{}/check_stoke.txt --instructions_path concrete_instances/register-variants/{}/instructions  --testid 04 |& tee concrete_instances/register-variants/{}/check_stoke.04.log"  |& tee nightlyruns/runlog.04 
  ```
- 2. 
+ 5. 
  ```
  cd strata-data/output-strata/instruction-summary;   parallel -j6  -a nightlyruns/job.05  "~/x86-semantics/scripts/process_spec.pl --check_stoke --file concrete_instances/register-variants/{}/check_stoke.05.txt --instructions_path concrete_instances/register-variants/{}/instructions  --testid 05  |& tee ~/Junk/log
  ```
  
- 3. 
+ 6. 
  ```
  cd strata-data/output-strata/instruction-summary;   parallel -j6  -a nightlyruns/job.06  "~/x86-semantics/scripts/process_spec.pl --check_stoke --file concrete_instances/register-variants/{}/check_stoke.06.txt --instructions_path concrete_instances/register-variants/{}/instructions  --testid 06  |& tee ~/Junk/log
  ```
-
+ 
+ 12. 
+ ```
+ cd strata-data/output-strata/instruction-summary;   parallel -j20  -a nightlyruns/job.12  "~/x86-semantics/scripts/process_spec.pl --check_stoke --file concrete_instances/register-variants/{}/check_stoke.txt --instructions_path concrete_instances/register-variants/{}/instructions  --testid 12  |& tee concrete_instances/register-variants/{}/check_stoke.12.log"  |& tee nightlyruns/runlog.12
+ ```
 
 
 
