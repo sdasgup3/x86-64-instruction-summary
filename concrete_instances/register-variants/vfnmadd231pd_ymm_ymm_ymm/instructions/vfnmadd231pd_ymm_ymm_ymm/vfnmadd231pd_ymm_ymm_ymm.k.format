@@ -12,13 +12,6 @@ Formula:
 
 %ymm1  : concatenateMInt( concatenateMInt( vfnmadd132_double(extractMInt( %ymm2, 0, 64), extractMInt( %ymm1, 0, 64), extractMInt( %ymm3, 0, 64)), vfnmadd132_double(extractMInt( %ymm2, 64, 128), extractMInt( %ymm1, 64, 128), extractMInt( %ymm3, 64, 128))), concatenateMInt( vfnmadd132_double(extractMInt( %ymm2, 128, 192), extractMInt( %ymm1, 128, 192), extractMInt( %ymm3, 128, 192)), vfnmadd132_double(extractMInt( %ymm2, 192, 256), extractMInt( %ymm1, 192, 256), extractMInt( %ymm3, 192, 256))))
 
-%cf    : (#ifMInt %cf #then mi(1, 1) #else mi(1, 0)#fi)
-%pf    : (#ifMInt %pf #then mi(1, 1) #else mi(1, 0)#fi)
-%af    : (#ifMInt %af #then mi(1, 1) #else mi(1, 0)#fi)
-%zf    : (#ifMInt %zf #then mi(1, 1) #else mi(1, 0)#fi)
-%sf    : (#ifMInt %sf #then mi(1, 1) #else mi(1, 0)#fi)
-%of    : (#ifMInt %of #then mi(1, 1) #else mi(1, 0)#fi)
-
 sigfpe  : sigfpe
 sigbus  : sigbus
 sigsegv : sigsegv

@@ -12,7 +12,6 @@ Formula:
 
 %rbx   : concatenateMInt( extractMInt( %rbx, 0, 56), extractMInt( addMInt( mi(9, 255), concatenateMInt( mi(1, 0), extractMInt( %rbx, 56, 64))), 1, 9))
 
-%cf    : (#ifMInt %cf #then mi(1, 1) #else mi(1, 0)#fi)
 %pf    : getParity(extractMInt( addMInt( mi(9, 255), concatenateMInt( mi(1, 0), extractMInt( %rbx, 56, 64))), 1, 9))
 %af    : extractMInt( addMInt( mi(5, 15), concatenateMInt( mi(1, 0), extractMInt( %rbx, 60, 64))), 0, 1)
 %zf    : (#ifMInt eqMInt( extractMInt( addMInt( mi(9, 255), concatenateMInt( mi(1, 0), extractMInt( %rbx, 56, 64))), 1, 9), mi(8, 0)) #then mi(1, 1) #else mi(1, 0)#fi)

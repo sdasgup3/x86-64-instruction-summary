@@ -13,10 +13,6 @@ Formula:
 %rbx   : concatenateMInt( extractMInt( %rbx, 0, 48), extractMInt( addMInt( (#ifMInt %cf #then addMInt( concatenateMInt( mi(1, 0), extractMInt( %rbx, 48, 64)), mi(17, 1)) #else concatenateMInt( mi(1, 0), extractMInt( %rbx, 48, 64))#fi), concatenateMInt( mi(1, 0), extractMInt( %rbx, 48, 64))), 1, 17))
 
 %cf    : extractMInt( addMInt( (#ifMInt %cf #then addMInt( concatenateMInt( mi(1, 0), extractMInt( %rbx, 48, 64)), mi(17, 1)) #else concatenateMInt( mi(1, 0), extractMInt( %rbx, 48, 64))#fi), concatenateMInt( mi(1, 0), extractMInt( %rbx, 48, 64))), 0, 1)
-%pf    : (#ifMInt %pf #then mi(1, 1) #else mi(1, 0)#fi)
-%af    : (#ifMInt %af #then mi(1, 1) #else mi(1, 0)#fi)
-%zf    : (#ifMInt %zf #then mi(1, 1) #else mi(1, 0)#fi)
-%sf    : (#ifMInt %sf #then mi(1, 1) #else mi(1, 0)#fi)
 %of    : (#ifMInt ((eqMInt( extractMInt( %rbx, 48, 49), mi(1, 1)) ==Bool eqMInt( extractMInt( %rbx, 48, 49), mi(1, 1))) andBool (notBool (eqMInt( extractMInt( %rbx, 48, 49), mi(1, 1)) ==Bool eqMInt( extractMInt( addMInt( (#ifMInt %cf #then addMInt( concatenateMInt( mi(1, 0), extractMInt( %rbx, 48, 64)), mi(17, 1)) #else concatenateMInt( mi(1, 0), extractMInt( %rbx, 48, 64))#fi), concatenateMInt( mi(1, 0), extractMInt( %rbx, 48, 64))), 1, 2), mi(1, 1))))) #then mi(1, 1) #else mi(1, 0)#fi)
 
 sigfpe  : sigfpe
