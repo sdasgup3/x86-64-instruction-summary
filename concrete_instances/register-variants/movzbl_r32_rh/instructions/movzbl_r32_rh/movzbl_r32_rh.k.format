@@ -12,13 +12,6 @@ Formula:
 
 %rbx   : concatenateMInt( mi(56, 0), extractMInt( %rax, 48, 56))
 
-%cf    : (#ifMInt %cf #then mi(1, 1) #else mi(1, 0)#fi)
-%pf    : (#ifMInt %pf #then mi(1, 1) #else mi(1, 0)#fi)
-%af    : (#ifMInt %af #then mi(1, 1) #else mi(1, 0)#fi)
-%zf    : (#ifMInt %zf #then mi(1, 1) #else mi(1, 0)#fi)
-%sf    : (#ifMInt %sf #then mi(1, 1) #else mi(1, 0)#fi)
-%of    : (#ifMInt %of #then mi(1, 1) #else mi(1, 0)#fi)
-
 sigfpe  : sigfpe
 sigbus  : sigbus
 sigsegv : sigsegv
