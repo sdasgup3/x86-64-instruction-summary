@@ -10,7 +10,7 @@ code: cltq
 
 Formula:
 
-%rax   : signExtend( extractMInt( %rax, 32, 64), 64)
+%rax   : mi(64, svalueMInt(extractMInt( %rax, 32, 64))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

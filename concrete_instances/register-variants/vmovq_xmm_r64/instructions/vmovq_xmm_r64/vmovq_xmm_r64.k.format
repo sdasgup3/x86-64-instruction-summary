@@ -10,7 +10,7 @@ code: vmovq %rbx, %xmm1
 
 Formula:
 
-%ymm1  : concatenateMInt( mi(128, 0), concatenateMInt( mi(64, 0), xorMInt( mi(64, 0), %rbx)))
+%ymm1  : concatenateMInt( mi(192, 0), xorMInt( %rbx, mi(64, 0)))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

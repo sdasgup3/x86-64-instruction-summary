@@ -10,7 +10,7 @@ code: vaddpd %xmm3, %xmm2, %xmm1
 
 Formula:
 
-%ymm1  : concatenateMInt( mi(64, 0), concatenateMInt( mi(64, 0), concatenateMInt( add_double(extractMInt( %ymm2, 128, 192), extractMInt( %ymm3, 128, 192)), add_double(extractMInt( %ymm2, 192, 256), extractMInt( %ymm3, 192, 256)))))
+%ymm1  : concatenateMInt( mi(128, 0), concatenateMInt( add_double(extractMInt( %ymm2, 128, 192), extractMInt( %ymm3, 128, 192)), add_double(extractMInt( %ymm2, 192, 256), extractMInt( %ymm3, 192, 256))))
 
 sigfpe  : sigfpe
 sigbus  : sigbus
