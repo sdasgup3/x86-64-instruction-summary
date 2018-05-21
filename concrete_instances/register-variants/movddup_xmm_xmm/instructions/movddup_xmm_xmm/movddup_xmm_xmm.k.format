@@ -1,0 +1,24 @@
+code: movddup %xmm2, %xmm1
+
+  maybe read:      { %xmm2 }
+  must read:       { %xmm2 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { pni }
+
+Formula:
+
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), concatenateMInt( extractMInt( %ymm2, 192, 256), extractMInt( %ymm2, 192, 256)))
+
+%cf    : (#ifMInt %cf #then mi(1, 1) #else mi(1, 0)#fi)
+%pf    : (#ifMInt %pf #then mi(1, 1) #else mi(1, 0)#fi)
+%af    : (#ifMInt %af #then mi(1, 1) #else mi(1, 0)#fi)
+%zf    : (#ifMInt %zf #then mi(1, 1) #else mi(1, 0)#fi)
+%sf    : (#ifMInt %sf #then mi(1, 1) #else mi(1, 0)#fi)
+%of    : (#ifMInt %of #then mi(1, 1) #else mi(1, 0)#fi)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

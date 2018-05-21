@@ -1,0 +1,25 @@
+code: xchgl %ecx, %ebx
+
+  maybe read:      { %ecx %ebx }
+  must read:       { %ecx %ebx }
+  maybe write:     { %rcx %rbx }
+  must write:      { %rcx %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rcx   : concatenateMInt( mi(32, 0), extractMInt( %rbx, 32, 64))
+%rbx   : concatenateMInt( mi(32, 0), extractMInt( %rcx, 32, 64))
+
+%cf    : (#ifMInt %cf #then mi(1, 1) #else mi(1, 0)#fi)
+%pf    : (#ifMInt %pf #then mi(1, 1) #else mi(1, 0)#fi)
+%af    : (#ifMInt %af #then mi(1, 1) #else mi(1, 0)#fi)
+%zf    : (#ifMInt %zf #then mi(1, 1) #else mi(1, 0)#fi)
+%sf    : (#ifMInt %sf #then mi(1, 1) #else mi(1, 0)#fi)
+%of    : (#ifMInt %of #then mi(1, 1) #else mi(1, 0)#fi)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv
