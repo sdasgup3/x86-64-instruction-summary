@@ -14,8 +14,8 @@ Formula:
 
 %cf    : mi(1, 0)
 %pf    : getParity(xorMInt( extractMInt( %rbx, 56, 64), extractMInt( %rcx, 56, 64)))
-%af    : (#ifMInt TMP_BOOL_1 #then mi(1, 1) #else mi(1, 0)#fi)
-%zf    : (#ifMInt eqMInt( xorMInt( extractMInt( %rbx, 48, 64), extractMInt( %rcx, 48, 64)), mi(16, 0)) #then mi(1, 1) #else mi(1, 0)#fi)
+%af    : (#ifMInt TMP_BOOL_1 #then mi(1, 1) #else mi(1, 0) #fi)
+%zf    : (#ifMInt eqMInt( xorMInt( extractMInt( %rbx, 48, 64), extractMInt( %rcx, 48, 64)), mi(16, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
 %sf    : xorMInt( extractMInt( %rbx, 48, 49), extractMInt( %rcx, 48, 49))
 %of    : mi(1, 0)
 

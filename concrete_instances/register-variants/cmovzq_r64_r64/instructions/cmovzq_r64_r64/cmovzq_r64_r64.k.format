@@ -10,7 +10,7 @@ code: cmovzq %rcx, %rbx
 
 Formula:
 
-%rbx   : (#ifMInt %zf #then %rcx #else %rbx#fi)
+%rbx   : (#ifMInt %zf #then %rcx #else %rbx #fi)
 
 sigfpe  : sigfpe
 sigbus  : sigbus

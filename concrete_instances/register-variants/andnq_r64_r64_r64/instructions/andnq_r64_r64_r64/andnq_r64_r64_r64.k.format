@@ -13,9 +13,9 @@ Formula:
 %rbx   : xorMInt( orMInt( %rdx, %rcx), %rcx)
 
 %cf    : mi(1, 0)
-%pf    : (#ifMInt TMP_BOOL_2 #then mi(1, 1) #else mi(1, 0)#fi)
-%af    : (#ifMInt TMP_BOOL_3 #then mi(1, 1) #else mi(1, 0)#fi)
-%zf    : (#ifMInt eqMInt( xorMInt( orMInt( %rdx, %rcx), %rcx), mi(64, 0)) #then mi(1, 1) #else mi(1, 0)#fi)
+%pf    : (#ifMInt TMP_BOOL_2 #then mi(1, 1) #else mi(1, 0) #fi)
+%af    : (#ifMInt TMP_BOOL_3 #then mi(1, 1) #else mi(1, 0) #fi)
+%zf    : (#ifMInt eqMInt( xorMInt( orMInt( %rdx, %rcx), %rcx), mi(64, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
 %sf    : xorMInt( orMInt( extractMInt( %rdx, 0, 1), extractMInt( %rcx, 0, 1)), extractMInt( %rcx, 0, 1))
 %of    : mi(1, 0)
 
