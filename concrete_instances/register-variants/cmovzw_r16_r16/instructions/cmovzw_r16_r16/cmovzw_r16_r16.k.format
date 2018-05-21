@@ -10,7 +10,7 @@ code: cmovzw %cx, %bx
 
 Formula:
 
-%rbx   : concatenateMInt( extractMInt( %rbx, 0, 48), (#ifMInt %zf #then extractMInt( %rcx, 48, 64) #else extractMInt( %rbx, 48, 64)#fi))
+%rbx   : (#ifMInt %zf #then concatenateMInt( extractMInt( %rbx, 0, 48), extractMInt( %rcx, 48, 64)) #else %rbx #fi)
 
 sigfpe  : sigfpe
 sigbus  : sigbus

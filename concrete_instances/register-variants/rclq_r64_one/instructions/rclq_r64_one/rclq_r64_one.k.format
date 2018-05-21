@@ -10,10 +10,10 @@ code: rclq $0x1, %rbx
 
 Formula:
 
-%rbx   : extractMInt( addMInt( (#ifMInt %cf #then addMInt( concatenateMInt( mi(1, 0), %rbx), mi(65, 1)) #else concatenateMInt( mi(1, 0), %rbx)#fi), concatenateMInt( mi(1, 0), %rbx)), 1, 65)
+%rbx   : extractMInt( addMInt( (#ifMInt %cf #then addMInt( concatenateMInt( mi(1, 0), %rbx), mi(65, 1)) #else concatenateMInt( mi(1, 0), %rbx) #fi), concatenateMInt( mi(1, 0), %rbx)), 1, 65)
 
-%cf    : extractMInt( addMInt( (#ifMInt %cf #then addMInt( concatenateMInt( mi(1, 0), %rbx), mi(65, 1)) #else concatenateMInt( mi(1, 0), %rbx)#fi), concatenateMInt( mi(1, 0), %rbx)), 0, 1)
-%of    : (#ifMInt ((eqMInt( extractMInt( %rbx, 0, 1), mi(1, 1)) ==Bool eqMInt( extractMInt( %rbx, 0, 1), mi(1, 1))) andBool (notBool (eqMInt( extractMInt( %rbx, 0, 1), mi(1, 1)) ==Bool eqMInt( extractMInt( addMInt( (#ifMInt %cf #then addMInt( concatenateMInt( mi(1, 0), %rbx), mi(65, 1)) #else concatenateMInt( mi(1, 0), %rbx)#fi), concatenateMInt( mi(1, 0), %rbx)), 1, 2), mi(1, 1))))) #then mi(1, 1) #else mi(1, 0)#fi)
+%cf    : extractMInt( addMInt( (#ifMInt %cf #then addMInt( concatenateMInt( mi(1, 0), %rbx), mi(65, 1)) #else concatenateMInt( mi(1, 0), %rbx) #fi), concatenateMInt( mi(1, 0), %rbx)), 0, 1)
+%of    : (#ifMInt ((eqMInt( extractMInt( %rbx, 0, 1), mi(1, 1)) ==Bool eqMInt( extractMInt( %rbx, 0, 1), mi(1, 1))) andBool (notBool (eqMInt( extractMInt( %rbx, 0, 1), mi(1, 1)) ==Bool eqMInt( extractMInt( addMInt( (#ifMInt %cf #then addMInt( concatenateMInt( mi(1, 0), %rbx), mi(65, 1)) #else concatenateMInt( mi(1, 0), %rbx) #fi), concatenateMInt( mi(1, 0), %rbx)), 1, 2), mi(1, 1))))) #then mi(1, 1) #else mi(1, 0) #fi)
 
 sigfpe  : sigfpe
 sigbus  : sigbus

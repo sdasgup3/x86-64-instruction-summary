@@ -10,7 +10,7 @@ code: sets %bl
 
 Formula:
 
-%rbx   : concatenateMInt( extractMInt( %rbx, 0, 56), (#ifMInt %sf #then mi(8, 1) #else mi(8, 0)#fi))
+%rbx   : (#ifMInt %sf #then concatenateMInt( extractMInt( %rbx, 0, 56), mi(8, 1)) #else concatenateMInt( extractMInt( %rbx, 0, 56), mi(8, 0)) #fi)
 
 sigfpe  : sigfpe
 sigbus  : sigbus
