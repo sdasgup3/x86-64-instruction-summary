@@ -1,0 +1,24 @@
+code: cmovzq %rcx, %rbx
+
+  maybe read:      { %rcx %zf }
+  must read:       { %rcx %zf }
+  maybe write:     { %rbx }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { cmov }
+
+Formula:
+
+%rbx   : (#ifMInt %zf #then %rcx #else %rbx#fi)
+
+%cf    : (#ifMInt %cf #then mi(1, 1) #else mi(1, 0)#fi)
+%pf    : (#ifMInt %pf #then mi(1, 1) #else mi(1, 0)#fi)
+%af    : (#ifMInt %af #then mi(1, 1) #else mi(1, 0)#fi)
+%zf    : (#ifMInt %zf #then mi(1, 1) #else mi(1, 0)#fi)
+%sf    : (#ifMInt %sf #then mi(1, 1) #else mi(1, 0)#fi)
+%of    : (#ifMInt %of #then mi(1, 1) #else mi(1, 0)#fi)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

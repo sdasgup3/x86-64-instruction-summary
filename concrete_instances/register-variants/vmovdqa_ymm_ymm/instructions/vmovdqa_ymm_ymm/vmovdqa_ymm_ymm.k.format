@@ -1,0 +1,24 @@
+code: vmovdqa %ymm2, %ymm1
+
+  maybe read:      { %ymm2 }
+  must read:       { %ymm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%ymm1  : %ymm2
+
+%cf    : (#ifMInt %cf #then mi(1, 1) #else mi(1, 0)#fi)
+%pf    : (#ifMInt %pf #then mi(1, 1) #else mi(1, 0)#fi)
+%af    : (#ifMInt %af #then mi(1, 1) #else mi(1, 0)#fi)
+%zf    : (#ifMInt %zf #then mi(1, 1) #else mi(1, 0)#fi)
+%sf    : (#ifMInt %sf #then mi(1, 1) #else mi(1, 0)#fi)
+%of    : (#ifMInt %of #then mi(1, 1) #else mi(1, 0)#fi)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv
