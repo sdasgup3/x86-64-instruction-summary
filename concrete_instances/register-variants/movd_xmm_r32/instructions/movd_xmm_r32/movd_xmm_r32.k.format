@@ -1,0 +1,17 @@
+code: movd %ebx, %xmm1
+
+  maybe read:      { %ebx }
+  must read:       { %ebx }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+Formula:
+
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), concatenateMInt( mi(96, 0), extractMInt( %rbx, 32, 64)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

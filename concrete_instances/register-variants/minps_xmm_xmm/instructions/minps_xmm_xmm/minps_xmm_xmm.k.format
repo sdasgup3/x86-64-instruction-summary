@@ -1,0 +1,17 @@
+code: minps %xmm2, %xmm1
+
+  maybe read:      { %xmm1 %xmm2 }
+  must read:       { %xmm1 %xmm2 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse }
+
+Formula:
+
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), concatenateMInt( concatenateMInt( concatenateMInt( (#ifMInt eqMInt( mincmp_single(extractMInt( %ymm1, 128, 160), extractMInt( %ymm2, 128, 160)), mi(1, 1)) #then extractMInt( %ymm1, 128, 160) #else extractMInt( %ymm2, 128, 160) #fi), (#ifMInt eqMInt( mincmp_single(extractMInt( %ymm1, 160, 192), extractMInt( %ymm2, 160, 192)), mi(1, 1)) #then extractMInt( %ymm1, 160, 192) #else extractMInt( %ymm2, 160, 192) #fi)), (#ifMInt eqMInt( mincmp_single(extractMInt( %ymm1, 192, 224), extractMInt( %ymm2, 192, 224)), mi(1, 1)) #then extractMInt( %ymm1, 192, 224) #else extractMInt( %ymm2, 192, 224) #fi)), (#ifMInt eqMInt( mincmp_single(extractMInt( %ymm1, 224, 256), extractMInt( %ymm2, 224, 256)), mi(1, 1)) #then extractMInt( %ymm1, 224, 256) #else extractMInt( %ymm2, 224, 256) #fi)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

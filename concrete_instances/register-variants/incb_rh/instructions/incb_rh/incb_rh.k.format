@@ -1,0 +1,23 @@
+code: incb %ah
+
+  maybe read:      { %ah }
+  must read:       { %ah }
+  maybe write:     { %ah %pf %af %zf %sf %of }
+  must write:      { %ah %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rax   : concatenateMInt( concatenateMInt( extractMInt( %rax, 0, 48), extractMInt( addMInt( concatenateMInt( mi(1, 0), extractMInt( %rax, 48, 56)), mi(9, 1)), 1, 9)), extractMInt( %rax, 56, 64))
+
+%pf    : getParity(extractMInt( addMInt( concatenateMInt( mi(1, 0), extractMInt( %rax, 48, 56)), mi(9, 1)), 1, 9))
+%af    : mi(1, 0)
+%zf    : (#ifMInt eqMInt( extractMInt( addMInt( concatenateMInt( mi(1, 0), extractMInt( %rax, 48, 56)), mi(9, 1)), 1, 9), mi(8, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : extractMInt( addMInt( concatenateMInt( mi(1, 0), extractMInt( %rax, 48, 56)), mi(9, 1)), 1, 2)
+%of    : (#ifMInt ((eqMInt( extractMInt( %rax, 48, 49), mi(1, 1)) ==Bool FALSE) andBool (notBool (eqMInt( extractMInt( %rax, 48, 49), mi(1, 1)) ==Bool eqMInt( extractMInt( addMInt( concatenateMInt( mi(1, 0), extractMInt( %rax, 48, 56)), mi(9, 1)), 1, 2), mi(1, 1))))) #then mi(1, 1) #else mi(1, 0) #fi)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

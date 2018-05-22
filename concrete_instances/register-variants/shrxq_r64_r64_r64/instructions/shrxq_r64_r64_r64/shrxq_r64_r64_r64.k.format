@@ -1,0 +1,17 @@
+code: shrxq %rdx, %rcx, %rbx
+
+  maybe read:      { %rcx %rdx }
+  must read:       { %rcx %rdx }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { bmi2 }
+
+Formula:
+
+%rbx   : extractMInt( lshrMInt( concatenateMInt( %rcx, mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), andMInt( extractMInt( %rdx, 56, 64), mi(8, 63))))), 0, 64)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

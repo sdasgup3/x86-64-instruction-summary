@@ -1,0 +1,17 @@
+code: cmoval %ecx, %ebx
+
+  maybe read:      { %ecx %cf %zf }
+  must read:       { %ecx %cf %zf }
+  maybe write:     { %rbx }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { cmov }
+
+Formula:
+
+%rbx   : concatenateMInt( mi(32, 0), (#ifMInt %zf #then extractMInt( %rbx, 32, 64) #else (#ifMInt eqMInt( (#ifMInt %cf #then mi(16, 256) #else mi(16, 0) #fi), mi(16, 0)) #then extractMInt( %rcx, 32, 64) #else extractMInt( %rbx, 32, 64) #fi) #fi))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

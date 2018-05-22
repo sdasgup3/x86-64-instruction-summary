@@ -1,0 +1,17 @@
+code: vpaddd %xmm3, %xmm2, %xmm1
+
+  maybe read:      { %xmm2 %xmm3 }
+  must read:       { %xmm2 %xmm3 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%ymm1  : concatenateMInt( mi(128, 0), concatenateMInt( concatenateMInt( concatenateMInt( extractMInt( addMInt( concatenateMInt( mi(33, 0), extractMInt( %ymm2, 128, 160)), concatenateMInt( mi(33, 0), extractMInt( %ymm3, 128, 160))), 33, 65), extractMInt( addMInt( concatenateMInt( mi(1, 0), concatenateMInt( extractMInt( %ymm2, 160, 192), extractMInt( %ymm3, 160, 192))), concatenateMInt( mi(33, 0), extractMInt( %ymm2, 160, 192))), 33, 65)), extractMInt( addMInt( concatenateMInt( mi(1, 0), concatenateMInt( extractMInt( %ymm3, 192, 224), extractMInt( %ymm3, 192, 224))), concatenateMInt( mi(1, 0), concatenateMInt( extractMInt( %ymm3, 192, 224), extractMInt( %ymm2, 192, 224)))), 33, 65)), extractMInt( addMInt( concatenateMInt( mi(1, 0), concatenateMInt( extractMInt( %ymm3, 224, 256), extractMInt( %ymm3, 224, 256))), concatenateMInt( mi(1, 0), concatenateMInt( extractMInt( %ymm3, 224, 256), extractMInt( %ymm2, 224, 256)))), 33, 65)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

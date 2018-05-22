@@ -1,0 +1,24 @@
+code: negw %bx
+
+  maybe read:      { %bx }
+  must read:       { %bx }
+  maybe write:     { %bx %cf %pf %af %zf %sf %of }
+  must write:      { %bx %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rbx   : concatenateMInt( extractMInt( %rbx, 0, 48), extractMInt( addMInt( mi(17, 1), concatenateMInt( mi(1, 0), xorMInt( mi(16, 65535), extractMInt( %rbx, 48, 64)))), 1, 17))
+
+%cf    : extractMInt( addMInt( concatenateMInt( mi(1, 0), extractMInt( %rbx, 48, 64)), mi(17, 65535)), 0, 1)
+%pf    : getParity(extractMInt( addMInt( mi(17, 1), concatenateMInt( mi(1, 0), xorMInt( mi(16, 65535), extractMInt( %rbx, 48, 64)))), 9, 17))
+%af    : mi(1, 0)
+%zf    : (#ifMInt eqMInt( extractMInt( addMInt( mi(17, 1), concatenateMInt( mi(1, 0), xorMInt( mi(16, 65535), extractMInt( %rbx, 48, 64)))), 1, 17), mi(16, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : extractMInt( addMInt( mi(17, 1), concatenateMInt( mi(1, 0), xorMInt( mi(16, 65535), extractMInt( %rbx, 48, 64)))), 1, 2)
+%of    : (#ifMInt ((FALSE ==Bool eqMInt( xorMInt( mi(1, 1), extractMInt( %rbx, 48, 49)), mi(1, 1))) andBool (notBool (FALSE ==Bool eqMInt( extractMInt( addMInt( mi(17, 1), concatenateMInt( mi(1, 0), xorMInt( mi(16, 65535), extractMInt( %rbx, 48, 64)))), 1, 2), mi(1, 1))))) #then mi(1, 1) #else mi(1, 0) #fi)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

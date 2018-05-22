@@ -1,0 +1,24 @@
+code: salq $0x1, %rbx
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { %rbx %cf %pf %zf %sf %of }
+  must write:      { %rbx %cf %pf %zf %sf %of }
+  maybe undef:     { %af }
+  must undef:      { %af }
+  required flags:  { }
+
+Formula:
+
+%rbx   : extractMInt( addMInt( concatenateMInt( mi(1, 0), %rbx), concatenateMInt( mi(1, 0), %rbx)), 1, 65)
+
+%cf    : extractMInt( addMInt( concatenateMInt( mi(1, 0), %rbx), concatenateMInt( mi(1, 0), %rbx)), 0, 1)
+%pf    : getParity(extractMInt( addMInt( concatenateMInt( mi(1, 0), %rbx), concatenateMInt( mi(1, 0), %rbx)), 57, 65))
+%af    : (#ifMInt TMP_BOOL_3 #then mi(1, 1) #else mi(1, 0) #fi)
+%zf    : (#ifMInt eqMInt( extractMInt( addMInt( concatenateMInt( mi(1, 0), %rbx), concatenateMInt( mi(1, 0), %rbx)), 1, 65), mi(64, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : extractMInt( addMInt( concatenateMInt( mi(1, 0), %rbx), concatenateMInt( mi(1, 0), %rbx)), 1, 2)
+%of    : (#ifMInt ((eqMInt( extractMInt( %rbx, 0, 1), mi(1, 1)) ==Bool eqMInt( extractMInt( %rbx, 0, 1), mi(1, 1))) andBool (notBool (eqMInt( extractMInt( %rbx, 0, 1), mi(1, 1)) ==Bool eqMInt( extractMInt( addMInt( concatenateMInt( mi(1, 0), %rbx), concatenateMInt( mi(1, 0), %rbx)), 1, 2), mi(1, 1))))) #then mi(1, 1) #else mi(1, 0) #fi)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

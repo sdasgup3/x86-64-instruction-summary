@@ -1,0 +1,17 @@
+code: movslq %ecx, %rbx
+
+  maybe read:      { %ecx }
+  must read:       { %ecx }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rbx   : mi(64, svalueMInt(extractMInt( %rcx, 32, 64)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

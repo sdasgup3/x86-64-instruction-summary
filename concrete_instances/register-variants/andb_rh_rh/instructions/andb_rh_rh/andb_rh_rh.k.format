@@ -1,0 +1,24 @@
+code: andb %bh, %ah
+
+  maybe read:      { %ah %bh }
+  must read:       { %ah %bh }
+  maybe write:     { %ah %cf %pf %zf %sf %of }
+  must write:      { %ah %cf %pf %zf %sf %of }
+  maybe undef:     { %af }
+  must undef:      { %af }
+  required flags:  { }
+
+Formula:
+
+%rax   : concatenateMInt( concatenateMInt( extractMInt( %rax, 0, 48), xorMInt( orMInt( xorMInt( mi(8, 255), extractMInt( %rax, 48, 56)), extractMInt( %rbx, 48, 56)), xorMInt( mi(8, 255), extractMInt( %rax, 48, 56)))), extractMInt( %rax, 56, 64))
+
+%cf    : mi(1, 0)
+%pf    : getParity(xorMInt( extractMInt( %rbx, 48, 56), xorMInt( extractMInt( %rax, 48, 56), orMInt( extractMInt( %rax, 48, 56), extractMInt( %rbx, 48, 56)))))
+%af    : (#ifMInt TMP_BOOL_26 #then mi(1, 1) #else mi(1, 0) #fi)
+%zf    : (#ifMInt eqMInt( xorMInt( extractMInt( mi(64, svalueMInt(extractMInt( %rbx, 48, 56))), 32, 64), xorMInt( extractMInt( mi(64, svalueMInt(extractMInt( %rax, 48, 56))), 32, 64), orMInt( extractMInt( mi(64, svalueMInt(extractMInt( %rax, 48, 56))), 32, 64), extractMInt( mi(64, svalueMInt(extractMInt( %rbx, 48, 56))), 32, 64)))), mi(32, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : xorMInt( extractMInt( mi(64, svalueMInt(extractMInt( %rbx, 48, 56))), 32, 33), xorMInt( extractMInt( mi(64, svalueMInt(extractMInt( %rax, 48, 56))), 32, 33), orMInt( extractMInt( mi(64, svalueMInt(extractMInt( %rax, 48, 56))), 32, 33), extractMInt( mi(64, svalueMInt(extractMInt( %rbx, 48, 56))), 32, 33))))
+%of    : mi(1, 0)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

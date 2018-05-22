@@ -1,0 +1,17 @@
+code: vpmovzxwd %xmm2, %ymm1
+
+  maybe read:      { %xmm2 }
+  must read:       { %xmm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+Formula:
+
+%ymm1  : concatenateMInt( concatenateMInt( concatenateMInt( sub_single(concatenateMInt( mi(16, 0), extractMInt( %ymm2, 128, 144)), mi(32, 0)), sub_single(concatenateMInt( mi(16, 0), extractMInt( %ymm2, 144, 160)), mi(32, 0))), concatenateMInt( sub_single(concatenateMInt( mi(16, 0), extractMInt( %ymm2, 160, 176)), mi(32, 0)), sub_single(concatenateMInt( mi(16, 0), extractMInt( %ymm2, 176, 192)), mi(32, 0)))), concatenateMInt( concatenateMInt( sub_single(concatenateMInt( mi(16, 0), extractMInt( %ymm2, 192, 208)), mi(32, 0)), sub_single(concatenateMInt( mi(16, 0), extractMInt( %ymm2, 208, 224)), mi(32, 0))), concatenateMInt( sub_single(concatenateMInt( mi(16, 0), extractMInt( %ymm2, 224, 240)), mi(32, 0)), sub_single(concatenateMInt( mi(16, 0), extractMInt( %ymm2, 240, 256)), mi(32, 0)))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

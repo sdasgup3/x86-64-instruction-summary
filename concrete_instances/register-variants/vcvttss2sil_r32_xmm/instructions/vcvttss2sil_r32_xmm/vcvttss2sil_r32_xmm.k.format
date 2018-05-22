@@ -1,0 +1,17 @@
+code: vcvttss2sil %xmm1, %ebx
+
+  maybe read:      { %xmm1 }
+  must read:       { %xmm1 }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%rbx   : concatenateMInt( mi(32, 0), cvt_single_to_int32_truncate(extractMInt( %ymm1, 224, 256)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

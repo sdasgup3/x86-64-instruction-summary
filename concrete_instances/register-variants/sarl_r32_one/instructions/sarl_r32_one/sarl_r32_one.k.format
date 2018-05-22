@@ -1,0 +1,24 @@
+code: sarl $0x1, %ebx
+
+  maybe read:      { %ebx }
+  must read:       { %ebx }
+  maybe write:     { %rbx %cf %pf %zf %sf %of }
+  must write:      { %rbx %cf %pf %zf %sf %of }
+  maybe undef:     { %af }
+  must undef:      { %af }
+  required flags:  { }
+
+Formula:
+
+%rbx   : concatenateMInt( mi(32, 0), extractMInt( ashrMInt( concatenateMInt( mi(64, svalueMInt(extractMInt( %rbx, 32, 64))), mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 1)))), 32, 64))
+
+%cf    : (#ifMInt ((TRUE andBool eqMInt( extractMInt( ashrMInt( concatenateMInt( mi(64, svalueMInt(extractMInt( %rbx, 32, 64))), mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 1)))), 64, 65), mi(1, 1))) orBool FALSE) #then mi(1, 1) #else mi(1, 0) #fi)
+%pf    : getParity(extractMInt( ashrMInt( concatenateMInt( mi(64, svalueMInt(extractMInt( %rbx, 32, 64))), mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 1)))), 56, 64))
+%af    : (#ifMInt TMP_BOOL_11 #then mi(1, 1) #else mi(1, 0) #fi)
+%zf    : (#ifMInt eqMInt( extractMInt( ashrMInt( concatenateMInt( mi(64, svalueMInt(extractMInt( %rbx, 32, 64))), mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 1)))), 0, 64), mi(64, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : extractMInt( ashrMInt( concatenateMInt( mi(64, svalueMInt(extractMInt( %rbx, 32, 64))), mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 1)))), 0, 1)
+%of    : mi(1, 0)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

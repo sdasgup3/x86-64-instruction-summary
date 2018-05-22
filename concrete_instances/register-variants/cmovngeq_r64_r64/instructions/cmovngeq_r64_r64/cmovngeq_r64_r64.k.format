@@ -1,0 +1,17 @@
+code: cmovngeq %rcx, %rbx
+
+  maybe read:      { %rcx %sf %of }
+  must read:       { %rcx %sf %of }
+  maybe write:     { %rbx }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { cmov }
+
+Formula:
+
+%rbx   : (#ifMInt eqMInt( extractMInt( addMInt( (#ifMInt eqMInt( (#ifMInt ((TRUE andBool eqMInt( extractMInt( ashrMInt( concatenateMInt( mi(64, svalueMInt(xorMInt( xorMInt( (#ifMInt %sf #then mi(8, 1) #else mi(8, 0) #fi), (#ifMInt %of #then mi(8, 1) #else mi(8, 0) #fi)), mi(8, 1)))), mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 1)))), 64, 65), mi(1, 1))) orBool FALSE) #then mi(1, 0) #else mi(1, 1) #fi), mi(1, 1)) #then addMInt( concatenateMInt( mi(1, 0), extractMInt( %rcx, 48, 64)), mi(17, 1)) #else concatenateMInt( mi(1, 0), extractMInt( %rcx, 48, 64)) #fi), concatenateMInt( mi(1, 0), xorMInt( mi(16, 65535), extractMInt( %rcx, 48, 64)))), 1, 17), mi(16, 0)) #then %rcx #else %rbx #fi)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

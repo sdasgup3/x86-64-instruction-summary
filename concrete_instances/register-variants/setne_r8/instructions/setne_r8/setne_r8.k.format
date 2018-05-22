@@ -1,0 +1,17 @@
+code: setne %bl
+
+  maybe read:      { %zf }
+  must read:       { %zf }
+  maybe write:     { %bl }
+  must write:      { %bl }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rbx   : concatenateMInt( extractMInt( %rbx, 0, 56), (#ifMInt %zf #then mi(8, 0) #else mi(8, 1) #fi))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

@@ -1,0 +1,17 @@
+code: movb %ah, %bl
+
+  maybe read:      { %ah }
+  must read:       { %ah }
+  maybe write:     { %bl }
+  must write:      { %bl }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rbx   : concatenateMInt( extractMInt( %rbx, 0, 56), extractMInt( %rax, 48, 56))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

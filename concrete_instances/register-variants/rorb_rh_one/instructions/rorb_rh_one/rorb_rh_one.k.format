@@ -1,0 +1,20 @@
+code: rorb $0x1, %ah
+
+  maybe read:      { %ah }
+  must read:       { %ah }
+  maybe write:     { %ah %cf %of }
+  must write:      { %ah %cf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rax   : concatenateMInt( concatenateMInt( extractMInt( %rax, 0, 48), extractMInt( ashrMInt( concatenateMInt( mi(64, svalueMInt(concatenateMInt( extractMInt( %rax, 48, 56), extractMInt( %rax, 48, 56)))), mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 1)))), 56, 64)), extractMInt( %rax, 56, 64))
+
+%cf    : extractMInt( addMInt( concatenateMInt( mi(1, 0), extractMInt( ashrMInt( concatenateMInt( mi(64, svalueMInt(concatenateMInt( extractMInt( %rax, 48, 56), extractMInt( %rax, 48, 56)))), mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 1)))), 56, 64)), concatenateMInt( mi(1, 0), extractMInt( ashrMInt( concatenateMInt( mi(64, svalueMInt(concatenateMInt( extractMInt( %rax, 48, 56), extractMInt( %rax, 48, 56)))), mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 1)))), 56, 64))), 0, 1)
+%of    : (#ifMInt ((eqMInt( extractMInt( ashrMInt( concatenateMInt( mi(64, svalueMInt(concatenateMInt( extractMInt( %rax, 48, 56), extractMInt( %rax, 48, 56)))), mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 1)))), 56, 57), mi(1, 1)) ==Bool eqMInt( extractMInt( ashrMInt( concatenateMInt( mi(64, svalueMInt(concatenateMInt( extractMInt( %rax, 48, 56), extractMInt( %rax, 48, 56)))), mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 1)))), 56, 57), mi(1, 1))) andBool (notBool (eqMInt( extractMInt( ashrMInt( concatenateMInt( mi(64, svalueMInt(concatenateMInt( extractMInt( %rax, 48, 56), extractMInt( %rax, 48, 56)))), mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 1)))), 56, 57), mi(1, 1)) ==Bool eqMInt( extractMInt( addMInt( concatenateMInt( mi(1, 0), extractMInt( ashrMInt( concatenateMInt( mi(64, svalueMInt(concatenateMInt( extractMInt( %rax, 48, 56), extractMInt( %rax, 48, 56)))), mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 1)))), 56, 64)), concatenateMInt( mi(1, 0), extractMInt( ashrMInt( concatenateMInt( mi(64, svalueMInt(concatenateMInt( extractMInt( %rax, 48, 56), extractMInt( %rax, 48, 56)))), mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 1)))), 56, 64))), 1, 2), mi(1, 1))))) #then mi(1, 1) #else mi(1, 0) #fi)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

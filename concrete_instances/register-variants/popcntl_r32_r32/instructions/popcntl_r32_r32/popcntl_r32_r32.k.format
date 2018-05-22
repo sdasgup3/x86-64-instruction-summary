@@ -1,0 +1,24 @@
+code: popcntl %ecx, %ebx
+
+  maybe read:      { %ecx }
+  must read:       { %ecx }
+  maybe write:     { %rbx %cf %pf %af %zf %sf %of }
+  must write:      { %rbx %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { popcnt }
+
+Formula:
+
+%rbx   : concatenateMInt( mi(32, 0), addMInt( concatenateMInt( mi(16, 0), addMInt( concatenateMInt( mi(8, 0), addMInt( concatenateMInt( mi(4, 0), addMInt( concatenateMInt( mi(2, 0), addMInt( concatenateMInt( mi(1, 0), extractMInt( %rcx, 32, 33)), concatenateMInt( mi(1, 0), extractMInt( %rcx, 33, 34)))), concatenateMInt( mi(2, 0), addMInt( concatenateMInt( mi(1, 0), extractMInt( %rcx, 34, 35)), concatenateMInt( mi(1, 0), extractMInt( %rcx, 35, 36)))))), concatenateMInt( mi(4, 0), addMInt( concatenateMInt( mi(2, 0), addMInt( concatenateMInt( mi(1, 0), extractMInt( %rcx, 36, 37)), concatenateMInt( mi(1, 0), extractMInt( %rcx, 37, 38)))), concatenateMInt( mi(2, 0), addMInt( concatenateMInt( mi(1, 0), extractMInt( %rcx, 38, 39)), concatenateMInt( mi(1, 0), extractMInt( %rcx, 39, 40)))))))), concatenateMInt( mi(8, 0), addMInt( concatenateMInt( mi(4, 0), addMInt( concatenateMInt( mi(2, 0), addMInt( concatenateMInt( mi(1, 0), extractMInt( %rcx, 40, 41)), concatenateMInt( mi(1, 0), extractMInt( %rcx, 41, 42)))), concatenateMInt( mi(2, 0), addMInt( concatenateMInt( mi(1, 0), extractMInt( %rcx, 42, 43)), concatenateMInt( mi(1, 0), extractMInt( %rcx, 43, 44)))))), concatenateMInt( mi(4, 0), addMInt( concatenateMInt( mi(2, 0), addMInt( concatenateMInt( mi(1, 0), extractMInt( %rcx, 44, 45)), concatenateMInt( mi(1, 0), extractMInt( %rcx, 45, 46)))), concatenateMInt( mi(2, 0), addMInt( concatenateMInt( mi(1, 0), extractMInt( %rcx, 46, 47)), concatenateMInt( mi(1, 0), extractMInt( %rcx, 47, 48)))))))))), concatenateMInt( mi(16, 0), addMInt( concatenateMInt( mi(8, 0), addMInt( concatenateMInt( mi(4, 0), addMInt( concatenateMInt( mi(2, 0), addMInt( concatenateMInt( mi(1, 0), extractMInt( %rcx, 48, 49)), concatenateMInt( mi(1, 0), extractMInt( %rcx, 49, 50)))), concatenateMInt( mi(2, 0), addMInt( concatenateMInt( mi(1, 0), extractMInt( %rcx, 50, 51)), concatenateMInt( mi(1, 0), extractMInt( %rcx, 51, 52)))))), concatenateMInt( mi(4, 0), addMInt( concatenateMInt( mi(2, 0), addMInt( concatenateMInt( mi(1, 0), extractMInt( %rcx, 52, 53)), concatenateMInt( mi(1, 0), extractMInt( %rcx, 53, 54)))), concatenateMInt( mi(2, 0), addMInt( concatenateMInt( mi(1, 0), extractMInt( %rcx, 54, 55)), concatenateMInt( mi(1, 0), extractMInt( %rcx, 55, 56)))))))), concatenateMInt( mi(8, 0), addMInt( concatenateMInt( mi(4, 0), addMInt( concatenateMInt( mi(2, 0), addMInt( concatenateMInt( mi(1, 0), extractMInt( %rcx, 56, 57)), concatenateMInt( mi(1, 0), extractMInt( %rcx, 57, 58)))), concatenateMInt( mi(2, 0), addMInt( concatenateMInt( mi(1, 0), extractMInt( %rcx, 58, 59)), concatenateMInt( mi(1, 0), extractMInt( %rcx, 59, 60)))))), concatenateMInt( mi(4, 0), addMInt( concatenateMInt( mi(2, 0), addMInt( concatenateMInt( mi(1, 0), extractMInt( %rcx, 60, 61)), concatenateMInt( mi(1, 0), extractMInt( %rcx, 61, 62)))), concatenateMInt( mi(2, 0), addMInt( concatenateMInt( mi(1, 0), extractMInt( %rcx, 62, 63)), concatenateMInt( mi(1, 0), extractMInt( %rcx, 63, 64))))))))))))
+
+%cf    : mi(1, 0)
+%pf    : mi(1, 0)
+%af    : mi(1, 0)
+%zf    : (#ifMInt eqMInt( concatenateMInt( mi(32, 0), extractMInt( %rcx, 32, 64)), mi(64, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : mi(1, 0)
+%of    : mi(1, 0)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

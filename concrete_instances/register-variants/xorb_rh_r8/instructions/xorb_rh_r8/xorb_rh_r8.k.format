@@ -1,0 +1,24 @@
+code: xorb %bl, %ah
+
+  maybe read:      { %ah %bl }
+  must read:       { %ah %bl }
+  maybe write:     { %ah %cf %pf %zf %sf %of }
+  must write:      { %ah %cf %pf %zf %sf %of }
+  maybe undef:     { %af }
+  must undef:      { %af }
+  required flags:  { }
+
+Formula:
+
+%rax   : concatenateMInt( concatenateMInt( extractMInt( %rax, 0, 48), xorMInt( extractMInt( %rax, 48, 56), extractMInt( %rbx, 56, 64))), extractMInt( %rax, 56, 64))
+
+%cf    : mi(1, 0)
+%pf    : getParity(xorMInt( extractMInt( %rax, 48, 56), extractMInt( %rbx, 56, 64)))
+%af    : (#ifMInt TMP_BOOL_12 #then mi(1, 1) #else mi(1, 0) #fi)
+%zf    : (#ifMInt eqMInt( xorMInt( extractMInt( %rax, 48, 56), extractMInt( %rbx, 56, 64)), mi(8, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : xorMInt( extractMInt( %rax, 48, 49), extractMInt( %rbx, 56, 57))
+%of    : mi(1, 0)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv
