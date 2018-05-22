@@ -1,0 +1,17 @@
+code: movzbq %cl, %rbx
+
+  maybe read:      { %cl }
+  must read:       { %cl }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rbx   : concatenateMInt( mi(56, 0), extractMInt( %rcx, 56, 64))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

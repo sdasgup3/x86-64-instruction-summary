@@ -1,0 +1,24 @@
+code: popcntw %cx, %bx
+
+  maybe read:      { %cx }
+  must read:       { %cx }
+  maybe write:     { %bx %cf %pf %af %zf %sf %of }
+  must write:      { %bx %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { popcnt }
+
+Formula:
+
+%rbx   : concatenateMInt( extractMInt( %rbx, 0, 48), addMInt( concatenateMInt( mi(8, 0), addMInt( concatenateMInt( mi(4, 0), addMInt( concatenateMInt( mi(2, 0), addMInt( concatenateMInt( mi(1, 0), extractMInt( %rcx, 48, 49)), concatenateMInt( mi(1, 0), extractMInt( %rcx, 49, 50)))), concatenateMInt( mi(2, 0), addMInt( concatenateMInt( mi(1, 0), extractMInt( %rcx, 50, 51)), concatenateMInt( mi(1, 0), extractMInt( %rcx, 51, 52)))))), concatenateMInt( mi(4, 0), addMInt( concatenateMInt( mi(2, 0), addMInt( concatenateMInt( mi(1, 0), extractMInt( %rcx, 52, 53)), concatenateMInt( mi(1, 0), extractMInt( %rcx, 53, 54)))), concatenateMInt( mi(2, 0), addMInt( concatenateMInt( mi(1, 0), extractMInt( %rcx, 54, 55)), concatenateMInt( mi(1, 0), extractMInt( %rcx, 55, 56)))))))), concatenateMInt( mi(8, 0), addMInt( concatenateMInt( mi(4, 0), addMInt( concatenateMInt( mi(2, 0), addMInt( concatenateMInt( mi(1, 0), extractMInt( %rcx, 56, 57)), concatenateMInt( mi(1, 0), extractMInt( %rcx, 57, 58)))), concatenateMInt( mi(2, 0), addMInt( concatenateMInt( mi(1, 0), extractMInt( %rcx, 58, 59)), concatenateMInt( mi(1, 0), extractMInt( %rcx, 59, 60)))))), concatenateMInt( mi(4, 0), addMInt( concatenateMInt( mi(2, 0), addMInt( concatenateMInt( mi(1, 0), extractMInt( %rcx, 60, 61)), concatenateMInt( mi(1, 0), extractMInt( %rcx, 61, 62)))), concatenateMInt( mi(2, 0), addMInt( concatenateMInt( mi(1, 0), extractMInt( %rcx, 62, 63)), concatenateMInt( mi(1, 0), extractMInt( %rcx, 63, 64))))))))))
+
+%cf    : mi(1, 0)
+%pf    : mi(1, 0)
+%af    : mi(1, 0)
+%zf    : (#ifMInt eqMInt( concatenateMInt( mi(48, 0), extractMInt( %rcx, 48, 64)), mi(64, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : mi(1, 0)
+%of    : mi(1, 0)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

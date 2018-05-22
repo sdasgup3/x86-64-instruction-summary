@@ -1,0 +1,17 @@
+code: movswl %cx, %ebx
+
+  maybe read:      { %cx }
+  must read:       { %cx }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rbx   : concatenateMInt( mi(32, 0), extractMInt( mi(64, svalueMInt(extractMInt( %rcx, 48, 64))), 32, 64))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

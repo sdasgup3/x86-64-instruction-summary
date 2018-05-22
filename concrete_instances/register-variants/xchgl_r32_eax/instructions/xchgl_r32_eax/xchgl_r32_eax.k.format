@@ -1,0 +1,18 @@
+code: xchgl %eax, %ebx
+
+  maybe read:      { %eax %ebx }
+  must read:       { %eax %ebx }
+  maybe write:     { %rax %rbx }
+  must write:      { %rax %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rax   : concatenateMInt( mi(32, 0), extractMInt( %rbx, 32, 64))
+%rbx   : concatenateMInt( mi(32, 0), extractMInt( %rax, 32, 64))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv
