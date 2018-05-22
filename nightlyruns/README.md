@@ -6,8 +6,9 @@
 | 5 | register | 2 apr | not-stratified-stoked |  count 218 = Stoked only by strata version of stoked; | job.05 | runlog.05 | 5 |
 | 6 | register | 2 apr | not-stratified-stoked |  count 44 = Stoked only by master stoke version; The strata stoke version lacks them. | job.06 | runlog.06 | 6 |
 | 12 | register | 18 may | stratified |  743 = 51_692. To check the runtime. Help in choosing a simpler version if avaailable. | job.12 | runlog.12 | 12 |
-| 13 | register | 19 may | all |  1130 = 743_(391-4). sat-check with `not (A==B)` and ensure that the ones failing the check do involve uifs. | job.13 | runlog.13 | 13 |
+| 13(redo) | register | 19 may | all |  1130 = 743_(391-4). sat-check with `not (A==B)` and ensure that the ones failing the check do involve uifs. | job.13 | runlog.13 | 13 |
 | 14 | register | 22 may | all |  389 = the ones in stratified set, but timed out on 15 mn. Hence fired for 60m. Note that the ones timed out are have very simle sized formula. So runtime as no correlation to formula size.  | job.14 | runlog.14 | 14 |
+| 15 | register | 22 may | all |  1130: Check if the newly introduced simplification rules work  | job.15 | runlog.15 | 15 |
 
 
 
