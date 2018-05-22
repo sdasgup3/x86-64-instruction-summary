@@ -12,7 +12,7 @@ Formula:
 
 %rax   : concatenateMInt( concatenateMInt( extractMInt( %rax, 0, 48), extractMInt( addMInt( concatenateMInt( mi(1, 0), extractMInt( %rax, 48, 56)), mi(9, 1)), 1, 9)), extractMInt( %rax, 56, 64))
 
-%pf    : getParity(extractMInt( addMInt( concatenateMInt( mi(1, 0), extractMInt( %rax, 48, 56)), mi(9, 1)), 1, 9))
+%pf    : (#ifMInt (notBool (((((((eqMInt( extractMInt( addMInt( concatenateMInt( mi(1, 0), extractMInt( %rax, 48, 56)), mi(9, 1)), 8, 9), mi(1, 1)) xorBool eqMInt( extractMInt( addMInt( concatenateMInt( mi(1, 0), extractMInt( %rax, 48, 56)), mi(9, 1)), 7, 8), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt( concatenateMInt( mi(1, 0), extractMInt( %rax, 48, 56)), mi(9, 1)), 6, 7), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt( concatenateMInt( mi(1, 0), extractMInt( %rax, 48, 56)), mi(9, 1)), 5, 6), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt( concatenateMInt( mi(1, 0), extractMInt( %rax, 48, 56)), mi(9, 1)), 4, 5), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt( concatenateMInt( mi(1, 0), extractMInt( %rax, 48, 56)), mi(9, 1)), 3, 4), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt( concatenateMInt( mi(1, 0), extractMInt( %rax, 48, 56)), mi(9, 1)), 2, 3), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt( concatenateMInt( mi(1, 0), extractMInt( %rax, 48, 56)), mi(9, 1)), 1, 2), mi(1, 1)))) #then mi(1, 1) #else mi(1, 0) #fi)
 %af    : mi(1, 0)
 %zf    : (#ifMInt eqMInt( extractMInt( addMInt( concatenateMInt( mi(1, 0), extractMInt( %rax, 48, 56)), mi(9, 1)), 1, 9), mi(8, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
 %sf    : extractMInt( addMInt( concatenateMInt( mi(1, 0), extractMInt( %rax, 48, 56)), mi(9, 1)), 1, 2)
