@@ -1,0 +1,11 @@
+[4m[1m[34mFiring Last 1[0m
+Thread 1 start: testb_rh_r8
+timeout 15m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/register-variants/testb_rh_r8/instructions/testb_rh_r8/testb_rh_r8.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ah %bl }" --live_out "{ %cf %pf %zf %sf %of }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Execution time testb_rh_r8: 900 s
+Thread 1 done!: testb_rh_r8
