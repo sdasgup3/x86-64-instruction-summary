@@ -10,7 +10,7 @@ code: sarxq %rdx, %rcx, %rbx
 
 Formula:
 
-%rbx   : extractMInt( ashrMInt( concatenateMInt( %rcx, mi(1, 0)), concatenateMInt( mi(57, 0), andMInt( extractMInt( %rdx, 56, 64), mi(8, 63)))), 0, 64)
+%rbx   : extractMInt( ashrMInt( concatenateMInt( %rcx, mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), andMInt( extractMInt( %rdx, 56, 64), mi(8, 63))))), 0, 64)
 
 sigfpe  : sigfpe
 sigbus  : sigbus
