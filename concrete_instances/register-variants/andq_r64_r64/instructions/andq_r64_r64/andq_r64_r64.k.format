@@ -1,0 +1,24 @@
+code: andq %rcx, %rbx
+
+  maybe read:      { %rcx %rbx }
+  must read:       { %rcx %rbx }
+  maybe write:     { %rbx %cf %pf %zf %sf %of }
+  must write:      { %rbx %cf %pf %zf %sf %of }
+  maybe undef:     { %af }
+  must undef:      { %af }
+  required flags:  { }
+
+Formula:
+
+%rbx   : xorMInt( orMInt( xorMInt( xorMInt( %rbx, mi(64, 0)), xorMInt( %rcx, mi(64, 0))), xorMInt( %rcx, mi(64, 0))), xorMInt( xorMInt( %rbx, mi(64, 0)), xorMInt( %rcx, mi(64, 0))))
+
+%cf    : mi(1, 0)
+%pf    : getParity(xorMInt( orMInt( xorMInt( xorMInt( extractMInt( %rbx, 56, 64), mi(8, 0)), xorMInt( extractMInt( %rcx, 56, 64), mi(8, 0))), xorMInt( extractMInt( %rcx, 56, 64), mi(8, 0))), xorMInt( xorMInt( extractMInt( %rbx, 56, 64), mi(8, 0)), xorMInt( extractMInt( %rcx, 56, 64), mi(8, 0)))))
+%af    : (#ifMInt TMP_BOOL_20 #then mi(1, 1) #else mi(1, 0) #fi)
+%zf    : (#ifMInt eqMInt( xorMInt( orMInt( xorMInt( xorMInt( %rbx, mi(64, 0)), xorMInt( %rcx, mi(64, 0))), xorMInt( %rcx, mi(64, 0))), xorMInt( xorMInt( %rbx, mi(64, 0)), xorMInt( %rcx, mi(64, 0)))), mi(64, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : xorMInt( orMInt( xorMInt( xorMInt( extractMInt( %rbx, 0, 1), mi(1, 0)), xorMInt( extractMInt( %rcx, 0, 1), mi(1, 0))), xorMInt( extractMInt( %rcx, 0, 1), mi(1, 0))), xorMInt( xorMInt( extractMInt( %rbx, 0, 1), mi(1, 0)), xorMInt( extractMInt( %rcx, 0, 1), mi(1, 0))))
+%of    : mi(1, 0)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

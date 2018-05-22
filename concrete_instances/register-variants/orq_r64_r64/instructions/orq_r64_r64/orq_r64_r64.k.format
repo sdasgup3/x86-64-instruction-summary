@@ -1,0 +1,24 @@
+code: orq %rcx, %rbx
+
+  maybe read:      { %rcx %rbx }
+  must read:       { %rcx %rbx }
+  maybe write:     { %rbx %cf %pf %zf %sf %of }
+  must write:      { %rbx %cf %pf %zf %sf %of }
+  maybe undef:     { %af }
+  must undef:      { %af }
+  required flags:  { }
+
+Formula:
+
+%rbx   : orMInt( %rcx, %rbx)
+
+%cf    : mi(1, 0)
+%pf    : getParity(orMInt( extractMInt( %rcx, 56, 64), extractMInt( %rbx, 56, 64)))
+%af    : (#ifMInt TMP_BOOL_0 #then mi(1, 1) #else mi(1, 0) #fi)
+%zf    : (#ifMInt eqMInt( orMInt( %rcx, %rbx), mi(64, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : orMInt( extractMInt( %rcx, 0, 1), extractMInt( %rbx, 0, 1))
+%of    : mi(1, 0)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

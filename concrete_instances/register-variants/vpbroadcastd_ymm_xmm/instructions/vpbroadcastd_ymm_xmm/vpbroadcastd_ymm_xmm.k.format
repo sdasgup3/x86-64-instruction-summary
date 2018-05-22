@@ -1,0 +1,17 @@
+code: vpbroadcastd %xmm2, %ymm1
+
+  maybe read:      { %xmm2 }
+  must read:       { %xmm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+Formula:
+
+%ymm1  : concatenateMInt( concatenateMInt( concatenateMInt( concatenateMInt( extractMInt( %ymm2, 224, 256), extractMInt( %ymm2, 224, 256)), extractMInt( %ymm2, 224, 256)), extractMInt( %ymm2, 224, 256)), concatenateMInt( concatenateMInt( concatenateMInt( extractMInt( %ymm2, 224, 256), extractMInt( %ymm2, 224, 256)), extractMInt( %ymm2, 224, 256)), extractMInt( %ymm2, 224, 256)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

@@ -1,0 +1,18 @@
+code: xchgb %cl, %bl
+
+  maybe read:      { %cl %bl }
+  must read:       { %cl %bl }
+  maybe write:     { %cl %bl }
+  must write:      { %cl %bl }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rcx   : concatenateMInt( extractMInt( %rcx, 0, 56), extractMInt( %rbx, 56, 64))
+%rbx   : concatenateMInt( extractMInt( %rbx, 0, 56), extractMInt( %rcx, 56, 64))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

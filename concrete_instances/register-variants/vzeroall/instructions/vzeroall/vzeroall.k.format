@@ -1,0 +1,32 @@
+code: vzeroall 
+
+  maybe read:      { }
+  must read:       { }
+  maybe write:     { %ymm0 %ymm1 %ymm2 %ymm3 %ymm4 %ymm5 %ymm6 %ymm7 %ymm8 %ymm9 %ymm10 %ymm11 %ymm12 %ymm13 %ymm14 %ymm15 }
+  must write:      { %ymm0 %ymm1 %ymm2 %ymm3 %ymm4 %ymm5 %ymm6 %ymm7 %ymm8 %ymm9 %ymm10 %ymm11 %ymm12 %ymm13 %ymm14 %ymm15 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%ymm0  : mi(256, 0)
+%ymm1  : mi(256, 0)
+%ymm2  : mi(256, 0)
+%ymm3  : mi(256, 0)
+%ymm4  : mi(256, 0)
+%ymm5  : mi(256, 0)
+%ymm6  : mi(256, 0)
+%ymm7  : mi(256, 0)
+%ymm8  : mi(256, 0)
+%ymm9  : mi(256, 0)
+%ymm10 : mi(256, 0)
+%ymm11 : mi(256, 0)
+%ymm12 : mi(256, 0)
+%ymm13 : mi(256, 0)
+%ymm14 : mi(256, 0)
+%ymm15 : mi(256, 0)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

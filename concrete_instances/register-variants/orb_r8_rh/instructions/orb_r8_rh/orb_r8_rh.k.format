@@ -1,0 +1,24 @@
+code: orb %ah, %bl
+
+  maybe read:      { %ah %bl }
+  must read:       { %ah %bl }
+  maybe write:     { %bl %cf %pf %zf %sf %of }
+  must write:      { %bl %cf %pf %zf %sf %of }
+  maybe undef:     { %af }
+  must undef:      { %af }
+  required flags:  { }
+
+Formula:
+
+%rbx   : concatenateMInt( extractMInt( %rbx, 0, 56), orMInt( extractMInt( %rbx, 56, 64), extractMInt( %rax, 48, 56)))
+
+%cf    : mi(1, 0)
+%pf    : getParity(orMInt( extractMInt( %rbx, 56, 64), extractMInt( %rax, 48, 56)))
+%af    : (#ifMInt TMP_BOOL_7 #then mi(1, 1) #else mi(1, 0) #fi)
+%zf    : (#ifMInt eqMInt( orMInt( mi(64, svalueMInt(concatenateMInt( extractMInt( %rbx, 56, 64), extractMInt( %rbx, 56, 64)))), mi(64, svalueMInt(concatenateMInt( extractMInt( %rax, 48, 56), extractMInt( %rax, 48, 56))))), mi(64, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : orMInt( extractMInt( mi(64, svalueMInt(concatenateMInt( extractMInt( %rbx, 56, 64), extractMInt( %rbx, 56, 64)))), 0, 1), extractMInt( mi(64, svalueMInt(concatenateMInt( extractMInt( %rax, 48, 56), extractMInt( %rax, 48, 56)))), 0, 1))
+%of    : mi(1, 0)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

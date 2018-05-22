@@ -1,0 +1,17 @@
+code: bswap %ebx
+
+  maybe read:      { %ebx }
+  must read:       { %ebx }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rbx   : concatenateMInt( concatenateMInt( concatenateMInt( mi(32, 0), extractMInt( %rbx, 56, 64)), extractMInt( %rbx, 48, 56)), concatenateMInt( extractMInt( %rbx, 40, 48), extractMInt( %rbx, 32, 40)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

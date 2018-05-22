@@ -1,0 +1,17 @@
+code: vmovmskpd %xmm1, %rbx
+
+  maybe read:      { %xmm1 }
+  must read:       { %xmm1 }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%rbx   : concatenateMInt( mi(32, 0), extractMInt( addMInt( (#ifMInt eqMInt( extractMInt( addMInt( (#ifMInt eqMInt( extractMInt( addMInt( concatenateMInt( mi(1, 0), extractMInt( %ymm1, 192, 224)), concatenateMInt( mi(1, 0), extractMInt( %ymm1, 192, 224))), 0, 1), mi(1, 1)) #then addMInt( concatenateMInt( mi(1, 0), extractMInt( %ymm1, 192, 224)), mi(33, 1)) #else concatenateMInt( mi(1, 0), extractMInt( %ymm1, 192, 224)) #fi), concatenateMInt( mi(1, 0), extractMInt( %ymm1, 192, 224))), 0, 1), mi(1, 1)) #then addMInt( concatenateMInt( mi(32, 0), extractMInt( addMInt( (#ifMInt eqMInt( extractMInt( addMInt( concatenateMInt( mi(1, 0), extractMInt( %ymm1, 128, 160)), concatenateMInt( mi(1, 0), extractMInt( %ymm1, 128, 160))), 0, 1), mi(1, 1)) #then addMInt( concatenateMInt( mi(1, 0), extractMInt( %ymm1, 128, 160)), mi(33, 1)) #else concatenateMInt( mi(1, 0), extractMInt( %ymm1, 128, 160)) #fi), concatenateMInt( mi(1, 0), extractMInt( %ymm1, 128, 160))), 0, 1)), mi(33, 1)) #else concatenateMInt( mi(32, 0), extractMInt( addMInt( (#ifMInt eqMInt( extractMInt( addMInt( concatenateMInt( mi(1, 0), extractMInt( %ymm1, 128, 160)), concatenateMInt( mi(1, 0), extractMInt( %ymm1, 128, 160))), 0, 1), mi(1, 1)) #then addMInt( concatenateMInt( mi(1, 0), extractMInt( %ymm1, 128, 160)), mi(33, 1)) #else concatenateMInt( mi(1, 0), extractMInt( %ymm1, 128, 160)) #fi), concatenateMInt( mi(1, 0), extractMInt( %ymm1, 128, 160))), 0, 1)) #fi), concatenateMInt( mi(32, 0), extractMInt( addMInt( (#ifMInt eqMInt( extractMInt( addMInt( concatenateMInt( mi(1, 0), extractMInt( %ymm1, 128, 160)), concatenateMInt( mi(1, 0), extractMInt( %ymm1, 128, 160))), 0, 1), mi(1, 1)) #then addMInt( concatenateMInt( mi(1, 0), extractMInt( %ymm1, 128, 160)), mi(33, 1)) #else concatenateMInt( mi(1, 0), extractMInt( %ymm1, 128, 160)) #fi), concatenateMInt( mi(1, 0), extractMInt( %ymm1, 128, 160))), 0, 1))), 1, 33))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

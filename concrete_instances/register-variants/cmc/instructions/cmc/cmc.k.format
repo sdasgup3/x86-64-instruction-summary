@@ -1,0 +1,17 @@
+code: cmc 
+
+  maybe read:      { %cf }
+  must read:       { %cf }
+  maybe write:     { %cf }
+  must write:      { %cf }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%cf    : (#ifMInt %cf #then mi(1, 0) #else mi(1, 1) #fi)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

@@ -1,0 +1,25 @@
+code: cmpxchgq %rcx, %rbx
+
+  maybe read:      { %rax %rcx %rbx }
+  must read:       { %rax %rcx %rbx }
+  maybe write:     { %rax %rbx %cf %pf %af %zf %sf %of }
+  must write:      { %rax %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rax   : (#ifMInt eqMInt( (#ifMInt eqMInt( extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), xorMInt( mi(64, 18446744073709551615), %rbx)), mi(65, 1)), concatenateMInt( mi(1, 0), %rax)), 1, 65), mi(64, 0)) #then mi(8, 2) #else mi(8, 0) #fi), mi(8, 0)) #then %rbx #else %rax #fi)
+%rbx   : (#ifMInt eqMInt( extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), xorMInt( mi(64, 18446744073709551615), %rbx)), mi(65, 1)), concatenateMInt( mi(1, 0), %rax)), 1, 65), mi(64, 0)) #then %rcx #else %rbx #fi)
+
+%cf    : (#ifMInt eqMInt( extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), xorMInt( mi(64, 18446744073709551615), %rbx)), mi(65, 1)), concatenateMInt( mi(1, 0), %rax)), 0, 1), mi(1, 1)) #then mi(1, 0) #else mi(1, 1) #fi)
+%pf    : getParity(extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), xorMInt( mi(64, 18446744073709551615), %rbx)), mi(65, 1)), concatenateMInt( mi(1, 0), %rax)), 57, 65))
+%af    : extractMInt( addMInt( concatenateMInt( mi(1, 0), xorMInt( mi(4, 15), extractMInt( %rbx, 60, 64))), concatenateMInt( mi(1, 0), extractMInt( %rax, 60, 64))), 0, 1)
+%zf    : (#ifMInt eqMInt( extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), xorMInt( mi(64, 18446744073709551615), %rbx)), mi(65, 1)), concatenateMInt( mi(1, 0), %rax)), 1, 65), mi(64, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), xorMInt( mi(64, 18446744073709551615), %rbx)), mi(65, 1)), concatenateMInt( mi(1, 0), %rax)), 1, 2)
+%of    : (#ifMInt ((eqMInt( xorMInt( mi(1, 1), extractMInt( %rbx, 0, 1)), mi(1, 1)) ==Bool eqMInt( extractMInt( %rax, 0, 1), mi(1, 1))) andBool (notBool (eqMInt( xorMInt( mi(1, 1), extractMInt( %rbx, 0, 1)), mi(1, 1)) ==Bool eqMInt( extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), xorMInt( mi(64, 18446744073709551615), %rbx)), mi(65, 1)), concatenateMInt( mi(1, 0), %rax)), 1, 2), mi(1, 1))))) #then mi(1, 1) #else mi(1, 0) #fi)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

@@ -1,0 +1,24 @@
+code: sbbl %ecx, %ebx
+
+  maybe read:      { %ecx %ebx %cf }
+  must read:       { %ecx %ebx %cf }
+  maybe write:     { %rbx %cf %pf %af %zf %sf %of }
+  must write:      { %rbx %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rbx   : concatenateMInt( mi(32, 0), extractMInt( addMInt( (#ifMInt eqMInt( (#ifMInt %cf #then mi(1, 0) #else mi(1, 1) #fi), mi(1, 1)) #then addMInt( concatenateMInt( mi(1, 0), xorMInt( mi(32, 4294967295), extractMInt( %rcx, 32, 64))), mi(33, 1)) #else concatenateMInt( mi(1, 0), xorMInt( mi(32, 4294967295), extractMInt( %rcx, 32, 64))) #fi), concatenateMInt( mi(1, 0), extractMInt( %rbx, 32, 64))), 1, 33))
+
+%cf    : (#ifMInt eqMInt( extractMInt( addMInt( (#ifMInt eqMInt( (#ifMInt %cf #then mi(1, 0) #else mi(1, 1) #fi), mi(1, 1)) #then addMInt( concatenateMInt( mi(1, 0), xorMInt( mi(32, 4294967295), extractMInt( %rcx, 32, 64))), mi(33, 1)) #else concatenateMInt( mi(1, 0), xorMInt( mi(32, 4294967295), extractMInt( %rcx, 32, 64))) #fi), concatenateMInt( mi(1, 0), extractMInt( %rbx, 32, 64))), 0, 1), mi(1, 1)) #then mi(1, 0) #else mi(1, 1) #fi)
+%pf    : getParity(extractMInt( addMInt( (#ifMInt eqMInt( (#ifMInt %cf #then mi(1, 0) #else mi(1, 1) #fi), mi(1, 1)) #then addMInt( concatenateMInt( mi(1, 0), xorMInt( mi(32, 4294967295), extractMInt( %rcx, 32, 64))), mi(33, 1)) #else concatenateMInt( mi(1, 0), xorMInt( mi(32, 4294967295), extractMInt( %rcx, 32, 64))) #fi), concatenateMInt( mi(1, 0), extractMInt( %rbx, 32, 64))), 25, 33))
+%af    : extractMInt( addMInt( concatenateMInt( mi(1, 0), xorMInt( mi(4, 15), extractMInt( %rcx, 60, 64))), concatenateMInt( mi(1, 0), extractMInt( %rbx, 60, 64))), 0, 1)
+%zf    : (#ifMInt eqMInt( extractMInt( addMInt( (#ifMInt eqMInt( (#ifMInt %cf #then mi(1, 0) #else mi(1, 1) #fi), mi(1, 1)) #then addMInt( concatenateMInt( mi(1, 0), xorMInt( mi(32, 4294967295), extractMInt( %rcx, 32, 64))), mi(33, 1)) #else concatenateMInt( mi(1, 0), xorMInt( mi(32, 4294967295), extractMInt( %rcx, 32, 64))) #fi), concatenateMInt( mi(1, 0), extractMInt( %rbx, 32, 64))), 1, 33), mi(32, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : extractMInt( addMInt( (#ifMInt eqMInt( (#ifMInt %cf #then mi(1, 0) #else mi(1, 1) #fi), mi(1, 1)) #then addMInt( concatenateMInt( mi(1, 0), xorMInt( mi(32, 4294967295), extractMInt( %rcx, 32, 64))), mi(33, 1)) #else concatenateMInt( mi(1, 0), xorMInt( mi(32, 4294967295), extractMInt( %rcx, 32, 64))) #fi), concatenateMInt( mi(1, 0), extractMInt( %rbx, 32, 64))), 1, 2)
+%of    : (#ifMInt ((eqMInt( xorMInt( mi(1, 1), extractMInt( %rcx, 32, 33)), mi(1, 1)) ==Bool eqMInt( extractMInt( %rbx, 32, 33), mi(1, 1))) andBool (notBool (eqMInt( xorMInt( mi(1, 1), extractMInt( %rcx, 32, 33)), mi(1, 1)) ==Bool eqMInt( extractMInt( addMInt( (#ifMInt eqMInt( (#ifMInt %cf #then mi(1, 0) #else mi(1, 1) #fi), mi(1, 1)) #then addMInt( concatenateMInt( mi(1, 0), xorMInt( mi(32, 4294967295), extractMInt( %rcx, 32, 64))), mi(33, 1)) #else concatenateMInt( mi(1, 0), xorMInt( mi(32, 4294967295), extractMInt( %rcx, 32, 64))) #fi), concatenateMInt( mi(1, 0), extractMInt( %rbx, 32, 64))), 1, 2), mi(1, 1))))) #then mi(1, 1) #else mi(1, 0) #fi)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

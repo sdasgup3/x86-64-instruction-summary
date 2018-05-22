@@ -1,0 +1,17 @@
+code: cmovow %cx, %bx
+
+  maybe read:      { %cx %of }
+  must read:       { %cx %of }
+  maybe write:     { %bx }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { cmov }
+
+Formula:
+
+%rbx   : concatenateMInt( extractMInt( %rbx, 0, 48), (#ifMInt eqMInt( (#ifMInt %of #then mi(8, 0) #else mi(8, 255) #fi), mi(8, 0)) #then extractMInt( %rcx, 48, 64) #else extractMInt( %rbx, 48, 64) #fi))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

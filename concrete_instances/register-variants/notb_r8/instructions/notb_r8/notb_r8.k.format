@@ -1,0 +1,17 @@
+code: notb %bl
+
+  maybe read:      { %bl }
+  must read:       { %bl }
+  maybe write:     { %bl }
+  must write:      { %bl }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rbx   : concatenateMInt( extractMInt( %rbx, 0, 56), xorMInt( mi(8, 255), extractMInt( %rbx, 56, 64)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

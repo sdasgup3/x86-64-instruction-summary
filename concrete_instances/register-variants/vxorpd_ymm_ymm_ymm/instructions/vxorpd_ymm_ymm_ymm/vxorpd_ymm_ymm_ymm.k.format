@@ -1,0 +1,17 @@
+code: vxorpd %ymm3, %ymm2, %ymm1
+
+  maybe read:      { %ymm2 %ymm3 }
+  must read:       { %ymm2 %ymm3 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%ymm1  : concatenateMInt( concatenateMInt( orMInt( mi(64, 0), xorMInt( orMInt( orMInt( extractMInt( %ymm2, 0, 64), extractMInt( %ymm3, 0, 64)), xorMInt( orMInt( xorMInt( extractMInt( %ymm2, 0, 64), extractMInt( %ymm3, 0, 64)), extractMInt( %ymm3, 0, 64)), xorMInt( extractMInt( %ymm2, 0, 64), extractMInt( %ymm3, 0, 64)))), xorMInt( orMInt( xorMInt( extractMInt( %ymm2, 0, 64), extractMInt( %ymm3, 0, 64)), extractMInt( %ymm3, 0, 64)), xorMInt( extractMInt( %ymm2, 0, 64), extractMInt( %ymm3, 0, 64))))), orMInt( mi(64, 0), xorMInt( orMInt( orMInt( extractMInt( %ymm2, 64, 128), extractMInt( %ymm3, 64, 128)), xorMInt( orMInt( xorMInt( extractMInt( %ymm2, 64, 128), extractMInt( %ymm3, 64, 128)), extractMInt( %ymm3, 64, 128)), xorMInt( extractMInt( %ymm2, 64, 128), extractMInt( %ymm3, 64, 128)))), xorMInt( orMInt( xorMInt( extractMInt( %ymm2, 64, 128), extractMInt( %ymm3, 64, 128)), extractMInt( %ymm3, 64, 128)), xorMInt( extractMInt( %ymm2, 64, 128), extractMInt( %ymm3, 64, 128)))))), concatenateMInt( xorMInt( orMInt( xorMInt( orMInt( xorMInt( extractMInt( %ymm2, 128, 192), extractMInt( %ymm3, 128, 192)), extractMInt( %ymm3, 128, 192)), xorMInt( extractMInt( %ymm2, 128, 192), extractMInt( %ymm3, 128, 192))), orMInt( extractMInt( %ymm2, 128, 192), extractMInt( %ymm3, 128, 192))), xorMInt( orMInt( xorMInt( extractMInt( %ymm2, 128, 192), extractMInt( %ymm3, 128, 192)), extractMInt( %ymm3, 128, 192)), xorMInt( extractMInt( %ymm2, 128, 192), extractMInt( %ymm3, 128, 192)))), xorMInt( orMInt( xorMInt( orMInt( xorMInt( extractMInt( %ymm2, 192, 256), extractMInt( %ymm3, 192, 256)), extractMInt( %ymm3, 192, 256)), xorMInt( extractMInt( %ymm2, 192, 256), extractMInt( %ymm3, 192, 256))), orMInt( extractMInt( %ymm2, 192, 256), extractMInt( %ymm3, 192, 256))), xorMInt( orMInt( xorMInt( extractMInt( %ymm2, 192, 256), extractMInt( %ymm3, 192, 256)), extractMInt( %ymm3, 192, 256)), xorMInt( extractMInt( %ymm2, 192, 256), extractMInt( %ymm3, 192, 256))))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

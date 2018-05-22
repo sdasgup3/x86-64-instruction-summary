@@ -1,0 +1,17 @@
+code: vpmovsxdq %xmm2, %ymm1
+
+  maybe read:      { %xmm2 }
+  must read:       { %xmm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+Formula:
+
+%ymm1  : concatenateMInt( concatenateMInt( mi(64, svalueMInt(extractMInt( %ymm2, 128, 160))), mi(64, svalueMInt(extractMInt( %ymm2, 160, 192)))), concatenateMInt( mi(64, svalueMInt(extractMInt( %ymm2, 192, 224))), mi(64, svalueMInt(extractMInt( %ymm2, 224, 256)))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv
