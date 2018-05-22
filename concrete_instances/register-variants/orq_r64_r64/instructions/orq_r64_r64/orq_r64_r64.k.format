@@ -13,7 +13,7 @@ Formula:
 %rbx   : orMInt( %rcx, %rbx)
 
 %cf    : mi(1, 0)
-%pf    : getParity(orMInt( extractMInt( %rcx, 56, 64), extractMInt( %rbx, 56, 64)))
+%pf    : (#ifMInt (notBool (((((((eqMInt( orMInt( extractMInt( %rcx, 63, 64), extractMInt( %rbx, 63, 64)), mi(1, 1)) xorBool eqMInt( orMInt( extractMInt( %rcx, 62, 63), extractMInt( %rbx, 62, 63)), mi(1, 1))) xorBool eqMInt( orMInt( extractMInt( %rcx, 61, 62), extractMInt( %rbx, 61, 62)), mi(1, 1))) xorBool eqMInt( orMInt( extractMInt( %rcx, 60, 61), extractMInt( %rbx, 60, 61)), mi(1, 1))) xorBool eqMInt( orMInt( extractMInt( %rcx, 59, 60), extractMInt( %rbx, 59, 60)), mi(1, 1))) xorBool eqMInt( orMInt( extractMInt( %rcx, 58, 59), extractMInt( %rbx, 58, 59)), mi(1, 1))) xorBool eqMInt( orMInt( extractMInt( %rcx, 57, 58), extractMInt( %rbx, 57, 58)), mi(1, 1))) xorBool eqMInt( orMInt( extractMInt( %rcx, 56, 57), extractMInt( %rbx, 56, 57)), mi(1, 1)))) #then mi(1, 1) #else mi(1, 0) #fi)
 %af    : (#ifMInt TMP_BOOL_0 #then mi(1, 1) #else mi(1, 0) #fi)
 %zf    : (#ifMInt eqMInt( orMInt( %rcx, %rbx), mi(64, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
 %sf    : orMInt( extractMInt( %rcx, 0, 1), extractMInt( %rbx, 0, 1))
