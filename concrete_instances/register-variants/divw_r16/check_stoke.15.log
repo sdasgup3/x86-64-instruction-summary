@@ -1,0 +1,10 @@
+[4m[1m[34mFiring Last 1[0m
+Thread 1 start: divw_r16
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/register-variants/divw_r16/instructions/divw_r16/divw_r16.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ax %dx %bx }" --live_out "{ %ax %dx }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Sandbox did not finish normally: divw_r16 8
+Execution time divw_r16: 7 s
+Thread 1 done!: divw_r16

@@ -1,0 +1,11 @@
+[4m[1m[34mFiring Last 1[0m
+Thread 1 start: vfmaddsub132ps_xmm_xmm_xmm
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/register-variants/vfmaddsub132ps_xmm_xmm_xmm/instructions/vfmaddsub132ps_xmm_xmm_xmm/vfmaddsub132ps_xmm_xmm_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Execution time vfmaddsub132ps_xmm_xmm_xmm: 1800 s
+Thread 1 done!: vfmaddsub132ps_xmm_xmm_xmm
