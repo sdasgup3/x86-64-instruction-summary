@@ -1,0 +1,16 @@
+[4m[1m[34mFiring Last 1[0m
+Thread 1 start: salb_r8_cl
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/register-variants/salb_r8_cl/instructions/salb_r8_cl/salb_r8_cl.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %cl %bl %cf %pf %zf %sf %of }" --live_out "{ %bl %pf %zf %sf }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time salb_r8_cl: 151 s
+Thread 1 done!: salb_r8_cl

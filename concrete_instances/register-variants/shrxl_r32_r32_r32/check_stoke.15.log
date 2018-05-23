@@ -1,0 +1,11 @@
+[4m[1m[34mFiring Last 1[0m
+Thread 1 start: shrxl_r32_r32_r32
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/register-variants/shrxl_r32_r32_r32/instructions/shrxl_r32_r32_r32/shrxl_r32_r32_r32.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ecx %edx }" --live_out "{ %rbx }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Execution time shrxl_r32_r32_r32: 1800 s
+Thread 1 done!: shrxl_r32_r32_r32

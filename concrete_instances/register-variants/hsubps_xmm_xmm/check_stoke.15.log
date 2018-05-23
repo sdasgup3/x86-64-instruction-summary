@@ -1,0 +1,5 @@
+[4m[1m[34mFiring Last 1[0m
+Thread 1 start: hsubps_xmm_xmm
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/register-variants/hsubps_xmm_xmm/instructions/hsubps_xmm_xmm/hsubps_xmm_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+Execution time hsubps_xmm_xmm: 1800 s
+Thread 1 done!: hsubps_xmm_xmm

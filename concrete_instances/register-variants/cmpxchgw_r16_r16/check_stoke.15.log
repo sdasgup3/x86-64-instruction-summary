@@ -1,0 +1,5 @@
+[4m[1m[34mFiring Last 1[0m
+Thread 1 start: cmpxchgw_r16_r16
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/register-variants/cmpxchgw_r16_r16/instructions/cmpxchgw_r16_r16/cmpxchgw_r16_r16.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ax %cx %bx %cf %pf %zf %sf %of }" --live_out "{ %ax %bx %cf %pf %zf %sf %of }" 
+Execution time cmpxchgw_r16_r16: 1801 s
+Thread 1 done!: cmpxchgw_r16_r16
