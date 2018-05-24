@@ -1,0 +1,32 @@
+code: vzeroupper 
+
+  maybe read:      { %xmm0 %xmm1 %xmm2 %xmm3 %xmm4 %xmm5 %xmm6 %xmm7 %xmm8 %xmm9 %xmm10 %xmm11 %xmm12 %xmm13 %xmm14 %xmm15 }
+  must read:       { %xmm0 %xmm1 %xmm2 %xmm3 %xmm4 %xmm5 %xmm6 %xmm7 %xmm8 %xmm9 %xmm10 %xmm11 %xmm12 %xmm13 %xmm14 %xmm15 }
+  maybe write:     { %ymm0 %ymm1 %ymm2 %ymm3 %ymm4 %ymm5 %ymm6 %ymm7 %ymm8 %ymm9 %ymm10 %ymm11 %ymm12 %ymm13 %ymm14 %ymm15 }
+  must write:      { %ymm0 %ymm1 %ymm2 %ymm3 %ymm4 %ymm5 %ymm6 %ymm7 %ymm8 %ymm9 %ymm10 %ymm11 %ymm12 %ymm13 %ymm14 %ymm15 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%ymm0  : concatenateMInt( mi(128, 0), extractMInt( %ymm0, 128, 256))
+%ymm1  : concatenateMInt( mi(128, 0), extractMInt( %ymm1, 128, 256))
+%ymm2  : concatenateMInt( mi(128, 0), extractMInt( %ymm2, 128, 256))
+%ymm3  : concatenateMInt( mi(128, 0), extractMInt( %ymm3, 128, 256))
+%ymm4  : concatenateMInt( mi(128, 0), extractMInt( %ymm4, 128, 256))
+%ymm5  : concatenateMInt( mi(128, 0), extractMInt( %ymm5, 128, 256))
+%ymm6  : concatenateMInt( mi(128, 0), extractMInt( %ymm6, 128, 256))
+%ymm7  : concatenateMInt( mi(128, 0), extractMInt( %ymm7, 128, 256))
+%ymm8  : concatenateMInt( mi(128, 0), extractMInt( %ymm8, 128, 256))
+%ymm9  : concatenateMInt( mi(128, 0), extractMInt( %ymm9, 128, 256))
+%ymm10 : concatenateMInt( mi(128, 0), extractMInt( %ymm10, 128, 256))
+%ymm11 : concatenateMInt( mi(128, 0), extractMInt( %ymm11, 128, 256))
+%ymm12 : concatenateMInt( mi(128, 0), extractMInt( %ymm12, 128, 256))
+%ymm13 : concatenateMInt( mi(128, 0), extractMInt( %ymm13, 128, 256))
+%ymm14 : concatenateMInt( mi(128, 0), extractMInt( %ymm14, 128, 256))
+%ymm15 : concatenateMInt( mi(128, 0), extractMInt( %ymm15, 128, 256))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

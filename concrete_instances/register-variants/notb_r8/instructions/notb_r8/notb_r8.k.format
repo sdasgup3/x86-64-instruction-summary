@@ -10,7 +10,7 @@ code: notb %bl
 
 Formula:
 
-%rbx   : concatenateMInt( extractMInt( %rbx, 0, 56), xorMInt( mi(8, 255), extractMInt( %rbx, 56, 64)))
+%rbx   : concatenateMInt( extractMInt( %rbx, 0, 56), xorMInt( extractMInt( %rbx, 56, 64), mi(8, 255)))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

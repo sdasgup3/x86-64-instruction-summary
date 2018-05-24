@@ -1,0 +1,17 @@
+code: pmovsxbw %xmm2, %xmm1
+
+  maybe read:      { %xmm2 }
+  must read:       { %xmm2 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse4_1 }
+
+Formula:
+
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), concatenateMInt( mi(16, svalueMInt(extractMInt( %ymm2, 192, 200))), concatenateMInt( mi(16, svalueMInt(extractMInt( %ymm2, 200, 208))), concatenateMInt( mi(16, svalueMInt(extractMInt( %ymm2, 208, 216))), concatenateMInt( mi(16, svalueMInt(extractMInt( %ymm2, 216, 224))), concatenateMInt( mi(16, svalueMInt(extractMInt( %ymm2, 224, 232))), concatenateMInt( mi(16, svalueMInt(extractMInt( %ymm2, 232, 240))), concatenateMInt( mi(16, svalueMInt(extractMInt( %ymm2, 240, 248))), mi(16, svalueMInt(extractMInt( %ymm2, 248, 256)))))))))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

@@ -10,7 +10,7 @@ code: setng %ah
 
 Formula:
 
-%rax   : concatenateMInt( concatenateMInt( extractMInt( %rax, 0, 48), (#ifMInt eqMInt( concatenateMInt( xorMInt( (#ifMInt %sf #then mi(8, 1) #else mi(8, 0) #fi), (#ifMInt %of #then mi(8, 1) #else mi(8, 0) #fi)), (#ifMInt %zf #then mi(8, 1) #else mi(8, 0) #fi)), mi(16, 0)) #then mi(8, 0) #else mi(8, 1) #fi)), extractMInt( %rax, 56, 64))
+%rax   : concatenateMInt( concatenateMInt( extractMInt( %rax, 0, 48), (#ifMInt eqMInt( concatenateMInt( xorMInt( (#ifMInt %of #then mi(8, 1) #else mi(8, 0) #fi), (#ifMInt %sf #then mi(8, 1) #else mi(8, 0) #fi)), (#ifMInt %zf #then mi(8, 1) #else mi(8, 0) #fi)), mi(16, 0)) #then mi(8, 0) #else mi(8, 1) #fi)), extractMInt( %rax, 56, 64))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

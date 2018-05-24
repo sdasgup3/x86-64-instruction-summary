@@ -1,0 +1,17 @@
+code: vpmuldq %ymm3, %ymm2, %ymm1
+
+  maybe read:      { %ymm2 %ymm3 }
+  must read:       { %ymm2 %ymm3 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+Formula:
+
+%ymm1  : concatenateMInt( mulMInt( mi(64, svalueMInt(extractMInt( %ymm2, 32, 64))), mi(64, svalueMInt(extractMInt( %ymm3, 32, 64)))), concatenateMInt( mulMInt( mi(64, svalueMInt(extractMInt( %ymm2, 96, 128))), mi(64, svalueMInt(extractMInt( %ymm3, 96, 128)))), concatenateMInt( mulMInt( mi(64, svalueMInt(extractMInt( %ymm2, 160, 192))), mi(64, svalueMInt(extractMInt( %ymm3, 160, 192)))), mulMInt( mi(64, svalueMInt(extractMInt( %ymm2, 224, 256))), mi(64, svalueMInt(extractMInt( %ymm3, 224, 256)))))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

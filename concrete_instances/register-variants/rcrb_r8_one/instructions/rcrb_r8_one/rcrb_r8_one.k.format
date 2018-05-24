@@ -1,0 +1,20 @@
+code: rcrb $0x1, %bl
+
+  maybe read:      { %bl %cf }
+  must read:       { %bl %cf }
+  maybe write:     { %bl %cf %of }
+  must write:      { %bl %cf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rbx   : concatenateMInt( extractMInt( %rbx, 0, 56), extractMInt( ror( concatenateMInt( (#ifMInt %cf #then mi(1, 1) #else mi(1, 0) #fi), extractMInt( %rbx, 56, 64)), mi(9, 1)), 1, 9))
+
+%cf    : extractMInt( ror( concatenateMInt( (#ifMInt %cf #then mi(1, 1) #else mi(1, 0) #fi), extractMInt( %rbx, 56, 64)), mi(9, 1)), 0, 1)
+%of    : (#ifMInt ((TRUE andBool (eqMInt( extractMInt( ror( concatenateMInt( (#ifMInt %cf #then mi(1, 1) #else mi(1, 0) #fi), extractMInt( %rbx, 56, 64)), mi(9, 1)), 1, 2), mi(1, 1)) xorBool eqMInt( extractMInt( ror( concatenateMInt( (#ifMInt %cf #then mi(1, 1) #else mi(1, 0) #fi), extractMInt( %rbx, 56, 64)), mi(9, 1)), 2, 3), mi(1, 1)))) orBool (FALSE andBool ((TRUE andBool %of) orBool (FALSE andBool TMP_BOOL_0)))) #then mi(1, 1) #else mi(1, 0) #fi)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

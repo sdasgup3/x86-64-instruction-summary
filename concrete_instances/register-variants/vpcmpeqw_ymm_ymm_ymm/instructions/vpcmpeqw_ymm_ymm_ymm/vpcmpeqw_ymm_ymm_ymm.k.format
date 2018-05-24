@@ -1,0 +1,17 @@
+code: vpcmpeqw %ymm3, %ymm2, %ymm1
+
+  maybe read:      { %ymm2 %ymm3 }
+  must read:       { %ymm2 %ymm3 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+Formula:
+
+%ymm1  : concatenateMInt( (#ifMInt eqMInt( extractMInt( %ymm2, 0, 16), extractMInt( %ymm3, 0, 16)) #then mi(16, 65535) #else mi(16, 0) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( %ymm2, 16, 32), extractMInt( %ymm3, 16, 32)) #then mi(16, 65535) #else mi(16, 0) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( %ymm2, 32, 48), extractMInt( %ymm3, 32, 48)) #then mi(16, 65535) #else mi(16, 0) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( %ymm2, 48, 64), extractMInt( %ymm3, 48, 64)) #then mi(16, 65535) #else mi(16, 0) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( %ymm2, 64, 80), extractMInt( %ymm3, 64, 80)) #then mi(16, 65535) #else mi(16, 0) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( %ymm2, 80, 96), extractMInt( %ymm3, 80, 96)) #then mi(16, 65535) #else mi(16, 0) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( %ymm2, 96, 112), extractMInt( %ymm3, 96, 112)) #then mi(16, 65535) #else mi(16, 0) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( %ymm2, 112, 128), extractMInt( %ymm3, 112, 128)) #then mi(16, 65535) #else mi(16, 0) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( %ymm2, 128, 144), extractMInt( %ymm3, 128, 144)) #then mi(16, 65535) #else mi(16, 0) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( %ymm2, 144, 160), extractMInt( %ymm3, 144, 160)) #then mi(16, 65535) #else mi(16, 0) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( %ymm2, 160, 176), extractMInt( %ymm3, 160, 176)) #then mi(16, 65535) #else mi(16, 0) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( %ymm2, 176, 192), extractMInt( %ymm3, 176, 192)) #then mi(16, 65535) #else mi(16, 0) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( %ymm2, 192, 208), extractMInt( %ymm3, 192, 208)) #then mi(16, 65535) #else mi(16, 0) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( %ymm2, 208, 224), extractMInt( %ymm3, 208, 224)) #then mi(16, 65535) #else mi(16, 0) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( %ymm2, 224, 240), extractMInt( %ymm3, 224, 240)) #then mi(16, 65535) #else mi(16, 0) #fi), (#ifMInt eqMInt( extractMInt( %ymm2, 240, 256), extractMInt( %ymm3, 240, 256)) #then mi(16, 65535) #else mi(16, 0) #fi))))))))))))))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

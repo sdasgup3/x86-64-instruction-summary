@@ -1,0 +1,17 @@
+code: pminsw %xmm2, %xmm1
+
+  maybe read:      { %xmm1 %xmm2 }
+  must read:       { %xmm1 %xmm2 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+Formula:
+
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), concatenateMInt( (#ifMInt sltMInt( extractMInt( %ymm1, 128, 144), extractMInt( %ymm2, 128, 144)) #then extractMInt( %ymm1, 128, 144) #else extractMInt( %ymm2, 128, 144) #fi), concatenateMInt( (#ifMInt sltMInt( extractMInt( %ymm1, 144, 160), extractMInt( %ymm2, 144, 160)) #then extractMInt( %ymm1, 144, 160) #else extractMInt( %ymm2, 144, 160) #fi), concatenateMInt( (#ifMInt sltMInt( extractMInt( %ymm1, 160, 176), extractMInt( %ymm2, 160, 176)) #then extractMInt( %ymm1, 160, 176) #else extractMInt( %ymm2, 160, 176) #fi), concatenateMInt( (#ifMInt sltMInt( extractMInt( %ymm1, 176, 192), extractMInt( %ymm2, 176, 192)) #then extractMInt( %ymm1, 176, 192) #else extractMInt( %ymm2, 176, 192) #fi), concatenateMInt( (#ifMInt sltMInt( extractMInt( %ymm1, 192, 208), extractMInt( %ymm2, 192, 208)) #then extractMInt( %ymm1, 192, 208) #else extractMInt( %ymm2, 192, 208) #fi), concatenateMInt( (#ifMInt sltMInt( extractMInt( %ymm1, 208, 224), extractMInt( %ymm2, 208, 224)) #then extractMInt( %ymm1, 208, 224) #else extractMInt( %ymm2, 208, 224) #fi), concatenateMInt( (#ifMInt sltMInt( extractMInt( %ymm1, 224, 240), extractMInt( %ymm2, 224, 240)) #then extractMInt( %ymm1, 224, 240) #else extractMInt( %ymm2, 224, 240) #fi), (#ifMInt sltMInt( extractMInt( %ymm1, 240, 256), extractMInt( %ymm2, 240, 256)) #then extractMInt( %ymm1, 240, 256) #else extractMInt( %ymm2, 240, 256) #fi)))))))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

@@ -1,0 +1,24 @@
+code: imulb %bl
+
+  maybe read:      { %al %bl }
+  must read:       { %al %bl }
+  maybe write:     { %ax %cf %of }
+  must write:      { %ax %cf %of }
+  maybe undef:     { %pf %af %zf %sf }
+  must undef:      { %pf %af %zf %sf }
+  required flags:  { }
+
+Formula:
+
+%rax   : concatenateMInt( extractMInt( %rax, 0, 48), mulMInt( mi(16, svalueMInt(extractMInt( %rbx, 56, 64))), mi(16, svalueMInt(extractMInt( %rax, 56, 64)))))
+
+%cf    : (#ifMInt (notBool eqMInt( mulMInt( mi(16, svalueMInt(extractMInt( %rbx, 56, 64))), mi(16, svalueMInt(extractMInt( %rax, 56, 64)))), mi(16, svalueMInt(extractMInt( mulMInt( mi(16, svalueMInt(extractMInt( %rbx, 56, 64))), mi(16, svalueMInt(extractMInt( %rax, 56, 64)))), 8, 16))))) #then mi(1, 1) #else mi(1, 0) #fi)
+%pf    : (#ifMInt TMP_BOOL_2 #then mi(1, 1) #else mi(1, 0) #fi)
+%af    : (#ifMInt TMP_BOOL_1 #then mi(1, 1) #else mi(1, 0) #fi)
+%zf    : (#ifMInt TMP_BOOL_0 #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : extractMInt( mulMInt( mi(16, svalueMInt(extractMInt( %rbx, 56, 64))), mi(16, svalueMInt(extractMInt( %rax, 56, 64)))), 8, 9)
+%of    : (#ifMInt (notBool eqMInt( mulMInt( mi(16, svalueMInt(extractMInt( %rbx, 56, 64))), mi(16, svalueMInt(extractMInt( %rax, 56, 64)))), mi(16, svalueMInt(extractMInt( mulMInt( mi(16, svalueMInt(extractMInt( %rbx, 56, 64))), mi(16, svalueMInt(extractMInt( %rax, 56, 64)))), 8, 16))))) #then mi(1, 1) #else mi(1, 0) #fi)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

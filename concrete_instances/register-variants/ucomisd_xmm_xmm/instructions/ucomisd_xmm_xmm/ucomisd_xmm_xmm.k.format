@@ -1,0 +1,22 @@
+code: ucomisd %xmm2, %xmm1
+
+  maybe read:      { %xmm1 %xmm2 }
+  must read:       { %xmm1 %xmm2 }
+  maybe write:     { %cf %pf %af %zf %sf %of }
+  must write:      { %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+Formula:
+
+%cf    : (#ifMInt (eqMInt( comisd(extractMInt( %ymm1, 192, 256), extractMInt( %ymm2, 192, 256)), mi(2, 0)) orBool eqMInt( comisd(extractMInt( %ymm1, 192, 256), extractMInt( %ymm2, 192, 256)), mi(2, 2))) #then mi(1, 1) #else mi(1, 0) #fi)
+%pf    : (#ifMInt eqMInt( comisd(extractMInt( %ymm1, 192, 256), extractMInt( %ymm2, 192, 256)), mi(2, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
+%af    : mi(1, 0)
+%zf    : (#ifMInt (eqMInt( comisd(extractMInt( %ymm1, 192, 256), extractMInt( %ymm2, 192, 256)), mi(2, 0)) orBool eqMInt( comisd(extractMInt( %ymm1, 192, 256), extractMInt( %ymm2, 192, 256)), mi(2, 3))) #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : mi(1, 0)
+%of    : mi(1, 0)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

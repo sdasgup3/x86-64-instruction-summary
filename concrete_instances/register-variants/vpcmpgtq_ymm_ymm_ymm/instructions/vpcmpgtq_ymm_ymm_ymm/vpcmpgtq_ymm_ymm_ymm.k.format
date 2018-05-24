@@ -1,0 +1,17 @@
+code: vpcmpgtq %ymm3, %ymm2, %ymm1
+
+  maybe read:      { %ymm2 %ymm3 }
+  must read:       { %ymm2 %ymm3 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+Formula:
+
+%ymm1  : concatenateMInt( (#ifMInt sgtMInt( extractMInt( %ymm2, 0, 64), extractMInt( %ymm3, 0, 64)) #then mi(64, 18446744073709551615) #else mi(64, 0) #fi), concatenateMInt( (#ifMInt sgtMInt( extractMInt( %ymm2, 64, 128), extractMInt( %ymm3, 64, 128)) #then mi(64, 18446744073709551615) #else mi(64, 0) #fi), concatenateMInt( (#ifMInt sgtMInt( extractMInt( %ymm2, 128, 192), extractMInt( %ymm3, 128, 192)) #then mi(64, 18446744073709551615) #else mi(64, 0) #fi), (#ifMInt sgtMInt( extractMInt( %ymm2, 192, 256), extractMInt( %ymm3, 192, 256)) #then mi(64, 18446744073709551615) #else mi(64, 0) #fi))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

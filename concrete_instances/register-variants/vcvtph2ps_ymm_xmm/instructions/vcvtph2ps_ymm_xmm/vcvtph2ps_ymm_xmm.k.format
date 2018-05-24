@@ -1,0 +1,17 @@
+code: vcvtph2ps %xmm2, %ymm1
+
+  maybe read:      { %xmm2 %mxcsr::rc[0] }
+  must read:       { %xmm2 %mxcsr::rc[0] }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { f16c }
+
+Formula:
+
+%ymm1  : concatenateMInt( cvt_half_to_single(extractMInt( %ymm2, 128, 144)), concatenateMInt( cvt_half_to_single(extractMInt( %ymm2, 144, 160)), concatenateMInt( cvt_half_to_single(extractMInt( %ymm2, 160, 176)), concatenateMInt( cvt_half_to_single(extractMInt( %ymm2, 176, 192)), concatenateMInt( cvt_half_to_single(extractMInt( %ymm2, 192, 208)), concatenateMInt( cvt_half_to_single(extractMInt( %ymm2, 208, 224)), concatenateMInt( cvt_half_to_single(extractMInt( %ymm2, 224, 240)), cvt_half_to_single(extractMInt( %ymm2, 240, 256)))))))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

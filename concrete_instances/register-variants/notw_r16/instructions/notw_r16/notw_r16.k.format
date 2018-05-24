@@ -10,7 +10,7 @@ code: notw %bx
 
 Formula:
 
-%rbx   : concatenateMInt( extractMInt( %rbx, 0, 48), xorMInt( mi(16, 65535), extractMInt( %rbx, 48, 64)))
+%rbx   : concatenateMInt( extractMInt( %rbx, 0, 48), xorMInt( extractMInt( %rbx, 48, 64), mi(16, 65535)))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

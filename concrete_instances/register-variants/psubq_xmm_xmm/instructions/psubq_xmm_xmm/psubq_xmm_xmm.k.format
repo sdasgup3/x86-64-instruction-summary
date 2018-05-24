@@ -10,7 +10,7 @@ code: psubq %xmm2, %xmm1
 
 Formula:
 
-%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), concatenateMInt( extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), xorMInt( mi(64, 18446744073709551615), extractMInt( %ymm2, 128, 192))), mi(65, 1)), concatenateMInt( mi(1, 0), extractMInt( %ymm1, 128, 192))), 1, 65), extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), xorMInt( mi(64, 18446744073709551615), extractMInt( %ymm2, 192, 256))), mi(65, 1)), concatenateMInt( mi(1, 0), extractMInt( %ymm1, 192, 256))), 1, 65)))
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), concatenateMInt( extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), xorMInt( extractMInt( %ymm2, 128, 192), mi(64, 18446744073709551615))), mi(65, 1)), concatenateMInt( mi(1, 0), extractMInt( %ymm1, 128, 192))), 1, 65), extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), xorMInt( extractMInt( %ymm2, 192, 256), mi(64, 18446744073709551615))), mi(65, 1)), concatenateMInt( mi(1, 0), extractMInt( %ymm1, 192, 256))), 1, 65)))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

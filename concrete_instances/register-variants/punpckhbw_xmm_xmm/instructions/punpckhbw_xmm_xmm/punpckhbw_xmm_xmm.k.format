@@ -1,0 +1,17 @@
+code: punpckhbw %xmm2, %xmm1
+
+  maybe read:      { %xmm1 %xmm2 }
+  must read:       { %xmm1 %xmm2 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+Formula:
+
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), concatenateMInt( concatenateMInt( extractMInt( %ymm2, 128, 136), extractMInt( %ymm1, 128, 136)), concatenateMInt( concatenateMInt( extractMInt( %ymm2, 136, 144), extractMInt( %ymm1, 136, 144)), concatenateMInt( concatenateMInt( extractMInt( %ymm2, 144, 152), extractMInt( %ymm1, 144, 152)), concatenateMInt( concatenateMInt( extractMInt( %ymm2, 152, 160), extractMInt( %ymm1, 152, 160)), concatenateMInt( concatenateMInt( extractMInt( %ymm2, 160, 168), extractMInt( %ymm1, 160, 168)), concatenateMInt( concatenateMInt( extractMInt( %ymm2, 168, 176), extractMInt( %ymm1, 168, 176)), concatenateMInt( concatenateMInt( extractMInt( %ymm2, 176, 184), extractMInt( %ymm1, 176, 184)), concatenateMInt( extractMInt( %ymm2, 184, 192), extractMInt( %ymm1, 184, 192))))))))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

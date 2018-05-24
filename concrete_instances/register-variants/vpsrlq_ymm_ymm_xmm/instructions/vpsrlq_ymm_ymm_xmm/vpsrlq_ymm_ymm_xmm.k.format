@@ -1,0 +1,17 @@
+code: vpsrlq %xmm3, %ymm2, %ymm1
+
+  maybe read:      { %ymm2 %xmm3 }
+  must read:       { %ymm2 %xmm3 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+Formula:
+
+%ymm1  : (#ifMInt ugtMInt( extractMInt( %ymm3, 192, 256), mi(64, 63)) #then mi(256, 0) #else concatenateMInt( lshrMInt( extractMInt( %ymm2, 0, 64), uvalueMInt(extractMInt( %ymm3, 192, 256))), concatenateMInt( lshrMInt( extractMInt( %ymm2, 64, 128), uvalueMInt(extractMInt( %ymm3, 192, 256))), concatenateMInt( lshrMInt( extractMInt( %ymm2, 128, 192), uvalueMInt(extractMInt( %ymm3, 192, 256))), lshrMInt( extractMInt( %ymm2, 192, 256), uvalueMInt(extractMInt( %ymm3, 192, 256)))))) #fi)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv
