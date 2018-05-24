@@ -10,7 +10,7 @@ code: movq %rbx, %xmm1
 
 Formula:
 
-%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), concatenateMInt( mi(64, 0), xorMInt( mi(64, 0), %rbx)))
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), concatenateMInt( mi(64, 0), %rbx))
 
 sigfpe  : sigfpe
 sigbus  : sigbus
