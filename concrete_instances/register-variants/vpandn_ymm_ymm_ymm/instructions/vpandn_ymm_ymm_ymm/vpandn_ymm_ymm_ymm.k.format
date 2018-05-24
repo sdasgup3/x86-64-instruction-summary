@@ -10,7 +10,7 @@ code: vpandn %ymm3, %ymm2, %ymm1
 
 Formula:
 
-%ymm1  : concatenateMInt( concatenateMInt( orMInt( xorMInt( extractMInt( %ymm2, 0, 64), orMInt( extractMInt( %ymm2, 0, 64), extractMInt( %ymm3, 0, 64))), mi(64, 0)), orMInt( xorMInt( extractMInt( %ymm2, 64, 128), orMInt( extractMInt( %ymm2, 64, 128), extractMInt( %ymm3, 64, 128))), mi(64, 0))), concatenateMInt( xorMInt( extractMInt( %ymm2, 128, 192), orMInt( extractMInt( %ymm3, 128, 192), extractMInt( %ymm2, 128, 192))), xorMInt( extractMInt( %ymm2, 192, 256), orMInt( extractMInt( %ymm3, 192, 256), extractMInt( %ymm2, 192, 256)))))
+%ymm1  : concatenateMInt( concatenateMInt( xorMInt( extractMInt( %ymm2, 0, 64), orMInt( extractMInt( %ymm2, 0, 64), extractMInt( %ymm3, 0, 64))), xorMInt( extractMInt( %ymm2, 64, 128), orMInt( extractMInt( %ymm2, 64, 128), extractMInt( %ymm3, 64, 128)))), concatenateMInt( xorMInt( extractMInt( %ymm2, 128, 192), orMInt( extractMInt( %ymm3, 128, 192), extractMInt( %ymm2, 128, 192))), xorMInt( extractMInt( %ymm2, 192, 256), orMInt( extractMInt( %ymm3, 192, 256), extractMInt( %ymm2, 192, 256)))))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

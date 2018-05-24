@@ -10,7 +10,7 @@ code: cvttps2dq %xmm2, %xmm1
 
 Formula:
 
-%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), concatenateMInt( cvt_single_to_int32_truncate(xorMInt( mi(32, 0), orMInt( extractMInt( %ymm2, 128, 160), mi(32, 0)))), concatenateMInt( cvt_single_to_int32_truncate(xorMInt( mi(32, 0), orMInt( extractMInt( %ymm2, 160, 192), mi(32, 0)))), concatenateMInt( cvt_single_to_int32_truncate(xorMInt( mi(32, 0), orMInt( extractMInt( %ymm2, 192, 224), mi(32, 0)))), cvt_single_to_int32_truncate(xorMInt( mi(32, 0), orMInt( extractMInt( %ymm2, 224, 256), mi(32, 0))))))))
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), concatenateMInt( cvt_single_to_int32_truncate(extractMInt( %ymm2, 128, 160)), concatenateMInt( cvt_single_to_int32_truncate(extractMInt( %ymm2, 160, 192)), concatenateMInt( cvt_single_to_int32_truncate(extractMInt( %ymm2, 192, 224)), cvt_single_to_int32_truncate(extractMInt( %ymm2, 224, 256))))))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

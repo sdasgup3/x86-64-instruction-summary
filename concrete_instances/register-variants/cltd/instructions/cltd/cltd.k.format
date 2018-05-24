@@ -10,7 +10,7 @@ code: cltd
 
 Formula:
 
-%rdx   : concatenateMInt( mi(32, 0), xorMInt( mi(32, 0), extractMInt( mi(64, svalueMInt(extractMInt( %rax, 32, 64))), 0, 32)))
+%rdx   : concatenateMInt( mi(32, 0), extractMInt( mi(64, svalueMInt(extractMInt( %rax, 32, 64))), 0, 32))
 
 sigfpe  : sigfpe
 sigbus  : sigbus
