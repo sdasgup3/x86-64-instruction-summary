@@ -127,26 +127,29 @@
 ( push )
 ( echo "vpmovsxwq_xmm_xmm::ymm1")
 (assert (not (=
-(let ((a!1 (concat (sub_single (concat #x0000 ((_ extract 31 16) ymm2))
-#x00000000)
-(sub_single (concat #x0000 ((_ extract 15 0) ymm2))
-#x00000000)))
+(let ((a!1 (bvxor (concat (concat #x0000 ((_ extract 31 16) ymm2))
+(concat #x0000 ((_ extract 15 0) ymm2)))
+#xffffffffffffffff))
 (a!2 (bvadd (concat #b0
 (concat ((_ extract 31 0) ymm2)
 ((_ extract 31 0) ymm2)))
 (concat #b0
 (concat ((_ extract 31 0) ymm2)
 ((_ extract 31 0) ymm2))))))
-(let ((a!3 (concat (sub_single (concat #x0000 ((_ extract 31 16) a!2))
-#x00000000)
-(sub_single (concat #x0000 ((_ extract 15 0) a!2))
-#x00000000))))
-(let ((a!4 (bvadd (concat #b0 (bvxor a!1 #xffffffffffffffff))
+(let ((a!3 (concat #b0
+(concat (concat #x0000 ((_ extract 31 16) a!2))
+(concat #x0000 ((_ extract 15 0) a!2))))))
+(let ((a!4 ((_ sign_extend 32)
+((_ extract 63 32)
+(bvadd (concat #b0 a!1)
 #b00000000000000000000000000000000000000000000000000000000000000001
-(concat #b0 a!3))))
-(concat #x00000000000000000000000000000000
-(concat ((_ sign_extend 32) ((_ extract 63 32) a!4))
-((_ sign_extend 32) ((_ extract 31 0) a!4)))))))
+a!3))))
+(a!5 ((_ sign_extend 32)
+((_ extract 31 0)
+(bvadd (concat #b0 a!1)
+#b00000000000000000000000000000000000000000000000000000000000000001
+a!3)))))
+(concat #x00000000000000000000000000000000 (concat a!4 a!5)))))
 
 (concat #x00000000000000000000000000000000
 (concat ((_ sign_extend 48) ((_ extract 31 16) ymm2))

@@ -10,33 +10,32 @@ code: punpcklwd %xmm2, %xmm1
 
 Formula:
 
-%ymm1  : (let ((a!1 (concat (sub_single (concat #x0000 ((_ extract 63 48) %ymm1))
-                               #x00000000)
-                   (sub_single (concat #x0000 ((_ extract 47 32) %ymm1))
-                               #x00000000)))
-      (a!2 (concat (sub_single (concat #x0000 ((_ extract 47 32) %ymm2))
-                               #x00000000)
-                   (sub_single (concat #x0000 ((_ extract 47 32) %ymm2))
-                               #x00000000)))
-      (a!4 (concat (sub_single (concat #x0000 ((_ extract 31 16) %ymm1))
-                               #x00000000)
-                   (sub_single (concat #x0000 ((_ extract 15 0) %ymm1))
-                               #x00000000)))
-      (a!5 (concat (sub_single (concat #x0000 ((_ extract 15 0) %ymm2))
-                               #x00000000)
-                   (sub_single (concat #x0000 ((_ extract 15 0) %ymm2))
-                               #x00000000)))
-      (a!6 ((_ extract 15 0)
-             (sub_single (concat #x0000 ((_ extract 15 0) %ymm2)) #x00000000))))
-(let ((a!3 (bvor (concat ((_ extract 63 32) %ymm2)
+%ymm1  : (let ((a!1 (bvor (concat ((_ extract 63 32) %ymm2)
                          (concat ((_ extract 47 32) %ymm2)
                                  ((_ extract 47 32) %ymm2)))
-                 a!2))
-      (a!7 (bvxor a!4
-                  a!5
-                  (bvor (concat ((_ extract 31 0) %ymm2) (concat a!6 a!6)) a!5))))
-  (concat ((_ extract 255 128) %ymm1) (concat (bvxor a!1 a!2 a!3) a!7))))
+                 (concat (concat #x0000 ((_ extract 47 32) %ymm2))
+                         (concat #x0000 ((_ extract 47 32) %ymm2)))))
+      (a!3 (bvor (concat ((_ extract 31 0) %ymm2)
+                         (concat ((_ extract 15 0) %ymm2)
+                                 ((_ extract 15 0) %ymm2)))
+                 (concat (concat #x0000 ((_ extract 15 0) %ymm2))
+                         (concat #x0000 ((_ extract 15 0) %ymm2))))))
+(let ((a!2 (bvxor (concat (concat #x0000 ((_ extract 63 48) %ymm1))
+                          (concat #x0000 ((_ extract 47 32) %ymm1)))
+                  (concat (concat #x0000 ((_ extract 47 32) %ymm2))
+                          (concat #x0000 ((_ extract 47 32) %ymm2)))
+                  a!1))
+      (a!4 (bvxor (concat (concat #x0000 ((_ extract 31 16) %ymm1))
+                          (concat #x0000 ((_ extract 15 0) %ymm1)))
+                  (concat (concat #x0000 ((_ extract 15 0) %ymm2))
+                          (concat #x0000 ((_ extract 15 0) %ymm2)))
+                  a!3)))
+  (concat ((_ extract 255 128) %ymm1) (concat a!2 a!4))))
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

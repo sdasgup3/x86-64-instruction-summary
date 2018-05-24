@@ -28,6 +28,10 @@ Formula:
                            a!2))))
   (concat (concat ((_ extract 255 240) %ymm3) ((_ extract 255 240) %ymm2)) a!3))))
 
+
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

@@ -8,8 +8,6 @@ code: pmovzxbd %xmm2, %xmm1
   must undef:      { }
   required flags:  { sse4_1 }
 
-pmovzxbd %xmm2, %xmm1: Hindex0(9)
-pmovzxbd %xmm2, %xmm1: Hindex0(9)
 Formula:
 
 %ymm1  : (let ((a!1 (concat (concat #x000000 ((_ extract 23 16) %ymm2))

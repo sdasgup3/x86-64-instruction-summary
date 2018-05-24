@@ -8,8 +8,6 @@ code: vpmovsxwq %xmm2, %xmm1
   must undef:      { }
   required flags:  { avx }
 
-vpmovsxwq %xmm2, %xmm1: Hindex0(9)
-vpmovsxwq %xmm2, %xmm1: Hindex0(9)
 Formula:
 
 %ymm1  : (concat #x00000000000000000000000000000000

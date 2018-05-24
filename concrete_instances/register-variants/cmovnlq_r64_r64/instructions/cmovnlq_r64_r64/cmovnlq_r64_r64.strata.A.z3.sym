@@ -18,14 +18,17 @@ Formula:
                         (concat #b000000000000000000000000000000000000000000000000000000000
                                 #x01)))
               #b1)))
-(let ((a!3 (bvadd (ite (or (and true a!2) false) #b000000000 #b011111111)
-                  (ite (or (and true a!2) false) #b000000000 #b011111111))))
-(let ((a!4 (ite (= ((_ extract 8 8) a!3) #b1)
+(let ((a!3 (= (ite (or (and true a!2) false) #b0 #b1) #b1)))
+(let ((a!4 (ite a!3
                 (bvadd (concat #b0 ((_ extract 15 0) %rbx)) #b00000000000000001)
                 (concat #b0 ((_ extract 15 0) %rbx)))))
 (let ((a!5 (bvadd a!4 (concat #b0 (bvxor ((_ extract 15 0) %rbx) #xffff)))))
   (ite (= ((_ extract 15 0) a!5) #x0000) %rbx %rcx))))))
 
+
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

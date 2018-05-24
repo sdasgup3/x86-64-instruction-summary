@@ -8,8 +8,6 @@ code: punpckhwd %xmm2, %xmm1
   must undef:      { }
   required flags:  { sse2 }
 
-punpckhwd %xmm2, %xmm1: Hindex6(9)
-punpckhwd %xmm2, %xmm1: Hindex6(9)
 Formula:
 
 %ymm1  : (let ((a!1 (concat (concat ((_ extract 111 96) %ymm2)

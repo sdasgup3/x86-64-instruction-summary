@@ -125,135 +125,22 @@
 
 
 ( push )
-( echo "vpsubd_ymm_ymm_ymm::ymm1")
+( echo "vfmsub213ss_xmm_xmm_xmm::ymm1")
 (assert (not (=
-(let ((a!1 (concat #b0
-(bvxor (concat ((_ extract 255 224) ymm3)
-((_ extract 255 224) ymm2))
-#xffffffffffffffff)))
-(a!4 (concat #b0
-(bvxor (concat ((_ extract 223 192) ymm3)
-((_ extract 223 192) ymm2))
-#xffffffffffffffff)))
-(a!7 (concat #b0
-(bvxor (concat ((_ extract 191 160) ymm3)
-((_ extract 191 160) ymm2))
-#xffffffffffffffff)))
-(a!10 (concat #b0
-(bvxor (concat ((_ extract 159 128) ymm3)
-((_ extract 159 128) ymm2))
-#xffffffffffffffff)))
-(a!13 (concat #b0
-(bvxor (concat ((_ extract 127 96) ymm3)
-((_ extract 127 96) ymm2))
-#xffffffffffffffff)))
-(a!16 (concat #b0
-(bvxor (concat ((_ extract 95 64) ymm3)
-((_ extract 95 64) ymm2))
-#xffffffffffffffff)))
-(a!19 (concat #b0
-(bvxor (concat ((_ extract 63 32) ymm3)
-((_ extract 63 32) ymm2))
-#xffffffffffffffff)))
-(a!22 (concat #b0
-(bvxor (concat ((_ extract 31 0) ymm3)
-((_ extract 31 0) ymm2))
-#xffffffffffffffff))))
-(let ((a!2 (bvadd a!1
-#b00000000000000000000000000000000000000000000000000000000000000001
-(concat #b0
-(concat ((_ extract 255 224) ymm2)
-((_ extract 255 224) ymm2)))))
-(a!5 (bvadd a!4
-#b00000000000000000000000000000000000000000000000000000000000000001
-(concat #b0
-(concat ((_ extract 223 192) ymm2)
-((_ extract 223 192) ymm2)))))
-(a!8 (bvadd a!7
-#b00000000000000000000000000000000000000000000000000000000000000001
-(concat #b0
-(concat ((_ extract 191 160) ymm2)
-((_ extract 191 160) ymm2)))))
-(a!11 (bvadd a!10
-#b00000000000000000000000000000000000000000000000000000000000000001
-(concat #b0
-(concat ((_ extract 159 128) ymm2)
-((_ extract 159 128) ymm2)))))
-(a!14 (bvadd a!13
-#b00000000000000000000000000000000000000000000000000000000000000001
-(concat #b0
-(concat ((_ extract 127 96) ymm2)
-((_ extract 127 96) ymm2)))))
-(a!17 (bvadd a!16
-#b00000000000000000000000000000000000000000000000000000000000000001
-(concat #b0
-(concat ((_ extract 95 64) ymm2)
-((_ extract 95 64) ymm2)))))
-(a!20 (bvadd a!19
-#b00000000000000000000000000000000000000000000000000000000000000001
-(concat #b0
-(concat ((_ extract 63 32) ymm2)
-((_ extract 63 32) ymm2)))))
-(a!23 (bvadd a!22
-#b00000000000000000000000000000000000000000000000000000000000000001
-(concat #b0
-(concat ((_ extract 31 0) ymm2)
-((_ extract 31 0) ymm2))))))
-(let ((a!3 ((_ extract 31 0)
-(bvadd (concat #b000000000000000000000000000000000
-((_ extract 63 32) a!2))
-(concat #b000000000000000000000000000000000
-((_ extract 31 0) a!2)))))
-(a!6 ((_ extract 31 0)
-(bvadd (concat #b0 ((_ extract 63 0) a!5))
-(concat #b000000000000000000000000000000000
-((_ extract 63 32) a!5)))))
-(a!9 (bvadd (concat #b0
-(concat ((_ extract 63 32) a!8)
-((_ extract 63 32) a!8)))
-(concat #b0 ((_ extract 63 0) a!8))))
-(a!12 (bvadd (concat #b0
-(concat ((_ extract 63 32) a!11)
-((_ extract 63 32) a!11)))
-(concat #b0 ((_ extract 63 0) a!11))))
-(a!15 ((_ extract 31 0)
-(bvadd (concat #b000000000000000000000000000000000
-((_ extract 63 32) a!14))
-(concat #b000000000000000000000000000000000
-((_ extract 31 0) a!14)))))
-(a!18 ((_ extract 31 0)
-(bvadd (concat #b0 ((_ extract 63 0) a!17))
-(concat #b000000000000000000000000000000000
-((_ extract 63 32) a!17)))))
-(a!21 (bvadd (concat #b0
-(concat ((_ extract 63 32) a!20)
-((_ extract 63 32) a!20)))
-(concat #b0 ((_ extract 63 0) a!20))))
-(a!24 (bvadd (concat #b0
-(concat ((_ extract 63 32) a!23)
-((_ extract 63 32) a!23)))
-(concat #b0 ((_ extract 63 0) a!23)))))
-(concat (concat (concat (concat a!3 a!6) ((_ extract 31 0) a!9))
-((_ extract 31 0) a!12))
-(concat (concat (concat a!15 a!18) ((_ extract 31 0) a!21))
-((_ extract 31 0) a!24))))))
+(let ((a!1 (vfmadd132_single ((_ extract 31 0) ymm2)
+(vfnmsub132_single
+((_ extract 31 0) ymm3)
+((_ extract 31 0) ymm3)
+(concat #x000000 ((_ extract 7 0) ymm3)))
+((_ extract 31 0) ymm1))))
+(concat #x00000000000000000000000000000000
+(concat ((_ extract 127 32) ymm1) a!1)))
 
-(let ((a!1 (concat (bvsub ((_ extract 95 64) ymm2) ((_ extract 95 64) ymm3))
-(concat (bvsub ((_ extract 63 32) ymm2)
-((_ extract 63 32) ymm3))
-(bvsub ((_ extract 31 0) ymm2)
-((_ extract 31 0) ymm3))))))
-(let ((a!2 (concat (bvsub ((_ extract 159 128) ymm2)
-((_ extract 159 128) ymm3))
-(concat (bvsub ((_ extract 127 96) ymm2)
-((_ extract 127 96) ymm3))
-a!1))))
-(let ((a!3 (concat (bvsub ((_ extract 223 192) ymm2)
-((_ extract 223 192) ymm3))
-(concat (bvsub ((_ extract 191 160) ymm2)
-((_ extract 191 160) ymm3))
-a!2))))
-(concat (bvsub ((_ extract 255 224) ymm2) ((_ extract 255 224) ymm3)) a!3))))
+(concat #x00000000000000000000000000000000
+(concat ((_ extract 127 32) ymm1)
+(vfmsub213_single ((_ extract 31 0) ymm1)
+((_ extract 31 0) ymm2)
+((_ extract 31 0) ymm3))))
 )))
 (check-sat)
 ( pop )
