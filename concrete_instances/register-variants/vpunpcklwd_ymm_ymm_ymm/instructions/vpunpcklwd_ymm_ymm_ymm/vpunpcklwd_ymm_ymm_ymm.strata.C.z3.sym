@@ -8,8 +8,6 @@ code: vpunpcklwd %ymm3, %ymm2, %ymm1
   must undef:      { }
   required flags:  { avx2 }
 
-vpunpcklwd %ymm3, %ymm2, %ymm1: Hindex6(9)
-vpunpcklwd %ymm3, %ymm2, %ymm1: Hindex6(9)
 Formula:
 
 %ymm1  : (let ((a!1 (concat (concat ((_ extract 47 32) %ymm3) ((_ extract 47 32) %ymm2))

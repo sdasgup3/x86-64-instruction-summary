@@ -127,15 +127,14 @@
 ( push )
 ( echo "vfmsub213ss_xmm_xmm_xmm::ymm1")
 (assert (not (=
-(let ((a!1 (vfnmsub132_single
+(let ((a!1 (vfmadd132_single ((_ extract 31 0) ymm2)
+(vfnmsub132_single
 ((_ extract 31 0) ymm3)
 ((_ extract 31 0) ymm3)
-(add_single (concat #x000000 ((_ extract 7 0) ymm3)) #x00000000))))
+(concat #x000000 ((_ extract 7 0) ymm3)))
+((_ extract 31 0) ymm1))))
 (concat #x00000000000000000000000000000000
-(concat ((_ extract 127 32) ymm1)
-(vfmadd132_single ((_ extract 31 0) ymm2)
-a!1
-((_ extract 31 0) ymm1)))))
+(concat ((_ extract 127 32) ymm1) a!1)))
 
 (let ((a!1 (vfnmsub132_single
 ((_ extract 31 0) ymm3)

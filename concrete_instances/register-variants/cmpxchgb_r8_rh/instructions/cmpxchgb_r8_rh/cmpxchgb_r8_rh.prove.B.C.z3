@@ -125,135 +125,148 @@
 
 
 ( push )
-( echo "vpsubd_ymm_ymm_ymm::ymm1")
+( echo "cmpxchgb_r8_rh::cf")
 (assert (not (=
-(let ((a!1 (concat #b0
-(bvxor (concat ((_ extract 255 224) ymm3)
-((_ extract 255 224) ymm2))
-#xffffffffffffffff)))
-(a!4 (concat #b0
-(bvxor (concat ((_ extract 223 192) ymm3)
-((_ extract 223 192) ymm2))
-#xffffffffffffffff)))
-(a!7 (concat #b0
-(bvxor (concat ((_ extract 191 160) ymm3)
-((_ extract 191 160) ymm2))
-#xffffffffffffffff)))
-(a!10 (concat #b0
-(bvxor (concat ((_ extract 159 128) ymm3)
-((_ extract 159 128) ymm2))
-#xffffffffffffffff)))
-(a!13 (concat #b0
-(bvxor (concat ((_ extract 127 96) ymm3)
-((_ extract 127 96) ymm2))
-#xffffffffffffffff)))
-(a!16 (concat #b0
-(bvxor (concat ((_ extract 95 64) ymm3)
-((_ extract 95 64) ymm2))
-#xffffffffffffffff)))
-(a!19 (concat #b0
-(bvxor (concat ((_ extract 63 32) ymm3)
-((_ extract 63 32) ymm2))
-#xffffffffffffffff)))
-(a!22 (concat #b0
-(bvxor (concat ((_ extract 31 0) ymm3)
-((_ extract 31 0) ymm2))
-#xffffffffffffffff))))
-(let ((a!2 (bvadd a!1
-#b00000000000000000000000000000000000000000000000000000000000000001
-(concat #b0
-(concat ((_ extract 255 224) ymm2)
-((_ extract 255 224) ymm2)))))
-(a!5 (bvadd a!4
-#b00000000000000000000000000000000000000000000000000000000000000001
-(concat #b0
-(concat ((_ extract 223 192) ymm2)
-((_ extract 223 192) ymm2)))))
-(a!8 (bvadd a!7
-#b00000000000000000000000000000000000000000000000000000000000000001
-(concat #b0
-(concat ((_ extract 191 160) ymm2)
-((_ extract 191 160) ymm2)))))
-(a!11 (bvadd a!10
-#b00000000000000000000000000000000000000000000000000000000000000001
-(concat #b0
-(concat ((_ extract 159 128) ymm2)
-((_ extract 159 128) ymm2)))))
-(a!14 (bvadd a!13
-#b00000000000000000000000000000000000000000000000000000000000000001
-(concat #b0
-(concat ((_ extract 127 96) ymm2)
-((_ extract 127 96) ymm2)))))
-(a!17 (bvadd a!16
-#b00000000000000000000000000000000000000000000000000000000000000001
-(concat #b0
-(concat ((_ extract 95 64) ymm2)
-((_ extract 95 64) ymm2)))))
-(a!20 (bvadd a!19
-#b00000000000000000000000000000000000000000000000000000000000000001
-(concat #b0
-(concat ((_ extract 63 32) ymm2)
-((_ extract 63 32) ymm2)))))
-(a!23 (bvadd a!22
-#b00000000000000000000000000000000000000000000000000000000000000001
-(concat #b0
-(concat ((_ extract 31 0) ymm2)
-((_ extract 31 0) ymm2))))))
-(let ((a!3 ((_ extract 31 0)
-(bvadd (concat #b000000000000000000000000000000000
-((_ extract 63 32) a!2))
-(concat #b000000000000000000000000000000000
-((_ extract 31 0) a!2)))))
-(a!6 ((_ extract 31 0)
-(bvadd (concat #b0 ((_ extract 63 0) a!5))
-(concat #b000000000000000000000000000000000
-((_ extract 63 32) a!5)))))
-(a!9 (bvadd (concat #b0
-(concat ((_ extract 63 32) a!8)
-((_ extract 63 32) a!8)))
-(concat #b0 ((_ extract 63 0) a!8))))
-(a!12 (bvadd (concat #b0
-(concat ((_ extract 63 32) a!11)
-((_ extract 63 32) a!11)))
-(concat #b0 ((_ extract 63 0) a!11))))
-(a!15 ((_ extract 31 0)
-(bvadd (concat #b000000000000000000000000000000000
-((_ extract 63 32) a!14))
-(concat #b000000000000000000000000000000000
-((_ extract 31 0) a!14)))))
-(a!18 ((_ extract 31 0)
-(bvadd (concat #b0 ((_ extract 63 0) a!17))
-(concat #b000000000000000000000000000000000
-((_ extract 63 32) a!17)))))
-(a!21 (bvadd (concat #b0
-(concat ((_ extract 63 32) a!20)
-((_ extract 63 32) a!20)))
-(concat #b0 ((_ extract 63 0) a!20))))
-(a!24 (bvadd (concat #b0
-(concat ((_ extract 63 32) a!23)
-((_ extract 63 32) a!23)))
-(concat #b0 ((_ extract 63 0) a!23)))))
-(concat (concat (concat (concat a!3 a!6) ((_ extract 31 0) a!9))
-((_ extract 31 0) a!12))
-(concat (concat (concat a!15 a!18) ((_ extract 31 0) a!21))
-((_ extract 31 0) a!24))))))
+(let ((a!1 (bvadd (concat #b0 (bvnot ((_ extract 7 0) rcx)))
+#b000000001
+(concat #b0 ((_ extract 7 0) rax)))))
+(ite (not (= ((_ extract 8 8) a!1) #b1)) #b1 #b0))
 
-(let ((a!1 (concat (bvsub ((_ extract 95 64) ymm2) ((_ extract 95 64) ymm3))
-(concat (bvsub ((_ extract 63 32) ymm2)
-((_ extract 63 32) ymm3))
-(bvsub ((_ extract 31 0) ymm2)
-((_ extract 31 0) ymm3))))))
-(let ((a!2 (concat (bvsub ((_ extract 159 128) ymm2)
-((_ extract 159 128) ymm3))
-(concat (bvsub ((_ extract 127 96) ymm2)
-((_ extract 127 96) ymm3))
-a!1))))
-(let ((a!3 (concat (bvsub ((_ extract 223 192) ymm2)
-((_ extract 223 192) ymm3))
-(concat (bvsub ((_ extract 191 160) ymm2)
-((_ extract 191 160) ymm3))
-a!2))))
-(concat (bvsub ((_ extract 255 224) ymm2) ((_ extract 255 224) ymm3)) a!3))))
+(let ((a!1 (bvadd (concat #b0 ((_ extract 7 0) rax))
+#b000000001
+(concat #b0 (bvxor #xff ((_ extract 7 0) rcx))))))
+(let ((a!2 (bvadd (ite (= ((_ extract 8 8) a!1) #b1) #b000000000 #b011111111)
+(ite (= ((_ extract 8 8) a!1) #b1) #b000000000 #b011111111))))
+(= ((_ extract 8 8) a!2) #b1)))
+)))
+(check-sat)
+( pop )
+
+
+
+( push )
+( echo "cmpxchgb_r8_rh::of")
+(assert (not (=
+(let ((a!1 (= (= (bvnot ((_ extract 7 7) rcx)) #b1)
+(= ((_ extract 7 7) rax) #b1)))
+(a!2 (bvadd (concat #b0 (bvnot ((_ extract 7 0) rcx)))
+#b000000001
+(concat #b0 ((_ extract 7 0) rax)))))
+(let ((a!3 (= (= (bvnot ((_ extract 7 7) rcx)) #b1)
+(= ((_ extract 7 7) a!2) #b1))))
+(ite (and a!1 (not a!3)) #b1 #b0)))
+
+(let ((a!1 (= (= ((_ extract 7 7) rax) #b1)
+(= (bvxor #b1 ((_ extract 7 7) rcx)) #b1)))
+(a!2 (bvadd (concat #b0 ((_ extract 7 0) rax))
+#b000000001
+(concat #b0 (bvxor #xff ((_ extract 7 0) rcx))))))
+(let ((a!3 (not (= (= ((_ extract 7 7) rax) #b1) (= ((_ extract 7 7) a!2) #b1)))))
+(and a!1 a!3)))
+)))
+(check-sat)
+( pop )
+
+
+
+( push )
+( echo "cmpxchgb_r8_rh::pf")
+(assert (not (=
+(let ((a!1 (bvadd (concat #b0 (bvnot ((_ extract 7 0) rcx)))
+#b000000001
+(concat #b0 ((_ extract 7 0) rax)))))
+(let ((a!2 (not (xor (= ((_ extract 0 0) a!1) #b1)
+(= ((_ extract 1 1) a!1) #b1)
+(= ((_ extract 2 2) a!1) #b1)
+(= ((_ extract 3 3) a!1) #b1)
+(= ((_ extract 4 4) a!1) #b1)
+(= ((_ extract 5 5) a!1) #b1)
+(= ((_ extract 6 6) a!1) #b1)
+(= ((_ extract 7 7) a!1) #b1)))))
+(ite a!2 #b1 #b0)))
+
+(let ((a!1 (bvadd (concat #b0 ((_ extract 7 0) rax))
+#b000000001
+(concat #b0 (bvxor #xff ((_ extract 7 0) rcx))))))
+(not (xor (= ((_ extract 0 0) a!1) #b1)
+(= ((_ extract 1 1) a!1) #b1)
+(= ((_ extract 2 2) a!1) #b1)
+(= ((_ extract 3 3) a!1) #b1)
+(= ((_ extract 4 4) a!1) #b1)
+(= ((_ extract 5 5) a!1) #b1)
+(= ((_ extract 6 6) a!1) #b1)
+(= ((_ extract 7 7) a!1) #b1))))
+)))
+(check-sat)
+( pop )
+
+
+
+( push )
+( echo "cmpxchgb_r8_rh::rax")
+(assert (not (=
+(ite (= ((_ extract 7 0) rax) ((_ extract 7 0) rcx))
+rax
+(concat ((_ extract 63 8) rax) ((_ extract 7 0) rcx)))
+
+(concat ((_ extract 63 8) rax) ((_ extract 7 0) rcx))
+)))
+(check-sat)
+( pop )
+
+
+
+( push )
+( echo "cmpxchgb_r8_rh::rcx")
+(assert (not (=
+(concat ((_ extract 63 8) rcx)
+(ite (= ((_ extract 7 0) rax) ((_ extract 7 0) rcx))
+((_ extract 15 8) rbx)
+((_ extract 7 0) rcx)))
+
+(let ((a!1 (bvadd (concat #b0 ((_ extract 7 0) rax))
+#b000000001
+(concat #b0 (bvxor #xff ((_ extract 7 0) rcx))))))
+(concat ((_ extract 63 8) rcx)
+(ite (= ((_ extract 7 0) a!1) #x00)
+((_ extract 15 8) rbx)
+((_ extract 7 0) rcx))))
+)))
+(check-sat)
+( pop )
+
+
+
+( push )
+( echo "cmpxchgb_r8_rh::sf")
+(assert (not (=
+(let ((a!1 (bvadd (concat #b0 (bvnot ((_ extract 7 0) rcx)))
+#b000000001
+(concat #b0 ((_ extract 7 0) rax)))))
+((_ extract 7 7) a!1))
+
+(let ((a!1 (bvadd (concat #b0 ((_ extract 7 0) rax))
+#b000000001
+(concat #b0 (bvxor #xff ((_ extract 7 0) rcx))))))
+(= ((_ extract 7 7) a!1) #b1))
+)))
+(check-sat)
+( pop )
+
+
+
+( push )
+( echo "cmpxchgb_r8_rh::zf")
+(assert (not (=
+(let ((a!1 (bvadd (concat #b0 (bvnot ((_ extract 7 0) rcx)))
+#b000000001
+(concat #b0 ((_ extract 7 0) rax)))))
+(ite (= ((_ extract 7 0) a!1) #x00) #b1 #b0))
+
+(let ((a!1 (bvadd (concat #b0 ((_ extract 7 0) rax))
+#b000000001
+(concat #b0 (bvxor #xff ((_ extract 7 0) rcx))))))
+(= ((_ extract 7 0) a!1) #x00))
 )))
 (check-sat)
 ( pop )

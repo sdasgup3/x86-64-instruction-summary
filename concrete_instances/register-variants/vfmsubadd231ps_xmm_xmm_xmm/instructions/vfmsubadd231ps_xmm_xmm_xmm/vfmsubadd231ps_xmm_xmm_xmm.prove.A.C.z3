@@ -127,161 +127,51 @@
 ( push )
 ( echo "vfmsubadd231ps_xmm_xmm_xmm::ymm1")
 (assert (not (=
-(let ((a!1 (vfnmsub132_single
-(add_single (concat #x000000 ((_ extract 31 24) ymm1)) #x00000000)
+(let ((a!1 (add_single (vfnmsub132_single #x00000000 #x00000000 #x00000000)
+(vfnmsub132_single
+(concat #x000000 ((_ extract 31 24) ymm1))
 ((_ extract 127 96) ymm1)
-((_ extract 127 96) ymm1)))
-(a!5 (vfnmsub132_single
-(add_single (concat #x000000 ((_ extract 23 16) ymm1)) #x00000000)
+((_ extract 127 96) ymm1))))
+(a!2 (sub_single (vfnmsub132_single #x00000000 #x00000000 #x00000000)
+(vfnmsub132_single
+(concat #x000000 ((_ extract 23 16) ymm1))
 ((_ extract 95 64) ymm1)
-((_ extract 95 64) ymm1)))
-(a!10 (vfnmsub132_single
-(add_single (concat #x000000 ((_ extract 15 8) ymm1)) #x00000000)
+((_ extract 95 64) ymm1))))
+(a!3 (add_single (vfnmsub132_single #x00000000 #x00000000 #x00000000)
+(vfnmsub132_single
+(concat #x000000 ((_ extract 15 8) ymm1))
 ((_ extract 63 32) ymm1)
-((_ extract 63 32) ymm1)))
-(a!14 (vfnmsub132_single
-(add_single (concat #x000000 ((_ extract 7 0) ymm1)) #x00000000)
+((_ extract 63 32) ymm1))))
+(a!4 (sub_single (vfnmsub132_single #x00000000 #x00000000 #x00000000)
+(vfnmsub132_single
+(concat #x000000 ((_ extract 7 0) ymm1))
 ((_ extract 31 0) ymm1)
-((_ extract 31 0) ymm1))))
-(let ((a!2 (bvor #x00000000
-(bvxor #x00000000
-(add_single (vfnmsub132_single
-#x00000000
-#x00000000
-#x00000000)
-a!1))))
-(a!6 (bvor #x00000000
-(bvxor #x00000000
-(sub_single (vfnmsub132_single
-#x00000000
-#x00000000
-#x00000000)
-a!5))))
-(a!9 (bvxor #x0000000000000000
-(concat (add_single (vfnmsub132_single
-#x00000000
-#x00000000
-#x00000000)
-a!1)
-(sub_single (vfnmsub132_single
-#x00000000
-#x00000000
-#x00000000)
-a!5))))
-(a!11 (bvor #x00000000
-(bvxor #x00000000
-(add_single (vfnmsub132_single
-#x00000000
-#x00000000
-#x00000000)
-a!10))))
-(a!15 (bvor #x00000000
-(bvxor #x00000000
-(sub_single (vfnmsub132_single
-#x00000000
-#x00000000
-#x00000000)
-a!14))))
-(a!18 (bvxor #x0000000000000000
-(concat (add_single (vfnmsub132_single
-#x00000000
-#x00000000
-#x00000000)
-a!10)
-(sub_single (vfnmsub132_single
-#x00000000
-#x00000000
-#x00000000)
-a!14)))))
-(let ((a!3 (bvxor (bvxor #x00000000
-(add_single (vfnmsub132_single
-#x00000000
-#x00000000
-#x00000000)
-a!1))
-a!2))
-(a!7 (bvxor (bvxor #x00000000
-(sub_single (vfnmsub132_single
-#x00000000
-#x00000000
-#x00000000)
-a!5))
-a!6))
-(a!12 (bvxor (bvxor #x00000000
-(add_single (vfnmsub132_single
-#x00000000
-#x00000000
-#x00000000)
-a!10))
-a!11))
-(a!16 (bvxor (bvxor #x00000000
-(sub_single (vfnmsub132_single
-#x00000000
-#x00000000
-#x00000000)
-a!14))
-a!15)))
-(let ((a!4 (vfmsub132_single ((_ extract 127 96) ymm2)
+((_ extract 31 0) ymm1)))))
+(let ((a!5 (concat (concat (vfmsub132_single ((_ extract 127 96) ymm2)
 (vfnmsub132_single
-a!3
-(add_single (vfnmsub132_single
 #x00000000
-#x00000000
-#x00000000)
+a!1
 a!1)
-(add_single (vfnmsub132_single
-#x00000000
-#x00000000
-#x00000000)
-a!1))
-((_ extract 127 96) ymm3)))
-(a!8 (vfmsub132_single ((_ extract 95 64) ymm2)
+((_ extract 127 96) ymm3))
+(vfmsub132_single ((_ extract 95 64) ymm2)
 (vfnmsub132_single
-a!7
-(sub_single (vfnmsub132_single
 #x00000000
-#x00000000
-#x00000000)
-a!5)
-(sub_single (vfnmsub132_single
-#x00000000
-#x00000000
-#x00000000)
-a!5))
+a!2
+a!2)
 ((_ extract 95 64) ymm3)))
-(a!13 (vfmsub132_single ((_ extract 63 32) ymm2)
+(concat (vfmsub132_single ((_ extract 63 32) ymm2)
 (vfnmsub132_single
-a!12
-(add_single (vfnmsub132_single
 #x00000000
-#x00000000
-#x00000000)
-a!10)
-(add_single (vfnmsub132_single
-#x00000000
-#x00000000
-#x00000000)
-a!10))
-((_ extract 63 32) ymm3)))
-(a!17 (vfmsub132_single ((_ extract 31 0) ymm2)
+a!3
+a!3)
+((_ extract 63 32) ymm3))
+(vfmsub132_single ((_ extract 31 0) ymm2)
 (vfnmsub132_single
-a!16
-(sub_single (vfnmsub132_single
 #x00000000
-#x00000000
-#x00000000)
-a!14)
-(sub_single (vfnmsub132_single
-#x00000000
-#x00000000
-#x00000000)
-a!14))
-((_ extract 31 0) ymm3))))
-(let ((a!19 (concat (bvor (concat a!4 a!8)
-(bvxor a!9 (bvor #x0000000000000000 a!9)))
-(bvor (concat a!13 a!17)
-(bvxor a!18 (bvor #x0000000000000000 a!18))))))
-(concat #x00000000000000000000000000000000 a!19))))))
+a!4
+a!4)
+((_ extract 31 0) ymm3))))))
+(concat #x00000000000000000000000000000000 a!5)))
 
 (let ((a!1 (vfnmsub132_single
 (add_single (concat #x000000 ((_ extract 31 24) ymm1)) #x00000000)

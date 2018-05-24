@@ -127,17 +127,14 @@
 ( push )
 ( echo "vpmovsxbq_xmm_xmm::ymm1")
 (assert (not (=
-(let ((a!1 (concat #xffffff80
-(add_single (concat #x000000 ((_ extract 15 8) ymm2))
-#x00000000)))
-(a!3 (concat #xffffff80
-(add_single (concat #x000000 ((_ extract 7 0) ymm2))
-#x00000000))))
-(let ((a!2 (bvxor ((_ extract 31 0)
-(bvadd (concat #b0 #xffffff80ffffff80) (concat #b0 a!1)))
+(let ((a!1 (concat #b0
+(concat #xffffff80
+(concat #x000000 ((_ extract 15 8) ymm2)))))
+(a!3 (concat #b0
+(concat #xffffff80 (concat #x000000 ((_ extract 7 0) ymm2))))))
+(let ((a!2 (bvxor ((_ extract 31 0) (bvadd (concat #b0 #xffffff80ffffff80) a!1))
 #xffffff80))
-(a!4 (bvxor ((_ extract 31 0)
-(bvadd (concat #b0 #xffffff80ffffff80) (concat #b0 a!3)))
+(a!4 (bvxor ((_ extract 31 0) (bvadd (concat #b0 #xffffff80ffffff80) a!3))
 #xffffff80)))
 (let ((a!5 (concat (concat ((_ extract 63 32) ((_ sign_extend 32) a!2)) a!2)
 ((_ sign_extend 32) a!4))))

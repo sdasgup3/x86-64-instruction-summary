@@ -8,8 +8,6 @@ code: vpmovsxbd %xmm2, %ymm1
   must undef:      { }
   required flags:  { avx2 }
 
-vpmovsxbd %xmm2, %ymm1: Hindex0(9)
-vpmovsxbd %xmm2, %ymm1: Hindex0(9)
 Formula:
 
 %ymm1  : (let ((a!1 (concat ((_ sign_extend 24) ((_ extract 23 16) %ymm2))
