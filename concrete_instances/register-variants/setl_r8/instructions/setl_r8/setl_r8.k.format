@@ -10,7 +10,7 @@ code: setl %bl
 
 Formula:
 
-%rbx   : concatenateMInt( extractMInt( %rbx, 0, 56), xorMInt( (#ifMInt %sf #then mi(8, 1) #else mi(8, 0) #fi), (#ifMInt %of #then mi(8, 1) #else mi(8, 0) #fi)))
+%rbx   : concatenateMInt( extractMInt( %rbx, 0, 56), xorMInt( (#ifMInt %of #then mi(8, 1) #else mi(8, 0) #fi), (#ifMInt %sf #then mi(8, 1) #else mi(8, 0) #fi)))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

@@ -1,0 +1,17 @@
+code: pmaxud %xmm2, %xmm1
+
+  maybe read:      { %xmm1 %xmm2 }
+  must read:       { %xmm1 %xmm2 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse4_1 }
+
+Formula:
+
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), concatenateMInt( (#ifMInt ugtMInt( extractMInt( %ymm1, 128, 160), extractMInt( %ymm2, 128, 160)) #then extractMInt( %ymm1, 128, 160) #else extractMInt( %ymm2, 128, 160) #fi), concatenateMInt( (#ifMInt ugtMInt( extractMInt( %ymm1, 160, 192), extractMInt( %ymm2, 160, 192)) #then extractMInt( %ymm1, 160, 192) #else extractMInt( %ymm2, 160, 192) #fi), concatenateMInt( (#ifMInt ugtMInt( extractMInt( %ymm1, 192, 224), extractMInt( %ymm2, 192, 224)) #then extractMInt( %ymm1, 192, 224) #else extractMInt( %ymm2, 192, 224) #fi), (#ifMInt ugtMInt( extractMInt( %ymm1, 224, 256), extractMInt( %ymm2, 224, 256)) #then extractMInt( %ymm1, 224, 256) #else extractMInt( %ymm2, 224, 256) #fi)))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

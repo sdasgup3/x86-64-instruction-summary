@@ -1,0 +1,25 @@
+code: mull %ebx
+
+  maybe read:      { %eax %ebx }
+  must read:       { %eax %ebx }
+  maybe write:     { %rax %rdx %cf %of }
+  must write:      { %rax %rdx %cf %of }
+  maybe undef:     { %pf %af %zf %sf }
+  must undef:      { %pf %af %zf %sf }
+  required flags:  { }
+
+Formula:
+
+%rax   : concatenateMInt( mi(32, 0), extractMInt( mulMInt( concatenateMInt( mi(32, 0), extractMInt( %rbx, 32, 64)), concatenateMInt( mi(32, 0), extractMInt( %rax, 32, 64))), 32, 64))
+%rdx   : concatenateMInt( mi(32, 0), extractMInt( mulMInt( concatenateMInt( mi(32, 0), extractMInt( %rbx, 32, 64)), concatenateMInt( mi(32, 0), extractMInt( %rax, 32, 64))), 0, 32))
+
+%cf    : (#ifMInt (notBool eqMInt( extractMInt( mulMInt( concatenateMInt( mi(32, 0), extractMInt( %rbx, 32, 64)), concatenateMInt( mi(32, 0), extractMInt( %rax, 32, 64))), 0, 32), mi(32, 0))) #then mi(1, 1) #else mi(1, 0) #fi)
+%pf    : (#ifMInt TMP_BOOL_2 #then mi(1, 1) #else mi(1, 0) #fi)
+%af    : (#ifMInt TMP_BOOL_1 #then mi(1, 1) #else mi(1, 0) #fi)
+%zf    : (#ifMInt TMP_BOOL_0 #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : (#ifMInt TMP_BOOL_3 #then mi(1, 1) #else mi(1, 0) #fi)
+%of    : (#ifMInt (notBool eqMInt( extractMInt( mulMInt( concatenateMInt( mi(32, 0), extractMInt( %rbx, 32, 64)), concatenateMInt( mi(32, 0), extractMInt( %rax, 32, 64))), 0, 32), mi(32, 0))) #then mi(1, 1) #else mi(1, 0) #fi)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

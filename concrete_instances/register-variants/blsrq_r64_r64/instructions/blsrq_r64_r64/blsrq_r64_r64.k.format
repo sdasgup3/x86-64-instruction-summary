@@ -1,0 +1,22 @@
+code: blsrq %rcx, %rbx
+
+  maybe read:      { %rcx }
+  must read:       { %rcx }
+  maybe write:     { %rbx %cf %zf %sf %of }
+  must write:      { %rbx %cf %zf %sf %of }
+  maybe undef:     { %pf %af }
+  must undef:      { %pf %af }
+  required flags:  { bmi1 }
+
+Formula:
+
+%rbx   : andMInt( subMInt( %rcx, mi(64, 1)), %rcx)
+
+%cf    : (#ifMInt eqMInt( %rcx, mi(64, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
+%zf    : (#ifMInt eqMInt( andMInt( subMInt( %rcx, mi(64, 1)), %rcx), mi(64, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : andMInt( extractMInt( subMInt( %rcx, mi(64, 1)), 0, 1), extractMInt( %rcx, 0, 1))
+%of    : mi(1, 0)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

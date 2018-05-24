@@ -1,0 +1,24 @@
+code: idivb %bh
+
+  maybe read:      { %ax %bh }
+  must read:       { %ax %bh }
+  maybe write:     { %ax }
+  must write:      { %ax }
+  maybe undef:     { %cf %pf %af %zf %sf %of }
+  must undef:      { %cf %pf %af %zf %sf %of }
+  required flags:  { }
+
+Formula:
+
+%rax   : concatenateMInt( concatenateMInt( extractMInt( %rax, 0, 48), idiv_remainder_int8(extractMInt( %rax, 48, 64), extractMInt( %rbx, 48, 56))), idiv_quotient_int8(extractMInt( %rax, 48, 64), extractMInt( %rbx, 48, 56)))
+
+%cf    : (#ifMInt TMP_BOOL_5 #then mi(1, 1) #else mi(1, 0) #fi)
+%pf    : (#ifMInt TMP_BOOL_2 #then mi(1, 1) #else mi(1, 0) #fi)
+%af    : (#ifMInt TMP_BOOL_1 #then mi(1, 1) #else mi(1, 0) #fi)
+%zf    : (#ifMInt TMP_BOOL_0 #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : (#ifMInt TMP_BOOL_3 #then mi(1, 1) #else mi(1, 0) #fi)
+%of    : (#ifMInt TMP_BOOL_4 #then mi(1, 1) #else mi(1, 0) #fi)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

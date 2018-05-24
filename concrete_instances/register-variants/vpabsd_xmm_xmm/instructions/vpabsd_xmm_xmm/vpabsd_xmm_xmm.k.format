@@ -1,0 +1,17 @@
+code: vpabsd %xmm2, %xmm1
+
+  maybe read:      { %xmm2 }
+  must read:       { %xmm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%ymm1  : concatenateMInt( mi(128, 0), concatenateMInt( (#ifMInt ugtMInt( extractMInt( %ymm2, 128, 160), mi(32, 2147483647)) #then addMInt(mi(32, 1), negMInt( extractMInt( %ymm2, 128, 160))) #else extractMInt( %ymm2, 128, 160) #fi), concatenateMInt( (#ifMInt ugtMInt( extractMInt( %ymm2, 160, 192), mi(32, 2147483647)) #then addMInt(mi(32, 1), negMInt( extractMInt( %ymm2, 160, 192))) #else extractMInt( %ymm2, 160, 192) #fi), concatenateMInt( (#ifMInt ugtMInt( extractMInt( %ymm2, 192, 224), mi(32, 2147483647)) #then addMInt(mi(32, 1), negMInt( extractMInt( %ymm2, 192, 224))) #else extractMInt( %ymm2, 192, 224) #fi), (#ifMInt ugtMInt( extractMInt( %ymm2, 224, 256), mi(32, 2147483647)) #then addMInt(mi(32, 1), negMInt( extractMInt( %ymm2, 224, 256))) #else extractMInt( %ymm2, 224, 256) #fi)))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

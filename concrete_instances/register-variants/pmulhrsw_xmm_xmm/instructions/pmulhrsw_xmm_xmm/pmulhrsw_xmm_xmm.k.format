@@ -1,0 +1,17 @@
+code: pmulhrsw %xmm2, %xmm1
+
+  maybe read:      { %xmm1 %xmm2 }
+  must read:       { %xmm1 %xmm2 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { ssse3 }
+
+Formula:
+
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), concatenateMInt( extractMInt( addMInt( lshrMInt( mulMInt( mi(32, svalueMInt(extractMInt( %ymm1, 128, 144))), mi(32, svalueMInt(extractMInt( %ymm2, 128, 144)))), uvalueMInt(mi(32, 14))), mi(32, 1)), 15, 31), concatenateMInt( extractMInt( addMInt( lshrMInt( mulMInt( mi(32, svalueMInt(extractMInt( %ymm1, 144, 160))), mi(32, svalueMInt(extractMInt( %ymm2, 144, 160)))), uvalueMInt(mi(32, 14))), mi(32, 1)), 15, 31), concatenateMInt( extractMInt( addMInt( lshrMInt( mulMInt( mi(32, svalueMInt(extractMInt( %ymm1, 160, 176))), mi(32, svalueMInt(extractMInt( %ymm2, 160, 176)))), uvalueMInt(mi(32, 14))), mi(32, 1)), 15, 31), concatenateMInt( extractMInt( addMInt( lshrMInt( mulMInt( mi(32, svalueMInt(extractMInt( %ymm1, 176, 192))), mi(32, svalueMInt(extractMInt( %ymm2, 176, 192)))), uvalueMInt(mi(32, 14))), mi(32, 1)), 15, 31), concatenateMInt( extractMInt( addMInt( lshrMInt( mulMInt( mi(32, svalueMInt(extractMInt( %ymm1, 192, 208))), mi(32, svalueMInt(extractMInt( %ymm2, 192, 208)))), uvalueMInt(mi(32, 14))), mi(32, 1)), 15, 31), concatenateMInt( extractMInt( addMInt( lshrMInt( mulMInt( mi(32, svalueMInt(extractMInt( %ymm1, 208, 224))), mi(32, svalueMInt(extractMInt( %ymm2, 208, 224)))), uvalueMInt(mi(32, 14))), mi(32, 1)), 15, 31), concatenateMInt( extractMInt( addMInt( lshrMInt( mulMInt( mi(32, svalueMInt(extractMInt( %ymm1, 224, 240))), mi(32, svalueMInt(extractMInt( %ymm2, 224, 240)))), uvalueMInt(mi(32, 14))), mi(32, 1)), 15, 31), extractMInt( addMInt( lshrMInt( mulMInt( mi(32, svalueMInt(extractMInt( %ymm1, 240, 256))), mi(32, svalueMInt(extractMInt( %ymm2, 240, 256)))), uvalueMInt(mi(32, 14))), mi(32, 1)), 15, 31)))))))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

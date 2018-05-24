@@ -1,0 +1,17 @@
+code: vpabsd %ymm2, %ymm1
+
+  maybe read:      { %ymm2 }
+  must read:       { %ymm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+Formula:
+
+%ymm1  : concatenateMInt( (#ifMInt ugtMInt( extractMInt( %ymm2, 0, 32), mi(32, 2147483647)) #then addMInt(mi(32, 1), negMInt( extractMInt( %ymm2, 0, 32))) #else extractMInt( %ymm2, 0, 32) #fi), concatenateMInt( (#ifMInt ugtMInt( extractMInt( %ymm2, 32, 64), mi(32, 2147483647)) #then addMInt(mi(32, 1), negMInt( extractMInt( %ymm2, 32, 64))) #else extractMInt( %ymm2, 32, 64) #fi), concatenateMInt( (#ifMInt ugtMInt( extractMInt( %ymm2, 64, 96), mi(32, 2147483647)) #then addMInt(mi(32, 1), negMInt( extractMInt( %ymm2, 64, 96))) #else extractMInt( %ymm2, 64, 96) #fi), concatenateMInt( (#ifMInt ugtMInt( extractMInt( %ymm2, 96, 128), mi(32, 2147483647)) #then addMInt(mi(32, 1), negMInt( extractMInt( %ymm2, 96, 128))) #else extractMInt( %ymm2, 96, 128) #fi), concatenateMInt( (#ifMInt ugtMInt( extractMInt( %ymm2, 128, 160), mi(32, 2147483647)) #then addMInt(mi(32, 1), negMInt( extractMInt( %ymm2, 128, 160))) #else extractMInt( %ymm2, 128, 160) #fi), concatenateMInt( (#ifMInt ugtMInt( extractMInt( %ymm2, 160, 192), mi(32, 2147483647)) #then addMInt(mi(32, 1), negMInt( extractMInt( %ymm2, 160, 192))) #else extractMInt( %ymm2, 160, 192) #fi), concatenateMInt( (#ifMInt ugtMInt( extractMInt( %ymm2, 192, 224), mi(32, 2147483647)) #then addMInt(mi(32, 1), negMInt( extractMInt( %ymm2, 192, 224))) #else extractMInt( %ymm2, 192, 224) #fi), (#ifMInt ugtMInt( extractMInt( %ymm2, 224, 256), mi(32, 2147483647)) #then addMInt(mi(32, 1), negMInt( extractMInt( %ymm2, 224, 256))) #else extractMInt( %ymm2, 224, 256) #fi))))))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

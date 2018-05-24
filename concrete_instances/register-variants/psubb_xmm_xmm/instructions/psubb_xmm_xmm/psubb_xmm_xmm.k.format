@@ -1,0 +1,17 @@
+code: psubb %xmm2, %xmm1
+
+  maybe read:      { %xmm1 %xmm2 }
+  must read:       { %xmm1 %xmm2 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+Formula:
+
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), concatenateMInt( subMInt( extractMInt( %ymm1, 128, 136), extractMInt( %ymm2, 128, 136)), concatenateMInt( subMInt( extractMInt( %ymm1, 136, 144), extractMInt( %ymm2, 136, 144)), concatenateMInt( subMInt( extractMInt( %ymm1, 144, 152), extractMInt( %ymm2, 144, 152)), concatenateMInt( subMInt( extractMInt( %ymm1, 152, 160), extractMInt( %ymm2, 152, 160)), concatenateMInt( subMInt( extractMInt( %ymm1, 160, 168), extractMInt( %ymm2, 160, 168)), concatenateMInt( subMInt( extractMInt( %ymm1, 168, 176), extractMInt( %ymm2, 168, 176)), concatenateMInt( subMInt( extractMInt( %ymm1, 176, 184), extractMInt( %ymm2, 176, 184)), concatenateMInt( subMInt( extractMInt( %ymm1, 184, 192), extractMInt( %ymm2, 184, 192)), concatenateMInt( subMInt( extractMInt( %ymm1, 192, 200), extractMInt( %ymm2, 192, 200)), concatenateMInt( subMInt( extractMInt( %ymm1, 200, 208), extractMInt( %ymm2, 200, 208)), concatenateMInt( subMInt( extractMInt( %ymm1, 208, 216), extractMInt( %ymm2, 208, 216)), concatenateMInt( subMInt( extractMInt( %ymm1, 216, 224), extractMInt( %ymm2, 216, 224)), concatenateMInt( subMInt( extractMInt( %ymm1, 224, 232), extractMInt( %ymm2, 224, 232)), concatenateMInt( subMInt( extractMInt( %ymm1, 232, 240), extractMInt( %ymm2, 232, 240)), concatenateMInt( subMInt( extractMInt( %ymm1, 240, 248), extractMInt( %ymm2, 240, 248)), subMInt( extractMInt( %ymm1, 248, 256), extractMInt( %ymm2, 248, 256))))))))))))))))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

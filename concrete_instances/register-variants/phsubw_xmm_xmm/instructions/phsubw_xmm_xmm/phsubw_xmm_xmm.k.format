@@ -1,0 +1,17 @@
+code: phsubw %xmm2, %xmm1
+
+  maybe read:      { %xmm1 %xmm2 }
+  must read:       { %xmm1 %xmm2 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { ssse3 }
+
+Formula:
+
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), concatenateMInt( concatenateMInt( concatenateMInt( concatenateMInt( concatenateMInt( concatenateMInt( concatenateMInt( subMInt( extractMInt( %ymm2, 144, 160), extractMInt( %ymm2, 128, 144)), subMInt( extractMInt( %ymm2, 176, 192), extractMInt( %ymm2, 160, 176))), subMInt( extractMInt( %ymm2, 208, 224), extractMInt( %ymm2, 192, 208))), subMInt( extractMInt( %ymm2, 240, 256), extractMInt( %ymm2, 224, 240))), subMInt( extractMInt( %ymm1, 144, 160), extractMInt( %ymm1, 128, 144))), subMInt( extractMInt( %ymm1, 176, 192), extractMInt( %ymm1, 160, 176))), subMInt( extractMInt( %ymm1, 208, 224), extractMInt( %ymm1, 192, 208))), subMInt( extractMInt( %ymm1, 240, 256), extractMInt( %ymm1, 224, 240))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

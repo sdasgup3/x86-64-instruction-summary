@@ -1,0 +1,18 @@
+code: mulxl %ecx, %ebx, %eax
+
+  maybe read:      { %ecx %edx }
+  must read:       { %ecx %edx }
+  maybe write:     { %rax %rbx }
+  must write:      { %rax %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { bmi2 }
+
+Formula:
+
+%rax   : concatenateMInt( mi(32, 0), extractMInt( mulMInt( concatenateMInt( mi(32, 0), extractMInt( %rdx, 32, 64)), concatenateMInt( mi(32, 0), extractMInt( %rcx, 32, 64))), 0, 32))
+%rbx   : concatenateMInt( mi(32, 0), extractMInt( mulMInt( concatenateMInt( mi(32, 0), extractMInt( %rdx, 32, 64)), concatenateMInt( mi(32, 0), extractMInt( %rcx, 32, 64))), 32, 64))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

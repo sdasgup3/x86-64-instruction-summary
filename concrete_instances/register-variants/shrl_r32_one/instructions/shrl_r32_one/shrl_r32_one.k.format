@@ -1,0 +1,24 @@
+code: shrl $0x1, %ebx
+
+  maybe read:      { %ebx }
+  must read:       { %ebx }
+  maybe write:     { %rbx %cf %pf %zf %sf %of }
+  must write:      { %rbx %cf %pf %zf %sf %of }
+  maybe undef:     { %af }
+  must undef:      { %af }
+  required flags:  { }
+
+Formula:
+
+%rbx   : concatenateMInt( mi(32, 0), extractMInt( lshrMInt( concatenateMInt( extractMInt( %rbx, 32, 64), mi(1, 0)), uvalueMInt(mi(33, 1))), 0, 32))
+
+%cf    : (#ifMInt ((FALSE andBool TMP_BOOL_0) orBool (TRUE andBool ((TRUE andBool eqMInt( extractMInt( lshrMInt( concatenateMInt( extractMInt( %rbx, 32, 64), mi(1, 0)), uvalueMInt(mi(33, 1))), 32, 33), mi(1, 1))) orBool (FALSE andBool %cf)))) #then mi(1, 1) #else mi(1, 0) #fi)
+%pf    : (#ifMInt ((TRUE andBool (notBool (((((((eqMInt( extractMInt( lshrMInt( concatenateMInt( extractMInt( %rbx, 32, 64), mi(1, 0)), uvalueMInt(mi(33, 1))), 31, 32), mi(1, 1)) xorBool eqMInt( extractMInt( lshrMInt( concatenateMInt( extractMInt( %rbx, 32, 64), mi(1, 0)), uvalueMInt(mi(33, 1))), 30, 31), mi(1, 1))) xorBool eqMInt( extractMInt( lshrMInt( concatenateMInt( extractMInt( %rbx, 32, 64), mi(1, 0)), uvalueMInt(mi(33, 1))), 29, 30), mi(1, 1))) xorBool eqMInt( extractMInt( lshrMInt( concatenateMInt( extractMInt( %rbx, 32, 64), mi(1, 0)), uvalueMInt(mi(33, 1))), 28, 29), mi(1, 1))) xorBool eqMInt( extractMInt( lshrMInt( concatenateMInt( extractMInt( %rbx, 32, 64), mi(1, 0)), uvalueMInt(mi(33, 1))), 27, 28), mi(1, 1))) xorBool eqMInt( extractMInt( lshrMInt( concatenateMInt( extractMInt( %rbx, 32, 64), mi(1, 0)), uvalueMInt(mi(33, 1))), 26, 27), mi(1, 1))) xorBool eqMInt( extractMInt( lshrMInt( concatenateMInt( extractMInt( %rbx, 32, 64), mi(1, 0)), uvalueMInt(mi(33, 1))), 25, 26), mi(1, 1))) xorBool eqMInt( extractMInt( lshrMInt( concatenateMInt( extractMInt( %rbx, 32, 64), mi(1, 0)), uvalueMInt(mi(33, 1))), 24, 25), mi(1, 1))))) orBool (FALSE andBool %pf)) #then mi(1, 1) #else mi(1, 0) #fi)
+%af    : (#ifMInt ((TRUE andBool TMP_BOOL_1) orBool (FALSE andBool %af)) #then mi(1, 1) #else mi(1, 0) #fi)
+%zf    : (#ifMInt ((TRUE andBool eqMInt( extractMInt( lshrMInt( concatenateMInt( extractMInt( %rbx, 32, 64), mi(1, 0)), uvalueMInt(mi(33, 1))), 0, 32), mi(32, 0))) orBool (FALSE andBool %zf)) #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : (#ifMInt ((TRUE andBool eqMInt( extractMInt( lshrMInt( concatenateMInt( extractMInt( %rbx, 32, 64), mi(1, 0)), uvalueMInt(mi(33, 1))), 0, 1), mi(1, 1))) orBool (FALSE andBool %sf)) #then mi(1, 1) #else mi(1, 0) #fi)
+%of    : (#ifMInt ((TRUE andBool eqMInt( extractMInt( %rbx, 32, 33), mi(1, 1))) orBool (FALSE andBool %of)) #then mi(1, 1) #else mi(1, 0) #fi)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

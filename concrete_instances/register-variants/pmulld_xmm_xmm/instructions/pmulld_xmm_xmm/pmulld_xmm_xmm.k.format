@@ -1,0 +1,17 @@
+code: pmulld %xmm2, %xmm1
+
+  maybe read:      { %xmm1 %xmm2 }
+  must read:       { %xmm1 %xmm2 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse4_1 }
+
+Formula:
+
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), concatenateMInt( extractMInt( mulMInt( mi(64, svalueMInt(extractMInt( %ymm1, 128, 160))), mi(64, svalueMInt(extractMInt( %ymm2, 128, 160)))), 32, 64), concatenateMInt( extractMInt( mulMInt( mi(64, svalueMInt(extractMInt( %ymm1, 160, 192))), mi(64, svalueMInt(extractMInt( %ymm2, 160, 192)))), 32, 64), concatenateMInt( extractMInt( mulMInt( mi(64, svalueMInt(extractMInt( %ymm1, 192, 224))), mi(64, svalueMInt(extractMInt( %ymm2, 192, 224)))), 32, 64), extractMInt( mulMInt( mi(64, svalueMInt(extractMInt( %ymm1, 224, 256))), mi(64, svalueMInt(extractMInt( %ymm2, 224, 256)))), 32, 64)))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

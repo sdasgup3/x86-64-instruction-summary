@@ -1,0 +1,17 @@
+code: vmovmskps %ymm1, %rbx
+
+  maybe read:      { %ymm1 }
+  must read:       { %ymm1 }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%rbx   : concatenateMInt( mi(56, 0), concatenateMInt( extractMInt( %ymm1, 0, 1), concatenateMInt( extractMInt( %ymm1, 32, 33), concatenateMInt( extractMInt( %ymm1, 64, 65), concatenateMInt( extractMInt( %ymm1, 96, 97), concatenateMInt( extractMInt( %ymm1, 128, 129), concatenateMInt( extractMInt( %ymm1, 160, 161), concatenateMInt( extractMInt( %ymm1, 192, 193), extractMInt( %ymm1, 224, 225)))))))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

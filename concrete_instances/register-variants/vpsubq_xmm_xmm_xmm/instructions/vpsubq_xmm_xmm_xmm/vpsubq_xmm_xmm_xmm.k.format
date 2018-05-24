@@ -10,7 +10,7 @@ code: vpsubq %xmm3, %xmm2, %xmm1
 
 Formula:
 
-%ymm1  : concatenateMInt( mi(128, 0), concatenateMInt( extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), xorMInt( mi(64, 18446744073709551615), extractMInt( %ymm3, 128, 192))), mi(65, 1)), concatenateMInt( mi(1, 0), extractMInt( %ymm2, 128, 192))), 1, 65), extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), xorMInt( mi(64, 18446744073709551615), extractMInt( %ymm3, 192, 256))), mi(65, 1)), concatenateMInt( mi(1, 0), extractMInt( %ymm2, 192, 256))), 1, 65)))
+%ymm1  : concatenateMInt( mi(128, 0), concatenateMInt( extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), xorMInt( extractMInt( %ymm3, 128, 192), mi(64, 18446744073709551615))), mi(65, 1)), concatenateMInt( mi(1, 0), extractMInt( %ymm2, 128, 192))), 1, 65), extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), xorMInt( extractMInt( %ymm3, 192, 256), mi(64, 18446744073709551615))), mi(65, 1)), concatenateMInt( mi(1, 0), extractMInt( %ymm2, 192, 256))), 1, 65)))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

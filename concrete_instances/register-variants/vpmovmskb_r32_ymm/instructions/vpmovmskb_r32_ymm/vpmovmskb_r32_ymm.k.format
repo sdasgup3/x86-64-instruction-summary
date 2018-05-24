@@ -1,0 +1,17 @@
+code: vpmovmskb %ymm1, %ebx
+
+  maybe read:      { %ymm1 }
+  must read:       { %ymm1 }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+Formula:
+
+%rbx   : concatenateMInt( mi(32, 0), concatenateMInt( extractMInt( %ymm1, 0, 1), concatenateMInt( extractMInt( %ymm1, 8, 9), concatenateMInt( extractMInt( %ymm1, 16, 17), concatenateMInt( extractMInt( %ymm1, 24, 25), concatenateMInt( extractMInt( %ymm1, 32, 33), concatenateMInt( extractMInt( %ymm1, 40, 41), concatenateMInt( extractMInt( %ymm1, 48, 49), concatenateMInt( extractMInt( %ymm1, 56, 57), concatenateMInt( extractMInt( %ymm1, 64, 65), concatenateMInt( extractMInt( %ymm1, 72, 73), concatenateMInt( extractMInt( %ymm1, 80, 81), concatenateMInt( extractMInt( %ymm1, 88, 89), concatenateMInt( extractMInt( %ymm1, 96, 97), concatenateMInt( extractMInt( %ymm1, 104, 105), concatenateMInt( extractMInt( %ymm1, 112, 113), concatenateMInt( extractMInt( %ymm1, 120, 121), concatenateMInt( extractMInt( %ymm1, 128, 129), concatenateMInt( extractMInt( %ymm1, 136, 137), concatenateMInt( extractMInt( %ymm1, 144, 145), concatenateMInt( extractMInt( %ymm1, 152, 153), concatenateMInt( extractMInt( %ymm1, 160, 161), concatenateMInt( extractMInt( %ymm1, 168, 169), concatenateMInt( extractMInt( %ymm1, 176, 177), concatenateMInt( extractMInt( %ymm1, 184, 185), concatenateMInt( extractMInt( %ymm1, 192, 193), concatenateMInt( extractMInt( %ymm1, 200, 201), concatenateMInt( extractMInt( %ymm1, 208, 209), concatenateMInt( extractMInt( %ymm1, 216, 217), concatenateMInt( extractMInt( %ymm1, 224, 225), concatenateMInt( extractMInt( %ymm1, 232, 233), concatenateMInt( extractMInt( %ymm1, 240, 241), extractMInt( %ymm1, 248, 249)))))))))))))))))))))))))))))))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

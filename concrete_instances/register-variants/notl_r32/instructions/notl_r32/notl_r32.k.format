@@ -10,7 +10,7 @@ code: notl %ebx
 
 Formula:
 
-%rbx   : xorMInt( mi(64, 4294967295), concatenateMInt( mi(32, 0), extractMInt( %rbx, 32, 64)))
+%rbx   : xorMInt( concatenateMInt( mi(32, 0), extractMInt( %rbx, 32, 64)), mi(64, 4294967295))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

@@ -10,7 +10,7 @@ code: notq %rbx
 
 Formula:
 
-%rbx   : xorMInt( mi(64, 18446744073709551615), %rbx)
+%rbx   : xorMInt( %rbx, mi(64, 18446744073709551615))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

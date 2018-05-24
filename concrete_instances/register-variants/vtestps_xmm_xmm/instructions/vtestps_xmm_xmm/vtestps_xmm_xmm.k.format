@@ -1,0 +1,22 @@
+code: vtestps %xmm2, %xmm1
+
+  maybe read:      { %xmm1 %xmm2 }
+  must read:       { %xmm1 %xmm2 }
+  maybe write:     { %cf %pf %af %zf %sf %of }
+  must write:      { %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%cf    : (#ifMInt (((eqMInt( andMInt( negMInt( extractMInt( %ymm1, 224, 225)), extractMInt( %ymm2, 224, 225)), mi(1, 0)) andBool eqMInt( andMInt( negMInt( extractMInt( %ymm1, 192, 193)), extractMInt( %ymm2, 192, 193)), mi(1, 0))) andBool eqMInt( andMInt( negMInt( extractMInt( %ymm1, 160, 161)), extractMInt( %ymm2, 160, 161)), mi(1, 0))) andBool eqMInt( andMInt( negMInt( extractMInt( %ymm1, 128, 129)), extractMInt( %ymm2, 128, 129)), mi(1, 0))) #then mi(1, 1) #else mi(1, 0) #fi)
+%pf    : mi(1, 0)
+%af    : mi(1, 0)
+%zf    : (#ifMInt (((eqMInt( andMInt( extractMInt( %ymm1, 224, 225), extractMInt( %ymm2, 224, 225)), mi(1, 0)) andBool eqMInt( andMInt( extractMInt( %ymm1, 192, 193), extractMInt( %ymm2, 192, 193)), mi(1, 0))) andBool eqMInt( andMInt( extractMInt( %ymm1, 160, 161), extractMInt( %ymm2, 160, 161)), mi(1, 0))) andBool eqMInt( andMInt( extractMInt( %ymm1, 128, 129), extractMInt( %ymm2, 128, 129)), mi(1, 0))) #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : mi(1, 0)
+%of    : mi(1, 0)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

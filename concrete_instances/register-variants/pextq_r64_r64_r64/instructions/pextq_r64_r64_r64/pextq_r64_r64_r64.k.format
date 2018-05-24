@@ -1,0 +1,12 @@
+code: pextq %rdx, %rcx, %rbx
+
+  maybe read:      { %rcx %rdx }
+  must read:       { %rcx %rdx }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { bmi2 }
+
+FATAL ERROR: Instruction unsupported: pextq %rdx, %rcx, %rbx
+stoke_debug_circuit: ./src/ext/cpputil/include/io/abort.h:35: void cpputil::Abort::operator()(std::streambuf*, char): Assertion `false' failed.
