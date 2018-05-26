@@ -10,7 +10,7 @@ code: vdivps %xmm3, %xmm2, %xmm1
 
 Formula:
 
-%ymm1  : concatenateMInt( mi(128, 0), concatenateMInt( concatenateMInt( div_single(extractMInt( %ymm2, 128, 160), extractMInt( %ymm3, 128, 160)), div_single(extractMInt( %ymm2, 160, 192), extractMInt( %ymm3, 160, 192))), concatenateMInt( div_single(extractMInt( %ymm2, 192, 224), extractMInt( %ymm3, 192, 224)), div_single(extractMInt( %ymm2, 224, 256), extractMInt( %ymm3, 224, 256)))))
+%ymm1  : concatenateMInt( mi(128, 0), concatenateMInt( div_single(extractMInt( %ymm2, 128, 160), extractMInt( %ymm3, 128, 160)), concatenateMInt( div_single(extractMInt( %ymm2, 160, 192), extractMInt( %ymm3, 160, 192)), concatenateMInt( div_single(extractMInt( %ymm2, 192, 224), extractMInt( %ymm3, 192, 224)), div_single(extractMInt( %ymm2, 224, 256), extractMInt( %ymm3, 224, 256))))))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

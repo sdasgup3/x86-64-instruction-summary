@@ -10,7 +10,7 @@ code: shlxq %rdx, %rcx, %rbx
 
 Formula:
 
-%rbx   : extractMInt( shlMInt( concatenateMInt( mi(1, 0), %rcx), uvalueMInt(concatenateMInt( mi(57, 0), andMInt( extractMInt( %rdx, 56, 64), mi(8, 63))))), 1, 65)
+%rbx   : shlMInt( %rcx, uvalueMInt(andMInt( %rdx, mi(64, 63))))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

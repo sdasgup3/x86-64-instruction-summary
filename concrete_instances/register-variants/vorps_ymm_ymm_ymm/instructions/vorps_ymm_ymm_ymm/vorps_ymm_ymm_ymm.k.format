@@ -10,7 +10,7 @@ code: vorps %ymm3, %ymm2, %ymm1
 
 Formula:
 
-%ymm1  : concatenateMInt( concatenateMInt( orMInt( extractMInt( %ymm3, 0, 64), extractMInt( %ymm2, 0, 64)), orMInt( extractMInt( %ymm3, 64, 128), extractMInt( %ymm2, 64, 128))), concatenateMInt( orMInt( extractMInt( %ymm3, 128, 192), extractMInt( %ymm2, 128, 192)), orMInt( extractMInt( %ymm3, 192, 256), extractMInt( %ymm2, 192, 256))))
+%ymm1  : orMInt( %ymm2, %ymm3)
 
 sigfpe  : sigfpe
 sigbus  : sigbus

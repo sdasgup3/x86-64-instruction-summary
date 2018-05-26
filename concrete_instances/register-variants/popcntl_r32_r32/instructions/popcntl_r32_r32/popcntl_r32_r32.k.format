@@ -15,7 +15,7 @@ Formula:
 %cf    : mi(1, 0)
 %pf    : mi(1, 0)
 %af    : mi(1, 0)
-%zf    : (#ifMInt eqMInt( concatenateMInt( mi(32, 0), extractMInt( %rcx, 32, 64)), mi(64, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
+%zf    : (#ifMInt eqMInt( extractMInt( %rcx, 32, 64), mi(32, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
 %sf    : mi(1, 0)
 %of    : mi(1, 0)
 

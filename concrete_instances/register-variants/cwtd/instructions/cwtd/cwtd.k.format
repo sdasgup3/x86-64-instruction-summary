@@ -10,7 +10,7 @@ code: cwtd
 
 Formula:
 
-%rdx   : concatenateMInt( extractMInt( %rdx, 0, 48), extractMInt( mi(64, svalueMInt(extractMInt( %rax, 48, 64))), 16, 32))
+%rdx   : concatenateMInt( extractMInt( %rdx, 0, 48), extractMInt( mi(32, svalueMInt(extractMInt( %rax, 48, 64))), 0, 16))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

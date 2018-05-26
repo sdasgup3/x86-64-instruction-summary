@@ -10,13 +10,13 @@ code: incq %rbx
 
 Formula:
 
-%rbx   : extractMInt( addMInt( concatenateMInt( mi(1, 0), mi(64, 1)), concatenateMInt( mi(1, 0), %rbx)), 1, 65)
+%rbx   : addMInt( %rbx, mi(64, 1))
 
-%pf    : (#ifMInt (notBool (((((((eqMInt( extractMInt( addMInt( concatenateMInt( mi(1, 0), mi(64, 1)), concatenateMInt( mi(1, 0), %rbx)), 64, 65), mi(1, 1)) xorBool eqMInt( extractMInt( addMInt( concatenateMInt( mi(1, 0), mi(64, 1)), concatenateMInt( mi(1, 0), %rbx)), 63, 64), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt( concatenateMInt( mi(1, 0), mi(64, 1)), concatenateMInt( mi(1, 0), %rbx)), 62, 63), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt( concatenateMInt( mi(1, 0), mi(64, 1)), concatenateMInt( mi(1, 0), %rbx)), 61, 62), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt( concatenateMInt( mi(1, 0), mi(64, 1)), concatenateMInt( mi(1, 0), %rbx)), 60, 61), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt( concatenateMInt( mi(1, 0), mi(64, 1)), concatenateMInt( mi(1, 0), %rbx)), 59, 60), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt( concatenateMInt( mi(1, 0), mi(64, 1)), concatenateMInt( mi(1, 0), %rbx)), 58, 59), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt( concatenateMInt( mi(1, 0), mi(64, 1)), concatenateMInt( mi(1, 0), %rbx)), 57, 58), mi(1, 1)))) #then mi(1, 1) #else mi(1, 0) #fi)
-%af    : extractMInt( addMInt( mi(5, 1), concatenateMInt( mi(1, 0), extractMInt( %rbx, 60, 64))), 0, 1)
-%zf    : (#ifMInt eqMInt( extractMInt( addMInt( concatenateMInt( mi(1, 0), mi(64, 1)), concatenateMInt( mi(1, 0), %rbx)), 1, 65), mi(64, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
-%sf    : extractMInt( addMInt( concatenateMInt( mi(1, 0), mi(64, 1)), concatenateMInt( mi(1, 0), %rbx)), 1, 2)
-%of    : (#ifMInt ((FALSE ==Bool eqMInt( extractMInt( %rbx, 0, 1), mi(1, 1))) andBool (notBool (FALSE ==Bool eqMInt( extractMInt( addMInt( concatenateMInt( mi(1, 0), mi(64, 1)), concatenateMInt( mi(1, 0), %rbx)), 1, 2), mi(1, 1))))) #then mi(1, 1) #else mi(1, 0) #fi)
+%pf    : (#ifMInt (notBool (((((((eqMInt( extractMInt( addMInt( %rbx, mi(64, 1)), 63, 64), mi(1, 1)) xorBool eqMInt( extractMInt( addMInt( %rbx, mi(64, 1)), 62, 63), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt( %rbx, mi(64, 1)), 61, 62), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt( %rbx, mi(64, 1)), 60, 61), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt( %rbx, mi(64, 1)), 59, 60), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt( %rbx, mi(64, 1)), 58, 59), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt( %rbx, mi(64, 1)), 57, 58), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt( %rbx, mi(64, 1)), 56, 57), mi(1, 1)))) #then mi(1, 1) #else mi(1, 0) #fi)
+%af    : (#ifMInt eqMInt( extractMInt( %rbx, 60, 64), mi(4, 15)) #then mi(1, 1) #else mi(1, 0) #fi)
+%zf    : (#ifMInt eqMInt( addMInt( %rbx, mi(64, 1)), mi(64, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : extractMInt( addMInt( %rbx, mi(64, 1)), 0, 1)
+%of    : (#ifMInt ((notBool eqMInt( extractMInt( %rbx, 0, 1), mi(1, 1))) andBool eqMInt( extractMInt( %rbx, 1, 64), mi(63, 18446744073709551615))) #then mi(1, 1) #else mi(1, 0) #fi)
 
 sigfpe  : sigfpe
 sigbus  : sigbus

@@ -10,7 +10,7 @@ code: cmovol %ecx, %ebx
 
 Formula:
 
-%rbx   : concatenateMInt( mi(32, 0), (#ifMInt eqMInt( (#ifMInt %of #then mi(8, 0) #else mi(8, 255) #fi), mi(8, 0)) #then extractMInt( %rcx, 32, 64) #else extractMInt( %rbx, 32, 64) #fi))
+%rbx   : concatenateMInt( mi(32, 0), (#ifMInt %of #then extractMInt( %rcx, 32, 64) #else extractMInt( %rbx, 32, 64) #fi))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

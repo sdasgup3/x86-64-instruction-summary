@@ -10,7 +10,7 @@ code: vpunpckldq %ymm3, %ymm2, %ymm1
 
 Formula:
 
-%ymm1  : concatenateMInt( concatenateMInt( concatenateMInt( concatenateMInt( extractMInt( %ymm3, 64, 96), extractMInt( %ymm2, 64, 96)), extractMInt( %ymm3, 96, 128)), extractMInt( %ymm2, 96, 128)), concatenateMInt( concatenateMInt( extractMInt( %ymm3, 192, 224), extractMInt( %ymm2, 192, 224)), concatenateMInt( extractMInt( %ymm3, 224, 256), extractMInt( %ymm2, 224, 256))))
+%ymm1  : concatenateMInt( concatenateMInt( extractMInt( %ymm3, 64, 96), extractMInt( %ymm2, 64, 96)), concatenateMInt( concatenateMInt( extractMInt( %ymm3, 96, 128), extractMInt( %ymm2, 96, 128)), concatenateMInt( concatenateMInt( extractMInt( %ymm3, 192, 224), extractMInt( %ymm2, 192, 224)), concatenateMInt( extractMInt( %ymm3, 224, 256), extractMInt( %ymm2, 224, 256)))))
 
 sigfpe  : sigfpe
 sigbus  : sigbus
