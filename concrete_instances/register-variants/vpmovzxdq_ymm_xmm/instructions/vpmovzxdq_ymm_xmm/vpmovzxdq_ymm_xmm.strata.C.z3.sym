@@ -8,8 +8,6 @@ code: vpmovzxdq %xmm2, %ymm1
   must undef:      { }
   required flags:  { avx2 }
 
-vpmovzxdq %xmm2, %ymm1: Hindex0(9)
-vpmovzxdq %xmm2, %ymm1: Hindex0(9)
 Formula:
 
 %ymm1  : (let ((a!1 (concat (concat #x00000000 ((_ extract 95 64) %ymm2))

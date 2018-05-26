@@ -10,78 +10,63 @@ code: sbbw %cx, %bx
 
 Formula:
 
-%rbx   : (let ((a!1 (= ((_ extract 8 8)
-                (bvadd (ite %cf #b000000000 #b011111111)
-                       (ite %cf #b000000000 #b011111111)))
-              #b1)))
-(let ((a!2 (ite a!1
+%rbx   : (let ((a!1 (ite (= (ite %cf #b0 #b1) #b1)
                 (bvadd (concat #b0 ((_ extract 15 0) %rbx)) #b00000000000000001)
                 (concat #b0 ((_ extract 15 0) %rbx)))))
-(let ((a!3 (bvadd a!2 (concat #b0 (bvxor ((_ extract 15 0) %rcx) #xffff)))))
-  (concat ((_ extract 63 16) %rbx) ((_ extract 15 0) a!3)))))
+(let ((a!2 (bvadd a!1 (concat #b0 (bvxor ((_ extract 15 0) %rcx) #xffff)))))
+  (concat ((_ extract 63 16) %rbx) ((_ extract 15 0) a!2))))
 
-%cf    : (let ((a!1 (= ((_ extract 8 8)
-                (bvadd (ite %cf #b000000000 #b011111111)
-                       (ite %cf #b000000000 #b011111111)))
-              #b1)))
-(let ((a!2 (ite a!1
+
+%cf    : (let ((a!1 (ite (= (ite %cf #b0 #b1) #b1)
                 (bvadd (concat #b0 ((_ extract 15 0) %rbx)) #b00000000000000001)
                 (concat #b0 ((_ extract 15 0) %rbx)))))
-(let ((a!3 (bvadd a!2 (concat #b0 (bvxor ((_ extract 15 0) %rcx) #xffff)))))
-(let ((a!4 (bvadd (ite (= ((_ extract 16 16) a!3) #b1) #b000000000 #b011111111)
-                  (ite (= ((_ extract 16 16) a!3) #b1) #b000000000 #b011111111))))
-  (= ((_ extract 8 8) a!4) #b1)))))
-%pf    : (let ((a!1 (= ((_ extract 8 8)
-                (bvadd (ite %cf #b000000000 #b011111111)
-                       (ite %cf #b000000000 #b011111111)))
-              #b1)))
-(let ((a!2 (ite a!1
+(let ((a!2 (bvadd a!1 (concat #b0 (bvxor ((_ extract 15 0) %rcx) #xffff)))))
+  (ite (= ((_ extract 16 16) a!2) #b1) #b0 #b1)))
+
+%pf    : (let ((a!1 (ite (= (ite %cf #b0 #b1) #b1)
                 (bvadd (concat #b0 ((_ extract 15 0) %rbx)) #b00000000000000001)
                 (concat #b0 ((_ extract 15 0) %rbx)))))
-(let ((a!3 (bvadd a!2 (concat #b0 (bvxor ((_ extract 15 0) %rcx) #xffff)))))
-  (not (xor (= ((_ extract 0 0) a!3) #b1)
-            (= ((_ extract 1 1) a!3) #b1)
-            (= ((_ extract 2 2) a!3) #b1)
-            (= ((_ extract 3 3) a!3) #b1)
-            (= ((_ extract 4 4) a!3) #b1)
-            (= ((_ extract 5 5) a!3) #b1)
-            (= ((_ extract 6 6) a!3) #b1)
-            (= ((_ extract 7 7) a!3) #b1))))))
+(let ((a!2 (bvadd a!1 (concat #b0 (bvxor ((_ extract 15 0) %rcx) #xffff)))))
+(let ((a!3 (not (xor (= ((_ extract 0 0) a!2) #b1)
+                     (= ((_ extract 1 1) a!2) #b1)
+                     (= ((_ extract 2 2) a!2) #b1)
+                     (= ((_ extract 3 3) a!2) #b1)
+                     (= ((_ extract 4 4) a!2) #b1)
+                     (= ((_ extract 5 5) a!2) #b1)
+                     (= ((_ extract 6 6) a!2) #b1)
+                     (= ((_ extract 7 7) a!2) #b1)))))
+  (ite a!3 #b1 #b0))))
+
 %af    : (let ((a!1 (bvadd (concat #b0 ((_ extract 3 0) %rbx))
                   (concat #b0 (bvxor ((_ extract 3 0) %rcx) #xf)))))
-  (= ((_ extract 4 4) a!1) #b1))
-%zf    : (let ((a!1 (= ((_ extract 8 8)
-                (bvadd (ite %cf #b000000000 #b011111111)
-                       (ite %cf #b000000000 #b011111111)))
-              #b1)))
-(let ((a!2 (ite a!1
+  ((_ extract 4 4) a!1))
+
+%zf    : (let ((a!1 (ite (= (ite %cf #b0 #b1) #b1)
                 (bvadd (concat #b0 ((_ extract 15 0) %rbx)) #b00000000000000001)
                 (concat #b0 ((_ extract 15 0) %rbx)))))
-(let ((a!3 (bvadd a!2 (concat #b0 (bvxor ((_ extract 15 0) %rcx) #xffff)))))
-  (= ((_ extract 15 0) a!3) #x0000))))
-%sf    : (let ((a!1 (= ((_ extract 8 8)
-                (bvadd (ite %cf #b000000000 #b011111111)
-                       (ite %cf #b000000000 #b011111111)))
-              #b1)))
-(let ((a!2 (ite a!1
+(let ((a!2 (bvadd a!1 (concat #b0 (bvxor ((_ extract 15 0) %rcx) #xffff)))))
+  (ite (= ((_ extract 15 0) a!2) #x0000) #b1 #b0)))
+
+%sf    : (let ((a!1 (ite (= (ite %cf #b0 #b1) #b1)
                 (bvadd (concat #b0 ((_ extract 15 0) %rbx)) #b00000000000000001)
                 (concat #b0 ((_ extract 15 0) %rbx)))))
-(let ((a!3 (bvadd a!2 (concat #b0 (bvxor ((_ extract 15 0) %rcx) #xffff)))))
-  (= ((_ extract 15 15) a!3) #b1))))
+(let ((a!2 (bvadd a!1 (concat #b0 (bvxor ((_ extract 15 0) %rcx) #xffff)))))
+  ((_ extract 15 15) a!2)))
+
 %of    : (let ((a!1 (= (= ((_ extract 15 15) %rbx) #b1)
               (= (bvxor ((_ extract 15 15) %rcx) #b1) #b1)))
-      (a!2 (= ((_ extract 8 8)
-                (bvadd (ite %cf #b000000000 #b011111111)
-                       (ite %cf #b000000000 #b011111111)))
-              #b1)))
-(let ((a!3 (ite a!2
+      (a!2 (ite (= (ite %cf #b0 #b1) #b1)
                 (bvadd (concat #b0 ((_ extract 15 0) %rbx)) #b00000000000000001)
                 (concat #b0 ((_ extract 15 0) %rbx)))))
-(let ((a!4 (bvadd a!3 (concat #b0 (bvxor ((_ extract 15 0) %rcx) #xffff)))))
-(let ((a!5 (not (= (= ((_ extract 15 15) %rbx) #b1)
-                   (= ((_ extract 15 15) a!4) #b1)))))
-  (and a!1 a!5)))))
+(let ((a!3 (bvadd a!2 (concat #b0 (bvxor ((_ extract 15 0) %rcx) #xffff)))))
+(let ((a!4 (not (= (= ((_ extract 15 15) %rbx) #b1)
+                   (= ((_ extract 15 15) a!3) #b1)))))
+  (ite (and a!1 a!4) #b1 #b0))))
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

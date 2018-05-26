@@ -8,8 +8,6 @@ code: cvtsi2ssl %ebx, %xmm1
   must undef:      { }
   required flags:  { sse }
 
-cvtsi2ssl %ebx, %xmm1: Hindex1(9)
-cvtsi2ssl %ebx, %xmm1: Hindex1(9)
 Formula:
 
 %ymm1  : (concat ((_ extract 255 128) %ymm1)

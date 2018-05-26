@@ -122,6 +122,8 @@
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 32))
+(declare-fun vfnmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 32))
 
 
 ( push )
@@ -138,15 +140,14 @@
 (let ((a!5 (bvashr (concat ((_ sign_extend 48) (concat a!4 a!4)) #b0)
 (concat #b000000000000000000000000000000000000000000000000000000000
 #x01))))
-(let ((a!6 ((_ extract 8 8)
+((_ extract 8 8)
 (bvadd (concat #b0 ((_ extract 8 1) a!5))
-(concat #b0 ((_ extract 8 1) a!5))))))
-(= a!6 #b1)))))))
+(concat #b0 ((_ extract 8 1) a!5)))))))))
 
 (let ((a!1 (= ((_ extract 15 15)
 (ext_rotate_right ((_ extract 15 0) rbx) #x0001))
 #b1)))
-(or (and true a!1) (and false cf)))
+(ite (or (and true a!1) (and false cf)) #b1 #b0))
 )))
 (check-sat)
 ( pop )
@@ -171,7 +172,9 @@
 (bvadd (concat #b0 ((_ extract 8 1) a!5))
 (concat #b0 ((_ extract 8 1) a!5))))))
 (let ((a!7 (not (= (= ((_ extract 8 8) a!5) #b1) (= a!6 #b1)))))
-(and (= (= ((_ extract 8 8) a!5) #b1) (= ((_ extract 8 8) a!5) #b1)) a!7))))))))
+(let ((a!8 (and (= (= ((_ extract 8 8) a!5) #b1) (= ((_ extract 8 8) a!5) #b1))
+a!7)))
+(ite a!8 #b1 #b0)))))))))
 
 (let ((a!1 (= ((_ extract 15 15)
 (ext_rotate_right ((_ extract 15 0) rbx) #x0001))
@@ -179,7 +182,7 @@
 (a!2 (= ((_ extract 14 14)
 (ext_rotate_right ((_ extract 15 0) rbx) #x0001))
 #b1)))
-(or (and true (xor a!1 a!2)) (and false TMP_BOOL)))
+(ite (or (and true (xor a!1 a!2)) (and false TMP_BOOL)) #b1 #b0))
 )))
 (check-sat)
 ( pop )

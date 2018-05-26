@@ -15,7 +15,9 @@ Formula:
                ((_ extract 7 0) %rcx)
                ((_ extract 7 0) %rbx)))
 
-%cf    : false
+
+%cf    : #b0
+
 %pf    : (let ((a!1 (= (bvxor (bvor ((_ extract 0 0) %rbx) ((_ extract 0 0) %rcx))
                      ((_ extract 0 0) %rcx)
                      ((_ extract 0 0) %rbx))
@@ -48,24 +50,29 @@ Formula:
                      ((_ extract 7 7) %rcx)
                      ((_ extract 7 7) %rbx))
               #b1)))
-  (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)))
-%af    : TMP_BOOL_9
+  (ite (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)) #b1 #b0))
+
+%af    : (ite TMP_BOOL_9 #b1 #b0)
+
 %zf    : (let ((a!1 (bvor ((_ extract 31 0) ((_ sign_extend 56) ((_ extract 7 0) %rbx)))
                  ((_ extract 31 0) ((_ sign_extend 56) ((_ extract 7 0) %rcx))))))
 (let ((a!2 (bvxor a!1
                   ((_ extract 31 0) ((_ sign_extend 56) ((_ extract 7 0) %rcx)))
                   ((_ extract 31 0) ((_ sign_extend 56) ((_ extract 7 0) %rbx))))))
-  (= a!2 #x00000000)))
+  (ite (= a!2 #x00000000) #b1 #b0)))
+
 %sf    : (let ((a!1 (bvor ((_ extract 31 31) ((_ sign_extend 56) ((_ extract 7 0) %rbx)))
                  ((_ extract 31 31) ((_ sign_extend 56) ((_ extract 7 0) %rcx))))))
-(let ((a!2 (bvxor a!1
-                  ((_ extract 31 31)
-                    ((_ sign_extend 56) ((_ extract 7 0) %rcx)))
-                  ((_ extract 31 31)
-                    ((_ sign_extend 56) ((_ extract 7 0) %rbx))))))
-  (= a!2 #b1)))
-%of    : false
+  (bvxor a!1
+         ((_ extract 31 31) ((_ sign_extend 56) ((_ extract 7 0) %rcx)))
+         ((_ extract 31 31) ((_ sign_extend 56) ((_ extract 7 0) %rbx)))))
+
+%of    : #b0
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

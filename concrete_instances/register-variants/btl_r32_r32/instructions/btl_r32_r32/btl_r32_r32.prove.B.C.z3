@@ -122,14 +122,16 @@
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 
 
 ( push )
 ( echo "btl_r32_r32::af")
 (assert (not (=
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -142,12 +144,12 @@ TMP_BOOL
 (let ((a!1 (bvlshr ((_ extract 31 0) rbx)
 ((_ sign_extend 0)
 (bvand ((_ extract 31 0) rcx) #x0000001f)))))
-(= ((_ extract 0 0) a!1) #b1))
+((_ extract 0 0) a!1))
 
 (let ((a!1 (bvlshr ((_ extract 31 0) rbx)
 ((_ sign_extend 0)
 (bvand ((_ extract 31 0) rcx) #x0000001f)))))
-(= ((_ extract 0 0) a!1) #b1))
+(ite (= ((_ extract 0 0) a!1) #b1) #b1 #b0))
 )))
 (check-sat)
 ( pop )
@@ -157,9 +159,9 @@ TMP_BOOL
 ( push )
 ( echo "btl_r32_r32::of")
 (assert (not (=
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -169,9 +171,9 @@ TMP_BOOL
 ( push )
 ( echo "btl_r32_r32::pf")
 (assert (not (=
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -181,9 +183,9 @@ TMP_BOOL
 ( push )
 ( echo "btl_r32_r32::sf")
 (assert (not (=
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 )))
 (check-sat)
 ( pop )

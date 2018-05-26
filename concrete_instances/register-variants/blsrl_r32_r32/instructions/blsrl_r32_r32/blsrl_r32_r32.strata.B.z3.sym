@@ -14,14 +14,23 @@ Formula:
         (bvand (bvsub ((_ extract 31 0) %rcx) #x00000001)
                ((_ extract 31 0) %rcx)))
 
-%cf    : (= ((_ extract 31 0) %rcx) #x00000000)
-%zf    : (= (bvand (bvsub ((_ extract 31 0) %rcx) #x00000001) ((_ extract 31 0) %rcx))
-   #x00000000)
-%sf    : (let ((a!1 (bvand ((_ extract 31 31) (bvsub ((_ extract 31 0) %rcx) #x00000001))
-                  ((_ extract 31 31) %rcx))))
-  (= a!1 #b1))
-%of    : false
+
+%cf    : (ite (= ((_ extract 31 0) %rcx) #x00000000) #b1 #b0)
+
+%zf    : (let ((a!1 (= (bvand (bvsub ((_ extract 31 0) %rcx) #x00000001)
+                     ((_ extract 31 0) %rcx))
+              #x00000000)))
+  (ite a!1 #b1 #b0))
+
+%sf    : (bvand ((_ extract 31 31) (bvsub ((_ extract 31 0) %rcx) #x00000001))
+       ((_ extract 31 31) %rcx))
+
+%of    : #b0
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

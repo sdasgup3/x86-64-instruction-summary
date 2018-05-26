@@ -10,16 +10,17 @@ code: vfnmadd132sd %xmm3, %xmm2, %xmm1
 
 Formula:
 
-%ymm1  : (let ((a!1 (vfnmadd132_double
-             (bvxor #x0000000000000000
-                    (bvor ((_ extract 63 0) %ymm1) #x0000000000000000))
-             ((_ extract 63 0) %ymm2)
-             ((_ extract 63 0) %ymm3))))
-(let ((a!2 (concat (bvxor #x0000000000000000
-                          (bvor ((_ extract 127 64) %ymm1) #x0000000000000000))
-                   a!1)))
-  (concat #x00000000000000000000000000000000 a!2)))
+%ymm1  : (concat #x00000000000000000000000000000000
+        (concat ((_ extract 127 64) %ymm1)
+                (vfnmadd132_double
+                  ((_ extract 63 0) %ymm1)
+                  ((_ extract 63 0) %ymm2)
+                  ((_ extract 63 0) %ymm3))))
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

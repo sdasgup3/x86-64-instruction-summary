@@ -13,29 +13,33 @@ Formula:
 %cf    : (let ((a!1 (bvadd (concat #b0 (bvxor (bvor %rbx %rcx) %rcx #xffffffffffffffff))
                   #b00000000000000000000000000000000000000000000000000000000000000001
                   (concat #b0 %rbx))))
-(let ((a!2 (bvadd (ite (= ((_ extract 64 64) a!1) #b1) #b000000000 #b011111111)
-                  (ite (= ((_ extract 64 64) a!1) #b1) #b000000000 #b011111111))))
-  (= ((_ extract 8 8) a!2) #b1)))
+  (ite (= ((_ extract 64 64) a!1) #b1) #b0 #b1))
+
 %pf    : (let ((a!1 (bvadd (concat #b0 (bvxor (bvor %rbx %rcx) %rcx #xffffffffffffffff))
                   #b00000000000000000000000000000000000000000000000000000000000000001
                   (concat #b0 %rbx))))
-  (not (xor (= ((_ extract 0 0) a!1) #b1)
-            (= ((_ extract 1 1) a!1) #b1)
-            (= ((_ extract 2 2) a!1) #b1)
-            (= ((_ extract 3 3) a!1) #b1)
-            (= ((_ extract 4 4) a!1) #b1)
-            (= ((_ extract 5 5) a!1) #b1)
-            (= ((_ extract 6 6) a!1) #b1)
-            (= ((_ extract 7 7) a!1) #b1))))
-%af    : TMP_BOOL_27
+(let ((a!2 (not (xor (= ((_ extract 0 0) a!1) #b1)
+                     (= ((_ extract 1 1) a!1) #b1)
+                     (= ((_ extract 2 2) a!1) #b1)
+                     (= ((_ extract 3 3) a!1) #b1)
+                     (= ((_ extract 4 4) a!1) #b1)
+                     (= ((_ extract 5 5) a!1) #b1)
+                     (= ((_ extract 6 6) a!1) #b1)
+                     (= ((_ extract 7 7) a!1) #b1)))))
+  (ite a!2 #b1 #b0)))
+
+%af    : (ite TMP_BOOL_27 #b1 #b0)
+
 %zf    : (let ((a!1 (bvadd (concat #b0 (bvxor (bvor %rbx %rcx) %rcx #xffffffffffffffff))
                   #b00000000000000000000000000000000000000000000000000000000000000001
                   (concat #b0 %rbx))))
-  (= ((_ extract 63 0) a!1) #x0000000000000000))
+  (ite (= ((_ extract 63 0) a!1) #x0000000000000000) #b1 #b0))
+
 %sf    : (let ((a!1 (bvadd (concat #b0 (bvxor (bvor %rbx %rcx) %rcx #xffffffffffffffff))
                   #b00000000000000000000000000000000000000000000000000000000000000001
                   (concat #b0 %rbx))))
-  (= ((_ extract 63 63) a!1) #b1))
+  ((_ extract 63 63) a!1))
+
 %of    : (let ((a!1 (= (bvxor (bvor ((_ extract 63 63) %rbx) ((_ extract 63 63) %rcx))
                      ((_ extract 63 63) %rcx)
                      #b1)
@@ -44,8 +48,13 @@ Formula:
                   #b00000000000000000000000000000000000000000000000000000000000000001
                   (concat #b0 %rbx))))
 (let ((a!3 (not (= a!1 (= ((_ extract 63 63) a!2) #b1)))))
-  (and (= a!1 (= ((_ extract 63 63) %rbx) #b1)) a!3)))
+(let ((a!4 (and (= a!1 (= ((_ extract 63 63) %rbx) #b1)) a!3)))
+  (ite a!4 #b1 #b0))))
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

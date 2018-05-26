@@ -8,8 +8,6 @@ code: vphaddd %ymm3, %ymm2, %ymm1
   must undef:      { }
   required flags:  { avx2 }
 
-vphaddd %ymm3, %ymm2, %ymm1: Hindex0(9)
-vphaddd %ymm3, %ymm2, %ymm1: Hindex0(9)
 Formula:
 
 %ymm1  : (let ((a!1 (concat (concat (bvadd ((_ extract 255 224) %ymm3)

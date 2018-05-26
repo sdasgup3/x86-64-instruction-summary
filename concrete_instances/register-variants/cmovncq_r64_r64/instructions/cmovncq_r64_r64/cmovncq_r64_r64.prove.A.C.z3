@@ -122,20 +122,18 @@
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 32))
+(declare-fun vfnmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 32))
 
 
 ( push )
 ( echo "cmovncq_r64_r64::rbx")
 (assert (not (=
-(let ((a!1 (= ((_ extract 8 8)
-(bvadd (ite cf #b000000000 #b011111111)
-(ite cf #b000000000 #b011111111)))
-#b1)))
-(let ((a!2 (ite a!1
+(let ((a!1 (ite (= (ite cf #b0 #b1) #b1)
 (bvadd (concat #b0 ((_ extract 15 0) rcx)) #b00000000000000001)
 (concat #b0 ((_ extract 15 0) rcx)))))
-(let ((a!3 (bvadd a!2 (concat #b0 (bvxor ((_ extract 15 0) rcx) #xffff)))))
-(ite (= ((_ extract 15 0) a!3) #x0000) rcx rbx))))
+(let ((a!2 (bvadd a!1 (concat #b0 (bvxor ((_ extract 15 0) rcx) #xffff)))))
+(ite (= ((_ extract 15 0) a!2) #x0000) rcx rbx)))
 
 (ite (not cf) rcx rbx)
 )))

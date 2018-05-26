@@ -122,14 +122,16 @@
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 32))
+(declare-fun vfnmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 32))
 
 
 ( push )
 ( echo "andw_r16_r16::af")
 (assert (not (=
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -139,9 +141,9 @@ TMP_BOOL
 ( push )
 ( echo "andw_r16_r16::cf")
 (assert (not (=
-false
+#b0
 
-false
+#b0
 )))
 (check-sat)
 ( pop )
@@ -151,9 +153,9 @@ false
 ( push )
 ( echo "andw_r16_r16::of")
 (assert (not (=
-false
+#b0
 
-false
+#b0
 )))
 (check-sat)
 ( pop )
@@ -195,7 +197,7 @@ false
 ((_ extract 7 7) rcx)
 ((_ extract 7 7) rbx))
 #b1)))
-(not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)))
+(ite (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)) #b1 #b0))
 
 (let ((a!1 (xor (= (bvand ((_ extract 0 0) rbx) ((_ extract 0 0) rcx)) #b1)
 (= (bvand ((_ extract 1 1) rbx) ((_ extract 1 1) rcx)) #b1)
@@ -205,7 +207,7 @@ false
 (= (bvand ((_ extract 5 5) rbx) ((_ extract 5 5) rcx)) #b1)
 (= (bvand ((_ extract 6 6) rbx) ((_ extract 6 6) rcx)) #b1)
 (= (bvand ((_ extract 7 7) rbx) ((_ extract 7 7) rcx)) #b1))))
-(not a!1))
+(ite (not a!1) #b1 #b0))
 )))
 (check-sat)
 ( pop )
@@ -242,9 +244,9 @@ false
 (bvxor (bvor ((_ extract 7 0) rbx) ((_ extract 7 0) rcx))
 ((_ extract 7 0) rcx)
 ((_ extract 7 0) rbx)))))
-(= ((_ extract 63 63) ((_ sign_extend 48) a!2)) #b1)))
+((_ extract 63 63) ((_ sign_extend 48) a!2))))
 
-(= (bvand ((_ extract 15 15) rbx) ((_ extract 15 15) rcx)) #b1)
+(ite (= (bvand ((_ extract 15 15) rbx) ((_ extract 15 15) rcx)) #b1) #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -261,9 +263,9 @@ false
 (bvxor (bvor ((_ extract 7 0) rbx) ((_ extract 7 0) rcx))
 ((_ extract 7 0) rcx)
 ((_ extract 7 0) rbx)))))
-(= ((_ sign_extend 48) a!2) #x0000000000000000)))
+(ite (= ((_ sign_extend 48) a!2) #x0000000000000000) #b1 #b0)))
 
-(= (bvand ((_ extract 15 0) rbx) ((_ extract 15 0) rcx)) #x0000)
+(ite (= (bvand ((_ extract 15 0) rbx) ((_ extract 15 0) rcx)) #x0000) #b1 #b0)
 )))
 (check-sat)
 ( pop )

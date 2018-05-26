@@ -10,10 +10,12 @@ code: cmc
 
 Formula:
 
-%cf    : (= ((_ extract 8 8)
-     (bvadd (ite %cf #b000000000 #b011111111) (ite %cf #b000000000 #b011111111)))
-   #b1)
+%cf    : (ite %cf #b0 #b1)
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

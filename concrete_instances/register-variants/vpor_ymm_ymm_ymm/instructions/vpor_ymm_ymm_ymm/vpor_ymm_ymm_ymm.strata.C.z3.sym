@@ -8,8 +8,6 @@ code: vpor %ymm3, %ymm2, %ymm1
   must undef:      { }
   required flags:  { avx2 }
 
-vpor %ymm3, %ymm2, %ymm1: Hindex0(9)
-vpor %ymm3, %ymm2, %ymm1: Hindex0(9)
 Formula:
 
 %ymm1  : (bvor %ymm2 %ymm3)

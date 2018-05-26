@@ -122,14 +122,16 @@
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 
 
 ( push )
 ( echo "tzcntw_r16_r16::af")
 (assert (not (=
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -163,7 +165,7 @@ TMP_BOOL
 (let ((a!8 (ite (= ((_ extract 0 0) rcx) #b1)
 #x0000
 (ite (= ((_ extract 1 1) rcx) #b1) #x0001 a!7))))
-(= a!8 #x0010)))))))))
+(ite (= a!8 #x0010) #b1 #b0)))))))))
 
 (let ((a!1 (concat #x00000000
 ((_ extract 31 0)
@@ -185,7 +187,7 @@ TMP_BOOL
 (let ((a!7 ((_ extract 8 8)
 (bvadd (concat #b0 ((_ extract 8 1) a!6))
 (concat #b0 ((_ extract 8 1) a!6))))))
-(= a!7 #b1)))))))
+(ite (= a!7 #b1) #b1 #b0)))))))
 )))
 (check-sat)
 ( pop )
@@ -195,9 +197,9 @@ TMP_BOOL
 ( push )
 ( echo "tzcntw_r16_r16::of")
 (assert (not (=
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -207,9 +209,9 @@ TMP_BOOL
 ( push )
 ( echo "tzcntw_r16_r16::pf")
 (assert (not (=
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -387,9 +389,9 @@ TMP_BOOL
 ( push )
 ( echo "tzcntw_r16_r16::sf")
 (assert (not (=
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -423,7 +425,7 @@ TMP_BOOL
 (let ((a!8 (ite (= ((_ extract 0 0) rcx) #b1)
 #x0000
 (ite (= ((_ extract 1 1) rcx) #b1) #x0001 a!7))))
-(= a!8 #x0000)))))))))
+(ite (= a!8 #x0000) #b1 #b0)))))))))
 
 (let ((a!1 (concat #x00000000
 ((_ extract 31 0)
@@ -549,7 +551,7 @@ TMP_BOOL
 (let ((a!90 ((_ extract 31 0)
 (bvadd (concat #b0 ((_ extract 31 0) a!89))
 #b011111111111111111111111111111111))))
-(= a!90 #x00000000)))))))))
+(ite (= a!90 #x00000000) #b1 #b0)))))))))
 )))
 (check-sat)
 ( pop )

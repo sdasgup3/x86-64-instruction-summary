@@ -122,14 +122,16 @@
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 32))
+(declare-fun vfnmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 32))
 
 
 ( push )
 ( echo "andq_r64_r64::af")
 (assert (not (=
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -139,9 +141,9 @@ TMP_BOOL
 ( push )
 ( echo "andq_r64_r64::cf")
 (assert (not (=
-false
+#b0
 
-false
+#b0
 )))
 (check-sat)
 ( pop )
@@ -151,9 +153,9 @@ false
 ( push )
 ( echo "andq_r64_r64::of")
 (assert (not (=
-false
+#b0
 
-false
+#b0
 )))
 (check-sat)
 ( pop )
@@ -163,78 +165,40 @@ false
 ( push )
 ( echo "andq_r64_r64::pf")
 (assert (not (=
-(let ((a!1 (bvor (bvxor #b0 ((_ extract 0 0) rcx))
-(bvxor (bvxor #b0 ((_ extract 0 0) rcx))
-#b0
-((_ extract 0 0) rbx))))
-(a!3 (bvor (bvxor #b0 ((_ extract 1 1) rcx))
-(bvxor (bvxor #b0 ((_ extract 1 1) rcx))
-#b0
-((_ extract 1 1) rbx))))
-(a!5 (bvor (bvxor #b0 ((_ extract 2 2) rcx))
-(bvxor (bvxor #b0 ((_ extract 2 2) rcx))
-#b0
-((_ extract 2 2) rbx))))
-(a!7 (bvor (bvxor #b0 ((_ extract 3 3) rcx))
-(bvxor (bvxor #b0 ((_ extract 3 3) rcx))
-#b0
-((_ extract 3 3) rbx))))
-(a!9 (bvor (bvxor #b0 ((_ extract 4 4) rcx))
-(bvxor (bvxor #b0 ((_ extract 4 4) rcx))
-#b0
-((_ extract 4 4) rbx))))
-(a!11 (bvor (bvxor #b0 ((_ extract 5 5) rcx))
-(bvxor (bvxor #b0 ((_ extract 5 5) rcx))
-#b0
-((_ extract 5 5) rbx))))
-(a!13 (bvor (bvxor #b0 ((_ extract 6 6) rcx))
-(bvxor (bvxor #b0 ((_ extract 6 6) rcx))
-#b0
-((_ extract 6 6) rbx))))
-(a!15 (bvor (bvxor #b0 ((_ extract 7 7) rcx))
-(bvxor (bvxor #b0 ((_ extract 7 7) rcx))
-#b0
-((_ extract 7 7) rbx)))))
-(let ((a!2 (bvxor (bvxor (bvxor #b0 ((_ extract 0 0) rcx))
-#b0
-((_ extract 0 0) rbx))
-a!1))
-(a!4 (bvxor (bvxor (bvxor #b0 ((_ extract 1 1) rcx))
-#b0
-((_ extract 1 1) rbx))
-a!3))
-(a!6 (bvxor (bvxor (bvxor #b0 ((_ extract 2 2) rcx))
-#b0
-((_ extract 2 2) rbx))
-a!5))
-(a!8 (bvxor (bvxor (bvxor #b0 ((_ extract 3 3) rcx))
-#b0
-((_ extract 3 3) rbx))
-a!7))
-(a!10 (bvxor (bvxor (bvxor #b0 ((_ extract 4 4) rcx))
-#b0
-((_ extract 4 4) rbx))
-a!9))
-(a!12 (bvxor (bvxor (bvxor #b0 ((_ extract 5 5) rcx))
-#b0
-((_ extract 5 5) rbx))
-a!11))
-(a!14 (bvxor (bvxor (bvxor #b0 ((_ extract 6 6) rcx))
-#b0
-((_ extract 6 6) rbx))
-a!13))
-(a!16 (bvxor (bvxor (bvxor #b0 ((_ extract 7 7) rcx))
-#b0
-((_ extract 7 7) rbx))
-a!15)))
-(not (xor (= a!2 #b1)
+(let ((a!1 (bvxor (bvxor ((_ extract 0 0) rcx) ((_ extract 0 0) rbx))
+(bvor ((_ extract 0 0) rcx)
+(bvxor ((_ extract 0 0) rcx) ((_ extract 0 0) rbx)))))
+(a!2 (bvxor (bvxor ((_ extract 1 1) rcx) ((_ extract 1 1) rbx))
+(bvor ((_ extract 1 1) rcx)
+(bvxor ((_ extract 1 1) rcx) ((_ extract 1 1) rbx)))))
+(a!3 (bvxor (bvxor ((_ extract 2 2) rcx) ((_ extract 2 2) rbx))
+(bvor ((_ extract 2 2) rcx)
+(bvxor ((_ extract 2 2) rcx) ((_ extract 2 2) rbx)))))
+(a!4 (bvxor (bvxor ((_ extract 3 3) rcx) ((_ extract 3 3) rbx))
+(bvor ((_ extract 3 3) rcx)
+(bvxor ((_ extract 3 3) rcx) ((_ extract 3 3) rbx)))))
+(a!5 (bvxor (bvxor ((_ extract 4 4) rcx) ((_ extract 4 4) rbx))
+(bvor ((_ extract 4 4) rcx)
+(bvxor ((_ extract 4 4) rcx) ((_ extract 4 4) rbx)))))
+(a!6 (bvxor (bvxor ((_ extract 5 5) rcx) ((_ extract 5 5) rbx))
+(bvor ((_ extract 5 5) rcx)
+(bvxor ((_ extract 5 5) rcx) ((_ extract 5 5) rbx)))))
+(a!7 (bvxor (bvxor ((_ extract 6 6) rcx) ((_ extract 6 6) rbx))
+(bvor ((_ extract 6 6) rcx)
+(bvxor ((_ extract 6 6) rcx) ((_ extract 6 6) rbx)))))
+(a!8 (bvxor (bvxor ((_ extract 7 7) rcx) ((_ extract 7 7) rbx))
+(bvor ((_ extract 7 7) rcx)
+(bvxor ((_ extract 7 7) rcx) ((_ extract 7 7) rbx))))))
+(ite (not (xor (= a!1 #b1)
+(= a!2 #b1)
+(= a!3 #b1)
 (= a!4 #b1)
+(= a!5 #b1)
 (= a!6 #b1)
-(= a!8 #b1)
-(= a!10 #b1)
-(= a!12 #b1)
-(= a!14 #b1)
-(= a!16 #b1)))))
+(= a!7 #b1)
+(= a!8 #b1)))
+#b1
+#b0))
 
 (let ((a!1 (xor (= (bvand ((_ extract 0 0) rbx) ((_ extract 0 0) rcx)) #b1)
 (= (bvand ((_ extract 1 1) rbx) ((_ extract 1 1) rcx)) #b1)
@@ -244,7 +208,7 @@ a!15)))
 (= (bvand ((_ extract 5 5) rbx) ((_ extract 5 5) rcx)) #b1)
 (= (bvand ((_ extract 6 6) rbx) ((_ extract 6 6) rcx)) #b1)
 (= (bvand ((_ extract 7 7) rbx) ((_ extract 7 7) rcx)) #b1))))
-(not a!1))
+(ite (not a!1) #b1 #b0))
 )))
 (check-sat)
 ( pop )
@@ -254,9 +218,7 @@ a!15)))
 ( push )
 ( echo "andq_r64_r64::rbx")
 (assert (not (=
-(bvxor (bvxor (bvxor #x0000000000000000 rcx) #x0000000000000000 rbx)
-(bvor (bvxor #x0000000000000000 rcx)
-(bvxor (bvxor #x0000000000000000 rcx) #x0000000000000000 rbx)))
+(bvxor (bvxor rcx rbx) (bvor rcx (bvxor rcx rbx)))
 
 (bvand rbx rcx)
 )))
@@ -268,17 +230,11 @@ a!15)))
 ( push )
 ( echo "andq_r64_r64::sf")
 (assert (not (=
-(let ((a!1 (bvor (bvxor #b0 ((_ extract 63 63) rcx))
-(bvxor (bvxor #b0 ((_ extract 63 63) rcx))
-#b0
-((_ extract 63 63) rbx)))))
-(let ((a!2 (bvxor (bvxor (bvxor #b0 ((_ extract 63 63) rcx))
-#b0
-((_ extract 63 63) rbx))
-a!1)))
-(= a!2 #b1)))
+(bvxor (bvxor ((_ extract 63 63) rcx) ((_ extract 63 63) rbx))
+(bvor ((_ extract 63 63) rcx)
+(bvxor ((_ extract 63 63) rcx) ((_ extract 63 63) rbx))))
 
-(= (bvand ((_ extract 63 63) rbx) ((_ extract 63 63) rcx)) #b1)
+(ite (= (bvand ((_ extract 63 63) rbx) ((_ extract 63 63) rcx)) #b1) #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -288,16 +244,11 @@ a!1)))
 ( push )
 ( echo "andq_r64_r64::zf")
 (assert (not (=
-(let ((a!1 (bvxor (bvxor (bvxor #x0000000000000000 rcx)
-#x0000000000000000
-rbx)
-(bvor (bvxor #x0000000000000000 rcx)
-(bvxor (bvxor #x0000000000000000 rcx)
-#x0000000000000000
-rbx)))))
-(= a!1 #x0000000000000000))
+(let ((a!1 (= (bvxor (bvxor rcx rbx) (bvor rcx (bvxor rcx rbx)))
+#x0000000000000000)))
+(ite a!1 #b1 #b0))
 
-(= (bvand rbx rcx) #x0000000000000000)
+(ite (= (bvand rbx rcx) #x0000000000000000) #b1 #b0)
 )))
 (check-sat)
 ( pop )

@@ -8,8 +8,6 @@ code: setns %ah
   must undef:      { }
   required flags:  { }
 
-setns %ah: Hindex3(9)
-setns %ah: Hindex3(9)
 Formula:
 
 %rax   : (concat (concat ((_ extract 63 16) %rax) (ite (not %sf) #x01 #x00))

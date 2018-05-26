@@ -16,19 +16,26 @@ Formula:
 (let ((a!2 ((_ extract 7 0) (bvadd a!1 (concat #b0 ((_ extract 15 8) %rax))))))
   (concat (concat ((_ extract 63 16) %rax) a!2) ((_ extract 7 0) %rax))))
 
+
 %cf    : (let ((a!1 (ite %cf
                 (bvadd (concat #b0 ((_ extract 15 8) %rax)) #b000000001)
                 (concat #b0 ((_ extract 15 8) %rax)))))
-(let ((a!2 ((_ extract 8 8) (bvadd a!1 (concat #b0 ((_ extract 15 8) %rax))))))
-  (= a!2 #b1)))
+  ((_ extract 8 8) (bvadd a!1 (concat #b0 ((_ extract 15 8) %rax)))))
+
 %of    : (let ((a!1 (ite %cf
                 (bvadd (concat #b0 ((_ extract 15 8) %rax)) #b000000001)
                 (concat #b0 ((_ extract 15 8) %rax)))))
 (let ((a!2 ((_ extract 7 7) (bvadd a!1 (concat #b0 ((_ extract 15 8) %rax))))))
 (let ((a!3 (not (= (= ((_ extract 15 15) %rax) #b1) (= a!2 #b1)))))
-  (and (= (= ((_ extract 15 15) %rax) #b1) (= ((_ extract 15 15) %rax) #b1))
-       a!3))))
+(let ((a!4 (and (= (= ((_ extract 15 15) %rax) #b1)
+                   (= ((_ extract 15 15) %rax) #b1))
+                a!3)))
+  (ite a!4 #b1 #b0)))))
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

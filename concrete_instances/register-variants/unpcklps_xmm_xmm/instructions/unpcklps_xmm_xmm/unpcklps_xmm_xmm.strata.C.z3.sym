@@ -8,8 +8,6 @@ code: unpcklps %xmm2, %xmm1
   must undef:      { }
   required flags:  { sse }
 
-unpcklps %xmm2, %xmm1: Hindex0(9)
-unpcklps %xmm2, %xmm1: Hindex0(9)
 Formula:
 
 %ymm1  : (let ((a!1 (concat (concat (concat ((_ extract 63 32) %ymm2)

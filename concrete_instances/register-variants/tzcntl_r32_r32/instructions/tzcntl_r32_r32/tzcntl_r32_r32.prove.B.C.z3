@@ -122,14 +122,16 @@
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 
 
 ( push )
 ( echo "tzcntl_r32_r32::af")
 (assert (not (=
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -187,7 +189,7 @@ TMP_BOOL
 (let ((a!16 (ite (= ((_ extract 0 0) rcx) #b1)
 #x00000000
 (ite (= ((_ extract 1 1) rcx) #b1) #x00000001 a!15))))
-(= a!16 #x00000020)))))))))))))))))
+(ite (= a!16 #x00000020) #b1 #b0)))))))))))))))))
 
 (let ((a!1 (bvadd (concat #b0 #xffffffffffffffff)
 (concat #b0 (concat #x00000000 ((_ extract 31 0) rcx))))))
@@ -209,7 +211,7 @@ a!3))))
 (let ((a!6 ((_ extract 8 8)
 (bvadd (concat #b0 ((_ extract 8 1) a!5))
 (concat #b0 ((_ extract 8 1) a!5))))))
-(= a!6 #b1))))))
+(ite (= a!6 #b1) #b1 #b0))))))
 )))
 (check-sat)
 ( pop )
@@ -219,9 +221,9 @@ a!3))))
 ( push )
 ( echo "tzcntl_r32_r32::of")
 (assert (not (=
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -231,9 +233,9 @@ TMP_BOOL
 ( push )
 ( echo "tzcntl_r32_r32::pf")
 (assert (not (=
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -445,9 +447,9 @@ a!3)))
 ( push )
 ( echo "tzcntl_r32_r32::sf")
 (assert (not (=
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -505,7 +507,7 @@ TMP_BOOL
 (let ((a!16 (ite (= ((_ extract 0 0) rcx) #b1)
 #x00000000
 (ite (= ((_ extract 1 1) rcx) #b1) #x00000001 a!15))))
-(= a!16 #x00000000)))))))))))))))))
+(ite (= a!16 #x00000000) #b1 #b0)))))))))))))))))
 
 (let ((a!1 (bvadd (concat #b0 #xffffffffffffffff)
 (concat #b0 (concat #x00000000 ((_ extract 31 0) rcx))))))
@@ -648,7 +650,7 @@ a!3)))
 (concat #x0000 (bvadd a!40 a!45))))))
 (let ((a!47 (bvadd (concat #b0 ((_ extract 31 0) (bvadd a!25 a!46)))
 #b011111111111111111111111111111111)))
-(= ((_ extract 31 0) a!47) #x00000000))))))))
+(ite (= ((_ extract 31 0) a!47) #x00000000) #b1 #b0))))))))
 )))
 (check-sat)
 ( pop )

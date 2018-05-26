@@ -8,16 +8,6 @@ code: movhlps %xmm2, %xmm1
   must undef:      { }
   required flags:  { sse }
 
-movhlps %xmm2, %xmm1: Hindex8(9)
-movhlps %xmm2, %xmm1: Hindex8(9)
-callq .move_128_64_xmm1_xmm12_xmm13: Hindex8(9)
-callq .move_128_064_xmm2_r12_r13: Hindex8(9)
-callq .move_128_032_xmm1_r10d_r11d_r12d_r13d: Hindex8(9)
-callq .move_032_064_r10d_r11d_rbx: Hindex8(9)
-movq %r10, %rbx: Hindex5(9)
-callq .move_064_128_r12_r13_xmm1: Hindex8(9)
-callq .move_128_064_xmm2_r12_r13: Hindex8(9)
-callq .move_064_128_r12_r13_xmm1: Hindex8(9)
 Formula:
 
 %ymm1  : (concat ((_ extract 255 128) %ymm1)

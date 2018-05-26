@@ -122,6 +122,8 @@
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 32))
+(declare-fun vfnmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 32))
 
 
 ( push )
@@ -129,11 +131,11 @@
 (assert (not (=
 (let ((a!1 (bvadd (concat #b0 (bvxor ((_ extract 3 0) rbx) #xf))
 (concat #b0 ((_ extract 3 0) rax)))))
-(= ((_ extract 4 4) a!1) #b1))
+((_ extract 4 4) a!1))
 
 (let ((a!1 (bvadd (concat #b0 (bvxor ((_ extract 3 0) rbx) #xf))
 (concat #b0 ((_ extract 3 0) rax)))))
-(= ((_ extract 4 4) a!1) #b1))
+(ite (= ((_ extract 4 4) a!1) #b1) #b1 #b0))
 )))
 (check-sat)
 ( pop )
@@ -147,10 +149,7 @@
 (bvadd (concat #b0 (bvxor rbx #xffffffffffffffff))
 #b00000000000000000000000000000000000000000000000000000000000000001
 (concat #b0 rax)))))
-(let ((a!2 ((_ extract 8 8)
-(bvadd (ite (= a!1 #b1) #b000000000 #b011111111)
-(ite (= a!1 #b1) #b000000000 #b011111111)))))
-(= a!2 #b1)))
+(ite (= a!1 #b1) #b0 #b1))
 
 (let ((a!1 ((_ extract 64 64)
 (bvadd (concat #b0 (bvxor rbx #xffffffffffffffff))
@@ -159,7 +158,7 @@
 (let ((a!2 ((_ extract 8 8)
 (bvadd (ite (= a!1 #b1) #b000000000 #b011111111)
 (ite (= a!1 #b1) #b000000000 #b011111111)))))
-(= a!2 #b1)))
+(ite (= a!2 #b1) #b1 #b0)))
 )))
 (check-sat)
 ( pop )
@@ -176,7 +175,7 @@
 #b00000000000000000000000000000000000000000000000000000000000000001
 (concat #b0 rax)))))
 (let ((a!3 (= (= (bvxor ((_ extract 63 63) rbx) #b1) #b1) (= a!2 #b1))))
-(and a!1 (not a!3))))
+(ite (and a!1 (not a!3)) #b1 #b0)))
 
 (let ((a!1 (= (= (bvxor ((_ extract 63 63) rbx) #b1) #b1)
 (= ((_ extract 63 63) rax) #b1)))
@@ -185,7 +184,7 @@
 #b00000000000000000000000000000000000000000000000000000000000000001
 (concat #b0 rax)))))
 (let ((a!3 (= (= (bvxor ((_ extract 63 63) rbx) #b1) #b1) (= a!2 #b1))))
-(and a!1 (not a!3))))
+(ite (and a!1 (not a!3)) #b1 #b0)))
 )))
 (check-sat)
 ( pop )
@@ -198,26 +197,28 @@
 (let ((a!1 (bvadd (concat #b0 (bvxor rbx #xffffffffffffffff))
 #b00000000000000000000000000000000000000000000000000000000000000001
 (concat #b0 rax))))
-(not (xor (= ((_ extract 0 0) a!1) #b1)
+(let ((a!2 (not (xor (= ((_ extract 0 0) a!1) #b1)
 (= ((_ extract 1 1) a!1) #b1)
 (= ((_ extract 2 2) a!1) #b1)
 (= ((_ extract 3 3) a!1) #b1)
 (= ((_ extract 4 4) a!1) #b1)
 (= ((_ extract 5 5) a!1) #b1)
 (= ((_ extract 6 6) a!1) #b1)
-(= ((_ extract 7 7) a!1) #b1))))
+(= ((_ extract 7 7) a!1) #b1)))))
+(ite a!2 #b1 #b0)))
 
 (let ((a!1 (bvadd (concat #b0 (bvxor rbx #xffffffffffffffff))
 #b00000000000000000000000000000000000000000000000000000000000000001
 (concat #b0 rax))))
-(not (xor (= ((_ extract 0 0) a!1) #b1)
+(let ((a!2 (not (xor (= ((_ extract 0 0) a!1) #b1)
 (= ((_ extract 1 1) a!1) #b1)
 (= ((_ extract 2 2) a!1) #b1)
 (= ((_ extract 3 3) a!1) #b1)
 (= ((_ extract 4 4) a!1) #b1)
 (= ((_ extract 5 5) a!1) #b1)
 (= ((_ extract 6 6) a!1) #b1)
-(= ((_ extract 7 7) a!1) #b1))))
+(= ((_ extract 7 7) a!1) #b1)))))
+(ite a!2 #b1 #b0)))
 )))
 (check-sat)
 ( pop )
@@ -231,10 +232,7 @@
 (bvadd (concat #b0 (bvxor rbx #xffffffffffffffff))
 #b00000000000000000000000000000000000000000000000000000000000000001
 (concat #b0 rax)))))
-(let ((a!2 ((_ extract 7 0)
-(bvadd (ite (= a!1 #x0000000000000000) #b000000001 #b000000000)
-(ite (= a!1 #x0000000000000000) #b000000001 #b000000000)))))
-(ite (= a!2 #x00) rbx rax)))
+(ite (= (ite (= a!1 #x0000000000000000) #x02 #x00) #x00) rbx rax))
 
 (let ((a!1 ((_ extract 63 0)
 (bvadd (concat #b0 (bvxor rbx #xffffffffffffffff))
@@ -273,17 +271,16 @@
 ( push )
 ( echo "cmpxchgq_r64_r64::sf")
 (assert (not (=
-(let ((a!1 ((_ extract 63 63)
+((_ extract 63 63)
 (bvadd (concat #b0 (bvxor rbx #xffffffffffffffff))
 #b00000000000000000000000000000000000000000000000000000000000000001
-(concat #b0 rax)))))
-(= a!1 #b1))
+(concat #b0 rax)))
 
 (let ((a!1 ((_ extract 63 63)
 (bvadd (concat #b0 (bvxor rbx #xffffffffffffffff))
 #b00000000000000000000000000000000000000000000000000000000000000001
 (concat #b0 rax)))))
-(= a!1 #b1))
+(ite (= a!1 #b1) #b1 #b0))
 )))
 (check-sat)
 ( pop )
@@ -297,13 +294,13 @@
 (bvadd (concat #b0 (bvxor rbx #xffffffffffffffff))
 #b00000000000000000000000000000000000000000000000000000000000000001
 (concat #b0 rax)))))
-(= a!1 #x0000000000000000))
+(ite (= a!1 #x0000000000000000) #b1 #b0))
 
 (let ((a!1 ((_ extract 63 0)
 (bvadd (concat #b0 (bvxor rbx #xffffffffffffffff))
 #b00000000000000000000000000000000000000000000000000000000000000001
 (concat #b0 rax)))))
-(= a!1 #x0000000000000000))
+(ite (= a!1 #x0000000000000000) #b1 #b0))
 )))
 (check-sat)
 ( pop )

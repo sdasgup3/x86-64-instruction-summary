@@ -122,6 +122,8 @@
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 32))
+(declare-fun vfnmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 32))
 
 
 ( push )
@@ -129,12 +131,12 @@
 (assert (not (=
 (let ((a!1 (bvadd (concat #b0 ((_ extract 3 0) rbx))
 (concat #b0 (bvxor #xf ((_ extract 3 0) rcx))))))
-(= ((_ extract 4 4) a!1) #b1))
+((_ extract 4 4) a!1))
 
 (let ((a!1 ((_ extract 4 4)
 (bvadd (concat #b0 ((_ extract 3 0) rcx))
 (concat #b0 ((_ extract 3 0) rbx))))))
-(= a!1 #b1))
+(ite (= a!1 #b1) #b1 #b0))
 )))
 (check-sat)
 ( pop )
@@ -147,14 +149,12 @@
 (let ((a!1 (bvadd (concat #b0 ((_ extract 7 0) rbx))
 #b000000001
 (concat #b0 (bvxor #xff ((_ extract 7 0) rcx))))))
-(let ((a!2 (bvadd (ite (= ((_ extract 8 8) a!1) #b1) #b000000000 #b011111111)
-(ite (= ((_ extract 8 8) a!1) #b1) #b000000000 #b011111111))))
-(= ((_ extract 8 8) a!2) #b1)))
+(ite (= ((_ extract 8 8) a!1) #b1) #b0 #b1))
 
 (let ((a!1 (bvadd (concat #b0 (bvnot ((_ extract 7 0) rcx)))
 #b000000001
 (concat #b0 ((_ extract 7 0) rbx)))))
-(not (= ((_ extract 8 8) a!1) #b1)))
+(ite (not (= ((_ extract 8 8) a!1) #b1)) #b1 #b0))
 )))
 (check-sat)
 ( pop )
@@ -170,7 +170,7 @@
 #b000000001
 (concat #b0 (bvxor #xff ((_ extract 7 0) rcx))))))
 (let ((a!3 (not (= (= ((_ extract 7 7) rbx) #b1) (= ((_ extract 7 7) a!2) #b1)))))
-(and a!1 a!3)))
+(ite (and a!1 a!3) #b1 #b0)))
 
 (let ((a!1 (= (= (bvnot ((_ extract 7 7) rcx)) #b1)
 (= ((_ extract 7 7) rbx) #b1)))
@@ -179,7 +179,7 @@
 (concat #b0 ((_ extract 7 0) rbx)))))
 (let ((a!3 (= (= (bvnot ((_ extract 7 7) rcx)) #b1)
 (= ((_ extract 7 7) a!2) #b1))))
-(and a!1 (not a!3))))
+(ite (and a!1 (not a!3)) #b1 #b0)))
 )))
 (check-sat)
 ( pop )
@@ -192,26 +192,28 @@
 (let ((a!1 (bvadd (concat #b0 ((_ extract 7 0) rbx))
 #b000000001
 (concat #b0 (bvxor #xff ((_ extract 7 0) rcx))))))
-(not (xor (= ((_ extract 0 0) a!1) #b1)
+(let ((a!2 (not (xor (= ((_ extract 0 0) a!1) #b1)
 (= ((_ extract 1 1) a!1) #b1)
 (= ((_ extract 2 2) a!1) #b1)
 (= ((_ extract 3 3) a!1) #b1)
 (= ((_ extract 4 4) a!1) #b1)
 (= ((_ extract 5 5) a!1) #b1)
 (= ((_ extract 6 6) a!1) #b1)
-(= ((_ extract 7 7) a!1) #b1))))
+(= ((_ extract 7 7) a!1) #b1)))))
+(ite a!2 #b1 #b0)))
 
 (let ((a!1 (bvadd (concat #b0 (bvnot ((_ extract 7 0) rcx)))
 #b000000001
 (concat #b0 ((_ extract 7 0) rbx)))))
-(not (xor (= ((_ extract 0 0) a!1) #b1)
+(let ((a!2 (not (xor (= ((_ extract 0 0) a!1) #b1)
 (= ((_ extract 1 1) a!1) #b1)
 (= ((_ extract 2 2) a!1) #b1)
 (= ((_ extract 3 3) a!1) #b1)
 (= ((_ extract 4 4) a!1) #b1)
 (= ((_ extract 5 5) a!1) #b1)
 (= ((_ extract 6 6) a!1) #b1)
-(= ((_ extract 7 7) a!1) #b1))))
+(= ((_ extract 7 7) a!1) #b1)))))
+(ite a!2 #b1 #b0)))
 )))
 (check-sat)
 ( pop )
@@ -224,12 +226,12 @@
 (let ((a!1 (bvadd (concat #b0 ((_ extract 7 0) rbx))
 #b000000001
 (concat #b0 (bvxor #xff ((_ extract 7 0) rcx))))))
-(= ((_ extract 7 7) a!1) #b1))
+((_ extract 7 7) a!1))
 
 (let ((a!1 (bvadd (concat #b0 (bvnot ((_ extract 7 0) rcx)))
 #b000000001
 (concat #b0 ((_ extract 7 0) rbx)))))
-(= ((_ extract 7 7) a!1) #b1))
+(ite (= ((_ extract 7 7) a!1) #b1) #b1 #b0))
 )))
 (check-sat)
 ( pop )
@@ -242,12 +244,12 @@
 (let ((a!1 (bvadd (concat #b0 ((_ extract 7 0) rbx))
 #b000000001
 (concat #b0 (bvxor #xff ((_ extract 7 0) rcx))))))
-(= ((_ extract 7 0) a!1) #x00))
+(ite (= ((_ extract 7 0) a!1) #x00) #b1 #b0))
 
 (let ((a!1 (bvadd (concat #b0 (bvnot ((_ extract 7 0) rcx)))
 #b000000001
 (concat #b0 ((_ extract 7 0) rbx)))))
-(= ((_ extract 7 0) a!1) #x00))
+(ite (= ((_ extract 7 0) a!1) #x00) #b1 #b0))
 )))
 (check-sat)
 ( pop )

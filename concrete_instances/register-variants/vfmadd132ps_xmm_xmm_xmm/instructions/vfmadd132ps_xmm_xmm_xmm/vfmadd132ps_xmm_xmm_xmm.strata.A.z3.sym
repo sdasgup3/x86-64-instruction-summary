@@ -10,49 +10,36 @@ code: vfmadd132ps %xmm3, %xmm2, %xmm1
 
 Formula:
 
-%ymm1  : (let ((a!1 (bvxor (bvxor #x00000000 ((_ extract 127 96) %ymm2))
-                  (bvor #x00000000
-                        (bvxor #x00000000 ((_ extract 127 96) %ymm2)))))
-      (a!2 (bvxor (bvxor #x00000000 ((_ extract 95 64) %ymm2))
-                  (bvor #x00000000 (bvxor #x00000000 ((_ extract 95 64) %ymm2)))))
-      (a!4 (bvxor (bvxor #x0000000000000000 ((_ extract 127 64) %ymm2))
-                  (bvor #x0000000000000000
-                        (bvxor #x0000000000000000 ((_ extract 127 64) %ymm2)))))
-      (a!5 (bvxor (bvxor #x00000000 ((_ extract 63 32) %ymm2))
-                  (bvor #x00000000 (bvxor #x00000000 ((_ extract 63 32) %ymm2)))))
-      (a!6 (bvxor (bvxor #x00000000 ((_ extract 31 0) %ymm2))
-                  (bvor #x00000000 (bvxor #x00000000 ((_ extract 31 0) %ymm2)))))
-      (a!8 (bvxor (bvxor #x0000000000000000 ((_ extract 63 0) %ymm2))
-                  (bvor #x0000000000000000
-                        (bvxor #x0000000000000000 ((_ extract 63 0) %ymm2))))))
-(let ((a!3 (concat (vfmsub132_single ((_ extract 127 96) %ymm1)
+%ymm1  : (let ((a!1 (concat (vfmsub132_single ((_ extract 127 96) %ymm1)
                                      (vfnmsub132_single
-                                       a!1
+                                       #x00000000
                                        ((_ extract 127 96) %ymm2)
                                        ((_ extract 127 96) %ymm2))
                                      ((_ extract 127 96) %ymm3))
                    (vfmsub132_single ((_ extract 95 64) %ymm1)
                                      (vfnmsub132_single
-                                       a!2
+                                       #x00000000
                                        ((_ extract 95 64) %ymm2)
                                        ((_ extract 95 64) %ymm2))
                                      ((_ extract 95 64) %ymm3))))
-      (a!7 (concat (vfmsub132_single ((_ extract 63 32) %ymm1)
+      (a!2 (concat (vfmsub132_single ((_ extract 63 32) %ymm1)
                                      (vfnmsub132_single
-                                       a!5
+                                       #x00000000
                                        ((_ extract 63 32) %ymm2)
                                        ((_ extract 63 32) %ymm2))
                                      ((_ extract 63 32) %ymm3))
                    (vfmsub132_single ((_ extract 31 0) %ymm1)
                                      (vfnmsub132_single
-                                       a!6
+                                       #x00000000
                                        ((_ extract 31 0) %ymm2)
                                        ((_ extract 31 0) %ymm2))
                                      ((_ extract 31 0) %ymm3)))))
-  (concat #x00000000000000000000000000000000
-          (concat (bvor #x0000000000000000 a!3 a!4)
-                  (bvor #x0000000000000000 a!7 a!8)))))
+  (concat #x00000000000000000000000000000000 (concat a!1 a!2)))
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

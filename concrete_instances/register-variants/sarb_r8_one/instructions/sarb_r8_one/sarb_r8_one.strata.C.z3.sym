@@ -8,8 +8,6 @@ code: sarb $0x1, %bl
   must undef:      { %af }
   required flags:  { }
 
-sarb $0x1, %bl: Hindex7(9)
-sarb $0x1, %bl: Hindex7(9)
 Formula:
 
 %rbx   : (let ((a!1 ((_ extract 8 1)
@@ -18,7 +16,7 @@ Formula:
 
 %cf    : (let ((a!1 ((_ extract 0 0)
              (bvashr (concat ((_ extract 7 0) %rbx) #b0) #b000000001))))
-  (or (and true (= a!1 #b1)) (and false %cf)))
+  (ite (or (and true (= a!1 #b1)) (and false %cf)) #b1 #b0))
 %pf    : (let ((a!1 ((_ extract 1 1)
              (bvashr (concat ((_ extract 7 0) %rbx) #b0) #b000000001)))
       (a!2 ((_ extract 2 2)
@@ -44,15 +42,15 @@ Formula:
                           (= a!6 #b1)
                           (= a!7 #b1)
                           (= a!8 #b1))))))
-  (or a!9 (and false %pf))))
-%af    : (or (and true TMP_BOOL_0) (and false %af))
+  (ite (or a!9 (and false %pf)) #b1 #b0)))
+%af    : (ite (or (and true TMP_BOOL_0) (and false %af)) #b1 #b0)
 %zf    : (let ((a!1 ((_ extract 8 1)
              (bvashr (concat ((_ extract 7 0) %rbx) #b0) #b000000001))))
-  (or (and true (= a!1 #x00)) (and false %zf)))
+  (ite (or (and true (= a!1 #x00)) (and false %zf)) #b1 #b0))
 %sf    : (let ((a!1 ((_ extract 8 8)
              (bvashr (concat ((_ extract 7 0) %rbx) #b0) #b000000001))))
-  (or (and true (= a!1 #b1)) (and false %sf)))
-%of    : (or false (and false %of))
+  (ite (or (and true (= a!1 #b1)) (and false %sf)) #b1 #b0))
+%of    : (ite (or false (and false %of)) #b1 #b0)
 
 sigfpe  : sigfpe
 sigbus  : sigbus

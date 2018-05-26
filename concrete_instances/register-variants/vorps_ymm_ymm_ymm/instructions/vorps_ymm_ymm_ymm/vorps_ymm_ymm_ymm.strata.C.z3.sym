@@ -8,8 +8,6 @@ code: vorps %ymm3, %ymm2, %ymm1
   must undef:      { }
   required flags:  { avx }
 
-vorps %ymm3, %ymm2, %ymm1: Hindex0(9)
-vorps %ymm3, %ymm2, %ymm1: Hindex0(9)
 Formula:
 
 %ymm1  : (bvor %ymm2 %ymm3)

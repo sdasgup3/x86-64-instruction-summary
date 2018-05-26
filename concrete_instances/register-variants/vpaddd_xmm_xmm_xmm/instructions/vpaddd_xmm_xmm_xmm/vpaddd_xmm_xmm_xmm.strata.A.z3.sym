@@ -10,12 +10,16 @@ code: vpaddd %xmm3, %xmm2, %xmm1
 
 Formula:
 
-%ymm1  : (let ((a!1 (bvadd (concat #b0 (concat #x00000000 ((_ extract 127 96) %ymm2)))
-                  (concat #b0 (concat #x00000000 ((_ extract 127 96) %ymm3)))))
+%ymm1  : (let ((a!1 ((_ extract 31 0)
+             (bvadd (concat #b000000000000000000000000000000000
+                            ((_ extract 127 96) %ymm2))
+                    (concat #b000000000000000000000000000000000
+                            ((_ extract 127 96) %ymm3)))))
       (a!2 (bvadd (concat #b0
                           (concat ((_ extract 95 64) %ymm2)
                                   ((_ extract 95 64) %ymm3)))
-                  (concat #b0 (concat #x00000000 ((_ extract 95 64) %ymm2)))))
+                  (concat #b000000000000000000000000000000000
+                          ((_ extract 95 64) %ymm2))))
       (a!3 (bvadd (concat #b0
                           (concat ((_ extract 63 32) %ymm3)
                                   ((_ extract 63 32) %ymm3)))
@@ -28,12 +32,15 @@ Formula:
                   (concat #b0
                           (concat ((_ extract 31 0) %ymm3)
                                   ((_ extract 31 0) %ymm2))))))
-(let ((a!5 (concat (concat (concat ((_ extract 31 0) a!1)
-                                   ((_ extract 31 0) a!2))
+(let ((a!5 (concat (concat (concat a!1 ((_ extract 31 0) a!2))
                            ((_ extract 31 0) a!3))
                    ((_ extract 31 0) a!4))))
   (concat #x00000000000000000000000000000000 a!5)))
 
+
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

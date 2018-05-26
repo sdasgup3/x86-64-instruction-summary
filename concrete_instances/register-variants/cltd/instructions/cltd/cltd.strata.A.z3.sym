@@ -10,11 +10,13 @@ code: cltd
 
 Formula:
 
-%rdx   : (let ((a!1 (bvxor #x00000000
-                  ((_ extract 63 32)
-                    ((_ sign_extend 32) ((_ extract 31 0) %rax))))))
-  (concat #x00000000 a!1))
+%rdx   : (concat #x00000000
+        ((_ extract 63 32) ((_ sign_extend 32) ((_ extract 31 0) %rax))))
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+
