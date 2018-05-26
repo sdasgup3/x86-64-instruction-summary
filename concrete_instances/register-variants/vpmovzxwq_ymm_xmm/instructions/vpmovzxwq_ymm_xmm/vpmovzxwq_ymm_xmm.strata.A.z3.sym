@@ -10,20 +10,15 @@ code: vpmovzxwq %xmm2, %ymm1
 
 Formula:
 
-%ymm1  : (let ((a!1 (concat #x00000000
-                   (sub_single (concat #x0000 ((_ extract 63 48) %ymm2))
-                               #x00000000)))
-      (a!2 (concat #x00000000
-                   (sub_single (concat #x0000 ((_ extract 47 32) %ymm2))
-                               #x00000000)))
-      (a!3 (concat #x00000000
-                   (sub_single (concat #x0000 ((_ extract 31 16) %ymm2))
-                               #x00000000)))
-      (a!4 (concat #x00000000
-                   (sub_single (concat #x0000 ((_ extract 15 0) %ymm2))
-                               #x00000000))))
-  (concat a!1 (concat a!2 (concat a!3 a!4))))
+%ymm1  : (let ((a!1 (concat (concat #x000000000000 ((_ extract 47 32) %ymm2))
+                   (concat (concat #x000000000000 ((_ extract 31 16) %ymm2))
+                           (concat #x000000000000 ((_ extract 15 0) %ymm2))))))
+  (concat (concat #x000000000000 ((_ extract 63 48) %ymm2)) a!1))
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

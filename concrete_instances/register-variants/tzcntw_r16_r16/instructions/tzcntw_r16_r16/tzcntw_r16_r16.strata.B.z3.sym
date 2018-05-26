@@ -36,6 +36,7 @@ Formula:
                 (ite (= ((_ extract 1 1) %rcx) #b1) #x0001 a!7))))
   (concat ((_ extract 63 16) %rbx) a!8)))))))))
 
+
 %cf    : (let ((a!1 (ite (= ((_ extract 14 14) %rcx) #b1)
                 #x000e
                 (ite (= ((_ extract 15 15) %rcx) #b1) #x000f #x0010))))
@@ -60,9 +61,12 @@ Formula:
 (let ((a!8 (ite (= ((_ extract 0 0) %rcx) #b1)
                 #x0000
                 (ite (= ((_ extract 1 1) %rcx) #b1) #x0001 a!7))))
-  (= a!8 #x0010)))))))))
-%pf    : TMP_BOOL_2
-%af    : TMP_BOOL_3
+  (ite (= a!8 #x0010) #b1 #b0)))))))))
+
+%pf    : (ite TMP_BOOL_2 #b1 #b0)
+
+%af    : (ite TMP_BOOL_3 #b1 #b0)
+
 %zf    : (let ((a!1 (ite (= ((_ extract 14 14) %rcx) #b1)
                 #x000e
                 (ite (= ((_ extract 15 15) %rcx) #b1) #x000f #x0010))))
@@ -87,10 +91,16 @@ Formula:
 (let ((a!8 (ite (= ((_ extract 0 0) %rcx) #b1)
                 #x0000
                 (ite (= ((_ extract 1 1) %rcx) #b1) #x0001 a!7))))
-  (= a!8 #x0000)))))))))
-%sf    : TMP_BOOL_1
-%of    : TMP_BOOL_0
+  (ite (= a!8 #x0000) #b1 #b0)))))))))
+
+%sf    : (ite TMP_BOOL_1 #b1 #b0)
+
+%of    : (ite TMP_BOOL_0 #b1 #b0)
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

@@ -10,20 +10,17 @@ code: cmovsq %rcx, %rbx
 
 Formula:
 
-%rbx   : (let ((a!1 (= ((_ extract 8 8)
-                (bvadd (ite %sf #b000000000 #b011111111)
-                       (ite %sf #b000000000 #b000000001)))
-              #b1)))
-(let ((a!2 (= ((_ extract 8 8)
-                (bvadd (ite a!1 #b000000000 #b011111111)
-                       (ite a!1 #b000000000 #b011111111)))
-              #b1)))
-(let ((a!3 (ite a!2
+%rbx   : (let ((a!1 (= (ite (= (ite %sf #b0 #b1) #b1) #b0 #b1) #b1)))
+(let ((a!2 (ite a!1
                 (bvadd (concat #b0 ((_ extract 15 0) %rcx)) #b00000000000000001)
                 (concat #b0 ((_ extract 15 0) %rcx)))))
-(let ((a!4 (bvadd a!3 (concat #b0 (bvxor ((_ extract 15 0) %rcx) #xffff)))))
-  (ite (= ((_ extract 15 0) a!4) #x0000) %rcx %rbx)))))
+(let ((a!3 (bvadd a!2 (concat #b0 (bvxor ((_ extract 15 0) %rcx) #xffff)))))
+  (ite (= ((_ extract 15 0) a!3) #x0000) %rcx %rbx))))
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

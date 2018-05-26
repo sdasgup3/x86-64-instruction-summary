@@ -34,34 +34,39 @@ Formula:
                   (concat #b0
                           (concat ((_ extract 159 128) %ymm2)
                                   ((_ extract 159 128) %ymm2)))))
-      (a!10 (bvadd (concat #b0
-                           (bvxor ((_ extract 127 64) %ymm3) #xffffffffffffffff))
-                   #b00000000000000000000000000000000000000000000000000000000000000001
-                   (concat #b0
-                           (concat ((_ extract 95 64) %ymm3)
-                                   ((_ extract 95 64) %ymm3)))))
-      (a!12 (bvadd (concat #b0
+      (a!9 (bvadd (concat #b0
+                          (bvxor ((_ extract 127 64) %ymm3) #xffffffffffffffff))
+                  #b00000000000000000000000000000000000000000000000000000000000000001
+                  (concat #b0
+                          (concat ((_ extract 95 64) %ymm3)
+                                  ((_ extract 95 64) %ymm3)))))
+      (a!11 (bvadd (concat #b0
                            (bvxor ((_ extract 63 0) %ymm3) #xffffffffffffffff))
                    #b00000000000000000000000000000000000000000000000000000000000000001
                    (concat #b0
                            (concat ((_ extract 31 0) %ymm3)
                                    ((_ extract 31 0) %ymm3)))))
-      (a!14 (bvadd (concat #b0
+      (a!13 (bvadd (concat #b0
                            (bvxor ((_ extract 127 64) %ymm2) #xffffffffffffffff))
                    #b00000000000000000000000000000000000000000000000000000000000000001
                    (concat #b0
                            (concat ((_ extract 95 64) %ymm2)
                                    ((_ extract 95 64) %ymm2)))))
-      (a!16 (bvadd (concat #b0
+      (a!15 (bvadd (concat #b0
                            (bvxor ((_ extract 63 0) %ymm2) #xffffffffffffffff))
                    #b00000000000000000000000000000000000000000000000000000000000000001
                    (concat #b0
                            (concat ((_ extract 31 0) %ymm2)
                                    ((_ extract 31 0) %ymm2))))))
-(let ((a!2 (bvadd (concat #b0 (concat #x00000000 ((_ extract 63 32) a!1)))
-                  (concat #b0 (concat #x00000000 ((_ extract 31 0) a!1)))))
-      (a!4 (bvadd (concat #b0 ((_ extract 63 0) a!3))
-                  (concat #b0 (concat #x00000000 ((_ extract 63 32) a!3)))))
+(let ((a!2 ((_ extract 31 0)
+             (bvadd (concat #b000000000000000000000000000000000
+                            ((_ extract 63 32) a!1))
+                    (concat #b000000000000000000000000000000000
+                            ((_ extract 31 0) a!1)))))
+      (a!4 ((_ extract 31 0)
+             (bvadd (concat #b0 ((_ extract 63 0) a!3))
+                    (concat #b000000000000000000000000000000000
+                            ((_ extract 63 32) a!3)))))
       (a!6 (bvadd (concat #b0
                           (concat ((_ extract 63 32) a!5)
                                   ((_ extract 63 32) a!5)))
@@ -70,28 +75,32 @@ Formula:
                           (concat ((_ extract 63 32) a!7)
                                   ((_ extract 63 32) a!7)))
                   (concat #b0 ((_ extract 63 0) a!7))))
-      (a!11 (bvadd (concat #b0 (concat #x00000000 ((_ extract 63 32) a!10)))
-                   (concat #b0 (concat #x00000000 ((_ extract 31 0) a!10)))))
-      (a!13 (bvadd (concat #b0 ((_ extract 63 0) a!12))
-                   (concat #b0 (concat #x00000000 ((_ extract 63 32) a!12)))))
-      (a!15 (bvadd (concat #b0
-                           (concat ((_ extract 63 32) a!14)
-                                   ((_ extract 63 32) a!14)))
-                   (concat #b0 ((_ extract 63 0) a!14))))
-      (a!17 (bvadd (concat #b0
-                           (concat ((_ extract 63 32) a!16)
-                                   ((_ extract 63 32) a!16)))
-                   (concat #b0 ((_ extract 63 0) a!16)))))
-(let ((a!9 (concat (concat (concat ((_ extract 31 0) a!2)
-                                   ((_ extract 31 0) a!4))
-                           ((_ extract 31 0) a!6))
-                   ((_ extract 31 0) a!8)))
-      (a!18 (concat (concat (concat ((_ extract 31 0) a!11)
-                                    ((_ extract 31 0) a!13))
-                            ((_ extract 31 0) a!15))
-                    ((_ extract 31 0) a!17))))
-  (concat a!9 a!18))))
+      (a!10 ((_ extract 31 0)
+              (bvadd (concat #b000000000000000000000000000000000
+                             ((_ extract 63 32) a!9))
+                     (concat #b000000000000000000000000000000000
+                             ((_ extract 31 0) a!9)))))
+      (a!12 ((_ extract 31 0)
+              (bvadd (concat #b0 ((_ extract 63 0) a!11))
+                     (concat #b000000000000000000000000000000000
+                             ((_ extract 63 32) a!11)))))
+      (a!14 (bvadd (concat #b0
+                           (concat ((_ extract 63 32) a!13)
+                                   ((_ extract 63 32) a!13)))
+                   (concat #b0 ((_ extract 63 0) a!13))))
+      (a!16 (bvadd (concat #b0
+                           (concat ((_ extract 63 32) a!15)
+                                   ((_ extract 63 32) a!15)))
+                   (concat #b0 ((_ extract 63 0) a!15)))))
+  (concat (concat (concat (concat a!2 a!4) ((_ extract 31 0) a!6))
+                  ((_ extract 31 0) a!8))
+          (concat (concat (concat a!10 a!12) ((_ extract 31 0) a!14))
+                  ((_ extract 31 0) a!16)))))
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

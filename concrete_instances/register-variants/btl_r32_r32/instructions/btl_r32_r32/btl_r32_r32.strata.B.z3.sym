@@ -13,12 +13,20 @@ Formula:
 %cf    : (let ((a!1 (bvlshr ((_ extract 31 0) %rbx)
                    ((_ sign_extend 0)
                      (bvand ((_ extract 31 0) %rcx) #x0000001f)))))
-  (= ((_ extract 0 0) a!1) #b1))
-%pf    : TMP_BOOL_3
-%af    : TMP_BOOL_2
-%sf    : TMP_BOOL_1
-%of    : TMP_BOOL_0
+  ((_ extract 0 0) a!1))
+
+%pf    : (ite TMP_BOOL_3 #b1 #b0)
+
+%af    : (ite TMP_BOOL_2 #b1 #b0)
+
+%sf    : (ite TMP_BOOL_1 #b1 #b0)
+
+%of    : (ite TMP_BOOL_0 #b1 #b0)
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

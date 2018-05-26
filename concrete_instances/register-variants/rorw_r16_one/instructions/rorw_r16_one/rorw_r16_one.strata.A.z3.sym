@@ -24,6 +24,7 @@ Formula:
   (concat ((_ extract 63 16) %rbx)
           (concat ((_ extract 8 1) a!5) ((_ extract 8 1) a!1))))))))
 
+
 %cf    : (let ((a!1 (bvashr (concat ((_ sign_extend 48) ((_ extract 15 0) %rbx)) #b0)
                    (concat #b000000000000000000000000000000000000000000000000000000000
                            #x01))))
@@ -35,10 +36,10 @@ Formula:
 (let ((a!5 (bvashr (concat ((_ sign_extend 48) (concat a!4 a!4)) #b0)
                    (concat #b000000000000000000000000000000000000000000000000000000000
                            #x01))))
-(let ((a!6 ((_ extract 8 8)
-             (bvadd (concat #b0 ((_ extract 8 1) a!5))
-                    (concat #b0 ((_ extract 8 1) a!5))))))
-  (= a!6 #b1)))))))
+  ((_ extract 8 8)
+    (bvadd (concat #b0 ((_ extract 8 1) a!5))
+           (concat #b0 ((_ extract 8 1) a!5)))))))))
+
 %of    : (let ((a!1 (bvashr (concat ((_ sign_extend 48) ((_ extract 15 0) %rbx)) #b0)
                    (concat #b000000000000000000000000000000000000000000000000000000000
                            #x01))))
@@ -54,8 +55,14 @@ Formula:
              (bvadd (concat #b0 ((_ extract 8 1) a!5))
                     (concat #b0 ((_ extract 8 1) a!5))))))
 (let ((a!7 (not (= (= ((_ extract 8 8) a!5) #b1) (= a!6 #b1)))))
-  (and (= (= ((_ extract 8 8) a!5) #b1) (= ((_ extract 8 8) a!5) #b1)) a!7))))))))
+(let ((a!8 (and (= (= ((_ extract 8 8) a!5) #b1) (= ((_ extract 8 8) a!5) #b1))
+                a!7)))
+  (ite a!8 #b1 #b0)))))))))
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+
