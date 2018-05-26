@@ -10,7 +10,7 @@ code: vbroadcastsd %xmm2, %ymm1
 
 Formula:
 
-%ymm1  : concatenateMInt( concatenateMInt( extractMInt( %ymm2, 192, 256), extractMInt( %ymm2, 192, 256)), concatenateMInt( extractMInt( %ymm2, 192, 256), extractMInt( %ymm2, 192, 256)))
+%ymm1  : concatenateMInt( concatenateMInt( concatenateMInt( extractMInt( %ymm2, 192, 256), extractMInt( %ymm2, 192, 256)), extractMInt( %ymm2, 192, 256)), extractMInt( %ymm2, 192, 256))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

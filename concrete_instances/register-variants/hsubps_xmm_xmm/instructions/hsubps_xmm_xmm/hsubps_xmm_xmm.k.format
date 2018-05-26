@@ -10,7 +10,7 @@ code: hsubps %xmm2, %xmm1
 
 Formula:
 
-%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), concatenateMInt( concatenateMInt( sub_single(extractMInt( %ymm2, 160, 192), extractMInt( %ymm2, 128, 160)), sub_single(extractMInt( %ymm2, 224, 256), extractMInt( %ymm2, 192, 224))), concatenateMInt( sub_single(extractMInt( %ymm1, 160, 192), extractMInt( %ymm1, 128, 160)), sub_single(extractMInt( %ymm1, 224, 256), extractMInt( %ymm1, 192, 224)))))
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), concatenateMInt( concatenateMInt( concatenateMInt( sub_single(extractMInt( %ymm2, 160, 192), extractMInt( %ymm2, 128, 160)), sub_single(extractMInt( %ymm2, 224, 256), extractMInt( %ymm2, 192, 224))), sub_single(extractMInt( %ymm1, 160, 192), extractMInt( %ymm1, 128, 160))), sub_single(extractMInt( %ymm1, 224, 256), extractMInt( %ymm1, 192, 224))))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

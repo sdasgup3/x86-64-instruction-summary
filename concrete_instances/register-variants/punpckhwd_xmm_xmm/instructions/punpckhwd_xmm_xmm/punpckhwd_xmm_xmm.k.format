@@ -10,7 +10,7 @@ code: punpckhwd %xmm2, %xmm1
 
 Formula:
 
-%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), concatenateMInt( xorMInt( concatenateMInt( concatenateMInt( mi(16, 0), extractMInt( %ymm1, 128, 144)), concatenateMInt( mi(16, 0), extractMInt( %ymm1, 144, 160))), xorMInt( concatenateMInt( concatenateMInt( mi(16, 0), extractMInt( %ymm2, 144, 160)), concatenateMInt( mi(16, 0), extractMInt( %ymm2, 144, 160))), orMInt( concatenateMInt( extractMInt( %ymm2, 128, 160), concatenateMInt( extractMInt( %ymm2, 144, 160), extractMInt( %ymm2, 144, 160))), concatenateMInt( concatenateMInt( mi(16, 0), extractMInt( %ymm2, 144, 160)), concatenateMInt( mi(16, 0), extractMInt( %ymm2, 144, 160)))))), xorMInt( concatenateMInt( concatenateMInt( mi(16, 0), extractMInt( %ymm1, 160, 176)), concatenateMInt( mi(16, 0), extractMInt( %ymm1, 176, 192))), xorMInt( concatenateMInt( concatenateMInt( mi(16, 0), extractMInt( %ymm2, 176, 192)), concatenateMInt( mi(16, 0), extractMInt( %ymm2, 176, 192))), orMInt( concatenateMInt( extractMInt( %ymm2, 160, 192), concatenateMInt( extractMInt( %ymm2, 176, 192), extractMInt( %ymm2, 176, 192))), concatenateMInt( concatenateMInt( mi(16, 0), extractMInt( %ymm2, 176, 192)), concatenateMInt( mi(16, 0), extractMInt( %ymm2, 176, 192))))))))
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), concatenateMInt( concatenateMInt( extractMInt( %ymm2, 128, 144), extractMInt( %ymm1, 128, 144)), concatenateMInt( concatenateMInt( extractMInt( %ymm2, 144, 160), extractMInt( %ymm1, 144, 160)), concatenateMInt( concatenateMInt( extractMInt( %ymm2, 160, 176), extractMInt( %ymm1, 160, 176)), concatenateMInt( extractMInt( %ymm2, 176, 192), extractMInt( %ymm1, 176, 192))))))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

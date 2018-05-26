@@ -10,7 +10,7 @@ code: movsbw %ah, %bx
 
 Formula:
 
-%rbx   : concatenateMInt( extractMInt( %rbx, 0, 48), extractMInt( mi(64, svalueMInt(extractMInt( %rax, 48, 56))), 48, 64))
+%rbx   : concatenateMInt( extractMInt( %rbx, 0, 48), mi(16, svalueMInt(extractMInt( %rax, 48, 56))))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

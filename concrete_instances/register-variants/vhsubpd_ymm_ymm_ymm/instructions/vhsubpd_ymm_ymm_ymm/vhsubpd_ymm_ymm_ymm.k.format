@@ -10,7 +10,7 @@ code: vhsubpd %ymm3, %ymm2, %ymm1
 
 Formula:
 
-%ymm1  : concatenateMInt( sub_double(extractMInt( %ymm3, 64, 128), extractMInt( %ymm3, 0, 64)), concatenateMInt( sub_double(extractMInt( %ymm2, 64, 128), extractMInt( %ymm2, 0, 64)), concatenateMInt( sub_double(extractMInt( %ymm3, 192, 256), extractMInt( %ymm3, 128, 192)), sub_double(extractMInt( %ymm2, 192, 256), extractMInt( %ymm2, 128, 192)))))
+%ymm1  : concatenateMInt( concatenateMInt( sub_double(extractMInt( %ymm3, 64, 128), extractMInt( %ymm3, 0, 64)), sub_double(extractMInt( %ymm2, 64, 128), extractMInt( %ymm2, 0, 64))), concatenateMInt( sub_double(extractMInt( %ymm3, 192, 256), extractMInt( %ymm3, 128, 192)), sub_double(extractMInt( %ymm2, 192, 256), extractMInt( %ymm2, 128, 192))))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

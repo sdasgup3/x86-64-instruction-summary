@@ -10,11 +10,11 @@ code: btq %rcx, %rbx
 
 Formula:
 
-%cf    : (#ifMInt ((TRUE andBool eqMInt( extractMInt( ashrMInt( concatenateMInt( extractMInt( ashrMInt( concatenateMInt( %rbx, mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), andMInt( extractMInt( %rcx, 56, 64), mi(8, 63))))), 0, 64), mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 1)))), 64, 65), mi(1, 1))) orBool FALSE) #then mi(1, 1) #else mi(1, 0) #fi)
-%pf    : (#ifMInt TMP_BOOL_12 #then mi(1, 1) #else mi(1, 0) #fi)
-%af    : (#ifMInt TMP_BOOL_13 #then mi(1, 1) #else mi(1, 0) #fi)
-%sf    : (#ifMInt TMP_BOOL_14 #then mi(1, 1) #else mi(1, 0) #fi)
-%of    : (#ifMInt TMP_BOOL_15 #then mi(1, 1) #else mi(1, 0) #fi)
+%cf    : extractMInt( lshrMInt( %rbx, uvalueMInt(mi(64, svalueMInt(andMInt( %rcx, mi(64, 63)))))), 63, 64)
+%pf    : (#ifMInt TMP_BOOL_3 #then mi(1, 1) #else mi(1, 0) #fi)
+%af    : (#ifMInt TMP_BOOL_2 #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : (#ifMInt TMP_BOOL_1 #then mi(1, 1) #else mi(1, 0) #fi)
+%of    : (#ifMInt TMP_BOOL_0 #then mi(1, 1) #else mi(1, 0) #fi)
 
 sigfpe  : sigfpe
 sigbus  : sigbus

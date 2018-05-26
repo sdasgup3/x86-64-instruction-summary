@@ -10,7 +10,7 @@ code: vpmovsxdq %xmm2, %ymm1
 
 Formula:
 
-%ymm1  : concatenateMInt( concatenateMInt( mi(64, svalueMInt(extractMInt( %ymm2, 128, 160))), mi(64, svalueMInt(extractMInt( %ymm2, 160, 192)))), concatenateMInt( mi(64, svalueMInt(extractMInt( %ymm2, 192, 224))), mi(64, svalueMInt(extractMInt( %ymm2, 224, 256)))))
+%ymm1  : concatenateMInt( mi(64, svalueMInt(extractMInt( %ymm2, 128, 160))), concatenateMInt( mi(64, svalueMInt(extractMInt( %ymm2, 160, 192))), concatenateMInt( mi(64, svalueMInt(extractMInt( %ymm2, 192, 224))), mi(64, svalueMInt(extractMInt( %ymm2, 224, 256))))))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

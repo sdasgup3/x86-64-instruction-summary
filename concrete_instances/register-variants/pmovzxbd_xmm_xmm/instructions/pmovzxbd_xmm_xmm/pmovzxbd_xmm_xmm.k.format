@@ -10,7 +10,7 @@ code: pmovzxbd %xmm2, %xmm1
 
 Formula:
 
-%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), concatenateMInt( concatenateMInt( concatenateMInt( mi(24, 0), extractMInt( %ymm2, 224, 232)), concatenateMInt( mi(24, 0), extractMInt( %ymm2, 232, 240))), concatenateMInt( concatenateMInt( mi(24, 0), extractMInt( %ymm2, 240, 248)), concatenateMInt( mi(24, 0), extractMInt( %ymm2, 248, 256)))))
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), concatenateMInt( concatenateMInt( mi(24, 0), extractMInt( %ymm2, 224, 232)), concatenateMInt( concatenateMInt( mi(24, 0), extractMInt( %ymm2, 232, 240)), concatenateMInt( concatenateMInt( mi(24, 0), extractMInt( %ymm2, 240, 248)), concatenateMInt( mi(24, 0), extractMInt( %ymm2, 248, 256))))))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

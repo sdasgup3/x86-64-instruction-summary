@@ -10,7 +10,7 @@ code: xorpd %xmm2, %xmm1
 
 Formula:
 
-%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), concatenateMInt( xorMInt( extractMInt( %ymm1, 128, 192), extractMInt( %ymm2, 128, 192)), xorMInt( extractMInt( %ymm1, 192, 256), extractMInt( %ymm2, 192, 256))))
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), xorMInt( extractMInt( %ymm1, 128, 256), extractMInt( %ymm2, 128, 256)))
 
 sigfpe  : sigfpe
 sigbus  : sigbus
