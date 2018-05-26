@@ -122,6 +122,8 @@
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 32))
+(declare-fun vfnmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 32))
 
 
 ( push )
@@ -151,31 +153,27 @@ a!9))
 (a!12 (ite (= ((_ extract 32 32) (bvadd a!11 a!11)) #b1)
 (bvadd a!11 #b000000000000000000000000000000001)
 a!11)))
-(let ((a!5 (ite (= ((_ extract 32 32) (bvadd a!4 a!3)) #b1)
-#b000000000000000000000000000000010
+(let ((a!5 (bvadd (concat #x00000000 ((_ extract 32 32) (bvadd a!4 a!3)))
 #b000000000000000000000000000000001))
-(a!6 (ite (= ((_ extract 32 32) (bvadd a!4 a!3)) #b1)
-#b000000000000000000000000000000001
-#b000000000000000000000000000000000))
-(a!13 (ite (= ((_ extract 32 32) (bvadd a!12 a!11)) #b1)
-#b000000000000000000000000000000010
-#b000000000000000000000000000000001))
-(a!14 (ite (= ((_ extract 32 32) (bvadd a!12 a!11)) #b1)
-#b000000000000000000000000000000001
-#b000000000000000000000000000000000)))
-(let ((a!7 (ite (= ((_ extract 32 32) (bvadd a!2 a!1)) #b1) a!5 a!6))
-(a!15 (ite (= ((_ extract 32 32) (bvadd a!10 a!9)) #b1) a!13 a!14)))
-(let ((a!8 (bvadd (concat #b0 ((_ extract 7 0) (bvadd a!7 a!6)))
-(concat #b0 ((_ extract 7 0) (bvadd a!7 a!6))))))
-(let ((a!16 (bvadd (concat #b0 ((_ extract 7 0) a!8))
-(concat #b0 ((_ extract 7 0) (bvadd a!15 a!14)))))
-(a!18 (concat #b0
-(concat ((_ extract 15 8) (bvadd a!15 a!14))
-((_ extract 7 0) a!8)))))
-(let ((a!17 (concat #b0
-(concat ((_ extract 15 8) (bvadd a!7 a!6))
-((_ extract 7 0) a!16)))))
-(concat #x000000000000 ((_ extract 15 0) (bvadd a!17 a!18))))))))))
+(a!13 (bvadd (concat #x00000000 ((_ extract 32 32) (bvadd a!12 a!11)))
+#b000000000000000000000000000000001)))
+(let ((a!6 (ite (= ((_ extract 32 32) (bvadd a!2 a!1)) #b1)
+a!5
+(concat #x00000000 ((_ extract 32 32) (bvadd a!4 a!3)))))
+(a!14 (ite (= ((_ extract 32 32) (bvadd a!10 a!9)) #b1)
+a!13
+(concat #x00000000 ((_ extract 32 32) (bvadd a!12 a!11))))))
+(let ((a!7 (bvadd a!6 (concat #x00000000 ((_ extract 32 32) (bvadd a!4 a!3)))))
+(a!15 (bvadd a!14
+(concat #x00000000 ((_ extract 32 32) (bvadd a!12 a!11))))))
+(let ((a!8 ((_ extract 7 0)
+(bvadd (concat #b0 ((_ extract 7 0) a!7))
+(concat #b0 ((_ extract 7 0) a!7))))))
+(let ((a!16 ((_ extract 7 0)
+(bvadd (concat #b0 a!8) (concat #b0 ((_ extract 7 0) a!15))))))
+(let ((a!17 (bvadd (concat #b0 (concat ((_ extract 15 8) a!7) a!16))
+(concat #b0 (concat ((_ extract 15 8) a!15) a!8)))))
+(concat #x000000000000 ((_ extract 15 0) a!17))))))))))
 
 (let ((a!1 (concat #b0
 ((_ extract 63 32)

@@ -8,8 +8,6 @@ code: vpsubq %xmm3, %xmm2, %xmm1
   must undef:      { }
   required flags:  { avx }
 
-vpsubq %xmm3, %xmm2, %xmm1: Hindex0(9)
-vpsubq %xmm3, %xmm2, %xmm1: Hindex0(9)
 Formula:
 
 %ymm1  : (concat #x00000000000000000000000000000000

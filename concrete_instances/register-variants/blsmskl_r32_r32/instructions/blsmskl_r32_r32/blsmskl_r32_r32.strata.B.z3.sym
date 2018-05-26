@@ -14,15 +14,24 @@ Formula:
         (bvxor (bvsub ((_ extract 31 0) %rcx) #x00000001)
                ((_ extract 31 0) %rcx)))
 
-%cf    : (= ((_ extract 31 0) %rcx) #x00000000)
-%pf    : TMP_BOOL_0
-%af    : TMP_BOOL_1
-%zf    : false
-%sf    : (let ((a!1 (bvxor ((_ extract 31 31) (bvsub ((_ extract 31 0) %rcx) #x00000001))
-                  ((_ extract 31 31) %rcx))))
-  (= a!1 #b1))
-%of    : false
+
+%cf    : (ite (= ((_ extract 31 0) %rcx) #x00000000) #b1 #b0)
+
+%pf    : (ite TMP_BOOL_0 #b1 #b0)
+
+%af    : (ite TMP_BOOL_1 #b1 #b0)
+
+%zf    : #b0
+
+%sf    : (bvxor ((_ extract 31 31) (bvsub ((_ extract 31 0) %rcx) #x00000001))
+       ((_ extract 31 31) %rcx))
+
+%of    : #b0
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

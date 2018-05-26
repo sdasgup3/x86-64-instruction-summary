@@ -8,8 +8,6 @@ code: vandpd %ymm3, %ymm2, %ymm1
   must undef:      { }
   required flags:  { avx }
 
-vandpd %ymm3, %ymm2, %ymm1: Hindex0(9)
-vandpd %ymm3, %ymm2, %ymm1: Hindex0(9)
 Formula:
 
 %ymm1  : (bvand %ymm2 %ymm3)

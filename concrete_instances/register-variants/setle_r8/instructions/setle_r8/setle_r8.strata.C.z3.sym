@@ -8,8 +8,6 @@ code: setle %bl
   must undef:      { }
   required flags:  { }
 
-setle %bl: Hindex3(9)
-setle %bl: Hindex3(9)
 Formula:
 
 %rbx   : (let ((a!1 (ite (or %zf (not (= %sf %of))) #x01 #x00)))

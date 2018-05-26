@@ -8,23 +8,23 @@ code: blsrl %ecx, %ebx
   must undef:      { %pf %af }
   required flags:  { bmi1 }
 
-blsrl %ecx, %ebx: Hindex1(9)
-blsrl %ecx, %ebx: Hindex1(9)
 Formula:
 
 %rbx   : (concat #x00000000
         (bvand (bvsub ((_ extract 31 0) %rcx) #x00000001)
                ((_ extract 31 0) %rcx)))
 
-%cf    : (= ((_ extract 31 0) %rcx) #x00000000)
-%pf    : TMP_BOOL_1
-%af    : TMP_BOOL_0
-%zf    : (= (bvand (bvsub ((_ extract 31 0) %rcx) #x00000001) ((_ extract 31 0) %rcx))
-   #x00000000)
+%cf    : (ite (= ((_ extract 31 0) %rcx) #x00000000) #b1 #b0)
+%pf    : (ite TMP_BOOL_1 #b1 #b0)
+%af    : (ite TMP_BOOL_0 #b1 #b0)
+%zf    : (let ((a!1 (= (bvand (bvsub ((_ extract 31 0) %rcx) #x00000001)
+                     ((_ extract 31 0) %rcx))
+              #x00000000)))
+  (ite a!1 #b1 #b0))
 %sf    : (let ((a!1 (bvand ((_ extract 31 31) (bvsub ((_ extract 31 0) %rcx) #x00000001))
                   ((_ extract 31 31) %rcx))))
-  (= a!1 #b1))
-%of    : false
+  (ite (= a!1 #b1) #b1 #b0))
+%of    : #b0
 
 sigfpe  : sigfpe
 sigbus  : sigbus

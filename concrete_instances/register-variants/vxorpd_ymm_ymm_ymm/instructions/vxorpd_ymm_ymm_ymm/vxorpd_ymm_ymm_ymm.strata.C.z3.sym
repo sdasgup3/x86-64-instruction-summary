@@ -8,8 +8,6 @@ code: vxorpd %ymm3, %ymm2, %ymm1
   must undef:      { }
   required flags:  { avx }
 
-vxorpd %ymm3, %ymm2, %ymm1: Hindex0(9)
-vxorpd %ymm3, %ymm2, %ymm1: Hindex0(9)
 Formula:
 
 %ymm1  : (bvxor %ymm2 %ymm3)

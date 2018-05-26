@@ -13,13 +13,25 @@ Formula:
 %rbx   : (concat #x00000000
         (bvand (bvnot ((_ extract 31 0) %rcx)) ((_ extract 31 0) %rdx)))
 
-%cf    : false
-%pf    : TMP_BOOL_1
-%af    : TMP_BOOL_0
-%zf    : (= (bvand (bvnot ((_ extract 31 0) %rcx)) ((_ extract 31 0) %rdx)) #x00000000)
-%sf    : (= (bvand (bvnot ((_ extract 31 31) %rcx)) ((_ extract 31 31) %rdx)) #b1)
-%of    : false
+
+%cf    : #b0
+
+%pf    : (ite TMP_BOOL_1 #b1 #b0)
+
+%af    : (ite TMP_BOOL_0 #b1 #b0)
+
+%zf    : (let ((a!1 (= (bvand (bvnot ((_ extract 31 0) %rcx)) ((_ extract 31 0) %rdx))
+              #x00000000)))
+  (ite a!1 #b1 #b0))
+
+%sf    : (bvand (bvnot ((_ extract 31 31) %rcx)) ((_ extract 31 31) %rdx))
+
+%of    : #b0
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

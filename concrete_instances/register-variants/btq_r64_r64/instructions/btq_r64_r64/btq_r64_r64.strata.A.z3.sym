@@ -17,12 +17,20 @@ Formula:
              (bvashr (concat ((_ extract 64 1) a!1) #b0)
                      (concat #b000000000000000000000000000000000000000000000000000000000
                              #x01)))))
-  (or (and true (= a!2 #b1)) false)))
-%pf    : TMP_BOOL_12
-%af    : TMP_BOOL_13
-%sf    : TMP_BOOL_14
-%of    : TMP_BOOL_15
+  (ite (or (and true (= a!2 #b1)) false) #b1 #b0)))
+
+%pf    : (ite TMP_BOOL_12 #b1 #b0)
+
+%af    : (ite TMP_BOOL_13 #b1 #b0)
+
+%sf    : (ite TMP_BOOL_14 #b1 #b0)
+
+%of    : (ite TMP_BOOL_15 #b1 #b0)
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

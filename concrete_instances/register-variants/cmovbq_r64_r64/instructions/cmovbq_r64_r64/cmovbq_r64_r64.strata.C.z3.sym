@@ -8,8 +8,6 @@ code: cmovbq %rcx, %rbx
   must undef:      { }
   required flags:  { cmov }
 
-cmovbq %rcx, %rbx: Hindex3(9)
-cmovbq %rcx, %rbx: Hindex3(9)
 Formula:
 
 %rbx   : (ite %cf %rcx %rbx)

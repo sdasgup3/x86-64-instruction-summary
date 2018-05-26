@@ -8,8 +8,6 @@ code: cmovzl %ecx, %ebx
   must undef:      { }
   required flags:  { cmov }
 
-cmovzl %ecx, %ebx: Hindex3(9)
-cmovzl %ecx, %ebx: Hindex3(9)
 Formula:
 
 %rbx   : (concat #x00000000 (ite %zf ((_ extract 31 0) %rcx) ((_ extract 31 0) %rbx)))

@@ -8,8 +8,6 @@ code: notb %ah
   must undef:      { }
   required flags:  { }
 
-notb %ah: Hindex1(9)
-notb %ah: Hindex1(9)
 Formula:
 
 %rax   : (concat (concat ((_ extract 63 16) %rax) (bvnot ((_ extract 15 8) %rax)))

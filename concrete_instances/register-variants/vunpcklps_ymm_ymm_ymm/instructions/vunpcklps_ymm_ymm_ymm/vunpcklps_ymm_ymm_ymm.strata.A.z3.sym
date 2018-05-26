@@ -10,11 +10,18 @@ code: vunpcklps %ymm3, %ymm2, %ymm1
 
 Formula:
 
-%ymm1  : (concat (concat (concat ((_ extract 191 160) %ymm3) ((_ extract 191 160) %ymm2))
-                (concat ((_ extract 159 128) %ymm3) ((_ extract 159 128) %ymm2)))
-        (concat (concat ((_ extract 63 32) %ymm3) ((_ extract 63 32) %ymm2))
-                (concat ((_ extract 31 0) %ymm3) ((_ extract 31 0) %ymm2))))
+%ymm1  : (let ((a!1 (concat (concat (concat ((_ extract 191 160) %ymm3)
+                                   ((_ extract 191 160) %ymm2))
+                           ((_ extract 159 128) %ymm3))
+                   ((_ extract 159 128) %ymm2))))
+  (concat a!1
+          (concat (concat ((_ extract 63 32) %ymm3) ((_ extract 63 32) %ymm2))
+                  (concat ((_ extract 31 0) %ymm3) ((_ extract 31 0) %ymm2)))))
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

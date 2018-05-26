@@ -15,12 +15,14 @@ Formula:
           (concat #b000000000000000000000000000000000000000000000000000000000
                   #x01)))
 
+
 %cf    : (let ((a!1 (= ((_ extract 0 0)
                 (bvashr (concat %rbx #b0)
                         (concat #b000000000000000000000000000000000000000000000000000000000
                                 #x01)))
               #b1)))
-  (or (and true a!1) false))
+  (ite (or (and true a!1) false) #b1 #b0))
+
 %pf    : (let ((a!1 (= ((_ extract 1 1)
                 (bvashr (concat %rbx #b0)
                         (concat #b000000000000000000000000000000000000000000000000000000000
@@ -61,20 +63,28 @@ Formula:
                         (concat #b000000000000000000000000000000000000000000000000000000000
                                 #x01)))
               #b1)))
-  (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)))
-%af    : TMP_BOOL_10
-%zf    : (= ((_ extract 64 1)
-     (bvashr (concat %rbx #b0)
-             (concat #b000000000000000000000000000000000000000000000000000000000
-                     #x01)))
-   #x0000000000000000)
-%sf    : (= ((_ extract 64 64)
-     (bvashr (concat %rbx #b0)
-             (concat #b000000000000000000000000000000000000000000000000000000000
-                     #x01)))
-   #b1)
-%of    : false
+  (ite (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)) #b1 #b0))
+
+%af    : (ite TMP_BOOL_10 #b1 #b0)
+
+%zf    : (let ((a!1 (= ((_ extract 64 1)
+                (bvashr (concat %rbx #b0)
+                        (concat #b000000000000000000000000000000000000000000000000000000000
+                                #x01)))
+              #x0000000000000000)))
+  (ite a!1 #b1 #b0))
+
+%sf    : ((_ extract 64 64)
+  (bvashr (concat %rbx #b0)
+          (concat #b000000000000000000000000000000000000000000000000000000000
+                  #x01)))
+
+%of    : #b0
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

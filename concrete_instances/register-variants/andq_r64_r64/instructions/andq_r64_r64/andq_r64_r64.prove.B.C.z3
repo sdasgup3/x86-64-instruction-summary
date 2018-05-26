@@ -122,14 +122,16 @@
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 
 
 ( push )
 ( echo "andq_r64_r64::af")
 (assert (not (=
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -139,9 +141,9 @@ TMP_BOOL
 ( push )
 ( echo "andq_r64_r64::cf")
 (assert (not (=
-false
+#b0
 
-false
+#b0
 )))
 (check-sat)
 ( pop )
@@ -151,9 +153,9 @@ false
 ( push )
 ( echo "andq_r64_r64::of")
 (assert (not (=
-false
+#b0
 
-false
+#b0
 )))
 (check-sat)
 ( pop )
@@ -171,7 +173,7 @@ false
 (= (bvand ((_ extract 5 5) rbx) ((_ extract 5 5) rcx)) #b1)
 (= (bvand ((_ extract 6 6) rbx) ((_ extract 6 6) rcx)) #b1)
 (= (bvand ((_ extract 7 7) rbx) ((_ extract 7 7) rcx)) #b1))))
-(not a!1))
+(ite (not a!1) #b1 #b0))
 
 (let ((a!1 (xor (= (bvand ((_ extract 0 0) rbx) ((_ extract 0 0) rcx)) #b1)
 (= (bvand ((_ extract 1 1) rbx) ((_ extract 1 1) rcx)) #b1)
@@ -181,7 +183,7 @@ false
 (= (bvand ((_ extract 5 5) rbx) ((_ extract 5 5) rcx)) #b1)
 (= (bvand ((_ extract 6 6) rbx) ((_ extract 6 6) rcx)) #b1)
 (= (bvand ((_ extract 7 7) rbx) ((_ extract 7 7) rcx)) #b1))))
-(not a!1))
+(ite (not a!1) #b1 #b0))
 )))
 (check-sat)
 ( pop )
@@ -203,9 +205,9 @@ false
 ( push )
 ( echo "andq_r64_r64::sf")
 (assert (not (=
-(= (bvand ((_ extract 63 63) rbx) ((_ extract 63 63) rcx)) #b1)
+(bvand ((_ extract 63 63) rbx) ((_ extract 63 63) rcx))
 
-(= (bvand ((_ extract 63 63) rbx) ((_ extract 63 63) rcx)) #b1)
+(ite (= (bvand ((_ extract 63 63) rbx) ((_ extract 63 63) rcx)) #b1) #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -215,9 +217,9 @@ false
 ( push )
 ( echo "andq_r64_r64::zf")
 (assert (not (=
-(= (bvand rbx rcx) #x0000000000000000)
+(ite (= (bvand rbx rcx) #x0000000000000000) #b1 #b0)
 
-(= (bvand rbx rcx) #x0000000000000000)
+(ite (= (bvand rbx rcx) #x0000000000000000) #b1 #b0)
 )))
 (check-sat)
 ( pop )

@@ -10,14 +10,14 @@ code: cmovnaeq %rcx, %rbx
 
 Formula:
 
-%rbx   : (let ((a!1 (bvadd (ite (= (ite %cf #x00000100 #x00000000) #x00000000)
-                       #b000000001
-                       #b000000000)
-                  (ite (= (ite %cf #x00000100 #x00000000) #x00000000)
-                       #b000000001
-                       #b000000000))))
-  (ite (= ((_ extract 7 0) a!1) #x00) %rcx %rbx))
+%rbx   : (let ((a!1 (= (ite (= (ite %cf #x00000100 #x00000000) #x00000000) #x02 #x00)
+              #x00)))
+  (ite a!1 %rcx %rbx))
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

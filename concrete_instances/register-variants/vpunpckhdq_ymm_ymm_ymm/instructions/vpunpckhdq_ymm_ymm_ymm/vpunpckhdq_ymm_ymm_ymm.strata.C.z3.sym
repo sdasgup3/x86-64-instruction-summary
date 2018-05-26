@@ -8,8 +8,6 @@ code: vpunpckhdq %ymm3, %ymm2, %ymm1
   must undef:      { }
   required flags:  { avx2 }
 
-vpunpckhdq %ymm3, %ymm2, %ymm1: Hindex6(9)
-vpunpckhdq %ymm3, %ymm2, %ymm1: Hindex6(9)
 Formula:
 
 %ymm1  : (let ((a!1 (concat (concat ((_ extract 223 192) %ymm3)

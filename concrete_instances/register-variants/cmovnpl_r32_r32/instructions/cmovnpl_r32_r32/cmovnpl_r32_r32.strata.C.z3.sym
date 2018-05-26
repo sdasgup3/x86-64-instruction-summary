@@ -8,8 +8,6 @@ code: cmovnpl %ecx, %ebx
   must undef:      { }
   required flags:  { cmov }
 
-cmovnpl %ecx, %ebx: Hindex3(9)
-cmovnpl %ecx, %ebx: Hindex3(9)
 Formula:
 
 %rbx   : (concat #x00000000

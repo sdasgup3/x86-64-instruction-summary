@@ -8,17 +8,15 @@ code: btq %rcx, %rbx
   must undef:      { %pf %af %sf %of }
   required flags:  { }
 
-btq %rcx, %rbx: Hindex1(9)
-btq %rcx, %rbx: Hindex1(9)
 Formula:
 
 %cf    : (let ((a!1 ((_ extract 0 0)
              (bvlshr %rbx ((_ sign_extend 0) (bvand %rcx #x000000000000003f))))))
-  (= a!1 #b1))
-%pf    : TMP_BOOL_3
-%af    : TMP_BOOL_2
-%sf    : TMP_BOOL_1
-%of    : TMP_BOOL_0
+  (ite (= a!1 #b1) #b1 #b0))
+%pf    : (ite TMP_BOOL_3 #b1 #b0)
+%af    : (ite TMP_BOOL_2 #b1 #b0)
+%sf    : (ite TMP_BOOL_1 #b1 #b0)
+%of    : (ite TMP_BOOL_0 #b1 #b0)
 
 sigfpe  : sigfpe
 sigbus  : sigbus

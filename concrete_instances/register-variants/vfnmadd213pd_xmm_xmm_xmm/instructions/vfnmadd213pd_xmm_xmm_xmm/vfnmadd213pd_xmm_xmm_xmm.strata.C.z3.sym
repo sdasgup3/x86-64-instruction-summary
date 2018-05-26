@@ -8,31 +8,6 @@ code: vfnmadd213pd %xmm3, %xmm2, %xmm1
   must undef:      { }
   required flags:  { fma }
 
-vfnmadd213pd %xmm3, %xmm2, %xmm1: Hindex8(9)
-vfnmadd213pd %xmm3, %xmm2, %xmm1: Hindex8(9)
-callq .move_128_064_xmm2_r8_r9: Hindex8(9)
-vzeroall: Hindex1(9)
-callq .move_064_128_r8_r9_xmm1: Hindex8(9)
-callq .move_128_064_xmm2_r8_r9: Hindex8(9)
-vzeroall: Hindex1(9)
-callq .move_064_128_r8_r9_xmm1: Hindex8(9)
-callq .move_128_064_xmm2_r8_r9: Hindex8(9)
-vzeroall: Hindex1(9)
-callq .move_064_128_r8_r9_xmm1: Hindex8(9)
-callq .move_128_064_xmm2_r12_r13: Hindex8(9)
-vzeroall: Hindex1(9)
-callq .move_064_128_r12_r13_xmm1: Hindex8(9)
-callq .move_128_064_xmm2_r12_r13: Hindex8(9)
-vzeroall: Hindex1(9)
-callq .move_064_128_r12_r13_xmm1: Hindex8(9)
-vmaxps %ymm3, %ymm11, %ymm1: Hindex0(9)
-vmaxpd %ymm5, %ymm11, %ymm1: Hindex0(9)
-vfnmadd132pd %ymm3, %ymm1, %ymm2: Hindex1(9)
-callq .move_256_128_ymm2_xmm10_xmm11: Hindex8(9)
-callq .move_128_256_xmm10_xmm11_ymm1: Hindex8(9)
-callq .move_128_064_xmm3_r10_r11: Hindex8(9)
-vzeroall: Hindex1(9)
-callq .move_064_128_r10_r11_xmm1: Hindex8(9)
 Formula:
 
 %ymm1  : (concat #x00000000000000000000000000000000
