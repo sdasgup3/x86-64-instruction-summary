@@ -1,6 +1,6 @@
 [4m[1m[34mFiring Last 1[0m
 Thread 1 start: rcll_r32_cl
-timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/register-variants/rcll_r32_cl/instructions/rcll_r32_cl/rcll_r32_cl.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %cl %rbx %cf %of }" --live_out "{ %rbx %cf }" 
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit  --target concrete_instances/register-variants/rcll_r32_cl/instructions/rcll_r32_cl/rcll_r32_cl.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %cl %rbx %cf %of }" --live_out "{ %rbx %cf }" 
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
