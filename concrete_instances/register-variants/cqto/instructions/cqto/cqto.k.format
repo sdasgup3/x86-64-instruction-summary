@@ -10,7 +10,7 @@ code: cqto
 
 Formula:
 
-%rdx   : extractMInt( ashrMInt( concatenateMInt( %rax, mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 63)))), 0, 64)
+%rdx   : extractMInt( mi(128, svalueMInt(%rax)), 0, 64)
 
 sigfpe  : sigfpe
 sigbus  : sigbus
