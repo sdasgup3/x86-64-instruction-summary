@@ -16,12 +16,15 @@ Formula:
                                        ((_ extract 63 32) %ymm3))
                            (mul_single ((_ extract 31 0) %ymm2)
                                        ((_ extract 31 0) %ymm3))))))
-(let ((a!2 (concat #x00000000
-                   (concat (mul_single ((_ extract 127 96) %ymm2)
-                                       ((_ extract 127 96) %ymm3))
-                           a!1))))
-  (concat #x00000000 (concat #x00000000 (concat #x00000000 a!2)))))
+  (concat #x00000000000000000000000000000000
+          (concat (mul_single ((_ extract 127 96) %ymm2)
+                              ((_ extract 127 96) %ymm3))
+                  a!1)))
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

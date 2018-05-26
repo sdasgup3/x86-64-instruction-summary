@@ -8,8 +8,6 @@ code: shlq $0x1, %rbx
   must undef:      { %af }
   required flags:  { }
 
-shlq $0x1, %rbx: Hindex7(9)
-shlq $0x1, %rbx: Hindex7(9)
 Formula:
 
 %rbx   : ((_ extract 63 0)
@@ -22,7 +20,9 @@ Formula:
                        (concat #b000000000000000000000000000000000000000000000000000000000
                                #x01)))
               #b1)))
-  (or (and false TMP_BOOL_0) (and true (or (and true a!1) (and false %cf)))))
+(let ((a!2 (or (and false TMP_BOOL_0)
+               (and true (or (and true a!1) (and false %cf))))))
+  (ite a!2 #b1 #b0)))
 %pf    : (let ((a!1 (= ((_ extract 0 0)
                 (bvshl (concat #b0 %rbx)
                        (concat #b000000000000000000000000000000000000000000000000000000000
@@ -63,20 +63,22 @@ Formula:
                        (concat #b000000000000000000000000000000000000000000000000000000000
                                #x01)))
               #b1)))
-  (or (and true (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8))) (and false %pf)))
-%af    : (or (and true TMP_BOOL_1) (and false %af))
+(let ((a!9 (or (and true (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)))
+               (and false %pf))))
+  (ite a!9 #b1 #b0)))
+%af    : (ite (or (and true TMP_BOOL_1) (and false %af)) #b1 #b0)
 %zf    : (let ((a!1 (= ((_ extract 63 0)
                 (bvshl (concat #b0 %rbx)
                        (concat #b000000000000000000000000000000000000000000000000000000000
                                #x01)))
               #x0000000000000000)))
-  (or (and true a!1) (and false %zf)))
+  (ite (or (and true a!1) (and false %zf)) #b1 #b0))
 %sf    : (let ((a!1 (= ((_ extract 63 63)
                 (bvshl (concat #b0 %rbx)
                        (concat #b000000000000000000000000000000000000000000000000000000000
                                #x01)))
               #b1)))
-  (or (and true a!1) (and false %sf)))
+  (ite (or (and true a!1) (and false %sf)) #b1 #b0))
 %of    : (let ((a!1 (= ((_ extract 64 64)
                 (bvshl (concat #b0 %rbx)
                        (concat #b000000000000000000000000000000000000000000000000000000000
@@ -89,7 +91,8 @@ Formula:
               #b1)))
 (let ((a!2 (or (and false TMP_BOOL_0)
                (and true (or (and true a!1) (and false %cf))))))
-  (or (and true (not (= a!2 a!3))) (and false %of))))
+(let ((a!4 (or (and true (not (= a!2 a!3))) (and false %of))))
+  (ite a!4 #b1 #b0))))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

@@ -8,8 +8,6 @@ code: cltq
   must undef:      { }
   required flags:  { }
 
-cltq: Hindex1(9)
-cltq: Hindex1(9)
 Formula:
 
 %rax   : ((_ sign_extend 32) ((_ extract 31 0) %rax))

@@ -14,7 +14,9 @@ Formula:
                 (bvxor ((_ extract 7 0) %rbx) ((_ extract 15 8) %rax)))
         ((_ extract 7 0) %rax))
 
-%cf    : false
+
+%cf    : #b0
+
 %pf    : (let ((a!1 (xor (= (bvxor ((_ extract 0 0) %rbx) ((_ extract 8 8) %rax)) #b1)
                 (= (bvxor ((_ extract 1 1) %rbx) ((_ extract 9 9) %rax)) #b1)
                 (= (bvxor ((_ extract 2 2) %rbx) ((_ extract 10 10) %rax)) #b1)
@@ -23,12 +25,20 @@ Formula:
                 (= (bvxor ((_ extract 5 5) %rbx) ((_ extract 13 13) %rax)) #b1)
                 (= (bvxor ((_ extract 6 6) %rbx) ((_ extract 14 14) %rax)) #b1)
                 (= (bvxor ((_ extract 7 7) %rbx) ((_ extract 15 15) %rax)) #b1))))
-  (not a!1))
-%af    : TMP_BOOL_12
-%zf    : (= (bvxor ((_ extract 7 0) %rbx) ((_ extract 15 8) %rax)) #x00)
-%sf    : (= (bvxor ((_ extract 7 7) %rbx) ((_ extract 15 15) %rax)) #b1)
-%of    : false
+  (ite (not a!1) #b1 #b0))
+
+%af    : (ite TMP_BOOL_12 #b1 #b0)
+
+%zf    : (ite (= (bvxor ((_ extract 7 0) %rbx) ((_ extract 15 8) %rax)) #x00) #b1 #b0)
+
+%sf    : (bvxor ((_ extract 7 7) %rbx) ((_ extract 15 15) %rax))
+
+%of    : #b0
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

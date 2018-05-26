@@ -8,8 +8,6 @@ code: movl %ecx, %ebx
   must undef:      { }
   required flags:  { }
 
-movl %ecx, %ebx: Hindex5(9)
-movl %ecx, %ebx: Hindex5(9)
 Formula:
 
 %rbx   : (concat #x00000000 ((_ extract 31 0) %rcx))

@@ -8,8 +8,6 @@ code: vunpckhps %xmm3, %xmm2, %xmm1
   must undef:      { }
   required flags:  { avx }
 
-vunpckhps %xmm3, %xmm2, %xmm1: Hindex0(9)
-vunpckhps %xmm3, %xmm2, %xmm1: Hindex0(9)
 Formula:
 
 %ymm1  : (let ((a!1 (concat (concat (concat ((_ extract 127 96) %ymm3)

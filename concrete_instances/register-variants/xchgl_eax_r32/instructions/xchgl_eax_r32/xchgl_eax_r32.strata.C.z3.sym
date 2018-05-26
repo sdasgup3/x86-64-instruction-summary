@@ -8,8 +8,6 @@ code: xchgl %ebx, %eax
   must undef:      { }
   required flags:  { }
 
-xchgl %ebx, %eax: Hindex1(9)
-xchgl %ebx, %eax: Hindex1(9)
 Formula:
 
 %rax   : (concat #x00000000 ((_ extract 31 0) %rbx))

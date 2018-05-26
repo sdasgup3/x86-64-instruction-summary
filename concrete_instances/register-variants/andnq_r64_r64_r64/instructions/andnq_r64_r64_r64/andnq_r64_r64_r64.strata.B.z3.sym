@@ -12,13 +12,23 @@ Formula:
 
 %rbx   : (bvand (bvnot %rcx) %rdx)
 
-%cf    : false
-%pf    : TMP_BOOL_1
-%af    : TMP_BOOL_0
-%zf    : (= (bvand (bvnot %rcx) %rdx) #x0000000000000000)
-%sf    : (= (bvand (bvnot ((_ extract 63 63) %rcx)) ((_ extract 63 63) %rdx)) #b1)
-%of    : false
+
+%cf    : #b0
+
+%pf    : (ite TMP_BOOL_1 #b1 #b0)
+
+%af    : (ite TMP_BOOL_0 #b1 #b0)
+
+%zf    : (ite (= (bvand (bvnot %rcx) %rdx) #x0000000000000000) #b1 #b0)
+
+%sf    : (bvand (bvnot ((_ extract 63 63) %rcx)) ((_ extract 63 63) %rdx))
+
+%of    : #b0
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

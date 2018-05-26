@@ -8,8 +8,6 @@ code: setb %ah
   must undef:      { }
   required flags:  { }
 
-setb %ah: Hindex3(9)
-setb %ah: Hindex3(9)
 Formula:
 
 %rax   : (concat (concat ((_ extract 63 16) %rax) (ite %cf #x01 #x00))

@@ -8,10 +8,6 @@ code: vfmadd231pd %ymm3, %ymm2, %ymm1
   must undef:      { }
   required flags:  { fma }
 
-vfmadd231pd %ymm3, %ymm2, %ymm1: Hindex8(9)
-vfmadd231pd %ymm3, %ymm2, %ymm1: Hindex8(9)
-vfmadd132pd %ymm3, %ymm1, %ymm2: Hindex1(9)
-vminpd %ymm2, %ymm2, %ymm1: Hindex0(9)
 Formula:
 
 %ymm1  : (let ((a!1 (concat (vfmadd132_double ((_ extract 191 128) %ymm2)

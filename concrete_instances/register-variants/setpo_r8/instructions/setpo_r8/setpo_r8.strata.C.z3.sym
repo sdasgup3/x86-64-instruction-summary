@@ -8,8 +8,6 @@ code: setpo %bl
   must undef:      { }
   required flags:  { }
 
-setpo %bl: Hindex3(9)
-setpo %bl: Hindex3(9)
 Formula:
 
 %rbx   : (concat ((_ extract 63 8) %rbx) (ite (not %pf) #x01 #x00))

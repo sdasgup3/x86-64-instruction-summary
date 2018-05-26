@@ -8,8 +8,6 @@ code: pmovzxdq %xmm2, %xmm1
   must undef:      { }
   required flags:  { sse4_1 }
 
-pmovzxdq %xmm2, %xmm1: Hindex0(9)
-pmovzxdq %xmm2, %xmm1: Hindex0(9)
 Formula:
 
 %ymm1  : (concat ((_ extract 255 128) %ymm1)

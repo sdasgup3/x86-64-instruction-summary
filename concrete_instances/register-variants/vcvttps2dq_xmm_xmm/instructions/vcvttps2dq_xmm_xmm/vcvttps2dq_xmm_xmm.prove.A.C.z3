@@ -122,21 +122,22 @@
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmsub213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd213_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
 ( push )
 ( echo "vcvttps2dq_xmm_xmm::ymm1")
 (assert (not (=
-(let ((a!1 (cvt_single_to_int32_truncate
-(bvxor #x00000000 (bvor ((_ extract 127 96) ymm2) #x00000000))))
-(a!2 (cvt_single_to_int32_truncate
-(bvxor #x00000000 (bvor ((_ extract 95 64) ymm2) #x00000000))))
-(a!3 (cvt_single_to_int32_truncate
-(bvxor #x00000000 (bvor ((_ extract 63 32) ymm2) #x00000000))))
-(a!4 (cvt_single_to_int32_truncate
-(bvxor #x00000000 (bvor ((_ extract 31 0) ymm2) #x00000000)))))
-(let ((a!5 (concat #x00000000 (concat a!1 (concat a!2 (concat a!3 a!4))))))
-(concat #x00000000 (concat #x00000000 (concat #x00000000 a!5)))))
+(let ((a!1 (concat (cvt_single_to_int32_truncate ((_ extract 95 64) ymm2))
+(concat (cvt_single_to_int32_truncate
+((_ extract 63 32) ymm2))
+(cvt_single_to_int32_truncate
+((_ extract 31 0) ymm2))))))
+(concat #x00000000000000000000000000000000
+(concat (cvt_single_to_int32_truncate ((_ extract 127 96) ymm2)) a!1)))
 
 (let ((a!1 (cvt_single_to_int32_truncate
 (bvxor #x00000000 (bvor ((_ extract 127 96) ymm2) #x00000000))))

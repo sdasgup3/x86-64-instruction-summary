@@ -15,19 +15,25 @@ Formula:
                               #b000000000000000000000000000000001))))
   (concat #x00000000 a!1))
 
-%cf    : (let ((a!1 ((_ extract 32 32)
-             (ext_rotate_left (concat (ite %cf #b1 #b0) ((_ extract 31 0) %rbx))
-                              #b000000000000000000000000000000001))))
-  (= a!1 #b1))
+
+%cf    : ((_ extract 32 32)
+  (ext_rotate_left (concat (ite %cf #b1 #b0) ((_ extract 31 0) %rbx))
+                   #b000000000000000000000000000000001))
+
 %of    : (let ((a!1 ((_ extract 32 32)
              (ext_rotate_left (concat (ite %cf #b1 #b0) ((_ extract 31 0) %rbx))
                               #b000000000000000000000000000000001)))
       (a!2 ((_ extract 31 31)
              (ext_rotate_left (concat (ite %cf #b1 #b0) ((_ extract 31 0) %rbx))
                               #b000000000000000000000000000000001))))
-  (or (and true (xor (= a!1 #b1) (= a!2 #b1)))
-      (and false (or (and true %of) (and false TMP_BOOL_0)))))
+(let ((a!3 (or (and true (xor (= a!1 #b1) (= a!2 #b1)))
+               (and false (or (and true %of) (and false TMP_BOOL_0))))))
+  (ite a!3 #b1 #b0)))
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

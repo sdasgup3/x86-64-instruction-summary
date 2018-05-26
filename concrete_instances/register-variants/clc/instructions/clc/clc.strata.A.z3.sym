@@ -10,8 +10,12 @@ code: clc
 
 Formula:
 
-%cf    : false
+%cf    : #b0
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

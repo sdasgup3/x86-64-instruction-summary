@@ -74,13 +74,23 @@ Formula:
           (bvadd (concat #x0000 (bvadd a!5 a!10))
                  (concat #x0000 (bvadd a!15 a!20))))))
 
-%cf    : false
-%pf    : false
-%af    : false
-%zf    : (= (concat #x00000000 ((_ extract 31 0) %rcx)) #x0000000000000000)
-%sf    : false
-%of    : false
+
+%cf    : #b0
+
+%pf    : #b0
+
+%af    : #b0
+
+%zf    : (ite (= (concat #x00000000 ((_ extract 31 0) %rcx)) #x0000000000000000) #b1 #b0)
+
+%sf    : #b0
+
+%of    : #b0
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

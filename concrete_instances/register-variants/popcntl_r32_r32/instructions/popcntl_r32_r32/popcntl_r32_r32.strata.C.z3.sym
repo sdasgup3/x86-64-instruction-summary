@@ -8,8 +8,6 @@ code: popcntl %ecx, %ebx
   must undef:      { }
   required flags:  { popcnt }
 
-popcntl %ecx, %ebx: Hindex1(9)
-popcntl %ecx, %ebx: Hindex1(9)
 Formula:
 
 %rbx   : (let ((a!1 (concat #b00
@@ -76,12 +74,12 @@ Formula:
           (bvadd (concat #x0000 (bvadd a!5 a!10))
                  (concat #x0000 (bvadd a!15 a!20))))))
 
-%cf    : false
-%pf    : false
-%af    : false
-%zf    : (= ((_ extract 31 0) %rcx) #x00000000)
-%sf    : false
-%of    : false
+%cf    : #b0
+%pf    : #b0
+%af    : #b0
+%zf    : (ite (= ((_ extract 31 0) %rcx) #x00000000) #b1 #b0)
+%sf    : #b0
+%of    : #b0
 
 sigfpe  : sigfpe
 sigbus  : sigbus

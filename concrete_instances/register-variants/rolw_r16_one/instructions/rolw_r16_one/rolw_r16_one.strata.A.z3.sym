@@ -19,14 +19,15 @@ Formula:
 (let ((a!3 ((_ extract 15 0) (bvadd a!2 (concat #b0 ((_ extract 15 0) %rbx))))))
   (concat ((_ extract 63 16) %rbx) a!3))))
 
+
 %cf    : (let ((a!1 ((_ extract 16 16)
              (bvadd (concat #b0 ((_ extract 15 0) %rbx))
                     (concat #b0 ((_ extract 15 0) %rbx))))))
 (let ((a!2 (ite (= a!1 #b1)
                 (bvadd (concat #b0 ((_ extract 15 0) %rbx)) #b00000000000000001)
                 (concat #b0 ((_ extract 15 0) %rbx)))))
-(let ((a!3 ((_ extract 16 16) (bvadd a!2 (concat #b0 ((_ extract 15 0) %rbx))))))
-  (= a!3 #b1))))
+  ((_ extract 16 16) (bvadd a!2 (concat #b0 ((_ extract 15 0) %rbx))))))
+
 %of    : (let ((a!1 ((_ extract 16 16)
              (bvadd (concat #b0 ((_ extract 15 0) %rbx))
                     (concat #b0 ((_ extract 15 0) %rbx))))))
@@ -35,9 +36,15 @@ Formula:
                 (concat #b0 ((_ extract 15 0) %rbx)))))
 (let ((a!3 ((_ extract 15 15) (bvadd a!2 (concat #b0 ((_ extract 15 0) %rbx))))))
 (let ((a!4 (not (= (= ((_ extract 15 15) %rbx) #b1) (= a!3 #b1)))))
-  (and (= (= ((_ extract 15 15) %rbx) #b1) (= ((_ extract 15 15) %rbx) #b1))
-       a!4)))))
+(let ((a!5 (and (= (= ((_ extract 15 15) %rbx) #b1)
+                   (= ((_ extract 15 15) %rbx) #b1))
+                a!4)))
+  (ite a!5 #b1 #b0))))))
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

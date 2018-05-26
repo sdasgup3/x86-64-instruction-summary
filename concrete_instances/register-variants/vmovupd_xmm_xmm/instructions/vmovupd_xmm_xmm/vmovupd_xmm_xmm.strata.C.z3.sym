@@ -8,8 +8,6 @@ code: vmovupd %xmm2, %xmm1
   must undef:      { }
   required flags:  { avx }
 
-vmovupd %xmm2, %xmm1: Hindex0(9)
-vmovupd %xmm2, %xmm1: Hindex0(9)
 Formula:
 
 %ymm1  : (concat #x00000000000000000000000000000000 ((_ extract 127 0) %ymm2))

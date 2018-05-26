@@ -8,8 +8,6 @@ code: orps %xmm2, %xmm1
   must undef:      { }
   required flags:  { sse }
 
-orps %xmm2, %xmm1: Hindex0(9)
-orps %xmm2, %xmm1: Hindex0(9)
 Formula:
 
 %ymm1  : (concat ((_ extract 255 128) %ymm1)

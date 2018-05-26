@@ -122,14 +122,18 @@
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmsub213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd213_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
 ( push )
 ( echo "testl_r32_r32::af")
 (assert (not (=
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -139,9 +143,9 @@ TMP_BOOL
 ( push )
 ( echo "testl_r32_r32::cf")
 (assert (not (=
-false
+#b0
 
-false
+#b0
 )))
 (check-sat)
 ( pop )
@@ -151,9 +155,9 @@ false
 ( push )
 ( echo "testl_r32_r32::of")
 (assert (not (=
-false
+#b0
 
-false
+#b0
 )))
 (check-sat)
 ( pop )
@@ -195,7 +199,7 @@ false
 ((_ extract 7 7) rcx)
 ((_ extract 7 7) rbx))
 #b1)))
-(not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)))
+(ite (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)) #b1 #b0))
 
 (let ((a!1 (xor (= (bvand ((_ extract 0 0) rbx) ((_ extract 0 0) rcx)) #b1)
 (= (bvand ((_ extract 1 1) rbx) ((_ extract 1 1) rcx)) #b1)
@@ -205,7 +209,7 @@ false
 (= (bvand ((_ extract 5 5) rbx) ((_ extract 5 5) rcx)) #b1)
 (= (bvand ((_ extract 6 6) rbx) ((_ extract 6 6) rcx)) #b1)
 (= (bvand ((_ extract 7 7) rbx) ((_ extract 7 7) rcx)) #b1))))
-(not a!1))
+(ite (not a!1) #b1 #b0))
 )))
 (check-sat)
 ( pop )
@@ -215,12 +219,11 @@ false
 ( push )
 ( echo "testl_r32_r32::sf")
 (assert (not (=
-(= (bvxor (bvor ((_ extract 31 31) rbx) ((_ extract 31 31) rcx))
+(bvxor (bvor ((_ extract 31 31) rbx) ((_ extract 31 31) rcx))
 ((_ extract 31 31) rcx)
 ((_ extract 31 31) rbx))
-#b1)
 
-(= (bvand ((_ extract 31 31) rbx) ((_ extract 31 31) rcx)) #b1)
+(ite (= (bvand ((_ extract 31 31) rbx) ((_ extract 31 31) rcx)) #b1) #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -230,12 +233,15 @@ false
 ( push )
 ( echo "testl_r32_r32::zf")
 (assert (not (=
-(= (bvxor (bvor ((_ extract 31 0) rbx) ((_ extract 31 0) rcx))
+(let ((a!1 (= (bvxor (bvor ((_ extract 31 0) rbx) ((_ extract 31 0) rcx))
 ((_ extract 31 0) rcx)
 ((_ extract 31 0) rbx))
-#x00000000)
+#x00000000)))
+(ite a!1 #b1 #b0))
 
-(= (bvand ((_ extract 31 0) rbx) ((_ extract 31 0) rcx)) #x00000000)
+(ite (= (bvand ((_ extract 31 0) rbx) ((_ extract 31 0) rcx)) #x00000000)
+#b1
+#b0)
 )))
 (check-sat)
 ( pop )

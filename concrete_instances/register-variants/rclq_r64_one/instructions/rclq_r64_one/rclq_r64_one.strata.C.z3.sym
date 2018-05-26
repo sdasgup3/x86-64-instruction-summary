@@ -8,8 +8,6 @@ code: rclq $0x1, %rbx
   must undef:      { }
   required flags:  { }
 
-rclq $0x1, %rbx: Hindex7(9)
-rclq $0x1, %rbx: Hindex7(9)
 Formula:
 
 %rbx   : ((_ extract 63 0)
@@ -23,7 +21,7 @@ Formula:
                               (bvurem (concat #b000000000000000000000000000000000000000000000000000000000
                                               #x01)
                                       #b00000000000000000000000000000000000000000000000000000000001000001)))))
-  (= a!1 #b1))
+  (ite (= a!1 #b1) #b1 #b0))
 %of    : (let ((a!1 (= ((_ extract 7 0)
                 (bvurem (concat #b000000000000000000000000000000000000000000000000000000000
                                 #x01)
@@ -42,7 +40,7 @@ Formula:
                 (xor (= ((_ extract 64 64) a!2) #b1)
                      (= ((_ extract 63 63) a!2) #b1))))
       (a!5 (or (and (not a!4) %of) (and (not (not a!4)) TMP_BOOL_0))))
-  (or a!3 (and (not a!1) a!5))))
+  (ite (or a!3 (and (not a!1) a!5)) #b1 #b0)))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

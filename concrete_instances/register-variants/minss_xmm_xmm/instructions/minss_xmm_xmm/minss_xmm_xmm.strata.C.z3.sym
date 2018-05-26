@@ -8,8 +8,6 @@ code: minss %xmm2, %xmm1
   must undef:      { }
   required flags:  { sse }
 
-minss %xmm2, %xmm1: Hindex1(9)
-minss %xmm2, %xmm1: Hindex1(9)
 Formula:
 
 %ymm1  : (let ((a!1 (ite (= (mincmp_single ((_ extract 31 0) %ymm1)

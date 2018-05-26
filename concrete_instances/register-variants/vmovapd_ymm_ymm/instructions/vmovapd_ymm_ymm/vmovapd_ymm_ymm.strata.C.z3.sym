@@ -8,8 +8,6 @@ code: vmovapd %ymm2, %ymm1
   must undef:      { }
   required flags:  { avx }
 
-vmovapd %ymm2, %ymm1: Hindex0(9)
-vmovapd %ymm2, %ymm1: Hindex0(9)
 Formula:
 
 %ymm1  : %ymm2

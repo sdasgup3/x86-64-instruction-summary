@@ -8,12 +8,6 @@ code: vcvtps2dq %xmm2, %xmm1
   must undef:      { }
   required flags:  { avx }
 
-vcvtps2dq %xmm2, %xmm1: Hindex8(9)
-vcvtps2dq %xmm2, %xmm1: Hindex8(9)
-callq .move_128_064_xmm2_r12_r13: Hindex8(9)
-vzeroall: Hindex1(9)
-callq .move_064_128_r12_r13_xmm2: Hindex8(9)
-vcvtps2dq %ymm2, %ymm1: Hindex0(9)
 Formula:
 
 %ymm1  : (let ((a!1 (concat (cvt_single_to_int32 ((_ extract 95 64) %ymm2))

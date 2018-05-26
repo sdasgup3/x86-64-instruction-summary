@@ -8,8 +8,6 @@ code: xchgb %cl, %bl
   must undef:      { }
   required flags:  { }
 
-xchgb %cl, %bl: Hindex1(9)
-xchgb %cl, %bl: Hindex1(9)
 Formula:
 
 %rcx   : (concat ((_ extract 63 8) %rcx) ((_ extract 7 0) %rbx))

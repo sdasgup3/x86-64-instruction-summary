@@ -8,8 +8,6 @@ code: rolw $0x1, %bx
   must undef:      { }
   required flags:  { }
 
-rolw $0x1, %bx: Hindex7(9)
-rolw $0x1, %bx: Hindex7(9)
 Formula:
 
 %rbx   : (concat ((_ extract 63 16) %rbx)
@@ -17,13 +15,13 @@ Formula:
 
 %cf    : (let ((a!1 (= ((_ extract 0 0) (ext_rotate_left ((_ extract 15 0) %rbx) #x0001))
               #b1)))
-  (or (and true a!1) (and false %cf)))
+  (ite (or (and true a!1) (and false %cf)) #b1 #b0))
 %of    : (let ((a!1 (= ((_ extract 15 15)
                 (ext_rotate_left ((_ extract 15 0) %rbx) #x0001))
               #b1))
       (a!2 (= ((_ extract 0 0) (ext_rotate_left ((_ extract 15 0) %rbx) #x0001))
               #b1)))
-  (or (and true (xor a!1 a!2)) (and false TMP_BOOL_0)))
+  (ite (or (and true (xor a!1 a!2)) (and false TMP_BOOL_0)) #b1 #b0))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

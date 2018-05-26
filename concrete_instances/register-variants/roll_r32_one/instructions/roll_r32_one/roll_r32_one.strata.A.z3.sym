@@ -20,6 +20,7 @@ Formula:
 (let ((a!3 ((_ extract 31 0) (bvadd a!2 (concat #b0 ((_ extract 31 0) %rbx))))))
   (concat #x00000000 a!3))))
 
+
 %cf    : (let ((a!1 ((_ extract 32 32)
              (bvadd (concat #b0 ((_ extract 31 0) %rbx))
                     (concat #b0 ((_ extract 31 0) %rbx))))))
@@ -27,8 +28,8 @@ Formula:
                 (bvadd (concat #b0 ((_ extract 31 0) %rbx))
                        #b000000000000000000000000000000001)
                 (concat #b0 ((_ extract 31 0) %rbx)))))
-(let ((a!3 ((_ extract 32 32) (bvadd a!2 (concat #b0 ((_ extract 31 0) %rbx))))))
-  (= a!3 #b1))))
+  ((_ extract 32 32) (bvadd a!2 (concat #b0 ((_ extract 31 0) %rbx))))))
+
 %of    : (let ((a!1 ((_ extract 32 32)
              (bvadd (concat #b0 ((_ extract 31 0) %rbx))
                     (concat #b0 ((_ extract 31 0) %rbx))))))
@@ -38,9 +39,15 @@ Formula:
                 (concat #b0 ((_ extract 31 0) %rbx)))))
 (let ((a!3 ((_ extract 31 31) (bvadd a!2 (concat #b0 ((_ extract 31 0) %rbx))))))
 (let ((a!4 (not (= (= ((_ extract 31 31) %rbx) #b1) (= a!3 #b1)))))
-  (and (= (= ((_ extract 31 31) %rbx) #b1) (= ((_ extract 31 31) %rbx) #b1))
-       a!4)))))
+(let ((a!5 (and (= (= ((_ extract 31 31) %rbx) #b1)
+                   (= ((_ extract 31 31) %rbx) #b1))
+                a!4)))
+  (ite a!5 #b1 #b0))))))
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

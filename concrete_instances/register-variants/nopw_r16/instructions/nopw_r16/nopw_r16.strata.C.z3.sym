@@ -8,8 +8,6 @@ code: nopw %bx
   must undef:      { }
   required flags:  { nopl }
 
-nopw %bx: Hindex1(9)
-nopw %bx: Hindex1(9)
 Formula:
 
 sigfpe  : sigfpe

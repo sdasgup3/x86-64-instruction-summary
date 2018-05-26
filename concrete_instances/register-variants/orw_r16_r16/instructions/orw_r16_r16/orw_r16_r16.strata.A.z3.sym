@@ -13,7 +13,9 @@ Formula:
 %rbx   : (concat ((_ extract 63 16) %rbx)
         (bvor ((_ extract 15 0) %rcx) ((_ extract 15 0) %rbx)))
 
-%cf    : false
+
+%cf    : #b0
+
 %pf    : (let ((a!1 (xor (= (bvor ((_ extract 0 0) %rcx) ((_ extract 0 0) %rbx)) #b1)
                 (= (bvor ((_ extract 1 1) %rcx) ((_ extract 1 1) %rbx)) #b1)
                 (= (bvor ((_ extract 2 2) %rcx) ((_ extract 2 2) %rbx)) #b1)
@@ -22,18 +24,24 @@ Formula:
                 (= (bvor ((_ extract 5 5) %rcx) ((_ extract 5 5) %rbx)) #b1)
                 (= (bvor ((_ extract 6 6) %rcx) ((_ extract 6 6) %rbx)) #b1)
                 (= (bvor ((_ extract 7 7) %rcx) ((_ extract 7 7) %rbx)) #b1))))
-  (not a!1))
-%af    : TMP_BOOL_1
-%zf    : (= (bvor ((_ sign_extend 48) ((_ extract 15 0) %rcx))
-         ((_ sign_extend 48) ((_ extract 15 0) %rbx)))
-   #x0000000000000000)
-%sf    : (let ((a!1 (bvor ((_ extract 63 63)
-                   ((_ sign_extend 48) ((_ extract 15 0) %rcx)))
-                 ((_ extract 63 63)
-                   ((_ sign_extend 48) ((_ extract 15 0) %rbx))))))
-  (= a!1 #b1))
-%of    : false
+  (ite (not a!1) #b1 #b0))
+
+%af    : (ite TMP_BOOL_1 #b1 #b0)
+
+%zf    : (let ((a!1 (= (bvor ((_ sign_extend 48) ((_ extract 15 0) %rcx))
+                    ((_ sign_extend 48) ((_ extract 15 0) %rbx)))
+              #x0000000000000000)))
+  (ite a!1 #b1 #b0))
+
+%sf    : (bvor ((_ extract 63 63) ((_ sign_extend 48) ((_ extract 15 0) %rcx)))
+      ((_ extract 63 63) ((_ sign_extend 48) ((_ extract 15 0) %rbx))))
+
+%of    : #b0
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

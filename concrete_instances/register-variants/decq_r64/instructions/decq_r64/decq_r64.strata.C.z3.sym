@@ -8,8 +8,6 @@ code: decq %rbx
   must undef:      { }
   required flags:  { }
 
-decq %rbx: Hindex1(9)
-decq %rbx: Hindex1(9)
 Formula:
 
 %rbx   : (bvsub %rbx #x0000000000000001)
@@ -22,13 +20,15 @@ Formula:
                 (= ((_ extract 5 5) (bvsub %rbx #x0000000000000001)) #b1)
                 (= ((_ extract 6 6) (bvsub %rbx #x0000000000000001)) #b1)
                 (= ((_ extract 7 7) (bvsub %rbx #x0000000000000001)) #b1))))
-  (not a!1))
-%af    : (= ((_ extract 3 0) %rbx) #x0)
-%zf    : (= (bvsub %rbx #x0000000000000001) #x0000000000000000)
-%sf    : (= ((_ extract 63 63) (bvsub %rbx #x0000000000000001)) #b1)
-%of    : (and (= ((_ extract 63 63) %rbx) #b1)
-     (= ((_ extract 62 0) %rbx)
-        #b000000000000000000000000000000000000000000000000000000000000000))
+  (ite (not a!1) #b1 #b0))
+%af    : (ite (= ((_ extract 3 0) %rbx) #x0) #b1 #b0)
+%zf    : (ite (= (bvsub %rbx #x0000000000000001) #x0000000000000000) #b1 #b0)
+%sf    : (ite (= ((_ extract 63 63) (bvsub %rbx #x0000000000000001)) #b1) #b1 #b0)
+%of    : (ite (and (= ((_ extract 63 63) %rbx) #b1)
+          (= ((_ extract 62 0) %rbx)
+             #b000000000000000000000000000000000000000000000000000000000000000))
+     #b1
+     #b0)
 
 sigfpe  : sigfpe
 sigbus  : sigbus

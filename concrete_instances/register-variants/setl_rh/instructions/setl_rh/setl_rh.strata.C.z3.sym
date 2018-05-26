@@ -8,8 +8,6 @@ code: setl %ah
   must undef:      { }
   required flags:  { }
 
-setl %ah: Hindex3(9)
-setl %ah: Hindex3(9)
 Formula:
 
 %rax   : (let ((a!1 (concat ((_ extract 63 16) %rax) (ite (not (= %sf %of)) #x01 #x00))))

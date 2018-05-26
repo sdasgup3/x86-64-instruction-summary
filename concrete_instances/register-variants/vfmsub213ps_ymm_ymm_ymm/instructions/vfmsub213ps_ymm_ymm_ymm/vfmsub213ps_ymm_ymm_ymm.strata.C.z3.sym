@@ -8,10 +8,6 @@ code: vfmsub213ps %ymm3, %ymm2, %ymm1
   must undef:      { }
   required flags:  { fma }
 
-vfmsub213ps %ymm3, %ymm2, %ymm1: Hindex8(9)
-vfmsub213ps %ymm3, %ymm2, %ymm1: Hindex8(9)
-vfmsub132ps %ymm1, %ymm3, %ymm2: Hindex1(9)
-vmaxpd %ymm2, %ymm2, %ymm1: Hindex0(9)
 Formula:
 
 %ymm1  : (let ((a!1 (concat (vfmsub132_single ((_ extract 95 64) %ymm2)

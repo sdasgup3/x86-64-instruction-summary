@@ -42,13 +42,25 @@ Formula:
                            (concat #x0 (bvadd a!8 a!9))))))
   (concat ((_ extract 63 16) %rbx) (bvadd a!5 a!10))))
 
-%cf    : false
-%pf    : false
-%af    : false
-%zf    : (= (concat #x000000000000 ((_ extract 15 0) %rcx)) #x0000000000000000)
-%sf    : false
-%of    : false
+
+%cf    : #b0
+
+%pf    : #b0
+
+%af    : #b0
+
+%zf    : (ite (= (concat #x000000000000 ((_ extract 15 0) %rcx)) #x0000000000000000)
+     #b1
+     #b0)
+
+%sf    : #b0
+
+%of    : #b0
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

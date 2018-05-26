@@ -20,8 +20,12 @@ Formula:
                    #b1)
                 ((_ extract 63 0) %ymm2)
                 ((_ extract 63 0) %ymm3))))
-  (concat #x0000000000000000 (concat #x0000000000000000 (concat a!1 a!2))))
+  (concat #x00000000000000000000000000000000 (concat a!1 a!2)))
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

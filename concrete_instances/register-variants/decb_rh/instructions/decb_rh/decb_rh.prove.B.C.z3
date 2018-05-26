@@ -122,14 +122,18 @@
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmsub213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd213_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
 ( push )
 ( echo "decb_rh::af")
 (assert (not (=
-(= ((_ extract 11 8) rax) #x0)
+(ite (= ((_ extract 11 8) rax) #x0) #b1 #b0)
 
-(= ((_ extract 11 8) rax) #x0)
+(ite (= ((_ extract 11 8) rax) #x0) #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -139,9 +143,15 @@
 ( push )
 ( echo "decb_rh::of")
 (assert (not (=
-(and (= ((_ extract 15 15) rax) #b1) (= ((_ extract 14 8) rax) #b0000000))
+(ite (and (= ((_ extract 15 15) rax) #b1)
+(= ((_ extract 14 8) rax) #b0000000))
+#b1
+#b0)
 
-(and (= ((_ extract 15 15) rax) #b1) (= ((_ extract 14 8) rax) #b0000000))
+(ite (and (= ((_ extract 15 15) rax) #b1)
+(= ((_ extract 14 8) rax) #b0000000))
+#b1
+#b0)
 )))
 (check-sat)
 ( pop )
@@ -159,7 +169,7 @@
 (a!6 (= ((_ extract 5 5) (bvsub ((_ extract 15 8) rax) #x01)) #b1))
 (a!7 (= ((_ extract 6 6) (bvsub ((_ extract 15 8) rax) #x01)) #b1))
 (a!8 (= ((_ extract 7 7) (bvsub ((_ extract 15 8) rax) #x01)) #b1)))
-(not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)))
+(ite (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)) #b1 #b0))
 
 (let ((a!1 (= ((_ extract 0 0) (bvsub ((_ extract 15 8) rax) #x01)) #b1))
 (a!2 (= ((_ extract 1 1) (bvsub ((_ extract 15 8) rax) #x01)) #b1))
@@ -169,7 +179,7 @@
 (a!6 (= ((_ extract 5 5) (bvsub ((_ extract 15 8) rax) #x01)) #b1))
 (a!7 (= ((_ extract 6 6) (bvsub ((_ extract 15 8) rax) #x01)) #b1))
 (a!8 (= ((_ extract 7 7) (bvsub ((_ extract 15 8) rax) #x01)) #b1)))
-(not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)))
+(ite (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)) #b1 #b0))
 )))
 (check-sat)
 ( pop )
@@ -193,9 +203,10 @@
 ( push )
 ( echo "decb_rh::sf")
 (assert (not (=
-(= ((_ extract 7 7) (bvsub ((_ extract 15 8) rax) #x01)) #b1)
+((_ extract 7 7) (bvsub ((_ extract 15 8) rax) #x01))
 
-(= ((_ extract 7 7) (bvsub ((_ extract 15 8) rax) #x01)) #b1)
+(let ((a!1 (= ((_ extract 7 7) (bvsub ((_ extract 15 8) rax) #x01)) #b1)))
+(ite a!1 #b1 #b0))
 )))
 (check-sat)
 ( pop )
@@ -205,9 +216,9 @@
 ( push )
 ( echo "decb_rh::zf")
 (assert (not (=
-(= (bvsub ((_ extract 15 8) rax) #x01) #x00)
+(ite (= (bvsub ((_ extract 15 8) rax) #x01) #x00) #b1 #b0)
 
-(= (bvsub ((_ extract 15 8) rax) #x01) #x00)
+(ite (= (bvsub ((_ extract 15 8) rax) #x01) #x00) #b1 #b0)
 )))
 (check-sat)
 ( pop )

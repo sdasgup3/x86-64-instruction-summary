@@ -8,18 +8,6 @@ code: vfmsub132ps %xmm3, %xmm2, %xmm1
   must undef:      { }
   required flags:  { fma }
 
-vfmsub132ps %xmm3, %xmm2, %xmm1: Hindex8(9)
-vfmsub132ps %xmm3, %xmm2, %xmm1: Hindex8(9)
-callq .move_128_064_xmm2_r12_r13: Hindex8(9)
-vzeroall: Hindex1(9)
-callq .move_064_128_r12_r13_xmm1: Hindex8(9)
-callq .move_128_064_xmm2_r8_r9: Hindex8(9)
-vzeroall: Hindex1(9)
-callq .move_064_128_r8_r9_xmm1: Hindex8(9)
-callq .move_128_064_xmm2_r8_r9: Hindex8(9)
-vzeroall: Hindex1(9)
-callq .move_064_128_r8_r9_xmm1: Hindex8(9)
-vfmsub132ps %ymm0, %ymm4, %ymm1: Hindex1(9)
 Formula:
 
 %ymm1  : (let ((a!1 (concat (vfmsub132_single ((_ extract 95 64) %ymm1)

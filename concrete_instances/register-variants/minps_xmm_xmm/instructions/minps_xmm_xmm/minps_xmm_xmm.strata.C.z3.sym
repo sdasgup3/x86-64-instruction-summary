@@ -8,19 +8,6 @@ code: minps %xmm2, %xmm1
   must undef:      { }
   required flags:  { sse }
 
-minps %xmm2, %xmm1: Hindex8(9)
-minps %xmm2, %xmm1: Hindex8(9)
-callq .move_128_064_xmm2_r12_r13: Hindex8(9)
-vzeroall: Hindex1(9)
-callq .move_064_128_r12_r13_xmm1: Hindex8(9)
-callq .move_128_064_xmm2_r10_r11: Hindex8(9)
-vzeroall: Hindex1(9)
-callq .move_064_128_r10_r11_xmm3: Hindex8(9)
-callq .move_256_128_ymm3_xmm12_xmm13: Hindex8(9)
-callq .move_128_256_xmm12_xmm13_ymm1: Hindex8(9)
-vminps %ymm1, %ymm14, %ymm1: Hindex0(9)
-callq .move_128_032_xmm2_xmm8_xmm9_xmm10_xmm11: Hindex8(9)
-callq .move_032_128_xmm8_xmm9_xmm10_xmm11_xmm1: Hindex8(9)
 Formula:
 
 %ymm1  : (let ((a!1 (ite (= (mincmp_single ((_ extract 127 96) %ymm1)

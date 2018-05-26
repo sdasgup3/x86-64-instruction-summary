@@ -8,8 +8,6 @@ code: xchgq %rcx, %rbx
   must undef:      { }
   required flags:  { }
 
-xchgq %rcx, %rbx: Hindex1(9)
-xchgq %rcx, %rbx: Hindex1(9)
 Formula:
 
 %rcx   : %rbx

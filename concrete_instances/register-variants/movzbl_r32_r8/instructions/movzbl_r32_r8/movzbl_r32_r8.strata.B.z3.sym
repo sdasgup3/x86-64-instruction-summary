@@ -10,8 +10,12 @@ code: movzbl %cl, %ebx
 
 Formula:
 
-%rbx   : (concat #x00000000 (concat #x000000 ((_ extract 7 0) %rcx)))
+%rbx   : (concat #x00000000000000 ((_ extract 7 0) %rcx))
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

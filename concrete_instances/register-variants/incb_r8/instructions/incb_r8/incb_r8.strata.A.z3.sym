@@ -14,6 +14,7 @@ Formula:
              (bvadd #b000000001 (concat #b0 ((_ extract 7 0) %rbx))))))
   (concat ((_ extract 63 8) %rbx) a!1))
 
+
 %pf    : (let ((a!1 ((_ extract 0 0)
              (bvadd #b000000001 (concat #b0 ((_ extract 7 0) %rbx)))))
       (a!2 ((_ extract 1 1)
@@ -30,26 +31,35 @@ Formula:
              (bvadd #b000000001 (concat #b0 ((_ extract 7 0) %rbx)))))
       (a!8 ((_ extract 7 7)
              (bvadd #b000000001 (concat #b0 ((_ extract 7 0) %rbx))))))
-  (not (xor (= a!1 #b1)
-            (= a!2 #b1)
-            (= a!3 #b1)
-            (= a!4 #b1)
-            (= a!5 #b1)
-            (= a!6 #b1)
-            (= a!7 #b1)
-            (= a!8 #b1))))
-%af    : (let ((a!1 ((_ extract 4 4) (bvadd #b00001 (concat #b0 ((_ extract 3 0) %rbx))))))
-  (= a!1 #b1))
+  (ite (not (xor (= a!1 #b1)
+                 (= a!2 #b1)
+                 (= a!3 #b1)
+                 (= a!4 #b1)
+                 (= a!5 #b1)
+                 (= a!6 #b1)
+                 (= a!7 #b1)
+                 (= a!8 #b1)))
+       #b1
+       #b0))
+
+%af    : ((_ extract 4 4) (bvadd #b00001 (concat #b0 ((_ extract 3 0) %rbx))))
+
 %zf    : (let ((a!1 ((_ extract 7 0)
              (bvadd #b000000001 (concat #b0 ((_ extract 7 0) %rbx))))))
-  (= a!1 #x00))
-%sf    : (let ((a!1 ((_ extract 7 7)
-             (bvadd #b000000001 (concat #b0 ((_ extract 7 0) %rbx))))))
-  (= a!1 #b1))
+  (ite (= a!1 #x00) #b1 #b0))
+
+%sf    : ((_ extract 7 7) (bvadd #b000000001 (concat #b0 ((_ extract 7 0) %rbx))))
+
 %of    : (let ((a!1 ((_ extract 7 7)
              (bvadd #b000000001 (concat #b0 ((_ extract 7 0) %rbx))))))
-  (and (= false (= ((_ extract 7 7) %rbx) #b1)) (not (= false (= a!1 #b1)))))
+(let ((a!2 (and (= false (= ((_ extract 7 7) %rbx) #b1))
+                (not (= false (= a!1 #b1))))))
+  (ite a!2 #b1 #b0)))
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+
