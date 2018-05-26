@@ -10,7 +10,7 @@ code: vhsubps %ymm3, %ymm2, %ymm1
 
 Formula:
 
-%ymm1  : concatenateMInt( sub_single(extractMInt( %ymm3, 32, 64), extractMInt( %ymm3, 0, 32)), concatenateMInt( sub_single(extractMInt( %ymm3, 96, 128), extractMInt( %ymm3, 64, 96)), concatenateMInt( sub_single(extractMInt( %ymm2, 32, 64), extractMInt( %ymm2, 0, 32)), concatenateMInt( sub_single(extractMInt( %ymm2, 96, 128), extractMInt( %ymm2, 64, 96)), concatenateMInt( sub_single(extractMInt( %ymm3, 160, 192), extractMInt( %ymm3, 128, 160)), concatenateMInt( sub_single(extractMInt( %ymm3, 224, 256), extractMInt( %ymm3, 192, 224)), concatenateMInt( sub_single(extractMInt( %ymm2, 160, 192), extractMInt( %ymm2, 128, 160)), sub_single(extractMInt( %ymm2, 224, 256), extractMInt( %ymm2, 192, 224)))))))))
+%ymm1  : concatenateMInt( concatenateMInt( concatenateMInt( concatenateMInt( sub_single(extractMInt( %ymm3, 32, 64), extractMInt( %ymm3, 0, 32)), sub_single(extractMInt( %ymm3, 96, 128), extractMInt( %ymm3, 64, 96))), sub_single(extractMInt( %ymm2, 32, 64), extractMInt( %ymm2, 0, 32))), sub_single(extractMInt( %ymm2, 96, 128), extractMInt( %ymm2, 64, 96))), concatenateMInt( concatenateMInt( concatenateMInt( sub_single(extractMInt( %ymm3, 160, 192), extractMInt( %ymm3, 128, 160)), sub_single(extractMInt( %ymm3, 224, 256), extractMInt( %ymm3, 192, 224))), sub_single(extractMInt( %ymm2, 160, 192), extractMInt( %ymm2, 128, 160))), sub_single(extractMInt( %ymm2, 224, 256), extractMInt( %ymm2, 192, 224))))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

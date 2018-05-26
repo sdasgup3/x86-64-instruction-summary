@@ -10,7 +10,7 @@ code: vpaddq %xmm3, %xmm2, %xmm1
 
 Formula:
 
-%ymm1  : concatenateMInt( mi(128, 0), concatenateMInt( extractMInt( addMInt( concatenateMInt( mi(1, 0), extractMInt( %ymm2, 128, 192)), concatenateMInt( mi(1, 0), extractMInt( %ymm3, 128, 192))), 1, 65), extractMInt( addMInt( concatenateMInt( mi(1, 0), extractMInt( %ymm2, 192, 256)), concatenateMInt( mi(1, 0), extractMInt( %ymm3, 192, 256))), 1, 65)))
+%ymm1  : concatenateMInt( mi(128, 0), concatenateMInt( addMInt( extractMInt( %ymm2, 128, 192), extractMInt( %ymm3, 128, 192)), addMInt( extractMInt( %ymm2, 192, 256), extractMInt( %ymm3, 192, 256))))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

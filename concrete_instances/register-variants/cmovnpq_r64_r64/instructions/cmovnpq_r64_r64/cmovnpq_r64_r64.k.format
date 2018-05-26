@@ -10,7 +10,7 @@ code: cmovnpq %rcx, %rbx
 
 Formula:
 
-%rbx   : (#ifMInt eqMInt( extractMInt( addMInt( (#ifMInt eqMInt( (#ifMInt eqMInt( (#ifMInt eqMInt( (#ifMInt %pf #then mi(1, 0) #else mi(1, 1) #fi), mi(1, 1)) #then mi(1, 0) #else mi(1, 1) #fi), mi(1, 1)) #then mi(1, 0) #else mi(1, 1) #fi), mi(1, 1)) #then addMInt( concatenateMInt( mi(1, 0), extractMInt( %rcx, 48, 64)), mi(17, 1)) #else concatenateMInt( mi(1, 0), extractMInt( %rcx, 48, 64)) #fi), concatenateMInt( mi(1, 0), xorMInt( extractMInt( %rcx, 48, 64), mi(16, 65535)))), 1, 17), mi(16, 0)) #then %rcx #else %rbx #fi)
+%rbx   : (#ifMInt (notBool %pf) #then %rcx #else %rbx #fi)
 
 sigfpe  : sigfpe
 sigbus  : sigbus

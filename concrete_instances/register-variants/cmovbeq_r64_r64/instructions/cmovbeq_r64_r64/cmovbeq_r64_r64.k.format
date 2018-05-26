@@ -10,7 +10,7 @@ code: cmovbeq %rcx, %rbx
 
 Formula:
 
-%rbx   : (#ifMInt eqMInt( (#ifMInt eqMInt( concatenateMInt( (#ifMInt %cf #then mi(24, 1) #else mi(24, 0) #fi), (#ifMInt %zf #then mi(8, 1) #else mi(8, 0) #fi)), mi(32, 0)) #then mi(8, 2) #else mi(8, 0) #fi), mi(8, 0)) #then %rcx #else %rbx #fi)
+%rbx   : (#ifMInt (%cf orBool %zf) #then %rcx #else %rbx #fi)
 
 sigfpe  : sigfpe
 sigbus  : sigbus

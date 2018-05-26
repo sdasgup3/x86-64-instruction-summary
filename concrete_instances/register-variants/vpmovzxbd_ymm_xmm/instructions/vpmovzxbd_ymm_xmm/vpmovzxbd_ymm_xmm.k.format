@@ -10,7 +10,7 @@ code: vpmovzxbd %xmm2, %ymm1
 
 Formula:
 
-%ymm1  : concatenateMInt( concatenateMInt( concatenateMInt( concatenateMInt( mi(24, 0), extractMInt( %ymm2, 192, 200)), concatenateMInt( mi(24, 0), extractMInt( %ymm2, 200, 208))), concatenateMInt( concatenateMInt( mi(24, 0), extractMInt( %ymm2, 208, 216)), concatenateMInt( mi(24, 0), extractMInt( %ymm2, 216, 224)))), concatenateMInt( concatenateMInt( concatenateMInt( mi(24, 0), extractMInt( %ymm2, 224, 232)), concatenateMInt( mi(24, 0), extractMInt( %ymm2, 232, 240))), concatenateMInt( concatenateMInt( mi(24, 0), extractMInt( %ymm2, 240, 248)), concatenateMInt( mi(24, 0), extractMInt( %ymm2, 248, 256)))))
+%ymm1  : concatenateMInt( concatenateMInt( mi(24, 0), extractMInt( %ymm2, 192, 200)), concatenateMInt( concatenateMInt( mi(24, 0), extractMInt( %ymm2, 200, 208)), concatenateMInt( concatenateMInt( mi(24, 0), extractMInt( %ymm2, 208, 216)), concatenateMInt( concatenateMInt( mi(24, 0), extractMInt( %ymm2, 216, 224)), concatenateMInt( concatenateMInt( mi(24, 0), extractMInt( %ymm2, 224, 232)), concatenateMInt( concatenateMInt( mi(24, 0), extractMInt( %ymm2, 232, 240)), concatenateMInt( concatenateMInt( mi(24, 0), extractMInt( %ymm2, 240, 248)), concatenateMInt( mi(24, 0), extractMInt( %ymm2, 248, 256)))))))))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

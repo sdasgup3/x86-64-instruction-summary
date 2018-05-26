@@ -10,7 +10,7 @@ code: notb %ah
 
 Formula:
 
-%rax   : concatenateMInt( concatenateMInt( extractMInt( %rax, 0, 48), xorMInt( mi(8, 255), extractMInt( %rax, 48, 56))), extractMInt( %rax, 56, 64))
+%rax   : concatenateMInt( concatenateMInt( extractMInt( %rax, 0, 48), negMInt( extractMInt( %rax, 48, 56))), extractMInt( %rax, 56, 64))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

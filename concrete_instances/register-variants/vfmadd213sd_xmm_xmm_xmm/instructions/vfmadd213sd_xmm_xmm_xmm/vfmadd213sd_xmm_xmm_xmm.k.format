@@ -10,7 +10,7 @@ code: vfmadd213sd %xmm3, %xmm2, %xmm1
 
 Formula:
 
-%ymm1  : concatenateMInt( mi(128, 0), concatenateMInt( extractMInt( %ymm1, 128, 192), vfmsub132_double(extractMInt( %ymm2, 192, 256), vfnmsub132_double(mi(64, 0), extractMInt( %ymm3, 192, 256), mi(64, 0)), extractMInt( %ymm1, 192, 256))))
+%ymm1  : concatenateMInt( mi(128, 0), concatenateMInt( extractMInt( %ymm1, 128, 192), vfmadd213_double(extractMInt( %ymm1, 192, 256), extractMInt( %ymm2, 192, 256), extractMInt( %ymm3, 192, 256))))
 
 sigfpe  : sigfpe
 sigbus  : sigbus
