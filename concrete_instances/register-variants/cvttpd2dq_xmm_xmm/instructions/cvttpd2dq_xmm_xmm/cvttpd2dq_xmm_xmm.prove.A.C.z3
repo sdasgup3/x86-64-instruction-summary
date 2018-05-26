@@ -122,17 +122,21 @@
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmsub213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd213_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
 ( push )
 ( echo "cvttpd2dq_xmm_xmm::ymm1")
 (assert (not (=
-(let ((a!1 (concat #x00000000
+(let ((a!1 (concat #x0000000000000000
 (concat (cvt_double_to_int32_truncate
 ((_ extract 127 64) ymm2))
 (cvt_double_to_int32_truncate
 ((_ extract 63 0) ymm2))))))
-(concat ((_ extract 255 128) ymm1) (concat #x00000000 a!1)))
+(concat ((_ extract 255 128) ymm1) a!1))
 
 (let ((a!1 (concat #x00000000
 (concat (cvt_double_to_int32_truncate

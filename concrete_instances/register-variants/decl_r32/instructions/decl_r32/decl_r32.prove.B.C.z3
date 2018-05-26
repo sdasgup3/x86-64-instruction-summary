@@ -122,14 +122,18 @@
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmsub213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd213_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
 ( push )
 ( echo "decl_r32::af")
 (assert (not (=
-(= ((_ extract 3 0) rbx) #x0)
+(ite (= ((_ extract 3 0) rbx) #x0) #b1 #b0)
 
-(= ((_ extract 3 0) rbx) #x0)
+(ite (= ((_ extract 3 0) rbx) #x0) #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -139,11 +143,15 @@
 ( push )
 ( echo "decl_r32::of")
 (assert (not (=
-(and (= ((_ extract 31 31) rbx) #b1)
+(ite (and (= ((_ extract 31 31) rbx) #b1)
 (= ((_ extract 30 0) rbx) #b0000000000000000000000000000000))
+#b1
+#b0)
 
-(and (= ((_ extract 31 31) rbx) #b1)
+(ite (and (= ((_ extract 31 31) rbx) #b1)
 (= ((_ extract 30 0) rbx) #b0000000000000000000000000000000))
+#b1
+#b0)
 )))
 (check-sat)
 ( pop )
@@ -161,7 +169,7 @@
 (a!6 (= ((_ extract 5 5) (bvsub ((_ extract 31 0) rbx) #x00000001)) #b1))
 (a!7 (= ((_ extract 6 6) (bvsub ((_ extract 31 0) rbx) #x00000001)) #b1))
 (a!8 (= ((_ extract 7 7) (bvsub ((_ extract 31 0) rbx) #x00000001)) #b1)))
-(not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)))
+(ite (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)) #b1 #b0))
 
 (let ((a!1 (= ((_ extract 0 0) (bvsub ((_ extract 31 0) rbx) #x00000001)) #b1))
 (a!2 (= ((_ extract 1 1) (bvsub ((_ extract 31 0) rbx) #x00000001)) #b1))
@@ -171,7 +179,7 @@
 (a!6 (= ((_ extract 5 5) (bvsub ((_ extract 31 0) rbx) #x00000001)) #b1))
 (a!7 (= ((_ extract 6 6) (bvsub ((_ extract 31 0) rbx) #x00000001)) #b1))
 (a!8 (= ((_ extract 7 7) (bvsub ((_ extract 31 0) rbx) #x00000001)) #b1)))
-(not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)))
+(ite (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)) #b1 #b0))
 )))
 (check-sat)
 ( pop )
@@ -193,9 +201,11 @@
 ( push )
 ( echo "decl_r32::sf")
 (assert (not (=
-(= ((_ extract 31 31) (bvsub ((_ extract 31 0) rbx) #x00000001)) #b1)
+((_ extract 31 31) (bvsub ((_ extract 31 0) rbx) #x00000001))
 
-(= ((_ extract 31 31) (bvsub ((_ extract 31 0) rbx) #x00000001)) #b1)
+(let ((a!1 (= ((_ extract 31 31) (bvsub ((_ extract 31 0) rbx) #x00000001))
+#b1)))
+(ite a!1 #b1 #b0))
 )))
 (check-sat)
 ( pop )
@@ -205,9 +215,9 @@
 ( push )
 ( echo "decl_r32::zf")
 (assert (not (=
-(= (bvsub ((_ extract 31 0) rbx) #x00000001) #x00000000)
+(ite (= (bvsub ((_ extract 31 0) rbx) #x00000001) #x00000000) #b1 #b0)
 
-(= (bvsub ((_ extract 31 0) rbx) #x00000001) #x00000000)
+(ite (= (bvsub ((_ extract 31 0) rbx) #x00000001) #x00000000) #b1 #b0)
 )))
 (check-sat)
 ( pop )

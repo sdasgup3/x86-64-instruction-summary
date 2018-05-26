@@ -122,14 +122,18 @@
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmsub213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd213_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
 ( push )
 ( echo "orb_rh_r8::af")
 (assert (not (=
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -139,9 +143,9 @@ TMP_BOOL
 ( push )
 ( echo "orb_rh_r8::cf")
 (assert (not (=
-false
+#b0
 
-false
+#b0
 )))
 (check-sat)
 ( pop )
@@ -151,9 +155,9 @@ false
 ( push )
 ( echo "orb_rh_r8::of")
 (assert (not (=
-false
+#b0
 
-false
+#b0
 )))
 (check-sat)
 ( pop )
@@ -171,7 +175,7 @@ false
 (= (bvor ((_ extract 13 13) rax) ((_ extract 5 5) rbx)) #b1)
 (= (bvor ((_ extract 14 14) rax) ((_ extract 6 6) rbx)) #b1)
 (= (bvor ((_ extract 15 15) rax) ((_ extract 7 7) rbx)) #b1))))
-(not a!1))
+(ite (not a!1) #b1 #b0))
 
 (let ((a!1 (xor (= (bvor ((_ extract 8 8) rax) ((_ extract 0 0) rbx)) #b1)
 (= (bvor ((_ extract 9 9) rax) ((_ extract 1 1) rbx)) #b1)
@@ -181,7 +185,7 @@ false
 (= (bvor ((_ extract 13 13) rax) ((_ extract 5 5) rbx)) #b1)
 (= (bvor ((_ extract 14 14) rax) ((_ extract 6 6) rbx)) #b1)
 (= (bvor ((_ extract 15 15) rax) ((_ extract 7 7) rbx)) #b1))))
-(not a!1))
+(ite (not a!1) #b1 #b0))
 )))
 (check-sat)
 ( pop )
@@ -213,9 +217,9 @@ false
 (a!2 ((_ extract 63 63)
 ((_ sign_extend 48)
 (concat ((_ extract 7 0) rbx) ((_ extract 7 0) rbx))))))
-(= (bvor a!1 a!2) #b1))
+(bvor a!1 a!2))
 
-(= (bvor ((_ extract 15 15) rax) ((_ extract 7 7) rbx)) #b1)
+(ite (= (bvor ((_ extract 15 15) rax) ((_ extract 7 7) rbx)) #b1) #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -229,9 +233,9 @@ false
 (concat ((_ extract 15 8) rax) ((_ extract 15 8) rax)))
 ((_ sign_extend 48)
 (concat ((_ extract 7 0) rbx) ((_ extract 7 0) rbx))))))
-(= a!1 #x0000000000000000))
+(ite (= a!1 #x0000000000000000) #b1 #b0))
 
-(= (bvor ((_ extract 15 8) rax) ((_ extract 7 0) rbx)) #x00)
+(ite (= (bvor ((_ extract 15 8) rax) ((_ extract 7 0) rbx)) #x00) #b1 #b0)
 )))
 (check-sat)
 ( pop )

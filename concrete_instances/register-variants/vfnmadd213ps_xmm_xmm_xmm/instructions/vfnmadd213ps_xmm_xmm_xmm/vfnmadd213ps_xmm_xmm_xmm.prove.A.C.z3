@@ -122,6 +122,10 @@
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmsub213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd213_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
 ( push )
@@ -140,7 +144,7 @@
 (a!2 (concat (vfnmadd132_single
 ((_ extract 95 64) ymm2)
 ((_ extract 95 64) ymm3)
-(bvor #x00000000 ((_ extract 95 64) ymm1)))
+((_ extract 95 64) ymm1))
 (concat (vfnmadd132_single
 ((_ extract 63 32) ymm2)
 ((_ extract 63 32) ymm3)
@@ -149,12 +153,12 @@
 ((_ extract 31 0) ymm2)
 ((_ extract 31 0) ymm3)
 ((_ extract 31 0) ymm1))))))
-(let ((a!3 (concat (vfnmadd132_single
+(concat a!1
+(concat (vfnmadd132_single
 ((_ extract 127 96) ymm2)
 ((_ extract 127 96) ymm3)
-(bvor #x00000000 ((_ extract 127 96) ymm1)))
+((_ extract 127 96) ymm1))
 a!2)))
-(concat a!1 a!3)))
 
 (let ((a!1 (concat (vfnmadd132_single #x00000000 #x00000000 #x00000000)
 (concat (vfnmadd132_single #x00000000 #x00000000 #x00000000)

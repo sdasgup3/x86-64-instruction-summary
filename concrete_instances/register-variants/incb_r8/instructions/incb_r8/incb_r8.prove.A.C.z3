@@ -122,15 +122,18 @@
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmsub213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd213_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
 ( push )
 ( echo "incb_r8::af")
 (assert (not (=
-(let ((a!1 ((_ extract 4 4) (bvadd #b00001 (concat #b0 ((_ extract 3 0) rbx))))))
-(= a!1 #b1))
+((_ extract 4 4) (bvadd #b00001 (concat #b0 ((_ extract 3 0) rbx))))
 
-(= ((_ extract 3 0) rbx) #xf)
+(ite (= ((_ extract 3 0) rbx) #xf) #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -142,9 +145,13 @@
 (assert (not (=
 (let ((a!1 ((_ extract 7 7)
 (bvadd #b000000001 (concat #b0 ((_ extract 7 0) rbx))))))
-(and (= false (= ((_ extract 7 7) rbx) #b1)) (not (= false (= a!1 #b1)))))
+(let ((a!2 (and (= false (= ((_ extract 7 7) rbx) #b1))
+(not (= false (= a!1 #b1))))))
+(ite a!2 #b1 #b0)))
 
-(and (not (= ((_ extract 7 7) rbx) #b1)) (= ((_ extract 6 0) rbx) #b1111111))
+(let ((a!1 (and (not (= ((_ extract 7 7) rbx) #b1))
+(= ((_ extract 6 0) rbx) #b1111111))))
+(ite a!1 #b1 #b0))
 )))
 (check-sat)
 ( pop )
@@ -170,14 +177,16 @@
 (bvadd #b000000001 (concat #b0 ((_ extract 7 0) rbx)))))
 (a!8 ((_ extract 7 7)
 (bvadd #b000000001 (concat #b0 ((_ extract 7 0) rbx))))))
-(not (xor (= a!1 #b1)
+(ite (not (xor (= a!1 #b1)
 (= a!2 #b1)
 (= a!3 #b1)
 (= a!4 #b1)
 (= a!5 #b1)
 (= a!6 #b1)
 (= a!7 #b1)
-(= a!8 #b1))))
+(= a!8 #b1)))
+#b1
+#b0))
 
 (let ((a!1 (= ((_ extract 0 0) (bvadd ((_ extract 7 0) rbx) #x01)) #b1))
 (a!2 (= ((_ extract 1 1) (bvadd ((_ extract 7 0) rbx) #x01)) #b1))
@@ -187,7 +196,7 @@
 (a!6 (= ((_ extract 5 5) (bvadd ((_ extract 7 0) rbx) #x01)) #b1))
 (a!7 (= ((_ extract 6 6) (bvadd ((_ extract 7 0) rbx) #x01)) #b1))
 (a!8 (= ((_ extract 7 7) (bvadd ((_ extract 7 0) rbx) #x01)) #b1)))
-(not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)))
+(ite (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)) #b1 #b0))
 )))
 (check-sat)
 ( pop )
@@ -211,11 +220,10 @@
 ( push )
 ( echo "incb_r8::sf")
 (assert (not (=
-(let ((a!1 ((_ extract 7 7)
-(bvadd #b000000001 (concat #b0 ((_ extract 7 0) rbx))))))
-(= a!1 #b1))
+((_ extract 7 7) (bvadd #b000000001 (concat #b0 ((_ extract 7 0) rbx))))
 
-(= ((_ extract 7 7) (bvadd ((_ extract 7 0) rbx) #x01)) #b1)
+(let ((a!1 (= ((_ extract 7 7) (bvadd ((_ extract 7 0) rbx) #x01)) #b1)))
+(ite a!1 #b1 #b0))
 )))
 (check-sat)
 ( pop )
@@ -227,9 +235,9 @@
 (assert (not (=
 (let ((a!1 ((_ extract 7 0)
 (bvadd #b000000001 (concat #b0 ((_ extract 7 0) rbx))))))
-(= a!1 #x00))
+(ite (= a!1 #x00) #b1 #b0))
 
-(= (bvadd ((_ extract 7 0) rbx) #x01) #x00)
+(ite (= (bvadd ((_ extract 7 0) rbx) #x01) #x00) #b1 #b0)
 )))
 (check-sat)
 ( pop )

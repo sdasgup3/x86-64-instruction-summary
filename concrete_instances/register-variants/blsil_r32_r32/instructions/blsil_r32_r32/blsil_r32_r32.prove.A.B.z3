@@ -122,14 +122,18 @@
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmsub213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd213_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
 ( push )
 ( echo "blsil_r32_r32::af")
 (assert (not (=
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -139,34 +143,35 @@ TMP_BOOL
 ( push )
 ( echo "blsil_r32_r32::cf")
 (assert (not (=
-(let ((a!1 (bvadd (concat #b0 #xffffffffffffffff)
-(concat #b0 (concat #x00000000 ((_ extract 31 0) rcx))))))
+(let ((a!1 ((_ extract 31 0)
+(bvadd (concat #b0 #xffffffffffffffff)
+(concat #b000000000000000000000000000000000
+((_ extract 31 0) rcx)))))
+(a!4 ((_ extract 7 0)
+(bvadd (concat #b0 #xffffffffffffffff)
+(concat #b000000000000000000000000000000000
+((_ extract 31 0) rcx))))))
 (let ((a!2 (= (bvxor ((_ extract 31 0) rcx)
-(bvor ((_ extract 31 0) rcx) ((_ extract 31 0) a!1))
-((_ extract 31 0) a!1)
+(bvor ((_ extract 31 0) rcx) a!1)
+a!1
 ((_ extract 31 0) rcx))
 #x00000000)))
-(let ((a!3 (bvadd (ite (= (ite a!2 #x00000001 #x00000000) #x00000000)
-#b000000001
-#b000000000)
-(ite (= (ite a!2 #x00000001 #x00000000) #x00000000)
-#b000000001
-#b000000000))))
-(let ((a!4 (ite (= ((_ extract 7 0) a!3) #x00)
+(let ((a!3 (= (ite (= (ite a!2 #x00000001 #x00000000) #x00000000) #x02 #x00)
+#x00)))
+(let ((a!5 (ite a!3
 (bvxor ((_ extract 7 0) rcx)
-(bvor ((_ extract 7 0) rcx) ((_ extract 7 0) a!1))
-((_ extract 7 0) a!1)
+(bvor ((_ extract 7 0) rcx) a!4)
+a!4
 ((_ extract 7 0) rcx))
 #xf9)))
-(let ((a!5 (bvashr (concat ((_ sign_extend 48) (concat a!4 a!4)) #b0)
+(let ((a!6 (bvashr (concat ((_ sign_extend 48) (concat a!5 a!5)) #b0)
 (concat #b000000000000000000000000000000000000000000000000000000000
 #x01))))
-(let ((a!6 ((_ extract 8 8)
-(bvadd (concat #b0 ((_ extract 8 1) a!5))
-(concat #b0 ((_ extract 8 1) a!5))))))
-(= a!6 #b1)))))))
+((_ extract 8 8)
+(bvadd (concat #b0 ((_ extract 8 1) a!6))
+(concat #b0 ((_ extract 8 1) a!6)))))))))
 
-(not (= ((_ extract 31 0) rcx) #x00000000))
+(ite (not (= ((_ extract 31 0) rcx) #x00000000)) #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -176,35 +181,39 @@ TMP_BOOL
 ( push )
 ( echo "blsil_r32_r32::of")
 (assert (not (=
-(let ((a!1 (bvadd (concat #b0 #xffffffffffffffff)
-(concat #b0 (concat #x00000000 ((_ extract 31 0) rcx))))))
+(let ((a!1 ((_ extract 31 0)
+(bvadd (concat #b0 #xffffffffffffffff)
+(concat #b000000000000000000000000000000000
+((_ extract 31 0) rcx)))))
+(a!4 ((_ extract 7 0)
+(bvadd (concat #b0 #xffffffffffffffff)
+(concat #b000000000000000000000000000000000
+((_ extract 31 0) rcx))))))
 (let ((a!2 (= (bvxor ((_ extract 31 0) rcx)
-(bvor ((_ extract 31 0) rcx) ((_ extract 31 0) a!1))
-((_ extract 31 0) a!1)
+(bvor ((_ extract 31 0) rcx) a!1)
+a!1
 ((_ extract 31 0) rcx))
 #x00000000)))
-(let ((a!3 (bvadd (ite (= (ite a!2 #x00000001 #x00000000) #x00000000)
-#b000000001
-#b000000000)
-(ite (= (ite a!2 #x00000001 #x00000000) #x00000000)
-#b000000001
-#b000000000))))
-(let ((a!4 (ite (= ((_ extract 7 0) a!3) #x00)
+(let ((a!3 (= (ite (= (ite a!2 #x00000001 #x00000000) #x00000000) #x02 #x00)
+#x00)))
+(let ((a!5 (ite a!3
 (bvxor ((_ extract 7 0) rcx)
-(bvor ((_ extract 7 0) rcx) ((_ extract 7 0) a!1))
-((_ extract 7 0) a!1)
+(bvor ((_ extract 7 0) rcx) a!4)
+a!4
 ((_ extract 7 0) rcx))
 #xf9)))
-(let ((a!5 (bvashr (concat ((_ sign_extend 48) (concat a!4 a!4)) #b0)
+(let ((a!6 (bvashr (concat ((_ sign_extend 48) (concat a!5 a!5)) #b0)
 (concat #b000000000000000000000000000000000000000000000000000000000
 #x01))))
-(let ((a!6 ((_ extract 7 7)
-(bvadd (concat #b0 ((_ extract 8 1) a!5))
-(concat #b0 ((_ extract 8 1) a!5))))))
-(let ((a!7 (not (= (= ((_ extract 8 8) a!5) #b1) (= a!6 #b1)))))
-(and (= (= ((_ extract 8 8) a!5) #b1) (= ((_ extract 8 8) a!5) #b1)) a!7))))))))
+(let ((a!7 ((_ extract 7 7)
+(bvadd (concat #b0 ((_ extract 8 1) a!6))
+(concat #b0 ((_ extract 8 1) a!6))))))
+(let ((a!8 (not (= (= ((_ extract 8 8) a!6) #b1) (= a!7 #b1)))))
+(let ((a!9 (and (= (= ((_ extract 8 8) a!6) #b1) (= ((_ extract 8 8) a!6) #b1))
+a!8)))
+(ite a!9 #b1 #b0)))))))))
 
-false
+#b0
 )))
 (check-sat)
 ( pop )
@@ -214,9 +223,9 @@ false
 ( push )
 ( echo "blsil_r32_r32::pf")
 (assert (not (=
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -226,11 +235,13 @@ TMP_BOOL
 ( push )
 ( echo "blsil_r32_r32::rbx")
 (assert (not (=
-(let ((a!1 (bvadd (concat #b0 #xffffffffffffffff)
-(concat #b0 (concat #x00000000 ((_ extract 31 0) rcx))))))
+(let ((a!1 ((_ extract 31 0)
+(bvadd (concat #b0 #xffffffffffffffff)
+(concat #b000000000000000000000000000000000
+((_ extract 31 0) rcx))))))
 (let ((a!2 (concat #x00000000
-(bvxor (bvor ((_ extract 31 0) rcx) ((_ extract 31 0) a!1))
-((_ extract 31 0) a!1)
+(bvxor (bvor ((_ extract 31 0) rcx) a!1)
+a!1
 ((_ extract 31 0) rcx)))))
 (bvxor (concat #x00000000 ((_ extract 31 0) rcx)) a!2)))
 
@@ -245,17 +256,17 @@ TMP_BOOL
 ( push )
 ( echo "blsil_r32_r32::sf")
 (assert (not (=
-(let ((a!1 (bvadd (concat #b0 #xffffffffffffffff)
-(concat #b0 (concat #x00000000 ((_ extract 31 0) rcx))))))
-(= (bvxor ((_ extract 31 31) rcx)
-(bvor ((_ extract 31 31) rcx) ((_ extract 31 31) a!1))
-((_ extract 31 31) a!1)
-((_ extract 31 31) rcx))
-#b1))
+(let ((a!1 ((_ extract 31 31)
+(bvadd (concat #b0 #xffffffffffffffff)
+(concat #b000000000000000000000000000000000
+((_ extract 31 0) rcx))))))
+(bvxor ((_ extract 31 31) rcx)
+(bvor ((_ extract 31 31) rcx) a!1)
+a!1
+((_ extract 31 31) rcx)))
 
-(let ((a!1 (bvand ((_ extract 31 31) (bvneg ((_ extract 31 0) rcx)))
-((_ extract 31 31) rcx))))
-(= a!1 #b1))
+(bvand ((_ extract 31 31) (bvneg ((_ extract 31 0) rcx)))
+((_ extract 31 31) rcx))
 )))
 (check-sat)
 ( pop )
@@ -265,15 +276,20 @@ TMP_BOOL
 ( push )
 ( echo "blsil_r32_r32::zf")
 (assert (not (=
-(let ((a!1 (bvadd (concat #b0 #xffffffffffffffff)
-(concat #b0 (concat #x00000000 ((_ extract 31 0) rcx))))))
-(= (bvxor ((_ extract 31 0) rcx)
-(bvor ((_ extract 31 0) rcx) ((_ extract 31 0) a!1))
-((_ extract 31 0) a!1)
+(let ((a!1 ((_ extract 31 0)
+(bvadd (concat #b0 #xffffffffffffffff)
+(concat #b000000000000000000000000000000000
+((_ extract 31 0) rcx))))))
+(let ((a!2 (= (bvxor ((_ extract 31 0) rcx)
+(bvor ((_ extract 31 0) rcx) a!1)
+a!1
 ((_ extract 31 0) rcx))
-#x00000000))
+#x00000000)))
+(ite a!2 #b1 #b0)))
 
-(= (bvand (bvneg ((_ extract 31 0) rcx)) ((_ extract 31 0) rcx)) #x00000000)
+(let ((a!1 (= (bvand (bvneg ((_ extract 31 0) rcx)) ((_ extract 31 0) rcx))
+#x00000000)))
+(ite a!1 #b1 #b0))
 )))
 (check-sat)
 ( pop )

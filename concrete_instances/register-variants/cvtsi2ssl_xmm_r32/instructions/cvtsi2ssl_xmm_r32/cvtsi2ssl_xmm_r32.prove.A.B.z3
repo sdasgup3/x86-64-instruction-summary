@@ -122,18 +122,20 @@
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmsub213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd213_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
 ( push )
 ( echo "cvtsi2ssl_xmm_r32::ymm1")
 (assert (not (=
-(concat ((_ extract 255 128) ymm1)
-(concat ((_ extract 127 32) ymm1)
-(cvt_int32_to_single ((_ extract 31 0) rbx))))
+(concat ((_ extract 255 32) ymm1)
+(cvt_int32_to_single ((_ extract 31 0) rbx)))
 
-(concat ((_ extract 255 128) ymm1)
-(concat ((_ extract 127 32) ymm1)
-(cvt_int32_to_single ((_ extract 31 0) rbx))))
+(concat ((_ extract 255 32) ymm1)
+(cvt_int32_to_single ((_ extract 31 0) rbx)))
 )))
 (check-sat)
 ( pop )

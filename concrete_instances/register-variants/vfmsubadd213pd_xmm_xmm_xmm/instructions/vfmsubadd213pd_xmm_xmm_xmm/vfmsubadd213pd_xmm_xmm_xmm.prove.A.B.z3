@@ -122,25 +122,29 @@
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmsub213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd213_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
 ( push )
 ( echo "vfmsubadd213pd_xmm_xmm_xmm::ymm1")
 (assert (not (=
-(let ((a!1 ((_ extract 63 8)
+(let ((a!1 (concat #x00000000000000000000000000000000
+((_ extract 63 8)
 (vfmsub132_double ((_ extract 127 64) ymm2)
-(bvxor ((_ extract 127 64) ymm3)
-#x0000000000000000)
-((_ extract 127 64) ymm1))))
-(a!2 ((_ extract 7 0)
-(vfmsub132_double ((_ extract 127 64) ymm2)
-(bvxor ((_ extract 127 64) ymm3)
-#x0000000000000000)
-((_ extract 127 64) ymm1))))
+((_ extract 127 64) ymm3)
+((_ extract 127 64) ymm1)))))
 (a!3 (= (mincmp_double #x0000000000000000
 (concat #x00000000 ((_ extract 127 96) ymm3)))
 #b1)))
-(let ((a!4 (vfnmsub132_double
+(let ((a!2 (concat a!1
+((_ extract 7 0)
+(vfmsub132_double ((_ extract 127 64) ymm2)
+((_ extract 127 64) ymm3)
+((_ extract 127 64) ymm1)))))
+(a!4 (vfnmsub132_double
 (ite a!3
 #x0000000000000000
 (concat #x00000000 ((_ extract 127 96) ymm3)))
@@ -148,7 +152,7 @@
 (ite a!3
 #x0000000000000000
 (concat #x00000000 ((_ extract 127 96) ymm3))))))
-(concat (concat (concat #x00000000000000000000000000000000 a!1) a!2)
+(concat a!2
 (vfmsub132_double ((_ extract 63 0) ymm2)
 (vfmsub132_double a!4
 ((_ extract 63 0) ymm3)

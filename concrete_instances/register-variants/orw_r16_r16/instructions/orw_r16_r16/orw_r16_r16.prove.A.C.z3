@@ -122,14 +122,18 @@
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmsub213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd213_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
 ( push )
 ( echo "orw_r16_r16::af")
 (assert (not (=
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -139,9 +143,9 @@ TMP_BOOL
 ( push )
 ( echo "orw_r16_r16::cf")
 (assert (not (=
-false
+#b0
 
-false
+#b0
 )))
 (check-sat)
 ( pop )
@@ -151,9 +155,9 @@ false
 ( push )
 ( echo "orw_r16_r16::of")
 (assert (not (=
-false
+#b0
 
-false
+#b0
 )))
 (check-sat)
 ( pop )
@@ -171,7 +175,7 @@ false
 (= (bvor ((_ extract 5 5) rcx) ((_ extract 5 5) rbx)) #b1)
 (= (bvor ((_ extract 6 6) rcx) ((_ extract 6 6) rbx)) #b1)
 (= (bvor ((_ extract 7 7) rcx) ((_ extract 7 7) rbx)) #b1))))
-(not a!1))
+(ite (not a!1) #b1 #b0))
 
 (let ((a!1 (xor (= (bvor ((_ extract 0 0) rbx) ((_ extract 0 0) rcx)) #b1)
 (= (bvor ((_ extract 1 1) rbx) ((_ extract 1 1) rcx)) #b1)
@@ -181,7 +185,7 @@ false
 (= (bvor ((_ extract 5 5) rbx) ((_ extract 5 5) rcx)) #b1)
 (= (bvor ((_ extract 6 6) rbx) ((_ extract 6 6) rcx)) #b1)
 (= (bvor ((_ extract 7 7) rbx) ((_ extract 7 7) rcx)) #b1))))
-(not a!1))
+(ite (not a!1) #b1 #b0))
 )))
 (check-sat)
 ( pop )
@@ -205,13 +209,10 @@ false
 ( push )
 ( echo "orw_r16_r16::sf")
 (assert (not (=
-(let ((a!1 (bvor ((_ extract 63 63)
-((_ sign_extend 48) ((_ extract 15 0) rcx)))
-((_ extract 63 63)
-((_ sign_extend 48) ((_ extract 15 0) rbx))))))
-(= a!1 #b1))
+(bvor ((_ extract 63 63) ((_ sign_extend 48) ((_ extract 15 0) rcx)))
+((_ extract 63 63) ((_ sign_extend 48) ((_ extract 15 0) rbx))))
 
-(= (bvor ((_ extract 15 15) rbx) ((_ extract 15 15) rcx)) #b1)
+(ite (= (bvor ((_ extract 15 15) rbx) ((_ extract 15 15) rcx)) #b1) #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -221,11 +222,12 @@ false
 ( push )
 ( echo "orw_r16_r16::zf")
 (assert (not (=
-(= (bvor ((_ sign_extend 48) ((_ extract 15 0) rcx))
+(let ((a!1 (= (bvor ((_ sign_extend 48) ((_ extract 15 0) rcx))
 ((_ sign_extend 48) ((_ extract 15 0) rbx)))
-#x0000000000000000)
+#x0000000000000000)))
+(ite a!1 #b1 #b0))
 
-(= (bvor ((_ extract 15 0) rbx) ((_ extract 15 0) rcx)) #x0000)
+(ite (= (bvor ((_ extract 15 0) rbx) ((_ extract 15 0) rcx)) #x0000) #b1 #b0)
 )))
 (check-sat)
 ( pop )

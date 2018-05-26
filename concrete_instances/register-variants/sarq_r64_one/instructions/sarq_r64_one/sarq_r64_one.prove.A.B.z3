@@ -122,14 +122,18 @@
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmsub213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd213_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
 ( push )
 ( echo "sarq_r64_one::af")
 (assert (not (=
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 
-(or (and true TMP_BOOL) (and false af))
+(ite (or (and true TMP_BOOL) (and false af)) #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -144,14 +148,14 @@ TMP_BOOL
 (concat #b000000000000000000000000000000000000000000000000000000000
 #x01)))
 #b1)))
-(or (and true a!1) false))
+(ite (or (and true a!1) false) #b1 #b0))
 
 (let ((a!1 (= ((_ extract 0 0)
 (bvashr (concat rbx #b0)
 (concat #b000000000000000000000000000000000000000000000000000000000
 #x01)))
 #b1)))
-(or (and true a!1) (and false cf)))
+(ite (or (and true a!1) (and false cf)) #b1 #b0))
 )))
 (check-sat)
 ( pop )
@@ -161,9 +165,9 @@ TMP_BOOL
 ( push )
 ( echo "sarq_r64_one::of")
 (assert (not (=
-false
+#b0
 
-(or false (and false of))
+(ite (or false (and false of)) #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -213,7 +217,7 @@ false
 (concat #b000000000000000000000000000000000000000000000000000000000
 #x01)))
 #b1)))
-(not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)))
+(ite (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)) #b1 #b0))
 
 (let ((a!1 (= ((_ extract 1 1)
 (bvashr (concat rbx #b0)
@@ -255,7 +259,9 @@ false
 (concat #b000000000000000000000000000000000000000000000000000000000
 #x01)))
 #b1)))
-(or (and true (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8))) (and false pf)))
+(let ((a!9 (or (and true (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)))
+(and false pf))))
+(ite a!9 #b1 #b0)))
 )))
 (check-sat)
 ( pop )
@@ -283,18 +289,17 @@ false
 ( push )
 ( echo "sarq_r64_one::sf")
 (assert (not (=
-(= ((_ extract 64 64)
+((_ extract 64 64)
 (bvashr (concat rbx #b0)
 (concat #b000000000000000000000000000000000000000000000000000000000
 #x01)))
-#b1)
 
 (let ((a!1 (= ((_ extract 64 64)
 (bvashr (concat rbx #b0)
 (concat #b000000000000000000000000000000000000000000000000000000000
 #x01)))
 #b1)))
-(or (and true a!1) (and false sf)))
+(ite (or (and true a!1) (and false sf)) #b1 #b0))
 )))
 (check-sat)
 ( pop )
@@ -304,18 +309,19 @@ false
 ( push )
 ( echo "sarq_r64_one::zf")
 (assert (not (=
-(= ((_ extract 64 1)
+(let ((a!1 (= ((_ extract 64 1)
 (bvashr (concat rbx #b0)
 (concat #b000000000000000000000000000000000000000000000000000000000
 #x01)))
-#x0000000000000000)
+#x0000000000000000)))
+(ite a!1 #b1 #b0))
 
 (let ((a!1 (= ((_ extract 64 1)
 (bvashr (concat rbx #b0)
 (concat #b000000000000000000000000000000000000000000000000000000000
 #x01)))
 #x0000000000000000)))
-(or (and true a!1) (and false zf)))
+(ite (or (and true a!1) (and false zf)) #b1 #b0))
 )))
 (check-sat)
 ( pop )

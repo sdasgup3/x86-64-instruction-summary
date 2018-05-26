@@ -122,6 +122,10 @@
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmsub213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd213_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
 ( push )
@@ -143,19 +147,19 @@
 (bvxor (concat ((_ extract 159 128) ymm3)
 ((_ extract 159 128) ymm2))
 #xffffffffffffffff)))
-(a!14 (concat #b0
+(a!13 (concat #b0
 (bvxor (concat ((_ extract 127 96) ymm3)
 ((_ extract 127 96) ymm2))
 #xffffffffffffffff)))
-(a!17 (concat #b0
+(a!16 (concat #b0
 (bvxor (concat ((_ extract 95 64) ymm3)
 ((_ extract 95 64) ymm2))
 #xffffffffffffffff)))
-(a!20 (concat #b0
+(a!19 (concat #b0
 (bvxor (concat ((_ extract 63 32) ymm3)
 ((_ extract 63 32) ymm2))
 #xffffffffffffffff)))
-(a!23 (concat #b0
+(a!22 (concat #b0
 (bvxor (concat ((_ extract 31 0) ymm3)
 ((_ extract 31 0) ymm2))
 #xffffffffffffffff))))
@@ -179,30 +183,35 @@
 (concat #b0
 (concat ((_ extract 159 128) ymm2)
 ((_ extract 159 128) ymm2)))))
-(a!15 (bvadd a!14
+(a!14 (bvadd a!13
 #b00000000000000000000000000000000000000000000000000000000000000001
 (concat #b0
 (concat ((_ extract 127 96) ymm2)
 ((_ extract 127 96) ymm2)))))
-(a!18 (bvadd a!17
+(a!17 (bvadd a!16
 #b00000000000000000000000000000000000000000000000000000000000000001
 (concat #b0
 (concat ((_ extract 95 64) ymm2)
 ((_ extract 95 64) ymm2)))))
-(a!21 (bvadd a!20
+(a!20 (bvadd a!19
 #b00000000000000000000000000000000000000000000000000000000000000001
 (concat #b0
 (concat ((_ extract 63 32) ymm2)
 ((_ extract 63 32) ymm2)))))
-(a!24 (bvadd a!23
+(a!23 (bvadd a!22
 #b00000000000000000000000000000000000000000000000000000000000000001
 (concat #b0
 (concat ((_ extract 31 0) ymm2)
 ((_ extract 31 0) ymm2))))))
-(let ((a!3 (bvadd (concat #b0 (concat #x00000000 ((_ extract 63 32) a!2)))
-(concat #b0 (concat #x00000000 ((_ extract 31 0) a!2)))))
-(a!6 (bvadd (concat #b0 ((_ extract 63 0) a!5))
-(concat #b0 (concat #x00000000 ((_ extract 63 32) a!5)))))
+(let ((a!3 ((_ extract 31 0)
+(bvadd (concat #b000000000000000000000000000000000
+((_ extract 63 32) a!2))
+(concat #b000000000000000000000000000000000
+((_ extract 31 0) a!2)))))
+(a!6 ((_ extract 31 0)
+(bvadd (concat #b0 ((_ extract 63 0) a!5))
+(concat #b000000000000000000000000000000000
+((_ extract 63 32) a!5)))))
 (a!9 (bvadd (concat #b0
 (concat ((_ extract 63 32) a!8)
 ((_ extract 63 32) a!8)))
@@ -211,27 +220,27 @@
 (concat ((_ extract 63 32) a!11)
 ((_ extract 63 32) a!11)))
 (concat #b0 ((_ extract 63 0) a!11))))
-(a!16 (bvadd (concat #b0 (concat #x00000000 ((_ extract 63 32) a!15)))
-(concat #b0 (concat #x00000000 ((_ extract 31 0) a!15)))))
-(a!19 (bvadd (concat #b0 ((_ extract 63 0) a!18))
-(concat #b0 (concat #x00000000 ((_ extract 63 32) a!18)))))
-(a!22 (bvadd (concat #b0
-(concat ((_ extract 63 32) a!21)
-((_ extract 63 32) a!21)))
-(concat #b0 ((_ extract 63 0) a!21))))
-(a!25 (bvadd (concat #b0
-(concat ((_ extract 63 32) a!24)
-((_ extract 63 32) a!24)))
-(concat #b0 ((_ extract 63 0) a!24)))))
-(let ((a!13 (concat (concat (concat ((_ extract 31 0) a!3)
-((_ extract 31 0) a!6))
-((_ extract 31 0) a!9))
-((_ extract 31 0) a!12)))
-(a!26 (concat (concat (concat ((_ extract 31 0) a!16)
-((_ extract 31 0) a!19))
-((_ extract 31 0) a!22))
-((_ extract 31 0) a!25))))
-(concat a!13 a!26)))))
+(a!15 ((_ extract 31 0)
+(bvadd (concat #b000000000000000000000000000000000
+((_ extract 63 32) a!14))
+(concat #b000000000000000000000000000000000
+((_ extract 31 0) a!14)))))
+(a!18 ((_ extract 31 0)
+(bvadd (concat #b0 ((_ extract 63 0) a!17))
+(concat #b000000000000000000000000000000000
+((_ extract 63 32) a!17)))))
+(a!21 (bvadd (concat #b0
+(concat ((_ extract 63 32) a!20)
+((_ extract 63 32) a!20)))
+(concat #b0 ((_ extract 63 0) a!20))))
+(a!24 (bvadd (concat #b0
+(concat ((_ extract 63 32) a!23)
+((_ extract 63 32) a!23)))
+(concat #b0 ((_ extract 63 0) a!23)))))
+(concat (concat (concat (concat a!3 a!6) ((_ extract 31 0) a!9))
+((_ extract 31 0) a!12))
+(concat (concat (concat a!15 a!18) ((_ extract 31 0) a!21))
+((_ extract 31 0) a!24))))))
 
 (let ((a!1 (concat (bvsub ((_ extract 95 64) ymm2) ((_ extract 95 64) ymm3))
 (concat (bvsub ((_ extract 63 32) ymm2)

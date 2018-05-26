@@ -122,6 +122,10 @@
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmsub213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd213_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
 ( push )
@@ -135,9 +139,14 @@
 (a!2 (ite (= (maxcmp_double ((_ extract 63 0) ymm1)
 ((_ extract 63 0) ymm2))
 #b1)
-((_ extract 63 0) ymm1)
-((_ extract 63 0) ymm2))))
-(concat ((_ extract 255 128) ymm1) (concat a!1 a!2)))
+((_ extract 63 32) ymm1)
+((_ extract 63 32) ymm2)))
+(a!3 (ite (= (maxcmp_double ((_ extract 63 0) ymm1)
+((_ extract 63 0) ymm2))
+#b1)
+((_ extract 31 0) ymm1)
+((_ extract 31 0) ymm2))))
+(concat ((_ extract 255 128) ymm1) (concat (concat a!1 a!2) a!3)))
 
 (let ((a!1 (ite (= (maxcmp_double ((_ extract 127 64) ymm1)
 ((_ extract 127 64) ymm2))

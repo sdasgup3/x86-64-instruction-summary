@@ -122,21 +122,24 @@
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmsub213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd213_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
 ( push )
 ( echo "mulps_xmm_xmm::ymm1")
 (assert (not (=
-(let ((a!1 (concat (mul_single ((_ extract 95 64) ymm1)
-((_ extract 95 64) ymm2))
-(concat (mul_single ((_ extract 63 32) ymm1)
-((_ extract 63 32) ymm2))
-(mul_single ((_ extract 31 0) ymm1)
-((_ extract 31 0) ymm2))))))
-(concat ((_ extract 255 128) ymm1)
-(concat (mul_single ((_ extract 127 96) ymm1)
+(let ((a!1 (concat (concat (mul_single ((_ extract 127 96) ymm1)
 ((_ extract 127 96) ymm2))
-a!1)))
+(mul_single ((_ extract 95 64) ymm1)
+((_ extract 95 64) ymm2)))
+(mul_single ((_ extract 63 32) ymm1)
+((_ extract 63 32) ymm2)))))
+(concat ((_ extract 255 128) ymm1)
+(concat a!1
+(mul_single ((_ extract 31 0) ymm1) ((_ extract 31 0) ymm2)))))
 
 (let ((a!1 (concat (mul_single ((_ extract 95 64) ymm1)
 ((_ extract 95 64) ymm2))
