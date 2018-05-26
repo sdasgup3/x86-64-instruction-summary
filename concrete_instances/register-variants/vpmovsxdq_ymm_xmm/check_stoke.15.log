@@ -1,6 +1,6 @@
 [4m[1m[34mFiring Last 1[0m
 Thread 1 start: vpmovsxdq_ymm_xmm
-timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/register-variants/vpmovsxdq_ymm_xmm/instructions/vpmovsxdq_ymm_xmm/vpmovsxdq_ymm_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 }" --live_out "{ %ymm1 }" 
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit  --target concrete_instances/register-variants/vpmovsxdq_ymm_xmm/instructions/vpmovsxdq_ymm_xmm/vpmovsxdq_ymm_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 }" --live_out "{ %ymm1 }" 
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
@@ -8,5 +8,9 @@ Collect Results
 Check Equivalence
 Completed 1000cases
 Completed 2000cases
-Execution time vpmovsxdq_ymm_xmm: 1801 s
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpmovsxdq_ymm_xmm: 52 s
 Thread 1 done!: vpmovsxdq_ymm_xmm
