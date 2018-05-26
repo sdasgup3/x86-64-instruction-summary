@@ -8,8 +8,6 @@ code: cbtw
   must undef:      { }
   required flags:  { }
 
-cbtw: Hindex1(9)
-cbtw: Hindex1(9)
 Formula:
 
 %rax   : (concat ((_ extract 63 16) %rax) ((_ sign_extend 8) ((_ extract 7 0) %rax)))

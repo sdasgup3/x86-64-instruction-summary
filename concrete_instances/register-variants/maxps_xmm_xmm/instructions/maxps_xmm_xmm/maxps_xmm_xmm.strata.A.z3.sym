@@ -31,8 +31,12 @@ Formula:
                 ((_ extract 31 0) %ymm1)
                 ((_ extract 31 0) %ymm2))))
   (concat ((_ extract 255 128) %ymm1)
-          (concat a!1 (concat a!2 (concat a!3 a!4)))))
+          (concat (concat a!1 a!2) (concat a!3 a!4))))
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

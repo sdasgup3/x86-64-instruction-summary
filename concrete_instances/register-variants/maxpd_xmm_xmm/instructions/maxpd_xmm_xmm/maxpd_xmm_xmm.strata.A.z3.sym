@@ -18,10 +18,19 @@ Formula:
       (a!2 (ite (= (maxcmp_double ((_ extract 63 0) %ymm1)
                                   ((_ extract 63 0) %ymm2))
                    #b1)
-                ((_ extract 63 0) %ymm1)
-                ((_ extract 63 0) %ymm2))))
-  (concat ((_ extract 255 128) %ymm1) (concat a!1 a!2)))
+                ((_ extract 63 32) %ymm1)
+                ((_ extract 63 32) %ymm2)))
+      (a!3 (ite (= (maxcmp_double ((_ extract 63 0) %ymm1)
+                                  ((_ extract 63 0) %ymm2))
+                   #b1)
+                ((_ extract 31 0) %ymm1)
+                ((_ extract 31 0) %ymm2))))
+  (concat ((_ extract 255 128) %ymm1) (concat (concat a!1 a!2) a!3)))
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

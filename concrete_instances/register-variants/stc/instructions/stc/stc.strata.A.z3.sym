@@ -10,8 +10,12 @@ code: stc
 
 Formula:
 
-%cf    : true
+%cf    : #b1
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

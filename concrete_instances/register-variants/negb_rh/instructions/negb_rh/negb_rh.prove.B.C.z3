@@ -122,16 +122,20 @@
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmsub213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd213_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
 ( push )
 ( echo "negb_rh::af")
 (assert (not (=
 (let ((a!1 (= ((_ extract 3 3) (bvneg ((_ extract 15 8) rax))) #b1)))
-(and (= ((_ extract 11 11) rax) #b1) a!1))
+(ite (and (= ((_ extract 11 11) rax) #b1) a!1) #b1 #b0))
 
 (let ((a!1 (= ((_ extract 3 3) (bvneg ((_ extract 15 8) rax))) #b1)))
-(and (= ((_ extract 11 11) rax) #b1) a!1))
+(ite (and (= ((_ extract 11 11) rax) #b1) a!1) #b1 #b0))
 )))
 (check-sat)
 ( pop )
@@ -141,9 +145,9 @@
 ( push )
 ( echo "negb_rh::cf")
 (assert (not (=
-(not (= ((_ extract 15 8) rax) #x00))
+(ite (not (= ((_ extract 15 8) rax) #x00)) #b1 #b0)
 
-(not (= ((_ extract 15 8) rax) #x00))
+(ite (not (= ((_ extract 15 8) rax) #x00)) #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -154,10 +158,10 @@
 ( echo "negb_rh::of")
 (assert (not (=
 (let ((a!1 (= ((_ extract 7 7) (bvneg ((_ extract 15 8) rax))) #b1)))
-(and (= ((_ extract 15 15) rax) #b1) a!1))
+(ite (and (= ((_ extract 15 15) rax) #b1) a!1) #b1 #b0))
 
 (let ((a!1 (= ((_ extract 7 7) (bvneg ((_ extract 15 8) rax))) #b1)))
-(and (= ((_ extract 15 15) rax) #b1) a!1))
+(ite (and (= ((_ extract 15 15) rax) #b1) a!1) #b1 #b0))
 )))
 (check-sat)
 ( pop )
@@ -175,7 +179,7 @@
 (a!6 (= ((_ extract 5 5) (bvneg ((_ extract 15 8) rax))) #b1))
 (a!7 (= ((_ extract 6 6) (bvneg ((_ extract 15 8) rax))) #b1))
 (a!8 (= ((_ extract 7 7) (bvneg ((_ extract 15 8) rax))) #b1)))
-(not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)))
+(ite (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)) #b1 #b0))
 
 (let ((a!1 (= ((_ extract 0 0) (bvneg ((_ extract 15 8) rax))) #b1))
 (a!2 (= ((_ extract 1 1) (bvneg ((_ extract 15 8) rax))) #b1))
@@ -185,7 +189,7 @@
 (a!6 (= ((_ extract 5 5) (bvneg ((_ extract 15 8) rax))) #b1))
 (a!7 (= ((_ extract 6 6) (bvneg ((_ extract 15 8) rax))) #b1))
 (a!8 (= ((_ extract 7 7) (bvneg ((_ extract 15 8) rax))) #b1)))
-(not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)))
+(ite (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)) #b1 #b0))
 )))
 (check-sat)
 ( pop )
@@ -209,9 +213,10 @@
 ( push )
 ( echo "negb_rh::sf")
 (assert (not (=
-(= ((_ extract 7 7) (bvneg ((_ extract 15 8) rax))) #b1)
+((_ extract 7 7) (bvneg ((_ extract 15 8) rax)))
 
-(= ((_ extract 7 7) (bvneg ((_ extract 15 8) rax))) #b1)
+(let ((a!1 (= ((_ extract 7 7) (bvneg ((_ extract 15 8) rax))) #b1)))
+(ite a!1 #b1 #b0))
 )))
 (check-sat)
 ( pop )
@@ -221,9 +226,9 @@
 ( push )
 ( echo "negb_rh::zf")
 (assert (not (=
-(= (bvneg ((_ extract 15 8) rax)) #x00)
+(ite (= (bvneg ((_ extract 15 8) rax)) #x00) #b1 #b0)
 
-(= (bvneg ((_ extract 15 8) rax)) #x00)
+(ite (= (bvneg ((_ extract 15 8) rax)) #x00) #b1 #b0)
 )))
 (check-sat)
 ( pop )

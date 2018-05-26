@@ -8,8 +8,6 @@ code: vbroadcastsd %xmm2, %ymm1
   must undef:      { }
   required flags:  { avx2 }
 
-vbroadcastsd %xmm2, %ymm1: Hindex1(9)
-vbroadcastsd %xmm2, %ymm1: Hindex1(9)
 Formula:
 
 %ymm1  : (concat (concat (concat ((_ extract 63 0) %ymm2) ((_ extract 63 0) %ymm2))

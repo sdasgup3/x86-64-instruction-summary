@@ -30,9 +30,13 @@ Formula:
                    #b1)
                 ((_ extract 31 0) %ymm2)
                 ((_ extract 31 0) %ymm3))))
-(let ((a!5 (concat #x00000000 (concat a!1 (concat a!2 (concat a!3 a!4))))))
-  (concat #x00000000 (concat #x00000000 (concat #x00000000 a!5)))))
+  (concat #x00000000000000000000000000000000
+          (concat a!1 (concat a!2 (concat a!3 a!4)))))
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

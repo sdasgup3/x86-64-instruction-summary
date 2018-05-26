@@ -8,8 +8,6 @@ code: setne %bl
   must undef:      { }
   required flags:  { }
 
-setne %bl: Hindex3(9)
-setne %bl: Hindex3(9)
 Formula:
 
 %rbx   : (concat ((_ extract 63 8) %rbx) (ite (not %zf) #x01 #x00))

@@ -12,6 +12,10 @@ Formula:
 
 %rbx   : (bvxor (concat #x00000000 ((_ extract 31 0) %rbx)) #x00000000ffffffff)
 
+
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

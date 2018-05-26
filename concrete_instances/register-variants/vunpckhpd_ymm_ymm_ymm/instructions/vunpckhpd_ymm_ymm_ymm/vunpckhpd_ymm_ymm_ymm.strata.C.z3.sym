@@ -8,8 +8,6 @@ code: vunpckhpd %ymm3, %ymm2, %ymm1
   must undef:      { }
   required flags:  { avx }
 
-vunpckhpd %ymm3, %ymm2, %ymm1: Hindex0(9)
-vunpckhpd %ymm3, %ymm2, %ymm1: Hindex0(9)
 Formula:
 
 %ymm1  : (concat (concat ((_ extract 255 192) %ymm3) ((_ extract 255 192) %ymm2))

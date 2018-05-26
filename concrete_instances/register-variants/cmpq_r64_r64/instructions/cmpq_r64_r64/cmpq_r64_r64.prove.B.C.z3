@@ -122,20 +122,23 @@
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmsub213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd213_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
 ( push )
 ( echo "cmpq_r64_r64::af")
 (assert (not (=
-(let ((a!1 ((_ extract 4 4)
+((_ extract 4 4)
 (bvadd (concat #b0 ((_ extract 3 0) rcx))
-(concat #b0 ((_ extract 3 0) rbx))))))
-(= a!1 #b1))
+(concat #b0 ((_ extract 3 0) rbx))))
 
 (let ((a!1 ((_ extract 4 4)
 (bvadd (concat #b0 ((_ extract 3 0) rcx))
 (concat #b0 ((_ extract 3 0) rbx))))))
-(= a!1 #b1))
+(ite (= a!1 #b1) #b1 #b0))
 )))
 (check-sat)
 ( pop )
@@ -149,13 +152,13 @@
 (bvadd (concat #b0 (bvnot rcx))
 #b00000000000000000000000000000000000000000000000000000000000000001
 (concat #b0 rbx)))))
-(not (= a!1 #b1)))
+(ite (not (= a!1 #b1)) #b1 #b0))
 
 (let ((a!1 ((_ extract 64 64)
 (bvadd (concat #b0 (bvnot rcx))
 #b00000000000000000000000000000000000000000000000000000000000000001
 (concat #b0 rbx)))))
-(not (= a!1 #b1)))
+(ite (not (= a!1 #b1)) #b1 #b0))
 )))
 (check-sat)
 ( pop )
@@ -172,7 +175,7 @@
 #b00000000000000000000000000000000000000000000000000000000000000001
 (concat #b0 rbx)))))
 (let ((a!3 (= (= (bvnot ((_ extract 63 63) rcx)) #b1) (= a!2 #b1))))
-(and a!1 (not a!3))))
+(ite (and a!1 (not a!3)) #b1 #b0)))
 
 (let ((a!1 (= (= (bvnot ((_ extract 63 63) rcx)) #b1)
 (= ((_ extract 63 63) rbx) #b1)))
@@ -181,7 +184,7 @@
 #b00000000000000000000000000000000000000000000000000000000000000001
 (concat #b0 rbx)))))
 (let ((a!3 (= (= (bvnot ((_ extract 63 63) rcx)) #b1) (= a!2 #b1))))
-(and a!1 (not a!3))))
+(ite (and a!1 (not a!3)) #b1 #b0)))
 )))
 (check-sat)
 ( pop )
@@ -223,14 +226,16 @@
 (bvadd (concat #b0 (bvnot rcx))
 #b00000000000000000000000000000000000000000000000000000000000000001
 (concat #b0 rbx)))))
-(not (xor (= a!1 #b1)
+(ite (not (xor (= a!1 #b1)
 (= a!2 #b1)
 (= a!3 #b1)
 (= a!4 #b1)
 (= a!5 #b1)
 (= a!6 #b1)
 (= a!7 #b1)
-(= a!8 #b1))))
+(= a!8 #b1)))
+#b1
+#b0))
 
 (let ((a!1 ((_ extract 0 0)
 (bvadd (concat #b0 (bvnot rcx))
@@ -264,14 +269,16 @@
 (bvadd (concat #b0 (bvnot rcx))
 #b00000000000000000000000000000000000000000000000000000000000000001
 (concat #b0 rbx)))))
-(not (xor (= a!1 #b1)
+(ite (not (xor (= a!1 #b1)
 (= a!2 #b1)
 (= a!3 #b1)
 (= a!4 #b1)
 (= a!5 #b1)
 (= a!6 #b1)
 (= a!7 #b1)
-(= a!8 #b1))))
+(= a!8 #b1)))
+#b1
+#b0))
 )))
 (check-sat)
 ( pop )
@@ -281,17 +288,16 @@
 ( push )
 ( echo "cmpq_r64_r64::sf")
 (assert (not (=
-(let ((a!1 ((_ extract 63 63)
+((_ extract 63 63)
 (bvadd (concat #b0 (bvnot rcx))
 #b00000000000000000000000000000000000000000000000000000000000000001
-(concat #b0 rbx)))))
-(= a!1 #b1))
+(concat #b0 rbx)))
 
 (let ((a!1 ((_ extract 63 63)
 (bvadd (concat #b0 (bvnot rcx))
 #b00000000000000000000000000000000000000000000000000000000000000001
 (concat #b0 rbx)))))
-(= a!1 #b1))
+(ite (= a!1 #b1) #b1 #b0))
 )))
 (check-sat)
 ( pop )
@@ -305,13 +311,13 @@
 (bvadd (concat #b0 (bvnot rcx))
 #b00000000000000000000000000000000000000000000000000000000000000001
 (concat #b0 rbx)))))
-(= a!1 #x0000000000000000))
+(ite (= a!1 #x0000000000000000) #b1 #b0))
 
 (let ((a!1 ((_ extract 63 0)
 (bvadd (concat #b0 (bvnot rcx))
 #b00000000000000000000000000000000000000000000000000000000000000001
 (concat #b0 rbx)))))
-(= a!1 #x0000000000000000))
+(ite (= a!1 #x0000000000000000) #b1 #b0))
 )))
 (check-sat)
 ( pop )

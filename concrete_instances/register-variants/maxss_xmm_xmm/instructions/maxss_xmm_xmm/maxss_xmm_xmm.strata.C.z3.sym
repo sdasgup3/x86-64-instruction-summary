@@ -8,8 +8,6 @@ code: maxss %xmm2, %xmm1
   must undef:      { }
   required flags:  { sse }
 
-maxss %xmm2, %xmm1: Hindex1(9)
-maxss %xmm2, %xmm1: Hindex1(9)
 Formula:
 
 %ymm1  : (let ((a!1 (ite (= (maxcmp_single ((_ extract 31 0) %ymm1)

@@ -8,12 +8,9 @@ code: stc
   must undef:      { }
   required flags:  { }
 
-stc: Hindex8(9)
-stc: Hindex8(9)
-callq .set_cf: Hindex8(9)
 Formula:
 
-%cf    : true
+%cf    : #b1
 
 sigfpe  : sigfpe
 sigbus  : sigbus

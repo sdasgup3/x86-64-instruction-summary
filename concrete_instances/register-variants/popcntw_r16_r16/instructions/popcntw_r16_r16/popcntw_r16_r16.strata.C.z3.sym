@@ -8,8 +8,6 @@ code: popcntw %cx, %bx
   must undef:      { }
   required flags:  { popcnt }
 
-popcntw %cx, %bx: Hindex1(9)
-popcntw %cx, %bx: Hindex1(9)
 Formula:
 
 %rbx   : (let ((a!1 (concat #b00
@@ -44,12 +42,12 @@ Formula:
                            (concat #x0 (bvadd a!8 a!9))))))
   (concat ((_ extract 63 16) %rbx) (bvadd a!5 a!10))))
 
-%cf    : false
-%pf    : false
-%af    : false
-%zf    : (= ((_ extract 15 0) %rcx) #x0000)
-%sf    : false
-%of    : false
+%cf    : #b0
+%pf    : #b0
+%af    : #b0
+%zf    : (ite (= ((_ extract 15 0) %rcx) #x0000) #b1 #b0)
+%sf    : #b0
+%of    : #b0
 
 sigfpe  : sigfpe
 sigbus  : sigbus

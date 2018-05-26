@@ -10,13 +10,17 @@ code: cvttpd2dq %xmm2, %xmm1
 
 Formula:
 
-%ymm1  : (let ((a!1 (concat #x00000000
+%ymm1  : (let ((a!1 (concat #x0000000000000000
                    (concat (cvt_double_to_int32_truncate
                              ((_ extract 127 64) %ymm2))
                            (cvt_double_to_int32_truncate
                              ((_ extract 63 0) %ymm2))))))
-  (concat ((_ extract 255 128) %ymm1) (concat #x00000000 a!1)))
+  (concat ((_ extract 255 128) %ymm1) a!1))
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

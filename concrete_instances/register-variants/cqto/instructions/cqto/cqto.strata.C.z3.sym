@@ -8,8 +8,6 @@ code: cqto
   must undef:      { }
   required flags:  { }
 
-cqto: Hindex1(9)
-cqto: Hindex1(9)
 Formula:
 
 %rdx   : ((_ extract 127 64) ((_ sign_extend 64) %rax))

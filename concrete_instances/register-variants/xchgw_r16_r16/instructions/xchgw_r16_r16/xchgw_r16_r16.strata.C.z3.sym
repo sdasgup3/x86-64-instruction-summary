@@ -8,8 +8,6 @@ code: xchgw %cx, %bx
   must undef:      { }
   required flags:  { }
 
-xchgw %cx, %bx: Hindex1(9)
-xchgw %cx, %bx: Hindex1(9)
 Formula:
 
 %rcx   : (concat ((_ extract 63 16) %rcx) ((_ extract 15 0) %rbx))

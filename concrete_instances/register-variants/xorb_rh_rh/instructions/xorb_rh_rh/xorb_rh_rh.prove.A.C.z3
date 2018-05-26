@@ -122,14 +122,18 @@
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmsub213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd213_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
 ( push )
 ( echo "xorb_rh_rh::af")
 (assert (not (=
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -139,9 +143,9 @@ TMP_BOOL
 ( push )
 ( echo "xorb_rh_rh::cf")
 (assert (not (=
-false
+#b0
 
-false
+#b0
 )))
 (check-sat)
 ( pop )
@@ -151,9 +155,9 @@ false
 ( push )
 ( echo "xorb_rh_rh::of")
 (assert (not (=
-false
+#b0
 
-false
+#b0
 )))
 (check-sat)
 ( pop )
@@ -177,7 +181,7 @@ false
 #b1)
 (= (bvxor ((_ extract 15 15) rbx) ((_ extract 15 15) rax))
 #b1))))
-(not a!1))
+(ite (not a!1) #b1 #b0))
 
 (let ((a!1 (xor (= (bvxor ((_ extract 8 8) rax) ((_ extract 8 8) rbx)) #b1)
 (= (bvxor ((_ extract 9 9) rax) ((_ extract 9 9) rbx)) #b1)
@@ -193,7 +197,7 @@ false
 #b1)
 (= (bvxor ((_ extract 15 15) rax) ((_ extract 15 15) rbx))
 #b1))))
-(not a!1))
+(ite (not a!1) #b1 #b0))
 )))
 (check-sat)
 ( pop )
@@ -219,9 +223,9 @@ false
 ( push )
 ( echo "xorb_rh_rh::sf")
 (assert (not (=
-(= (bvxor ((_ extract 15 15) rbx) ((_ extract 15 15) rax)) #b1)
+(bvxor ((_ extract 15 15) rbx) ((_ extract 15 15) rax))
 
-(= (bvxor ((_ extract 15 15) rax) ((_ extract 15 15) rbx)) #b1)
+(ite (= (bvxor ((_ extract 15 15) rax) ((_ extract 15 15) rbx)) #b1) #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -231,9 +235,9 @@ false
 ( push )
 ( echo "xorb_rh_rh::zf")
 (assert (not (=
-(= (bvxor ((_ extract 15 8) rbx) ((_ extract 15 8) rax)) #x00)
+(ite (= (bvxor ((_ extract 15 8) rbx) ((_ extract 15 8) rax)) #x00) #b1 #b0)
 
-(= (bvxor ((_ extract 15 8) rax) ((_ extract 15 8) rbx)) #x00)
+(ite (= (bvxor ((_ extract 15 8) rax) ((_ extract 15 8) rbx)) #x00) #b1 #b0)
 )))
 (check-sat)
 ( pop )

@@ -8,9 +8,6 @@ code: vmovdqa %ymm2, %ymm1
   must undef:      { }
   required flags:  { avx }
 
-vmovdqa %ymm2, %ymm1: Hindex8(9)
-vmovdqa %ymm2, %ymm1: Hindex8(9)
-vminpd %ymm2, %ymm2, %ymm1: Hindex0(9)
 Formula:
 
 %ymm1  : %ymm2

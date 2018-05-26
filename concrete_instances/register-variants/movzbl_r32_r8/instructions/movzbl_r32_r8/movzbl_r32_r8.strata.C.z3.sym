@@ -8,8 +8,6 @@ code: movzbl %cl, %ebx
   must undef:      { }
   required flags:  { }
 
-movzbl %cl, %ebx: Hindex5(9)
-movzbl %cl, %ebx: Hindex5(9)
 Formula:
 
 %rbx   : (concat #x00000000 (concat #x000000 ((_ extract 7 0) %rcx)))

@@ -8,8 +8,6 @@ code: notl %ebx
   must undef:      { }
   required flags:  { }
 
-notl %ebx: Hindex1(9)
-notl %ebx: Hindex1(9)
 Formula:
 
 %rbx   : (concat #x00000000 (bvnot ((_ extract 31 0) %rbx)))

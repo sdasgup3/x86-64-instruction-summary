@@ -12,6 +12,7 @@ Formula:
 
 %rbx   : (concat ((_ extract 63 16) %rbx) (bvsub ((_ extract 15 0) %rbx) #x0001))
 
+
 %pf    : (let ((a!1 (= ((_ extract 0 0) (bvsub ((_ extract 15 0) %rbx) #x0001)) #b1))
       (a!2 (= ((_ extract 1 1) (bvsub ((_ extract 15 0) %rbx) #x0001)) #b1))
       (a!3 (= ((_ extract 2 2) (bvsub ((_ extract 15 0) %rbx) #x0001)) #b1))
@@ -20,13 +21,23 @@ Formula:
       (a!6 (= ((_ extract 5 5) (bvsub ((_ extract 15 0) %rbx) #x0001)) #b1))
       (a!7 (= ((_ extract 6 6) (bvsub ((_ extract 15 0) %rbx) #x0001)) #b1))
       (a!8 (= ((_ extract 7 7) (bvsub ((_ extract 15 0) %rbx) #x0001)) #b1)))
-  (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)))
-%af    : (= ((_ extract 3 0) %rbx) #x0)
-%zf    : (= (bvsub ((_ extract 15 0) %rbx) #x0001) #x0000)
-%sf    : (= ((_ extract 15 15) (bvsub ((_ extract 15 0) %rbx) #x0001)) #b1)
-%of    : (and (= ((_ extract 15 15) %rbx) #b1)
-     (= ((_ extract 14 0) %rbx) #b000000000000000))
+  (ite (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)) #b1 #b0))
+
+%af    : (ite (= ((_ extract 3 0) %rbx) #x0) #b1 #b0)
+
+%zf    : (ite (= (bvsub ((_ extract 15 0) %rbx) #x0001) #x0000) #b1 #b0)
+
+%sf    : ((_ extract 15 15) (bvsub ((_ extract 15 0) %rbx) #x0001))
+
+%of    : (ite (and (= ((_ extract 15 15) %rbx) #b1)
+          (= ((_ extract 14 0) %rbx) #b000000000000000))
+     #b1
+     #b0)
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

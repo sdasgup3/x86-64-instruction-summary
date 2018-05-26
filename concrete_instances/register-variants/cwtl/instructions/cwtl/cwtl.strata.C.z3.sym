@@ -8,8 +8,6 @@ code: cwtl
   must undef:      { }
   required flags:  { }
 
-cwtl: Hindex1(9)
-cwtl: Hindex1(9)
 Formula:
 
 %rax   : (concat #x00000000 ((_ sign_extend 16) ((_ extract 15 0) %rax)))

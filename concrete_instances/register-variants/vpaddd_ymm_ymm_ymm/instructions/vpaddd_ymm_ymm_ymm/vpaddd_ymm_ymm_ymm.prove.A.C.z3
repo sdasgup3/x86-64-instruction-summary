@@ -122,17 +122,25 @@
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmsub213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd213_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
 ( push )
 ( echo "vpaddd_ymm_ymm_ymm::ymm1")
 (assert (not (=
-(let ((a!1 (bvadd (concat #b0 (concat #x00000000 ((_ extract 255 224) ymm2)))
-(concat #b0 (concat #x00000000 ((_ extract 255 224) ymm3)))))
+(let ((a!1 ((_ extract 31 0)
+(bvadd (concat #b000000000000000000000000000000000
+((_ extract 255 224) ymm2))
+(concat #b000000000000000000000000000000000
+((_ extract 255 224) ymm3)))))
 (a!2 (bvadd (concat #b0
 (concat ((_ extract 223 192) ymm2)
 ((_ extract 223 192) ymm3)))
-(concat #b0 (concat #x00000000 ((_ extract 223 192) ymm2)))))
+(concat #b000000000000000000000000000000000
+((_ extract 223 192) ymm2))))
 (a!3 (bvadd (concat #b0
 (concat ((_ extract 191 160) ymm3)
 ((_ extract 191 160) ymm3)))
@@ -145,12 +153,16 @@
 (concat #b0
 (concat ((_ extract 159 128) ymm3)
 ((_ extract 159 128) ymm2)))))
-(a!6 (bvadd (concat #b0 (concat #x00000000 ((_ extract 127 96) ymm2)))
-(concat #b0 (concat #x00000000 ((_ extract 127 96) ymm3)))))
+(a!6 ((_ extract 31 0)
+(bvadd (concat #b000000000000000000000000000000000
+((_ extract 127 96) ymm2))
+(concat #b000000000000000000000000000000000
+((_ extract 127 96) ymm3)))))
 (a!7 (bvadd (concat #b0
 (concat ((_ extract 95 64) ymm2)
 ((_ extract 95 64) ymm3)))
-(concat #b0 (concat #x00000000 ((_ extract 95 64) ymm2)))))
+(concat #b000000000000000000000000000000000
+((_ extract 95 64) ymm2))))
 (a!8 (bvadd (concat #b0
 (concat ((_ extract 63 32) ymm3)
 ((_ extract 63 32) ymm3)))
@@ -163,12 +175,10 @@
 (concat #b0
 (concat ((_ extract 31 0) ymm3)
 ((_ extract 31 0) ymm2))))))
-(let ((a!5 (concat (concat (concat ((_ extract 31 0) a!1)
-((_ extract 31 0) a!2))
+(let ((a!5 (concat (concat (concat a!1 ((_ extract 31 0) a!2))
 ((_ extract 31 0) a!3))
 ((_ extract 31 0) a!4)))
-(a!10 (concat (concat (concat ((_ extract 31 0) a!6)
-((_ extract 31 0) a!7))
+(a!10 (concat (concat (concat a!6 ((_ extract 31 0) a!7))
 ((_ extract 31 0) a!8))
 ((_ extract 31 0) a!9))))
 (concat a!5 a!10)))

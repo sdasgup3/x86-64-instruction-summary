@@ -12,15 +12,24 @@ Formula:
 
 %rbx   : (bvxor (bvor %rdx %rcx) %rcx)
 
-%cf    : false
-%pf    : TMP_BOOL_2
-%af    : TMP_BOOL_3
-%zf    : (= (bvxor (bvor %rdx %rcx) %rcx) #x0000000000000000)
-%sf    : (= (bvxor (bvor ((_ extract 63 63) %rdx) ((_ extract 63 63) %rcx))
-          ((_ extract 63 63) %rcx))
-   #b1)
-%of    : false
+
+%cf    : #b0
+
+%pf    : (ite TMP_BOOL_2 #b1 #b0)
+
+%af    : (ite TMP_BOOL_3 #b1 #b0)
+
+%zf    : (ite (= (bvxor (bvor %rdx %rcx) %rcx) #x0000000000000000) #b1 #b0)
+
+%sf    : (bvxor (bvor ((_ extract 63 63) %rdx) ((_ extract 63 63) %rcx))
+       ((_ extract 63 63) %rcx))
+
+%of    : #b0
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

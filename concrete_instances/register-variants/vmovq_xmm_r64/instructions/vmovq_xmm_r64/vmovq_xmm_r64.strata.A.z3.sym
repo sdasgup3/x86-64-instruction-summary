@@ -10,9 +10,12 @@ code: vmovq %rbx, %xmm1
 
 Formula:
 
-%ymm1  : (concat #x00000000000000000000000000000000
-        (concat #x0000000000000000 (bvxor #x0000000000000000 %rbx)))
+%ymm1  : (concat #x000000000000000000000000000000000000000000000000 %rbx)
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

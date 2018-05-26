@@ -122,14 +122,18 @@
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmsub213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd213_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
 ( push )
 ( echo "andb_r8_r8::af")
 (assert (not (=
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 
-TMP_BOOL
+(ite TMP_BOOL #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -139,9 +143,9 @@ TMP_BOOL
 ( push )
 ( echo "andb_r8_r8::cf")
 (assert (not (=
-false
+#b0
 
-false
+#b0
 )))
 (check-sat)
 ( pop )
@@ -151,9 +155,9 @@ false
 ( push )
 ( echo "andb_r8_r8::of")
 (assert (not (=
-false
+#b0
 
-false
+#b0
 )))
 (check-sat)
 ( pop )
@@ -171,7 +175,7 @@ false
 (= (bvand ((_ extract 5 5) rbx) ((_ extract 5 5) rcx)) #b1)
 (= (bvand ((_ extract 6 6) rbx) ((_ extract 6 6) rcx)) #b1)
 (= (bvand ((_ extract 7 7) rbx) ((_ extract 7 7) rcx)) #b1))))
-(not a!1))
+(ite (not a!1) #b1 #b0))
 
 (let ((a!1 (xor (= (bvand ((_ extract 0 0) rbx) ((_ extract 0 0) rcx)) #b1)
 (= (bvand ((_ extract 1 1) rbx) ((_ extract 1 1) rcx)) #b1)
@@ -181,7 +185,7 @@ false
 (= (bvand ((_ extract 5 5) rbx) ((_ extract 5 5) rcx)) #b1)
 (= (bvand ((_ extract 6 6) rbx) ((_ extract 6 6) rcx)) #b1)
 (= (bvand ((_ extract 7 7) rbx) ((_ extract 7 7) rcx)) #b1))))
-(not a!1))
+(ite (not a!1) #b1 #b0))
 )))
 (check-sat)
 ( pop )
@@ -205,9 +209,9 @@ false
 ( push )
 ( echo "andb_r8_r8::sf")
 (assert (not (=
-(= (bvand ((_ extract 7 7) rbx) ((_ extract 7 7) rcx)) #b1)
+(bvand ((_ extract 7 7) rbx) ((_ extract 7 7) rcx))
 
-(= (bvand ((_ extract 7 7) rbx) ((_ extract 7 7) rcx)) #b1)
+(ite (= (bvand ((_ extract 7 7) rbx) ((_ extract 7 7) rcx)) #b1) #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -217,9 +221,9 @@ false
 ( push )
 ( echo "andb_r8_r8::zf")
 (assert (not (=
-(= (bvand ((_ extract 7 0) rbx) ((_ extract 7 0) rcx)) #x00)
+(ite (= (bvand ((_ extract 7 0) rbx) ((_ extract 7 0) rcx)) #x00) #b1 #b0)
 
-(= (bvand ((_ extract 7 0) rbx) ((_ extract 7 0) rcx)) #x00)
+(ite (= (bvand ((_ extract 7 0) rbx) ((_ extract 7 0) rcx)) #x00) #b1 #b0)
 )))
 (check-sat)
 ( pop )

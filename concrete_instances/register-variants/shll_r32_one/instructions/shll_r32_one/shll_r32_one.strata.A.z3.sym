@@ -15,10 +15,11 @@ Formula:
                     (concat #b0 ((_ extract 31 0) %rbx))))))
   (concat #x00000000 a!1))
 
-%cf    : (let ((a!1 ((_ extract 32 32)
-             (bvadd (concat #b0 ((_ extract 31 0) %rbx))
-                    (concat #b0 ((_ extract 31 0) %rbx))))))
-  (= a!1 #b1))
+
+%cf    : ((_ extract 32 32)
+  (bvadd (concat #b0 ((_ extract 31 0) %rbx))
+         (concat #b0 ((_ extract 31 0) %rbx))))
+
 %pf    : (let ((a!1 ((_ extract 0 0)
              (bvadd (concat #b0 ((_ extract 31 0) %rbx))
                     (concat #b0 ((_ extract 31 0) %rbx)))))
@@ -43,30 +44,41 @@ Formula:
       (a!8 ((_ extract 7 7)
              (bvadd (concat #b0 ((_ extract 31 0) %rbx))
                     (concat #b0 ((_ extract 31 0) %rbx))))))
-  (not (xor (= a!1 #b1)
-            (= a!2 #b1)
-            (= a!3 #b1)
-            (= a!4 #b1)
-            (= a!5 #b1)
-            (= a!6 #b1)
-            (= a!7 #b1)
-            (= a!8 #b1))))
-%af    : TMP_BOOL_2
+  (ite (not (xor (= a!1 #b1)
+                 (= a!2 #b1)
+                 (= a!3 #b1)
+                 (= a!4 #b1)
+                 (= a!5 #b1)
+                 (= a!6 #b1)
+                 (= a!7 #b1)
+                 (= a!8 #b1)))
+       #b1
+       #b0))
+
+%af    : (ite TMP_BOOL_2 #b1 #b0)
+
 %zf    : (let ((a!1 ((_ extract 31 0)
              (bvadd (concat #b0 ((_ extract 31 0) %rbx))
                     (concat #b0 ((_ extract 31 0) %rbx))))))
-  (= a!1 #x00000000))
-%sf    : (let ((a!1 ((_ extract 31 31)
-             (bvadd (concat #b0 ((_ extract 31 0) %rbx))
-                    (concat #b0 ((_ extract 31 0) %rbx))))))
-  (= a!1 #b1))
+  (ite (= a!1 #x00000000) #b1 #b0))
+
+%sf    : ((_ extract 31 31)
+  (bvadd (concat #b0 ((_ extract 31 0) %rbx))
+         (concat #b0 ((_ extract 31 0) %rbx))))
+
 %of    : (let ((a!1 ((_ extract 31 31)
              (bvadd (concat #b0 ((_ extract 31 0) %rbx))
                     (concat #b0 ((_ extract 31 0) %rbx))))))
 (let ((a!2 (not (= (= ((_ extract 31 31) %rbx) #b1) (= a!1 #b1)))))
-  (and (= (= ((_ extract 31 31) %rbx) #b1) (= ((_ extract 31 31) %rbx) #b1))
-       a!2)))
+(let ((a!3 (and (= (= ((_ extract 31 31) %rbx) #b1)
+                   (= ((_ extract 31 31) %rbx) #b1))
+                a!2)))
+  (ite a!3 #b1 #b0))))
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

@@ -8,14 +8,6 @@ code: vcvtss2sd %xmm3, %xmm2, %xmm1
   must undef:      { }
   required flags:  { avx }
 
-vcvtss2sd %xmm3, %xmm2, %xmm1: Hindex8(9)
-vcvtss2sd %xmm3, %xmm2, %xmm1: Hindex8(9)
-callq .move_128_064_xmm2_r8_r9: Hindex8(9)
-vzeroall: Hindex1(9)
-callq .move_064_128_r8_r9_xmm1: Hindex8(9)
-callq .move_128_64_xmm2_xmm10_xmm11: Hindex8(9)
-vcvtps2pd %xmm3, %ymm10: Hindex0(9)
-callq .move_64_128_xmm10_xmm11_xmm1: Hindex8(9)
 Formula:
 
 %ymm1  : (concat #x00000000000000000000000000000000

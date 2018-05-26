@@ -8,8 +8,6 @@ code: shlw $0x1, %bx
   must undef:      { %af }
   required flags:  { }
 
-shlw $0x1, %bx: Hindex7(9)
-shlw $0x1, %bx: Hindex7(9)
 Formula:
 
 %rbx   : (let ((a!1 ((_ extract 15 0)
@@ -19,7 +17,7 @@ Formula:
 %cf    : (let ((a!1 ((_ extract 16 16)
              (bvshl (concat #b0 ((_ extract 15 0) %rbx)) #b00000000000000001))))
 (let ((a!2 (and true (or (and true (= a!1 #b1)) (and false %cf)))))
-  (or (and false TMP_BOOL_0) a!2)))
+  (ite (or (and false TMP_BOOL_0) a!2) #b1 #b0)))
 %pf    : (let ((a!1 ((_ extract 0 0)
              (bvshl (concat #b0 ((_ extract 15 0) %rbx)) #b00000000000000001)))
       (a!2 ((_ extract 1 1)
@@ -45,21 +43,21 @@ Formula:
                           (= a!6 #b1)
                           (= a!7 #b1)
                           (= a!8 #b1))))))
-  (or a!9 (and false %pf))))
-%af    : (or (and true TMP_BOOL_1) (and false %af))
+  (ite (or a!9 (and false %pf)) #b1 #b0)))
+%af    : (ite (or (and true TMP_BOOL_1) (and false %af)) #b1 #b0)
 %zf    : (let ((a!1 ((_ extract 15 0)
              (bvshl (concat #b0 ((_ extract 15 0) %rbx)) #b00000000000000001))))
-  (or (and true (= a!1 #x0000)) (and false %zf)))
+  (ite (or (and true (= a!1 #x0000)) (and false %zf)) #b1 #b0))
 %sf    : (let ((a!1 ((_ extract 15 15)
              (bvshl (concat #b0 ((_ extract 15 0) %rbx)) #b00000000000000001))))
-  (or (and true (= a!1 #b1)) (and false %sf)))
+  (ite (or (and true (= a!1 #b1)) (and false %sf)) #b1 #b0))
 %of    : (let ((a!1 ((_ extract 16 16)
              (bvshl (concat #b0 ((_ extract 15 0) %rbx)) #b00000000000000001)))
       (a!3 ((_ extract 15 15)
              (bvshl (concat #b0 ((_ extract 15 0) %rbx)) #b00000000000000001))))
 (let ((a!2 (and true (or (and true (= a!1 #b1)) (and false %cf)))))
 (let ((a!4 (not (= (or (and false TMP_BOOL_0) a!2) (= a!3 #b1)))))
-  (or (and true a!4) (and false %of)))))
+  (ite (or (and true a!4) (and false %of)) #b1 #b0))))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

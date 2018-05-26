@@ -122,6 +122,10 @@
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmsub213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd213_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
 ( push )
@@ -132,38 +136,36 @@
 (bvor ((_ extract 255 192) ymm2)
 (bvxor ((_ extract 255 192) ymm2)
 ((_ extract 255 192) ymm3)))))
-(a!3 (bvxor (bvxor ((_ extract 191 128) ymm2)
+(a!2 (bvxor (bvxor ((_ extract 191 128) ymm2)
 ((_ extract 191 128) ymm3))
 (bvor ((_ extract 191 128) ymm2)
 (bvxor ((_ extract 191 128) ymm2)
 ((_ extract 191 128) ymm3)))))
-(a!5 (bvxor (bvxor ((_ extract 127 64) ymm2) ((_ extract 127 64) ymm3))
+(a!4 (bvxor (bvxor ((_ extract 127 64) ymm2) ((_ extract 127 64) ymm3))
 (bvor ((_ extract 127 64) ymm2)
 (bvxor ((_ extract 127 64) ymm2)
 ((_ extract 127 64) ymm3)))))
-(a!6 (bvxor (bvxor ((_ extract 63 0) ymm2) ((_ extract 63 0) ymm3))
+(a!5 (bvxor (bvxor ((_ extract 63 0) ymm2) ((_ extract 63 0) ymm3))
 (bvor ((_ extract 63 0) ymm2)
 (bvxor ((_ extract 63 0) ymm2)
 ((_ extract 63 0) ymm3))))))
-(let ((a!2 (bvor (bvxor a!1
+(let ((a!3 (concat (bvxor a!1
 (bvor a!1
 ((_ extract 255 192) ymm3)
 ((_ extract 255 192) ymm2)))
-#x0000000000000000))
-(a!4 (bvor (bvxor a!3
-(bvor a!3
+(bvxor a!2
+(bvor a!2
 ((_ extract 191 128) ymm3)
-((_ extract 191 128) ymm2)))
-#x0000000000000000))
-(a!7 (concat (bvxor a!5
+((_ extract 191 128) ymm2)))))
+(a!6 (concat (bvxor a!4
 (bvor ((_ extract 127 64) ymm3)
 ((_ extract 127 64) ymm2)
-a!5))
-(bvxor a!6
+a!4))
+(bvxor a!5
 (bvor ((_ extract 63 0) ymm3)
 ((_ extract 63 0) ymm2)
-a!6)))))
-(concat (concat a!2 a!4) a!7)))
+a!5)))))
+(concat a!3 a!6)))
 
 (bvxor ymm2 ymm3)
 )))

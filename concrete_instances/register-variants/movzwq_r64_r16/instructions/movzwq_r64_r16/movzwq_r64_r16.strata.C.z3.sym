@@ -8,8 +8,6 @@ code: movzwq %cx, %rbx
   must undef:      { }
   required flags:  { }
 
-movzwq %cx, %rbx: Hindex5(9)
-movzwq %cx, %rbx: Hindex5(9)
 Formula:
 
 %rbx   : (concat #x000000000000 ((_ extract 15 0) %rcx))

@@ -122,14 +122,18 @@
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmsub213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd213_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
 ( push )
 ( echo "sarw_r16_one::af")
 (assert (not (=
-(or (and true TMP_BOOL) (and false af))
+(ite (or (and true TMP_BOOL) (and false af)) #b1 #b0)
 
-(or (and true TMP_BOOL) (and false af))
+(ite (or (and true TMP_BOOL) (and false af)) #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -141,11 +145,11 @@
 (assert (not (=
 (let ((a!1 ((_ extract 0 0)
 (bvashr (concat ((_ extract 15 0) rbx) #b0) #b00000000000000001))))
-(or (and true (= a!1 #b1)) (and false cf)))
+(ite (or (and true (= a!1 #b1)) (and false cf)) #b1 #b0))
 
 (let ((a!1 ((_ extract 0 0)
 (bvashr (concat ((_ extract 15 0) rbx) #b0) #b00000000000000001))))
-(or (and true (= a!1 #b1)) (and false cf)))
+(ite (or (and true (= a!1 #b1)) (and false cf)) #b1 #b0))
 )))
 (check-sat)
 ( pop )
@@ -155,9 +159,9 @@
 ( push )
 ( echo "sarw_r16_one::of")
 (assert (not (=
-(or false (and false of))
+(ite (or false (and false of)) #b1 #b0)
 
-(or false (and false of))
+(ite (or false (and false of)) #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -192,7 +196,7 @@
 (= a!6 #b1)
 (= a!7 #b1)
 (= a!8 #b1))))))
-(or a!9 (and false pf))))
+(ite (or a!9 (and false pf)) #b1 #b0)))
 
 (let ((a!1 ((_ extract 1 1)
 (bvashr (concat ((_ extract 15 0) rbx) #b0) #b00000000000000001)))
@@ -219,7 +223,7 @@
 (= a!6 #b1)
 (= a!7 #b1)
 (= a!8 #b1))))))
-(or a!9 (and false pf))))
+(ite (or a!9 (and false pf)) #b1 #b0)))
 )))
 (check-sat)
 ( pop )
@@ -247,11 +251,11 @@
 (assert (not (=
 (let ((a!1 ((_ extract 16 16)
 (bvashr (concat ((_ extract 15 0) rbx) #b0) #b00000000000000001))))
-(or (and true (= a!1 #b1)) (and false sf)))
+(ite (or (and true (= a!1 #b1)) (and false sf)) #b1 #b0))
 
 (let ((a!1 ((_ extract 16 16)
 (bvashr (concat ((_ extract 15 0) rbx) #b0) #b00000000000000001))))
-(or (and true (= a!1 #b1)) (and false sf)))
+(ite (or (and true (= a!1 #b1)) (and false sf)) #b1 #b0))
 )))
 (check-sat)
 ( pop )
@@ -263,11 +267,11 @@
 (assert (not (=
 (let ((a!1 ((_ extract 16 1)
 (bvashr (concat ((_ extract 15 0) rbx) #b0) #b00000000000000001))))
-(or (and true (= a!1 #x0000)) (and false zf)))
+(ite (or (and true (= a!1 #x0000)) (and false zf)) #b1 #b0))
 
 (let ((a!1 ((_ extract 16 1)
 (bvashr (concat ((_ extract 15 0) rbx) #b0) #b00000000000000001))))
-(or (and true (= a!1 #x0000)) (and false zf)))
+(ite (or (and true (= a!1 #x0000)) (and false zf)) #b1 #b0))
 )))
 (check-sat)
 ( pop )

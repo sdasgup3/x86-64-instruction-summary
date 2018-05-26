@@ -8,8 +8,6 @@ code: setnp %ah
   must undef:      { }
   required flags:  { }
 
-setnp %ah: Hindex3(9)
-setnp %ah: Hindex3(9)
 Formula:
 
 %rax   : (concat (concat ((_ extract 63 16) %rax) (ite (not %pf) #x01 #x00))

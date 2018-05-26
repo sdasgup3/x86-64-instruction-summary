@@ -8,8 +8,6 @@ code: cwtd
   must undef:      { }
   required flags:  { }
 
-cwtd: Hindex1(9)
-cwtd: Hindex1(9)
 Formula:
 
 %rdx   : (concat ((_ extract 63 16) %rdx)

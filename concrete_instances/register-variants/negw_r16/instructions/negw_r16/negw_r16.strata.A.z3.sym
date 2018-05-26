@@ -14,32 +14,42 @@ Formula:
                   (concat #b0 (bvxor ((_ extract 15 0) %rbx) #xffff)))))
   (concat ((_ extract 63 16) %rbx) ((_ extract 15 0) a!1)))
 
-%cf    : (let ((a!1 ((_ extract 16 16)
-             (bvadd (concat #b0 ((_ extract 15 0) %rbx)) #b01111111111111111))))
-  (= a!1 #b1))
+
+%cf    : ((_ extract 16 16)
+  (bvadd (concat #b0 ((_ extract 15 0) %rbx)) #b01111111111111111))
+
 %pf    : (let ((a!1 (bvadd #b00000000000000001
                   (concat #b0 (bvxor ((_ extract 15 0) %rbx) #xffff)))))
-  (not (xor (= ((_ extract 0 0) a!1) #b1)
-            (= ((_ extract 1 1) a!1) #b1)
-            (= ((_ extract 2 2) a!1) #b1)
-            (= ((_ extract 3 3) a!1) #b1)
-            (= ((_ extract 4 4) a!1) #b1)
-            (= ((_ extract 5 5) a!1) #b1)
-            (= ((_ extract 6 6) a!1) #b1)
-            (= ((_ extract 7 7) a!1) #b1))))
-%af    : false
+(let ((a!2 (not (xor (= ((_ extract 0 0) a!1) #b1)
+                     (= ((_ extract 1 1) a!1) #b1)
+                     (= ((_ extract 2 2) a!1) #b1)
+                     (= ((_ extract 3 3) a!1) #b1)
+                     (= ((_ extract 4 4) a!1) #b1)
+                     (= ((_ extract 5 5) a!1) #b1)
+                     (= ((_ extract 6 6) a!1) #b1)
+                     (= ((_ extract 7 7) a!1) #b1)))))
+  (ite a!2 #b1 #b0)))
+
+%af    : #b0
+
 %zf    : (let ((a!1 (bvadd #b00000000000000001
                   (concat #b0 (bvxor ((_ extract 15 0) %rbx) #xffff)))))
-  (= ((_ extract 15 0) a!1) #x0000))
+  (ite (= ((_ extract 15 0) a!1) #x0000) #b1 #b0))
+
 %sf    : (let ((a!1 (bvadd #b00000000000000001
                   (concat #b0 (bvxor ((_ extract 15 0) %rbx) #xffff)))))
-  (= ((_ extract 15 15) a!1) #b1))
+  ((_ extract 15 15) a!1))
+
 %of    : (let ((a!1 (= false (= (bvxor ((_ extract 15 15) %rbx) #b1) #b1)))
       (a!2 (bvadd #b00000000000000001
                   (concat #b0 (bvxor ((_ extract 15 0) %rbx) #xffff)))))
 (let ((a!3 (not (= false (= ((_ extract 15 15) a!2) #b1)))))
-  (and a!1 a!3)))
+  (ite (and a!1 a!3) #b1 #b0)))
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

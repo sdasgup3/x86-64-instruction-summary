@@ -10,9 +10,12 @@ code: movq %rbx, %xmm1
 
 Formula:
 
-%ymm1  : (concat ((_ extract 255 128) %ymm1)
-        (concat #x0000000000000000 (bvxor #x0000000000000000 %rbx)))
+%ymm1  : (concat ((_ extract 255 128) %ymm1) (concat #x0000000000000000 %rbx))
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

@@ -8,28 +8,6 @@ code: shrxq %rdx, %rcx, %rbx
   must undef:      { }
   required flags:  { bmi2 }
 
-shrxq %rdx, %rcx, %rbx: Hindex8(9)
-shrxq %rdx, %rcx, %rbx: Hindex8(9)
-movq %rcx, %rbx: Hindex5(9)
-callq .clear_cf: Hindex8(9)
-callq .set_of: Hindex8(9)
-callq .read_of_into_rbx: Hindex8(9)
-callq .move_064_032_rbx_r10d_r11d: Hindex8(9)
-movsbq %cl, %r10: Hindex5(9)
-callq .move_032_064_r10d_r11d_rbx: Hindex8(9)
-callq .set_of: Hindex8(9)
-callq .read_of_into_rbx: Hindex8(9)
-callq .move_064_032_rbx_r10d_r11d: Hindex8(9)
-movsbq %cl, %r10: Hindex5(9)
-callq .move_032_064_r10d_r11d_rbx: Hindex8(9)
-movsbq %r15b, %rcx: Hindex5(9)
-adcb %cl, %r13b: Hindex2(9)
-movslq %r13d, %rbx: Hindex5(9)
-callq .move_016_008_bx_r10b_r11b: Hindex8(9)
-callq .move_016_008_cx_r8b_r9b: Hindex8(9)
-callq .move_008_016_r10b_r11b_cx: Hindex8(9)
-callq .move_008_016_r8b_r9b_bx: Hindex8(9)
-shrq %cl, %rbx: Hindex7(9)
 Formula:
 
 %rbx   : (let ((a!1 (bvlshr (concat %rcx #b0)

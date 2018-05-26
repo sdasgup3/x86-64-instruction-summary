@@ -8,8 +8,6 @@ code: notq %rbx
   must undef:      { }
   required flags:  { }
 
-notq %rbx: Hindex1(9)
-notq %rbx: Hindex1(9)
 Formula:
 
 %rbx   : (bvnot %rbx)
