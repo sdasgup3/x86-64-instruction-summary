@@ -122,14 +122,18 @@
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmsub213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd213_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
 ( push )
 ( echo "shlq_r64_one::af")
 (assert (not (=
-(or (and true TMP_BOOL) (and false af))
+(ite (or (and true TMP_BOOL) (and false af)) #b1 #b0)
 
-(or (and true TMP_BOOL) (and false af))
+(ite (or (and true TMP_BOOL) (and false af)) #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -144,14 +148,18 @@
 (concat #b000000000000000000000000000000000000000000000000000000000
 #x01)))
 #b1)))
-(or (and false TMP_BOOL) (and true (or (and true a!1) (and false cf)))))
+(let ((a!2 (or (and false TMP_BOOL)
+(and true (or (and true a!1) (and false cf))))))
+(ite a!2 #b1 #b0)))
 
 (let ((a!1 (= ((_ extract 64 64)
 (bvshl (concat #b0 rbx)
 (concat #b000000000000000000000000000000000000000000000000000000000
 #x01)))
 #b1)))
-(or (and false TMP_BOOL) (and true (or (and true a!1) (and false cf)))))
+(let ((a!2 (or (and false TMP_BOOL)
+(and true (or (and true a!1) (and false cf))))))
+(ite a!2 #b1 #b0)))
 )))
 (check-sat)
 ( pop )
@@ -173,7 +181,8 @@
 #b1)))
 (let ((a!2 (or (and false TMP_BOOL)
 (and true (or (and true a!1) (and false cf))))))
-(or (and true (not (= a!2 a!3))) (and false of))))
+(let ((a!4 (or (and true (not (= a!2 a!3))) (and false of))))
+(ite a!4 #b1 #b0))))
 
 (let ((a!1 (= ((_ extract 64 64)
 (bvshl (concat #b0 rbx)
@@ -187,7 +196,8 @@
 #b1)))
 (let ((a!2 (or (and false TMP_BOOL)
 (and true (or (and true a!1) (and false cf))))))
-(or (and true (not (= a!2 a!3))) (and false of))))
+(let ((a!4 (or (and true (not (= a!2 a!3))) (and false of))))
+(ite a!4 #b1 #b0))))
 )))
 (check-sat)
 ( pop )
@@ -237,7 +247,9 @@
 (concat #b000000000000000000000000000000000000000000000000000000000
 #x01)))
 #b1)))
-(or (and true (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8))) (and false pf)))
+(let ((a!9 (or (and true (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)))
+(and false pf))))
+(ite a!9 #b1 #b0)))
 
 (let ((a!1 (= ((_ extract 0 0)
 (bvshl (concat #b0 rbx)
@@ -279,7 +291,9 @@
 (concat #b000000000000000000000000000000000000000000000000000000000
 #x01)))
 #b1)))
-(or (and true (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8))) (and false pf)))
+(let ((a!9 (or (and true (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)))
+(and false pf))))
+(ite a!9 #b1 #b0)))
 )))
 (check-sat)
 ( pop )
@@ -312,14 +326,14 @@
 (concat #b000000000000000000000000000000000000000000000000000000000
 #x01)))
 #b1)))
-(or (and true a!1) (and false sf)))
+(ite (or (and true a!1) (and false sf)) #b1 #b0))
 
 (let ((a!1 (= ((_ extract 63 63)
 (bvshl (concat #b0 rbx)
 (concat #b000000000000000000000000000000000000000000000000000000000
 #x01)))
 #b1)))
-(or (and true a!1) (and false sf)))
+(ite (or (and true a!1) (and false sf)) #b1 #b0))
 )))
 (check-sat)
 ( pop )
@@ -334,14 +348,14 @@
 (concat #b000000000000000000000000000000000000000000000000000000000
 #x01)))
 #x0000000000000000)))
-(or (and true a!1) (and false zf)))
+(ite (or (and true a!1) (and false zf)) #b1 #b0))
 
 (let ((a!1 (= ((_ extract 63 0)
 (bvshl (concat #b0 rbx)
 (concat #b000000000000000000000000000000000000000000000000000000000
 #x01)))
 #x0000000000000000)))
-(or (and true a!1) (and false zf)))
+(ite (or (and true a!1) (and false zf)) #b1 #b0))
 )))
 (check-sat)
 ( pop )

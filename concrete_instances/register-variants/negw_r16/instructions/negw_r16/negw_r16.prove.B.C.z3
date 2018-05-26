@@ -122,16 +122,20 @@
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmsub213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd213_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
 ( push )
 ( echo "negw_r16::af")
 (assert (not (=
 (let ((a!1 (= ((_ extract 3 3) (bvneg ((_ extract 15 0) rbx))) #b1)))
-(and (= ((_ extract 3 3) rbx) #b1) a!1))
+(ite (and (= ((_ extract 3 3) rbx) #b1) a!1) #b1 #b0))
 
 (let ((a!1 (= ((_ extract 3 3) (bvneg ((_ extract 15 0) rbx))) #b1)))
-(and (= ((_ extract 3 3) rbx) #b1) a!1))
+(ite (and (= ((_ extract 3 3) rbx) #b1) a!1) #b1 #b0))
 )))
 (check-sat)
 ( pop )
@@ -141,9 +145,9 @@
 ( push )
 ( echo "negw_r16::cf")
 (assert (not (=
-(not (= ((_ extract 15 0) rbx) #x0000))
+(ite (not (= ((_ extract 15 0) rbx) #x0000)) #b1 #b0)
 
-(not (= ((_ extract 15 0) rbx) #x0000))
+(ite (not (= ((_ extract 15 0) rbx) #x0000)) #b1 #b0)
 )))
 (check-sat)
 ( pop )
@@ -154,10 +158,10 @@
 ( echo "negw_r16::of")
 (assert (not (=
 (let ((a!1 (= ((_ extract 15 15) (bvneg ((_ extract 15 0) rbx))) #b1)))
-(and (= ((_ extract 15 15) rbx) #b1) a!1))
+(ite (and (= ((_ extract 15 15) rbx) #b1) a!1) #b1 #b0))
 
 (let ((a!1 (= ((_ extract 15 15) (bvneg ((_ extract 15 0) rbx))) #b1)))
-(and (= ((_ extract 15 15) rbx) #b1) a!1))
+(ite (and (= ((_ extract 15 15) rbx) #b1) a!1) #b1 #b0))
 )))
 (check-sat)
 ( pop )
@@ -175,7 +179,7 @@
 (a!6 (= ((_ extract 5 5) (bvneg ((_ extract 15 0) rbx))) #b1))
 (a!7 (= ((_ extract 6 6) (bvneg ((_ extract 15 0) rbx))) #b1))
 (a!8 (= ((_ extract 7 7) (bvneg ((_ extract 15 0) rbx))) #b1)))
-(not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)))
+(ite (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)) #b1 #b0))
 
 (let ((a!1 (= ((_ extract 0 0) (bvneg ((_ extract 15 0) rbx))) #b1))
 (a!2 (= ((_ extract 1 1) (bvneg ((_ extract 15 0) rbx))) #b1))
@@ -185,7 +189,7 @@
 (a!6 (= ((_ extract 5 5) (bvneg ((_ extract 15 0) rbx))) #b1))
 (a!7 (= ((_ extract 6 6) (bvneg ((_ extract 15 0) rbx))) #b1))
 (a!8 (= ((_ extract 7 7) (bvneg ((_ extract 15 0) rbx))) #b1)))
-(not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)))
+(ite (not (xor a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8)) #b1 #b0))
 )))
 (check-sat)
 ( pop )
@@ -207,9 +211,10 @@
 ( push )
 ( echo "negw_r16::sf")
 (assert (not (=
-(= ((_ extract 15 15) (bvneg ((_ extract 15 0) rbx))) #b1)
+((_ extract 15 15) (bvneg ((_ extract 15 0) rbx)))
 
-(= ((_ extract 15 15) (bvneg ((_ extract 15 0) rbx))) #b1)
+(let ((a!1 (= ((_ extract 15 15) (bvneg ((_ extract 15 0) rbx))) #b1)))
+(ite a!1 #b1 #b0))
 )))
 (check-sat)
 ( pop )
@@ -219,9 +224,9 @@
 ( push )
 ( echo "negw_r16::zf")
 (assert (not (=
-(= (bvneg ((_ extract 15 0) rbx)) #x0000)
+(ite (= (bvneg ((_ extract 15 0) rbx)) #x0000) #b1 #b0)
 
-(= (bvneg ((_ extract 15 0) rbx)) #x0000)
+(ite (= (bvneg ((_ extract 15 0) rbx)) #x0000) #b1 #b0)
 )))
 (check-sat)
 ( pop )

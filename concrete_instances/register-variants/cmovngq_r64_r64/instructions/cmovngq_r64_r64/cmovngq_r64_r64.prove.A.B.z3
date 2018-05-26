@@ -122,6 +122,10 @@
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmsub213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd213_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
 ( push )
@@ -129,15 +133,11 @@
 (assert (not (=
 (let ((a!1 (= (ite zf
 #x00
-(bvxor #x00 #x01 (ite of #x01 #x00) (ite sf #x01 #x00)))
+(bvxor #x01 (ite of #x01 #x00) (ite sf #x01 #x00)))
 #x00)))
-(let ((a!2 (bvadd (ite (= (ite a!1 #x00000001 #x00000000) #x00000000)
-#b000000001
-#b000000000)
-(ite (= (ite a!1 #x00000001 #x00000000) #x00000000)
-#b000000001
-#b000000000))))
-(ite (= ((_ extract 7 0) a!2) #x00) rcx rbx)))
+(let ((a!2 (= (ite (= (ite a!1 #x00000001 #x00000000) #x00000000) #x02 #x00)
+#x00)))
+(ite a!2 rcx rbx)))
 
 (ite (or zf (not (= sf of))) rcx rbx)
 )))

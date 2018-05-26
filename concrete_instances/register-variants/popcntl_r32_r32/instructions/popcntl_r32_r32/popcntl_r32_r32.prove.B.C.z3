@@ -122,14 +122,18 @@
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmsub213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd213_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
 ( push )
 ( echo "popcntl_r32_r32::af")
 (assert (not (=
-false
+#b0
 
-false
+#b0
 )))
 (check-sat)
 ( pop )
@@ -139,9 +143,9 @@ false
 ( push )
 ( echo "popcntl_r32_r32::cf")
 (assert (not (=
-false
+#b0
 
-false
+#b0
 )))
 (check-sat)
 ( pop )
@@ -151,9 +155,9 @@ false
 ( push )
 ( echo "popcntl_r32_r32::of")
 (assert (not (=
-false
+#b0
 
-false
+#b0
 )))
 (check-sat)
 ( pop )
@@ -163,9 +167,9 @@ false
 ( push )
 ( echo "popcntl_r32_r32::pf")
 (assert (not (=
-false
+#b0
 
-false
+#b0
 )))
 (check-sat)
 ( pop )
@@ -311,9 +315,9 @@ false
 ( push )
 ( echo "popcntl_r32_r32::sf")
 (assert (not (=
-false
+#b0
 
-false
+#b0
 )))
 (check-sat)
 ( pop )
@@ -323,9 +327,9 @@ false
 ( push )
 ( echo "popcntl_r32_r32::zf")
 (assert (not (=
-(= ((_ extract 31 0) rcx) #x00000000)
+(ite (= ((_ extract 31 0) rcx) #x00000000) #b1 #b0)
 
-(= ((_ extract 31 0) rcx) #x00000000)
+(ite (= ((_ extract 31 0) rcx) #x00000000) #b1 #b0)
 )))
 (check-sat)
 ( pop )

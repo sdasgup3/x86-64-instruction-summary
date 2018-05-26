@@ -122,18 +122,20 @@
 (declare-fun vfnmadd132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 (declare-fun vfnmsub132_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
 (declare-fun vfnmsub132_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
+(declare-fun vfnmadd213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd231_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmsub213_double ((_ BitVec 64) (_ BitVec 64) (_ BitVec 64)) (_ BitVec 64))
+(declare-fun vfnmadd213_single ((_ BitVec 32) (_ BitVec 32) (_ BitVec 32)) (_ BitVec 32))
 
 
 ( push )
 ( echo "addss_xmm_xmm::ymm1")
 (assert (not (=
-(concat ((_ extract 255 128) ymm1)
-(concat ((_ extract 127 32) ymm1)
-(add_single ((_ extract 31 0) ymm1) ((_ extract 31 0) ymm2))))
+(concat ((_ extract 255 32) ymm1)
+(add_single ((_ extract 31 0) ymm1) ((_ extract 31 0) ymm2)))
 
-(concat ((_ extract 255 128) ymm1)
-(concat ((_ extract 127 32) ymm1)
-(add_single ((_ extract 31 0) ymm1) ((_ extract 31 0) ymm2))))
+(concat ((_ extract 255 32) ymm1)
+(add_single ((_ extract 31 0) ymm1) ((_ extract 31 0) ymm2)))
 )))
 (check-sat)
 ( pop )
