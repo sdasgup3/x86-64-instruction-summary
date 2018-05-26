@@ -10,7 +10,8 @@ code: testb %bh, %ah
 
 Formula:
 
-%cf    : false
+%cf    : #b0
+
 %pf    : (let ((a!1 (xor (= (bvand ((_ extract 8 8) %rax) ((_ extract 8 8) %rbx)) #b1)
                 (= (bvand ((_ extract 9 9) %rax) ((_ extract 9 9) %rbx)) #b1)
                 (= (bvand ((_ extract 10 10) %rax) ((_ extract 10 10) %rbx))
@@ -25,12 +26,20 @@ Formula:
                    #b1)
                 (= (bvand ((_ extract 15 15) %rax) ((_ extract 15 15) %rbx))
                    #b1))))
-  (not a!1))
-%af    : TMP_BOOL_0
-%zf    : (= (bvand ((_ extract 15 8) %rax) ((_ extract 15 8) %rbx)) #x00)
-%sf    : (= (bvand ((_ extract 15 15) %rax) ((_ extract 15 15) %rbx)) #b1)
-%of    : false
+  (ite (not a!1) #b1 #b0))
+
+%af    : (ite TMP_BOOL_0 #b1 #b0)
+
+%zf    : (ite (= (bvand ((_ extract 15 8) %rax) ((_ extract 15 8) %rbx)) #x00) #b1 #b0)
+
+%sf    : (bvand ((_ extract 15 15) %rax) ((_ extract 15 15) %rbx))
+
+%of    : #b0
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

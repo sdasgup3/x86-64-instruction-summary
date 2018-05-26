@@ -8,8 +8,6 @@ code: cmovngw %cx, %bx
   must undef:      { }
   required flags:  { cmov }
 
-cmovngw %cx, %bx: Hindex3(9)
-cmovngw %cx, %bx: Hindex3(9)
 Formula:
 
 %rbx   : (let ((a!1 (ite (or %zf (not (= %sf %of)))

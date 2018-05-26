@@ -8,8 +8,6 @@ code: cmovnaw %cx, %bx
   must undef:      { }
   required flags:  { cmov }
 
-cmovnaw %cx, %bx: Hindex3(9)
-cmovnaw %cx, %bx: Hindex3(9)
 Formula:
 
 %rbx   : (concat ((_ extract 63 16) %rbx)

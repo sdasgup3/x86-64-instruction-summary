@@ -16,7 +16,7 @@ Formula:
 (let ((a!2 (ite a!1
                 (concat #x00000000 ((_ extract 95 64) %ymm2))
                 (concat #x00000000 ((_ extract 31 0) %ymm2)))))
-(let ((a!3 (concat (bvxor ((_ extract 127 64) %ymm1) #x0000000000000000)
+(let ((a!3 (concat ((_ extract 127 64) %ymm1)
                    (vfmsub132_double (vfnmsub132_double
                                        a!2
                                        ((_ extract 63 0) %ymm2)
@@ -30,6 +30,10 @@ Formula:
                                      ((_ extract 63 0) %ymm1)))))
   (concat #x00000000000000000000000000000000 a!3))))
 
+
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+

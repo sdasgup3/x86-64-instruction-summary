@@ -20,6 +20,7 @@ Formula:
                                      #x01))))))
   (concat a!2 ((_ extract 7 0) %rax))))
 
+
 %cf    : (let ((a!1 (concat ((_ sign_extend 48)
                      (concat ((_ extract 15 8) %rax) ((_ extract 15 8) %rax)))
                    #b0)))
@@ -28,7 +29,8 @@ Formula:
                      (bvashr a!1
                              (concat #b000000000000000000000000000000000000000000000000000000000
                                      #x01))))))
-  (= ((_ extract 8 8) (bvadd a!2 a!2)) #b1)))
+  ((_ extract 8 8) (bvadd a!2 a!2))))
+
 %of    : (let ((a!1 (concat ((_ sign_extend 48)
                      (concat ((_ extract 15 8) %rax) ((_ extract 15 8) %rax)))
                    #b0)))
@@ -43,8 +45,12 @@ Formula:
                              (concat #b000000000000000000000000000000000000000000000000000000000
                                      #x01))))))
 (let ((a!4 (= a!2 (= ((_ extract 7 7) (bvadd a!3 a!3)) #b1))))
-  (and (= a!2 a!2) (not a!4)))))
+  (ite (and (= a!2 a!2) (not a!4)) #b1 #b0))))
+
 
 sigfpe  : sigfpe
+
 sigbus  : sigbus
+
 sigsegv : sigsegv
+
