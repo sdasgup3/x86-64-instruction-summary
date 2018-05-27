@@ -1,6 +1,6 @@
 [4m[1m[34mFiring Last 1[0m
 Thread 1 start: subq_r64_r64
-timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit  --target concrete_instances/register-variants/subq_r64_r64/instructions/subq_r64_r64/subq_r64_r64.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %rcx %rbx }" --live_out "{ %rbx %cf %pf %af %zf %sf %of }" 
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/register-variants/subq_r64_r64/instructions/subq_r64_r64/subq_r64_r64.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %rcx %rbx }" --live_out "{ %rbx %cf %pf %af %zf %sf %of }" 
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests

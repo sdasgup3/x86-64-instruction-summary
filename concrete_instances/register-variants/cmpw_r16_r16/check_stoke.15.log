@@ -1,6 +1,6 @@
 [4m[1m[34mFiring Last 1[0m
 Thread 1 start: cmpw_r16_r16
-timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit  --target concrete_instances/register-variants/cmpw_r16_r16/instructions/cmpw_r16_r16/cmpw_r16_r16.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %cx %bx }" --live_out "{ %cf %pf %af %zf %sf %of }" 
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/register-variants/cmpw_r16_r16/instructions/cmpw_r16_r16/cmpw_r16_r16.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %cx %bx }" --live_out "{ %cf %pf %af %zf %sf %of }" 
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
@@ -88,5 +88,5 @@ Sandbox and validator do not agree for 'cmpw %cx, %bx' (opcode cmpw_r16_r16)
     validator: true
     sandbox:   false
 
-Execution time cmpw_r16_r16: 7 s
+Execution time cmpw_r16_r16: 8 s
 Thread 1 done!: cmpw_r16_r16
