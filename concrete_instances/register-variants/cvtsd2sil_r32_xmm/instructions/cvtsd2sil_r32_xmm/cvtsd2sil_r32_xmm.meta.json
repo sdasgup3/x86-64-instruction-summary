@@ -1,6 +1,7 @@
 {
   "def_in": "{ %xmm1 %mxcsr::rc[0] }",
   "live_out": "{ %rbx }",
+  "maybe_undef_out": "{ }",
   "def_in_formal": "{ %xmm1 %mxcsr::rc[0] }",
   "live_out_formal": "{ %rbx }",
   "search_without_uif": false,
