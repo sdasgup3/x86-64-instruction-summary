@@ -1128,3 +1128,5 @@ vpmovsxbq_ymm_xmm
 vpunpckhwd_ymm_ymm_ymm
 pmovsxbq_xmm_xmm
 vpmovsxbq_xmm_xmm
+cmpxchgl_r32_r32
+vpcmpgtq_ymm_ymm_ymm
