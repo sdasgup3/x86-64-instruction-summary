@@ -1,6 +1,7 @@
 {
   "def_in": "{ %al }",
   "live_out": "{ %ax }",
+  "maybe_undef_out": "{ }",
   "def_in_formal": "{ %al }",
   "live_out_formal": "{ %ax }",
   "search_without_uif": false,
