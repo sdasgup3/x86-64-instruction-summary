@@ -1,0 +1,17 @@
+code: xchgb %ah, %ah
+
+  maybe read:      { %ah }
+  must read:       { %ah }
+  maybe write:     { %ah }
+  must write:      { %ah }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rax   : %rax
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv
