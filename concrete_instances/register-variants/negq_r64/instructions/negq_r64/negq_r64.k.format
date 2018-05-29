@@ -14,7 +14,7 @@ Formula:
 
 %cf    : (#ifMInt (notBool eqMInt( %rbx, mi(64, 0))) #then mi(1, 1) #else mi(1, 0) #fi)
 %pf    : (#ifMInt (notBool (((((((eqMInt( extractMInt( addMInt(mi(64, 1), negMInt( %rbx)), 63, 64), mi(1, 1)) xorBool eqMInt( extractMInt( addMInt(mi(64, 1), negMInt( %rbx)), 62, 63), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt(mi(64, 1), negMInt( %rbx)), 61, 62), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt(mi(64, 1), negMInt( %rbx)), 60, 61), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt(mi(64, 1), negMInt( %rbx)), 59, 60), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt(mi(64, 1), negMInt( %rbx)), 58, 59), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt(mi(64, 1), negMInt( %rbx)), 57, 58), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt(mi(64, 1), negMInt( %rbx)), 56, 57), mi(1, 1)))) #then mi(1, 1) #else mi(1, 0) #fi)
-%af    : (#ifMInt (eqMInt( extractMInt( %rbx, 60, 61), mi(1, 1)) andBool eqMInt( extractMInt( addMInt(mi(64, 1), negMInt( %rbx)), 60, 61), mi(1, 1))) #then mi(1, 1) #else mi(1, 0) #fi)
+%af    : (#ifMInt (eqMInt( extractMInt( %rbx, 59, 60), mi(1, 1)) xorBool eqMInt( extractMInt( addMInt(mi(64, 1), negMInt( %rbx)), 59, 60), mi(1, 1))) #then mi(1, 1) #else mi(1, 0) #fi)
 %zf    : (#ifMInt eqMInt( addMInt(mi(64, 1), negMInt( %rbx)), mi(64, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
 %sf    : extractMInt( addMInt(mi(64, 1), negMInt( %rbx)), 0, 1)
 %of    : (#ifMInt (eqMInt( extractMInt( %rbx, 0, 1), mi(1, 1)) andBool eqMInt( extractMInt( addMInt(mi(64, 1), negMInt( %rbx)), 0, 1), mi(1, 1))) #then mi(1, 1) #else mi(1, 0) #fi)
