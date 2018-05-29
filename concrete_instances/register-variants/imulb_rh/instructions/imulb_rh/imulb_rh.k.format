@@ -16,7 +16,7 @@ Formula:
 %pf    : (#ifMInt TMP_BOOL_2 #then mi(1, 1) #else mi(1, 0) #fi)
 %af    : (#ifMInt TMP_BOOL_1 #then mi(1, 1) #else mi(1, 0) #fi)
 %zf    : (#ifMInt TMP_BOOL_0 #then mi(1, 1) #else mi(1, 0) #fi)
-%sf    : extractMInt( mulMInt( mi(16, svalueMInt(extractMInt( %rbx, 48, 56))), mi(16, svalueMInt(extractMInt( %rax, 56, 64)))), 8, 9)
+%sf    : (#ifMInt TMP_BOOL_3 #then mi(1, 1) #else mi(1, 0) #fi)
 %of    : (#ifMInt (notBool eqMInt( mulMInt( mi(16, svalueMInt(extractMInt( %rbx, 48, 56))), mi(16, svalueMInt(extractMInt( %rax, 56, 64)))), mi(16, svalueMInt(extractMInt( mulMInt( mi(16, svalueMInt(extractMInt( %rbx, 48, 56))), mi(16, svalueMInt(extractMInt( %rax, 56, 64)))), 8, 16))))) #then mi(1, 1) #else mi(1, 0) #fi)
 
 sigfpe  : sigfpe
