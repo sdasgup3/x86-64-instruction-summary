@@ -1,6 +1,6 @@
 [4m[1m[34mFiring Last 1[0m
 Thread 1 start: addb_r8_rh
-timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/register-variants/addb_r8_rh/instructions/addb_r8_rh/addb_r8_rh.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ah %bl }" --live_out "{ %bl %cf %pf %af %zf %sf %of }" 
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/register-variants/addb_r8_rh/instructions/addb_r8_rh/addb_r8_rh.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ah %bl }" --live_out "{ %bl %cf %pf %af %zf %sf %of }" --maybe_undef_out "{ }" 
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
@@ -12,5 +12,5 @@ Completed 3000cases
 Completed 4000cases
 Completed 5000cases
 Completed 6000cases
-Execution time addb_r8_rh: 253 s
+Execution time addb_r8_rh: 349 s
 Thread 1 done!: addb_r8_rh
