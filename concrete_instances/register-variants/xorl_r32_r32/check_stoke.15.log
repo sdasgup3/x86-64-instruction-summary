@@ -1,6 +1,6 @@
 [4m[1m[34mFiring Last 1[0m
 Thread 1 start: xorl_r32_r32
-timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit  --target concrete_instances/register-variants/xorl_r32_r32/instructions/xorl_r32_r32/xorl_r32_r32.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ecx %ebx }" --live_out "{ %rbx %cf %pf %zf %sf %of }" 
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/register-variants/xorl_r32_r32/instructions/xorl_r32_r32/xorl_r32_r32.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ecx %ebx }" --live_out "{ %rbx %cf %pf %zf %sf %of }" --maybe_undef_out "{ %af }" 
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
@@ -12,5 +12,5 @@ Completed 3000cases
 Completed 4000cases
 Completed 5000cases
 Completed 6000cases
-Execution time xorl_r32_r32: 211 s
+Execution time xorl_r32_r32: 299 s
 Thread 1 done!: xorl_r32_r32
