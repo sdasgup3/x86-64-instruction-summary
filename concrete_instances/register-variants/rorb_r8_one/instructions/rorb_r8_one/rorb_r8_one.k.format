@@ -12,8 +12,8 @@ Formula:
 
 %rbx   : concatenateMInt( extractMInt( %rbx, 0, 56), ror( extractMInt( %rbx, 56, 64), mi(8, 1)))
 
-%cf    : (#ifMInt ((TRUE andBool eqMInt( extractMInt( ror( extractMInt( %rbx, 56, 64), mi(8, 1)), 0, 1), mi(1, 1))) orBool (FALSE andBool %cf)) #then mi(1, 1) #else mi(1, 0) #fi)
-%of    : (#ifMInt ((TRUE andBool (eqMInt( extractMInt( ror( extractMInt( %rbx, 56, 64), mi(8, 1)), 0, 1), mi(1, 1)) xorBool eqMInt( extractMInt( ror( extractMInt( %rbx, 56, 64), mi(8, 1)), 1, 2), mi(1, 1)))) orBool (FALSE andBool TMP_BOOL_0)) #then mi(1, 1) #else mi(1, 0) #fi)
+%cf    : (#ifMInt (eqMInt( extractMInt( ror( extractMInt( %rbx, 56, 64), mi(8, 1)), 0, 1), mi(1, 1)) orBool FALSE) #then mi(1, 1) #else mi(1, 0) #fi)
+%of    : (#ifMInt ((eqMInt( extractMInt( ror( extractMInt( %rbx, 56, 64), mi(8, 1)), 0, 1), mi(1, 1)) xorBool eqMInt( extractMInt( ror( extractMInt( %rbx, 56, 64), mi(8, 1)), 1, 2), mi(1, 1))) orBool FALSE) #then mi(1, 1) #else mi(1, 0) #fi)
 
 sigfpe  : sigfpe
 sigbus  : sigbus
