@@ -13,7 +13,7 @@ Formula:
 %rax   : concatenateMInt( concatenateMInt( extractMInt( %rax, 0, 48), extractMInt( ror( concatenateMInt( (#ifMInt %cf #then mi(1, 1) #else mi(1, 0) #fi), extractMInt( %rax, 48, 56)), mi(9, 1)), 1, 9)), extractMInt( %rax, 56, 64))
 
 %cf    : extractMInt( ror( concatenateMInt( (#ifMInt %cf #then mi(1, 1) #else mi(1, 0) #fi), extractMInt( %rax, 48, 56)), mi(9, 1)), 0, 1)
-%of    : (#ifMInt ((eqMInt( extractMInt( ror( concatenateMInt( (#ifMInt %cf #then mi(1, 1) #else mi(1, 0) #fi), extractMInt( %rax, 48, 56)), mi(9, 1)), 1, 2), mi(1, 1)) xorBool eqMInt( extractMInt( ror( concatenateMInt( (#ifMInt %cf #then mi(1, 1) #else mi(1, 0) #fi), extractMInt( %rax, 48, 56)), mi(9, 1)), 2, 3), mi(1, 1))) orBool FALSE) #then mi(1, 1) #else mi(1, 0) #fi)
+%of    : (#ifMInt (eqMInt( extractMInt( ror( concatenateMInt( (#ifMInt %cf #then mi(1, 1) #else mi(1, 0) #fi), extractMInt( %rax, 48, 56)), mi(9, 1)), 1, 2), mi(1, 1)) xorBool eqMInt( extractMInt( ror( concatenateMInt( (#ifMInt %cf #then mi(1, 1) #else mi(1, 0) #fi), extractMInt( %rax, 48, 56)), mi(9, 1)), 2, 3), mi(1, 1))) #then mi(1, 1) #else mi(1, 0) #fi)
 
 sigfpe  : sigfpe
 sigbus  : sigbus
