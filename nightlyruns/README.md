@@ -27,6 +27,7 @@
 ```
 02.
 ```
+cat nightlyruns/job.01 | parallel "cp concrete_instances/immediate-variants/{}/check_stoke.01.txt concrete_instances/immediate-variants/{}/check_stoke.02.txt"
 ~/x86-semantics/scripts/process_spec.pl --check_stoke_imm --file nightlyruns/job.02   --testid 02  |& tee nightlyruns/runlog.02
 ```
 03.
