@@ -1,5 +1,12 @@
 # Jobs Chart
 ## Immediates
+
+### Prepare Instruction Directory
+```
+parallel -a ~/x86-semantics/docs/relatedwork/strata/Registers/register_instructions.txt "~/x86-semantics/scripts/process_spec.pl --prepare_concrete --opcode {} --workdir concrete_instances/register-variants/{}"
+```
+
+### Test Charts
 | Id  | Instr Category  | Date  | Purpose  | Count   | Input | Output | Command |
 |--|--|--|--|--|--|--|--|
 | 01 | immediates | 30 may | match stoke | Ungeneralized Stratified (78) + Generalised Stratified(28) | job.01 |runlog.01 | 01 |
@@ -8,6 +15,14 @@
 | 08 | immediates | 30 may | check stoke | 162: Generalized unstratified immediates, Those with > imm8, are tested inly for first 256 values | job.08 |runlog.08 | 08 |
 
 ## Registers
+
+### Prepare Instruction Directory
+```
+parallel -a ~/x86-semantics/docs/relatedwork/strata/Registers/register_instructions.txt "~/x86-semantics/scripts/process_spec.pl --prepare_concrete --opcode {} --workdir concrete_instances/register-variants/{}"
+parallel -a ~/x86-semantics/docs/relatedwork/strata/Registers/schedule_instructions.txt  "~/x86-semantics/scripts/process_spec.pl --prepare_concrete --opcode {} --workdir concrete_instances/register-variants/{} --samereg "
+```
+
+### Test Charts
 | Id  | Instr Category  | Date  | Purpose  | Count   | Input | Output | Command |
 |--|--|--|--|--|--|--|--|
 | 4 | register | 2 apr | not-stratified-not-stoked | 125 = 129 - 1 (mispelled) - 3 (pextl/q and cmpxchgl) | job.04 |runlog.04 | 4 |
