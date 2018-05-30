@@ -283,7 +283,12 @@ Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vpextrw_r32_xmm_imm8_141 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vpextrw_r32_xmm_imm8_142 
-Equivalent.
+Circuit for 'vpextrw $0x8e, %xmm1, %ebx' (opcode vpextrw_r32_xmm_imm8_142)
+  not equivalent for '%rbx':
+    strata:        0x0₄₈ ∘ add_single(0x0₃₂, %ymm1[127:96])[15:0]
+    hand-written:  0x0₄₈ ∘ (%ymm1[127:0] >> 0x60₁₂₈)[15:0]
+
+
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vpextrw_r32_xmm_imm8_143 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vpextrw_r32_xmm_imm8_144 
@@ -359,7 +364,12 @@ Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vpextrw_r32_xmm_imm8_179 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vpextrw_r32_xmm_imm8_180 
-Equivalent.
+Circuit for 'vpextrw $0xb4, %xmm1, %ebx' (opcode vpextrw_r32_xmm_imm8_180)
+  not equivalent for '%rbx':
+    strata:        0x0₄₈ ∘ add_double(%ymm1[127:64], 0x0₆₄)[15:0]
+    hand-written:  0x0₄₈ ∘ (%ymm1[127:0] >> 0x40₁₂₈)[15:0]
+
+
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vpextrw_r32_xmm_imm8_181 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vpextrw_r32_xmm_imm8_182 

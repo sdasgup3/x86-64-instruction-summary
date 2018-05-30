@@ -246,7 +246,7 @@ strata does not support 'vcmpsd $0x5e, %xmm3, %xmm2, %xmm1'.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpsd_xmm_xmm_xmm_imm8_95 
 Circuit for 'vcmpsd $0x5f, %xmm3, %xmm2, %xmm1' (opcode vcmpsd_xmm_xmm_xmm_imm8_95)
   not equivalent for '%ymm1':
-    strata:        0x0₆₄ ∘ 0x0₆₄ ∘ ((0x0₆₄ | %ymm2[127:64]) ∘ (0xffffffffffffffff₆₄ | %ymm2[63:0]))
+    strata:        0x0₆₄ ∘ 0x0₆₄ ∘ (%ymm2[127:64] ∘ (0xffffffffffffffff₆₄ | %ymm2[63:0]))
     hand-written:  0x0₁₂₈ ∘ (%ymm2[127:64] ∘ (cmp_double_pred(%ymm2[63:0], %ymm3[63:0], 0x5f₈) = 0x1₁ ? 0xffffffffffffffff₆₄ : 0x0₆₄))
 
 
@@ -540,7 +540,7 @@ strata does not support 'vcmpsd $0xce, %xmm3, %xmm2, %xmm1'.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpsd_xmm_xmm_xmm_imm8_207 
 Circuit for 'vcmpsd $0xcf, %xmm3, %xmm2, %xmm1' (opcode vcmpsd_xmm_xmm_xmm_imm8_207)
   not equivalent for '%ymm1':
-    strata:        0x0₁₂₈ ∘ ((0x0₆₄ | %ymm2[127:64]) ∘ (add_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), sign-extend-64(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂))[63:32]) ∘ add_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), sign-extend-64(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂))[63:32]) | %ymm2[63:0]))
+    strata:        0x0₁₂₈ ∘ (%ymm2[127:64] ∘ (add_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), sign-extend-64(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂))[63:32]) ∘ add_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), sign-extend-64(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂))[63:32]) | %ymm2[63:0]))
     hand-written:  0x0₁₂₈ ∘ (%ymm2[127:64] ∘ (cmp_double_pred(%ymm2[63:0], %ymm3[63:0], 0xcf₈) = 0x1₁ ? 0xffffffffffffffff₆₄ : 0x0₆₄))
 
 

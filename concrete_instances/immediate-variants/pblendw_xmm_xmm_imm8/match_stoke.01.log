@@ -474,7 +474,7 @@ strata does not support 'pblendw $0xeb, %xmm2, %xmm1'.
 Circuit for 'pblendw $0xec, %xmm2, %xmm1' (opcode pblendw_xmm_xmm_imm8_236)
   not equivalent for '%xmm1':
     strata:        %ymm2[127:80] ∘ %ymm1[79:72] ∘ %ymm1[71:64] ∘ (%ymm2[63:32] ∘ vfmsub132_double(0x0₃₂ ∘ %ymm2[31:0], vfnmsub132_double(0x0₆₄, %ymm1[63:0], 0x0₆₄), 0x0₃₂ ∘ %ymm2[31:0])[31:0])
-    hand-written:  %ymm2[127:112] ∘ (%ymm2[111:96] ∘ (%ymm2[95:80] ∘ (%ymm1[79:64] ∘ (%ymm2[63:48] ∘ (%ymm2[47:32] ∘ %ymm1[31:0])))))
+    hand-written:  %ymm2[127:80] ∘ (%ymm1[79:64] ∘ (%ymm2[63:32] ∘ %ymm1[31:0]))
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode pblendw_xmm_xmm_imm8_237 

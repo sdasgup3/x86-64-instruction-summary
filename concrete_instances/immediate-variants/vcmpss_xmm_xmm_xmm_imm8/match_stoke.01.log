@@ -78,7 +78,7 @@ strata does not support 'vcmpss $0x1e, %xmm3, %xmm2, %xmm1'.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpss_xmm_xmm_xmm_imm8_31 
 Circuit for 'vcmpss $0x1f, %xmm3, %xmm2, %xmm1' (opcode vcmpss_xmm_xmm_xmm_imm8_31)
   not equivalent for '%ymm1':
-    strata:        0x0₆₄ ∘ (0x0₆₄ ∘ ((0x0₆₄ | %ymm2[127:64]) ∘ (cvt_single_to_int32_truncate(sqrt_double(0x0₃₂ ∘ div_single(0x0₃₂, 0x0₃₂))[63:32]) ∘ cvt_single_to_int32_truncate(sqrt_double(0x0₃₂ ∘ div_single(0x0₃₂, 0x0₃₂))[31:0]) | %ymm2[63:16] ∘ (%ymm2[79:64] | %ymm2[15:0]))))
+    strata:        0x0₁₂₈ ∘ (%ymm2[127:64] ∘ (cvt_single_to_int32_truncate(sqrt_double(0x0₃₂ ∘ div_single(0x0₃₂, 0x0₃₂))[63:32]) ∘ cvt_single_to_int32_truncate(sqrt_double(0x0₃₂ ∘ div_single(0x0₃₂, 0x0₃₂))[31:0]) | %ymm2[63:16] ∘ (%ymm2[79:64] | %ymm2[15:0])))
     hand-written:  0x0₁₂₈ ∘ (%ymm2[127:32] ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0x1f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))
 
 
@@ -120,7 +120,7 @@ strata does not support 'vcmpss $0x2e, %xmm3, %xmm2, %xmm1'.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpss_xmm_xmm_xmm_imm8_47 
 Circuit for 'vcmpss $0x2f, %xmm3, %xmm2, %xmm1' (opcode vcmpss_xmm_xmm_xmm_imm8_47)
   not equivalent for '%ymm1':
-    strata:        0x0₁₂₈ ∘ ((0x0₆₄ | %ymm2[127:64]) ∘ (0xffffffff₆₄ | %ymm2[63:0]))
+    strata:        0x0₁₂₈ ∘ (%ymm2[127:64] ∘ (0xffffffff₆₄ | %ymm2[63:0]))
     hand-written:  0x0₁₂₈ ∘ (%ymm2[127:32] ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0x2f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))
 
 
@@ -288,7 +288,7 @@ strata does not support 'vcmpss $0x6e, %xmm3, %xmm2, %xmm1'.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpss_xmm_xmm_xmm_imm8_111 
 Circuit for 'vcmpss $0x6f, %xmm3, %xmm2, %xmm1' (opcode vcmpss_xmm_xmm_xmm_imm8_111)
   not equivalent for '%ymm1':
-    strata:        0x0₁₂₈ ∘ ((0x0₆₄ | %ymm2[127:64]) ∘ (0xffffffff₆₄ | %ymm2[63:0]))
+    strata:        0x0₁₂₈ ∘ (%ymm2[127:64] ∘ (0xffffffff₆₄ | %ymm2[63:0]))
     hand-written:  0x0₁₂₈ ∘ (%ymm2[127:32] ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0x6f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))
 
 
@@ -330,7 +330,7 @@ strata does not support 'vcmpss $0x7e, %xmm3, %xmm2, %xmm1'.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpss_xmm_xmm_xmm_imm8_127 
 Circuit for 'vcmpss $0x7f, %xmm3, %xmm2, %xmm1' (opcode vcmpss_xmm_xmm_xmm_imm8_127)
   not equivalent for '%ymm1':
-    strata:        0x0₆₄ ∘ 0x0₆₄ ∘ ((0x0₆₄ | %ymm2[127:64]) ∘ (0x0₆₄ ⊕ %ymm2[63:0] | 0x0₃₂ ∘ %ymm2[31:0] ⊕ 0xffffffff₆₄))
+    strata:        0x0₆₄ ∘ 0x0₆₄ ∘ (%ymm2[127:64] ∘ (%ymm2[63:0] | 0x0₃₂ ∘ %ymm2[31:0] ⊕ 0xffffffff₆₄))
     hand-written:  0x0₁₂₈ ∘ (%ymm2[127:32] ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0x7f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))
 
 
@@ -372,7 +372,7 @@ strata does not support 'vcmpss $0x8e, %xmm3, %xmm2, %xmm1'.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpss_xmm_xmm_xmm_imm8_143 
 Circuit for 'vcmpss $0x8f, %xmm3, %xmm2, %xmm1' (opcode vcmpss_xmm_xmm_xmm_imm8_143)
   not equivalent for '%ymm1':
-    strata:        0x0₁₂₈ ∘ (%ymm2[127:32] ∘ (mincmp_single(%ymm2[31:8] ∘ 0xff₈, 0xffffffff₃₂) = 0x1₁ ? %ymm2[31:8] ∘ 0xff₈ : 0xffffffff₃₂))
+    strata:        0x0₁₂₈ ∘ (%ymm2[127:32] ∘ (mincmp_single(%ymm2[31:8] ∘ 0xff₈, add_double(0x0₆₄, 0xffffffffffffffff₆₄)[15:0] ∘ add_double(0x0₆₄, 0xffffffffffffffff₆₄)[15:0]) = 0x1₁ ? %ymm2[31:8] ∘ 0xff₈ : add_double(0x0₆₄, 0xffffffffffffffff₆₄)[15:0] ∘ add_double(0x0₆₄, 0xffffffffffffffff₆₄)[15:0]))
     hand-written:  0x0₁₂₈ ∘ (%ymm2[127:32] ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0x8f₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))
 
 
@@ -498,7 +498,7 @@ strata does not support 'vcmpss $0xbe, %xmm3, %xmm2, %xmm1'.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpss_xmm_xmm_xmm_imm8_191 
 Circuit for 'vcmpss $0xbf, %xmm3, %xmm2, %xmm1' (opcode vcmpss_xmm_xmm_xmm_imm8_191)
   not equivalent for '%ymm1':
-    strata:        0x0₁₂₈ ∘ ((%ymm2[127:64] | 0x0₆₄) ∘ (%ymm2[63:0] | 0xffffffff₆₄))
+    strata:        0x0₁₂₈ ∘ (%ymm2[127:64] ∘ (%ymm2[63:0] | 0xffffffff₆₄))
     hand-written:  0x0₁₂₈ ∘ (%ymm2[127:32] ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0xbf₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))
 
 
@@ -582,7 +582,7 @@ strata does not support 'vcmpss $0xde, %xmm3, %xmm2, %xmm1'.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpss_xmm_xmm_xmm_imm8_223 
 Circuit for 'vcmpss $0xdf, %xmm3, %xmm2, %xmm1' (opcode vcmpss_xmm_xmm_xmm_imm8_223)
   not equivalent for '%ymm1':
-    strata:        0x0₁₂₈ ∘ ((%ymm2[127:64] ⊕ 0x0₆₄) ∘ (0x0₃₂ ∘ %ymm2[31:0] ⊕ 0xffffffff₆₄ ⊕ %ymm2[63:0]))
+    strata:        0x0₁₂₈ ∘ (%ymm2[127:64] ∘ (0x0₃₂ ∘ %ymm2[31:0] ⊕ 0xffffffff₆₄ ⊕ %ymm2[63:0]))
     hand-written:  0x0₁₂₈ ∘ (%ymm2[127:32] ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0xdf₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))
 
 
@@ -624,7 +624,7 @@ strata does not support 'vcmpss $0xee, %xmm3, %xmm2, %xmm1'.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vcmpss_xmm_xmm_xmm_imm8_239 
 Circuit for 'vcmpss $0xef, %xmm3, %xmm2, %xmm1' (opcode vcmpss_xmm_xmm_xmm_imm8_239)
   not equivalent for '%ymm1':
-    strata:        0x0₁₂₈ ∘ ((%ymm2[127:64] | 0x0₆₄) ∘ (%ymm2[63:0] | 0x0₃₂ ∘ sign-extend-64(vfnmsub132_double(0x0₆₄, 0x0₆₄, 0x0₆₄)[63:32])[63:32]))
+    strata:        0x0₁₂₈ ∘ (%ymm2[127:64] ∘ (%ymm2[63:0] | 0x0₃₂ ∘ sign-extend-64(vfnmsub132_double(0x0₆₄, 0x0₆₄, 0x0₆₄)[63:32])[63:32]))
     hand-written:  0x0₁₂₈ ∘ (%ymm2[127:32] ∘ (cmp_single_pred(%ymm2[31:0], %ymm3[31:0], 0xef₈) = 0x1₁ ? 0xffffffff₃₂ : 0x0₃₂))
 
 

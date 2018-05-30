@@ -1,1115 +1,430 @@
 
 
  Running Match Stoke on blendpd_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/blendpd_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/blendpd_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/blendpd_xmm_xmm_imm8/check_stoke.txt
-blendpd_xmm_xmm_imm8
-	eq: 241
-	But eq: 0
-	Not eq(blendpd_xmm_xmm_imm8): 0
-	Not present: 15
-	Size check_stoke: 15
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/blendpd_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/blendpd_xmm_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on blendps_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/blendps_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/blendps_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/blendps_xmm_xmm_imm8/check_stoke.txt
-blendps_xmm_xmm_imm8
-	eq: 255
-	But eq: 0
-	Not eq(blendps_xmm_xmm_imm8): 1
-	Not present: 0
-	Size check_stoke: 1
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/blendps_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/blendps_xmm_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on dppd_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/dppd_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/dppd_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/dppd_xmm_xmm_imm8/check_stoke.txt
-dppd_xmm_xmm_imm8
-	eq: 108
-	But eq: 123
-	Not eq(dppd_xmm_xmm_imm8): 25
-	Not present: 0
-	Size check_stoke: 148
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/dppd_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/dppd_xmm_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on dpps_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/dpps_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/dpps_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/dpps_xmm_xmm_imm8/check_stoke.txt
-dpps_xmm_xmm_imm8
-	eq: 14
-	But eq: 45
-	Not eq(dpps_xmm_xmm_imm8): 20
-	Not present: 177
-	Size check_stoke: 242
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/dpps_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/dpps_xmm_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on extractps_r32_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/extractps_r32_xmm_imm8/match_stoke.txt  1>imm_instructions/extractps_r32_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/extractps_r32_xmm_imm8/check_stoke.txt
-extractps_r32_xmm_imm8
-	eq: 254
-	But eq: 0
-	Not eq(extractps_r32_xmm_imm8): 0
-	Not present: 2
-	Size check_stoke: 2
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/extractps_r32_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/extractps_r32_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on extractps_r64_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/extractps_r64_xmm_imm8/match_stoke.txt  1>imm_instructions/extractps_r64_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/extractps_r64_xmm_imm8/check_stoke.txt
-extractps_r64_xmm_imm8
-	eq: 256
-	But eq: 0
-	Not eq(extractps_r64_xmm_imm8): 0
-	Not present: 0
-	Size check_stoke: 0
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/extractps_r64_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/extractps_r64_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on insertps_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/insertps_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/insertps_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/insertps_xmm_xmm_imm8/check_stoke.txt
-insertps_xmm_xmm_imm8
-	eq: 251
-	But eq: 0
-	Not eq(insertps_xmm_xmm_imm8): 4
-	Not present: 1
-	Size check_stoke: 5
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/insertps_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/insertps_xmm_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on palignr_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/palignr_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/palignr_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/palignr_xmm_xmm_imm8/check_stoke.txt
-palignr_xmm_xmm_imm8
-	eq: 229
-	But eq: 0
-	Not eq(palignr_xmm_xmm_imm8): 5
-	Not present: 22
-	Size check_stoke: 27
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/palignr_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/palignr_xmm_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on pblendw_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/pblendw_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/pblendw_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/pblendw_xmm_xmm_imm8/check_stoke.txt
-pblendw_xmm_xmm_imm8
-	eq: 44
-	But eq: 0
-	Not eq(pblendw_xmm_xmm_imm8): 1
-	Not present: 211
-	Size check_stoke: 212
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/pblendw_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/pblendw_xmm_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on pextrb_r32_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/pextrb_r32_xmm_imm8/match_stoke.txt  1>imm_instructions/pextrb_r32_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/pextrb_r32_xmm_imm8/check_stoke.txt
-pextrb_r32_xmm_imm8
-	eq: 256
-	But eq: 0
-	Not eq(pextrb_r32_xmm_imm8): 0
-	Not present: 0
-	Size check_stoke: 0
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/pextrb_r32_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/pextrb_r32_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on pextrb_r64_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/pextrb_r64_xmm_imm8/match_stoke.txt  1>imm_instructions/pextrb_r64_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/pextrb_r64_xmm_imm8/check_stoke.txt
-pextrb_r64_xmm_imm8
-	eq: 256
-	But eq: 0
-	Not eq(pextrb_r64_xmm_imm8): 0
-	Not present: 0
-	Size check_stoke: 0
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/pextrb_r64_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/pextrb_r64_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on pextrd_r32_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/pextrd_r32_xmm_imm8/match_stoke.txt  1>imm_instructions/pextrd_r32_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/pextrd_r32_xmm_imm8/check_stoke.txt
-pextrd_r32_xmm_imm8
-	eq: 256
-	But eq: 0
-	Not eq(pextrd_r32_xmm_imm8): 0
-	Not present: 0
-	Size check_stoke: 0
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/pextrd_r32_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/pextrd_r32_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on pextrq_r64_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/pextrq_r64_xmm_imm8/match_stoke.txt  1>imm_instructions/pextrq_r64_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/pextrq_r64_xmm_imm8/check_stoke.txt
-pextrq_r64_xmm_imm8
-	eq: 256
-	But eq: 0
-	Not eq(pextrq_r64_xmm_imm8): 0
-	Not present: 0
-	Size check_stoke: 0
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/pextrq_r64_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/pextrq_r64_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on pextrw_r32_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/pextrw_r32_xmm_imm8/match_stoke.txt  1>imm_instructions/pextrw_r32_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/pextrw_r32_xmm_imm8/check_stoke.txt
-pextrw_r32_xmm_imm8
-	eq: 256
-	But eq: 0
-	Not eq(pextrw_r32_xmm_imm8): 0
-	Not present: 0
-	Size check_stoke: 0
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/pextrw_r32_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/pextrw_r32_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on pextrw_r64_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/pextrw_r64_xmm_imm8/match_stoke.txt  1>imm_instructions/pextrw_r64_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/pextrw_r64_xmm_imm8/check_stoke.txt
-pextrw_r64_xmm_imm8
-	eq: 256
-	But eq: 0
-	Not eq(pextrw_r64_xmm_imm8): 0
-	Not present: 0
-	Size check_stoke: 0
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/pextrw_r64_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/pextrw_r64_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on pinsrb_xmm_r32_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/pinsrb_xmm_r32_imm8/match_stoke.txt  1>imm_instructions/pinsrb_xmm_r32_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/pinsrb_xmm_r32_imm8/check_stoke.txt
-pinsrb_xmm_r32_imm8
-	eq: 256
-	But eq: 0
-	Not eq(pinsrb_xmm_r32_imm8): 0
-	Not present: 0
-	Size check_stoke: 0
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/pinsrb_xmm_r32_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/pinsrb_xmm_r32_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on pinsrd_xmm_r32_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/pinsrd_xmm_r32_imm8/match_stoke.txt  1>imm_instructions/pinsrd_xmm_r32_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/pinsrd_xmm_r32_imm8/check_stoke.txt
-pinsrd_xmm_r32_imm8
-	eq: 256
-	But eq: 0
-	Not eq(pinsrd_xmm_r32_imm8): 0
-	Not present: 0
-	Size check_stoke: 0
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/pinsrd_xmm_r32_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/pinsrd_xmm_r32_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on pinsrw_xmm_r32_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/pinsrw_xmm_r32_imm8/match_stoke.txt  1>imm_instructions/pinsrw_xmm_r32_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/pinsrw_xmm_r32_imm8/check_stoke.txt
-pinsrw_xmm_r32_imm8
-	eq: 256
-	But eq: 0
-	Not eq(pinsrw_xmm_r32_imm8): 0
-	Not present: 0
-	Size check_stoke: 0
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/pinsrw_xmm_r32_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/pinsrw_xmm_r32_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on pshufd_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/pshufd_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/pshufd_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/pshufd_xmm_xmm_imm8/check_stoke.txt
-pshufd_xmm_xmm_imm8
-	eq: 238
-	But eq: 0
-	Not eq(pshufd_xmm_xmm_imm8): 12
-	Not present: 6
-	Size check_stoke: 18
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/pshufd_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/pshufd_xmm_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on pshufhw_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/pshufhw_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/pshufhw_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/pshufhw_xmm_xmm_imm8/check_stoke.txt
-pshufhw_xmm_xmm_imm8
-	eq: 20
-	But eq: 0
-	Not eq(pshufhw_xmm_xmm_imm8): 1
-	Not present: 235
-	Size check_stoke: 236
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/pshufhw_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/pshufhw_xmm_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on pshuflw_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/pshuflw_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/pshuflw_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/pshuflw_xmm_xmm_imm8/check_stoke.txt
-pshuflw_xmm_xmm_imm8
-	eq: 4
-	But eq: 0
-	Not eq(pshuflw_xmm_xmm_imm8): 0
-	Not present: 252
-	Size check_stoke: 252
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/pshuflw_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/pshuflw_xmm_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on pslldq_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/pslldq_xmm_imm8/match_stoke.txt  1>imm_instructions/pslldq_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/pslldq_xmm_imm8/check_stoke.txt
-pslldq_xmm_imm8
-	eq: 242
-	But eq: 0
-	Not eq(pslldq_xmm_imm8): 4
-	Not present: 10
-	Size check_stoke: 14
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/pslldq_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/pslldq_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on psrldq_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/psrldq_xmm_imm8/match_stoke.txt  1>imm_instructions/psrldq_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/psrldq_xmm_imm8/check_stoke.txt
-psrldq_xmm_imm8
-	eq: 237
-	But eq: 0
-	Not eq(psrldq_xmm_imm8): 8
-	Not present: 11
-	Size check_stoke: 19
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/psrldq_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/psrldq_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on shufpd_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/shufpd_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/shufpd_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/shufpd_xmm_xmm_imm8/check_stoke.txt
-shufpd_xmm_xmm_imm8
-	eq: 256
-	But eq: 0
-	Not eq(shufpd_xmm_xmm_imm8): 0
-	Not present: 0
-	Size check_stoke: 0
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/shufpd_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/shufpd_xmm_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on shufps_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/shufps_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/shufps_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/shufps_xmm_xmm_imm8/check_stoke.txt
-shufps_xmm_xmm_imm8
-	eq: 171
-	But eq: 0
-	Not eq(shufps_xmm_xmm_imm8): 0
-	Not present: 85
-	Size check_stoke: 85
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/shufps_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/shufps_xmm_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vblendpd_xmm_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vblendpd_xmm_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/vblendpd_xmm_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vblendpd_xmm_xmm_xmm_imm8/check_stoke.txt
-vblendpd_xmm_xmm_xmm_imm8
-	eq: 256
-	But eq: 0
-	Not eq(vblendpd_xmm_xmm_xmm_imm8): 0
-	Not present: 0
-	Size check_stoke: 0
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vblendpd_xmm_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vblendpd_xmm_xmm_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vblendpd_ymm_ymm_ymm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vblendpd_ymm_ymm_ymm_imm8/match_stoke.txt  1>imm_instructions/vblendpd_ymm_ymm_ymm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vblendpd_ymm_ymm_ymm_imm8/check_stoke.txt
-vblendpd_ymm_ymm_ymm_imm8
-	eq: 156
-	But eq: 0
-	Not eq(vblendpd_ymm_ymm_ymm_imm8): 0
-	Not present: 100
-	Size check_stoke: 100
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vblendpd_ymm_ymm_ymm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vblendpd_ymm_ymm_ymm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vblendps_xmm_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vblendps_xmm_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/vblendps_xmm_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vblendps_xmm_xmm_xmm_imm8/check_stoke.txt
-vblendps_xmm_xmm_xmm_imm8
-	eq: 216
-	But eq: 0
-	Not eq(vblendps_xmm_xmm_xmm_imm8): 9
-	Not present: 31
-	Size check_stoke: 40
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vblendps_xmm_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vblendps_xmm_xmm_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vblendps_ymm_ymm_ymm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vblendps_ymm_ymm_ymm_imm8/match_stoke.txt  1>imm_instructions/vblendps_ymm_ymm_ymm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vblendps_ymm_ymm_ymm_imm8/check_stoke.txt
-vblendps_ymm_ymm_ymm_imm8
-	eq: 38
-	But eq: 0
-	Not eq(vblendps_ymm_ymm_ymm_imm8): 0
-	Not present: 218
-	Size check_stoke: 218
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vblendps_ymm_ymm_ymm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vblendps_ymm_ymm_ymm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vcmppd_xmm_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vcmppd_xmm_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/vcmppd_xmm_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vcmppd_xmm_xmm_xmm_imm8/check_stoke.txt
-vcmppd_xmm_xmm_xmm_imm8
-	eq: 0
-	But eq: 0
-	Not eq(vcmppd_xmm_xmm_xmm_imm8): 32
-	Not present: 224
-	Size check_stoke: 256
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vcmppd_xmm_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vcmppd_xmm_xmm_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vcmppd_ymm_ymm_ymm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vcmppd_ymm_ymm_ymm_imm8/match_stoke.txt  1>imm_instructions/vcmppd_ymm_ymm_ymm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vcmppd_ymm_ymm_ymm_imm8/check_stoke.txt
-vcmppd_ymm_ymm_ymm_imm8
-	eq: 0
-	But eq: 0
-	Not eq(vcmppd_ymm_ymm_ymm_imm8): 32
-	Not present: 224
-	Size check_stoke: 256
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vcmppd_ymm_ymm_ymm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vcmppd_ymm_ymm_ymm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vcmpps_xmm_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vcmpps_xmm_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/vcmpps_xmm_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vcmpps_xmm_xmm_xmm_imm8/check_stoke.txt
-vcmpps_xmm_xmm_xmm_imm8
-	eq: 0
-	But eq: 0
-	Not eq(vcmpps_xmm_xmm_xmm_imm8): 32
-	Not present: 224
-	Size check_stoke: 256
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vcmpps_xmm_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vcmpps_xmm_xmm_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vcmpps_ymm_ymm_ymm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vcmpps_ymm_ymm_ymm_imm8/match_stoke.txt  1>imm_instructions/vcmpps_ymm_ymm_ymm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vcmpps_ymm_ymm_ymm_imm8/check_stoke.txt
-vcmpps_ymm_ymm_ymm_imm8
-	eq: 0
-	But eq: 0
-	Not eq(vcmpps_ymm_ymm_ymm_imm8): 31
-	Not present: 225
-	Size check_stoke: 256
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vcmpps_ymm_ymm_ymm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vcmpps_ymm_ymm_ymm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vcmpsd_xmm_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vcmpsd_xmm_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/vcmpsd_xmm_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vcmpsd_xmm_xmm_xmm_imm8/check_stoke.txt
-vcmpsd_xmm_xmm_xmm_imm8
-	eq: 0
-	But eq: 0
-	Not eq(vcmpsd_xmm_xmm_xmm_imm8): 32
-	Not present: 224
-	Size check_stoke: 256
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vcmpsd_xmm_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vcmpsd_xmm_xmm_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vcmpss_xmm_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vcmpss_xmm_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/vcmpss_xmm_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vcmpss_xmm_xmm_xmm_imm8/check_stoke.txt
-vcmpss_xmm_xmm_xmm_imm8
-	eq: 0
-	But eq: 0
-	Not eq(vcmpss_xmm_xmm_xmm_imm8): 32
-	Not present: 224
-	Size check_stoke: 256
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vcmpss_xmm_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vcmpss_xmm_xmm_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vdppd_xmm_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vdppd_xmm_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/vdppd_xmm_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vdppd_xmm_xmm_xmm_imm8/check_stoke.txt
-vdppd_xmm_xmm_xmm_imm8
-	eq: 69
-	But eq: 56
-	Not eq(vdppd_xmm_xmm_xmm_imm8): 9
-	Not present: 122
-	Size check_stoke: 187
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vdppd_xmm_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vdppd_xmm_xmm_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vdpps_xmm_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vdpps_xmm_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/vdpps_xmm_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vdpps_xmm_xmm_xmm_imm8/check_stoke.txt
-vdpps_xmm_xmm_xmm_imm8
-	eq: 16
-	But eq: 21
-	Not eq(vdpps_xmm_xmm_xmm_imm8): 5
-	Not present: 214
-	Size check_stoke: 240
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vdpps_xmm_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vdpps_xmm_xmm_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vdpps_ymm_ymm_ymm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vdpps_ymm_ymm_ymm_imm8/match_stoke.txt  1>imm_instructions/vdpps_ymm_ymm_ymm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vdpps_ymm_ymm_ymm_imm8/check_stoke.txt
-vdpps_ymm_ymm_ymm_imm8
-	eq: 16
-	But eq: 16
-	Not eq(vdpps_ymm_ymm_ymm_imm8): 1
-	Not present: 223
-	Size check_stoke: 240
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vdpps_ymm_ymm_ymm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vdpps_ymm_ymm_ymm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vextractf128_xmm_ymm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vextractf128_xmm_ymm_imm8/match_stoke.txt  1>imm_instructions/vextractf128_xmm_ymm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vextractf128_xmm_ymm_imm8/check_stoke.txt
-vextractf128_xmm_ymm_imm8
-	eq: 251
-	But eq: 0
-	Not eq(vextractf128_xmm_ymm_imm8): 0
-	Not present: 5
-	Size check_stoke: 5
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vextractf128_xmm_ymm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vextractf128_xmm_ymm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vextracti128_xmm_ymm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vextracti128_xmm_ymm_imm8/match_stoke.txt  1>imm_instructions/vextracti128_xmm_ymm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vextracti128_xmm_ymm_imm8/check_stoke.txt
-vextracti128_xmm_ymm_imm8
-	eq: 256
-	But eq: 0
-	Not eq(vextracti128_xmm_ymm_imm8): 0
-	Not present: 0
-	Size check_stoke: 0
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vextracti128_xmm_ymm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vextracti128_xmm_ymm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vextractps_r32_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vextractps_r32_xmm_imm8/match_stoke.txt  1>imm_instructions/vextractps_r32_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vextractps_r32_xmm_imm8/check_stoke.txt
-vextractps_r32_xmm_imm8
-	eq: 256
-	But eq: 0
-	Not eq(vextractps_r32_xmm_imm8): 0
-	Not present: 0
-	Size check_stoke: 0
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vextractps_r32_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vextractps_r32_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vinsertf128_ymm_ymm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vinsertf128_ymm_ymm_xmm_imm8/match_stoke.txt  1>imm_instructions/vinsertf128_ymm_ymm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vinsertf128_ymm_ymm_xmm_imm8/check_stoke.txt
-vinsertf128_ymm_ymm_xmm_imm8
-	eq: 248
-	But eq: 0
-	Not eq(vinsertf128_ymm_ymm_xmm_imm8): 1
-	Not present: 7
-	Size check_stoke: 8
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vinsertf128_ymm_ymm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vinsertf128_ymm_ymm_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vinserti128_ymm_ymm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vinserti128_ymm_ymm_xmm_imm8/match_stoke.txt  1>imm_instructions/vinserti128_ymm_ymm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vinserti128_ymm_ymm_xmm_imm8/check_stoke.txt
-vinserti128_ymm_ymm_xmm_imm8
-	eq: 238
-	But eq: 0
-	Not eq(vinserti128_ymm_ymm_xmm_imm8): 0
-	Not present: 18
-	Size check_stoke: 18
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vinserti128_ymm_ymm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vinserti128_ymm_ymm_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vinsertps_xmm_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vinsertps_xmm_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/vinsertps_xmm_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vinsertps_xmm_xmm_xmm_imm8/check_stoke.txt
-vinsertps_xmm_xmm_xmm_imm8
-	eq: 206
-	But eq: 0
-	Not eq(vinsertps_xmm_xmm_xmm_imm8): 29
-	Not present: 21
-	Size check_stoke: 50
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vpalignr_xmm_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpalignr_xmm_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/vpalignr_xmm_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpalignr_xmm_xmm_xmm_imm8/check_stoke.txt
-vpalignr_xmm_xmm_xmm_imm8
-	eq: 225
-	But eq: 0
-	Not eq(vpalignr_xmm_xmm_xmm_imm8): 0
-	Not present: 31
-	Size check_stoke: 31
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpalignr_xmm_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpalignr_xmm_xmm_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vpalignr_ymm_ymm_ymm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpalignr_ymm_ymm_ymm_imm8/match_stoke.txt  1>imm_instructions/vpalignr_ymm_ymm_ymm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpalignr_ymm_ymm_ymm_imm8/check_stoke.txt
-vpalignr_ymm_ymm_ymm_imm8
-	eq: 232
-	But eq: 0
-	Not eq(vpalignr_ymm_ymm_ymm_imm8): 0
-	Not present: 24
-	Size check_stoke: 24
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpalignr_ymm_ymm_ymm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpalignr_ymm_ymm_ymm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vpblendd_xmm_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpblendd_xmm_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/vpblendd_xmm_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpblendd_xmm_xmm_xmm_imm8/check_stoke.txt
-vpblendd_xmm_xmm_xmm_imm8
-	eq: 164
-	But eq: 0
-	Not eq(vpblendd_xmm_xmm_xmm_imm8): 9
-	Not present: 83
-	Size check_stoke: 92
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpblendd_xmm_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpblendd_xmm_xmm_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vpblendd_ymm_ymm_ymm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpblendd_ymm_ymm_ymm_imm8/match_stoke.txt  1>imm_instructions/vpblendd_ymm_ymm_ymm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpblendd_ymm_ymm_ymm_imm8/check_stoke.txt
-vpblendd_ymm_ymm_ymm_imm8
-	eq: 46
-	But eq: 0
-	Not eq(vpblendd_ymm_ymm_ymm_imm8): 2
-	Not present: 208
-	Size check_stoke: 210
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpblendd_ymm_ymm_ymm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpblendd_ymm_ymm_ymm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vpblendw_xmm_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpblendw_xmm_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/vpblendw_xmm_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpblendw_xmm_xmm_xmm_imm8/check_stoke.txt
-vpblendw_xmm_xmm_xmm_imm8
-	eq: 27
-	But eq: 0
-	Not eq(vpblendw_xmm_xmm_xmm_imm8): 1
-	Not present: 228
-	Size check_stoke: 229
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpblendw_xmm_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpblendw_xmm_xmm_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vpblendw_ymm_ymm_ymm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpblendw_ymm_ymm_ymm_imm8/match_stoke.txt  1>imm_instructions/vpblendw_ymm_ymm_ymm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpblendw_ymm_ymm_ymm_imm8/check_stoke.txt
-vpblendw_ymm_ymm_ymm_imm8
-	eq: 8
-	But eq: 0
-	Not eq(vpblendw_ymm_ymm_ymm_imm8): 0
-	Not present: 248
-	Size check_stoke: 248
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpblendw_ymm_ymm_ymm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpblendw_ymm_ymm_ymm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vperm2f128_ymm_ymm_ymm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vperm2f128_ymm_ymm_ymm_imm8/match_stoke.txt  1>imm_instructions/vperm2f128_ymm_ymm_ymm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vperm2f128_ymm_ymm_ymm_imm8/check_stoke.txt
-vperm2f128_ymm_ymm_ymm_imm8
-	eq: 233
-	But eq: 0
-	Not eq(vperm2f128_ymm_ymm_ymm_imm8): 1
-	Not present: 22
-	Size check_stoke: 23
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vperm2f128_ymm_ymm_ymm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vperm2f128_ymm_ymm_ymm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vperm2i128_ymm_ymm_ymm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vperm2i128_ymm_ymm_ymm_imm8/match_stoke.txt  1>imm_instructions/vperm2i128_ymm_ymm_ymm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vperm2i128_ymm_ymm_ymm_imm8/check_stoke.txt
-vperm2i128_ymm_ymm_ymm_imm8
-	eq: 229
-	But eq: 0
-	Not eq(vperm2i128_ymm_ymm_ymm_imm8): 2
-	Not present: 25
-	Size check_stoke: 27
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vperm2i128_ymm_ymm_ymm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vperm2i128_ymm_ymm_ymm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vpermpd_ymm_ymm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpermpd_ymm_ymm_imm8/match_stoke.txt  1>imm_instructions/vpermpd_ymm_ymm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpermpd_ymm_ymm_imm8/check_stoke.txt
-vpermpd_ymm_ymm_imm8
-	eq: 220
-	But eq: 0
-	Not eq(vpermpd_ymm_ymm_imm8): 0
-	Not present: 36
-	Size check_stoke: 36
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpermpd_ymm_ymm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpermpd_ymm_ymm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vpermq_ymm_ymm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpermq_ymm_ymm_imm8/match_stoke.txt  1>imm_instructions/vpermq_ymm_ymm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpermq_ymm_ymm_imm8/check_stoke.txt
-vpermq_ymm_ymm_imm8
-	eq: 188
-	But eq: 0
-	Not eq(vpermq_ymm_ymm_imm8): 0
-	Not present: 68
-	Size check_stoke: 68
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpermq_ymm_ymm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpermq_ymm_ymm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vpextrb_r32_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpextrb_r32_xmm_imm8/match_stoke.txt  1>imm_instructions/vpextrb_r32_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpextrb_r32_xmm_imm8/check_stoke.txt
-vpextrb_r32_xmm_imm8
-	eq: 256
-	But eq: 0
-	Not eq(vpextrb_r32_xmm_imm8): 0
-	Not present: 0
-	Size check_stoke: 0
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpextrb_r32_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpextrb_r32_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vpextrb_r64_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpextrb_r64_xmm_imm8/match_stoke.txt  1>imm_instructions/vpextrb_r64_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpextrb_r64_xmm_imm8/check_stoke.txt
-vpextrb_r64_xmm_imm8
-	eq: 256
-	But eq: 0
-	Not eq(vpextrb_r64_xmm_imm8): 0
-	Not present: 0
-	Size check_stoke: 0
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpextrb_r64_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpextrb_r64_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vpextrd_r32_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpextrd_r32_xmm_imm8/match_stoke.txt  1>imm_instructions/vpextrd_r32_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpextrd_r32_xmm_imm8/check_stoke.txt
-vpextrd_r32_xmm_imm8
-	eq: 256
-	But eq: 0
-	Not eq(vpextrd_r32_xmm_imm8): 0
-	Not present: 0
-	Size check_stoke: 0
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpextrd_r32_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpextrd_r32_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vpextrq_r64_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpextrq_r64_xmm_imm8/match_stoke.txt  1>imm_instructions/vpextrq_r64_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpextrq_r64_xmm_imm8/check_stoke.txt
-vpextrq_r64_xmm_imm8
-	eq: 256
-	But eq: 0
-	Not eq(vpextrq_r64_xmm_imm8): 0
-	Not present: 0
-	Size check_stoke: 0
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpextrq_r64_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpextrq_r64_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vpextrw_r32_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpextrw_r32_xmm_imm8/match_stoke.txt  1>imm_instructions/vpextrw_r32_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpextrw_r32_xmm_imm8/check_stoke.txt
-vpextrw_r32_xmm_imm8
-	eq: 256
-	But eq: 0
-	Not eq(vpextrw_r32_xmm_imm8): 0
-	Not present: 0
-	Size check_stoke: 0
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpextrw_r32_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpextrw_r32_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vpextrw_r64_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpextrw_r64_xmm_imm8/match_stoke.txt  1>imm_instructions/vpextrw_r64_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpextrw_r64_xmm_imm8/check_stoke.txt
-vpextrw_r64_xmm_imm8
-	eq: 244
-	But eq: 0
-	Not eq(vpextrw_r64_xmm_imm8): 0
-	Not present: 12
-	Size check_stoke: 12
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpextrw_r64_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpextrw_r64_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vpinsrb_xmm_xmm_r32_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpinsrb_xmm_xmm_r32_imm8/match_stoke.txt  1>imm_instructions/vpinsrb_xmm_xmm_r32_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpinsrb_xmm_xmm_r32_imm8/check_stoke.txt
-vpinsrb_xmm_xmm_r32_imm8
-	eq: 256
-	But eq: 0
-	Not eq(vpinsrb_xmm_xmm_r32_imm8): 0
-	Not present: 0
-	Size check_stoke: 0
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpinsrb_xmm_xmm_r32_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpinsrb_xmm_xmm_r32_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vpinsrd_xmm_xmm_r32_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpinsrd_xmm_xmm_r32_imm8/match_stoke.txt  1>imm_instructions/vpinsrd_xmm_xmm_r32_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpinsrd_xmm_xmm_r32_imm8/check_stoke.txt
-vpinsrd_xmm_xmm_r32_imm8
-	eq: 231
-	But eq: 0
-	Not eq(vpinsrd_xmm_xmm_r32_imm8): 2
-	Not present: 23
-	Size check_stoke: 25
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpinsrd_xmm_xmm_r32_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpinsrd_xmm_xmm_r32_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vpinsrq_xmm_xmm_r64_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpinsrq_xmm_xmm_r64_imm8/match_stoke.txt  1>imm_instructions/vpinsrq_xmm_xmm_r64_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpinsrq_xmm_xmm_r64_imm8/check_stoke.txt
-vpinsrq_xmm_xmm_r64_imm8
-	eq: 256
-	But eq: 0
-	Not eq(vpinsrq_xmm_xmm_r64_imm8): 0
-	Not present: 0
-	Size check_stoke: 0
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpinsrq_xmm_xmm_r64_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpinsrq_xmm_xmm_r64_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vpinsrw_xmm_xmm_r32_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpinsrw_xmm_xmm_r32_imm8/match_stoke.txt  1>imm_instructions/vpinsrw_xmm_xmm_r32_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpinsrw_xmm_xmm_r32_imm8/check_stoke.txt
-vpinsrw_xmm_xmm_r32_imm8
-	eq: 256
-	But eq: 0
-	Not eq(vpinsrw_xmm_xmm_r32_imm8): 0
-	Not present: 0
-	Size check_stoke: 0
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpinsrw_xmm_xmm_r32_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpinsrw_xmm_xmm_r32_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vpshufd_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpshufd_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/vpshufd_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpshufd_xmm_xmm_imm8/check_stoke.txt
-vpshufd_xmm_xmm_imm8
-	eq: 240
-	But eq: 0
-	Not eq(vpshufd_xmm_xmm_imm8): 5
-	Not present: 11
-	Size check_stoke: 16
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpshufd_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpshufd_xmm_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vpshufd_ymm_ymm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpshufd_ymm_ymm_imm8/match_stoke.txt  1>imm_instructions/vpshufd_ymm_ymm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpshufd_ymm_ymm_imm8/check_stoke.txt
-vpshufd_ymm_ymm_imm8
-	eq: 242
-	But eq: 0
-	Not eq(vpshufd_ymm_ymm_imm8): 0
-	Not present: 14
-	Size check_stoke: 14
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpshufd_ymm_ymm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpshufd_ymm_ymm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vpshufhw_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpshufhw_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/vpshufhw_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpshufhw_xmm_xmm_imm8/check_stoke.txt
-vpshufhw_xmm_xmm_imm8
-	eq: 30
-	But eq: 0
-	Not eq(vpshufhw_xmm_xmm_imm8): 0
-	Not present: 226
-	Size check_stoke: 226
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpshufhw_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpshufhw_xmm_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vpshufhw_ymm_ymm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpshufhw_ymm_ymm_imm8/match_stoke.txt  1>imm_instructions/vpshufhw_ymm_ymm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpshufhw_ymm_ymm_imm8/check_stoke.txt
-vpshufhw_ymm_ymm_imm8
-	eq: 2
-	But eq: 0
-	Not eq(vpshufhw_ymm_ymm_imm8): 0
-	Not present: 254
-	Size check_stoke: 254
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpshufhw_ymm_ymm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpshufhw_ymm_ymm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vpshuflw_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpshuflw_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/vpshuflw_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpshuflw_xmm_xmm_imm8/check_stoke.txt
-vpshuflw_xmm_xmm_imm8
-	eq: 34
-	But eq: 0
-	Not eq(vpshuflw_xmm_xmm_imm8): 0
-	Not present: 222
-	Size check_stoke: 222
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpshuflw_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpshuflw_xmm_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vpshuflw_ymm_ymm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpshuflw_ymm_ymm_imm8/match_stoke.txt  1>imm_instructions/vpshuflw_ymm_ymm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpshuflw_ymm_ymm_imm8/check_stoke.txt
-vpshuflw_ymm_ymm_imm8
-	eq: 5
-	But eq: 0
-	Not eq(vpshuflw_ymm_ymm_imm8): 0
-	Not present: 251
-	Size check_stoke: 251
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpshuflw_ymm_ymm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpshuflw_ymm_ymm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vpslldq_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpslldq_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/vpslldq_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpslldq_xmm_xmm_imm8/check_stoke.txt
-vpslldq_xmm_xmm_imm8
-	eq: 245
-	But eq: 0
-	Not eq(vpslldq_xmm_xmm_imm8): 0
-	Not present: 11
-	Size check_stoke: 11
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpslldq_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpslldq_xmm_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vpslldq_ymm_ymm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpslldq_ymm_ymm_imm8/match_stoke.txt  1>imm_instructions/vpslldq_ymm_ymm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpslldq_ymm_ymm_imm8/check_stoke.txt
-vpslldq_ymm_ymm_imm8
-	eq: 242
-	But eq: 0
-	Not eq(vpslldq_ymm_ymm_imm8): 0
-	Not present: 14
-	Size check_stoke: 14
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpslldq_ymm_ymm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpslldq_ymm_ymm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vpsrldq_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpsrldq_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/vpsrldq_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpsrldq_xmm_xmm_imm8/check_stoke.txt
-vpsrldq_xmm_xmm_imm8
-	eq: 246
-	But eq: 0
-	Not eq(vpsrldq_xmm_xmm_imm8): 0
-	Not present: 10
-	Size check_stoke: 10
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpsrldq_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpsrldq_xmm_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vpsrldq_ymm_ymm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpsrldq_ymm_ymm_imm8/match_stoke.txt  1>imm_instructions/vpsrldq_ymm_ymm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpsrldq_ymm_ymm_imm8/check_stoke.txt
-vpsrldq_ymm_ymm_imm8
-	eq: 244
-	But eq: 0
-	Not eq(vpsrldq_ymm_ymm_imm8): 0
-	Not present: 12
-	Size check_stoke: 12
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpsrldq_ymm_ymm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpsrldq_ymm_ymm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vshufpd_xmm_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vshufpd_xmm_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/vshufpd_xmm_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vshufpd_xmm_xmm_xmm_imm8/check_stoke.txt
-vshufpd_xmm_xmm_xmm_imm8
-	eq: 256
-	But eq: 0
-	Not eq(vshufpd_xmm_xmm_xmm_imm8): 0
-	Not present: 0
-	Size check_stoke: 0
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vshufpd_xmm_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vshufpd_xmm_xmm_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vshufpd_ymm_ymm_ymm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vshufpd_ymm_ymm_ymm_imm8/match_stoke.txt  1>imm_instructions/vshufpd_ymm_ymm_ymm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vshufpd_ymm_ymm_ymm_imm8/check_stoke.txt
-vshufpd_ymm_ymm_ymm_imm8
-	eq: 217
-	But eq: 0
-	Not eq(vshufpd_ymm_ymm_ymm_imm8): 0
-	Not present: 39
-	Size check_stoke: 39
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vshufpd_ymm_ymm_ymm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vshufpd_ymm_ymm_ymm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vshufps_xmm_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vshufps_xmm_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/vshufps_xmm_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vshufps_xmm_xmm_xmm_imm8/check_stoke.txt
-vshufps_xmm_xmm_xmm_imm8
-	eq: 157
-	But eq: 0
-	Not eq(vshufps_xmm_xmm_xmm_imm8): 0
-	Not present: 99
-	Size check_stoke: 99
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vshufps_xmm_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vshufps_xmm_xmm_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vshufps_ymm_ymm_ymm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vshufps_ymm_ymm_ymm_imm8/match_stoke.txt  1>imm_instructions/vshufps_ymm_ymm_ymm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vshufps_ymm_ymm_ymm_imm8/check_stoke.txt
-vshufps_ymm_ymm_ymm_imm8
-	eq: 40
-	But eq: 0
-	Not eq(vshufps_ymm_ymm_ymm_imm8): 0
-	Not present: 216
-	Size check_stoke: 216
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vshufps_ymm_ymm_ymm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vshufps_ymm_ymm_ymm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vpermilpd_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpermilpd_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/vpermilpd_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpermilpd_xmm_xmm_imm8/check_stoke.txt
-vpermilpd_xmm_xmm_imm8
-	eq: 256
-	But eq: 0
-	Not eq(vpermilpd_xmm_xmm_imm8): 0
-	Not present: 0
-	Size check_stoke: 0
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpermilpd_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpermilpd_xmm_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vpermilpd_ymm_ymm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpermilpd_ymm_ymm_imm8/match_stoke.txt  1>imm_instructions/vpermilpd_ymm_ymm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpermilpd_ymm_ymm_imm8/check_stoke.txt
-vpermilpd_ymm_ymm_imm8
-	eq: 256
-	But eq: 0
-	Not eq(vpermilpd_ymm_ymm_imm8): 0
-	Not present: 0
-	Size check_stoke: 0
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpermilpd_ymm_ymm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpermilpd_ymm_ymm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vpermilps_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpermilps_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/vpermilps_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpermilps_xmm_xmm_imm8/check_stoke.txt
-vpermilps_xmm_xmm_imm8
-	eq: 213
-	But eq: 0
-	Not eq(vpermilps_xmm_xmm_imm8): 3
-	Not present: 40
-	Size check_stoke: 43
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpermilps_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpermilps_xmm_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vpermilps_ymm_ymm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpermilps_ymm_ymm_imm8/match_stoke.txt  1>imm_instructions/vpermilps_ymm_ymm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpermilps_ymm_ymm_imm8/check_stoke.txt
-vpermilps_ymm_ymm_imm8
-	eq: 78
-	But eq: 0
-	Not eq(vpermilps_ymm_ymm_imm8): 0
-	Not present: 178
-	Size check_stoke: 178
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpermilps_ymm_ymm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpermilps_ymm_ymm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on psrad_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/psrad_xmm_imm8/match_stoke.txt  1>imm_instructions/psrad_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/psrad_xmm_imm8/check_stoke.txt
-psrad_xmm_imm8
-	eq: 2
-	But eq: 0
-	Not eq(psrad_xmm_imm8): 225
-	Not present: 29
-	Size check_stoke: 254
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/psrad_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/psrad_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vpsrad_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpsrad_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/vpsrad_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpsrad_xmm_xmm_imm8/check_stoke.txt
-vpsrad_xmm_xmm_imm8
-	eq: 1
-	But eq: 0
-	Not eq(vpsrad_xmm_xmm_imm8): 21
-	Not present: 234
-	Size check_stoke: 255
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpsrad_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpsrad_xmm_xmm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on vpsrad_ymm_ymm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpsrad_ymm_ymm_imm8/match_stoke.txt  1>imm_instructions/vpsrad_ymm_ymm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpsrad_ymm_ymm_imm8/check_stoke.txt
-vpsrad_ymm_ymm_imm8
-	eq: 1
-	But eq: 0
-	Not eq(vpsrad_ymm_ymm_imm8): 0
-	Not present: 255
-	Size check_stoke: 255
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpsrad_ymm_ymm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpsrad_ymm_ymm_imm8/match_stoke.01.log 2>&1 
 
 
  Running Match Stoke on psraw_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/psraw_xmm_imm8/match_stoke.txt  1>imm_instructions/psraw_xmm_imm8/match_stoke.log 2>&1 
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/psraw_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/psraw_xmm_imm8/match_stoke.01.log 2>&1 
 
 
- Populating imm_instructions/psraw_xmm_imm8/check_stoke.txt
+ Running Match Stoke on vpsraw_xmm_xmm_imm8
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpsraw_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpsraw_xmm_xmm_imm8/match_stoke.01.log 2>&1 
+
+
+ Running Match Stoke on vpsraw_ymm_ymm_imm8
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpsraw_ymm_ymm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpsraw_ymm_ymm_imm8/match_stoke.01.log 2>&1 
+
+
+ Running Match Stoke on pslld_xmm_imm8
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/pslld_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/pslld_xmm_imm8/match_stoke.01.log 2>&1 
+
+
+ Running Match Stoke on vpslld_xmm_xmm_imm8
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpslld_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpslld_xmm_xmm_imm8/match_stoke.01.log 2>&1 
+
+
+ Running Match Stoke on vpslld_ymm_ymm_imm8
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpslld_ymm_ymm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpslld_ymm_ymm_imm8/match_stoke.01.log 2>&1 
+
+
+ Running Match Stoke on psllq_xmm_imm8
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/psllq_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/psllq_xmm_imm8/match_stoke.01.log 2>&1 
+
+
+ Running Match Stoke on vpsllq_xmm_xmm_imm8
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpsllq_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpsllq_xmm_xmm_imm8/match_stoke.01.log 2>&1 
+
+
+ Running Match Stoke on vpsllq_ymm_ymm_imm8
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpsllq_ymm_ymm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpsllq_ymm_ymm_imm8/match_stoke.01.log 2>&1 
+
+
+ Running Match Stoke on psllw_xmm_imm8
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/psllw_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/psllw_xmm_imm8/match_stoke.01.log 2>&1 
+
+
+ Running Match Stoke on vpsllw_xmm_xmm_imm8
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpsllw_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpsllw_xmm_xmm_imm8/match_stoke.01.log 2>&1 
+
+
+ Running Match Stoke on vpsllw_ymm_ymm_imm8
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpsllw_ymm_ymm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpsllw_ymm_ymm_imm8/match_stoke.01.log 2>&1 
+
+
+ Running Match Stoke on psrld_xmm_imm8
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/psrld_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/psrld_xmm_imm8/match_stoke.01.log 2>&1 
+
+
+ Running Match Stoke on vpsrld_xmm_xmm_imm8
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpsrld_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpsrld_xmm_xmm_imm8/match_stoke.01.log 2>&1 
+
+
+ Running Match Stoke on vpsrld_ymm_ymm_imm8
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpsrld_ymm_ymm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpsrld_ymm_ymm_imm8/match_stoke.01.log 2>&1 
+
+
+ Running Match Stoke on psrlq_xmm_imm8
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/psrlq_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/psrlq_xmm_imm8/match_stoke.01.log 2>&1 
+
+
+ Running Match Stoke on vpsrlq_xmm_xmm_imm8
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpsrlq_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpsrlq_xmm_xmm_imm8/match_stoke.01.log 2>&1 
+
+
+ Running Match Stoke on vpsrlq_ymm_ymm_imm8
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpsrlq_ymm_ymm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpsrlq_ymm_ymm_imm8/match_stoke.01.log 2>&1 
+
+
+ Running Match Stoke on psrlw_xmm_imm8
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/psrlw_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/psrlw_xmm_imm8/match_stoke.01.log 2>&1 
+
+
+ Running Match Stoke on vpsrlw_xmm_xmm_imm8
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpsrlw_xmm_xmm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpsrlw_xmm_xmm_imm8/match_stoke.01.log 2>&1 
+
+
+ Running Match Stoke on vpsrlw_ymm_ymm_imm8
+~/x86-semantics/scripts/process_spec.pl --match_stoke --file concrete_instances/immediate-variants/vpsrlw_ymm_ymm_imm8/match_stoke.01.txt  1>concrete_instances/immediate-variants/vpsrlw_ymm_ymm_imm8/match_stoke.01.log 2>&1 
+
+
+ Populating concrete_instances/immediate-variants/psraw_xmm_imm8/check_stoke.01.txt
 psraw_xmm_imm8
 	eq: 1
 	But eq: 0
@@ -1118,11 +433,7 @@ psraw_xmm_imm8
 	Size check_stoke: 255
 
 
- Running Match Stoke on vpsraw_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpsraw_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/vpsraw_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpsraw_xmm_xmm_imm8/check_stoke.txt
+ Populating concrete_instances/immediate-variants/vpsraw_xmm_xmm_imm8/check_stoke.01.txt
 vpsraw_xmm_xmm_imm8
 	eq: 1
 	But eq: 0
@@ -1131,11 +442,25 @@ vpsraw_xmm_xmm_imm8
 	Size check_stoke: 255
 
 
- Running Match Stoke on vpsraw_ymm_ymm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpsraw_ymm_ymm_imm8/match_stoke.txt  1>imm_instructions/vpsraw_ymm_ymm_imm8/match_stoke.log 2>&1 
+ Populating concrete_instances/immediate-variants/pshuflw_xmm_xmm_imm8/check_stoke.01.txt
+pshuflw_xmm_xmm_imm8
+	eq: 4
+	But eq: 0
+	Not eq(pshuflw_xmm_xmm_imm8): 0
+	Not present: 252
+	Size check_stoke: 252
 
 
- Populating imm_instructions/vpsraw_ymm_ymm_imm8/check_stoke.txt
+ Populating concrete_instances/immediate-variants/vpsrad_ymm_ymm_imm8/check_stoke.01.txt
+vpsrad_ymm_ymm_imm8
+	eq: 1
+	But eq: 0
+	Not eq(vpsrad_ymm_ymm_imm8): 0
+	Not present: 255
+	Size check_stoke: 255
+
+
+ Populating concrete_instances/immediate-variants/vpsraw_ymm_ymm_imm8/check_stoke.01.txt
 vpsraw_ymm_ymm_imm8
 	eq: 1
 	But eq: 0
@@ -1144,76 +469,52 @@ vpsraw_ymm_ymm_imm8
 	Size check_stoke: 255
 
 
- Running Match Stoke on pslld_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/pslld_xmm_imm8/match_stoke.txt  1>imm_instructions/pslld_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/pslld_xmm_imm8/check_stoke.txt
-pslld_xmm_imm8
-	eq: 227
+ Populating concrete_instances/immediate-variants/vpshufhw_ymm_ymm_imm8/check_stoke.01.txt
+vpshufhw_ymm_ymm_imm8
+	eq: 2
 	But eq: 0
-	Not eq(pslld_xmm_imm8): 4
-	Not present: 25
-	Size check_stoke: 29
+	Not eq(vpshufhw_ymm_ymm_imm8): 0
+	Not present: 254
+	Size check_stoke: 254
 
 
- Running Match Stoke on vpslld_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpslld_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/vpslld_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpslld_xmm_xmm_imm8/check_stoke.txt
-vpslld_xmm_xmm_imm8
-	eq: 228
+ Populating concrete_instances/immediate-variants/vpshuflw_ymm_ymm_imm8/check_stoke.01.txt
+vpshuflw_ymm_ymm_imm8
+	eq: 5
 	But eq: 0
-	Not eq(vpslld_xmm_xmm_imm8): 0
-	Not present: 28
-	Size check_stoke: 28
+	Not eq(vpshuflw_ymm_ymm_imm8): 0
+	Not present: 251
+	Size check_stoke: 251
 
 
- Running Match Stoke on vpslld_ymm_ymm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpslld_ymm_ymm_imm8/match_stoke.txt  1>imm_instructions/vpslld_ymm_ymm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpslld_ymm_ymm_imm8/check_stoke.txt
-vpslld_ymm_ymm_imm8
-	eq: 227
+ Populating concrete_instances/immediate-variants/vpalignr_xmm_xmm_xmm_imm8/check_stoke.01.txt
+vpalignr_xmm_xmm_xmm_imm8
+	eq: 225
 	But eq: 0
-	Not eq(vpslld_ymm_ymm_imm8): 0
-	Not present: 29
-	Size check_stoke: 29
+	Not eq(vpalignr_xmm_xmm_xmm_imm8): 0
+	Not present: 31
+	Size check_stoke: 31
 
 
- Running Match Stoke on psllq_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/psllq_xmm_imm8/match_stoke.txt  1>imm_instructions/psllq_xmm_imm8/match_stoke.log 2>&1 
+ Populating concrete_instances/immediate-variants/vdpps_ymm_ymm_ymm_imm8/check_stoke.01.txt
+vdpps_ymm_ymm_ymm_imm8
+	eq: 16
+	But eq: 15
+	Not eq(vdpps_ymm_ymm_ymm_imm8): 2
+	Not present: 223
+	Size check_stoke: 240
 
 
- Populating imm_instructions/psllq_xmm_imm8/check_stoke.txt
-psllq_xmm_imm8
-	eq: 198
+ Populating concrete_instances/immediate-variants/vpblendw_ymm_ymm_ymm_imm8/check_stoke.01.txt
+vpblendw_ymm_ymm_ymm_imm8
+	eq: 8
 	But eq: 0
-	Not eq(psllq_xmm_imm8): 6
-	Not present: 52
-	Size check_stoke: 58
+	Not eq(vpblendw_ymm_ymm_ymm_imm8): 0
+	Not present: 248
+	Size check_stoke: 248
 
 
- Running Match Stoke on vpsllq_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpsllq_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/vpsllq_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpsllq_xmm_xmm_imm8/check_stoke.txt
-vpsllq_xmm_xmm_imm8
-	eq: 197
-	But eq: 0
-	Not eq(vpsllq_xmm_xmm_imm8): 0
-	Not present: 59
-	Size check_stoke: 59
-
-
- Running Match Stoke on vpsllq_ymm_ymm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpsllq_ymm_ymm_imm8/match_stoke.txt  1>imm_instructions/vpsllq_ymm_ymm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpsllq_ymm_ymm_imm8/check_stoke.txt
+ Populating concrete_instances/immediate-variants/vpsllq_ymm_ymm_imm8/check_stoke.01.txt
 vpsllq_ymm_ymm_imm8
 	eq: 190
 	But eq: 0
@@ -1222,76 +523,34 @@ vpsllq_ymm_ymm_imm8
 	Size check_stoke: 66
 
 
- Running Match Stoke on psllw_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/psllw_xmm_imm8/match_stoke.txt  1>imm_instructions/psllw_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/psllw_xmm_imm8/check_stoke.txt
-psllw_xmm_imm8
-	eq: 234
+ Populating concrete_instances/immediate-variants/vpsllq_xmm_xmm_imm8/check_stoke.01.txt
+vpsllq_xmm_xmm_imm8
+	eq: 197
 	But eq: 0
-	Not eq(psllw_xmm_imm8): 7
-	Not present: 15
-	Size check_stoke: 22
+	Not eq(vpsllq_xmm_xmm_imm8): 0
+	Not present: 59
+	Size check_stoke: 59
 
 
- Running Match Stoke on vpsllw_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpsllw_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/vpsllw_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpsllw_xmm_xmm_imm8/check_stoke.txt
-vpsllw_xmm_xmm_imm8
-	eq: 241
+ Populating concrete_instances/immediate-variants/vpshufhw_xmm_xmm_imm8/check_stoke.01.txt
+vpshufhw_xmm_xmm_imm8
+	eq: 30
 	But eq: 0
-	Not eq(vpsllw_xmm_xmm_imm8): 0
-	Not present: 15
-	Size check_stoke: 15
+	Not eq(vpshufhw_xmm_xmm_imm8): 0
+	Not present: 226
+	Size check_stoke: 226
 
 
- Running Match Stoke on vpsllw_ymm_ymm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpsllw_ymm_ymm_imm8/match_stoke.txt  1>imm_instructions/vpsllw_ymm_ymm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpsllw_ymm_ymm_imm8/check_stoke.txt
-vpsllw_ymm_ymm_imm8
-	eq: 241
+ Populating concrete_instances/immediate-variants/vpslldq_ymm_ymm_imm8/check_stoke.01.txt
+vpslldq_ymm_ymm_imm8
+	eq: 242
 	But eq: 0
-	Not eq(vpsllw_ymm_ymm_imm8): 0
-	Not present: 15
-	Size check_stoke: 15
+	Not eq(vpslldq_ymm_ymm_imm8): 0
+	Not present: 14
+	Size check_stoke: 14
 
 
- Running Match Stoke on psrld_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/psrld_xmm_imm8/match_stoke.txt  1>imm_instructions/psrld_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/psrld_xmm_imm8/check_stoke.txt
-psrld_xmm_imm8
-	eq: 220
-	But eq: 0
-	Not eq(psrld_xmm_imm8): 6
-	Not present: 30
-	Size check_stoke: 36
-
-
- Running Match Stoke on vpsrld_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpsrld_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/vpsrld_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpsrld_xmm_xmm_imm8/check_stoke.txt
-vpsrld_xmm_xmm_imm8
-	eq: 225
-	But eq: 0
-	Not eq(vpsrld_xmm_xmm_imm8): 0
-	Not present: 31
-	Size check_stoke: 31
-
-
- Running Match Stoke on vpsrld_ymm_ymm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpsrld_ymm_ymm_imm8/match_stoke.txt  1>imm_instructions/vpsrld_ymm_ymm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpsrld_ymm_ymm_imm8/check_stoke.txt
+ Populating concrete_instances/immediate-variants/vpsrld_ymm_ymm_imm8/check_stoke.01.txt
 vpsrld_ymm_ymm_imm8
 	eq: 219
 	But eq: 0
@@ -1300,63 +559,25 @@ vpsrld_ymm_ymm_imm8
 	Size check_stoke: 37
 
 
- Running Match Stoke on psrlq_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/psrlq_xmm_imm8/match_stoke.txt  1>imm_instructions/psrlq_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/psrlq_xmm_imm8/check_stoke.txt
-psrlq_xmm_imm8
-	eq: 189
+ Populating concrete_instances/immediate-variants/vpsllw_xmm_xmm_imm8/check_stoke.01.txt
+vpsllw_xmm_xmm_imm8
+	eq: 241
 	But eq: 0
-	Not eq(psrlq_xmm_imm8): 7
-	Not present: 60
-	Size check_stoke: 67
-
-
- Running Match Stoke on vpsrlq_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpsrlq_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/vpsrlq_xmm_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpsrlq_xmm_xmm_imm8/check_stoke.txt
-vpsrlq_xmm_xmm_imm8
-	eq: 195
-	But eq: 0
-	Not eq(vpsrlq_xmm_xmm_imm8): 1
-	Not present: 60
-	Size check_stoke: 61
-
-
- Running Match Stoke on vpsrlq_ymm_ymm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpsrlq_ymm_ymm_imm8/match_stoke.txt  1>imm_instructions/vpsrlq_ymm_ymm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/vpsrlq_ymm_ymm_imm8/check_stoke.txt
-vpsrlq_ymm_ymm_imm8
-	eq: 194
-	But eq: 0
-	Not eq(vpsrlq_ymm_ymm_imm8): 0
-	Not present: 62
-	Size check_stoke: 62
-
-
- Running Match Stoke on psrlw_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/psrlw_xmm_imm8/match_stoke.txt  1>imm_instructions/psrlw_xmm_imm8/match_stoke.log 2>&1 
-
-
- Populating imm_instructions/psrlw_xmm_imm8/check_stoke.txt
-psrlw_xmm_imm8
-	eq: 239
-	But eq: 0
-	Not eq(psrlw_xmm_imm8): 2
+	Not eq(vpsllw_xmm_xmm_imm8): 0
 	Not present: 15
-	Size check_stoke: 17
+	Size check_stoke: 15
 
 
- Running Match Stoke on vpsrlw_xmm_xmm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpsrlw_xmm_xmm_imm8/match_stoke.txt  1>imm_instructions/vpsrlw_xmm_xmm_imm8/match_stoke.log 2>&1 
+ Populating concrete_instances/immediate-variants/vpsrlw_ymm_ymm_imm8/check_stoke.01.txt
+vpsrlw_ymm_ymm_imm8
+	eq: 241
+	But eq: 0
+	Not eq(vpsrlw_ymm_ymm_imm8): 0
+	Not present: 15
+	Size check_stoke: 15
 
 
- Populating imm_instructions/vpsrlw_xmm_xmm_imm8/check_stoke.txt
+ Populating concrete_instances/immediate-variants/vpsrlw_xmm_xmm_imm8/check_stoke.01.txt
 vpsrlw_xmm_xmm_imm8
 	eq: 241
 	But eq: 0
@@ -1365,14 +586,794 @@ vpsrlw_xmm_xmm_imm8
 	Size check_stoke: 15
 
 
- Running Match Stoke on vpsrlw_ymm_ymm_imm8
-~/x86-semantics/scripts/process_spec.pl --match_stoke --file imm_instructions/vpsrlw_ymm_ymm_imm8/match_stoke.txt  1>imm_instructions/vpsrlw_ymm_ymm_imm8/match_stoke.log 2>&1 
+ Populating concrete_instances/immediate-variants/vpsrld_xmm_xmm_imm8/check_stoke.01.txt
+vpsrld_xmm_xmm_imm8
+	eq: 225
+	But eq: 0
+	Not eq(vpsrld_xmm_xmm_imm8): 0
+	Not present: 31
+	Size check_stoke: 31
 
 
- Populating imm_instructions/vpsrlw_ymm_ymm_imm8/check_stoke.txt
-vpsrlw_ymm_ymm_imm8
+ Populating concrete_instances/immediate-variants/vpsrlq_xmm_xmm_imm8/check_stoke.01.txt
+vpsrlq_xmm_xmm_imm8
+	eq: 195
+	But eq: 0
+	Not eq(vpsrlq_xmm_xmm_imm8): 1
+	Not present: 60
+	Size check_stoke: 61
+
+
+ Populating concrete_instances/immediate-variants/vpsllw_ymm_ymm_imm8/check_stoke.01.txt
+vpsllw_ymm_ymm_imm8
 	eq: 241
 	But eq: 0
-	Not eq(vpsrlw_ymm_ymm_imm8): 0
+	Not eq(vpsllw_ymm_ymm_imm8): 0
 	Not present: 15
 	Size check_stoke: 15
+
+
+ Populating concrete_instances/immediate-variants/vpslldq_xmm_xmm_imm8/check_stoke.01.txt
+vpslldq_xmm_xmm_imm8
+	eq: 245
+	But eq: 0
+	Not eq(vpslldq_xmm_xmm_imm8): 0
+	Not present: 11
+	Size check_stoke: 11
+
+
+ Populating concrete_instances/immediate-variants/vpsrlq_ymm_ymm_imm8/check_stoke.01.txt
+vpsrlq_ymm_ymm_imm8
+	eq: 194
+	But eq: 0
+	Not eq(vpsrlq_ymm_ymm_imm8): 0
+	Not present: 62
+	Size check_stoke: 62
+
+
+ Populating concrete_instances/immediate-variants/pinsrw_xmm_r32_imm8/check_stoke.01.txt
+pinsrw_xmm_r32_imm8
+	eq: 256
+	But eq: 0
+	Not eq(pinsrw_xmm_r32_imm8): 0
+	Not present: 0
+	Size check_stoke: 0
+
+
+ Populating concrete_instances/immediate-variants/vcmpss_xmm_xmm_xmm_imm8/check_stoke.01.txt
+vcmpss_xmm_xmm_xmm_imm8
+	eq: 0
+	But eq: 0
+	Not eq(vcmpss_xmm_xmm_xmm_imm8): 32
+	Not present: 224
+	Size check_stoke: 256
+
+
+ Populating concrete_instances/immediate-variants/vpsrldq_ymm_ymm_imm8/check_stoke.01.txt
+vpsrldq_ymm_ymm_imm8
+	eq: 244
+	But eq: 0
+	Not eq(vpsrldq_ymm_ymm_imm8): 0
+	Not present: 12
+	Size check_stoke: 12
+
+
+ Populating concrete_instances/immediate-variants/vpalignr_ymm_ymm_ymm_imm8/check_stoke.01.txt
+vpalignr_ymm_ymm_ymm_imm8
+	eq: 232
+	But eq: 0
+	Not eq(vpalignr_ymm_ymm_ymm_imm8): 0
+	Not present: 24
+	Size check_stoke: 24
+
+
+ Populating concrete_instances/immediate-variants/vcmpsd_xmm_xmm_xmm_imm8/check_stoke.01.txt
+vcmpsd_xmm_xmm_xmm_imm8
+	eq: 0
+	But eq: 0
+	Not eq(vcmpsd_xmm_xmm_xmm_imm8): 32
+	Not present: 224
+	Size check_stoke: 256
+
+
+ Populating concrete_instances/immediate-variants/vpslld_ymm_ymm_imm8/check_stoke.01.txt
+vpslld_ymm_ymm_imm8
+	eq: 227
+	But eq: 0
+	Not eq(vpslld_ymm_ymm_imm8): 0
+	Not present: 29
+	Size check_stoke: 29
+
+
+ Populating concrete_instances/immediate-variants/blendpd_xmm_xmm_imm8/check_stoke.01.txt
+blendpd_xmm_xmm_imm8
+	eq: 241
+	But eq: 0
+	Not eq(blendpd_xmm_xmm_imm8): 0
+	Not present: 15
+	Size check_stoke: 15
+
+
+ Populating concrete_instances/immediate-variants/vpsrldq_xmm_xmm_imm8/check_stoke.01.txt
+vpsrldq_xmm_xmm_imm8
+	eq: 246
+	But eq: 0
+	Not eq(vpsrldq_xmm_xmm_imm8): 0
+	Not present: 10
+	Size check_stoke: 10
+
+
+ Populating concrete_instances/immediate-variants/vpslld_xmm_xmm_imm8/check_stoke.01.txt
+vpslld_xmm_xmm_imm8
+	eq: 228
+	But eq: 0
+	Not eq(vpslld_xmm_xmm_imm8): 0
+	Not present: 28
+	Size check_stoke: 28
+
+
+ Populating concrete_instances/immediate-variants/vblendpd_xmm_xmm_xmm_imm8/check_stoke.01.txt
+vblendpd_xmm_xmm_xmm_imm8
+	eq: 254
+	But eq: 0
+	Not eq(vblendpd_xmm_xmm_xmm_imm8): 2
+	Not present: 0
+	Size check_stoke: 2
+
+
+ Populating concrete_instances/immediate-variants/vpblendw_xmm_xmm_xmm_imm8/check_stoke.01.txt
+vpblendw_xmm_xmm_xmm_imm8
+	eq: 27
+	But eq: 0
+	Not eq(vpblendw_xmm_xmm_xmm_imm8): 1
+	Not present: 228
+	Size check_stoke: 229
+
+
+ Populating concrete_instances/immediate-variants/vdpps_xmm_xmm_xmm_imm8/check_stoke.01.txt
+vdpps_xmm_xmm_xmm_imm8
+	eq: 16
+	But eq: 15
+	Not eq(vdpps_xmm_xmm_xmm_imm8): 11
+	Not present: 214
+	Size check_stoke: 240
+
+
+ Populating concrete_instances/immediate-variants/pshufhw_xmm_xmm_imm8/check_stoke.01.txt
+pshufhw_xmm_xmm_imm8
+	eq: 20
+	But eq: 0
+	Not eq(pshufhw_xmm_xmm_imm8): 1
+	Not present: 235
+	Size check_stoke: 236
+
+
+ Populating concrete_instances/immediate-variants/pblendw_xmm_xmm_imm8/check_stoke.01.txt
+pblendw_xmm_xmm_imm8
+	eq: 44
+	But eq: 0
+	Not eq(pblendw_xmm_xmm_imm8): 1
+	Not present: 211
+	Size check_stoke: 212
+
+
+ Populating concrete_instances/immediate-variants/vpshuflw_xmm_xmm_imm8/check_stoke.01.txt
+vpshuflw_xmm_xmm_imm8
+	eq: 34
+	But eq: 0
+	Not eq(vpshuflw_xmm_xmm_imm8): 0
+	Not present: 222
+	Size check_stoke: 222
+
+
+ Populating concrete_instances/immediate-variants/vdppd_xmm_xmm_xmm_imm8/check_stoke.01.txt
+vdppd_xmm_xmm_xmm_imm8
+	eq: 73
+	But eq: 48
+	Not eq(vdppd_xmm_xmm_xmm_imm8): 13
+	Not present: 122
+	Size check_stoke: 183
+
+
+ Populating concrete_instances/immediate-variants/vpinsrw_xmm_xmm_r32_imm8/check_stoke.01.txt
+vpinsrw_xmm_xmm_r32_imm8
+	eq: 256
+	But eq: 0
+	Not eq(vpinsrw_xmm_xmm_r32_imm8): 0
+	Not present: 0
+	Size check_stoke: 0
+
+
+ Populating concrete_instances/immediate-variants/vpinsrb_xmm_xmm_r32_imm8/check_stoke.01.txt
+vpinsrb_xmm_xmm_r32_imm8
+	eq: 256
+	But eq: 0
+	Not eq(vpinsrb_xmm_xmm_r32_imm8): 0
+	Not present: 0
+	Size check_stoke: 0
+
+
+ Populating concrete_instances/immediate-variants/vblendps_ymm_ymm_ymm_imm8/check_stoke.01.txt
+vblendps_ymm_ymm_ymm_imm8
+	eq: 38
+	But eq: 0
+	Not eq(vblendps_ymm_ymm_ymm_imm8): 0
+	Not present: 218
+	Size check_stoke: 218
+
+
+ Populating concrete_instances/immediate-variants/vpinsrq_xmm_xmm_r64_imm8/check_stoke.01.txt
+vpinsrq_xmm_xmm_r64_imm8
+	eq: 255
+	But eq: 0
+	Not eq(vpinsrq_xmm_xmm_r64_imm8): 1
+	Not present: 0
+	Size check_stoke: 1
+
+
+ Populating concrete_instances/immediate-variants/vcmppd_ymm_ymm_ymm_imm8/check_stoke.01.txt
+vcmppd_ymm_ymm_ymm_imm8
+	eq: 0
+	But eq: 0
+	Not eq(vcmppd_ymm_ymm_ymm_imm8): 32
+	Not present: 224
+	Size check_stoke: 256
+
+
+ Populating concrete_instances/immediate-variants/pinsrb_xmm_r32_imm8/check_stoke.01.txt
+pinsrb_xmm_r32_imm8
+	eq: 256
+	But eq: 0
+	Not eq(pinsrb_xmm_r32_imm8): 0
+	Not present: 0
+	Size check_stoke: 0
+
+
+ Populating concrete_instances/immediate-variants/vextractf128_xmm_ymm_imm8/check_stoke.01.txt
+vextractf128_xmm_ymm_imm8
+	eq: 251
+	But eq: 0
+	Not eq(vextractf128_xmm_ymm_imm8): 0
+	Not present: 5
+	Size check_stoke: 5
+
+
+ Populating concrete_instances/immediate-variants/vpermilpd_xmm_xmm_imm8/check_stoke.01.txt
+vpermilpd_xmm_xmm_imm8
+	eq: 255
+	But eq: 0
+	Not eq(vpermilpd_xmm_xmm_imm8): 1
+	Not present: 0
+	Size check_stoke: 1
+
+
+ Populating concrete_instances/immediate-variants/shufpd_xmm_xmm_imm8/check_stoke.01.txt
+shufpd_xmm_xmm_imm8
+	eq: 256
+	But eq: 0
+	Not eq(shufpd_xmm_xmm_imm8): 0
+	Not present: 0
+	Size check_stoke: 0
+
+
+ Populating concrete_instances/immediate-variants/vpblendd_ymm_ymm_ymm_imm8/check_stoke.01.txt
+vpblendd_ymm_ymm_ymm_imm8
+	eq: 46
+	But eq: 0
+	Not eq(vpblendd_ymm_ymm_ymm_imm8): 2
+	Not present: 208
+	Size check_stoke: 210
+
+
+ Populating concrete_instances/immediate-variants/vinsertf128_ymm_ymm_xmm_imm8/check_stoke.01.txt
+vinsertf128_ymm_ymm_xmm_imm8
+	eq: 248
+	But eq: 0
+	Not eq(vinsertf128_ymm_ymm_xmm_imm8): 1
+	Not present: 7
+	Size check_stoke: 8
+
+
+ Populating concrete_instances/immediate-variants/vpextrq_r64_xmm_imm8/check_stoke.01.txt
+vpextrq_r64_xmm_imm8
+	eq: 255
+	But eq: 0
+	Not eq(vpextrq_r64_xmm_imm8): 1
+	Not present: 0
+	Size check_stoke: 1
+
+
+ Populating concrete_instances/immediate-variants/vshufpd_xmm_xmm_xmm_imm8/check_stoke.01.txt
+vshufpd_xmm_xmm_xmm_imm8
+	eq: 256
+	But eq: 0
+	Not eq(vshufpd_xmm_xmm_xmm_imm8): 0
+	Not present: 0
+	Size check_stoke: 0
+
+
+ Populating concrete_instances/immediate-variants/vextracti128_xmm_ymm_imm8/check_stoke.01.txt
+vextracti128_xmm_ymm_imm8
+	eq: 256
+	But eq: 0
+	Not eq(vextracti128_xmm_ymm_imm8): 0
+	Not present: 0
+	Size check_stoke: 0
+
+
+ Populating concrete_instances/immediate-variants/vpsrad_xmm_xmm_imm8/check_stoke.01.txt
+vpsrad_xmm_xmm_imm8
+	eq: 1
+	But eq: 0
+	Not eq(vpsrad_xmm_xmm_imm8): 21
+	Not present: 234
+	Size check_stoke: 255
+
+
+ Populating concrete_instances/immediate-variants/pextrq_r64_xmm_imm8/check_stoke.01.txt
+pextrq_r64_xmm_imm8
+	eq: 254
+	But eq: 0
+	Not eq(pextrq_r64_xmm_imm8): 2
+	Not present: 0
+	Size check_stoke: 2
+
+
+ Populating concrete_instances/immediate-variants/vcmpps_xmm_xmm_xmm_imm8/check_stoke.01.txt
+vcmpps_xmm_xmm_xmm_imm8
+	eq: 0
+	But eq: 0
+	Not eq(vcmpps_xmm_xmm_xmm_imm8): 32
+	Not present: 224
+	Size check_stoke: 256
+
+
+ Populating concrete_instances/immediate-variants/vcmpps_ymm_ymm_ymm_imm8/check_stoke.01.txt
+vcmpps_ymm_ymm_ymm_imm8
+	eq: 0
+	But eq: 0
+	Not eq(vcmpps_ymm_ymm_ymm_imm8): 31
+	Not present: 225
+	Size check_stoke: 256
+
+
+ Populating concrete_instances/immediate-variants/vperm2i128_ymm_ymm_ymm_imm8/check_stoke.01.txt
+vperm2i128_ymm_ymm_ymm_imm8
+	eq: 229
+	But eq: 0
+	Not eq(vperm2i128_ymm_ymm_ymm_imm8): 2
+	Not present: 25
+	Size check_stoke: 27
+
+
+ Populating concrete_instances/immediate-variants/vshufps_ymm_ymm_ymm_imm8/check_stoke.01.txt
+vshufps_ymm_ymm_ymm_imm8
+	eq: 40
+	But eq: 0
+	Not eq(vshufps_ymm_ymm_ymm_imm8): 0
+	Not present: 216
+	Size check_stoke: 216
+
+
+ Populating concrete_instances/immediate-variants/vpermq_ymm_ymm_imm8/check_stoke.01.txt
+vpermq_ymm_ymm_imm8
+	eq: 188
+	But eq: 0
+	Not eq(vpermq_ymm_ymm_imm8): 0
+	Not present: 68
+	Size check_stoke: 68
+
+
+ Populating concrete_instances/immediate-variants/psrlq_xmm_imm8/check_stoke.01.txt
+psrlq_xmm_imm8
+	eq: 191
+	But eq: 0
+	Not eq(psrlq_xmm_imm8): 5
+	Not present: 60
+	Size check_stoke: 65
+
+
+ Populating concrete_instances/immediate-variants/extractps_r32_xmm_imm8/check_stoke.01.txt
+extractps_r32_xmm_imm8
+	eq: 253
+	But eq: 0
+	Not eq(extractps_r32_xmm_imm8): 1
+	Not present: 2
+	Size check_stoke: 3
+
+
+ Populating concrete_instances/immediate-variants/vshufpd_ymm_ymm_ymm_imm8/check_stoke.01.txt
+vshufpd_ymm_ymm_ymm_imm8
+	eq: 217
+	But eq: 0
+	Not eq(vshufpd_ymm_ymm_ymm_imm8): 0
+	Not present: 39
+	Size check_stoke: 39
+
+
+ Populating concrete_instances/immediate-variants/vpermpd_ymm_ymm_imm8/check_stoke.01.txt
+vpermpd_ymm_ymm_imm8
+	eq: 220
+	But eq: 0
+	Not eq(vpermpd_ymm_ymm_imm8): 0
+	Not present: 36
+	Size check_stoke: 36
+
+
+ Populating concrete_instances/immediate-variants/vpermilpd_ymm_ymm_imm8/check_stoke.01.txt
+vpermilpd_ymm_ymm_imm8
+	eq: 256
+	But eq: 0
+	Not eq(vpermilpd_ymm_ymm_imm8): 0
+	Not present: 0
+	Size check_stoke: 0
+
+
+ Populating concrete_instances/immediate-variants/vblendpd_ymm_ymm_ymm_imm8/check_stoke.01.txt
+vblendpd_ymm_ymm_ymm_imm8
+	eq: 156
+	But eq: 0
+	Not eq(vblendpd_ymm_ymm_ymm_imm8): 0
+	Not present: 100
+	Size check_stoke: 100
+
+
+ Populating concrete_instances/immediate-variants/vinserti128_ymm_ymm_xmm_imm8/check_stoke.01.txt
+vinserti128_ymm_ymm_xmm_imm8
+	eq: 238
+	But eq: 0
+	Not eq(vinserti128_ymm_ymm_xmm_imm8): 0
+	Not present: 18
+	Size check_stoke: 18
+
+
+ Populating concrete_instances/immediate-variants/pextrb_r32_xmm_imm8/check_stoke.01.txt
+pextrb_r32_xmm_imm8
+	eq: 256
+	But eq: 0
+	Not eq(pextrb_r32_xmm_imm8): 0
+	Not present: 0
+	Size check_stoke: 0
+
+
+ Populating concrete_instances/immediate-variants/vperm2f128_ymm_ymm_ymm_imm8/check_stoke.01.txt
+vperm2f128_ymm_ymm_ymm_imm8
+	eq: 232
+	But eq: 0
+	Not eq(vperm2f128_ymm_ymm_ymm_imm8): 2
+	Not present: 22
+	Size check_stoke: 24
+
+
+ Populating concrete_instances/immediate-variants/pslldq_xmm_imm8/check_stoke.01.txt
+pslldq_xmm_imm8
+	eq: 242
+	But eq: 0
+	Not eq(pslldq_xmm_imm8): 4
+	Not present: 10
+	Size check_stoke: 14
+
+
+ Populating concrete_instances/immediate-variants/dpps_xmm_xmm_imm8/check_stoke.01.txt
+dpps_xmm_xmm_imm8
+	eq: 14
+	But eq: 15
+	Not eq(dpps_xmm_xmm_imm8): 50
+	Not present: 177
+	Size check_stoke: 242
+
+
+ Populating concrete_instances/immediate-variants/vcmppd_xmm_xmm_xmm_imm8/check_stoke.01.txt
+vcmppd_xmm_xmm_xmm_imm8
+	eq: 0
+	But eq: 0
+	Not eq(vcmppd_xmm_xmm_xmm_imm8): 32
+	Not present: 224
+	Size check_stoke: 256
+
+
+ Populating concrete_instances/immediate-variants/pextrb_r64_xmm_imm8/check_stoke.01.txt
+pextrb_r64_xmm_imm8
+	eq: 256
+	But eq: 0
+	Not eq(pextrb_r64_xmm_imm8): 0
+	Not present: 0
+	Size check_stoke: 0
+
+
+ Populating concrete_instances/immediate-variants/vpblendd_xmm_xmm_xmm_imm8/check_stoke.01.txt
+vpblendd_xmm_xmm_xmm_imm8
+	eq: 164
+	But eq: 0
+	Not eq(vpblendd_xmm_xmm_xmm_imm8): 9
+	Not present: 83
+	Size check_stoke: 92
+
+
+ Populating concrete_instances/immediate-variants/blendps_xmm_xmm_imm8/check_stoke.01.txt
+blendps_xmm_xmm_imm8
+	eq: 254
+	But eq: 0
+	Not eq(blendps_xmm_xmm_imm8): 2
+	Not present: 0
+	Size check_stoke: 2
+
+
+ Populating concrete_instances/immediate-variants/extractps_r64_xmm_imm8/check_stoke.01.txt
+extractps_r64_xmm_imm8
+	eq: 254
+	But eq: 0
+	Not eq(extractps_r64_xmm_imm8): 2
+	Not present: 0
+	Size check_stoke: 2
+
+
+ Populating concrete_instances/immediate-variants/vblendps_xmm_xmm_xmm_imm8/check_stoke.01.txt
+vblendps_xmm_xmm_xmm_imm8
+	eq: 214
+	But eq: 0
+	Not eq(vblendps_xmm_xmm_xmm_imm8): 11
+	Not present: 31
+	Size check_stoke: 42
+
+
+ Populating concrete_instances/immediate-variants/psrldq_xmm_imm8/check_stoke.01.txt
+psrldq_xmm_imm8
+	eq: 237
+	But eq: 0
+	Not eq(psrldq_xmm_imm8): 8
+	Not present: 11
+	Size check_stoke: 19
+
+
+ Populating concrete_instances/immediate-variants/psllw_xmm_imm8/check_stoke.01.txt
+psllw_xmm_imm8
+	eq: 233
+	But eq: 0
+	Not eq(psllw_xmm_imm8): 8
+	Not present: 15
+	Size check_stoke: 23
+
+
+ Populating concrete_instances/immediate-variants/pextrd_r32_xmm_imm8/check_stoke.01.txt
+pextrd_r32_xmm_imm8
+	eq: 256
+	But eq: 0
+	Not eq(pextrd_r32_xmm_imm8): 0
+	Not present: 0
+	Size check_stoke: 0
+
+
+ Populating concrete_instances/immediate-variants/vpextrd_r32_xmm_imm8/check_stoke.01.txt
+vpextrd_r32_xmm_imm8
+	eq: 255
+	But eq: 0
+	Not eq(vpextrd_r32_xmm_imm8): 1
+	Not present: 0
+	Size check_stoke: 1
+
+
+ Populating concrete_instances/immediate-variants/psllq_xmm_imm8/check_stoke.01.txt
+psllq_xmm_imm8
+	eq: 198
+	But eq: 0
+	Not eq(psllq_xmm_imm8): 6
+	Not present: 52
+	Size check_stoke: 58
+
+
+ Populating concrete_instances/immediate-variants/vpextrb_r32_xmm_imm8/check_stoke.01.txt
+vpextrb_r32_xmm_imm8
+	eq: 256
+	But eq: 0
+	Not eq(vpextrb_r32_xmm_imm8): 0
+	Not present: 0
+	Size check_stoke: 0
+
+
+ Populating concrete_instances/immediate-variants/pslld_xmm_imm8/check_stoke.01.txt
+pslld_xmm_imm8
+	eq: 227
+	But eq: 0
+	Not eq(pslld_xmm_imm8): 4
+	Not present: 25
+	Size check_stoke: 29
+
+
+ Populating concrete_instances/immediate-variants/vpermilps_ymm_ymm_imm8/check_stoke.01.txt
+vpermilps_ymm_ymm_imm8
+	eq: 78
+	But eq: 0
+	Not eq(vpermilps_ymm_ymm_imm8): 0
+	Not present: 178
+	Size check_stoke: 178
+
+
+ Populating concrete_instances/immediate-variants/vpextrb_r64_xmm_imm8/check_stoke.01.txt
+vpextrb_r64_xmm_imm8
+	eq: 256
+	But eq: 0
+	Not eq(vpextrb_r64_xmm_imm8): 0
+	Not present: 0
+	Size check_stoke: 0
+
+
+ Populating concrete_instances/immediate-variants/vextractps_r32_xmm_imm8/check_stoke.01.txt
+vextractps_r32_xmm_imm8
+	eq: 255
+	But eq: 0
+	Not eq(vextractps_r32_xmm_imm8): 1
+	Not present: 0
+	Size check_stoke: 1
+
+
+ Populating concrete_instances/immediate-variants/psrld_xmm_imm8/check_stoke.01.txt
+psrld_xmm_imm8
+	eq: 220
+	But eq: 0
+	Not eq(psrld_xmm_imm8): 6
+	Not present: 30
+	Size check_stoke: 36
+
+
+ Populating concrete_instances/immediate-variants/insertps_xmm_xmm_imm8/check_stoke.01.txt
+insertps_xmm_xmm_imm8
+	eq: 251
+	But eq: 0
+	Not eq(insertps_xmm_xmm_imm8): 4
+	Not present: 1
+	Size check_stoke: 5
+
+
+ Populating concrete_instances/immediate-variants/psrlw_xmm_imm8/check_stoke.01.txt
+psrlw_xmm_imm8
+	eq: 239
+	But eq: 0
+	Not eq(psrlw_xmm_imm8): 2
+	Not present: 15
+	Size check_stoke: 17
+
+
+ Populating concrete_instances/immediate-variants/vshufps_xmm_xmm_xmm_imm8/check_stoke.01.txt
+vshufps_xmm_xmm_xmm_imm8
+	eq: 157
+	But eq: 0
+	Not eq(vshufps_xmm_xmm_xmm_imm8): 0
+	Not present: 99
+	Size check_stoke: 99
+
+
+ Populating concrete_instances/immediate-variants/palignr_xmm_xmm_imm8/check_stoke.01.txt
+palignr_xmm_xmm_imm8
+	eq: 229
+	But eq: 0
+	Not eq(palignr_xmm_xmm_imm8): 5
+	Not present: 22
+	Size check_stoke: 27
+
+
+ Populating concrete_instances/immediate-variants/shufps_xmm_xmm_imm8/check_stoke.01.txt
+shufps_xmm_xmm_imm8
+	eq: 169
+	But eq: 0
+	Not eq(shufps_xmm_xmm_imm8): 2
+	Not present: 85
+	Size check_stoke: 87
+
+
+ Populating concrete_instances/immediate-variants/vpextrw_r64_xmm_imm8/check_stoke.01.txt
+vpextrw_r64_xmm_imm8
+	eq: 244
+	But eq: 0
+	Not eq(vpextrw_r64_xmm_imm8): 0
+	Not present: 12
+	Size check_stoke: 12
+
+
+ Populating concrete_instances/immediate-variants/vpinsrd_xmm_xmm_r32_imm8/check_stoke.01.txt
+vpinsrd_xmm_xmm_r32_imm8
+	eq: 229
+	But eq: 0
+	Not eq(vpinsrd_xmm_xmm_r32_imm8): 4
+	Not present: 23
+	Size check_stoke: 27
+
+
+ Populating concrete_instances/immediate-variants/dppd_xmm_xmm_imm8/check_stoke.01.txt
+dppd_xmm_xmm_imm8
+	eq: 138
+	But eq: 46
+	Not eq(dppd_xmm_xmm_imm8): 72
+	Not present: 0
+	Size check_stoke: 118
+
+
+ Populating concrete_instances/immediate-variants/pextrw_r32_xmm_imm8/check_stoke.01.txt
+pextrw_r32_xmm_imm8
+	eq: 254
+	But eq: 0
+	Not eq(pextrw_r32_xmm_imm8): 2
+	Not present: 0
+	Size check_stoke: 2
+
+
+ Populating concrete_instances/immediate-variants/pinsrd_xmm_r32_imm8/check_stoke.01.txt
+pinsrd_xmm_r32_imm8
+	eq: 253
+	But eq: 0
+	Not eq(pinsrd_xmm_r32_imm8): 3
+	Not present: 0
+	Size check_stoke: 3
+
+
+ Populating concrete_instances/immediate-variants/vpermilps_xmm_xmm_imm8/check_stoke.01.txt
+vpermilps_xmm_xmm_imm8
+	eq: 212
+	But eq: 0
+	Not eq(vpermilps_xmm_xmm_imm8): 4
+	Not present: 40
+	Size check_stoke: 44
+
+
+ Populating concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/check_stoke.01.txt
+vinsertps_xmm_xmm_xmm_imm8
+	eq: 206
+	But eq: 0
+	Not eq(vinsertps_xmm_xmm_xmm_imm8): 29
+	Not present: 21
+	Size check_stoke: 50
+
+
+ Populating concrete_instances/immediate-variants/pextrw_r64_xmm_imm8/check_stoke.01.txt
+pextrw_r64_xmm_imm8
+	eq: 256
+	But eq: 0
+	Not eq(pextrw_r64_xmm_imm8): 0
+	Not present: 0
+	Size check_stoke: 0
+
+
+ Populating concrete_instances/immediate-variants/pshufd_xmm_xmm_imm8/check_stoke.01.txt
+pshufd_xmm_xmm_imm8
+	eq: 236
+	But eq: 0
+	Not eq(pshufd_xmm_xmm_imm8): 14
+	Not present: 6
+	Size check_stoke: 20
+
+
+ Populating concrete_instances/immediate-variants/vpextrw_r32_xmm_imm8/check_stoke.01.txt
+vpextrw_r32_xmm_imm8
+	eq: 254
+	But eq: 0
+	Not eq(vpextrw_r32_xmm_imm8): 2
+	Not present: 0
+	Size check_stoke: 2
+
+
+ Populating concrete_instances/immediate-variants/vpshufd_xmm_xmm_imm8/check_stoke.01.txt
+vpshufd_xmm_xmm_imm8
+	eq: 240
+	But eq: 0
+	Not eq(vpshufd_xmm_xmm_imm8): 5
+	Not present: 11
+	Size check_stoke: 16
+
+
+ Populating concrete_instances/immediate-variants/psrad_xmm_imm8/check_stoke.01.txt
+psrad_xmm_imm8
+	eq: 2
+	But eq: 0
+	Not eq(psrad_xmm_imm8): 225
+	Not present: 29
+	Size check_stoke: 254
+
+
+ Populating concrete_instances/immediate-variants/vpshufd_ymm_ymm_imm8/check_stoke.01.txt
+vpshufd_ymm_ymm_imm8
+	eq: 242
+	But eq: 0
+	Not eq(vpshufd_ymm_ymm_imm8): 0
+	Not present: 14
+	Size check_stoke: 14
+Execution time: 2393 s

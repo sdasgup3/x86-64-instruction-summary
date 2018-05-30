@@ -248,7 +248,7 @@ Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vpshufd_xmm_xmm_imm8_121 
 Circuit for 'vpshufd $0x79, %xmm2, %xmm1' (opcode vpshufd_xmm_xmm_imm8_121)
   not equivalent for '%ymm1':
-    strata:        0x0₁₂₈ ∘ (%ymm2[63:32] ∘ vfmsub132_double(0x0₆₄, vfnmsub132_double(0x0₃₂ ∘ %ymm2[127:96], 0x0₃₂ ∘ %ymm2[127:96], 0x0₆₄), 0x0₆₄)[31:0] ∘ %ymm2[95:64] ∘ (0x0₃₂ ⊕ (%ymm2[63:32] | 0x0₃₂)))
+    strata:        0x0₁₂₈ ∘ (%ymm2[63:32] ∘ vfmsub132_double(0x0₆₄, vfnmsub132_double(0x0₃₂ ∘ %ymm2[127:96], 0x0₃₂ ∘ %ymm2[127:96], 0x0₆₄), 0x0₆₄)[31:0] ∘ %ymm2[95:64] ∘ %ymm2[63:32])
     hand-written:  0x0₁₂₈ ∘ ((%ymm2[127:0] >> 0x20₁₂₈)[31:0] ∘ ((%ymm2[127:0] >> 0x60₁₂₈)[31:0] ∘ ((%ymm2[127:0] >> 0x40₁₂₈)[31:0] ∘ (%ymm2[127:0] >> 0x20₁₂₈)[31:0])))
 
 
@@ -366,7 +366,7 @@ Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vpshufd_xmm_xmm_imm8_175 
 Circuit for 'vpshufd $0xaf, %xmm2, %xmm1' (opcode vpshufd_xmm_xmm_imm8_175)
   not equivalent for '%ymm1':
-    strata:        0x0₃₂ ∘ (0x0₃₂ ∘ (0x0₃₂ ∘ cvt_double_to_single(0x0₃₂ ∘ %ymm2[63:32]))) ∘ (%ymm2[95:64] ∘ %ymm2[95:64] ∘ (%ymm2[127:96] ∘ %ymm2[127:96]))
+    strata:        0x0₉₆ ∘ cvt_double_to_single(0x0₃₂ ∘ %ymm2[63:32]) ∘ (%ymm2[95:64] ∘ %ymm2[95:64] ∘ (%ymm2[127:96] ∘ %ymm2[127:96]))
     hand-written:  0x0₁₂₈ ∘ ((%ymm2[127:0] >> 0x40₁₂₈)[31:0] ∘ ((%ymm2[127:0] >> 0x40₁₂₈)[31:0] ∘ ((%ymm2[127:0] >> 0x60₁₂₈)[31:0] ∘ (%ymm2[127:0] >> 0x60₁₂₈)[31:0])))
 
 

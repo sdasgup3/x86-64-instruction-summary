@@ -35,7 +35,12 @@ Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vpermilps_xmm_xmm_imm8_17 
 strata does not support 'vpermilps $0x11, %xmm2, %xmm1'.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vpermilps_xmm_xmm_imm8_18 
-Equivalent.
+Circuit for 'vpermilps $0x12, %xmm2, %xmm1' (opcode vpermilps_xmm_xmm_imm8_18)
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ (sub_double(%ymm2[31:0] ∘ %ymm2[63:32], 0x0₆₄) ∘ sub_double(%ymm2[31:0] ∘ %ymm2[95:64], 0x0₆₄))
+    hand-written:  0x0₁₂₈ ∘ (%ymm2[31:0] ∘ (%ymm2[63:0] ∘ %ymm2[95:64]))
+
+
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vpermilps_xmm_xmm_imm8_19 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vpermilps_xmm_xmm_imm8_20 
@@ -405,7 +410,7 @@ Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vpermilps_xmm_xmm_imm8_197 
 Circuit for 'vpermilps $0xc5, %xmm2, %xmm1' (opcode vpermilps_xmm_xmm_imm8_197)
   not equivalent for '%ymm1':
-    strata:        0x0₁₂₈ ∘ ((%ymm2[127:96] ∘ vfnmsub132_double(0x0₃₂ ∘ %ymm2[95:64], vfnmsub132_double(0x0₆₄, 0x0₃₂ ∘ %ymm2[31:0], 0x0₆₄), 0x0₃₂ ∘ %ymm2[31:0])[31:0] | 0x0₆₄) ∘ (%ymm2[63:32] ∘ vfmsub132_double(cvt_single_to_int32_truncate(vfnmsub132_double(0x0₃₂ ∘ %ymm2[95:64], vfnmsub132_double(0x0₆₄, 0x0₃₂ ∘ %ymm2[31:0], 0x0₆₄), 0x0₃₂ ∘ %ymm2[31:0])[63:32]) ∘ cvt_single_to_int32_truncate(vfnmsub132_double(0x0₃₂ ∘ %ymm2[95:64], vfnmsub132_double(0x0₆₄, 0x0₃₂ ∘ %ymm2[31:0], 0x0₆₄), 0x0₃₂ ∘ %ymm2[31:0])[31:0]), vfmsub132_double(vfnmsub132_double(0x0₆₄, 0x0₆₄, 0x0₆₄), 0x0₃₂ ∘ %ymm2[63:32], 0x0₃₂ ∘ %ymm2[63:32]), 0x0₃₂ ∘ %ymm2[31:0])[31:0] | 0x0₃₂ ∘ %ymm2[63:32]))
+    strata:        0x0₁₂₈ ∘ (%ymm2[127:96] ∘ vfnmsub132_double(0x0₃₂ ∘ %ymm2[95:64], vfnmsub132_double(0x0₆₄, 0x0₃₂ ∘ %ymm2[31:0], 0x0₆₄), 0x0₃₂ ∘ %ymm2[31:0])[31:0] ∘ (%ymm2[63:32] ∘ vfmsub132_double(cvt_single_to_int32_truncate(vfnmsub132_double(0x0₃₂ ∘ %ymm2[95:64], vfnmsub132_double(0x0₆₄, 0x0₃₂ ∘ %ymm2[31:0], 0x0₆₄), 0x0₃₂ ∘ %ymm2[31:0])[63:32]) ∘ cvt_single_to_int32_truncate(vfnmsub132_double(0x0₃₂ ∘ %ymm2[95:64], vfnmsub132_double(0x0₆₄, 0x0₃₂ ∘ %ymm2[31:0], 0x0₆₄), 0x0₃₂ ∘ %ymm2[31:0])[31:0]), vfmsub132_double(vfnmsub132_double(0x0₆₄, 0x0₆₄, 0x0₆₄), 0x0₃₂ ∘ %ymm2[63:32], 0x0₃₂ ∘ %ymm2[63:32]), 0x0₃₂ ∘ %ymm2[31:0])[31:0] | 0x0₃₂ ∘ %ymm2[63:32]))
     hand-written:  0x0₁₂₈ ∘ (%ymm2[127:96] ∘ (%ymm2[31:0] ∘ (%ymm2[63:32] ∘ %ymm2[63:32])))
 
 
