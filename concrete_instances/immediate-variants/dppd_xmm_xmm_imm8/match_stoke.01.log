@@ -14,7 +14,7 @@ But Equivalent after simplification
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_2 
 Circuit for 'dppd $0x2, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_2)
   not equivalent for '%xmm1':
-    strata:        0x0₆₄ ∘ (0x0₃₂ ∘ cvt_double_to_single(sub_double(0x0₃₂ ∘ %ymm2[31:0], 0x0₃₂ ∘ %ymm2[31:0])))
+    strata:        0x0₉₆ ∘ cvt_double_to_single(sub_double(0x0₃₂ ∘ %ymm2[31:0], 0x0₃₂ ∘ %ymm2[31:0]))
     hand-written:  0x0₆₄ ∘ 0x0₆₄
 
 
@@ -137,98 +137,60 @@ But Equivalent after simplification
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_16 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_17 
-Circuit for 'dppd $0x11, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_17)
-    strata:        (%ymm1[255:128] ∘ (0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x11₈[1:1] = 0x1₁ ? add_double(0x11₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x11₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x11₈[0:0] = 0x1₁ ? add_double(0x11₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x11₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
-
-But Equivalent after simplification
-
-
-    strata:        0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-    hand-written:  0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-
+Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_18 
 Circuit for 'dppd $0x12, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_18)
   not equivalent for '%xmm1':
     strata:        add_double((0x0₁ ∘ (%ymm1[127:64] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ %ymm1[127:64])[63:0], mul_double(%ymm1[63:0], %ymm2[63:0])) ∘ sub_double((0x0₁ ∘ (mul_double(%ymm1[63:0], %ymm2[63:0]) ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ mul_double(%ymm1[63:0], %ymm2[63:0]))[63:0], (0x0₁ ∘ (mul_double(%ymm1[63:0], %ymm2[63:0]) ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ mul_double(%ymm1[63:0], %ymm2[63:0]))[63:0])
-    hand-written:  mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ 0x0₆₄
+    hand-written:  add_double(mul_double(%ymm1[63:0], %ymm2[63:0]), 0x0₆₄) ∘ 0x0₆₄
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_19 
 Circuit for 'dppd $0x13, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_19)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ mul_double(%ymm1[63:0], %ymm2[63:0])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x13₈[1:1] = 0x1₁ ? add_double(0x13₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x13₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x13₈[0:0] = 0x1₁ ? add_double(0x13₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x13₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        add_double(0x0₆₄, mul_double(%ymm1[63:0], %ymm2[63:0])) ∘ add_double(0x0₆₄, mul_double(%ymm1[63:0], %ymm2[63:0]))
+    hand-written:  add_double(mul_double(%ymm1[63:0], %ymm2[63:0]), 0x0₆₄) ∘ add_double(mul_double(%ymm1[63:0], %ymm2[63:0]), 0x0₆₄)
 
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-    hand-written:  mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_20 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_21 
 Circuit for 'dppd $0x15, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_21)
-    strata:        (%ymm1[255:128] ∘ (0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x15₈[1:1] = 0x1₁ ? add_double(0x15₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x15₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x15₈[0:0] = 0x1₁ ? add_double(0x15₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x15₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        0x0₆₄ ∘ add_double(0x0₆₄, mul_double(%ymm1[63:0], %ymm2[63:0]))
+    hand-written:  0x0₆₄ ∘ add_double(mul_double(%ymm1[63:0], %ymm2[63:0]), 0x0₆₄)
 
-But Equivalent after simplification
-
-
-    strata:        0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-    hand-written:  0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_22 
 Circuit for 'dppd $0x16, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_22)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ 0x0₆₄))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x16₈[1:1] = 0x1₁ ? add_double(0x16₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x16₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x16₈[0:0] = 0x1₁ ? add_double(0x16₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x16₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        (maxcmp_double(mul_double(%ymm1[63:0], %ymm2[63:0]), add_double(mul_double(%ymm1[63:0], %ymm2[63:0]), 0x0₆₄)) = 0x1₁ ? mul_double(%ymm1[63:0], %ymm2[63:0]) : add_double(mul_double(%ymm1[63:0], %ymm2[63:0]), 0x0₆₄)) ∘ 0x0₆₄
+    hand-written:  add_double(mul_double(%ymm1[63:0], %ymm2[63:0]), 0x0₆₄) ∘ 0x0₆₄
 
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ 0x0₆₄
-    hand-written:  mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_23 
 Circuit for 'dppd $0x17, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_23)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ mul_double(%ymm1[63:0], %ymm2[63:0])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x17₈[1:1] = 0x1₁ ? add_double(0x17₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x17₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x17₈[0:0] = 0x1₁ ? add_double(0x17₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x17₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        add_double(0x0₆₄, mul_double(%ymm1[63:0], %ymm2[63:0])) ∘ add_double(mul_double(%ymm1[63:0], %ymm2[63:0]), 0x0₆₄)
+    hand-written:  add_double(mul_double(%ymm1[63:0], %ymm2[63:0]), 0x0₆₄) ∘ add_double(mul_double(%ymm1[63:0], %ymm2[63:0]), 0x0₆₄)
 
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-    hand-written:  mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_24 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_25 
 Circuit for 'dppd $0x19, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_25)
-    strata:        (%ymm1[255:128] ∘ (0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x19₈[1:1] = 0x1₁ ? add_double(0x19₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x19₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x19₈[0:0] = 0x1₁ ? add_double(0x19₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x19₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        0x0₆₄ ∘ add_double(0x0₆₄, mul_double(%ymm1[63:0], %ymm2[63:0]))
+    hand-written:  0x0₆₄ ∘ add_double(mul_double(%ymm1[63:0], %ymm2[63:0]), 0x0₆₄)
 
-But Equivalent after simplification
-
-
-    strata:        0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-    hand-written:  0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_26 
-Circuit for 'dppd $0x1a, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_26)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ 0x0₆₄))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x1a₈[1:1] = 0x1₁ ? add_double(0x1a₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x1a₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x1a₈[0:0] = 0x1₁ ? add_double(0x1a₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x1a₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
-
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ 0x0₆₄
-    hand-written:  mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ 0x0₆₄
-
+Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_27 
 Circuit for 'dppd $0x1b, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_27)
   not equivalent for '%xmm1':
     strata:        vfmsub132_double(0x0₃₂ ∘ %ymm1[31:0], vfnmsub132_double(0x0₆₄, mul_double(%ymm1[63:0], %ymm2[63:0]), 0x0₆₄), 0x0₃₂ ∘ %ymm1[31:0]) ∘ vfmsub132_double(0x0₃₂ ∘ %ymm1[31:0], vfnmsub132_double(0x0₆₄, mul_double(%ymm1[63:0], %ymm2[63:0]), 0x0₆₄), 0x0₃₂ ∘ %ymm1[31:0])
-    hand-written:  mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
+    hand-written:  add_double(mul_double(%ymm1[63:0], %ymm2[63:0]), 0x0₆₄) ∘ add_double(mul_double(%ymm1[63:0], %ymm2[63:0]), 0x0₆₄)
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_28 
@@ -242,158 +204,104 @@ Circuit for 'dppd $0x1c, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_28)
 Circuit for 'dppd $0x1d, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_29)
   not equivalent for '%xmm1':
     strata:        0x0₆₄ ∘ add_double(0x0₃₂ ∘ cvt_double_to_int32_truncate(0x0₃₂ ∘ %ymm2[95:64]), mul_double(%ymm1[63:0], %ymm2[63:0]))
-    hand-written:  0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
+    hand-written:  0x0₆₄ ∘ add_double(mul_double(%ymm1[63:0], %ymm2[63:0]), 0x0₆₄)
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_30 
 Circuit for 'dppd $0x1e, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_30)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ 0x0₆₄))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x1e₈[1:1] = 0x1₁ ? add_double(0x1e₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x1e₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x1e₈[0:0] = 0x1₁ ? add_double(0x1e₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x1e₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        add_double(0x0₆₄, mul_double(%ymm1[63:0], %ymm2[63:0])) ∘ 0x0₆₄
+    hand-written:  add_double(mul_double(%ymm1[63:0], %ymm2[63:0]), 0x0₆₄) ∘ 0x0₆₄
 
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ 0x0₆₄
-    hand-written:  mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_31 
 Circuit for 'dppd $0x1f, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_31)
   not equivalent for '%xmm1':
     strata:        vfmsub132_double(0x0₆₄, vfnmsub132_double(0x0₆₄, vfmsub132_double(%ymm1[63:0], 0x0₆₄, %ymm2[63:0]), 0x0₆₄), 0x0₆₄) ∘ vfmsub132_double(0x0₆₄, vfnmsub132_double(0x0₆₄, vfmsub132_double(%ymm1[63:0], 0x0₆₄, %ymm2[63:0]), 0x0₆₄), 0x0₆₄)
-    hand-written:  mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
+    hand-written:  add_double(mul_double(%ymm1[63:0], %ymm2[63:0]), 0x0₆₄) ∘ add_double(mul_double(%ymm1[63:0], %ymm2[63:0]), 0x0₆₄)
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_32 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_33 
 Circuit for 'dppd $0x21, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_33)
-    strata:        (%ymm1[255:128] ∘ (0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x21₈[1:1] = 0x1₁ ? add_double(0x21₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x21₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x21₈[0:0] = 0x1₁ ? add_double(0x21₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x21₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        0x0₆₄ ∘ add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄)
+    hand-written:  0x0₆₄ ∘ add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64]))
 
-But Equivalent after simplification
-
-
-    strata:        0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
-    hand-written:  0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_34 
 Circuit for 'dppd $0x22, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_34)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[127:64], 0x0₆₄ ⊕ (0x0₆₄ | 0x0₆₄ ⊕ %ymm2[127:64])) ∘ 0x0₆₄))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x22₈[1:1] = 0x1₁ ? add_double(0x22₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x22₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x22₈[0:0] = 0x1₁ ? add_double(0x22₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x22₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄) ∘ 0x0₆₄
+    hand-written:  add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64])) ∘ 0x0₆₄
 
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[127:64], 0x0₆₄ ⊕ (0x0₆₄ | 0x0₆₄ ⊕ %ymm2[127:64])) ∘ 0x0₆₄
-    hand-written:  mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_35 
 Circuit for 'dppd $0x23, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_35)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x23₈[1:1] = 0x1₁ ? add_double(0x23₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x23₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x23₈[0:0] = 0x1₁ ? add_double(0x23₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x23₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄) ∘ add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄)
+    hand-written:  add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64])) ∘ add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64]))
 
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
-    hand-written:  mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_36 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_37 
-Circuit for 'dppd $0x25, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_37)
-    strata:        (%ymm1[255:128] ∘ (0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x25₈[1:1] = 0x1₁ ? add_double(0x25₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x25₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x25₈[0:0] = 0x1₁ ? add_double(0x25₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x25₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
-
-But Equivalent after simplification
-
-
-    strata:        0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
-    hand-written:  0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
-
+Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_38 
 Circuit for 'dppd $0x26, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_38)
   not equivalent for '%xmm1':
     strata:        vfmsub132_double(0x0₆₄, vfnmsub132_double(0x0₆₄, vfmsub132_double(%ymm1[127:64], 0x0₆₄, %ymm2[127:64]), 0x0₆₄), 0x0₆₄) ∘ 0x0₃₂ ∘ 0x0₃₂
-    hand-written:  mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ 0x0₆₄
+    hand-written:  add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64])) ∘ 0x0₆₄
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_39 
 Circuit for 'dppd $0x27, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_39)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x27₈[1:1] = 0x1₁ ? add_double(0x27₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x27₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x27₈[0:0] = 0x1₁ ? add_double(0x27₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x27₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄) ∘ add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄)
+    hand-written:  add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64])) ∘ add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64]))
 
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
-    hand-written:  mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_40 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_41 
 Circuit for 'dppd $0x29, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_41)
-    strata:        (%ymm1[255:128] ∘ (0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x29₈[1:1] = 0x1₁ ? add_double(0x29₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x29₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x29₈[0:0] = 0x1₁ ? add_double(0x29₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x29₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        0x0₆₄ ∘ add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄)
+    hand-written:  0x0₆₄ ∘ add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64]))
 
-But Equivalent after simplification
-
-
-    strata:        0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
-    hand-written:  0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_42 
 Circuit for 'dppd $0x2a, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_42)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ 0x0₆₄))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x2a₈[1:1] = 0x1₁ ? add_double(0x2a₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x2a₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x2a₈[0:0] = 0x1₁ ? add_double(0x2a₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x2a₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄) ∘ 0x0₆₄
+    hand-written:  add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64])) ∘ 0x0₆₄
 
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ 0x0₆₄
-    hand-written:  mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_43 
-Circuit for 'dppd $0x2b, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_43)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x2b₈[1:1] = 0x1₁ ? add_double(0x2b₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x2b₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x2b₈[0:0] = 0x1₁ ? add_double(0x2b₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x2b₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
-
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
-    hand-written:  mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
-
+Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_44 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_45 
 Circuit for 'dppd $0x2d, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_45)
   not equivalent for '%xmm1':
     strata:        0x0₆₄ ∘ vfmsub132_double(0x0₆₄, vfnmsub132_double(%ymm1[127:64], 0x0₆₄, %ymm2[127:64]), 0x0₆₄)
-    hand-written:  0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
+    hand-written:  0x0₆₄ ∘ add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64]))
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_46 
 Circuit for 'dppd $0x2e, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_46)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ 0x0₆₄))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x2e₈[1:1] = 0x1₁ ? add_double(0x2e₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x2e₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x2e₈[0:0] = 0x1₁ ? add_double(0x2e₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x2e₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄) ∘ 0x0₆₄
+    hand-written:  add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64])) ∘ 0x0₆₄
 
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ 0x0₆₄
-    hand-written:  mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_47 
 Circuit for 'dppd $0x2f, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_47)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x2f₈[1:1] = 0x1₁ ? add_double(0x2f₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x2f₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x2f₈[0:0] = 0x1₁ ? add_double(0x2f₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x2f₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄) ∘ add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄)
+    hand-written:  add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64])) ∘ add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64]))
 
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
-    hand-written:  mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_48 
 Equivalent.
@@ -571,262 +479,156 @@ But Equivalent after simplification
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_80 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_81 
-Circuit for 'dppd $0x51, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_81)
-    strata:        (%ymm1[255:128] ∘ (0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x51₈[1:1] = 0x1₁ ? add_double(0x51₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x51₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x51₈[0:0] = 0x1₁ ? add_double(0x51₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x51₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
-
-But Equivalent after simplification
-
-
-    strata:        0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-    hand-written:  0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-
+Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_82 
 Circuit for 'dppd $0x52, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_82)
   not equivalent for '%xmm1':
-    strata:        vfmsub132_double(%ymm1[63:0], 0x0₆₄, %ymm2[63:0]) ∘ 0x0₆₄
-    hand-written:  mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ 0x0₆₄
+    strata:        add_double(vfmsub132_double(%ymm1[63:0], 0x0₆₄, %ymm2[63:0]), 0x0₆₄) ∘ 0x0₆₄
+    hand-written:  add_double(mul_double(%ymm1[63:0], %ymm2[63:0]), 0x0₆₄) ∘ 0x0₆₄
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_83 
-Circuit for 'dppd $0x53, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_83)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ mul_double(%ymm1[63:0], %ymm2[63:0])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x53₈[1:1] = 0x1₁ ? add_double(0x53₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x53₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x53₈[0:0] = 0x1₁ ? add_double(0x53₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x53₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
-
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-    hand-written:  mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-
+Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_84 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_85 
-Circuit for 'dppd $0x55, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_85)
-    strata:        (%ymm1[255:128] ∘ (0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x55₈[1:1] = 0x1₁ ? add_double(0x55₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x55₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x55₈[0:0] = 0x1₁ ? add_double(0x55₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x55₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
-
-But Equivalent after simplification
-
-
-    strata:        0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-    hand-written:  0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-
+Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_86 
-Circuit for 'dppd $0x56, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_86)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ 0x0₆₄))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x56₈[1:1] = 0x1₁ ? add_double(0x56₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x56₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x56₈[0:0] = 0x1₁ ? add_double(0x56₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x56₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
-
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ 0x0₆₄
-    hand-written:  mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ 0x0₆₄
-
+Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_87 
 Circuit for 'dppd $0x57, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_87)
   not equivalent for '%xmm1':
-    strata:        vfmsub132_double(vfnmsub132_double(mincmp_double(0x0₃₂ ∘ %ymm1[95:64], 0x0₃₂ ∘ %ymm1[31:0]) = 0x1₁ ? 0x0₃₂ ∘ %ymm1[95:64] : 0x0₃₂ ∘ %ymm1[31:0], %ymm1[63:0], mincmp_double(0x0₃₂ ∘ %ymm1[95:64], 0x0₃₂ ∘ %ymm1[31:0]) = 0x1₁ ? 0x0₃₂ ∘ %ymm1[95:64] : 0x0₃₂ ∘ %ymm1[31:0]), 0x0₆₄, sub_double(0x0₆₄, %ymm2[63:0])) ∘ vfmsub132_double(vfnmsub132_double(mincmp_double(0x0₃₂ ∘ %ymm1[95:64], 0x0₃₂ ∘ %ymm1[31:0]) = 0x1₁ ? 0x0₃₂ ∘ %ymm1[95:64] : 0x0₃₂ ∘ %ymm1[31:0], %ymm1[63:0], mincmp_double(0x0₃₂ ∘ %ymm1[95:64], 0x0₃₂ ∘ %ymm1[31:0]) = 0x1₁ ? 0x0₃₂ ∘ %ymm1[95:64] : 0x0₃₂ ∘ %ymm1[31:0]), 0x0₆₄, sub_double(0x0₆₄, %ymm2[63:0]))
-    hand-written:  mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
+    strata:        add_double(vfmsub132_double(vfnmsub132_double(mincmp_double(0x0₃₂ ∘ %ymm1[95:64], 0x0₃₂ ∘ %ymm1[31:0]) = 0x1₁ ? 0x0₃₂ ∘ %ymm1[95:64] : 0x0₃₂ ∘ %ymm1[31:0], %ymm1[63:0], mincmp_double(0x0₃₂ ∘ %ymm1[95:64], 0x0₃₂ ∘ %ymm1[31:0]) = 0x1₁ ? 0x0₃₂ ∘ %ymm1[95:64] : 0x0₃₂ ∘ %ymm1[31:0]), 0x0₆₄, sub_double(0x0₆₄, %ymm2[63:0])), 0x0₆₄) ∘ add_double(vfmsub132_double(vfnmsub132_double(mincmp_double(0x0₃₂ ∘ %ymm1[95:64], 0x0₃₂ ∘ %ymm1[31:0]) = 0x1₁ ? 0x0₃₂ ∘ %ymm1[95:64] : 0x0₃₂ ∘ %ymm1[31:0], %ymm1[63:0], mincmp_double(0x0₃₂ ∘ %ymm1[95:64], 0x0₃₂ ∘ %ymm1[31:0]) = 0x1₁ ? 0x0₃₂ ∘ %ymm1[95:64] : 0x0₃₂ ∘ %ymm1[31:0]), 0x0₆₄, sub_double(0x0₆₄, %ymm2[63:0])), 0x0₆₄)
+    hand-written:  add_double(mul_double(%ymm1[63:0], %ymm2[63:0]), 0x0₆₄) ∘ add_double(mul_double(%ymm1[63:0], %ymm2[63:0]), 0x0₆₄)
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_88 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_89 
 Circuit for 'dppd $0x59, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_89)
-    strata:        (%ymm1[255:128] ∘ (0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x59₈[1:1] = 0x1₁ ? add_double(0x59₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x59₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x59₈[0:0] = 0x1₁ ? add_double(0x59₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x59₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        0x0₆₄ ∘ add_double(0x0₆₄, mul_double(%ymm1[63:0], %ymm2[63:0]))
+    hand-written:  0x0₆₄ ∘ add_double(mul_double(%ymm1[63:0], %ymm2[63:0]), 0x0₆₄)
 
-But Equivalent after simplification
-
-
-    strata:        0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-    hand-written:  0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_90 
-Circuit for 'dppd $0x5a, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_90)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ 0x0₃₂ ∘ 0x0₃₂))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x5a₈[1:1] = 0x1₁ ? add_double(0x5a₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x5a₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x5a₈[0:0] = 0x1₁ ? add_double(0x5a₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x5a₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
-
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ 0x0₃₂ ∘ 0x0₃₂
-    hand-written:  mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ 0x0₆₄
-
+Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_91 
 Circuit for 'dppd $0x5b, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_91)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ mul_double(%ymm1[63:0], %ymm2[63:0])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x5b₈[1:1] = 0x1₁ ? add_double(0x5b₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x5b₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x5b₈[0:0] = 0x1₁ ? add_double(0x5b₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x5b₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        add_double(0x0₆₄, mul_double(%ymm1[63:0], %ymm2[63:0])) ∘ add_double(0x0₆₄, mul_double(%ymm1[63:0], %ymm2[63:0]))
+    hand-written:  add_double(mul_double(%ymm1[63:0], %ymm2[63:0]), 0x0₆₄) ∘ add_double(mul_double(%ymm1[63:0], %ymm2[63:0]), 0x0₆₄)
 
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-    hand-written:  mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_92 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_93 
 Circuit for 'dppd $0x5d, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_93)
-    strata:        (%ymm1[255:128] ∘ (0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x5d₈[1:1] = 0x1₁ ? add_double(0x5d₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x5d₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x5d₈[0:0] = 0x1₁ ? add_double(0x5d₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x5d₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        0x0₆₄ ∘ add_double(0x0₆₄, mul_double(%ymm1[63:0], %ymm2[63:0]))
+    hand-written:  0x0₆₄ ∘ add_double(mul_double(%ymm1[63:0], %ymm2[63:0]), 0x0₆₄)
 
-But Equivalent after simplification
-
-
-    strata:        0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-    hand-written:  0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_94 
 Circuit for 'dppd $0x5e, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_94)
   not equivalent for '%xmm1':
     strata:        vfmsub132_double(0x0₆₄, vfmsub132_double(vfnmsub132_double(mincmp_double(0x0₆₄, 0x0₃₂ ∘ vfmsub132_double(%ymm1[127:64], vfnmsub132_double(0x0₆₄, 0x0₆₄, 0x0₆₄), %ymm2[127:64])[63:32]) = 0x1₁ ? 0x0₆₄ : 0x0₃₂ ∘ vfmsub132_double(%ymm1[127:64], vfnmsub132_double(0x0₆₄, 0x0₆₄, 0x0₆₄), %ymm2[127:64])[63:32], 0x0₃₂ ∘ vfmsub132_double(%ymm1[127:64], vfnmsub132_double(0x0₆₄, 0x0₆₄, 0x0₆₄), %ymm2[127:64])[63:32], mincmp_double(0x0₆₄, 0x0₃₂ ∘ vfmsub132_double(%ymm1[127:64], vfnmsub132_double(0x0₆₄, 0x0₆₄, 0x0₆₄), %ymm2[127:64])[63:32]) = 0x1₁ ? 0x0₆₄ : 0x0₃₂ ∘ vfmsub132_double(%ymm1[127:64], vfnmsub132_double(0x0₆₄, 0x0₆₄, 0x0₆₄), %ymm2[127:64])[63:32]), vfmsub132_double(%ymm1[63:0], vfnmsub132_double(vfnmsub132_double((maxcmp_single(%ymm2[63:32], 0x0₃₂) = 0x1₁ ? %ymm2[63:32] : 0x0₃₂) ∘ (maxcmp_single(%ymm2[31:0], 0x0₃₂) = 0x1₁ ? %ymm2[31:0] : 0x0₃₂), 0x0₆₄, 0x0₆₄), vfnmsub132_double((maxcmp_single(%ymm2[63:32], 0x0₃₂) = 0x1₁ ? %ymm2[63:32] : 0x0₃₂) ∘ (maxcmp_single(%ymm2[31:0], 0x0₃₂) = 0x1₁ ? %ymm2[31:0] : 0x0₃₂), 0x0₆₄, 0x0₆₄), 0x0₃₂ ∘ vfnmsub132_double(0x0₆₄, 0x0₆₄, 0x0₆₄)[63:32]), %ymm2[63:0]), vfmsub132_double(%ymm1[63:0], vfnmsub132_double(vfnmsub132_double((maxcmp_single(%ymm2[63:32], 0x0₃₂) = 0x1₁ ? %ymm2[63:32] : 0x0₃₂) ∘ (maxcmp_single(%ymm2[31:0], 0x0₃₂) = 0x1₁ ? %ymm2[31:0] : 0x0₃₂), 0x0₆₄, 0x0₆₄), vfnmsub132_double((maxcmp_single(%ymm2[63:32], 0x0₃₂) = 0x1₁ ? %ymm2[63:32] : 0x0₃₂) ∘ (maxcmp_single(%ymm2[31:0], 0x0₃₂) = 0x1₁ ? %ymm2[31:0] : 0x0₃₂), 0x0₆₄, 0x0₆₄), 0x0₃₂ ∘ vfnmsub132_double(0x0₆₄, 0x0₆₄, 0x0₆₄)[63:32]), %ymm2[63:0])), 0x0₆₄) ∘ 0x0₆₄
-    hand-written:  mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ 0x0₆₄
+    hand-written:  add_double(mul_double(%ymm1[63:0], %ymm2[63:0]), 0x0₆₄) ∘ 0x0₆₄
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_95 
-Circuit for 'dppd $0x5f, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_95)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ mul_double(%ymm1[63:0], %ymm2[63:0])[63:32] ∘ mul_double(%ymm1[63:0], %ymm2[63:0])[31:0]))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x5f₈[1:1] = 0x1₁ ? add_double(0x5f₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x5f₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x5f₈[0:0] = 0x1₁ ? add_double(0x5f₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x5f₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
-
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ mul_double(%ymm1[63:0], %ymm2[63:0])[63:32] ∘ mul_double(%ymm1[63:0], %ymm2[63:0])[31:0]
-    hand-written:  mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-
+Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_96 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_97 
 Circuit for 'dppd $0x61, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_97)
-    strata:        (%ymm1[255:128] ∘ (0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x61₈[1:1] = 0x1₁ ? add_double(0x61₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x61₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x61₈[0:0] = 0x1₁ ? add_double(0x61₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x61₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        0x0₆₄ ∘ add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄)
+    hand-written:  0x0₆₄ ∘ add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64]))
 
-But Equivalent after simplification
-
-
-    strata:        0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
-    hand-written:  0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_98 
 Circuit for 'dppd $0x62, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_98)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ 0x0₆₄))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x62₈[1:1] = 0x1₁ ? add_double(0x62₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x62₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x62₈[0:0] = 0x1₁ ? add_double(0x62₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x62₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄) ∘ 0x0₆₄
+    hand-written:  add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64])) ∘ 0x0₆₄
 
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ 0x0₆₄
-    hand-written:  mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_99 
 Circuit for 'dppd $0x63, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_99)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x63₈[1:1] = 0x1₁ ? add_double(0x63₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x63₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x63₈[0:0] = 0x1₁ ? add_double(0x63₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x63₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄) ∘ add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄)
+    hand-written:  add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64])) ∘ add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64]))
 
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
-    hand-written:  mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_100 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_101 
 Circuit for 'dppd $0x65, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_101)
-    strata:        (%ymm1[255:128] ∘ (0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x65₈[1:1] = 0x1₁ ? add_double(0x65₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x65₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x65₈[0:0] = 0x1₁ ? add_double(0x65₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x65₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        0x0₆₄ ∘ add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄)
+    hand-written:  0x0₆₄ ∘ add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64]))
 
-But Equivalent after simplification
-
-
-    strata:        0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
-    hand-written:  0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_102 
 Circuit for 'dppd $0x66, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_102)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ 0x0₆₄))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x66₈[1:1] = 0x1₁ ? add_double(0x66₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x66₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x66₈[0:0] = 0x1₁ ? add_double(0x66₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x66₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄) ∘ 0x0₆₄
+    hand-written:  add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64])) ∘ 0x0₆₄
 
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ 0x0₆₄
-    hand-written:  mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_103 
 Circuit for 'dppd $0x67, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_103)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x67₈[1:1] = 0x1₁ ? add_double(0x67₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x67₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x67₈[0:0] = 0x1₁ ? add_double(0x67₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x67₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄) ∘ add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄)
+    hand-written:  add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64])) ∘ add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64]))
 
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
-    hand-written:  mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_104 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_105 
 Circuit for 'dppd $0x69, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_105)
-    strata:        (%ymm1[255:128] ∘ (0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x69₈[1:1] = 0x1₁ ? add_double(0x69₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x69₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x69₈[0:0] = 0x1₁ ? add_double(0x69₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x69₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        0x0₆₄ ∘ add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄)
+    hand-written:  0x0₆₄ ∘ add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64]))
 
-But Equivalent after simplification
-
-
-    strata:        0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
-    hand-written:  0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_106 
 Circuit for 'dppd $0x6a, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_106)
   not equivalent for '%xmm1':
-    strata:        vfmsub132_double(%ymm1[127:64], vfnmsub132_double(0x0₆₄, 0x0₆₄, 0x0₆₄), %ymm2[127:64]) ∘ (0x0₆₄ ⊕ %ymm1[127:64] ⊕ (0x0₆₄ | 0x0₆₄ ⊕ %ymm1[127:64]))
-    hand-written:  mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ 0x0₆₄
+    strata:        add_double(vfmsub132_double(%ymm1[127:64], vfnmsub132_double(0x0₆₄, 0x0₆₄, 0x0₆₄), %ymm2[127:64]), 0x0₆₄) ∘ 0x0₆₄
+    hand-written:  add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64])) ∘ 0x0₆₄
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_107 
 Circuit for 'dppd $0x6b, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_107)
   not equivalent for '%xmm1':
     strata:        vfmsub132_double(0x0₆₄, vfnmsub132_double(0x0₆₄, vfmsub132_double(%ymm1[127:64], vfnmsub132_double(0x0₆₄, 0x0₆₄, 0x0₆₄), %ymm2[127:64]), 0x0₆₄), 0x0₆₄) ∘ vfmsub132_double(0x0₆₄, vfnmsub132_double(0x0₆₄, vfmsub132_double(%ymm1[127:64], vfnmsub132_double(0x0₆₄, 0x0₆₄, 0x0₆₄), %ymm2[127:64]), 0x0₆₄), 0x0₆₄)
-    hand-written:  mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
+    hand-written:  add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64])) ∘ add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64]))
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_108 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_109 
 Circuit for 'dppd $0x6d, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_109)
-    strata:        (%ymm1[255:128] ∘ (0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x6d₈[1:1] = 0x1₁ ? add_double(0x6d₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x6d₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x6d₈[0:0] = 0x1₁ ? add_double(0x6d₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x6d₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        0x0₆₄ ∘ add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄)
+    hand-written:  0x0₆₄ ∘ add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64]))
 
-But Equivalent after simplification
-
-
-    strata:        0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
-    hand-written:  0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_110 
 Circuit for 'dppd $0x6e, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_110)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ 0x0₆₄))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x6e₈[1:1] = 0x1₁ ? add_double(0x6e₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x6e₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x6e₈[0:0] = 0x1₁ ? add_double(0x6e₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x6e₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄) ∘ 0x0₆₄
+    hand-written:  add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64])) ∘ 0x0₆₄
 
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ 0x0₆₄
-    hand-written:  mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_111 
 Circuit for 'dppd $0x6f, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_111)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x6f₈[1:1] = 0x1₁ ? add_double(0x6f₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x6f₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x6f₈[0:0] = 0x1₁ ? add_double(0x6f₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x6f₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄) ∘ add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄)
+    hand-written:  add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64])) ∘ add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64]))
 
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
-    hand-written:  mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_112 
 Equivalent.
@@ -1003,21 +805,12 @@ But Equivalent after simplification
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_144 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_145 
-Circuit for 'dppd $0x91, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_145)
-    strata:        (%ymm1[255:128] ∘ (0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x91₈[1:1] = 0x1₁ ? add_double(0x91₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x91₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x91₈[0:0] = 0x1₁ ? add_double(0x91₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x91₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
-
-But Equivalent after simplification
-
-
-    strata:        0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-    hand-written:  0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-
+Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_146 
 Circuit for 'dppd $0x92, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_146)
   not equivalent for '%xmm1':
-    strata:        add_double(0x0₆₄ ⊕ (%ymm13[127:64] | 0x0₆₄) ⊕ (%ymm13[127:64] | 0x0₆₄ ⊕ (%ymm13[127:64] | 0x0₆₄)), mul_double(%ymm1[63:0], %ymm2[63:0])) ∘ sub_double(0x0₆₄ ⊕ (%ymm13[63:0] | 0x0₆₄) ⊕ (%ymm13[63:0] | 0x0₆₄ ⊕ (%ymm13[63:0] | 0x0₆₄)), 0x0₆₄ ⊕ (%ymm13[63:0] | 0x0₆₄) ⊕ (%ymm13[63:0] | 0x0₆₄ ⊕ (%ymm13[63:0] | 0x0₆₄)))
-    hand-written:  mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ 0x0₆₄
+    strata:        add_double(0x0₆₄, mul_double(%ymm1[63:0], %ymm2[63:0])) ∘ 0x0₆₄
+    hand-written:  add_double(mul_double(%ymm1[63:0], %ymm2[63:0]), 0x0₆₄) ∘ 0x0₆₄
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_147 
@@ -1025,38 +818,11 @@ Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_148 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_149 
-Circuit for 'dppd $0x95, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_149)
-    strata:        (%ymm1[255:128] ∘ (0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x95₈[1:1] = 0x1₁ ? add_double(0x95₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x95₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x95₈[0:0] = 0x1₁ ? add_double(0x95₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x95₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
-
-But Equivalent after simplification
-
-
-    strata:        0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-    hand-written:  0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-
+Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_150 
-Circuit for 'dppd $0x96, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_150)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ 0x0₆₄))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x96₈[1:1] = 0x1₁ ? add_double(0x96₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x96₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x96₈[0:0] = 0x1₁ ? add_double(0x96₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x96₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
-
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ 0x0₆₄
-    hand-written:  mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ 0x0₆₄
-
+Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_151 
-Circuit for 'dppd $0x97, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_151)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ mul_double(%ymm1[63:0], %ymm2[63:0])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x97₈[1:1] = 0x1₁ ? add_double(0x97₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x97₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x97₈[0:0] = 0x1₁ ? add_double(0x97₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x97₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
-
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-    hand-written:  mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-
+Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_152 
 Circuit for 'dppd $0x98, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_152)
   not equivalent for '%xmm1':
@@ -1065,208 +831,105 @@ Circuit for 'dppd $0x98, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_152)
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_153 
-Circuit for 'dppd $0x99, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_153)
-    strata:        (%ymm1[255:128] ∘ (0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x99₈[1:1] = 0x1₁ ? add_double(0x99₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x99₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x99₈[0:0] = 0x1₁ ? add_double(0x99₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x99₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
-
-But Equivalent after simplification
-
-
-    strata:        0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-    hand-written:  0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-
+Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_154 
-Circuit for 'dppd $0x9a, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_154)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ 0x0₆₄))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x9a₈[1:1] = 0x1₁ ? add_double(0x9a₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x9a₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x9a₈[0:0] = 0x1₁ ? add_double(0x9a₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x9a₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
-
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ 0x0₆₄
-    hand-written:  mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ 0x0₆₄
-
+Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_155 
-Circuit for 'dppd $0x9b, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_155)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ mul_double(%ymm1[63:0], %ymm2[63:0])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x9b₈[1:1] = 0x1₁ ? add_double(0x9b₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x9b₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x9b₈[0:0] = 0x1₁ ? add_double(0x9b₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x9b₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
-
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-    hand-written:  mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-
+Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_156 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_157 
 Circuit for 'dppd $0x9d, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_157)
-    strata:        (%ymm1[255:128] ∘ (0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x9d₈[1:1] = 0x1₁ ? add_double(0x9d₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x9d₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x9d₈[0:0] = 0x1₁ ? add_double(0x9d₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x9d₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        0x0₆₄ ∘ add_double(0x0₆₄, mul_double(%ymm1[63:0], %ymm2[63:0]))
+    hand-written:  0x0₆₄ ∘ add_double(mul_double(%ymm1[63:0], %ymm2[63:0]), 0x0₆₄)
 
-But Equivalent after simplification
-
-
-    strata:        0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-    hand-written:  0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_158 
-Circuit for 'dppd $0x9e, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_158)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ 0x0₆₄))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x9e₈[1:1] = 0x1₁ ? add_double(0x9e₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x9e₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x9e₈[0:0] = 0x1₁ ? add_double(0x9e₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x9e₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
-
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ 0x0₆₄
-    hand-written:  mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ 0x0₆₄
-
+Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_159 
-Circuit for 'dppd $0x9f, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_159)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ mul_double(%ymm1[63:0], %ymm2[63:0])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0x9f₈[1:1] = 0x1₁ ? add_double(0x9f₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x9f₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x9f₈[0:0] = 0x1₁ ? add_double(0x9f₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0x9f₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
-
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-    hand-written:  mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-
+Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_160 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_161 
-Circuit for 'dppd $0xa1, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_161)
-    strata:        (%ymm1[255:128] ∘ (0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0xa1₈[1:1] = 0x1₁ ? add_double(0xa1₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xa1₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0xa1₈[0:0] = 0x1₁ ? add_double(0xa1₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xa1₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
-
-But Equivalent after simplification
-
-
-    strata:        0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
-    hand-written:  0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
-
+Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_162 
 Circuit for 'dppd $0xa2, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_162)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ 0x0₆₄))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0xa2₈[1:1] = 0x1₁ ? add_double(0xa2₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xa2₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0xa2₈[0:0] = 0x1₁ ? add_double(0xa2₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xa2₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄) ∘ 0x0₆₄
+    hand-written:  add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64])) ∘ 0x0₆₄
 
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ 0x0₆₄
-    hand-written:  mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_163 
 Circuit for 'dppd $0xa3, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_163)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0xa3₈[1:1] = 0x1₁ ? add_double(0xa3₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xa3₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0xa3₈[0:0] = 0x1₁ ? add_double(0xa3₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xa3₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄) ∘ add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄)
+    hand-written:  add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64])) ∘ add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64]))
 
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
-    hand-written:  mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_164 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_165 
 Circuit for 'dppd $0xa5, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_165)
   not equivalent for '%xmm1':
-    strata:        0x0₆₄ ∘ vfmsub132_double(%ymm1[127:64], 0x0₆₄, %ymm2[127:64])
-    hand-written:  0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
+    strata:        0x0₆₄ ∘ add_double(vfmsub132_double(%ymm1[127:64], 0x0₆₄, %ymm2[127:64]), 0x0₆₄)
+    hand-written:  0x0₆₄ ∘ add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64]))
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_166 
-Circuit for 'dppd $0xa6, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_166)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ 0x0₆₄))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0xa6₈[1:1] = 0x1₁ ? add_double(0xa6₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xa6₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0xa6₈[0:0] = 0x1₁ ? add_double(0xa6₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xa6₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
-
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ 0x0₆₄
-    hand-written:  mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ 0x0₆₄
-
+Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_167 
 Circuit for 'dppd $0xa7, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_167)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0xa7₈[1:1] = 0x1₁ ? add_double(0xa7₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xa7₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0xa7₈[0:0] = 0x1₁ ? add_double(0xa7₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xa7₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄) ∘ add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄)
+    hand-written:  add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64])) ∘ add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64]))
 
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
-    hand-written:  mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_168 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_169 
 Circuit for 'dppd $0xa9, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_169)
-    strata:        (%ymm1[255:128] ∘ (0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0xa9₈[1:1] = 0x1₁ ? add_double(0xa9₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xa9₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0xa9₈[0:0] = 0x1₁ ? add_double(0xa9₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xa9₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        0x0₆₄ ∘ add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄)
+    hand-written:  0x0₆₄ ∘ add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64]))
 
-But Equivalent after simplification
-
-
-    strata:        0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
-    hand-written:  0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_170 
 Circuit for 'dppd $0xaa, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_170)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ 0x0₆₄))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0xaa₈[1:1] = 0x1₁ ? add_double(0xaa₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xaa₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0xaa₈[0:0] = 0x1₁ ? add_double(0xaa₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xaa₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄) ∘ 0x0₆₄
+    hand-written:  add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64])) ∘ 0x0₆₄
 
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ 0x0₆₄
-    hand-written:  mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_171 
 Circuit for 'dppd $0xab, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_171)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0xab₈[1:1] = 0x1₁ ? add_double(0xab₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xab₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0xab₈[0:0] = 0x1₁ ? add_double(0xab₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xab₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄) ∘ add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄)
+    hand-written:  add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64])) ∘ add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64]))
 
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
-    hand-written:  mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_172 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_173 
 Circuit for 'dppd $0xad, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_173)
-    strata:        (%ymm1[255:128] ∘ (0x0₆₄ ∘ (0x0₆₄ ⊕ (mul_double(%ymm1[127:64], %ymm2[127:64]) | 0x0₆₄))))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0xad₈[1:1] = 0x1₁ ? add_double(0xad₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xad₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0xad₈[0:0] = 0x1₁ ? add_double(0xad₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xad₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        0x0₆₄ ∘ (mul_double(%ymm1[127:64], %ymm2[127:64]) ⊕ add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄) ⊕ (mul_double(%ymm1[127:64], %ymm2[127:64]) | mul_double(%ymm1[127:64], %ymm2[127:64]) ⊕ add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄)))
+    hand-written:  0x0₆₄ ∘ add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64]))
 
-But Equivalent after simplification
-
-
-    strata:        0x0₆₄ ∘ (0x0₆₄ ⊕ (mul_double(%ymm1[127:64], %ymm2[127:64]) | 0x0₆₄))
-    hand-written:  0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_174 
 Circuit for 'dppd $0xae, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_174)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ 0x0₆₄))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0xae₈[1:1] = 0x1₁ ? add_double(0xae₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xae₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0xae₈[0:0] = 0x1₁ ? add_double(0xae₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xae₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄) ∘ 0x0₆₄
+    hand-written:  add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64])) ∘ 0x0₆₄
 
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ 0x0₆₄
-    hand-written:  mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_175 
 Circuit for 'dppd $0xaf, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_175)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0xaf₈[1:1] = 0x1₁ ? add_double(0xaf₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xaf₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0xaf₈[0:0] = 0x1₁ ? add_double(0xaf₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xaf₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄) ∘ add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄)
+    hand-written:  add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64])) ∘ add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64]))
 
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
-    hand-written:  mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_176 
 Equivalent.
@@ -1456,259 +1119,138 @@ Equivalent.
 Circuit for 'dppd $0xd1, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_209)
   not equivalent for '%xmm1':
     strata:        mul_double(0x0₃₂ ∘ %ymm2[31:0], 0x0₃₂ ∘ %ymm2[95:64]) ∘ vfmsub132_double(0x0₃₂ ∘ %ymm2[95:64], vfnmsub132_double(mul_double(%ymm1[63:0], %ymm2[63:0]), mul_double(%ymm1[63:0], %ymm2[63:0]), 0x0₃₂ ∘ %ymm1[127:96]), mul_double(0x0₃₂ ∘ %ymm2[31:0], 0x0₃₂ ∘ %ymm2[95:64]))
-    hand-written:  0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
+    hand-written:  0x0₆₄ ∘ add_double(mul_double(%ymm1[63:0], %ymm2[63:0]), 0x0₆₄)
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_210 
 Circuit for 'dppd $0xd2, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_210)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ 0x0₆₄))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0xd2₈[1:1] = 0x1₁ ? add_double(0xd2₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xd2₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0xd2₈[0:0] = 0x1₁ ? add_double(0xd2₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xd2₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        add_double(0x0₆₄, mul_double(%ymm1[63:0], %ymm2[63:0])) ∘ 0x0₆₄
+    hand-written:  add_double(mul_double(%ymm1[63:0], %ymm2[63:0]), 0x0₆₄) ∘ 0x0₆₄
 
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ 0x0₆₄
-    hand-written:  mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_211 
-Circuit for 'dppd $0xd3, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_211)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ mul_double(%ymm1[63:0], %ymm2[63:0])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0xd3₈[1:1] = 0x1₁ ? add_double(0xd3₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xd3₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0xd3₈[0:0] = 0x1₁ ? add_double(0xd3₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xd3₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
-
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-    hand-written:  mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-
+Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_212 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_213 
-Circuit for 'dppd $0xd5, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_213)
-    strata:        (%ymm1[255:128] ∘ (0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0xd5₈[1:1] = 0x1₁ ? add_double(0xd5₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xd5₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0xd5₈[0:0] = 0x1₁ ? add_double(0xd5₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xd5₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
-
-But Equivalent after simplification
-
-
-    strata:        0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-    hand-written:  0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-
+Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_214 
-Circuit for 'dppd $0xd6, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_214)
-  not equivalent for '%xmm1':
-    strata:        add_double(mul_double(%ymm1[63:0], %ymm2[63:0]), 0x0₆₄ ⊕ (%ymm12[127:64] | 0x0₆₄) ⊕ (%ymm12[127:64] | 0x0₆₄ ⊕ (%ymm12[127:64] | 0x0₆₄))) ∘ sub_double(0x0₆₄ ⊕ (%ymm12[63:0] | 0x0₆₄) ⊕ (%ymm12[63:0] | 0x0₆₄ ⊕ (%ymm12[63:0] | 0x0₆₄)), 0x0₆₄ ⊕ (%ymm12[63:0] | 0x0₆₄) ⊕ (%ymm12[63:0] | 0x0₆₄ ⊕ (%ymm12[63:0] | 0x0₆₄)))
-    hand-written:  mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ 0x0₆₄
-
-
+Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_215 
-Circuit for 'dppd $0xd7, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_215)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ mul_double(%ymm1[63:0], %ymm2[63:0])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0xd7₈[1:1] = 0x1₁ ? add_double(0xd7₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xd7₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0xd7₈[0:0] = 0x1₁ ? add_double(0xd7₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xd7₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
-
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-    hand-written:  mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-
+Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_216 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_217 
-Circuit for 'dppd $0xd9, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_217)
-    strata:        (%ymm1[255:128] ∘ (0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0xd9₈[1:1] = 0x1₁ ? add_double(0xd9₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xd9₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0xd9₈[0:0] = 0x1₁ ? add_double(0xd9₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xd9₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
-
-But Equivalent after simplification
-
-
-    strata:        0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-    hand-written:  0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-
+Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_218 
 Circuit for 'dppd $0xda, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_218)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ 0x0₆₄))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0xda₈[1:1] = 0x1₁ ? add_double(0xda₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xda₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0xda₈[0:0] = 0x1₁ ? add_double(0xda₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xda₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        sub_double(add_double(0x0₆₄, mul_double(%ymm1[63:0], %ymm2[63:0])), 0x0₆₄) ∘ 0x0₆₄
+    hand-written:  add_double(mul_double(%ymm1[63:0], %ymm2[63:0]), 0x0₆₄) ∘ 0x0₆₄
 
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ 0x0₆₄
-    hand-written:  mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_219 
-Circuit for 'dppd $0xdb, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_219)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ mul_double(%ymm1[63:0], %ymm2[63:0])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0xdb₈[1:1] = 0x1₁ ? add_double(0xdb₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xdb₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0xdb₈[0:0] = 0x1₁ ? add_double(0xdb₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xdb₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
-
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-    hand-written:  mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-
+Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_220 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_221 
-Circuit for 'dppd $0xdd, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_221)
-    strata:        (%ymm1[255:128] ∘ (0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0xdd₈[1:1] = 0x1₁ ? add_double(0xdd₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xdd₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0xdd₈[0:0] = 0x1₁ ? add_double(0xdd₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xdd₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
-
-But Equivalent after simplification
-
-
-    strata:        0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-    hand-written:  0x0₆₄ ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-
+Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_222 
-Circuit for 'dppd $0xde, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_222)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ 0x0₆₄))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0xde₈[1:1] = 0x1₁ ? add_double(0xde₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xde₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0xde₈[0:0] = 0x1₁ ? add_double(0xde₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xde₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
-
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ 0x0₆₄
-    hand-written:  mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ 0x0₆₄
-
+Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_223 
-Circuit for 'dppd $0xdf, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_223)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ mul_double(%ymm1[63:0], %ymm2[63:0])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0xdf₈[1:1] = 0x1₁ ? add_double(0xdf₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xdf₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0xdf₈[0:0] = 0x1₁ ? add_double(0xdf₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xdf₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
-
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-    hand-written:  mul_double(%ymm1[63:0], %ymm2[63:0]) ∘ mul_double(%ymm1[63:0], %ymm2[63:0])
-
+Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_224 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_225 
 Circuit for 'dppd $0xe1, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_225)
   not equivalent for '%xmm1':
-    strata:        0x0₆₄ ∘ vfmsub132_double(%ymm1[127:64], 0x0₆₄, %ymm2[127:64])
-    hand-written:  0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
+    strata:        0x0₆₄ ∘ add_double(vfmsub132_double(%ymm1[127:64], 0x0₆₄, %ymm2[127:64]), 0x0₆₄)
+    hand-written:  0x0₆₄ ∘ add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64]))
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_226 
 Circuit for 'dppd $0xe2, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_226)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ 0x0₆₄))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0xe2₈[1:1] = 0x1₁ ? add_double(0xe2₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xe2₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0xe2₈[0:0] = 0x1₁ ? add_double(0xe2₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xe2₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄) ∘ 0x0₆₄
+    hand-written:  add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64])) ∘ 0x0₆₄
 
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ 0x0₆₄
-    hand-written:  mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_227 
 Circuit for 'dppd $0xe3, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_227)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0xe3₈[1:1] = 0x1₁ ? add_double(0xe3₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xe3₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0xe3₈[0:0] = 0x1₁ ? add_double(0xe3₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xe3₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄) ∘ add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄)
+    hand-written:  add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64])) ∘ add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64]))
 
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
-    hand-written:  mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_228 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_229 
 Circuit for 'dppd $0xe5, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_229)
-    strata:        (%ymm1[255:128] ∘ (0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0xe5₈[1:1] = 0x1₁ ? add_double(0xe5₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xe5₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0xe5₈[0:0] = 0x1₁ ? add_double(0xe5₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xe5₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        0x0₆₄ ∘ add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄)
+    hand-written:  0x0₆₄ ∘ add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64]))
 
-But Equivalent after simplification
-
-
-    strata:        0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
-    hand-written:  0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_230 
 Circuit for 'dppd $0xe6, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_230)
   not equivalent for '%xmm1':
-    strata:        ((0x0₁ ∘ (0x0₃₂ ∘ (0x0₁ ∘ (%ymm1[127:96] ∘ %ymm1[127:96] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm1[127:96] ∘ %ymm1[127:96]))[63:32]) + 0x0₁ ∘ (0x0₃₂ ∘ (0x0₁ ∘ (%ymm1[127:96] ∘ %ymm1[127:96] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm1[127:96] ∘ %ymm1[127:96]))[31:0]))[31:0] ∘ (0x0₁ ∘ (0x0₁ ∘ (%ymm1[95:64] ∘ %ymm1[95:64] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm1[95:64] ∘ %ymm1[95:64]))[63:0] + 0x0₁ ∘ (0x0₃₂ ∘ (0x0₁ ∘ (%ymm1[95:64] ∘ %ymm1[95:64] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm1[95:64] ∘ %ymm1[95:64]))[63:32]))[31:0] | vfmsub132_double(0x0₆₄, vfnmsub132_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄), 0x0₆₄)) ∘ ((0x0₁ ∘ ((0x0₁ ∘ (%ymm1[63:32] ∘ %ymm1[63:32] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm1[63:32] ∘ %ymm1[63:32]))[63:32] ∘ (0x0₁ ∘ (%ymm1[63:32] ∘ %ymm1[63:32] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm1[63:32] ∘ %ymm1[63:32]))[63:32]) + 0x0₁ ∘ (0x0₁ ∘ (%ymm1[63:32] ∘ %ymm1[63:32] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm1[63:32] ∘ %ymm1[63:32]))[63:0])[31:0] ∘ (0x0₁ ∘ ((0x0₁ ∘ (%ymm1[31:0] ∘ %ymm1[31:0] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm1[31:0] ∘ %ymm1[31:0]))[63:32] ∘ (0x0₁ ∘ (%ymm1[31:0] ∘ %ymm1[31:0] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm1[31:0] ∘ %ymm1[31:0]))[63:32]) + 0x0₁ ∘ (0x0₁ ∘ (%ymm1[31:0] ∘ %ymm1[31:0] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm1[31:0] ∘ %ymm1[31:0]))[63:0])[31:0] | vfmsub132_double(0x0₃₂ ∘ %ymm2[63:32], 0x0₆₄, 0x0₃₂ ∘ %ymm2[127:96]))
-    hand-written:  mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ 0x0₆₄
+    strata:        ((0x0₃₃ ∘ (0x0₁ ∘ (%ymm1[127:96] ∘ %ymm1[127:96] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm1[127:96] ∘ %ymm1[127:96]))[63:32] + 0x0₃₃ ∘ (0x0₁ ∘ (%ymm1[127:96] ∘ %ymm1[127:96] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm1[127:96] ∘ %ymm1[127:96]))[31:0])[31:0] ∘ (0x0₁ ∘ (0x0₁ ∘ (%ymm1[95:64] ∘ %ymm1[95:64] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm1[95:64] ∘ %ymm1[95:64]))[63:0] + 0x0₃₃ ∘ (0x0₁ ∘ (%ymm1[95:64] ∘ %ymm1[95:64] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm1[95:64] ∘ %ymm1[95:64]))[63:32])[31:0] | vfmsub132_double(0x0₆₄, vfnmsub132_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄), 0x0₆₄)) ∘ ((0x0₁ ∘ ((0x0₁ ∘ (%ymm1[63:32] ∘ %ymm1[63:32] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm1[63:32] ∘ %ymm1[63:32]))[63:32] ∘ (0x0₁ ∘ (%ymm1[63:32] ∘ %ymm1[63:32] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm1[63:32] ∘ %ymm1[63:32]))[63:32]) + 0x0₁ ∘ (0x0₁ ∘ (%ymm1[63:32] ∘ %ymm1[63:32] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm1[63:32] ∘ %ymm1[63:32]))[63:0])[31:0] ∘ (0x0₁ ∘ ((0x0₁ ∘ (%ymm1[31:0] ∘ %ymm1[31:0] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm1[31:0] ∘ %ymm1[31:0]))[63:32] ∘ (0x0₁ ∘ (%ymm1[31:0] ∘ %ymm1[31:0] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm1[31:0] ∘ %ymm1[31:0]))[63:32]) + 0x0₁ ∘ (0x0₁ ∘ (%ymm1[31:0] ∘ %ymm1[31:0] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm1[31:0] ∘ %ymm1[31:0]))[63:0])[31:0] | vfmsub132_double(0x0₃₂ ∘ %ymm2[63:32], 0x0₆₄, 0x0₃₂ ∘ %ymm2[127:96]))
+    hand-written:  add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64])) ∘ 0x0₆₄
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_231 
 Circuit for 'dppd $0xe7, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_231)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0xe7₈[1:1] = 0x1₁ ? add_double(0xe7₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xe7₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0xe7₈[0:0] = 0x1₁ ? add_double(0xe7₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xe7₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄) ∘ add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄)
+    hand-written:  add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64])) ∘ add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64]))
 
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
-    hand-written:  mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_232 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_233 
 Circuit for 'dppd $0xe9, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_233)
-    strata:        (%ymm1[255:128] ∘ (0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0xe9₈[1:1] = 0x1₁ ? add_double(0xe9₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xe9₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0xe9₈[0:0] = 0x1₁ ? add_double(0xe9₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xe9₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        0x0₆₄ ∘ add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄)
+    hand-written:  0x0₆₄ ∘ add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64]))
 
-But Equivalent after simplification
-
-
-    strata:        0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
-    hand-written:  0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_234 
 Circuit for 'dppd $0xea, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_234)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ 0x0₆₄))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0xea₈[1:1] = 0x1₁ ? add_double(0xea₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xea₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0xea₈[0:0] = 0x1₁ ? add_double(0xea₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xea₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄) ∘ 0x0₆₄
+    hand-written:  add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64])) ∘ 0x0₆₄
 
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ 0x0₆₄
-    hand-written:  mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_235 
 Circuit for 'dppd $0xeb, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_235)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0xeb₈[1:1] = 0x1₁ ? add_double(0xeb₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xeb₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0xeb₈[0:0] = 0x1₁ ? add_double(0xeb₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xeb₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄) ∘ add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64]))
+    hand-written:  add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64])) ∘ add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64]))
 
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
-    hand-written:  mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_236 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_237 
 Circuit for 'dppd $0xed, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_237)
-    strata:        (%ymm1[255:128] ∘ (0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0xed₈[1:1] = 0x1₁ ? add_double(0xed₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xed₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0xed₈[0:0] = 0x1₁ ? add_double(0xed₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xed₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        0x0₆₄ ∘ add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄)
+    hand-written:  0x0₆₄ ∘ add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64]))
 
-But Equivalent after simplification
-
-
-    strata:        0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
-    hand-written:  0x0₆₄ ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_238 
 Circuit for 'dppd $0xee, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_238)
   not equivalent for '%xmm1':
-    strata:        vfmsub132_double(%ymm1[127:64] ⊕ (0x0₆₄ | %ymm1[127:64]), vfnmsub132_double(0x0₆₄, vfmsub132_double(%ymm1[127:64], 0x0₆₄, %ymm2[127:64]), 0x0₆₄), %ymm1[127:64] ⊕ (0x0₆₄ | %ymm1[127:64])) ∘ (%ymm1[127:64] ⊕ (0x0₆₄ | %ymm1[127:64]))
-    hand-written:  mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ 0x0₆₄
+    strata:        vfmsub132_double(0x0₆₄, vfnmsub132_double(0x0₆₄, vfmsub132_double(%ymm1[127:64], 0x0₆₄, %ymm2[127:64]), 0x0₆₄), 0x0₆₄) ∘ 0x0₆₄
+    hand-written:  add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64])) ∘ 0x0₆₄
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_239 
 Circuit for 'dppd $0xef, %xmm2, %xmm1' (opcode dppd_xmm_xmm_imm8_239)
-    strata:        (%ymm1[255:128] ∘ (mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])))[127:0]
-    hand-written:  (%ymm1[255:128] ∘ ((0xef₈[1:1] = 0x1₁ ? add_double(0xef₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xef₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0xef₈[0:0] = 0x1₁ ? add_double(0xef₈[4:4] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][63:0], %ymm2[127:0][127:0][63:0]) : 0x0₆₄, 0xef₈[5:5] = 0x1₁ ? mul_double(%ymm1[127:0][127:0][127:64], %ymm2[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄)))[127:0]
+  not equivalent for '%xmm1':
+    strata:        add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄) ∘ add_double(mul_double(%ymm1[127:64], %ymm2[127:64]), 0x0₆₄)
+    hand-written:  add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64])) ∘ add_double(0x0₆₄, mul_double(%ymm1[127:64], %ymm2[127:64]))
 
-But Equivalent after simplification
-
-
-    strata:        mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
-    hand-written:  mul_double(%ymm1[127:64], %ymm2[127:64]) ∘ mul_double(%ymm1[127:64], %ymm2[127:64])
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode dppd_xmm_xmm_imm8_240 
 Equivalent.

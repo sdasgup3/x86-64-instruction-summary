@@ -262,7 +262,7 @@ Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode psrldq_xmm_imm8_128 
 Circuit for 'psrldq $0x80, %xmm1' (opcode psrldq_xmm_imm8_128)
   not equivalent for '%xmm1':
-    strata:        add_double(sub_double(0x0₃₂ ∘ (0x0₁₆ ∘ %ymm1[15:0]), 0x0₃₂ ∘ (0x0₁₆ ∘ %ymm1[15:0])), sub_double(0x0₃₂ ∘ (0x0₁₆ ∘ %ymm1[31:16]), 0x0₃₂ ∘ (0x0₁₆ ∘ %ymm1[31:16])))[63:32] ∘ 0x0₃₂ ∘ (add_double(sub_double(0x0₃₂ ∘ (0x0₁₆ ∘ %ymm1[15:0]), 0x0₃₂ ∘ (0x0₁₆ ∘ %ymm1[15:0])), sub_double(0x0₃₂ ∘ (0x0₁₆ ∘ %ymm1[31:16]), 0x0₃₂ ∘ (0x0₁₆ ∘ %ymm1[31:16])))[31:0] ∘ 0x0₃₂)
+    strata:        add_double(sub_double(0x0₄₈ ∘ %ymm1[15:0], 0x0₄₈ ∘ %ymm1[15:0]), sub_double(0x0₄₈ ∘ %ymm1[31:16], 0x0₄₈ ∘ %ymm1[31:16]))[63:32] ∘ 0x0₃₂ ∘ add_double(sub_double(0x0₄₈ ∘ %ymm1[15:0], 0x0₄₈ ∘ %ymm1[15:0]), sub_double(0x0₄₈ ∘ %ymm1[31:16], 0x0₄₈ ∘ %ymm1[31:16]))[31:0] ∘ 0x0₃₂
     hand-written:  %ymm1[127:0] >> (0x0₁₂₀ ∘ 0x10₈ << 0x3₁₂₈)
 
 

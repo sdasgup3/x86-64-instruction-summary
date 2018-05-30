@@ -169,14 +169,10 @@ But Equivalent after simplification
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_17 
 Circuit for 'vdpps $0x11, %xmm3, %xmm2, %xmm1' (opcode vdpps_xmm_xmm_xmm_imm8_17)
-    strata:        0x0₁₂₈ ∘ (0x0₃₂ ∘ (0x0₃₂ ∘ (0x0₃₂ ∘ mul_single(%ymm2[31:0], %ymm3[31:0]))))
-    hand-written:  0x0₁₂₈ ∘ ((0x11₈[3:3] = 0x1₁ ? add_double(add_double(0x11₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x11₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x11₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x11₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x11₈[2:2] = 0x1₁ ? add_double(add_double(0x11₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x11₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x11₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x11₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x11₈[1:1] = 0x1₁ ? add_double(add_double(0x11₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x11₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x11₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x11₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x11₈[0:0] = 0x1₁ ? add_double(add_double(0x11₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x11₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x11₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x11₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂))[127:0]
+  not equivalent for '%ymm1':
+    strata:        0x0₂₂₄ ∘ add_single(0x0₃₂, mul_single(%ymm2[31:0], %ymm3[31:0]))
+    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₃₂ ∘ add_double(add_double(mul_single(%ymm2[31:0], %ymm3[31:0]), 0x0₃₂), 0x0₃₂))
 
-But Equivalent after simplification
-
-
-    strata:        0x0₁₂₈ ∘ (0x0₃₂ ∘ (0x0₃₂ ∘ (0x0₃₂ ∘ mul_single(%ymm2[31:0], %ymm3[31:0]))))
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₃₂ ∘ mul_single(%ymm2[31:0], %ymm3[31:0]))
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_18 
 strata does not support 'vdpps $0x12, %xmm3, %xmm2, %xmm1'.
@@ -184,20 +180,16 @@ strata does not support 'vdpps $0x12, %xmm3, %xmm2, %xmm1'.
 strata does not support 'vdpps $0x13, %xmm3, %xmm2, %xmm1'.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_20 
 Circuit for 'vdpps $0x14, %xmm3, %xmm2, %xmm1' (opcode vdpps_xmm_xmm_xmm_imm8_20)
-    strata:        0x0₆₄ ∘ 0x0₃₂ ∘ 0x0₃₂ ∘ (0x0₃₂ ∘ mul_single(%ymm2[31:0], %ymm3[31:0]) ∘ 0x0₃₂ ∘ 0x0₃₂)
-    hand-written:  0x0₁₂₈ ∘ ((0x14₈[3:3] = 0x1₁ ? add_double(add_double(0x14₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x14₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x14₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x14₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x14₈[2:2] = 0x1₁ ? add_double(add_double(0x14₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x14₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x14₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x14₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x14₈[1:1] = 0x1₁ ? add_double(add_double(0x14₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x14₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x14₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x14₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x14₈[0:0] = 0x1₁ ? add_double(add_double(0x14₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x14₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x14₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x14₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂))[127:0]
+  not equivalent for '%ymm1':
+    strata:        0x0₆₄ ∘ 0x0₃₂ ∘ 0x0₃₂ ∘ (0x0₃₂ ∘ add_single(mul_single(%ymm2[31:0], %ymm3[31:0]), 0x0₃₂) ∘ 0x0₃₂ ∘ 0x0₃₂)
+    hand-written:  0x0₁₂₈ ∘ (0x0₃₂ ∘ add_double(add_double(mul_single(%ymm2[31:0], %ymm3[31:0]), 0x0₃₂), 0x0₃₂) ∘ 0x0₃₂ ∘ 0x0₃₂)
 
-But Equivalent after simplification
-
-
-    strata:        0x0₆₄ ∘ 0x0₃₂ ∘ 0x0₃₂ ∘ (0x0₃₂ ∘ mul_single(%ymm2[31:0], %ymm3[31:0]) ∘ 0x0₃₂ ∘ 0x0₃₂)
-    hand-written:  0x0₁₂₈ ∘ (0x0₃₂ ∘ mul_single(%ymm2[31:0], %ymm3[31:0]) ∘ 0x0₃₂ ∘ 0x0₃₂)
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_21 
 Circuit for 'vdpps $0x15, %xmm3, %xmm2, %xmm1' (opcode vdpps_xmm_xmm_xmm_imm8_21)
   not equivalent for '%ymm1':
     strata:        vfmadd132_single(0x0₃₂, 0x0₃₂, 0x0₃₂) ∘ vfmadd132_single(0x0₃₂, 0x0₃₂, 0x0₃₂) ∘ (vfmadd132_single(0x0₃₂, 0x0₃₂, 0x0₃₂) ∘ (vfmadd132_single(0x0₃₂, 0x0₃₂, 0x0₃₂) ∘ (vfmadd132_single(0x0₃₂, 0x0₃₂, 0x0₃₂) ∘ (vfmadd132_single(0x0₃₂, mul_single(%ymm2[31:0], %ymm3[31:0]), 0x0₃₂) ∘ (vfmadd132_single(0x0₃₂, 0x0₃₂, 0x0₃₂) ∘ vfmadd132_single(0x0₃₂, mul_single(%ymm2[31:0], %ymm3[31:0]), 0x0₃₂))))))
-    hand-written:  0x0₁₂₈ ∘ (0x0₃₂ ∘ mul_single(%ymm2[31:0], %ymm3[31:0]) ∘ 0x0₃₂ ∘ mul_single(%ymm2[31:0], %ymm3[31:0]))
+    hand-written:  0x0₁₂₈ ∘ (0x0₃₂ ∘ add_double(add_double(mul_single(%ymm2[31:0], %ymm3[31:0]), 0x0₃₂), 0x0₃₂) ∘ 0x0₃₂ ∘ add_double(add_double(mul_single(%ymm2[31:0], %ymm3[31:0]), 0x0₃₂), 0x0₃₂))
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_22 
@@ -232,14 +224,10 @@ strata does not support 'vdpps $0x23, %xmm3, %xmm2, %xmm1'.
 strata does not support 'vdpps $0x24, %xmm3, %xmm2, %xmm1'.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_37 
 Circuit for 'vdpps $0x25, %xmm3, %xmm2, %xmm1' (opcode vdpps_xmm_xmm_xmm_imm8_37)
-    strata:        0x0₃₂ ∘ (0x0₃₂ ∘ 0x0₆₄) ∘ (0x0₃₂ ∘ mul_single(%ymm2[63:32], %ymm3[63:32]) ∘ 0x0₃₂ ∘ mul_single(%ymm2[63:32], %ymm3[63:32]))
-    hand-written:  0x0₁₂₈ ∘ ((0x25₈[3:3] = 0x1₁ ? add_double(add_double(0x25₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x25₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x25₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x25₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x25₈[2:2] = 0x1₁ ? add_double(add_double(0x25₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x25₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x25₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x25₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x25₈[1:1] = 0x1₁ ? add_double(add_double(0x25₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x25₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x25₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x25₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x25₈[0:0] = 0x1₁ ? add_double(add_double(0x25₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x25₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x25₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x25₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂))[127:0]
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ (0x0₃₂ ∘ add_single(mul_single(%ymm2[63:32], %ymm3[63:32]), 0x0₃₂) ∘ 0x0₃₂ ∘ add_single(mul_single(%ymm2[63:32], %ymm3[63:32]), 0x0₃₂))
+    hand-written:  0x0₁₂₈ ∘ (0x0₃₂ ∘ add_double(add_double(0x0₃₂, mul_single(%ymm2[63:32], %ymm3[63:32])), 0x0₃₂) ∘ 0x0₃₂ ∘ add_double(add_double(0x0₃₂, mul_single(%ymm2[63:32], %ymm3[63:32])), 0x0₃₂))
 
-But Equivalent after simplification
-
-
-    strata:        0x0₃₂ ∘ (0x0₃₂ ∘ 0x0₆₄) ∘ (0x0₃₂ ∘ mul_single(%ymm2[63:32], %ymm3[63:32]) ∘ 0x0₃₂ ∘ mul_single(%ymm2[63:32], %ymm3[63:32]))
-    hand-written:  0x0₁₂₈ ∘ (0x0₃₂ ∘ mul_single(%ymm2[63:32], %ymm3[63:32]) ∘ 0x0₃₂ ∘ mul_single(%ymm2[63:32], %ymm3[63:32]))
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_38 
 strata does not support 'vdpps $0x26, %xmm3, %xmm2, %xmm1'.
@@ -298,8 +286,8 @@ Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_65 
 Circuit for 'vdpps $0x41, %xmm3, %xmm2, %xmm1' (opcode vdpps_xmm_xmm_xmm_imm8_65)
   not equivalent for '%ymm1':
-    strata:        0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₃₂ ∘ ((vfmsub132_single(%ymm2[95:64], vfnmsub132_single(0x0₃₂ ⊕ sub_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ %ymm2[23:16], 0x0₃₂, 0x0₃₂)) ⊕ (0x0₃₂ | 0x0₃₂ ⊕ sub_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ %ymm2[23:16], 0x0₃₂, 0x0₃₂))), sub_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ %ymm2[23:16], 0x0₃₂, 0x0₃₂)), sub_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ %ymm2[23:16], 0x0₃₂, 0x0₃₂))), %ymm3[95:64]) | 0x0₃₂ ⊕ sub_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ %ymm2[23:16], 0x0₃₂, 0x0₃₂)) ⊕ (0x0₃₂ | 0x0₃₂ ⊕ sub_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ %ymm2[23:16], 0x0₃₂, 0x0₃₂)))) ⊕ 0x0₃₂))
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₃₂ ∘ mul_single(%ymm2[95:64], %ymm3[95:64]))
+    strata:        0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₃₂ ∘ add_single(0x0₃₂, vfmsub132_single(%ymm2[95:64], vfnmsub132_single(0x0₃₂, sub_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ %ymm2[23:16], 0x0₃₂, 0x0₃₂)), sub_single(vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), vfnmsub132_single(0x0₂₄ ∘ %ymm2[23:16], 0x0₃₂, 0x0₃₂))), %ymm3[95:64])))
+    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₃₂ ∘ add_double(0x0₃₂, add_double(mul_single(%ymm2[95:64], %ymm3[95:64]), 0x0₃₂)))
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_66 
@@ -310,14 +298,10 @@ strata does not support 'vdpps $0x43, %xmm3, %xmm2, %xmm1'.
 strata does not support 'vdpps $0x44, %xmm3, %xmm2, %xmm1'.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_69 
 Circuit for 'vdpps $0x45, %xmm3, %xmm2, %xmm1' (opcode vdpps_xmm_xmm_xmm_imm8_69)
-    strata:        0x0₆₄ ∘ 0x0₃₂ ∘ 0x0₃₂ ∘ (0x0₃₂ ∘ mul_single(%ymm2[95:64], %ymm3[95:64]) ∘ 0x0₃₂ ∘ mul_single(%ymm2[95:64], %ymm3[95:64]))
-    hand-written:  0x0₁₂₈ ∘ ((0x45₈[3:3] = 0x1₁ ? add_double(add_double(0x45₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x45₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x45₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x45₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x45₈[2:2] = 0x1₁ ? add_double(add_double(0x45₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x45₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x45₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x45₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x45₈[1:1] = 0x1₁ ? add_double(add_double(0x45₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x45₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x45₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x45₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x45₈[0:0] = 0x1₁ ? add_double(add_double(0x45₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x45₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x45₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x45₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂))[127:0]
+  not equivalent for '%ymm1':
+    strata:        0x0₆₄ ∘ 0x0₃₂ ∘ 0x0₃₂ ∘ (0x0₃₂ ∘ add_single(mul_single(%ymm2[95:64], %ymm3[95:64]), 0x0₃₂) ∘ 0x0₃₂ ∘ add_single(mul_single(%ymm2[95:64], %ymm3[95:64]), 0x0₃₂))
+    hand-written:  0x0₁₂₈ ∘ (0x0₃₂ ∘ add_double(0x0₃₂, add_double(mul_single(%ymm2[95:64], %ymm3[95:64]), 0x0₃₂)) ∘ 0x0₃₂ ∘ add_double(0x0₃₂, add_double(mul_single(%ymm2[95:64], %ymm3[95:64]), 0x0₃₂)))
 
-But Equivalent after simplification
-
-
-    strata:        0x0₆₄ ∘ 0x0₃₂ ∘ 0x0₃₂ ∘ (0x0₃₂ ∘ mul_single(%ymm2[95:64], %ymm3[95:64]) ∘ 0x0₃₂ ∘ mul_single(%ymm2[95:64], %ymm3[95:64]))
-    hand-written:  0x0₁₂₈ ∘ (0x0₃₂ ∘ mul_single(%ymm2[95:64], %ymm3[95:64]) ∘ 0x0₃₂ ∘ mul_single(%ymm2[95:64], %ymm3[95:64]))
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_70 
 strata does not support 'vdpps $0x46, %xmm3, %xmm2, %xmm1'.
@@ -335,22 +319,18 @@ strata does not support 'vdpps $0x4b, %xmm3, %xmm2, %xmm1'.
 strata does not support 'vdpps $0x4c, %xmm3, %xmm2, %xmm1'.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_77 
 Circuit for 'vdpps $0x4d, %xmm3, %xmm2, %xmm1' (opcode vdpps_xmm_xmm_xmm_imm8_77)
-    strata:        0x0₆₄ ∘ 0x0₃₂ ∘ 0x0₃₂ ∘ (mul_single(%ymm2[95:64], %ymm3[95:64]) ∘ mul_single(%ymm2[95:64], %ymm3[95:64]) ∘ 0x0₃₂ ∘ mul_single(%ymm2[95:64], %ymm3[95:64]))
-    hand-written:  0x0₁₂₈ ∘ ((0x4d₈[3:3] = 0x1₁ ? add_double(add_double(0x4d₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x4d₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x4d₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x4d₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x4d₈[2:2] = 0x1₁ ? add_double(add_double(0x4d₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x4d₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x4d₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x4d₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x4d₈[1:1] = 0x1₁ ? add_double(add_double(0x4d₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x4d₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x4d₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x4d₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x4d₈[0:0] = 0x1₁ ? add_double(add_double(0x4d₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x4d₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x4d₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x4d₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂))[127:0]
+  not equivalent for '%ymm1':
+    strata:        0x0₆₄ ∘ 0x0₃₂ ∘ 0x0₃₂ ∘ (add_single(mul_single(%ymm2[95:64], %ymm3[95:64]), 0x0₃₂) ∘ add_single(mul_single(%ymm2[95:64], %ymm3[95:64]), 0x0₃₂) ∘ 0x0₃₂ ∘ add_single(mul_single(%ymm2[95:64], %ymm3[95:64]), 0x0₃₂))
+    hand-written:  0x0₁₂₈ ∘ (add_double(0x0₃₂, add_double(mul_single(%ymm2[95:64], %ymm3[95:64]), 0x0₃₂)) ∘ add_double(0x0₃₂, add_double(mul_single(%ymm2[95:64], %ymm3[95:64]), 0x0₃₂)) ∘ 0x0₃₂ ∘ add_double(0x0₃₂, add_double(mul_single(%ymm2[95:64], %ymm3[95:64]), 0x0₃₂)))
 
-But Equivalent after simplification
-
-
-    strata:        0x0₆₄ ∘ 0x0₃₂ ∘ 0x0₃₂ ∘ (mul_single(%ymm2[95:64], %ymm3[95:64]) ∘ mul_single(%ymm2[95:64], %ymm3[95:64]) ∘ 0x0₃₂ ∘ mul_single(%ymm2[95:64], %ymm3[95:64]))
-    hand-written:  0x0₁₂₈ ∘ (mul_single(%ymm2[95:64], %ymm3[95:64]) ∘ mul_single(%ymm2[95:64], %ymm3[95:64]) ∘ 0x0₃₂ ∘ mul_single(%ymm2[95:64], %ymm3[95:64]))
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_78 
 strata does not support 'vdpps $0x4e, %xmm3, %xmm2, %xmm1'.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_79 
 Circuit for 'vdpps $0x4f, %xmm3, %xmm2, %xmm1' (opcode vdpps_xmm_xmm_xmm_imm8_79)
   not equivalent for '%ymm1':
-    strata:        vfmadd132_single(0x0₃₂, 0x0₃₂, 0x0₃₂) ∘ vfmadd132_single(0x0₃₂, 0x0₃₂, 0x0₃₂) ∘ (vfmadd132_single(0x0₃₂, 0x0₃₂, 0x0₃₂) ∘ vfmadd132_single(0x0₃₂, 0x0₃₂, 0x0₃₂)) ∘ (vfmadd132_single(0x0₃₂, vfmsub132_single(%ymm2[95:64], vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), %ymm3[95:64]) | 0x0₃₂, 0x0₃₂) ∘ vfmadd132_single(0x0₃₂, vfmsub132_single(%ymm2[95:64], vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), %ymm3[95:64]) | 0x0₃₂, 0x0₃₂) ∘ (vfmadd132_single(0x0₃₂, vfmsub132_single(%ymm2[95:64], vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), %ymm3[95:64]) | 0x0₃₂, 0x0₃₂) ∘ vfmadd132_single(0x0₃₂, vfmsub132_single(%ymm2[95:64], vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), %ymm3[95:64]) | 0x0₃₂, 0x0₃₂)))
-    hand-written:  0x0₁₂₈ ∘ (mul_single(%ymm2[95:64], %ymm3[95:64]) ∘ mul_single(%ymm2[95:64], %ymm3[95:64]) ∘ mul_single(%ymm2[95:64], %ymm3[95:64]) ∘ mul_single(%ymm2[95:64], %ymm3[95:64]))
+    strata:        vfmadd132_single(0x0₃₂, 0x0₃₂, 0x0₃₂) ∘ vfmadd132_single(0x0₃₂, 0x0₃₂, 0x0₃₂) ∘ (vfmadd132_single(0x0₃₂, 0x0₃₂, 0x0₃₂) ∘ vfmadd132_single(0x0₃₂, 0x0₃₂, 0x0₃₂)) ∘ (vfmadd132_single(0x0₃₂, vfmsub132_single(%ymm2[95:64], vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), %ymm3[95:64]), 0x0₃₂) ∘ vfmadd132_single(0x0₃₂, vfmsub132_single(%ymm2[95:64], vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), %ymm3[95:64]), 0x0₃₂) ∘ (vfmadd132_single(0x0₃₂, vfmsub132_single(%ymm2[95:64], vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), %ymm3[95:64]), 0x0₃₂) ∘ vfmadd132_single(0x0₃₂, vfmsub132_single(%ymm2[95:64], vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), %ymm3[95:64]), 0x0₃₂)))
+    hand-written:  0x0₁₂₈ ∘ (add_double(0x0₃₂, add_double(mul_single(%ymm2[95:64], %ymm3[95:64]), 0x0₃₂)) ∘ add_double(0x0₃₂, add_double(mul_single(%ymm2[95:64], %ymm3[95:64]), 0x0₃₂)) ∘ add_double(0x0₃₂, add_double(mul_single(%ymm2[95:64], %ymm3[95:64]), 0x0₃₂)) ∘ add_double(0x0₃₂, add_double(mul_single(%ymm2[95:64], %ymm3[95:64]), 0x0₃₂)))
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_80 
@@ -454,8 +434,8 @@ Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_129 
 Circuit for 'vdpps $0x81, %xmm3, %xmm2, %xmm1' (opcode vdpps_xmm_xmm_xmm_imm8_129)
   not equivalent for '%ymm1':
-    strata:        0x0₁₂₈ ∘ (0x0₉₆ ∘ vfmadd132_single(0x0₃₂, 0x0₃₂ | (vfmsub132_single(%ymm2[127:96], vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), %ymm3[127:96]) | 0x0₃₂), 0x0₃₂))
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₃₂ ∘ mul_single(%ymm2[127:96], %ymm3[127:96]))
+    strata:        0x0₂₂₄ ∘ vfmadd132_single(0x0₃₂, vfmsub132_single(%ymm2[127:96], vfnmsub132_single(0x0₃₂, 0x0₃₂, 0x0₃₂), %ymm3[127:96]), 0x0₃₂)
+    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₃₂ ∘ add_double(0x0₃₂, add_double(0x0₃₂, mul_single(%ymm2[127:96], %ymm3[127:96]))))
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_130 
@@ -486,14 +466,10 @@ strata does not support 'vdpps $0x8d, %xmm3, %xmm2, %xmm1'.
 strata does not support 'vdpps $0x8e, %xmm3, %xmm2, %xmm1'.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_143 
 Circuit for 'vdpps $0x8f, %xmm3, %xmm2, %xmm1' (opcode vdpps_xmm_xmm_xmm_imm8_143)
-    strata:        0x0₁₂₈ ∘ (mul_single(%ymm2[127:96], %ymm3[127:96]) ∘ mul_single(%ymm2[127:96], %ymm3[127:96]) ∘ (mul_single(%ymm2[127:96], %ymm3[127:96]) ∘ mul_single(%ymm2[127:96], %ymm3[127:96])))
-    hand-written:  0x0₁₂₈ ∘ ((0x8f₈[3:3] = 0x1₁ ? add_double(add_double(0x8f₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x8f₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x8f₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x8f₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x8f₈[2:2] = 0x1₁ ? add_double(add_double(0x8f₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x8f₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x8f₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x8f₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x8f₈[1:1] = 0x1₁ ? add_double(add_double(0x8f₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x8f₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x8f₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x8f₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂) ∘ (0x8f₈[0:0] = 0x1₁ ? add_double(add_double(0x8f₈[4:4] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][31:0], %ymm3[127:0][127:0][127:0][31:0]) : 0x0₃₂, 0x8f₈[5:5] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][63:32], %ymm3[127:0][127:0][127:0][63:32]) : 0x0₃₂), add_double(0x8f₈[6:6] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][95:64], %ymm3[127:0][127:0][127:0][95:64]) : 0x0₃₂, 0x8f₈[7:7] = 0x1₁ ? mul_single(%ymm2[127:0][127:0][127:0][127:96], %ymm3[127:0][127:0][127:0][127:96]) : 0x0₃₂)) : 0x0₃₂))[127:0]
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ (add_single(mul_single(%ymm2[127:96], %ymm3[127:96]), 0x0₃₂) ∘ add_single(mul_single(%ymm2[127:96], %ymm3[127:96]), 0x0₃₂) ∘ add_single(mul_single(%ymm2[127:96], %ymm3[127:96]), 0x0₃₂) ∘ add_single(mul_single(%ymm2[127:96], %ymm3[127:96]), 0x0₃₂))
+    hand-written:  0x0₁₂₈ ∘ (add_double(0x0₃₂, add_double(0x0₃₂, mul_single(%ymm2[127:96], %ymm3[127:96]))) ∘ add_double(0x0₃₂, add_double(0x0₃₂, mul_single(%ymm2[127:96], %ymm3[127:96]))) ∘ add_double(0x0₃₂, add_double(0x0₃₂, mul_single(%ymm2[127:96], %ymm3[127:96]))) ∘ add_double(0x0₃₂, add_double(0x0₃₂, mul_single(%ymm2[127:96], %ymm3[127:96]))))
 
-But Equivalent after simplification
-
-
-    strata:        0x0₁₂₈ ∘ (mul_single(%ymm2[127:96], %ymm3[127:96]) ∘ mul_single(%ymm2[127:96], %ymm3[127:96]) ∘ (mul_single(%ymm2[127:96], %ymm3[127:96]) ∘ mul_single(%ymm2[127:96], %ymm3[127:96])))
-    hand-written:  0x0₁₂₈ ∘ (mul_single(%ymm2[127:96], %ymm3[127:96]) ∘ mul_single(%ymm2[127:96], %ymm3[127:96]) ∘ mul_single(%ymm2[127:96], %ymm3[127:96]) ∘ mul_single(%ymm2[127:96], %ymm3[127:96]))
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_144 
 Equivalent.
@@ -596,8 +572,8 @@ Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_193 
 Circuit for 'vdpps $0xc1, %xmm3, %xmm2, %xmm1' (opcode vdpps_xmm_xmm_xmm_imm8_193)
   not equivalent for '%ymm1':
-    strata:        0x0₁₂₈ ∘ (0x0₉₆ ∘ add_single(mul_single(%ymm2[127:96], %ymm3[127:96]), mul_single(%ymm2[95:64], %ymm3[95:64])))
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₃₂ ∘ add_double(mul_single(%ymm2[95:64], %ymm3[95:64]), mul_single(%ymm2[127:96], %ymm3[127:96])))
+    strata:        0x0₂₂₄ ∘ add_single(mul_single(%ymm2[127:96], %ymm3[127:96]), add_single(mul_single(%ymm2[95:64], %ymm3[95:64]), 0x0₃₂))
+    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₃₂ ∘ add_double(0x0₃₂, add_double(mul_single(%ymm2[95:64], %ymm3[95:64]), mul_single(%ymm2[127:96], %ymm3[127:96]))))
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdpps_xmm_xmm_xmm_imm8_194 

@@ -202,12 +202,7 @@ Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode insertps_xmm_xmm_imm8_98 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode insertps_xmm_xmm_imm8_99 
-Circuit for 'insertps $0x63, %xmm2, %xmm1' (opcode insertps_xmm_xmm_imm8_99)
-  not equivalent for '%xmm1':
-    strata:        %ymm1[127:96] ∘ %ymm2[63:32] ∘ cvt_single_to_double(sub_single(0x0₃₂ ⊕ (%ymm11[31:0] | 0x0₃₂) ⊕ (%ymm11[31:0] | 0x0₃₂ ⊕ (%ymm11[31:0] | 0x0₃₂)), 0x0₃₂ ⊕ (%ymm11[31:0] | 0x0₃₂) ⊕ (%ymm11[31:0] | 0x0₃₂ ⊕ (%ymm11[31:0] | 0x0₃₂))))
-    hand-written:  %ymm1[127:96] ∘ %ymm2[63:32] ∘ 0x0₃₂ ∘ 0x0₃₂
-
-
+Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode insertps_xmm_xmm_imm8_100 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode insertps_xmm_xmm_imm8_101 
@@ -278,7 +273,12 @@ Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode insertps_xmm_xmm_imm8_131 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode insertps_xmm_xmm_imm8_132 
-Equivalent.
+Circuit for 'insertps $0x84, %xmm2, %xmm1' (opcode insertps_xmm_xmm_imm8_132)
+  not equivalent for '%xmm1':
+    strata:        %ymm1[127:96] ∘ 0x0₃₂ ∘ %ymm1[63:32] ∘ add_double(%ymm2[127:64], 0x0₆₄)[31:0]
+    hand-written:  %ymm1[127:96] ∘ 0x0₃₂ ∘ %ymm1[63:32] ∘ %ymm2[95:64]
+
+
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode insertps_xmm_xmm_imm8_133 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode insertps_xmm_xmm_imm8_134 

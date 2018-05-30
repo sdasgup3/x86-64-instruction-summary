@@ -65,7 +65,7 @@ Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_27 
 Circuit for 'vinsertps $0x1b, %xmm3, %xmm2, %xmm1' (opcode vinsertps_xmm_xmm_xmm_imm8_27)
   not equivalent for '%ymm1':
-    strata:        0x0₁₂₈ ∘ ((0x0₁ ∘ (0x0₃₂ ∘ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x1₆₅ + 0x0₁ ∘ 0x0₆₄)[63:32]) + 0x0₁ ∘ (0x0₃₂ ∘ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x1₆₅ + 0x0₁ ∘ 0x0₆₄)[31:0]))[31:0] ∘ (0x0₁ ∘ (0x0₁ ∘ (0x0₃₂ ∘ %ymm2[95:64] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm2[95:64] ∘ %ymm2[95:64]))[63:0] + 0x0₁ ∘ (0x0₃₂ ∘ (0x0₁ ∘ (0x0₃₂ ∘ %ymm2[95:64] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm2[95:64] ∘ %ymm2[95:64]))[63:32]))[31:0] ∘ (0x0₁ ∘ ((0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x1₆₅ + 0x0₁ ∘ 0x0₆₄)[63:32] ∘ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x1₆₅ + 0x0₁ ∘ 0x0₆₄)[63:32]) + 0x0₁ ∘ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x1₆₅ + 0x0₁ ∘ 0x0₆₄)[63:0])[31:0] ∘ (0x0₁ ∘ ((0x0₁ ∘ (0x0₃₂ ∘ cvt_double_to_int32(0x0₃₂ ∘ %ymm2[63:32]) ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (cvt_double_to_int32(0x0₃₂ ∘ %ymm2[63:32]) ∘ cvt_double_to_int32(0x0₃₂ ∘ %ymm2[63:32])))[63:32] ∘ (0x0₁ ∘ (0x0₃₂ ∘ cvt_double_to_int32(0x0₃₂ ∘ %ymm2[63:32]) ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (cvt_double_to_int32(0x0₃₂ ∘ %ymm2[63:32]) ∘ cvt_double_to_int32(0x0₃₂ ∘ %ymm2[63:32])))[63:32]) + 0x0₁ ∘ (0x0₁ ∘ (0x0₃₂ ∘ cvt_double_to_int32(0x0₃₂ ∘ %ymm2[63:32]) ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (cvt_double_to_int32(0x0₃₂ ∘ %ymm2[63:32]) ∘ cvt_double_to_int32(0x0₃₂ ∘ %ymm2[63:32])))[63:0])[31:0])
+    strata:        0x0₁₂₈ ∘ ((0x0₃₃ ∘ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x1₆₅ + 0x0₁ ∘ 0x0₆₄)[63:32] + 0x0₃₃ ∘ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x1₆₅ + 0x0₁ ∘ 0x0₆₄)[31:0])[31:0] ∘ (0x0₁ ∘ (0x0₁ ∘ (0x0₃₂ ∘ %ymm2[95:64] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm2[95:64] ∘ %ymm2[95:64]))[63:0] + 0x0₃₃ ∘ (0x0₁ ∘ (0x0₃₂ ∘ %ymm2[95:64] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (%ymm2[95:64] ∘ %ymm2[95:64]))[63:32])[31:0] ∘ (0x0₁ ∘ ((0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x1₆₅ + 0x0₁ ∘ 0x0₆₄)[63:32] ∘ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x1₆₅ + 0x0₁ ∘ 0x0₆₄)[63:32]) + 0x0₁ ∘ (0x0₁ ∘ 0xffffffffffffffff₆₄ + 0x1₆₅ + 0x0₁ ∘ 0x0₆₄)[63:0])[31:0] ∘ (0x0₁ ∘ ((0x0₁ ∘ (0x0₃₂ ∘ cvt_double_to_int32(0x0₃₂ ∘ %ymm2[63:32]) ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (cvt_double_to_int32(0x0₃₂ ∘ %ymm2[63:32]) ∘ cvt_double_to_int32(0x0₃₂ ∘ %ymm2[63:32])))[63:32] ∘ (0x0₁ ∘ (0x0₃₂ ∘ cvt_double_to_int32(0x0₃₂ ∘ %ymm2[63:32]) ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (cvt_double_to_int32(0x0₃₂ ∘ %ymm2[63:32]) ∘ cvt_double_to_int32(0x0₃₂ ∘ %ymm2[63:32])))[63:32]) + 0x0₁ ∘ (0x0₁ ∘ (0x0₃₂ ∘ cvt_double_to_int32(0x0₃₂ ∘ %ymm2[63:32]) ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (cvt_double_to_int32(0x0₃₂ ∘ %ymm2[63:32]) ∘ cvt_double_to_int32(0x0₃₂ ∘ %ymm2[63:32])))[63:0])[31:0])
     hand-written:  0x0₁₂₈ ∘ (0x0₃₂ ∘ %ymm2[95:64] ∘ 0x0₃₂ ∘ 0x0₃₂)
 
 
@@ -294,7 +294,7 @@ Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_119 
 Circuit for 'vinsertps $0x77, %xmm3, %xmm2, %xmm1' (opcode vinsertps_xmm_xmm_xmm_imm8_119)
   not equivalent for '%ymm1':
-    strata:        0x0₃₂ ∘ (0x0₃₂ ∘ 0x0₆₄) ∘ (%ymm3[63:32] ∘ cvt_double_to_single(0x0₃₂ ∘ %ymm2[63:32]) ∘ sign-extend-64((0x0₁ ∘ (0x0₁₆ ∘ cvt_single_to_double(%ymm2[31:0])[31:16] ∘ (0x0₁₆ ∘ cvt_single_to_double(%ymm2[31:0])[15:0]) ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (0x0₁₆ ∘ (0x0₁ ∘ (cvt_single_to_double(%ymm2[31:0])[31:0] ∘ cvt_single_to_double(%ymm2[31:0])[31:0]) + 0x0₁ ∘ (cvt_single_to_double(%ymm2[31:0])[31:0] ∘ cvt_single_to_double(%ymm2[31:0])[31:0]))[31:16] ∘ (0x0₁₆ ∘ (0x0₁ ∘ (cvt_single_to_double(%ymm2[31:0])[31:0] ∘ cvt_single_to_double(%ymm2[31:0])[31:0]) + 0x0₁ ∘ (cvt_single_to_double(%ymm2[31:0])[31:0] ∘ cvt_single_to_double(%ymm2[31:0])[31:0]))[15:0])))[31:0]))
+    strata:        0x0₃₂ ∘ 0x0₉₆ ∘ (%ymm3[63:32] ∘ cvt_double_to_single(0x0₃₂ ∘ %ymm2[63:32]) ∘ sign-extend-64((0x0₁ ∘ (0x0₁₆ ∘ cvt_single_to_double(%ymm2[31:0])[31:16] ∘ (0x0₁₆ ∘ cvt_single_to_double(%ymm2[31:0])[15:0]) ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ (0x0₁₆ ∘ (0x0₁ ∘ (cvt_single_to_double(%ymm2[31:0])[31:0] ∘ cvt_single_to_double(%ymm2[31:0])[31:0]) + 0x0₁ ∘ (cvt_single_to_double(%ymm2[31:0])[31:0] ∘ cvt_single_to_double(%ymm2[31:0])[31:0]))[31:16] ∘ (0x0₁₆ ∘ (0x0₁ ∘ (cvt_single_to_double(%ymm2[31:0])[31:0] ∘ cvt_single_to_double(%ymm2[31:0])[31:0]) + 0x0₁ ∘ (cvt_single_to_double(%ymm2[31:0])[31:0] ∘ cvt_single_to_double(%ymm2[31:0])[31:0]))[15:0])))[31:0]))
     hand-written:  0x0₁₂₈ ∘ (%ymm3[63:32] ∘ 0x0₃₂ ∘ 0x0₃₂ ∘ 0x0₃₂)
 
 
@@ -305,12 +305,7 @@ Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_122 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_123 
-Circuit for 'vinsertps $0x7b, %xmm3, %xmm2, %xmm1' (opcode vinsertps_xmm_xmm_xmm_imm8_123)
-  not equivalent for '%ymm1':
-    strata:        (0x0₆₄ ⊕ (%ymm12[255:192] | 0x0₆₄) ⊕ (0x0₆₄ ⊕ (%ymm12[255:192] | 0x0₆₄) | %ymm12[255:192]) | 0x0₆₄) ∘ (0x0₆₄ ⊕ (%ymm12[191:128] | 0x0₆₄) ⊕ (0x0₆₄ ⊕ (%ymm12[191:128] | 0x0₆₄) | %ymm12[191:128]) | 0x0₆₄) ∘ (0x0₃₂ ∘ %ymm2[95:64] ∘ sub_double(0x0₆₄ ⊕ (%ymm12[63:0] | 0x0₆₄) ⊕ (%ymm12[63:0] | 0x0₆₄ ⊕ (%ymm12[63:0] | 0x0₆₄)), 0x0₆₄ ⊕ (%ymm12[127:64] | 0x0₆₄) ⊕ (%ymm12[127:64] | 0x0₆₄ ⊕ (%ymm12[127:64] | 0x0₆₄))))
-    hand-written:  0x0₁₂₈ ∘ (0x0₃₂ ∘ %ymm2[95:64] ∘ 0x0₃₂ ∘ 0x0₃₂)
-
-
+Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_124 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_125 
@@ -391,7 +386,7 @@ Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_155 
 Circuit for 'vinsertps $0x9b, %xmm3, %xmm2, %xmm1' (opcode vinsertps_xmm_xmm_xmm_imm8_155)
   not equivalent for '%ymm1':
-    strata:        sign-extend-64((0x0₁ ∘ (0x0₃₂ ∘ (0x0₂₄ ∘ cvt_double_to_int32_truncate(0x0₃₂ ∘ %ymm2[95:64])[31:24])) + 0x0₁ ∘ 0xffffff80₆₄)[31:0] ⊕ 0xffffff80₃₂) ∘ sign-extend-64((0x0₁ ∘ (0x0₂₄ ∘ cvt_double_to_int32_truncate(0x0₃₂ ∘ %ymm2[95:64])[23:16] ∘ 0xffffff80₃₂) + 0x0₁ ∘ (0x0₃₂ ∘ (0x0₂₄ ∘ cvt_double_to_int32_truncate(0x0₃₂ ∘ %ymm2[95:64])[23:16])))[31:0] ⊕ 0xffffff80₃₂) ∘ (0x0₃₂ ∘ %ymm2[95:64] ∘ sign-extend-64((0x0₁ ∘ 0xffffff80ffffff80₆₄ + 0x0₁ ∘ (0xffffff80₃₂ ∘ (0x0₂₄ ∘ cvt_double_to_int32_truncate(0x0₃₂ ∘ %ymm2[95:64])[7:0])))[31:0] ⊕ 0xffffff80₃₂))
+    strata:        sign-extend-64((0x0₅₇ ∘ cvt_double_to_int32_truncate(0x0₃₂ ∘ %ymm2[95:64])[31:24] + 0x0₃₃ ∘ 0xffffff80₃₂)[31:0] ⊕ 0xffffff80₃₂) ∘ sign-extend-64((0x0₁ ∘ (0x0₂₄ ∘ cvt_double_to_int32_truncate(0x0₃₂ ∘ %ymm2[95:64])[23:16] ∘ 0xffffff80₃₂) + 0x0₅₇ ∘ cvt_double_to_int32_truncate(0x0₃₂ ∘ %ymm2[95:64])[23:16])[31:0] ⊕ 0xffffff80₃₂) ∘ (0x0₃₂ ∘ %ymm2[95:64] ∘ sign-extend-64((0x0₁ ∘ 0xffffff80ffffff80₆₄ + 0x0₁ ∘ (0xffffff80₃₂ ∘ (0x0₂₄ ∘ cvt_double_to_int32_truncate(0x0₃₂ ∘ %ymm2[95:64])[7:0])))[31:0] ⊕ 0xffffff80₃₂))
     hand-written:  0x0₁₂₈ ∘ (0x0₃₂ ∘ %ymm2[95:64] ∘ 0x0₃₂ ∘ 0x0₃₂)
 
 
@@ -404,7 +399,7 @@ Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_159 
 Circuit for 'vinsertps $0x9f, %xmm3, %xmm2, %xmm1' (opcode vinsertps_xmm_xmm_xmm_imm8_159)
   not equivalent for '%ymm1':
-    strata:        0x0₃₂ ∘ (0x0₃₂ ∘ (0x0₃₂ ∘ (0x0₃₂ ∘ (cvt_single_to_int32(0x0₁₆ ∘ %ymm2[63:48]) ∘ (cvt_single_to_int32(0x0₁₆ ∘ %ymm2[47:32]) ∘ (cvt_single_to_int32(0x0₁₆ ∘ %ymm2[31:16]) ∘ cvt_single_to_int32(0x0₁₆ ∘ %ymm2[15:0])))))))
+    strata:        0x0₁₂₈ ∘ (cvt_single_to_int32(0x0₁₆ ∘ %ymm2[63:48]) ∘ (cvt_single_to_int32(0x0₁₆ ∘ %ymm2[47:32]) ∘ (cvt_single_to_int32(0x0₁₆ ∘ %ymm2[31:16]) ∘ cvt_single_to_int32(0x0₁₆ ∘ %ymm2[15:0]))))
     hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₃₂ ∘ 0x0₃₂)
 
 
@@ -464,7 +459,12 @@ Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_179 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_180 
-Equivalent.
+Circuit for 'vinsertps $0xb4, %xmm3, %xmm2, %xmm1' (opcode vinsertps_xmm_xmm_xmm_imm8_180)
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ (add_double(%ymm3[127:64], 0x0₆₄)[31:0] ∘ 0x0₃₂ ∘ %ymm2[63:0])
+    hand-written:  0x0₁₂₈ ∘ (%ymm3[95:64] ∘ 0x0₃₂ ∘ %ymm2[63:32] ∘ %ymm2[31:0])
+
+
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_181 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_182 
@@ -581,7 +581,7 @@ Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_225 
 Circuit for 'vinsertps $0xe1, %xmm3, %xmm2, %xmm1' (opcode vinsertps_xmm_xmm_xmm_imm8_225)
   not equivalent for '%ymm1':
-    strata:        0x0₁₂₈ ∘ (%ymm2[127:96] ∘ vfmsub132_double(0x0₃₂ ∘ %ymm3[127:96], vfnmsub132_double(vfnmsub132_double(0x0₃₂ ∘ (maxcmp_single(%ymm2[95:64], 0x0₃₂ ⊕ (%ymm3[127:96] | 0x0₃₂) ⊕ (%ymm3[127:96] | 0x0₃₂ ⊕ (%ymm3[127:96] | 0x0₃₂))) = 0x1₁ ? %ymm2[95:64] : 0x0₃₂ ⊕ (%ymm3[127:96] | 0x0₃₂) ⊕ (%ymm3[127:96] | 0x0₃₂ ⊕ (%ymm3[127:96] | 0x0₃₂))), 0x0₃₂ ∘ %ymm3[127:96], 0x0₆₄), vfnmsub132_double(0x0₃₂ ∘ (maxcmp_single(%ymm2[95:64], 0x0₃₂ ⊕ (%ymm3[127:96] | 0x0₃₂) ⊕ (%ymm3[127:96] | 0x0₃₂ ⊕ (%ymm3[127:96] | 0x0₃₂))) = 0x1₁ ? %ymm2[95:64] : 0x0₃₂ ⊕ (%ymm3[127:96] | 0x0₃₂) ⊕ (%ymm3[127:96] | 0x0₃₂ ⊕ (%ymm3[127:96] | 0x0₃₂))), 0x0₃₂ ∘ %ymm3[127:96], 0x0₆₄), 0x0₃₂ ∘ vfnmsub132_double(0x0₆₄, 0x0₆₄, 0x0₆₄)[63:32]), 0x0₃₂ ∘ %ymm2[95:64])[31:0] ∘ %ymm2[63:32] ∘ cvt_double_to_int32_truncate(0x0₃₂ ∘ %ymm2[63:32]))
+    strata:        0x0₁₂₈ ∘ (%ymm2[127:96] ∘ vfmsub132_double(0x0₃₂ ∘ %ymm3[127:96], vfnmsub132_double(vfnmsub132_double(0x0₃₂ ∘ (maxcmp_single(%ymm2[95:64], 0x0₃₂) = 0x1₁ ? %ymm2[95:64] : 0x0₃₂), 0x0₃₂ ∘ %ymm3[127:96], 0x0₆₄), vfnmsub132_double(0x0₃₂ ∘ (maxcmp_single(%ymm2[95:64], 0x0₃₂) = 0x1₁ ? %ymm2[95:64] : 0x0₃₂), 0x0₃₂ ∘ %ymm3[127:96], 0x0₆₄), 0x0₃₂ ∘ vfnmsub132_double(0x0₆₄, 0x0₆₄, 0x0₆₄)[63:32]), 0x0₃₂ ∘ %ymm2[95:64])[31:0] ∘ %ymm2[63:32] ∘ cvt_double_to_int32_truncate(0x0₃₂ ∘ %ymm2[63:32]))
     hand-written:  0x0₁₂₈ ∘ (%ymm2[127:96] ∘ %ymm3[127:96] ∘ %ymm2[63:32] ∘ 0x0₃₂)
 
 
@@ -606,7 +606,7 @@ Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_235 
 Circuit for 'vinsertps $0xeb, %xmm3, %xmm2, %xmm1' (opcode vinsertps_xmm_xmm_xmm_imm8_235)
   not equivalent for '%ymm1':
-    strata:        0x0₄₈ ∘ (0x0₈₀ ∘ (0x0₃₂ ∘ %ymm3[127:96] ∘ mul_double(0x0₃₂ ∘ %ymm3[127:96], 0x0₃₂ ∘ %ymm3[95:64])))
+    strata:        0x0₁₂₈ ∘ (0x0₃₂ ∘ %ymm3[127:96] ∘ mul_double(0x0₃₂ ∘ %ymm3[127:96], 0x0₃₂ ∘ %ymm3[95:64]))
     hand-written:  0x0₁₂₈ ∘ (0x0₃₂ ∘ %ymm3[127:96] ∘ 0x0₃₂ ∘ 0x0₃₂)
 
 
@@ -631,7 +631,7 @@ Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vinsertps_xmm_xmm_xmm_imm8_245 
 Circuit for 'vinsertps $0xf5, %xmm3, %xmm2, %xmm1' (opcode vinsertps_xmm_xmm_xmm_imm8_245)
   not equivalent for '%ymm1':
-    strata:        0x0₁₂₈ ∘ (%ymm3[127:96] ∘ 0x0₃₂ ∘ %ymm2[63:32] ∘ approx_reciprocal_single(approx_reciprocal_single(0x0₃₂ ⊕ (%ymm3[31:0] | 0x0₃₂) ⊕ (%ymm3[31:0] | 0x0₃₂ ⊕ (%ymm3[31:0] | 0x0₃₂)))))
+    strata:        0x0₁₂₈ ∘ (%ymm3[127:96] ∘ 0x0₃₂ ∘ %ymm2[63:32] ∘ approx_reciprocal_single(approx_reciprocal_single(0x0₃₂)))
     hand-written:  0x0₁₂₈ ∘ (%ymm3[127:96] ∘ 0x0₃₂ ∘ %ymm2[63:32] ∘ 0x0₃₂)
 
 

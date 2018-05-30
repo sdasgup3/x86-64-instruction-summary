@@ -9,7 +9,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_2 
 Circuit for 'vdppd $0x2, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_2)
@@ -20,7 +20,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_3 
 Circuit for 'vdppd $0x3, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_3)
@@ -31,7 +31,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_4 
 Equivalent.
@@ -44,7 +44,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_6 
 Circuit for 'vdppd $0x6, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_6)
@@ -55,7 +55,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_7 
 Circuit for 'vdppd $0x7, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_7)
@@ -66,7 +66,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_8 
 Equivalent.
@@ -79,7 +79,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_10 
 Circuit for 'vdppd $0xa, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_10)
@@ -90,7 +90,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_11 
 Circuit for 'vdppd $0xb, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_11)
@@ -101,7 +101,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_12 
 Equivalent.
@@ -114,7 +114,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_14 
 Circuit for 'vdppd $0xe, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_14)
@@ -125,7 +125,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_15 
 Circuit for 'vdppd $0xf, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_15)
@@ -136,7 +136,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_16 
 Equivalent.
@@ -159,16 +159,7 @@ Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_25 
 strata does not support 'vdppd $0x19, %xmm3, %xmm2, %xmm1'.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_26 
-Circuit for 'vdppd $0x1a, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_26)
-    strata:        0x0₁₂₈ ∘ ((0x0₆₄ ⊕ mul_double(%ymm2[63:0], %ymm3[63:0])) ∘ 0x0₆₄)
-    hand-written:  0x0₁₂₈ ∘ ((0x1a₈[1:1] = 0x1₁ ? add_double(0x1a₈[4:4] = 0x1₁ ? mul_double(%ymm2[127:0][127:0][63:0], %ymm3[127:0][127:0][63:0]) : 0x0₆₄, 0x1a₈[5:5] = 0x1₁ ? mul_double(%ymm2[127:0][127:0][127:64], %ymm3[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x1a₈[0:0] = 0x1₁ ? add_double(0x1a₈[4:4] = 0x1₁ ? mul_double(%ymm2[127:0][127:0][63:0], %ymm3[127:0][127:0][63:0]) : 0x0₆₄, 0x1a₈[5:5] = 0x1₁ ? mul_double(%ymm2[127:0][127:0][127:64], %ymm3[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄))[127:0]
-
-But Equivalent after simplification
-
-
-    strata:        0x0₁₂₈ ∘ ((0x0₆₄ ⊕ mul_double(%ymm2[63:0], %ymm3[63:0])) ∘ 0x0₆₄)
-    hand-written:  0x0₁₂₈ ∘ (mul_double(%ymm2[63:0], %ymm3[63:0]) ∘ 0x0₆₄)
-
+Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_27 
 strata does not support 'vdppd $0x1b, %xmm3, %xmm2, %xmm1'.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_28 
@@ -179,27 +170,19 @@ strata does not support 'vdppd $0x1d, %xmm3, %xmm2, %xmm1'.
 strata does not support 'vdppd $0x1e, %xmm3, %xmm2, %xmm1'.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_31 
 Circuit for 'vdppd $0x1f, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_31)
-    strata:        0x0₆₄ ∘ (0x0₆₄ ∘ (mul_double(%ymm2[63:0], %ymm3[63:0]) ∘ mul_double(%ymm2[63:0], %ymm3[63:0])))
-    hand-written:  0x0₁₂₈ ∘ ((0x1f₈[1:1] = 0x1₁ ? add_double(0x1f₈[4:4] = 0x1₁ ? mul_double(%ymm2[127:0][127:0][63:0], %ymm3[127:0][127:0][63:0]) : 0x0₆₄, 0x1f₈[5:5] = 0x1₁ ? mul_double(%ymm2[127:0][127:0][127:64], %ymm3[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x1f₈[0:0] = 0x1₁ ? add_double(0x1f₈[4:4] = 0x1₁ ? mul_double(%ymm2[127:0][127:0][63:0], %ymm3[127:0][127:0][63:0]) : 0x0₆₄, 0x1f₈[5:5] = 0x1₁ ? mul_double(%ymm2[127:0][127:0][127:64], %ymm3[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄))[127:0]
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ (add_double(0x0₆₄, mul_double(%ymm2[63:0], %ymm3[63:0])) ∘ add_double(0x0₆₄, mul_double(%ymm2[63:0], %ymm3[63:0])))
+    hand-written:  0x0₁₂₈ ∘ (add_double(mul_double(%ymm2[63:0], %ymm3[63:0]), 0x0₆₄) ∘ add_double(mul_double(%ymm2[63:0], %ymm3[63:0]), 0x0₆₄))
 
-But Equivalent after simplification
-
-
-    strata:        0x0₆₄ ∘ (0x0₆₄ ∘ (mul_double(%ymm2[63:0], %ymm3[63:0]) ∘ mul_double(%ymm2[63:0], %ymm3[63:0])))
-    hand-written:  0x0₁₂₈ ∘ (mul_double(%ymm2[63:0], %ymm3[63:0]) ∘ mul_double(%ymm2[63:0], %ymm3[63:0]))
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_32 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_33 
 Circuit for 'vdppd $0x21, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_33)
-    strata:        0x0₆₄ ∘ 0x0₆₄ ∘ (0x0₆₄ ∘ (0x0₆₄ ⊕ mul_double(%ymm2[127:64], %ymm3[127:64])))
-    hand-written:  0x0₁₂₈ ∘ ((0x21₈[1:1] = 0x1₁ ? add_double(0x21₈[4:4] = 0x1₁ ? mul_double(%ymm2[127:0][127:0][63:0], %ymm3[127:0][127:0][63:0]) : 0x0₆₄, 0x21₈[5:5] = 0x1₁ ? mul_double(%ymm2[127:0][127:0][127:64], %ymm3[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x21₈[0:0] = 0x1₁ ? add_double(0x21₈[4:4] = 0x1₁ ? mul_double(%ymm2[127:0][127:0][63:0], %ymm3[127:0][127:0][63:0]) : 0x0₆₄, 0x21₈[5:5] = 0x1₁ ? mul_double(%ymm2[127:0][127:0][127:64], %ymm3[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄))[127:0]
+  not equivalent for '%ymm1':
+    strata:        0x0₆₄ ∘ 0x0₆₄ ∘ (0x0₆₄ ∘ add_double(mul_double(%ymm2[127:64], %ymm3[127:64]), 0x0₆₄))
+    hand-written:  0x0₁₉₂ ∘ add_double(0x0₆₄, mul_double(%ymm2[127:64], %ymm3[127:64]))
 
-But Equivalent after simplification
-
-
-    strata:        0x0₆₄ ∘ 0x0₆₄ ∘ (0x0₆₄ ∘ (0x0₆₄ ⊕ mul_double(%ymm2[127:64], %ymm3[127:64])))
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ mul_double(%ymm2[127:64], %ymm3[127:64]))
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_34 
 strata does not support 'vdppd $0x22, %xmm3, %xmm2, %xmm1'.
@@ -230,8 +213,8 @@ strata does not support 'vdppd $0x2e, %xmm3, %xmm2, %xmm1'.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_47 
 Circuit for 'vdppd $0x2f, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_47)
   not equivalent for '%ymm1':
-    strata:        0x0₁₂₈ ∘ (vfmadd132_double(vfmsub132_double(%ymm3[127:64], vfnmsub132_double(0x0₆₄, 0x0₆₄, 0x0₆₄), 0x0₆₄) ⊕ 0x0₆₄ ⊕ (vfmsub132_double(%ymm3[127:64], vfnmsub132_double(0x0₆₄, 0x0₆₄, 0x0₆₄), 0x0₆₄) | vfmsub132_double(%ymm3[127:64], vfnmsub132_double(0x0₆₄, 0x0₆₄, 0x0₆₄), 0x0₆₄) ⊕ 0x0₆₄), vfmsub132_double(%ymm2[127:64], 0x0₆₄, %ymm3[127:64]), 0x0₆₄) ∘ vfmadd132_double(vfmsub132_double(%ymm3[127:64], vfnmsub132_double(0x0₆₄, 0x0₆₄, 0x0₆₄), 0x0₆₄) ⊕ 0x0₆₄ ⊕ (vfmsub132_double(%ymm3[127:64], vfnmsub132_double(0x0₆₄, 0x0₆₄, 0x0₆₄), 0x0₆₄) | vfmsub132_double(%ymm3[127:64], vfnmsub132_double(0x0₆₄, 0x0₆₄, 0x0₆₄), 0x0₆₄) ⊕ 0x0₆₄), vfmsub132_double(%ymm2[127:64], 0x0₆₄, %ymm3[127:64]), 0x0₆₄))
-    hand-written:  0x0₁₂₈ ∘ (mul_double(%ymm2[127:64], %ymm3[127:64]) ∘ mul_double(%ymm2[127:64], %ymm3[127:64]))
+    strata:        0x0₁₂₈ ∘ (vfmadd132_double(0x0₆₄, vfmsub132_double(%ymm2[127:64], 0x0₆₄, %ymm3[127:64]), 0x0₆₄) ∘ vfmadd132_double(0x0₆₄, vfmsub132_double(%ymm2[127:64], 0x0₆₄, %ymm3[127:64]), 0x0₆₄))
+    hand-written:  0x0₁₂₈ ∘ (add_double(0x0₆₄, mul_double(%ymm2[127:64], %ymm3[127:64])) ∘ add_double(0x0₆₄, mul_double(%ymm2[127:64], %ymm3[127:64])))
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_48 
@@ -277,7 +260,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_66 
 Circuit for 'vdppd $0x42, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_66)
@@ -288,7 +271,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_67 
 Circuit for 'vdppd $0x43, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_67)
@@ -299,7 +282,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_68 
 Equivalent.
@@ -312,7 +295,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_70 
 Circuit for 'vdppd $0x46, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_70)
@@ -323,7 +306,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_71 
 Circuit for 'vdppd $0x47, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_71)
@@ -334,7 +317,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_72 
 Equivalent.
@@ -347,7 +330,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_74 
 Circuit for 'vdppd $0x4a, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_74)
@@ -358,7 +341,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_75 
 Circuit for 'vdppd $0x4b, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_75)
@@ -369,7 +352,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_76 
 Equivalent.
@@ -382,7 +365,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_78 
 Circuit for 'vdppd $0x4e, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_78)
@@ -393,7 +376,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_79 
 Circuit for 'vdppd $0x4f, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_79)
@@ -404,7 +387,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_80 
 Equivalent.
@@ -419,8 +402,8 @@ Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_85 
 Circuit for 'vdppd $0x55, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_85)
   not equivalent for '%ymm1':
-    strata:        0x0₁₂₈ ∘ (0x0₆₄ ∘ vfmsub132_double(0x0₆₄, vfnmsub132_double(0x0₆₄, mul_double(%ymm2[63:0], %ymm3[63:0]), 0x0₆₄), 0x0₆₄))
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ mul_double(%ymm2[63:0], %ymm3[63:0]))
+    strata:        0x0₁₉₂ ∘ vfmsub132_double(0x0₆₄, vfnmsub132_double(0x0₆₄, mul_double(%ymm2[63:0], %ymm3[63:0]), 0x0₆₄), 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ add_double(mul_double(%ymm2[63:0], %ymm3[63:0]), 0x0₆₄)
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_86 
@@ -432,8 +415,8 @@ Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_89 
 Circuit for 'vdppd $0x59, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_89)
   not equivalent for '%ymm1':
-    strata:        0x0₁₂₈ ∘ (0x0₆₄ ∘ vfmsub132_double(%ymm2[63:0], 0x0₆₄, %ymm3[63:0]))
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ mul_double(%ymm2[63:0], %ymm3[63:0]))
+    strata:        0x0₁₉₂ ∘ add_double(0x0₆₄, vfmsub132_double(%ymm2[63:0], 0x0₆₄, %ymm3[63:0]))
+    hand-written:  0x0₁₉₂ ∘ add_double(mul_double(%ymm2[63:0], %ymm3[63:0]), 0x0₆₄)
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_90 
@@ -453,16 +436,7 @@ Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_97 
 strata does not support 'vdppd $0x61, %xmm3, %xmm2, %xmm1'.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_98 
-Circuit for 'vdppd $0x62, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_98)
-    strata:        0x0₁₂₈ ∘ (mul_double(%ymm2[127:64], %ymm3[127:64]) ∘ 0x0₆₄)
-    hand-written:  0x0₁₂₈ ∘ ((0x62₈[1:1] = 0x1₁ ? add_double(0x62₈[4:4] = 0x1₁ ? mul_double(%ymm2[127:0][127:0][63:0], %ymm3[127:0][127:0][63:0]) : 0x0₆₄, 0x62₈[5:5] = 0x1₁ ? mul_double(%ymm2[127:0][127:0][127:64], %ymm3[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x62₈[0:0] = 0x1₁ ? add_double(0x62₈[4:4] = 0x1₁ ? mul_double(%ymm2[127:0][127:0][63:0], %ymm3[127:0][127:0][63:0]) : 0x0₆₄, 0x62₈[5:5] = 0x1₁ ? mul_double(%ymm2[127:0][127:0][127:64], %ymm3[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄))[127:0]
-
-But Equivalent after simplification
-
-
-    strata:        0x0₁₂₈ ∘ (mul_double(%ymm2[127:64], %ymm3[127:64]) ∘ 0x0₆₄)
-    hand-written:  0x0₁₂₈ ∘ (mul_double(%ymm2[127:64], %ymm3[127:64]) ∘ 0x0₆₄)
-
+Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_99 
 strata does not support 'vdppd $0x63, %xmm3, %xmm2, %xmm1'.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_100 
@@ -470,8 +444,8 @@ Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_101 
 Circuit for 'vdppd $0x65, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_101)
   not equivalent for '%ymm1':
-    strata:        0x0₁₂₈ ∘ (0x0₆₄ ∘ vfmsub132_double(0x0₆₄, vfnmadd132_double(%ymm2[127:64], 0x0₆₄, %ymm3[127:64]) ⊕ 0x0₆₄, 0x0₆₄))
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ mul_double(%ymm2[127:64], %ymm3[127:64]))
+    strata:        0x0₁₉₂ ∘ vfmsub132_double(0x0₆₄, vfnmadd132_double(%ymm2[127:64], 0x0₆₄, %ymm3[127:64]), 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ add_double(0x0₆₄, mul_double(%ymm2[127:64], %ymm3[127:64]))
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_102 
@@ -486,14 +460,10 @@ strata does not support 'vdppd $0x69, %xmm3, %xmm2, %xmm1'.
 strata does not support 'vdppd $0x6a, %xmm3, %xmm2, %xmm1'.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_107 
 Circuit for 'vdppd $0x6b, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_107)
-    strata:        0x0₁₂₈ ∘ (mul_double(%ymm2[127:64], %ymm3[127:64]) ∘ mul_double(%ymm2[127:64], %ymm3[127:64]))
-    hand-written:  0x0₁₂₈ ∘ ((0x6b₈[1:1] = 0x1₁ ? add_double(0x6b₈[4:4] = 0x1₁ ? mul_double(%ymm2[127:0][127:0][63:0], %ymm3[127:0][127:0][63:0]) : 0x0₆₄, 0x6b₈[5:5] = 0x1₁ ? mul_double(%ymm2[127:0][127:0][127:64], %ymm3[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x6b₈[0:0] = 0x1₁ ? add_double(0x6b₈[4:4] = 0x1₁ ? mul_double(%ymm2[127:0][127:0][63:0], %ymm3[127:0][127:0][63:0]) : 0x0₆₄, 0x6b₈[5:5] = 0x1₁ ? mul_double(%ymm2[127:0][127:0][127:64], %ymm3[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄))[127:0]
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ (add_double(mul_double(%ymm2[127:64], %ymm3[127:64]), 0x0₆₄) ∘ add_double(mul_double(%ymm2[127:64], %ymm3[127:64]), 0x0₆₄))
+    hand-written:  0x0₁₂₈ ∘ (add_double(0x0₆₄, mul_double(%ymm2[127:64], %ymm3[127:64])) ∘ add_double(0x0₆₄, mul_double(%ymm2[127:64], %ymm3[127:64])))
 
-But Equivalent after simplification
-
-
-    strata:        0x0₁₂₈ ∘ (mul_double(%ymm2[127:64], %ymm3[127:64]) ∘ mul_double(%ymm2[127:64], %ymm3[127:64]))
-    hand-written:  0x0₁₂₈ ∘ (mul_double(%ymm2[127:64], %ymm3[127:64]) ∘ mul_double(%ymm2[127:64], %ymm3[127:64]))
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_108 
 Equivalent.
@@ -504,8 +474,8 @@ strata does not support 'vdppd $0x6e, %xmm3, %xmm2, %xmm1'.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_111 
 Circuit for 'vdppd $0x6f, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_111)
   not equivalent for '%ymm1':
-    strata:        0x0₁₂₈ ∘ (vfmsub132_double(%ymm2[127:64], 0x0₆₄, %ymm3[127:64]) ∘ vfmsub132_double(%ymm2[127:64], 0x0₆₄, %ymm3[127:64]))
-    hand-written:  0x0₁₂₈ ∘ (mul_double(%ymm2[127:64], %ymm3[127:64]) ∘ mul_double(%ymm2[127:64], %ymm3[127:64]))
+    strata:        0x0₁₂₈ ∘ (add_double(vfmsub132_double(%ymm2[127:64], 0x0₆₄, %ymm3[127:64]), 0x0₆₄) ∘ add_double(vfmsub132_double(%ymm2[127:64], 0x0₆₄, %ymm3[127:64]), 0x0₆₄))
+    hand-written:  0x0₁₂₈ ∘ (add_double(0x0₆₄, mul_double(%ymm2[127:64], %ymm3[127:64])) ∘ add_double(0x0₆₄, mul_double(%ymm2[127:64], %ymm3[127:64])))
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_112 
@@ -551,7 +521,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_130 
 Circuit for 'vdppd $0x82, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_130)
@@ -562,7 +532,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_131 
 Circuit for 'vdppd $0x83, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_131)
@@ -573,7 +543,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_132 
 Equivalent.
@@ -586,7 +556,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_134 
 Circuit for 'vdppd $0x86, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_134)
@@ -597,7 +567,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_135 
 Circuit for 'vdppd $0x87, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_135)
@@ -608,7 +578,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_136 
 Equivalent.
@@ -621,7 +591,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_138 
 Circuit for 'vdppd $0x8a, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_138)
@@ -632,7 +602,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_139 
 Circuit for 'vdppd $0x8b, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_139)
@@ -643,7 +613,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_140 
 Equivalent.
@@ -656,7 +626,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_142 
 Circuit for 'vdppd $0x8e, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_142)
@@ -667,7 +637,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_143 
 Circuit for 'vdppd $0x8f, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_143)
@@ -678,21 +648,12 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_144 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_145 
-Circuit for 'vdppd $0x91, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_145)
-    strata:        0x0₆₄ ∘ 0x0₆₄ ∘ (0x0₆₄ ∘ (0x0₆₄ ⊕ mul_double(%ymm2[63:0], %ymm3[63:0])))
-    hand-written:  0x0₁₂₈ ∘ ((0x91₈[1:1] = 0x1₁ ? add_double(0x91₈[4:4] = 0x1₁ ? mul_double(%ymm2[127:0][127:0][63:0], %ymm3[127:0][127:0][63:0]) : 0x0₆₄, 0x91₈[5:5] = 0x1₁ ? mul_double(%ymm2[127:0][127:0][127:64], %ymm3[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x91₈[0:0] = 0x1₁ ? add_double(0x91₈[4:4] = 0x1₁ ? mul_double(%ymm2[127:0][127:0][63:0], %ymm3[127:0][127:0][63:0]) : 0x0₆₄, 0x91₈[5:5] = 0x1₁ ? mul_double(%ymm2[127:0][127:0][127:64], %ymm3[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄))[127:0]
-
-But Equivalent after simplification
-
-
-    strata:        0x0₆₄ ∘ 0x0₆₄ ∘ (0x0₆₄ ∘ (0x0₆₄ ⊕ mul_double(%ymm2[63:0], %ymm3[63:0])))
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ mul_double(%ymm2[63:0], %ymm3[63:0]))
-
+Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_146 
 strata does not support 'vdppd $0x92, %xmm3, %xmm2, %xmm1'.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_147 
@@ -719,22 +680,13 @@ Equivalent.
 Circuit for 'vdppd $0x9d, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_157)
   not equivalent for '%ymm1':
     strata:        0x0₁₂₈ ∘ (vfmsub132_double(0x0₂₄ ∘ %ymm2[31:24] ∘ (0x0₂₄ ∘ %ymm2[23:16]), vfnmsub132_double(0x0₆₄, 0x0₆₄, 0x0₆₄), 0x0₆₄) ∘ vfmsub132_double(0x0₂₄ ∘ %ymm2[15:8] ∘ (0x0₂₄ ∘ %ymm2[7:0]), vfnmsub132_double(0x0₆₄, mul_double(%ymm2[63:0], %ymm3[63:0]), 0x0₆₄), 0x0₆₄))
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ mul_double(%ymm2[63:0], %ymm3[63:0]))
+    hand-written:  0x0₁₉₂ ∘ add_double(mul_double(%ymm2[63:0], %ymm3[63:0]), 0x0₆₄)
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_158 
 strata does not support 'vdppd $0x9e, %xmm3, %xmm2, %xmm1'.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_159 
-Circuit for 'vdppd $0x9f, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_159)
-    strata:        0x0₁₂₈ ∘ (mul_double(%ymm2[63:0], %ymm3[63:0]) ∘ mul_double(%ymm2[63:0], %ymm3[63:0]))
-    hand-written:  0x0₁₂₈ ∘ ((0x9f₈[1:1] = 0x1₁ ? add_double(0x9f₈[4:4] = 0x1₁ ? mul_double(%ymm2[127:0][127:0][63:0], %ymm3[127:0][127:0][63:0]) : 0x0₆₄, 0x9f₈[5:5] = 0x1₁ ? mul_double(%ymm2[127:0][127:0][127:64], %ymm3[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0x9f₈[0:0] = 0x1₁ ? add_double(0x9f₈[4:4] = 0x1₁ ? mul_double(%ymm2[127:0][127:0][63:0], %ymm3[127:0][127:0][63:0]) : 0x0₆₄, 0x9f₈[5:5] = 0x1₁ ? mul_double(%ymm2[127:0][127:0][127:64], %ymm3[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄))[127:0]
-
-But Equivalent after simplification
-
-
-    strata:        0x0₁₂₈ ∘ (mul_double(%ymm2[63:0], %ymm3[63:0]) ∘ mul_double(%ymm2[63:0], %ymm3[63:0]))
-    hand-written:  0x0₁₂₈ ∘ (mul_double(%ymm2[63:0], %ymm3[63:0]) ∘ mul_double(%ymm2[63:0], %ymm3[63:0]))
-
+Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_160 
 Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_161 
@@ -743,7 +695,7 @@ strata does not support 'vdppd $0xa1, %xmm3, %xmm2, %xmm1'.
 Circuit for 'vdppd $0xa2, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_162)
   not equivalent for '%ymm1':
     strata:        vfnmadd132_double(0x0₆₄, 0x0₆₄, 0x0₆₄) ∘ (vfnmadd132_double(0x0₆₄, 0x0₆₄, 0x0₆₄) ∘ (vfnmadd132_double(0x0₆₄, mul_double(%ymm2[127:64], %ymm3[127:64]), vfnmsub132_double(0x0₆₄, 0x0₆₄, 0x0₆₄)) ∘ vfnmadd132_double(0x0₆₄, 0x0₆₄, vfnmsub132_double(0x0₆₄, 0x0₆₄, 0x0₆₄))))
-    hand-written:  0x0₁₂₈ ∘ (mul_double(%ymm2[127:64], %ymm3[127:64]) ∘ 0x0₆₄)
+    hand-written:  0x0₁₂₈ ∘ (add_double(0x0₆₄, mul_double(%ymm2[127:64], %ymm3[127:64])) ∘ 0x0₆₄)
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_163 
@@ -815,7 +767,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_194 
 Circuit for 'vdppd $0xc2, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_194)
@@ -826,7 +778,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_195 
 Circuit for 'vdppd $0xc3, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_195)
@@ -837,7 +789,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_196 
 Equivalent.
@@ -850,7 +802,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_198 
 Circuit for 'vdppd $0xc6, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_198)
@@ -861,7 +813,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_199 
 Circuit for 'vdppd $0xc7, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_199)
@@ -872,7 +824,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_200 
 Equivalent.
@@ -885,7 +837,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_202 
 Circuit for 'vdppd $0xca, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_202)
@@ -896,7 +848,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_203 
 Circuit for 'vdppd $0xcb, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_203)
@@ -907,7 +859,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_204 
 Equivalent.
@@ -920,7 +872,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_206 
 Circuit for 'vdppd $0xce, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_206)
@@ -931,7 +883,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_207 
 Circuit for 'vdppd $0xcf, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_207)
@@ -942,7 +894,7 @@ But Equivalent after simplification
 
 
     strata:        0x0₂₅₆
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ 0x0₆₄
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_208 
 Equivalent.
@@ -957,8 +909,8 @@ Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_213 
 Circuit for 'vdppd $0xd5, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_213)
   not equivalent for '%ymm1':
-    strata:        0x0₁₂₈ ∘ (0x0₆₄ ∘ vfmsub132_double(0x0₆₄, vfnmsub132_double(0x0₆₄, mul_double(%ymm2[63:0], %ymm3[63:0]), 0x0₆₄), 0x0₆₄))
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ mul_double(%ymm2[63:0], %ymm3[63:0]))
+    strata:        0x0₁₉₂ ∘ vfmsub132_double(0x0₆₄, vfnmsub132_double(0x0₆₄, mul_double(%ymm2[63:0], %ymm3[63:0]), 0x0₆₄), 0x0₆₄)
+    hand-written:  0x0₁₉₂ ∘ add_double(mul_double(%ymm2[63:0], %ymm3[63:0]), 0x0₆₄)
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_214 
@@ -971,14 +923,10 @@ Equivalent.
 strata does not support 'vdppd $0xd9, %xmm3, %xmm2, %xmm1'.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_218 
 Circuit for 'vdppd $0xda, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_218)
-    strata:        0x0₁₂₈ ∘ (mul_double(%ymm2[63:0], %ymm3[63:0]) ∘ 0x0₆₄)
-    hand-written:  0x0₁₂₈ ∘ ((0xda₈[1:1] = 0x1₁ ? add_double(0xda₈[4:4] = 0x1₁ ? mul_double(%ymm2[127:0][127:0][63:0], %ymm3[127:0][127:0][63:0]) : 0x0₆₄, 0xda₈[5:5] = 0x1₁ ? mul_double(%ymm2[127:0][127:0][127:64], %ymm3[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄) ∘ (0xda₈[0:0] = 0x1₁ ? add_double(0xda₈[4:4] = 0x1₁ ? mul_double(%ymm2[127:0][127:0][63:0], %ymm3[127:0][127:0][63:0]) : 0x0₆₄, 0xda₈[5:5] = 0x1₁ ? mul_double(%ymm2[127:0][127:0][127:64], %ymm3[127:0][127:0][127:64]) : 0x0₆₄) : 0x0₆₄))[127:0]
+  not equivalent for '%ymm1':
+    strata:        0x0₁₂₈ ∘ (add_double(0x0₆₄, mul_double(%ymm2[63:0], %ymm3[63:0])) ∘ 0x0₆₄)
+    hand-written:  0x0₁₂₈ ∘ (add_double(mul_double(%ymm2[63:0], %ymm3[63:0]), 0x0₆₄) ∘ 0x0₆₄)
 
-But Equivalent after simplification
-
-
-    strata:        0x0₁₂₈ ∘ (mul_double(%ymm2[63:0], %ymm3[63:0]) ∘ 0x0₆₄)
-    hand-written:  0x0₁₂₈ ∘ (mul_double(%ymm2[63:0], %ymm3[63:0]) ∘ 0x0₆₄)
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_219 
 strata does not support 'vdppd $0xdb, %xmm3, %xmm2, %xmm1'.
@@ -1004,7 +952,7 @@ Equivalent.
 Circuit for 'vdppd $0xe5, %xmm3, %xmm2, %xmm1' (opcode vdppd_xmm_xmm_xmm_imm8_229)
   not equivalent for '%ymm1':
     strata:        0x0₁₂₈ ∘ (vfmsub132_double(0x0₆₄, vfnmsub132_double(0x0₆₄, 0x0₆₄, 0x0₆₄), 0x0₆₄) ∘ vfmsub132_double(0x0₃₂ ∘ %ymm3[31:0], vfnmsub132_double(0x0₆₄, mul_double(%ymm2[127:64], %ymm3[127:64]), 0x0₆₄), mul_double(0x0₃₂ ∘ %ymm3[95:64], 0x0₃₂ ∘ %ymm3[95:64])))
-    hand-written:  0x0₁₂₈ ∘ (0x0₆₄ ∘ mul_double(%ymm2[127:64], %ymm3[127:64]))
+    hand-written:  0x0₁₉₂ ∘ add_double(0x0₆₄, mul_double(%ymm2[127:64], %ymm3[127:64]))
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vdppd_xmm_xmm_xmm_imm8_230 

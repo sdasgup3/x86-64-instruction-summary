@@ -51,7 +51,7 @@ strata does not support 'vperm2i128 $0x18, %ymm3, %ymm2, %ymm1'.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vperm2i128_ymm_ymm_ymm_imm8_25 
 Circuit for 'vperm2i128 $0x19, %ymm3, %ymm2, %ymm1' (opcode vperm2i128_ymm_ymm_ymm_imm8_25)
   not equivalent for '%ymm1':
-    strata:        (0x0₆₄ ⊕ (%ymm2[255:192] | 0x0₆₄)) ∘ (0x0₆₄ ⊕ (%ymm2[191:128] | 0x0₆₄)) ∘ (mul_double(0x0₅₆ ∘ %ymm3[15:8], 0x0₅₆ ∘ %ymm3[15:8]) ∘ mul_double(0x0₅₆ ∘ %ymm3[7:0], 0x0₅₆ ∘ %ymm3[7:0]))
+    strata:        %ymm2[255:128] ∘ (mul_double(0x0₅₆ ∘ %ymm3[15:8], 0x0₅₆ ∘ %ymm3[15:8]) ∘ mul_double(0x0₅₆ ∘ %ymm3[7:0], 0x0₅₆ ∘ %ymm3[7:0]))
     hand-written:  %ymm2[255:128] ∘ 0x0₁₂₈
 
 
@@ -66,7 +66,7 @@ Equivalent.
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vperm2i128_ymm_ymm_ymm_imm8_30 
 Circuit for 'vperm2i128 $0x1e, %ymm3, %ymm2, %ymm1' (opcode vperm2i128_ymm_ymm_ymm_imm8_30)
   not equivalent for '%ymm1':
-    strata:        %ymm2[255:192] ∘ (%ymm2[191:128] ∘ (0x0₅₆ ∘ cvt_single_to_double(%ymm2[31:0])[15:8] ∘ (0x0₅₆ ∘ cvt_single_to_double(%ymm2[31:0])[7:0])))
+    strata:        %ymm2[255:128] ∘ (0x0₅₆ ∘ cvt_single_to_double(%ymm2[31:0])[15:8] ∘ (0x0₅₆ ∘ cvt_single_to_double(%ymm2[31:0])[7:0]))
     hand-written:  %ymm2[255:128] ∘ 0x0₁₂₈
 
 
