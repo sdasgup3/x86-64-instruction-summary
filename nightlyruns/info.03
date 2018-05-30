@@ -1,4 +1,10 @@
-1st April: Immediates Ungeneralized Unstratified : check stoke : count 34 =   31 (Ungeneralized Unstratified Unstoked) + 3(Ungeneralized Unstratified Stoked(9) - 6 (with imm sized > 8)) - 8 (string related testcases)
+1st April: Immediates Ungeneralized Unstratified : check stoke : 
 
-done
+
+count 26 =
+
+31 (Ungeneralized Unstratified Unstoked) -  8 (string related testcases) 
+9 (Ungeneralized Unstratified Stoked) -  6 (with imm sized > 8, push, and
+    overlapped imm instructions)
+
 

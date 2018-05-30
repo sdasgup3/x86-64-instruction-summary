@@ -1,4 +1,12 @@
 # Jobs Chart
+## Immediates
+| Id  | Instr Category  | Date  | Purpose  | Count   | Input | Output | Command |
+|--|--|--|--|--|--|--|--|
+| 01 | immediates | 30 may | match stoke | Ungeneralized Stratified (78) + Generalised Stratified(28) | job.01 |runlog.01 | 01 |
+| 02 | immediates | 30 may | check stoke | Ungeneralized Stratified (78) + Generalised Stratified(28) | job.02 |runlog.02 | 02 |
+| 03 | immediates | 30 may | check stoke | Immediates Ungeneralized Unstratified: 26 == 31 (Ungeneralized Unstratified Unstoked) -  8 (string related testcases) + 9 (Ungeneralized Unstratified Stoked) -  6 (with imm sized > 8, push, and overlapped imm instructions)| job.03 |runlog.03 | 03 |
+| 08 | immediates | 30 may | check stoke | 162: Generalized unstratified immediates, Those with > imm8, are tested inly for first 256 values | job.08 |runlog.08 | 08 |
+
 ## Registers
 | Id  | Instr Category  | Date  | Purpose  | Count   | Input | Output | Command |
 |--|--|--|--|--|--|--|--|
@@ -10,16 +18,24 @@
 | 14 | register | 22 may | stratified |  389 = the ones in stratified set, but timed out on 15 mn. Hence fired for 60m. Note that the ones timed out are have very simle sized formula. So runtime as no correlation to formula size.  | job.14 | runlog.14 | 14 |
 | 15 | register | 22 may | all |  1132: Check if the newly introduced simplification rules work  | job.15 | runlog.15 | 15 |
 
-## Immediates
-| Id  | Instr Category  | Date  | Purpose  | Count   | Input | Output | Command |
-|--|--|--|--|--|--|--|--|
-| 01 | immediates | 30 may | match stoke | Ungeneralized Stratified (78) + Generalised Stratified(28) | job.01 |runlog.01 | 01 |
 
 
 ## Commands
 01.
 ```
 ~/x86-semantics/scripts/process_spec.pl --match_stoke_imm --file nightlyruns/job.01   --testid 01  |& tee nightlyruns/runlog.01
+```
+02.
+```
+~/x86-semantics/scripts/process_spec.pl --check_stoke_imm --file nightlyruns/job.02   --testid 02  |& tee nightlyruns/runlog.02
+```
+03.
+```
+~/x86-semantics/scripts/process_spec.pl --check_stoke_imm --file nightlyruns/job.03   --testid 03  |& tee nightlyruns/runlog.03
+```
+08.
+```
+~/x86-semantics/scripts/process_spec.pl --check_stoke_imm --file nightlyruns/job.08   --testid 08  |& tee nightlyruns/runlog.08
 ```
 
 
