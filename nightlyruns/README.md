@@ -17,8 +17,13 @@ parallel -a ~/x86-semantics/docs/relatedwork/strata/Registers/register_instructi
 ### Commands
 01.
 ```
+This does equiv matched between the models of strata and stoke handler. But we have already 
+make sure to skip job.01 instruction from strata handler (#include "not_generalized_stratified_imms.inc").
+So uncomment that from  strata_handler to make this work.
+
 ~/x86-semantics/scripts/process_spec.pl --match_stoke_imm --file nightlyruns/job.01   --testid 01  |& tee nightlyruns/runlog.01
 ```
+
 02.
 ```
 cat nightlyruns/job.01 | parallel "cp concrete_instances/immediate-variants/{}/check_stoke.01.txt concrete_instances/immediate-variants/{}/check_stoke.02.txt"
@@ -28,8 +33,8 @@ cat nightlyruns/job.01 | parallel "cp concrete_instances/immediate-variants/{}/c
 
 // The following is faster
 parallel -j10  -a nightlyruns/job.02  "~/x86-semantics/scripts/process_spec.pl --check_stoke --file concrete_instances/immediate-variants/{}/check_stoke.02.txt --instructions_path concrete_instances/immediate-variants/{}/instructions --testid 02  |& tee concrete_instances/immediate-variants/{}/check_stoke.02.log"  |& tee nightlyruns/runlog.02
-
 ```
+
 03.
 ```
 ~/x86-semantics/scripts/process_spec.pl --check_stoke_imm --file nightlyruns/job.03   --testid 03  |& tee nightlyruns/runlog.03
