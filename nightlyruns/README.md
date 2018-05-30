@@ -28,11 +28,12 @@ So uncomment that from  strata_handler to make this work.
 ```
 cat nightlyruns/job.01 | parallel "cp concrete_instances/immediate-variants/{}/check_stoke.01.txt concrete_instances/immediate-variants/{}/check_stoke.02.txt"
 
-// This one is slower; try the faster next
+parallel -j1  -a nightlyruns/job.02  "~/x86-semantics/scripts/process_spec.pl --check_stoke --file concrete_instances/immediate-variants/{}/check_stoke.02.txt --instructions_path concrete_instances/immediate-variants/{}/instructions --testid 02  |& tee concrete_instances/immediate-variants/{}/check_stoke.02.log"  |& tee nightlyruns/runlog.02
+
+OR
+
 ~/x86-semantics/scripts/process_spec.pl --check_stoke_imm --file nightlyruns/job.02   --testid 02  |& tee nightlyruns/runlog.02
 
-// The following is faster
-parallel -j10  -a nightlyruns/job.02  "~/x86-semantics/scripts/process_spec.pl --check_stoke --file concrete_instances/immediate-variants/{}/check_stoke.02.txt --instructions_path concrete_instances/immediate-variants/{}/instructions --testid 02  |& tee concrete_instances/immediate-variants/{}/check_stoke.02.log"  |& tee nightlyruns/runlog.02
 ```
 
 03.
