@@ -1,5 +1,5 @@
 # Jobs Chart
-
+## Registers
 | Id  | Instr Category  | Date  | Purpose  | Count   | Input | Output | Command |
 |--|--|--|--|--|--|--|--|
 | 4 | register | 2 apr | not-stratified-not-stoked | 125 = 129 - 1 (mispelled) - 3 (pextl/q and cmpxchgl) | job.04 |runlog.04 | 4 |
@@ -8,11 +8,21 @@
 | 12 | register | 18 may | stratified |  743 = 51_692. To check the runtime. Help in choosing a simpler version if avaailable. | job.12 | runlog.12 | 12 |
 | 13(redo) | register | 19 may | all |  1130 = 743_(391-4). sat-check with `not (A==B)` and ensure that the ones failing the check do involve uifs. | job.13 | runlog.13 | 13 |
 | 14 | register | 22 may | stratified |  389 = the ones in stratified set, but timed out on 15 mn. Hence fired for 60m. Note that the ones timed out are have very simle sized formula. So runtime as no correlation to formula size.  | job.14 | runlog.14 | 14 |
-| 15 | register | 22 may | all |  1130: Check if the newly introduced simplification rules work  | job.15 | runlog.15 | 15 |
+| 15 | register | 22 may | all |  1132: Check if the newly introduced simplification rules work  | job.15 | runlog.15 | 15 |
 
+## Immediates
+| Id  | Instr Category  | Date  | Purpose  | Count   | Input | Output | Command |
+|--|--|--|--|--|--|--|--|
+| 01 | immediates | 30 may | match stoke | Ungeneralized Stratified (78) + Generalised Stratified(28) | job.01 |runlog.01 | 01 |
 
 
 ## Commands
+01.
+```
+~/x86-semantics/scripts/process_spec.pl --match_stoke_imm --file nightlyruns/job.01   --testid 01  |& tee nightlyruns/runlog.01
+```
+
+
  4. 
  ```
  cd strata-data/output-strata/instruction-summary;   parallel -j6  -a nightlyruns/job.04  "~/x86-semantics/scripts/process_spec.pl --check_stoke --file concrete_instances/register-variants/{}/check_stoke.txt --instructions_path concrete_instances/register-variants/{}/instructions  --testid 04 |& tee concrete_instances/register-variants/{}/check_stoke.04.log"  |& tee nightlyruns/runlog.04 
