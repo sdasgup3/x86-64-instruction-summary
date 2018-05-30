@@ -22,7 +22,13 @@ parallel -a ~/x86-semantics/docs/relatedwork/strata/Registers/register_instructi
 02.
 ```
 cat nightlyruns/job.01 | parallel "cp concrete_instances/immediate-variants/{}/check_stoke.01.txt concrete_instances/immediate-variants/{}/check_stoke.02.txt"
+
+// This one is slower; try the faster next
 ~/x86-semantics/scripts/process_spec.pl --check_stoke_imm --file nightlyruns/job.02   --testid 02  |& tee nightlyruns/runlog.02
+
+// The following is faster
+parallel -j10  -a nightlyruns/job.02  "~/x86-semantics/scripts/process_spec.pl --check_stoke --file concrete_instances/immediate-variants/{}/check_stoke.02.txt --instructions_path concrete_instances/immediate-variants/{}/instructions --testid 02  |& tee concrete_instances/immediate-variants/{}/check_stoke.02.log"  |& tee nightlyruns/runlog.02
+
 ```
 03.
 ```
@@ -79,6 +85,11 @@ parallel -a ~/x86-semantics/docs/relatedwork/strata/Registers/schedule_instructi
  cd strata-data/output-strata/instruction-summary;   parallel -j20  -a nightlyruns/job.13  "~/x86-semantics/scripts/process_spec.pl --check_stoke --file concrete_instances/register-variants/{}/check_stoke.txt --instructions_path concrete_instances/register-variants/{}/instructions  --testid 13  |& tee concrete_instances/register-variants/{}/check_stoke.13.log"  |& tee nightlyruns/runlog.13
  ```
 
+15.
+```
+parallel -j20  -a nightlyruns/job.15  "~/x86-semantics/scripts/process_spec.pl --check_stoke --file concrete_instances/register-variants/{}/check_stoke.txt --instructions_path concrete_instances/register-variants/{}/instructions --testid 15  |& tee concrete_instances/register-variants/{}/check_stoke.15.log"  |& tee nightlyruns/runlog.15
+
+```
 
 ## ./info.11
 21 April: Register stratified istr  testing
