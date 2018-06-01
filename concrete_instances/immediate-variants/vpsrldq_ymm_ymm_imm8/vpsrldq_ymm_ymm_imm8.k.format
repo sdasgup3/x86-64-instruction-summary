@@ -1,0 +1,17 @@
+code: vpsrldq $0x0, %ymm2, %ymm1
+
+  maybe read:      { %ymm2 }
+  must read:       { %ymm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+Formula:
+
+%ymm1  : %ymm2
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

@@ -1,0 +1,12 @@
+code: vpcmpestri $0x0, %xmm2, %xmm1
+
+  maybe read:      { %eax %edx %xmm1 %xmm2 }
+  must read:       { %eax %edx %xmm1 %xmm2 }
+  maybe write:     { %rcx %cf %pf %af %zf %sf %of }
+  must write:      { %rcx %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+FATAL ERROR: Instruction unsupported: vpcmpestri $0x0, %xmm2, %xmm1
+stoke_debug_circuit: ./src/ext/cpputil/include/io/abort.h:35: void cpputil::Abort::operator()(std::streambuf*, char): Assertion `false' failed.

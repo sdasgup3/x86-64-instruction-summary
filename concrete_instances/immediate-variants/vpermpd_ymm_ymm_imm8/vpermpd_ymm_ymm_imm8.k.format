@@ -1,0 +1,17 @@
+code: vpermpd $0x0, %ymm2, %ymm1
+
+  maybe read:      { %ymm2 }
+  must read:       { %ymm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+Formula:
+
+%ymm1  : concatenateMInt( concatenateMInt( extractMInt( %ymm2, 192, 256), extractMInt( %ymm2, 192, 256)), concatenateMInt( extractMInt( %ymm2, 192, 256), extractMInt( %ymm2, 192, 256)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

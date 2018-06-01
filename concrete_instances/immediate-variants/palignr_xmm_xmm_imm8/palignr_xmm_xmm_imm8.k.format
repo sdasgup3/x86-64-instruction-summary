@@ -1,0 +1,17 @@
+code: palignr $0x0, %xmm2, %xmm1
+
+  maybe read:      { %xmm1 %xmm2 }
+  must read:       { %xmm1 %xmm2 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { ssse3 }
+
+Formula:
+
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), extractMInt( %ymm2, 128, 256))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

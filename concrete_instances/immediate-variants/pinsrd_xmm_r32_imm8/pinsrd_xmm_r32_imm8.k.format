@@ -1,0 +1,17 @@
+code: pinsrd $0x0, %ebx, %xmm1
+
+  maybe read:      { %ebx %xmm1 }
+  must read:       { %ebx %xmm1 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse4_1 }
+
+Formula:
+
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 224), extractMInt( %rbx, 32, 64))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv
