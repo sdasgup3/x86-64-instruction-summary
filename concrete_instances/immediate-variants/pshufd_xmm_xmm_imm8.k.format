@@ -1,0 +1,17 @@
+code: pshufd $0x0, %xmm2, %xmm1
+
+  maybe read:      { %xmm2 }
+  must read:       { %xmm2 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+Formula:
+
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), concatenateMInt( extractMInt( lshrMInt( extractMInt( %ymm2, 128, 256), uvalueMInt(mi(128, 96))), 96, 128), concatenateMInt( extractMInt( lshrMInt( extractMInt( %ymm2, 128, 256), uvalueMInt(mi(128, 96))), 96, 128), concatenateMInt( extractMInt( lshrMInt( extractMInt( %ymm2, 128, 256), uvalueMInt(mi(128, 64))), 96, 128), extractMInt( lshrMInt( extractMInt( %ymm2, 128, 256), uvalueMInt(mi(128, 0))), 96, 128)))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

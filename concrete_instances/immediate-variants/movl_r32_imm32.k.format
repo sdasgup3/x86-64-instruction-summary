@@ -1,0 +1,17 @@
+code: movl $0x0, %ebx
+
+  maybe read:      { }
+  must read:       { }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rbx   : concatenateMInt( mi(32, 0), Imm32)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

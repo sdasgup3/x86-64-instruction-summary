@@ -1,0 +1,17 @@
+code: movw $0x0, %bx
+
+  maybe read:      { }
+  must read:       { }
+  maybe write:     { %bx }
+  must write:      { %bx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rbx   : concatenateMInt( extractMInt( %rbx, 0, 48), Imm16)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

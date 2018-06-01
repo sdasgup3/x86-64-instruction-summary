@@ -1,0 +1,21 @@
+code: btq $0x0, %rbx
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { %cf }
+  must write:      { %cf }
+  maybe undef:     { %pf %af %sf %of }
+  must undef:      { %pf %af %sf %of }
+  required flags:  { }
+
+Formula:
+
+%cf    : extractMInt( lshrMInt( %rbx, uvalueMInt(mi(64, svalueMInt(andMInt( Imm8, mi(8, 63)))))), 63, 64)
+%pf    : (#ifMInt TMP_BOOL_3 #then mi(1, 1) #else mi(1, 0) #fi)
+%af    : (#ifMInt TMP_BOOL_2 #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : (#ifMInt TMP_BOOL_1 #then mi(1, 1) #else mi(1, 0) #fi)
+%of    : (#ifMInt TMP_BOOL_0 #then mi(1, 1) #else mi(1, 0) #fi)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

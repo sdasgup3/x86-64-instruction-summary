@@ -1,0 +1,17 @@
+code: vpshufd $0x0, %ymm2, %ymm1
+
+  maybe read:      { %ymm2 }
+  must read:       { %ymm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+Formula:
+
+%ymm1  : concatenateMInt( extractMInt( lshrMInt( extractMInt( %ymm2, 0, 128), uvalueMInt(mi(128, 96))), 96, 128), concatenateMInt( extractMInt( lshrMInt( extractMInt( %ymm2, 0, 128), uvalueMInt(mi(128, 32))), 96, 128), concatenateMInt( extractMInt( lshrMInt( extractMInt( %ymm2, 0, 128), uvalueMInt(mi(128, 64))), 96, 128), concatenateMInt( extractMInt( lshrMInt( extractMInt( %ymm2, 0, 128), uvalueMInt(mi(128, 0))), 96, 128), concatenateMInt( extractMInt( lshrMInt( extractMInt( %ymm2, 128, 256), uvalueMInt(mi(128, 96))), 96, 128), concatenateMInt( extractMInt( lshrMInt( extractMInt( %ymm2, 128, 256), uvalueMInt(mi(128, 32))), 96, 128), concatenateMInt( extractMInt( lshrMInt( extractMInt( %ymm2, 128, 256), uvalueMInt(mi(128, 64))), 96, 128), extractMInt( lshrMInt( extractMInt( %ymm2, 128, 256), uvalueMInt(mi(128, 0))), 96, 128))))))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

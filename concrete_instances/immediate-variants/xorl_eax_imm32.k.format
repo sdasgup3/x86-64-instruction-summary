@@ -1,0 +1,24 @@
+code: xorl $0x0, %eax
+
+  maybe read:      { %eax }
+  must read:       { %eax }
+  maybe write:     { %rax %cf %pf %zf %sf %of }
+  must write:      { %rax %cf %pf %zf %sf %of }
+  maybe undef:     { %af }
+  must undef:      { %af }
+  required flags:  { }
+
+Formula:
+
+%rax   : concatenateMInt( mi(32, 0), xorMInt( extractMInt( %rax, 32, 64), Imm32))
+
+%cf    : mi(1, 0)
+%pf    : (#ifMInt (notBool (((((((eqMInt( xorMInt( extractMInt( %rax, 63, 64), extractMInt( Imm32, 31, 32)), mi(1, 1)) xorBool eqMInt( xorMInt( extractMInt( %rax, 62, 63), extractMInt( Imm32, 30, 31)), mi(1, 1))) xorBool eqMInt( xorMInt( extractMInt( %rax, 61, 62), extractMInt( Imm32, 29, 30)), mi(1, 1))) xorBool eqMInt( xorMInt( extractMInt( %rax, 60, 61), extractMInt( Imm32, 28, 29)), mi(1, 1))) xorBool eqMInt( xorMInt( extractMInt( %rax, 59, 60), extractMInt( Imm32, 27, 28)), mi(1, 1))) xorBool eqMInt( xorMInt( extractMInt( %rax, 58, 59), extractMInt( Imm32, 26, 27)), mi(1, 1))) xorBool eqMInt( xorMInt( extractMInt( %rax, 57, 58), extractMInt( Imm32, 25, 26)), mi(1, 1))) xorBool eqMInt( xorMInt( extractMInt( %rax, 56, 57), extractMInt( Imm32, 24, 25)), mi(1, 1)))) #then mi(1, 1) #else mi(1, 0) #fi)
+%af    : (#ifMInt TMP_BOOL_0 #then mi(1, 1) #else mi(1, 0) #fi)
+%zf    : (#ifMInt eqMInt( xorMInt( extractMInt( %rax, 32, 64), Imm32), mi(32, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : xorMInt( extractMInt( %rax, 32, 33), extractMInt( Imm32, 0, 1))
+%of    : mi(1, 0)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

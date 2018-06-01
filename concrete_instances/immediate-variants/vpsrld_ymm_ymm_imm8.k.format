@@ -1,0 +1,17 @@
+code: vpsrld $0x0, %ymm2, %ymm1
+
+  maybe read:      { %ymm2 }
+  must read:       { %ymm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+Formula:
+
+%ymm1  : (#ifMInt ugtMInt( concatenateMInt( mi(56, 0), Imm8), mi(64, 31)) #then mi(256, 0) #else concatenateMInt( lshrMInt( extractMInt( %ymm2, 0, 32), uvalueMInt(concatenateMInt( mi(24, 0), Imm8))), concatenateMInt( lshrMInt( extractMInt( %ymm2, 32, 64), uvalueMInt(concatenateMInt( mi(24, 0), Imm8))), concatenateMInt( lshrMInt( extractMInt( %ymm2, 64, 96), uvalueMInt(concatenateMInt( mi(24, 0), Imm8))), concatenateMInt( lshrMInt( extractMInt( %ymm2, 96, 128), uvalueMInt(concatenateMInt( mi(24, 0), Imm8))), concatenateMInt( lshrMInt( extractMInt( %ymm2, 128, 160), uvalueMInt(concatenateMInt( mi(24, 0), Imm8))), concatenateMInt( lshrMInt( extractMInt( %ymm2, 160, 192), uvalueMInt(concatenateMInt( mi(24, 0), Imm8))), concatenateMInt( lshrMInt( extractMInt( %ymm2, 192, 224), uvalueMInt(concatenateMInt( mi(24, 0), Imm8))), lshrMInt( extractMInt( %ymm2, 224, 256), uvalueMInt(concatenateMInt( mi(24, 0), Imm8)))))))))) #fi)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv
