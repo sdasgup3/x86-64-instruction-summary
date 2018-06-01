@@ -1,0 +1,22 @@
+code: orq $0x0, %rax
+
+  maybe read:      { %rax }
+  must read:       { %rax }
+  maybe write:     { %rax %cf %pf %zf %sf %of }
+  must write:      { %rax %cf %pf %zf %sf %of }
+  maybe undef:     { %af }
+  must undef:      { %af }
+  required flags:  { }
+
+Formula:
+
+%cf    : mi(1, 0)
+%pf    : (#ifMInt (notBool (((((((eqMInt( extractMInt( %rax, 63, 64), mi(1, 1)) xorBool eqMInt( extractMInt( %rax, 62, 63), mi(1, 1))) xorBool eqMInt( extractMInt( %rax, 61, 62), mi(1, 1))) xorBool eqMInt( extractMInt( %rax, 60, 61), mi(1, 1))) xorBool eqMInt( extractMInt( %rax, 59, 60), mi(1, 1))) xorBool eqMInt( extractMInt( %rax, 58, 59), mi(1, 1))) xorBool eqMInt( extractMInt( %rax, 57, 58), mi(1, 1))) xorBool eqMInt( extractMInt( %rax, 56, 57), mi(1, 1)))) #then mi(1, 1) #else mi(1, 0) #fi)
+%af    : (#ifMInt TMP_BOOL_1 #then mi(1, 1) #else mi(1, 0) #fi)
+%zf    : (#ifMInt eqMInt( %rax, mi(64, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : extractMInt( %rax, 0, 1)
+%of    : mi(1, 0)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

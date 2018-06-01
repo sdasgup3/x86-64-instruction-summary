@@ -1,0 +1,24 @@
+code: adcb $0x0, %al
+
+  maybe read:      { %al %cf }
+  must read:       { %al %cf }
+  maybe write:     { %al %cf %pf %af %zf %sf %of }
+  must write:      { %al %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rax   : concatenateMInt( extractMInt( %rax, 0, 56), extractMInt( addMInt( (#ifMInt %cf #then mi(9, 1) #else mi(9, 0) #fi), concatenateMInt( mi(1, 0), extractMInt( %rax, 56, 64))), 1, 9))
+
+%cf    : extractMInt( addMInt( (#ifMInt %cf #then mi(9, 1) #else mi(9, 0) #fi), concatenateMInt( mi(1, 0), extractMInt( %rax, 56, 64))), 0, 1)
+%pf    : (#ifMInt (notBool (((((((eqMInt( extractMInt( addMInt( (#ifMInt %cf #then mi(9, 1) #else mi(9, 0) #fi), concatenateMInt( mi(1, 0), extractMInt( %rax, 56, 64))), 8, 9), mi(1, 1)) xorBool eqMInt( extractMInt( addMInt( (#ifMInt %cf #then mi(9, 1) #else mi(9, 0) #fi), concatenateMInt( mi(1, 0), extractMInt( %rax, 56, 64))), 7, 8), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt( (#ifMInt %cf #then mi(9, 1) #else mi(9, 0) #fi), concatenateMInt( mi(1, 0), extractMInt( %rax, 56, 64))), 6, 7), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt( (#ifMInt %cf #then mi(9, 1) #else mi(9, 0) #fi), concatenateMInt( mi(1, 0), extractMInt( %rax, 56, 64))), 5, 6), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt( (#ifMInt %cf #then mi(9, 1) #else mi(9, 0) #fi), concatenateMInt( mi(1, 0), extractMInt( %rax, 56, 64))), 4, 5), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt( (#ifMInt %cf #then mi(9, 1) #else mi(9, 0) #fi), concatenateMInt( mi(1, 0), extractMInt( %rax, 56, 64))), 3, 4), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt( (#ifMInt %cf #then mi(9, 1) #else mi(9, 0) #fi), concatenateMInt( mi(1, 0), extractMInt( %rax, 56, 64))), 2, 3), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt( (#ifMInt %cf #then mi(9, 1) #else mi(9, 0) #fi), concatenateMInt( mi(1, 0), extractMInt( %rax, 56, 64))), 1, 2), mi(1, 1)))) #then mi(1, 1) #else mi(1, 0) #fi)
+%af    : xorMInt( extractMInt( %rax, 59, 60), extractMInt( addMInt( (#ifMInt %cf #then mi(9, 1) #else mi(9, 0) #fi), concatenateMInt( mi(1, 0), extractMInt( %rax, 56, 64))), 4, 5))
+%zf    : (#ifMInt eqMInt( extractMInt( addMInt( (#ifMInt %cf #then mi(9, 1) #else mi(9, 0) #fi), concatenateMInt( mi(1, 0), extractMInt( %rax, 56, 64))), 1, 9), mi(8, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : extractMInt( addMInt( (#ifMInt %cf #then mi(9, 1) #else mi(9, 0) #fi), concatenateMInt( mi(1, 0), extractMInt( %rax, 56, 64))), 1, 2)
+%of    : (#ifMInt ((FALSE ==Bool eqMInt( extractMInt( %rax, 56, 57), mi(1, 1))) andBool (notBool (FALSE ==Bool eqMInt( extractMInt( addMInt( (#ifMInt %cf #then mi(9, 1) #else mi(9, 0) #fi), concatenateMInt( mi(1, 0), extractMInt( %rax, 56, 64))), 1, 2), mi(1, 1))))) #then mi(1, 1) #else mi(1, 0) #fi)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

@@ -1,0 +1,20 @@
+code: rcll $0x0, %ebx
+
+  maybe read:      { %ebx %cf }
+  must read:       { %ebx %cf }
+  maybe write:     { %rbx %cf %of }
+  must write:      { %rbx }
+  maybe undef:     { %of }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rbx   : concatenateMInt( mi(32, 0), extractMInt( rol( concatenateMInt( (#ifMInt %cf #then mi(1, 1) #else mi(1, 0) #fi), extractMInt( %rbx, 32, 64)), uremMInt( concatenateMInt( mi(25, 0), andMInt( Imm8, mi(8, 31))), mi(33, 33))), 1, 33))
+
+%cf    : extractMInt( rol( concatenateMInt( (#ifMInt %cf #then mi(1, 1) #else mi(1, 0) #fi), extractMInt( %rbx, 32, 64)), uremMInt( concatenateMInt( mi(25, 0), andMInt( Imm8, mi(8, 31))), mi(33, 33))), 0, 1)
+%of    : (#ifMInt ((eqMInt( extractMInt( uremMInt( concatenateMInt( mi(25, 0), andMInt( Imm8, mi(8, 31))), mi(33, 33)), 25, 33), mi(8, 1)) andBool (eqMInt( extractMInt( rol( concatenateMInt( (#ifMInt %cf #then mi(1, 1) #else mi(1, 0) #fi), extractMInt( %rbx, 32, 64)), uremMInt( concatenateMInt( mi(25, 0), andMInt( Imm8, mi(8, 31))), mi(33, 33))), 0, 1), mi(1, 1)) xorBool eqMInt( extractMInt( rol( concatenateMInt( (#ifMInt %cf #then mi(1, 1) #else mi(1, 0) #fi), extractMInt( %rbx, 32, 64)), uremMInt( concatenateMInt( mi(25, 0), andMInt( Imm8, mi(8, 31))), mi(33, 33))), 1, 2), mi(1, 1)))) orBool ((notBool eqMInt( extractMInt( uremMInt( concatenateMInt( mi(25, 0), andMInt( Imm8, mi(8, 31))), mi(33, 33)), 25, 33), mi(8, 1))) andBool (((notBool eqMInt( extractMInt( uremMInt( concatenateMInt( mi(25, 0), andMInt( Imm8, mi(8, 31))), mi(33, 33)), 25, 33), mi(8, 0))) andBool TMP_BOOL_0) orBool ((notBool (notBool eqMInt( extractMInt( uremMInt( concatenateMInt( mi(25, 0), andMInt( Imm8, mi(8, 31))), mi(33, 33)), 25, 33), mi(8, 0)))) andBool %of)))) #then mi(1, 1) #else mi(1, 0) #fi)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

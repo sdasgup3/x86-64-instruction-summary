@@ -1,0 +1,17 @@
+code: dppd $0x0, %xmm2, %xmm1
+
+  maybe read:      { %xmm1 %xmm2 }
+  must read:       { %xmm1 %xmm2 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse4_1 }
+
+Formula:
+
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), concatenateMInt( (#ifMInt eqMInt( extractMInt( Imm8, 6, 7), mi(1, 1)) #then add_double((#ifMInt eqMInt( extractMInt( Imm8, 3, 4), mi(1, 1)) #then mul_double(extractMInt( %ymm1, 192, 256), extractMInt( %ymm2, 192, 256)) #else mi(64, 0) #fi), (#ifMInt eqMInt( extractMInt( Imm8, 2, 3), mi(1, 1)) #then mul_double(extractMInt( %ymm1, 128, 192), extractMInt( %ymm2, 128, 192)) #else mi(64, 0) #fi)) #else mi(64, 0) #fi), (#ifMInt eqMInt( extractMInt( Imm8, 7, 8), mi(1, 1)) #then add_double((#ifMInt eqMInt( extractMInt( Imm8, 3, 4), mi(1, 1)) #then mul_double(extractMInt( %ymm1, 192, 256), extractMInt( %ymm2, 192, 256)) #else mi(64, 0) #fi), (#ifMInt eqMInt( extractMInt( Imm8, 2, 3), mi(1, 1)) #then mul_double(extractMInt( %ymm1, 128, 192), extractMInt( %ymm2, 128, 192)) #else mi(64, 0) #fi)) #else mi(64, 0) #fi)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

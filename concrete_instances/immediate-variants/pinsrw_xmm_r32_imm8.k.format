@@ -1,0 +1,17 @@
+code: pinsrw $0x0, %ebx, %xmm1
+
+  maybe read:      { %ebx %xmm1 }
+  must read:       { %ebx %xmm1 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+Formula:
+
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), orMInt( andMInt( extractMInt( %ymm1, 128, 256), negMInt( shlMInt( mi(128, 65535), uvalueMInt(mi(128, 0))))), andMInt( shlMInt( concatenateMInt( mi(96, 0), extractMInt( %rbx, 32, 64)), uvalueMInt(mi(128, 0))), shlMInt( mi(128, 65535), uvalueMInt(mi(128, 0))))))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

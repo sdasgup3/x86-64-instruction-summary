@@ -1,0 +1,17 @@
+code: cmppd $0x0, %xmm2, %xmm1
+
+  maybe read:      { %xmm1 %xmm2 }
+  must read:       { %xmm1 %xmm2 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+Formula:
+
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), concatenateMInt( (#ifMInt eqMInt( cmp_double_pred(extractMInt( %ymm1, 128, 192), extractMInt( %ymm2, 128, 192), Imm8), mi(1, 1)) #then mi(64, 18446744073709551615) #else mi(64, 0) #fi), (#ifMInt eqMInt( cmp_double_pred(extractMInt( %ymm1, 192, 256), extractMInt( %ymm2, 192, 256), Imm8), mi(1, 1)) #then mi(64, 18446744073709551615) #else mi(64, 0) #fi)))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

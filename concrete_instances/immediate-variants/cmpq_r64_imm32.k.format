@@ -1,0 +1,22 @@
+code: cmpq $0x0, %rbx
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { %cf %pf %af %zf %sf %of }
+  must write:      { %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%cf    : (#ifMInt (notBool eqMInt( extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), negMInt( mi(64, svalueMInt(Imm32)))), mi(65, 1)), concatenateMInt( mi(1, 0), %rbx)), 0, 1), mi(1, 1))) #then mi(1, 1) #else mi(1, 0) #fi)
+%pf    : (#ifMInt (notBool (((((((eqMInt( extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), negMInt( mi(64, svalueMInt(Imm32)))), mi(65, 1)), concatenateMInt( mi(1, 0), %rbx)), 64, 65), mi(1, 1)) xorBool eqMInt( extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), negMInt( mi(64, svalueMInt(Imm32)))), mi(65, 1)), concatenateMInt( mi(1, 0), %rbx)), 63, 64), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), negMInt( mi(64, svalueMInt(Imm32)))), mi(65, 1)), concatenateMInt( mi(1, 0), %rbx)), 62, 63), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), negMInt( mi(64, svalueMInt(Imm32)))), mi(65, 1)), concatenateMInt( mi(1, 0), %rbx)), 61, 62), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), negMInt( mi(64, svalueMInt(Imm32)))), mi(65, 1)), concatenateMInt( mi(1, 0), %rbx)), 60, 61), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), negMInt( mi(64, svalueMInt(Imm32)))), mi(65, 1)), concatenateMInt( mi(1, 0), %rbx)), 59, 60), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), negMInt( mi(64, svalueMInt(Imm32)))), mi(65, 1)), concatenateMInt( mi(1, 0), %rbx)), 58, 59), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), negMInt( mi(64, svalueMInt(Imm32)))), mi(65, 1)), concatenateMInt( mi(1, 0), %rbx)), 57, 58), mi(1, 1)))) #then mi(1, 1) #else mi(1, 0) #fi)
+%af    : xorMInt( xorMInt( extractMInt( Imm32, 27, 28), extractMInt( %rbx, 59, 60)), extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), negMInt( mi(64, svalueMInt(Imm32)))), mi(65, 1)), concatenateMInt( mi(1, 0), %rbx)), 60, 61))
+%zf    : (#ifMInt eqMInt( extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), negMInt( mi(64, svalueMInt(Imm32)))), mi(65, 1)), concatenateMInt( mi(1, 0), %rbx)), 1, 65), mi(64, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), negMInt( mi(64, svalueMInt(Imm32)))), mi(65, 1)), concatenateMInt( mi(1, 0), %rbx)), 1, 2)
+%of    : (#ifMInt ((eqMInt( negMInt( extractMInt( mi(64, svalueMInt(Imm32)), 0, 1)), mi(1, 1)) ==Bool eqMInt( extractMInt( %rbx, 0, 1), mi(1, 1))) andBool (notBool (eqMInt( negMInt( extractMInt( mi(64, svalueMInt(Imm32)), 0, 1)), mi(1, 1)) ==Bool eqMInt( extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), negMInt( mi(64, svalueMInt(Imm32)))), mi(65, 1)), concatenateMInt( mi(1, 0), %rbx)), 1, 2), mi(1, 1))))) #then mi(1, 1) #else mi(1, 0) #fi)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

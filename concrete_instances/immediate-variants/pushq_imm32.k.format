@@ -1,0 +1,21 @@
+code: pushq $0x0
+
+  maybe read:      { %rsp }
+  must read:       { %rsp }
+  maybe write:     { %rsp }
+  must write:      { %rsp }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rsp   : subMInt( %rsp, mi(64, 8))
+
+Information about memory writes:
+  Address subMInt( %rsp, mi(64, 8)) was updated to
+    mi(64, svalueMInt(Imm32)) (8 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))
