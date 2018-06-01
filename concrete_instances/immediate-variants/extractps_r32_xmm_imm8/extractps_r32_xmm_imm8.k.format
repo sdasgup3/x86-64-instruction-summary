@@ -10,7 +10,7 @@ code: extractps $0x0, %xmm1, %ebx
 
 Formula:
 
-%rbx   : concatenateMInt( mi(32, 0), extractMInt( %ymm1, 224, 256))
+%rbx   : concatenateMInt( mi(32, 0), extractMInt( lshrMInt( extractMInt( %ymm1, 128, 256), uvalueMInt(shlMInt( concatenateMInt( mi(126, 0), extractMInt( Imm8, 6, 8)), uvalueMInt(mi(128, 5))))), 96, 128))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

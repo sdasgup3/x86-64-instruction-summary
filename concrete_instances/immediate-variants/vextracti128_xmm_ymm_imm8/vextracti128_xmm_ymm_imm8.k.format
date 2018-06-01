@@ -10,7 +10,7 @@ code: vextracti128 $0x0, %ymm1, %xmm1
 
 Formula:
 
-%ymm1  : concatenateMInt( mi(128, 0), extractMInt( %ymm1, 128, 256))
+%ymm1  : concatenateMInt( mi(128, 0), (#ifMInt eqMInt( extractMInt( Imm8, 7, 8), mi(1, 0)) #then extractMInt( %ymm1, 128, 256) #else extractMInt( %ymm1, 0, 128) #fi))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

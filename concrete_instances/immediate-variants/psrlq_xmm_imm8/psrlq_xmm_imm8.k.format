@@ -10,7 +10,7 @@ code: psrlq $0x0, %xmm1
 
 Formula:
 
-%ymm1  : %ymm1
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), (#ifMInt ugtMInt( concatenateMInt( mi(56, 0), Imm8), mi(64, 63)) #then mi(128, 0) #else concatenateMInt( lshrMInt( extractMInt( %ymm1, 128, 192), uvalueMInt(concatenateMInt( mi(56, 0), Imm8))), lshrMInt( extractMInt( %ymm1, 192, 256), uvalueMInt(concatenateMInt( mi(56, 0), Imm8)))) #fi))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

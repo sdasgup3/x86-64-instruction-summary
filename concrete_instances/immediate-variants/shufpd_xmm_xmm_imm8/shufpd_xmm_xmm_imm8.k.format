@@ -10,7 +10,7 @@ code: shufpd $0x0, %xmm2, %xmm1
 
 Formula:
 
-%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), concatenateMInt( extractMInt( %ymm2, 192, 256), extractMInt( %ymm1, 192, 256)))
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), concatenateMInt( (#ifMInt eqMInt( extractMInt( Imm8, 6, 7), mi(1, 1)) #then extractMInt( %ymm2, 128, 192) #else extractMInt( %ymm2, 192, 256) #fi), (#ifMInt eqMInt( extractMInt( Imm8, 7, 8), mi(1, 1)) #then extractMInt( %ymm1, 128, 192) #else extractMInt( %ymm1, 192, 256) #fi)))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

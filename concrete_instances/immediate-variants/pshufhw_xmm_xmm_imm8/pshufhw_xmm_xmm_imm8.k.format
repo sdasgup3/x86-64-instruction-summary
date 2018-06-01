@@ -10,7 +10,7 @@ code: pshufhw $0x0, %xmm2, %xmm1
 
 Formula:
 
-%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), concatenateMInt( concatenateMInt( concatenateMInt( extractMInt( %ymm2, 176, 192), extractMInt( %ymm2, 176, 192)), concatenateMInt( extractMInt( %ymm2, 176, 192), extractMInt( %ymm2, 176, 192))), extractMInt( %ymm2, 192, 256)))
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), concatenateMInt( extractMInt( lshrMInt( extractMInt( %ymm2, 128, 256), uvalueMInt(shlMInt( concatenateMInt( mi(126, 0), extractMInt( Imm8, 0, 2)), uvalueMInt(mi(128, 4))))), 48, 64), concatenateMInt( extractMInt( lshrMInt( extractMInt( %ymm2, 128, 256), uvalueMInt(shlMInt( concatenateMInt( mi(126, 0), extractMInt( Imm8, 2, 4)), uvalueMInt(mi(128, 4))))), 48, 64), concatenateMInt( extractMInt( lshrMInt( extractMInt( %ymm2, 128, 256), uvalueMInt(shlMInt( concatenateMInt( mi(126, 0), extractMInt( Imm8, 4, 6)), uvalueMInt(mi(128, 4))))), 48, 64), concatenateMInt( extractMInt( lshrMInt( extractMInt( %ymm2, 128, 256), uvalueMInt(shlMInt( concatenateMInt( mi(126, 0), extractMInt( Imm8, 6, 8)), uvalueMInt(mi(128, 4))))), 48, 64), extractMInt( %ymm2, 192, 256))))))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

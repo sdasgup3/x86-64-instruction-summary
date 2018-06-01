@@ -10,7 +10,7 @@ code: vpblendw $0x0, %xmm3, %xmm2, %xmm1
 
 Formula:
 
-%ymm1  : concatenateMInt( mi(128, 0), extractMInt( %ymm2, 128, 256))
+%ymm1  : concatenateMInt( mi(128, 0), concatenateMInt( (#ifMInt eqMInt( extractMInt( Imm8, 0, 1), mi(1, 0)) #then extractMInt( %ymm2, 128, 144) #else extractMInt( %ymm3, 128, 144) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( Imm8, 1, 2), mi(1, 0)) #then extractMInt( %ymm2, 144, 160) #else extractMInt( %ymm3, 144, 160) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( Imm8, 2, 3), mi(1, 0)) #then extractMInt( %ymm2, 160, 176) #else extractMInt( %ymm3, 160, 176) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( Imm8, 3, 4), mi(1, 0)) #then extractMInt( %ymm2, 176, 192) #else extractMInt( %ymm3, 176, 192) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( Imm8, 4, 5), mi(1, 0)) #then extractMInt( %ymm2, 192, 208) #else extractMInt( %ymm3, 192, 208) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( Imm8, 5, 6), mi(1, 0)) #then extractMInt( %ymm2, 208, 224) #else extractMInt( %ymm3, 208, 224) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( Imm8, 6, 7), mi(1, 0)) #then extractMInt( %ymm2, 224, 240) #else extractMInt( %ymm3, 224, 240) #fi), (#ifMInt eqMInt( extractMInt( Imm8, 7, 8), mi(1, 0)) #then extractMInt( %ymm2, 240, 256) #else extractMInt( %ymm3, 240, 256) #fi)))))))))
 
 sigfpe  : sigfpe
 sigbus  : sigbus
