@@ -1,0 +1,17 @@
+code: vpextrb $0x0, %xmm1, %ebx
+
+  maybe read:      { %xmm1 }
+  must read:       { %xmm1 }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%rbx   : concatenateMInt( mi(56, 0), extractMInt( %ymm1, 248, 256))
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

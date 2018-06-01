@@ -1,0 +1,17 @@
+code: pextrq $0x0, %xmm1, %rbx
+
+  maybe read:      { %xmm1 }
+  must read:       { %xmm1 }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse4_1 }
+
+Formula:
+
+%rbx   : extractMInt( %ymm1, 192, 256)
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

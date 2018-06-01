@@ -1,0 +1,17 @@
+code: psrlq $0x0, %xmm1
+
+  maybe read:      { %xmm1 }
+  must read:       { %xmm1 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+Formula:
+
+%ymm1  : %ymm1
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv
