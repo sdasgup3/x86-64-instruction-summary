@@ -120,7 +120,7 @@ Equivalent.
 Circuit for 'palignr $0x3b, %xmm2, %xmm1' (opcode palignr_xmm_xmm_imm8_59)
   not equivalent for '%xmm1':
     strata:        sub_double((0x0₁ ∘ (%ymm1[127:64] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ %ymm1[127:64])[63:0], (0x0₁ ∘ (%ymm1[127:64] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ %ymm1[127:64])[63:0]) ∘ sub_double((0x0₁ ∘ (%ymm1[63:0] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ %ymm1[63:0])[63:0], (0x0₁ ∘ (%ymm1[63:0] ⊕ 0xffffffffffffffff₆₄) + 0x1₆₅ + 0x0₁ ∘ %ymm1[63:0])[63:0])
-    hand-written:  (%ymm1[127:0] ∘ %ymm2[127:0] >> 0x1d8₂₅₆)[127:0]
+    hand-written:  (%ymm1[127:0] ∘ %ymm2[127:0] >> (0x0₂₄₈ ∘ 0x3b₈ << 0x3₂₅₆))[127:0]
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode palignr_xmm_xmm_imm8_60 
@@ -131,7 +131,7 @@ Equivalent.
 Circuit for 'palignr $0x3e, %xmm2, %xmm1' (opcode palignr_xmm_xmm_imm8_62)
   not equivalent for '%xmm1':
     strata:        cvt_int32_to_double(sub_double(0x0₃₂ ∘ %ymm1[31:0], 0x0₃₂ ∘ %ymm1[31:0])[63:32]) ∘ cvt_int32_to_double(sub_double(0x0₃₂ ∘ %ymm1[31:0], 0x0₃₂ ∘ %ymm1[31:0])[31:0])
-    hand-written:  (%ymm1[127:0] ∘ %ymm2[127:0] >> 0x1f0₂₅₆)[127:0]
+    hand-written:  (%ymm1[127:0] ∘ %ymm2[127:0] >> (0x0₂₄₈ ∘ 0x3e₈ << 0x3₂₅₆))[127:0]
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode palignr_xmm_xmm_imm8_63 
@@ -366,7 +366,7 @@ Equivalent.
 Circuit for 'palignr $0xb1, %xmm2, %xmm1' (opcode palignr_xmm_xmm_imm8_177)
   not equivalent for '%xmm1':
     strata:        0x0₆₄ ∘ sub_double(0x0₁₆ ∘ %ymm1[95:80] ∘ (0x0₁₆ ∘ %ymm1[79:64]), 0x0₁₆ ∘ %ymm1[95:80] ∘ (0x0₁₆ ∘ %ymm1[79:64]))
-    hand-written:  (%ymm1[127:0] ∘ %ymm2[127:0] >> 0x588₂₅₆)[127:0]
+    hand-written:  (%ymm1[127:0] ∘ %ymm2[127:0] >> (0x0₂₄₈ ∘ 0xb1₈ << 0x3₂₅₆))[127:0]
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode palignr_xmm_xmm_imm8_178 
@@ -413,7 +413,7 @@ Equivalent.
 Circuit for 'palignr $0xc6, %xmm2, %xmm1' (opcode palignr_xmm_xmm_imm8_198)
   not equivalent for '%xmm1':
     strata:        sign-extend-64(sub_double(0x0₃₂ ∘ %ymm1[31:0], 0x0₃₂ ∘ %ymm1[31:0])[63:32]) ∘ sign-extend-64(sub_double(0x0₃₂ ∘ %ymm1[31:0], 0x0₃₂ ∘ %ymm1[31:0])[31:0])
-    hand-written:  (%ymm1[127:0] ∘ %ymm2[127:0] >> 0x630₂₅₆)[127:0]
+    hand-written:  (%ymm1[127:0] ∘ %ymm2[127:0] >> (0x0₂₄₈ ∘ 0xc6₈ << 0x3₂₅₆))[127:0]
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode palignr_xmm_xmm_imm8_199 
@@ -480,7 +480,7 @@ Equivalent.
 Circuit for 'palignr $0xe5, %xmm2, %xmm1' (opcode palignr_xmm_xmm_imm8_229)
   not equivalent for '%xmm1':
     strata:        0x0₆₄ ∘ sub_double(0x0₃₂ ∘ cvt_double_to_single(0x0₃₂ ∘ %ymm1[63:32]), 0x0₃₂ ∘ cvt_double_to_single(0x0₃₂ ∘ %ymm1[63:32]))
-    hand-written:  (%ymm1[127:0] ∘ %ymm2[127:0] >> 0x728₂₅₆)[127:0]
+    hand-written:  (%ymm1[127:0] ∘ %ymm2[127:0] >> (0x0₂₄₈ ∘ 0xe5₈ << 0x3₂₅₆))[127:0]
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode palignr_xmm_xmm_imm8_230 

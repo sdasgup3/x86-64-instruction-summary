@@ -164,7 +164,7 @@ Equivalent.
 Circuit for 'pextrq $0x51, %xmm1, %rbx' (opcode pextrq_r64_xmm_imm8_81)
   not equivalent for '%rbx':
     strata:        sub_double(%ymm1[127:64], 0x0₆₄)
-    hand-written:  (%ymm1[127:0] >> 0x40₁₂₈)[63:0]
+    hand-written:  (%ymm1[127:0] >> (0x0₁₂₇ ∘ 0x1₁ << 0x6₁₂₈))[63:0]
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode pextrq_r64_xmm_imm8_82 
@@ -511,7 +511,7 @@ Equivalent.
 Circuit for 'pextrq $0xfc, %xmm1, %rbx' (opcode pextrq_r64_xmm_imm8_252)
   not equivalent for '%rbx':
     strata:        sub_double(%ymm1[63:0], 0x0₆₄)
-    hand-written:  (%ymm1[127:0] >> 0x0₁₂₈)[63:0]
+    hand-written:  (%ymm1[127:0] >> (0x0₁₂₇ ∘ 0x0₁ << 0x6₁₂₈))[63:0]
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode pextrq_r64_xmm_imm8_253 

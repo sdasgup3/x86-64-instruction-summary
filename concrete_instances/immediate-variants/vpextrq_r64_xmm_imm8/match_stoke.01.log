@@ -512,6 +512,6 @@ Equivalent.
 Circuit for 'vpextrq $0xff, %xmm1, %rbx' (opcode vpextrq_r64_xmm_imm8_255)
   not equivalent for '%rbx':
     strata:        sub_double(%ymm1[127:64], 0x0₆₄)
-    hand-written:  (%ymm1[127:0] >> 0x40₁₂₈)[63:0]
+    hand-written:  (%ymm1[127:0] >> (0x0₁₂₇ ∘ 0x1₁ << 0x6₁₂₈))[63:0]
 
 

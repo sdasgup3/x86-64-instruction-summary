@@ -10,7 +10,7 @@ Equivalent.
 Circuit for 'pshufd $0x4, %xmm2, %xmm1' (opcode pshufd_xmm_xmm_imm8_4)
   not equivalent for '%xmm1':
     strata:        vfmsub132_double(0x0₃₂ ∘ %ymm2[127:96], %ymm2[63:0], 0x0₃₂ ∘ %ymm2[95:64])[31:0] ∘ %ymm2[31:0] ∘ %ymm2[63:32] ∘ %ymm2[31:0]
-    hand-written:  (%ymm2[127:0] >> 0x0₁₂₈)[31:0] ∘ ((%ymm2[127:0] >> 0x0₁₂₈)[31:0] ∘ ((%ymm2[127:0] >> 0x20₁₂₈)[31:0] ∘ (%ymm2[127:0] >> 0x0₁₂₈)[31:0]))
+    hand-written:  (%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x0₂ << 0x5₁₂₈))[31:0] ∘ ((%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x0₂ << 0x5₁₂₈))[31:0] ∘ ((%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x1₂ << 0x5₁₂₈))[31:0] ∘ (%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x0₂ << 0x5₁₂₈))[31:0]))
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode pshufd_xmm_xmm_imm8_5 
@@ -77,7 +77,7 @@ Equivalent.
 Circuit for 'pshufd $0x23, %xmm2, %xmm1' (opcode pshufd_xmm_xmm_imm8_35)
   not equivalent for '%xmm1':
     strata:        %ymm2[31:0] ∘ %ymm2[95:64] ∘ vfmsub132_double(0x0₃₂ ∘ %ymm2[63:32], %ymm2[63:0], 0x0₃₂ ∘ %ymm2[127:96])[31:0] ∘ %ymm2[127:96]
-    hand-written:  (%ymm2[127:0] >> 0x0₁₂₈)[31:0] ∘ ((%ymm2[127:0] >> 0x40₁₂₈)[31:0] ∘ ((%ymm2[127:0] >> 0x0₁₂₈)[31:0] ∘ (%ymm2[127:0] >> 0x60₁₂₈)[31:0]))
+    hand-written:  (%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x0₂ << 0x5₁₂₈))[31:0] ∘ ((%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x2₂ << 0x5₁₂₈))[31:0] ∘ ((%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x0₂ << 0x5₁₂₈))[31:0] ∘ (%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x3₂ << 0x5₁₂₈))[31:0]))
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode pshufd_xmm_xmm_imm8_36 
@@ -90,7 +90,7 @@ Equivalent.
 Circuit for 'pshufd $0x27, %xmm2, %xmm1' (opcode pshufd_xmm_xmm_imm8_39)
   not equivalent for '%xmm1':
     strata:        vfnmsub132_double(0x0₃₂ ∘ %ymm2[127:96], vfnmsub132_double(0x0₆₄, %ymm2[63:0], 0x0₆₄), 0x0₃₂ ∘ %ymm2[127:96])[31:0] ∘ %ymm2[95:64] ∘ %ymm2[63:32] ∘ %ymm2[127:96]
-    hand-written:  (%ymm2[127:0] >> 0x0₁₂₈)[31:0] ∘ ((%ymm2[127:0] >> 0x40₁₂₈)[31:0] ∘ ((%ymm2[127:0] >> 0x20₁₂₈)[31:0] ∘ (%ymm2[127:0] >> 0x60₁₂₈)[31:0]))
+    hand-written:  (%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x0₂ << 0x5₁₂₈))[31:0] ∘ ((%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x2₂ << 0x5₁₂₈))[31:0] ∘ ((%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x1₂ << 0x5₁₂₈))[31:0] ∘ (%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x3₂ << 0x5₁₂₈))[31:0]))
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode pshufd_xmm_xmm_imm8_40 
@@ -139,7 +139,7 @@ Equivalent.
 Circuit for 'pshufd $0x3d, %xmm2, %xmm1' (opcode pshufd_xmm_xmm_imm8_61)
   not equivalent for '%xmm1':
     strata:        vfmsub132_double(0x0₃₂ ∘ %ymm2[127:96], vfnmsub132_double(0x0₆₄, %ymm2[63:0], 0x0₆₄), 0x0₃₂ ∘ %ymm2[63:32])[31:0] ∘ %ymm2[127:96] ∘ %ymm2[127:96] ∘ %ymm2[63:32]
-    hand-written:  (%ymm2[127:0] >> 0x0₁₂₈)[31:0] ∘ ((%ymm2[127:0] >> 0x60₁₂₈)[31:0] ∘ ((%ymm2[127:0] >> 0x60₁₂₈)[31:0] ∘ (%ymm2[127:0] >> 0x20₁₂₈)[31:0]))
+    hand-written:  (%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x0₂ << 0x5₁₂₈))[31:0] ∘ ((%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x3₂ << 0x5₁₂₈))[31:0] ∘ ((%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x3₂ << 0x5₁₂₈))[31:0] ∘ (%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x1₂ << 0x5₁₂₈))[31:0]))
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode pshufd_xmm_xmm_imm8_62 
@@ -156,7 +156,7 @@ Equivalent.
 Circuit for 'pshufd $0x43, %xmm2, %xmm1' (opcode pshufd_xmm_xmm_imm8_67)
   not equivalent for '%xmm1':
     strata:        vfnmsub132_double(0x0₃₂ ∘ %ymm2[63:32], vfnmsub132_double(0x0₆₄, %ymm2[63:0], 0x0₆₄), 0x0₃₂ ∘ %ymm2[63:32]) ∘ (%ymm2[31:0] ∘ %ymm2[127:96])
-    hand-written:  (%ymm2[127:0] >> 0x20₁₂₈)[31:0] ∘ ((%ymm2[127:0] >> 0x0₁₂₈)[31:0] ∘ ((%ymm2[127:0] >> 0x0₁₂₈)[31:0] ∘ (%ymm2[127:0] >> 0x60₁₂₈)[31:0]))
+    hand-written:  (%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x1₂ << 0x5₁₂₈))[31:0] ∘ ((%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x0₂ << 0x5₁₂₈))[31:0] ∘ ((%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x0₂ << 0x5₁₂₈))[31:0] ∘ (%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x3₂ << 0x5₁₂₈))[31:0]))
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode pshufd_xmm_xmm_imm8_68 
@@ -253,7 +253,7 @@ Equivalent.
 Circuit for 'pshufd $0x71, %xmm2, %xmm1' (opcode pshufd_xmm_xmm_imm8_113)
   not equivalent for '%xmm1':
     strata:        (vfmsub132_double(0x0₃₂ ∘ %ymm2[63:32], vfnmsub132_double(0x0₆₄, 0x0₃₂ ∘ %ymm2[127:96], 0x0₆₄), 0x0₃₂ ∘ %ymm2[63:32]) | %ymm2[63:32] ∘ 0x0₃₂) ∘ (0x0₃₂ ∘ cvt_double_to_int32_truncate(0x0₃₂ ∘ %ymm2[95:64]) | %ymm2[31:0] ∘ %ymm2[63:32])
-    hand-written:  (%ymm2[127:0] >> 0x20₁₂₈)[31:0] ∘ ((%ymm2[127:0] >> 0x60₁₂₈)[31:0] ∘ ((%ymm2[127:0] >> 0x0₁₂₈)[31:0] ∘ (%ymm2[127:0] >> 0x20₁₂₈)[31:0]))
+    hand-written:  (%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x1₂ << 0x5₁₂₈))[31:0] ∘ ((%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x3₂ << 0x5₁₂₈))[31:0] ∘ ((%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x0₂ << 0x5₁₂₈))[31:0] ∘ (%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x1₂ << 0x5₁₂₈))[31:0]))
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode pshufd_xmm_xmm_imm8_114 
@@ -322,14 +322,14 @@ Equivalent.
 Circuit for 'pshufd $0x91, %xmm2, %xmm1' (opcode pshufd_xmm_xmm_imm8_145)
   not equivalent for '%xmm1':
     strata:        %ymm2[95:32] ∘ (maxcmp_double(sign-extend-64(%ymm2[31:0]), %ymm2[31:0] ∘ %ymm2[63:32]) = 0x1₁ ? sign-extend-64(%ymm2[31:0]) : %ymm2[31:0] ∘ %ymm2[63:32])
-    hand-written:  (%ymm2[127:0] >> 0x40₁₂₈)[31:0] ∘ ((%ymm2[127:0] >> 0x20₁₂₈)[31:0] ∘ ((%ymm2[127:0] >> 0x0₁₂₈)[31:0] ∘ (%ymm2[127:0] >> 0x20₁₂₈)[31:0]))
+    hand-written:  (%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x2₂ << 0x5₁₂₈))[31:0] ∘ ((%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x1₂ << 0x5₁₂₈))[31:0] ∘ ((%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x0₂ << 0x5₁₂₈))[31:0] ∘ (%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x1₂ << 0x5₁₂₈))[31:0]))
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode pshufd_xmm_xmm_imm8_146 
 Circuit for 'pshufd $0x92, %xmm2, %xmm1' (opcode pshufd_xmm_xmm_imm8_146)
   not equivalent for '%xmm1':
     strata:        %ymm2[95:0] ∘ (maxcmp_single(mincmp_single(%ymm2[31:0], %ymm2[95:64]) = 0x1₁ ? %ymm2[31:0] : %ymm2[95:64], %ymm2[95:64]) = 0x1₁ ? mincmp_single(%ymm2[31:0], %ymm2[95:64]) = 0x1₁ ? %ymm2[31:0] : %ymm2[95:64] : %ymm2[95:64])
-    hand-written:  (%ymm2[127:0] >> 0x40₁₂₈)[31:0] ∘ ((%ymm2[127:0] >> 0x20₁₂₈)[31:0] ∘ ((%ymm2[127:0] >> 0x0₁₂₈)[31:0] ∘ (%ymm2[127:0] >> 0x40₁₂₈)[31:0]))
+    hand-written:  (%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x2₂ << 0x5₁₂₈))[31:0] ∘ ((%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x1₂ << 0x5₁₂₈))[31:0] ∘ ((%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x0₂ << 0x5₁₂₈))[31:0] ∘ (%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x2₂ << 0x5₁₂₈))[31:0]))
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode pshufd_xmm_xmm_imm8_147 
@@ -356,7 +356,7 @@ Equivalent.
 Circuit for 'pshufd $0x9d, %xmm2, %xmm1' (opcode pshufd_xmm_xmm_imm8_157)
   not equivalent for '%xmm1':
     strata:        %ymm2[95:64] ∘ add_double(%ymm2[63:32] ∘ %ymm2[63:32], 0x0₆₄)[31:0] ∘ %ymm2[127:96] ∘ add_double(%ymm2[63:32] ∘ %ymm2[63:32], 0x0₆₄)[31:0]
-    hand-written:  (%ymm2[127:0] >> 0x40₁₂₈)[31:0] ∘ ((%ymm2[127:0] >> 0x20₁₂₈)[31:0] ∘ ((%ymm2[127:0] >> 0x60₁₂₈)[31:0] ∘ (%ymm2[127:0] >> 0x20₁₂₈)[31:0]))
+    hand-written:  (%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x2₂ << 0x5₁₂₈))[31:0] ∘ ((%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x1₂ << 0x5₁₂₈))[31:0] ∘ ((%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x3₂ << 0x5₁₂₈))[31:0] ∘ (%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x1₂ << 0x5₁₂₈))[31:0]))
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode pshufd_xmm_xmm_imm8_158 
@@ -391,7 +391,7 @@ Equivalent.
 Circuit for 'pshufd $0xac, %xmm2, %xmm1' (opcode pshufd_xmm_xmm_imm8_172)
   not equivalent for '%xmm1':
     strata:        vfmsub132_double(0x0₃₂ ∘ %ymm2[127:96], 0x0₃₂ ∘ %ymm2[95:64], 0x0₃₂ ∘ %ymm2[127:96])[31:0] ∘ %ymm2[95:64] ∘ %ymm2[127:96] ∘ %ymm2[31:0]
-    hand-written:  (%ymm2[127:0] >> 0x40₁₂₈)[31:0] ∘ ((%ymm2[127:0] >> 0x40₁₂₈)[31:0] ∘ ((%ymm2[127:0] >> 0x60₁₂₈)[31:0] ∘ (%ymm2[127:0] >> 0x0₁₂₈)[31:0]))
+    hand-written:  (%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x2₂ << 0x5₁₂₈))[31:0] ∘ ((%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x2₂ << 0x5₁₂₈))[31:0] ∘ ((%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x3₂ << 0x5₁₂₈))[31:0] ∘ (%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x0₂ << 0x5₁₂₈))[31:0]))
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode pshufd_xmm_xmm_imm8_173 
@@ -406,7 +406,7 @@ Equivalent.
 Circuit for 'pshufd $0xb1, %xmm2, %xmm1' (opcode pshufd_xmm_xmm_imm8_177)
   not equivalent for '%xmm1':
     strata:        sub_double(%ymm2[95:64] ∘ %ymm2[127:96], 0x0₆₄) ∘ (%ymm2[31:0] ∘ %ymm2[63:32])
-    hand-written:  (%ymm2[127:0] >> 0x40₁₂₈)[31:0] ∘ ((%ymm2[127:0] >> 0x60₁₂₈)[31:0] ∘ ((%ymm2[127:0] >> 0x0₁₂₈)[31:0] ∘ (%ymm2[127:0] >> 0x20₁₂₈)[31:0]))
+    hand-written:  (%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x2₂ << 0x5₁₂₈))[31:0] ∘ ((%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x3₂ << 0x5₁₂₈))[31:0] ∘ ((%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x0₂ << 0x5₁₂₈))[31:0] ∘ (%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x1₂ << 0x5₁₂₈))[31:0]))
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode pshufd_xmm_xmm_imm8_178 
@@ -453,7 +453,7 @@ Equivalent.
 Circuit for 'pshufd $0xc6, %xmm2, %xmm1' (opcode pshufd_xmm_xmm_imm8_198)
   not equivalent for '%xmm1':
     strata:        %ymm2[127:96] ∘ vfmsub132_double(0x0₃₂ ∘ %ymm2[95:64], vfnmsub132_double(0x0₆₄, 0x0₃₂ ∘ %ymm2[31:0], 0x0₆₄), 0x0₃₂ ∘ %ymm2[95:64])[31:0] ∘ %ymm2[63:32] ∘ %ymm2[95:64]
-    hand-written:  (%ymm2[127:0] >> 0x60₁₂₈)[31:0] ∘ ((%ymm2[127:0] >> 0x0₁₂₈)[31:0] ∘ ((%ymm2[127:0] >> 0x20₁₂₈)[31:0] ∘ (%ymm2[127:0] >> 0x40₁₂₈)[31:0]))
+    hand-written:  (%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x3₂ << 0x5₁₂₈))[31:0] ∘ ((%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x0₂ << 0x5₁₂₈))[31:0] ∘ ((%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x1₂ << 0x5₁₂₈))[31:0] ∘ (%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x2₂ << 0x5₁₂₈))[31:0]))
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode pshufd_xmm_xmm_imm8_199 
@@ -478,14 +478,14 @@ Equivalent.
 Circuit for 'pshufd $0xd0, %xmm2, %xmm1' (opcode pshufd_xmm_xmm_imm8_208)
   not equivalent for '%xmm1':
     strata:        %ymm2[127:96] ∘ %ymm2[63:32] ∘ vfmsub132_double(0x0₃₂ ∘ %ymm2[31:0], vfnmsub132_double(0x0₆₄, %ymm2[31:0] ∘ %ymm2[31:0], 0x0₆₄), 0x0₃₂ ∘ %ymm2[63:32])[31:0] ∘ %ymm2[31:0]
-    hand-written:  (%ymm2[127:0] >> 0x60₁₂₈)[31:0] ∘ ((%ymm2[127:0] >> 0x20₁₂₈)[31:0] ∘ ((%ymm2[127:0] >> 0x0₁₂₈)[31:0] ∘ (%ymm2[127:0] >> 0x0₁₂₈)[31:0]))
+    hand-written:  (%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x3₂ << 0x5₁₂₈))[31:0] ∘ ((%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x1₂ << 0x5₁₂₈))[31:0] ∘ ((%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x0₂ << 0x5₁₂₈))[31:0] ∘ (%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x0₂ << 0x5₁₂₈))[31:0]))
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode pshufd_xmm_xmm_imm8_209 
 Circuit for 'pshufd $0xd1, %xmm2, %xmm1' (opcode pshufd_xmm_xmm_imm8_209)
   not equivalent for '%xmm1':
     strata:        %ymm2[127:96] ∘ vfmsub132_double(0x0₃₂ ∘ %ymm2[31:0], vfnmsub132_double(0x0₆₄, 0x0₃₂ ∘ %ymm2[63:32], 0x0₆₄), 0x0₃₂ ∘ %ymm2[63:32])[31:0] ∘ vfmsub132_double(vfmsub132_double(0x0₃₂ ∘ %ymm2[31:0], vfnmsub132_double(0x0₆₄, 0x0₃₂ ∘ %ymm2[63:32], 0x0₆₄), 0x0₃₂ ∘ %ymm2[63:32]), vfnmsub132_double(0x0₆₄, %ymm2[63:0], 0x0₆₄), 0x0₃₂ ∘ %ymm2[63:32])[31:0] ∘ vfmsub132_double(0x0₃₂ ∘ %ymm2[31:0], vfnmsub132_double(0x0₆₄, 0x0₃₂ ∘ %ymm2[63:32], 0x0₆₄), 0x0₃₂ ∘ %ymm2[63:32])[31:0]
-    hand-written:  (%ymm2[127:0] >> 0x60₁₂₈)[31:0] ∘ ((%ymm2[127:0] >> 0x20₁₂₈)[31:0] ∘ ((%ymm2[127:0] >> 0x0₁₂₈)[31:0] ∘ (%ymm2[127:0] >> 0x20₁₂₈)[31:0]))
+    hand-written:  (%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x3₂ << 0x5₁₂₈))[31:0] ∘ ((%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x1₂ << 0x5₁₂₈))[31:0] ∘ ((%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x0₂ << 0x5₁₂₈))[31:0] ∘ (%ymm2[127:0] >> (0x0₁₂₆ ∘ 0x1₂ << 0x5₁₂₈))[31:0]))
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode pshufd_xmm_xmm_imm8_210 
