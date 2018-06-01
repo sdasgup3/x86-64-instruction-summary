@@ -13,6 +13,7 @@ parallel -a ~/x86-semantics/docs/relatedwork/strata/Registers/register_instructi
 | 02 | immediates | 30 may | check stoke | Ungeneralized Stratified (78) + Generalised Stratified(28) | job.02 |runlog.02 | 02 |
 | 03 | immediates | 30 may | check stoke | Immediates Ungeneralized Unstratified: 26 == 31 (Ungeneralized Unstratified Unstoked) -  8 (string related testcases) + 9 (Ungeneralized Unstratified Stoked) -  6 (with imm sized > 8, push, and overlapped imm instructions)| job.03 |runlog.03 | 03 |
 | 08 | immediates | 30 may | check stoke | 162: Generalized unstratified immediates, Those with > imm8, are tested inly for first 256 values | job.08 |runlog.08 | 08 |
+| 16 | immediates | 1jun | check stoke | 31: Non Generalized stratified immediates,These are reimplemented. Also performed match stoke test before this test  | job.08 |runlog.16 | 16 |
 
 ### Commands
 01.
@@ -44,6 +45,14 @@ OR
 ```
 ~/x86-semantics/scripts/process_spec.pl --check_stoke_imm --file nightlyruns/job.08   --testid 08  |& tee nightlyruns/runlog.08
 ```
+
+16.
+```
+Make sure that one one thread is triggered at one invocation of parallel.
+
+parallel -j31  -a nightlyruns/job.16  "~/x86-semantics/scripts/process_spec.pl --check_stoke --file concrete_instances/immediate-variants/{}/check_stoke.02.txt --instructions_path concrete_instances/immediate-variants/{}/instructions --testid 16  |& tee concrete_instances/immediate-variants/{}/check_stoke.16.log"  |& tee nightlyruns/runlog.16
+```
+
 
 ## Registers
 
