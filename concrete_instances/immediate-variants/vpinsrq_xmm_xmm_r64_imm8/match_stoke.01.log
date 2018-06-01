@@ -148,7 +148,7 @@ Equivalent.
 Circuit for 'vpinsrq $0x49, %rbx, %xmm2, %xmm1' (opcode vpinsrq_xmm_xmm_r64_imm8_73)
   not equivalent for '%ymm1':
     strata:        0x0₁₂₈ ∘ (%rbx ∘ sub_double(%ymm2[63:0], 0x0₆₄))
-    hand-written:  0x0₁₂₈ ∘ (%ymm2[127:0] & !(0xffffffffffffffff₁₂₈ << 0x40₁₂₈) | 0x0₆₄ ∘ %rbx << 0x40₁₂₈ & 0xffffffffffffffff₁₂₈ << 0x40₁₂₈)
+    hand-written:  0x0₁₂₈ ∘ (%ymm2[127:0] & !(0xffffffffffffffff₁₂₈ << (0x0₁₂₇ ∘ 0x1₁ << 0x6₁₂₈)) | 0x0₆₄ ∘ %rbx << (0x0₁₂₇ ∘ 0x1₁ << 0x6₁₂₈) & 0xffffffffffffffff₁₂₈ << (0x0₁₂₇ ∘ 0x1₁ << 0x6₁₂₈))
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode vpinsrq_xmm_xmm_r64_imm8_74 

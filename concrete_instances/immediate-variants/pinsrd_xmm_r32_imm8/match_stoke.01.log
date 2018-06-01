@@ -216,7 +216,7 @@ Equivalent.
 Circuit for 'pinsrd $0x6b, %ebx, %xmm1' (opcode pinsrd_xmm_r32_imm8_107)
   not equivalent for '%xmm1':
     strata:        add_double(0x0₃₂ ∘ %rbx[31:24] ∘ %rbx[23:0], 0x0₆₄)[31:0] ∘ %ymm1[95:64] ∘ %ymm1[63:0]
-    hand-written:  %ymm1[127:0] & !(0xffffffff₁₂₈ << 0x60₁₂₈) | 0x0₉₆ ∘ %rbx[31:0] << 0x60₁₂₈ & 0xffffffff₁₂₈ << 0x60₁₂₈
+    hand-written:  %ymm1[127:0] & !(0xffffffff₁₂₈ << (0x0₁₂₆ ∘ 0x3₂ << 0x5₁₂₈)) | 0x0₉₆ ∘ %rbx[31:0] << (0x0₁₂₆ ∘ 0x3₂ << 0x5₁₂₈) & 0xffffffff₁₂₈ << (0x0₁₂₆ ∘ 0x3₂ << 0x5₁₂₈)
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode pinsrd_xmm_r32_imm8_108 
@@ -253,14 +253,14 @@ Equivalent.
 Circuit for 'pinsrd $0x7b, %ebx, %xmm1' (opcode pinsrd_xmm_r32_imm8_123)
   not equivalent for '%xmm1':
     strata:        %rbx[31:0] ∘ add_double(0x0₆₄, %ymm1[127:64])[31:0] ∘ %ymm1[63:0]
-    hand-written:  %ymm1[127:0] & !(0xffffffff₁₂₈ << 0x60₁₂₈) | 0x0₉₆ ∘ %rbx[31:0] << 0x60₁₂₈ & 0xffffffff₁₂₈ << 0x60₁₂₈
+    hand-written:  %ymm1[127:0] & !(0xffffffff₁₂₈ << (0x0₁₂₆ ∘ 0x3₂ << 0x5₁₂₈)) | 0x0₉₆ ∘ %rbx[31:0] << (0x0₁₂₆ ∘ 0x3₂ << 0x5₁₂₈) & 0xffffffff₁₂₈ << (0x0₁₂₆ ∘ 0x3₂ << 0x5₁₂₈)
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode pinsrd_xmm_r32_imm8_124 
 Circuit for 'pinsrd $0x7c, %ebx, %xmm1' (opcode pinsrd_xmm_r32_imm8_124)
   not equivalent for '%xmm1':
     strata:        %ymm1[127:32] ∘ add_double(0x0₃₂ ∘ %rbx[31:24] ∘ %rbx[23:0], 0x0₆₄)[31:0]
-    hand-written:  %ymm1[127:0] & !(0xffffffff₁₂₈ << 0x0₁₂₈) | 0x0₉₆ ∘ %rbx[31:0] << 0x0₁₂₈ & 0xffffffff₁₂₈ << 0x0₁₂₈
+    hand-written:  %ymm1[127:0] & !(0xffffffff₁₂₈ << (0x0₁₂₆ ∘ 0x0₂ << 0x5₁₂₈)) | 0x0₉₆ ∘ %rbx[31:0] << (0x0₁₂₆ ∘ 0x0₂ << 0x5₁₂₈) & 0xffffffff₁₂₈ << (0x0₁₂₆ ∘ 0x0₂ << 0x5₁₂₈)
 
 
 /home/sdasgup3/Github/strata/stoke/bin/specgen compare --circuit_dir /home/sdasgup3/Github/strata-data/circuits --opcode pinsrd_xmm_r32_imm8_125 
