@@ -10,7 +10,7 @@ code: pinsrd $0x0, %ebx, %xmm1
 
 Formula:
 
-%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 224), extractMInt( %rbx, 32, 64))
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), orMInt( andMInt( extractMInt( %ymm1, 128, 256), negMInt( shlMInt( mi(128, 4294967295), uvalueMInt(shlMInt( concatenateMInt( mi(126, 0), extractMInt( Imm8, 6, 8)), uvalueMInt(mi(128, 5))))))), andMInt( shlMInt( concatenateMInt( mi(96, 0), extractMInt( %rbx, 32, 64)), uvalueMInt(shlMInt( concatenateMInt( mi(126, 0), extractMInt( Imm8, 6, 8)), uvalueMInt(mi(128, 5))))), shlMInt( mi(128, 4294967295), uvalueMInt(shlMInt( concatenateMInt( mi(126, 0), extractMInt( Imm8, 6, 8)), uvalueMInt(mi(128, 5))))))))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

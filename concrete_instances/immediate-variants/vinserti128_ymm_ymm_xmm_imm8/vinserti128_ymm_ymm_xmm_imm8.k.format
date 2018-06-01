@@ -10,7 +10,7 @@ code: vinserti128 $0x0, %xmm3, %ymm2, %ymm1
 
 Formula:
 
-%ymm1  : concatenateMInt( extractMInt( %ymm2, 0, 128), extractMInt( %ymm3, 128, 256))
+%ymm1  : (#ifMInt eqMInt( extractMInt( Imm8, 7, 8), mi(1, 0)) #then concatenateMInt( extractMInt( %ymm2, 0, 128), extractMInt( %ymm3, 128, 256)) #else concatenateMInt( extractMInt( %ymm3, 128, 256), extractMInt( %ymm2, 128, 256)) #fi)
 
 sigfpe  : sigfpe
 sigbus  : sigbus

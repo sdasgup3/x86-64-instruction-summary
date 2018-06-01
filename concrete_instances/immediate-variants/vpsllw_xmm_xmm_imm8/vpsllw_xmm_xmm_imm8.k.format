@@ -10,7 +10,7 @@ code: vpsllw $0x0, %xmm2, %xmm1
 
 Formula:
 
-%ymm1  : concatenateMInt( mi(128, 0), extractMInt( %ymm2, 128, 256))
+%ymm1  : (#ifMInt ugtMInt( concatenateMInt( mi(56, 0), Imm8), mi(64, 15)) #then concatenateMInt( mi(128, 0), mi(128, 0)) #else concatenateMInt( mi(128, 0), concatenateMInt( shlMInt( extractMInt( %ymm2, 128, 144), uvalueMInt(concatenateMInt( mi(8, 0), Imm8))), concatenateMInt( shlMInt( extractMInt( %ymm2, 144, 160), uvalueMInt(concatenateMInt( mi(8, 0), Imm8))), concatenateMInt( shlMInt( extractMInt( %ymm2, 160, 176), uvalueMInt(concatenateMInt( mi(8, 0), Imm8))), concatenateMInt( shlMInt( extractMInt( %ymm2, 176, 192), uvalueMInt(concatenateMInt( mi(8, 0), Imm8))), concatenateMInt( shlMInt( extractMInt( %ymm2, 192, 208), uvalueMInt(concatenateMInt( mi(8, 0), Imm8))), concatenateMInt( shlMInt( extractMInt( %ymm2, 208, 224), uvalueMInt(concatenateMInt( mi(8, 0), Imm8))), concatenateMInt( shlMInt( extractMInt( %ymm2, 224, 240), uvalueMInt(concatenateMInt( mi(8, 0), Imm8))), shlMInt( extractMInt( %ymm2, 240, 256), uvalueMInt(concatenateMInt( mi(8, 0), Imm8))))))))))) #fi)
 
 sigfpe  : sigfpe
 sigbus  : sigbus
