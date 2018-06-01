@@ -19,7 +19,7 @@ parallel -a ~/x86-semantics/docs/relatedwork/strata/Registers/register_instructi
 ```
 This does equiv matched between the models of strata and stoke handler. But we have already 
 make sure to skip job.01 instruction from strata handler (#include "not_generalized_stratified_imms.inc").
-So uncomment that from  strata_handler to make this work.
+So uncomment that and CODEX from  strata_handler to make this work.
 
 ~/x86-semantics/scripts/process_spec.pl --match_stoke_imm --file nightlyruns/job.01   --testid 01  |& tee nightlyruns/runlog.01
 ```
