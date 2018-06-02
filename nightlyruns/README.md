@@ -24,13 +24,22 @@ grep "^sat" ~/Junk/log
 ### Test Charts
 | Id  | Instr Category  | Date  | Purpose  | Count   | Input | Output | Command |
 |--|--|--|--|--|--|--|--|
-| 09 | Mmeory | 2 Jun | check stoke | 1312:Generalized by registers (Generalized
-    wither from strata or stoke). The immediates are all instantiated with zero 
-That said the check_stoke.txt has only single instr | job.09 |runlog.09 | 09 |
+| 09 | Mmeory | 2 Jun | check stoke | 1312:Generalized by registers (Generalized either from strata or stoke). The immediates are all instantiated with zero. That said the check_stoke.txt has only single instr | job.09 |runlog.09 | 09 |
 | 10 | Mmeory | 2 Jun | check stoke | 45 (55 -10 which we are not implemented):
   All these are manually implemented. No Immediates | job.10 |runlog.10 | 10 |
 
 ### Commands
+```
+// Update testcases
+parallel -a ~/Junk/xx "~/x86-semantics/scripts/process_spec.pl --opcode  {}    --instructions_path concrete_instances/memory-variants/{}/instructions/ --update_tc --testid 09" 
+
+cd strata-data/output-strata/instruction-summary
+
+parallel -j6  -a ../nightlyruns/job.09  "~/x86-semantics/scripts/process_spec.pl --check_stoke --file concrete_instances/memory-variants/{}/check_stoke.09.txt --instructions_path concrete_instances/memory-variants/{}/instructions --use_updated_tc --testid 09  |& tee concrete_instances/memory-variants/{}/check_stoke.09.log" |& tee ~/Junk/log
+
+Other Switches: --no_strata_handler // avoid using strata handler; mainly used for evaluating the formula of both strata and non strata handlers.
+
+```
 
 
 ## Immediates
