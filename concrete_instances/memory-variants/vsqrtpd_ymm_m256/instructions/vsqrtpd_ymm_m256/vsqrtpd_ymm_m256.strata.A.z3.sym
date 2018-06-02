@@ -1,0 +1,42 @@
+code: vsqrtpd (%rbx), %ymm1
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%ymm1  : (let ((a!1 (concat (sqrt_double ((_ extract 191 128) TMP_BV_256_1))
+                   (concat (sqrt_double ((_ extract 127 64) TMP_BV_256_2))
+                           (sqrt_double ((_ extract 63 0) TMP_BV_256_3))))))
+  (concat (sqrt_double ((_ extract 255 192) TMP_BV_256_0)) a!1))
+
+
+Information about memory reads:
+  Value TMP_BV_256_0
+ (32 bytes)
+    was read at address %rbx
+.
+  Value TMP_BV_256_1
+ (32 bytes)
+    was read at address %rbx
+.
+  Value TMP_BV_256_2
+ (32 bytes)
+    was read at address %rbx
+.
+  Value TMP_BV_256_3
+ (32 bytes)
+    was read at address %rbx
+.
+
+sigfpe  : sigfpe
+
+sigbus  : sigbus
+
+sigsegv : sigsegv
+

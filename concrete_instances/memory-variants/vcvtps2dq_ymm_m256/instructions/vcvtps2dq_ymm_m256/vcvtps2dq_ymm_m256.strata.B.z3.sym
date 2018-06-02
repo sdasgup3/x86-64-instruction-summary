@@ -1,0 +1,39 @@
+code: vcvtps2dq (%rbx), %ymm1
+
+  maybe read:      { %rbx %mxcsr::rc[0] }
+  must read:       { %rbx %mxcsr::rc[0] }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%ymm1  : (let ((a!1 (concat (cvt_single_to_int32 ((_ extract 95 64) TMP_BV_256_0))
+                   (concat (cvt_single_to_int32
+                             ((_ extract 63 32) TMP_BV_256_0))
+                           (cvt_single_to_int32 ((_ extract 31 0) TMP_BV_256_0))))))
+(let ((a!2 (concat (cvt_single_to_int32 ((_ extract 159 128) TMP_BV_256_0))
+                   (concat (cvt_single_to_int32
+                             ((_ extract 127 96) TMP_BV_256_0))
+                           a!1))))
+(let ((a!3 (concat (cvt_single_to_int32 ((_ extract 223 192) TMP_BV_256_0))
+                   (concat (cvt_single_to_int32
+                             ((_ extract 191 160) TMP_BV_256_0))
+                           a!2))))
+  (concat (cvt_single_to_int32 ((_ extract 255 224) TMP_BV_256_0)) a!3))))
+
+
+Information about memory reads:
+  Value TMP_BV_256_0
+ (32 bytes)
+    was read at address %rbx
+.
+
+sigfpe  : sigfpe
+
+sigbus  : sigbus
+
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))
+

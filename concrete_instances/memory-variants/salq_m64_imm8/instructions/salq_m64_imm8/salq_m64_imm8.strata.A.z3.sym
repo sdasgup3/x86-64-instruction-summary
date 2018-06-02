@@ -1,0 +1,33 @@
+code: salq $0x0, (%rbx)
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { %cf %pf %zf %sf %of }
+  must write:      { }
+  maybe undef:     { %cf %af %of }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+Information about memory reads:
+  Value TMP_BV_64_0
+ (8 bytes)
+    was read at address %rbx
+.
+
+Information about memory writes:
+  Address %rbx
+ was updated to
+    ((_ extract 63 0)
+  (bvshl (concat #b0 TMP_BV_64_0)
+         (concat #b000000000000000000000000000000000000000000000000000000000
+                 #x00)))
+ (8 bytes).
+
+sigfpe  : sigfpe
+
+sigbus  : sigbus
+
+sigsegv : (or sigsegv (and (not sigfpe) (not sigbus) false))
+
