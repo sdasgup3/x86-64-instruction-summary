@@ -1,0 +1,61 @@
+code: xorq %rcx, (%rbx)
+
+  maybe read:      { %rcx %rbx }
+  must read:       { %rcx %rbx }
+  maybe write:     { %cf %pf %zf %sf %of }
+  must write:      { %cf %pf %zf %sf %of }
+  maybe undef:     { %af }
+  must undef:      { %af }
+  required flags:  { }
+
+Formula:
+
+%cf    : #b0
+
+%pf    : (let ((a!1 (xor (= (bvxor ((_ extract 0 0) TMP_BV_64_0) ((_ extract 0 0) %rcx))
+                   #b1)
+                (= (bvxor ((_ extract 1 1) TMP_BV_64_0) ((_ extract 1 1) %rcx))
+                   #b1)
+                (= (bvxor ((_ extract 2 2) TMP_BV_64_0) ((_ extract 2 2) %rcx))
+                   #b1)
+                (= (bvxor ((_ extract 3 3) TMP_BV_64_0) ((_ extract 3 3) %rcx))
+                   #b1)
+                (= (bvxor ((_ extract 4 4) TMP_BV_64_0) ((_ extract 4 4) %rcx))
+                   #b1)
+                (= (bvxor ((_ extract 5 5) TMP_BV_64_0) ((_ extract 5 5) %rcx))
+                   #b1)
+                (= (bvxor ((_ extract 6 6) TMP_BV_64_0) ((_ extract 6 6) %rcx))
+                   #b1)
+                (= (bvxor ((_ extract 7 7) TMP_BV_64_0) ((_ extract 7 7) %rcx))
+                   #b1))))
+  (ite (not a!1) #b1 #b0))
+
+%af    : (ite TMP_BOOL_0 #b1 #b0)
+
+%zf    : (ite (= (bvxor TMP_BV_64_0 %rcx) #x0000000000000000) #b1 #b0)
+
+%sf    : (bvxor ((_ extract 63 63) TMP_BV_64_0) ((_ extract 63 63) %rcx))
+
+%of    : #b0
+
+
+Information about memory reads:
+  Value TMP_BV_64_0
+ (8 bytes)
+    was read at address %rbx
+.
+
+Information about memory writes:
+  Address %rbx
+ was updated to
+    (bvxor TMP_BV_64_0 %rcx)
+ (8 bytes).
+
+sigfpe  : sigfpe
+
+sigbus  : sigbus
+
+sigsegv : (or sigsegv
+    (and (not sigfpe) (not sigbus) false)
+    (and (not sigfpe) (not sigbus) false))
+
