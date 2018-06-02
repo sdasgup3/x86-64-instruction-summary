@@ -1,0 +1,496 @@
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: vpalignr_xmm_xmm_xmm_imm8_1
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpalignr_xmm_xmm_xmm_imm8/instructions/vpalignr_xmm_xmm_xmm_imm8_1/vpalignr_xmm_xmm_xmm_imm8_1.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpalignr_xmm_xmm_xmm_imm8_1: 53 s
+Thread 1 done!: vpalignr_xmm_xmm_xmm_imm8_1
+[4m[1m[34mFiring 1.[0m
+Thread 2 start: vpalignr_xmm_xmm_xmm_imm8_2
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpalignr_xmm_xmm_xmm_imm8/instructions/vpalignr_xmm_xmm_xmm_imm8_2/vpalignr_xmm_xmm_xmm_imm8_2.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpalignr_xmm_xmm_xmm_imm8_2: 46 s
+Thread 2 done!: vpalignr_xmm_xmm_xmm_imm8_2
+[4m[1m[34mFiring 1.[0m
+Thread 3 start: vpalignr_xmm_xmm_xmm_imm8_3
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpalignr_xmm_xmm_xmm_imm8/instructions/vpalignr_xmm_xmm_xmm_imm8_3/vpalignr_xmm_xmm_xmm_imm8_3.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpalignr_xmm_xmm_xmm_imm8_3: 44 s
+Thread 3 done!: vpalignr_xmm_xmm_xmm_imm8_3
+[4m[1m[34mFiring 1.[0m
+Thread 4 start: vpalignr_xmm_xmm_xmm_imm8_4
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpalignr_xmm_xmm_xmm_imm8/instructions/vpalignr_xmm_xmm_xmm_imm8_4/vpalignr_xmm_xmm_xmm_imm8_4.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpalignr_xmm_xmm_xmm_imm8_4: 44 s
+Thread 4 done!: vpalignr_xmm_xmm_xmm_imm8_4
+[4m[1m[34mFiring 1.[0m
+Thread 5 start: vpalignr_xmm_xmm_xmm_imm8_5
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpalignr_xmm_xmm_xmm_imm8/instructions/vpalignr_xmm_xmm_xmm_imm8_5/vpalignr_xmm_xmm_xmm_imm8_5.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpalignr_xmm_xmm_xmm_imm8_5: 45 s
+Thread 5 done!: vpalignr_xmm_xmm_xmm_imm8_5
+[4m[1m[34mFiring 1.[0m
+Thread 6 start: vpalignr_xmm_xmm_xmm_imm8_6
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpalignr_xmm_xmm_xmm_imm8/instructions/vpalignr_xmm_xmm_xmm_imm8_6/vpalignr_xmm_xmm_xmm_imm8_6.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpalignr_xmm_xmm_xmm_imm8_6: 43 s
+Thread 6 done!: vpalignr_xmm_xmm_xmm_imm8_6
+[4m[1m[34mFiring 1.[0m
+Thread 7 start: vpalignr_xmm_xmm_xmm_imm8_7
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpalignr_xmm_xmm_xmm_imm8/instructions/vpalignr_xmm_xmm_xmm_imm8_7/vpalignr_xmm_xmm_xmm_imm8_7.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpalignr_xmm_xmm_xmm_imm8_7: 43 s
+Thread 7 done!: vpalignr_xmm_xmm_xmm_imm8_7
+[4m[1m[34mFiring 1.[0m
+Thread 8 start: vpalignr_xmm_xmm_xmm_imm8_8
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpalignr_xmm_xmm_xmm_imm8/instructions/vpalignr_xmm_xmm_xmm_imm8_8/vpalignr_xmm_xmm_xmm_imm8_8.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpalignr_xmm_xmm_xmm_imm8_8: 43 s
+Thread 8 done!: vpalignr_xmm_xmm_xmm_imm8_8
+[4m[1m[34mFiring 1.[0m
+Thread 9 start: vpalignr_xmm_xmm_xmm_imm8_9
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpalignr_xmm_xmm_xmm_imm8/instructions/vpalignr_xmm_xmm_xmm_imm8_9/vpalignr_xmm_xmm_xmm_imm8_9.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpalignr_xmm_xmm_xmm_imm8_9: 43 s
+Thread 9 done!: vpalignr_xmm_xmm_xmm_imm8_9
+[4m[1m[34mFiring 1.[0m
+Thread 10 start: vpalignr_xmm_xmm_xmm_imm8_10
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpalignr_xmm_xmm_xmm_imm8/instructions/vpalignr_xmm_xmm_xmm_imm8_10/vpalignr_xmm_xmm_xmm_imm8_10.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpalignr_xmm_xmm_xmm_imm8_10: 44 s
+Thread 10 done!: vpalignr_xmm_xmm_xmm_imm8_10
+[4m[1m[34mFiring 1.[0m
+Thread 11 start: vpalignr_xmm_xmm_xmm_imm8_11
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpalignr_xmm_xmm_xmm_imm8/instructions/vpalignr_xmm_xmm_xmm_imm8_11/vpalignr_xmm_xmm_xmm_imm8_11.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpalignr_xmm_xmm_xmm_imm8_11: 43 s
+Thread 11 done!: vpalignr_xmm_xmm_xmm_imm8_11
+[4m[1m[34mFiring 1.[0m
+Thread 12 start: vpalignr_xmm_xmm_xmm_imm8_12
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpalignr_xmm_xmm_xmm_imm8/instructions/vpalignr_xmm_xmm_xmm_imm8_12/vpalignr_xmm_xmm_xmm_imm8_12.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpalignr_xmm_xmm_xmm_imm8_12: 43 s
+Thread 12 done!: vpalignr_xmm_xmm_xmm_imm8_12
+[4m[1m[34mFiring 1.[0m
+Thread 13 start: vpalignr_xmm_xmm_xmm_imm8_13
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpalignr_xmm_xmm_xmm_imm8/instructions/vpalignr_xmm_xmm_xmm_imm8_13/vpalignr_xmm_xmm_xmm_imm8_13.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpalignr_xmm_xmm_xmm_imm8_13: 45 s
+Thread 13 done!: vpalignr_xmm_xmm_xmm_imm8_13
+[4m[1m[34mFiring 1.[0m
+Thread 14 start: vpalignr_xmm_xmm_xmm_imm8_14
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpalignr_xmm_xmm_xmm_imm8/instructions/vpalignr_xmm_xmm_xmm_imm8_14/vpalignr_xmm_xmm_xmm_imm8_14.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpalignr_xmm_xmm_xmm_imm8_14: 43 s
+Thread 14 done!: vpalignr_xmm_xmm_xmm_imm8_14
+[4m[1m[34mFiring 1.[0m
+Thread 15 start: vpalignr_xmm_xmm_xmm_imm8_15
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpalignr_xmm_xmm_xmm_imm8/instructions/vpalignr_xmm_xmm_xmm_imm8_15/vpalignr_xmm_xmm_xmm_imm8_15.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpalignr_xmm_xmm_xmm_imm8_15: 43 s
+Thread 15 done!: vpalignr_xmm_xmm_xmm_imm8_15
+[4m[1m[34mFiring 1.[0m
+Thread 16 start: vpalignr_xmm_xmm_xmm_imm8_16
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpalignr_xmm_xmm_xmm_imm8/instructions/vpalignr_xmm_xmm_xmm_imm8_16/vpalignr_xmm_xmm_xmm_imm8_16.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpalignr_xmm_xmm_xmm_imm8_16: 42 s
+Thread 16 done!: vpalignr_xmm_xmm_xmm_imm8_16
+[4m[1m[34mFiring 1.[0m
+Thread 17 start: vpalignr_xmm_xmm_xmm_imm8_17
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpalignr_xmm_xmm_xmm_imm8/instructions/vpalignr_xmm_xmm_xmm_imm8_17/vpalignr_xmm_xmm_xmm_imm8_17.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpalignr_xmm_xmm_xmm_imm8_17: 42 s
+Thread 17 done!: vpalignr_xmm_xmm_xmm_imm8_17
+[4m[1m[34mFiring 1.[0m
+Thread 18 start: vpalignr_xmm_xmm_xmm_imm8_18
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpalignr_xmm_xmm_xmm_imm8/instructions/vpalignr_xmm_xmm_xmm_imm8_18/vpalignr_xmm_xmm_xmm_imm8_18.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpalignr_xmm_xmm_xmm_imm8_18: 42 s
+Thread 18 done!: vpalignr_xmm_xmm_xmm_imm8_18
+[4m[1m[34mFiring 1.[0m
+Thread 19 start: vpalignr_xmm_xmm_xmm_imm8_19
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpalignr_xmm_xmm_xmm_imm8/instructions/vpalignr_xmm_xmm_xmm_imm8_19/vpalignr_xmm_xmm_xmm_imm8_19.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpalignr_xmm_xmm_xmm_imm8_19: 41 s
+Thread 19 done!: vpalignr_xmm_xmm_xmm_imm8_19
+[4m[1m[34mFiring 1.[0m
+Thread 20 start: vpalignr_xmm_xmm_xmm_imm8_20
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpalignr_xmm_xmm_xmm_imm8/instructions/vpalignr_xmm_xmm_xmm_imm8_20/vpalignr_xmm_xmm_xmm_imm8_20.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpalignr_xmm_xmm_xmm_imm8_20: 41 s
+Thread 20 done!: vpalignr_xmm_xmm_xmm_imm8_20
+[4m[1m[34mFiring 1.[0m
+Thread 21 start: vpalignr_xmm_xmm_xmm_imm8_21
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpalignr_xmm_xmm_xmm_imm8/instructions/vpalignr_xmm_xmm_xmm_imm8_21/vpalignr_xmm_xmm_xmm_imm8_21.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpalignr_xmm_xmm_xmm_imm8_21: 44 s
+Thread 21 done!: vpalignr_xmm_xmm_xmm_imm8_21
+[4m[1m[34mFiring 1.[0m
+Thread 22 start: vpalignr_xmm_xmm_xmm_imm8_22
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpalignr_xmm_xmm_xmm_imm8/instructions/vpalignr_xmm_xmm_xmm_imm8_22/vpalignr_xmm_xmm_xmm_imm8_22.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpalignr_xmm_xmm_xmm_imm8_22: 42 s
+Thread 22 done!: vpalignr_xmm_xmm_xmm_imm8_22
+[4m[1m[34mFiring 1.[0m
+Thread 23 start: vpalignr_xmm_xmm_xmm_imm8_23
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpalignr_xmm_xmm_xmm_imm8/instructions/vpalignr_xmm_xmm_xmm_imm8_23/vpalignr_xmm_xmm_xmm_imm8_23.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpalignr_xmm_xmm_xmm_imm8_23: 42 s
+Thread 23 done!: vpalignr_xmm_xmm_xmm_imm8_23
+[4m[1m[34mFiring 1.[0m
+Thread 24 start: vpalignr_xmm_xmm_xmm_imm8_25
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpalignr_xmm_xmm_xmm_imm8/instructions/vpalignr_xmm_xmm_xmm_imm8_25/vpalignr_xmm_xmm_xmm_imm8_25.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpalignr_xmm_xmm_xmm_imm8_25: 42 s
+Thread 24 done!: vpalignr_xmm_xmm_xmm_imm8_25
+[4m[1m[34mFiring 1.[0m
+Thread 25 start: vpalignr_xmm_xmm_xmm_imm8_26
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpalignr_xmm_xmm_xmm_imm8/instructions/vpalignr_xmm_xmm_xmm_imm8_26/vpalignr_xmm_xmm_xmm_imm8_26.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpalignr_xmm_xmm_xmm_imm8_26: 43 s
+Thread 25 done!: vpalignr_xmm_xmm_xmm_imm8_26
+[4m[1m[34mFiring 1.[0m
+Thread 26 start: vpalignr_xmm_xmm_xmm_imm8_27
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpalignr_xmm_xmm_xmm_imm8/instructions/vpalignr_xmm_xmm_xmm_imm8_27/vpalignr_xmm_xmm_xmm_imm8_27.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpalignr_xmm_xmm_xmm_imm8_27: 42 s
+Thread 26 done!: vpalignr_xmm_xmm_xmm_imm8_27
+[4m[1m[34mFiring 1.[0m
+Thread 27 start: vpalignr_xmm_xmm_xmm_imm8_29
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpalignr_xmm_xmm_xmm_imm8/instructions/vpalignr_xmm_xmm_xmm_imm8_29/vpalignr_xmm_xmm_xmm_imm8_29.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpalignr_xmm_xmm_xmm_imm8_29: 42 s
+Thread 27 done!: vpalignr_xmm_xmm_xmm_imm8_29
+[4m[1m[34mFiring 1.[0m
+Thread 28 start: vpalignr_xmm_xmm_xmm_imm8_30
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpalignr_xmm_xmm_xmm_imm8/instructions/vpalignr_xmm_xmm_xmm_imm8_30/vpalignr_xmm_xmm_xmm_imm8_30.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpalignr_xmm_xmm_xmm_imm8_30: 41 s
+Thread 28 done!: vpalignr_xmm_xmm_xmm_imm8_30
+[4m[1m[34mFiring 1.[0m
+Thread 29 start: vpalignr_xmm_xmm_xmm_imm8_31
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpalignr_xmm_xmm_xmm_imm8/instructions/vpalignr_xmm_xmm_xmm_imm8_31/vpalignr_xmm_xmm_xmm_imm8_31.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpalignr_xmm_xmm_xmm_imm8_31: 40 s
+Thread 29 done!: vpalignr_xmm_xmm_xmm_imm8_31
+[4m[1m[34mFiring 1.[0m
+Thread 30 start: vpalignr_xmm_xmm_xmm_imm8_162
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpalignr_xmm_xmm_xmm_imm8/instructions/vpalignr_xmm_xmm_xmm_imm8_162/vpalignr_xmm_xmm_xmm_imm8_162.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpalignr_xmm_xmm_xmm_imm8_162: 40 s
+Thread 30 done!: vpalignr_xmm_xmm_xmm_imm8_162
+[4m[1m[34mFiring 1.[0m
+Thread 31 start: vpalignr_xmm_xmm_xmm_imm8_232
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpalignr_xmm_xmm_xmm_imm8/instructions/vpalignr_xmm_xmm_xmm_imm8_232/vpalignr_xmm_xmm_xmm_imm8_232.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 %xmm3 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpalignr_xmm_xmm_xmm_imm8_232: 45 s
+Thread 31 done!: vpalignr_xmm_xmm_xmm_imm8_232
