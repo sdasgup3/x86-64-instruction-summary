@@ -1,9 +1,24 @@
 # Jobs Chart
 
 ## Memory
-### Prepare Instruction Directory
+
+### Prepare Instruction Directory (diff operands)
 ```
-parallel -a ~/x86-semantics/docs/relatedwork/strata/Registers/register_instructions.txt "~/x86-semantics/scripts/process_spec.pl --prepare_concrete --opcode {} --workdir concrete_instances/register-variants/{}"
+ls concrete_instances/memory-variants/ | parallel  "~/x86-semantics/scripts/process_spec.pl --prepare_concrete --opcode {} --workdir concrete_instances/memory-variants/{}"
+```
+
+### Check the ones supported by both Strata and Stoke handlers.
+```
+Get the list from https://github.com/sdasgup3/strata-stoke/blob/strata.stoke.ubuntu/src/validator/handlers/mems.inc
+Also make sure to comment out the mems.inc from strata handler
+
+parallel -a <list>  "echo; echo {}; ~/Github/strata/stoke/bin/stoke_debug_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits/ --opc {} --smtlib_format &> concrete_instances/memory-variants/{}/instructions/{}/{}.strata.A.z3.sym"
+
+parallel -a <list>  "echo; echo {}; ~/Github/strata/stoke/bin/stoke_debug_circuit  --opc {} --smtlib_format &> concrete_instances/memory-variants/{}/instructions/{}/{}.strata.B.z3.sym"
+
+parallel  -a  <list>  "echo; echo {}; ~/x86-semantics/scripts/z3compare.pl --file concrete_instances/memory-variants/{}/instructions/{}/{}.strata.A.z3.sym  --file concrete_instances/memory-variants/{}/instructions/{}/{}.strata.B.z3.sym --opcode {} --workfile concrete_instances/memory-variants/{}/instructions/{}/{}.prove.A.B.z3 ; z3 concrete_instances/memory-variants/{}/instructions/{}/{}.prove.A.B.z3" |& tee ~/Junk/log
+
+grep "^sat" ~/Junk/log
 ```
 
 ### Test Charts
