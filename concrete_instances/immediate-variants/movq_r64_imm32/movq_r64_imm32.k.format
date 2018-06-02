@@ -10,7 +10,7 @@ code: movq $0x0, %rbx
 
 Formula:
 
-%rbx   : mi(64, 0)
+%rbx   : mi(64, svalueMInt(Imm32))
 
 sigfpe  : sigfpe
 sigbus  : sigbus
