@@ -10,11 +10,13 @@ code: xorq $0x0, %rax
 
 Formula:
 
+%rax   : xorMInt( %rax, mi(64, svalueMInt(Imm32)))
+
 %cf    : mi(1, 0)
-%pf    : (#ifMInt (notBool (((((((eqMInt( extractMInt( %rax, 63, 64), mi(1, 1)) xorBool eqMInt( extractMInt( %rax, 62, 63), mi(1, 1))) xorBool eqMInt( extractMInt( %rax, 61, 62), mi(1, 1))) xorBool eqMInt( extractMInt( %rax, 60, 61), mi(1, 1))) xorBool eqMInt( extractMInt( %rax, 59, 60), mi(1, 1))) xorBool eqMInt( extractMInt( %rax, 58, 59), mi(1, 1))) xorBool eqMInt( extractMInt( %rax, 57, 58), mi(1, 1))) xorBool eqMInt( extractMInt( %rax, 56, 57), mi(1, 1)))) #then mi(1, 1) #else mi(1, 0) #fi)
-%af    : (#ifMInt TMP_BOOL_1 #then mi(1, 1) #else mi(1, 0) #fi)
-%zf    : (#ifMInt eqMInt( %rax, mi(64, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
-%sf    : extractMInt( %rax, 0, 1)
+%pf    : (#ifMInt (notBool (((((((eqMInt( xorMInt( extractMInt( %rax, 63, 64), extractMInt( Imm32, 31, 32)), mi(1, 1)) xorBool eqMInt( xorMInt( extractMInt( %rax, 62, 63), extractMInt( Imm32, 30, 31)), mi(1, 1))) xorBool eqMInt( xorMInt( extractMInt( %rax, 61, 62), extractMInt( Imm32, 29, 30)), mi(1, 1))) xorBool eqMInt( xorMInt( extractMInt( %rax, 60, 61), extractMInt( Imm32, 28, 29)), mi(1, 1))) xorBool eqMInt( xorMInt( extractMInt( %rax, 59, 60), extractMInt( Imm32, 27, 28)), mi(1, 1))) xorBool eqMInt( xorMInt( extractMInt( %rax, 58, 59), extractMInt( Imm32, 26, 27)), mi(1, 1))) xorBool eqMInt( xorMInt( extractMInt( %rax, 57, 58), extractMInt( Imm32, 25, 26)), mi(1, 1))) xorBool eqMInt( xorMInt( extractMInt( %rax, 56, 57), extractMInt( Imm32, 24, 25)), mi(1, 1)))) #then mi(1, 1) #else mi(1, 0) #fi)
+%af    : (#ifMInt TMP_BOOL_0 #then mi(1, 1) #else mi(1, 0) #fi)
+%zf    : (#ifMInt eqMInt( xorMInt( %rax, mi(64, svalueMInt(Imm32))), mi(64, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : xorMInt( extractMInt( %rax, 0, 1), extractMInt( mi(64, svalueMInt(Imm32)), 0, 1))
 %of    : mi(1, 0)
 
 sigfpe  : sigfpe
