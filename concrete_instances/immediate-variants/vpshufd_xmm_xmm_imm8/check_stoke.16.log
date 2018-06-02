@@ -1,0 +1,256 @@
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: vpshufd_xmm_xmm_imm8_45
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpshufd_xmm_xmm_imm8/instructions/vpshufd_xmm_xmm_imm8_45/vpshufd_xmm_xmm_imm8_45.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpshufd_xmm_xmm_imm8_45: 53 s
+Thread 1 done!: vpshufd_xmm_xmm_imm8_45
+[4m[1m[34mFiring 1.[0m
+Thread 2 start: vpshufd_xmm_xmm_imm8_121
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpshufd_xmm_xmm_imm8/instructions/vpshufd_xmm_xmm_imm8_121/vpshufd_xmm_xmm_imm8_121.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpshufd_xmm_xmm_imm8_121: 49 s
+Thread 2 done!: vpshufd_xmm_xmm_imm8_121
+[4m[1m[34mFiring 1.[0m
+Thread 3 start: vpshufd_xmm_xmm_imm8_167
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpshufd_xmm_xmm_imm8/instructions/vpshufd_xmm_xmm_imm8_167/vpshufd_xmm_xmm_imm8_167.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpshufd_xmm_xmm_imm8_167: 46 s
+Thread 3 done!: vpshufd_xmm_xmm_imm8_167
+[4m[1m[34mFiring 1.[0m
+Thread 4 start: vpshufd_xmm_xmm_imm8_175
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpshufd_xmm_xmm_imm8/instructions/vpshufd_xmm_xmm_imm8_175/vpshufd_xmm_xmm_imm8_175.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpshufd_xmm_xmm_imm8_175: 45 s
+Thread 4 done!: vpshufd_xmm_xmm_imm8_175
+[4m[1m[34mFiring 1.[0m
+Thread 5 start: vpshufd_xmm_xmm_imm8_198
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpshufd_xmm_xmm_imm8/instructions/vpshufd_xmm_xmm_imm8_198/vpshufd_xmm_xmm_imm8_198.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpshufd_xmm_xmm_imm8_198: 45 s
+Thread 5 done!: vpshufd_xmm_xmm_imm8_198
+[4m[1m[34mFiring 1.[0m
+Thread 6 start: vpshufd_xmm_xmm_imm8_41
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpshufd_xmm_xmm_imm8/instructions/vpshufd_xmm_xmm_imm8_41/vpshufd_xmm_xmm_imm8_41.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpshufd_xmm_xmm_imm8_41: 44 s
+Thread 6 done!: vpshufd_xmm_xmm_imm8_41
+[4m[1m[34mFiring 1.[0m
+Thread 7 start: vpshufd_xmm_xmm_imm8_53
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpshufd_xmm_xmm_imm8/instructions/vpshufd_xmm_xmm_imm8_53/vpshufd_xmm_xmm_imm8_53.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpshufd_xmm_xmm_imm8_53: 45 s
+Thread 7 done!: vpshufd_xmm_xmm_imm8_53
+[4m[1m[34mFiring 1.[0m
+Thread 8 start: vpshufd_xmm_xmm_imm8_56
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpshufd_xmm_xmm_imm8/instructions/vpshufd_xmm_xmm_imm8_56/vpshufd_xmm_xmm_imm8_56.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpshufd_xmm_xmm_imm8_56: 45 s
+Thread 8 done!: vpshufd_xmm_xmm_imm8_56
+[4m[1m[34mFiring 1.[0m
+Thread 9 start: vpshufd_xmm_xmm_imm8_57
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpshufd_xmm_xmm_imm8/instructions/vpshufd_xmm_xmm_imm8_57/vpshufd_xmm_xmm_imm8_57.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpshufd_xmm_xmm_imm8_57: 45 s
+Thread 9 done!: vpshufd_xmm_xmm_imm8_57
+[4m[1m[34mFiring 1.[0m
+Thread 10 start: vpshufd_xmm_xmm_imm8_77
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpshufd_xmm_xmm_imm8/instructions/vpshufd_xmm_xmm_imm8_77/vpshufd_xmm_xmm_imm8_77.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpshufd_xmm_xmm_imm8_77: 44 s
+Thread 10 done!: vpshufd_xmm_xmm_imm8_77
+[4m[1m[34mFiring 1.[0m
+Thread 11 start: vpshufd_xmm_xmm_imm8_88
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpshufd_xmm_xmm_imm8/instructions/vpshufd_xmm_xmm_imm8_88/vpshufd_xmm_xmm_imm8_88.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpshufd_xmm_xmm_imm8_88: 44 s
+Thread 11 done!: vpshufd_xmm_xmm_imm8_88
+[4m[1m[34mFiring 1.[0m
+Thread 12 start: vpshufd_xmm_xmm_imm8_109
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpshufd_xmm_xmm_imm8/instructions/vpshufd_xmm_xmm_imm8_109/vpshufd_xmm_xmm_imm8_109.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpshufd_xmm_xmm_imm8_109: 44 s
+Thread 12 done!: vpshufd_xmm_xmm_imm8_109
+[4m[1m[34mFiring 1.[0m
+Thread 13 start: vpshufd_xmm_xmm_imm8_143
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpshufd_xmm_xmm_imm8/instructions/vpshufd_xmm_xmm_imm8_143/vpshufd_xmm_xmm_imm8_143.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpshufd_xmm_xmm_imm8_143: 44 s
+Thread 13 done!: vpshufd_xmm_xmm_imm8_143
+[4m[1m[34mFiring 1.[0m
+Thread 14 start: vpshufd_xmm_xmm_imm8_147
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpshufd_xmm_xmm_imm8/instructions/vpshufd_xmm_xmm_imm8_147/vpshufd_xmm_xmm_imm8_147.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpshufd_xmm_xmm_imm8_147: 45 s
+Thread 14 done!: vpshufd_xmm_xmm_imm8_147
+[4m[1m[34mFiring 1.[0m
+Thread 15 start: vpshufd_xmm_xmm_imm8_148
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpshufd_xmm_xmm_imm8/instructions/vpshufd_xmm_xmm_imm8_148/vpshufd_xmm_xmm_imm8_148.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpshufd_xmm_xmm_imm8_148: 44 s
+Thread 15 done!: vpshufd_xmm_xmm_imm8_148
+[4m[1m[34mFiring 1.[0m
+Thread 16 start: vpshufd_xmm_xmm_imm8_196
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpshufd_xmm_xmm_imm8/instructions/vpshufd_xmm_xmm_imm8_196/vpshufd_xmm_xmm_imm8_196.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpshufd_xmm_xmm_imm8_196: 44 s
+Thread 16 done!: vpshufd_xmm_xmm_imm8_196

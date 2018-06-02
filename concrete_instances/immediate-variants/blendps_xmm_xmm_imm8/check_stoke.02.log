@@ -1,16 +1,31 @@
-[4m[1m[34mFiring Last 1[0m
-Thread 1 start: blendps_xmm_xmm_imm8_182
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/blendps_xmm_xmm_imm8/instructions/blendps_xmm_xmm_imm8_182/blendps_xmm_xmm_imm8_182.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+[4m[1m[34mFiring Last 2[0m
+Thread 2 start: blendps_xmm_xmm_imm8_182
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/blendps_xmm_xmm_imm8/instructions/blendps_xmm_xmm_imm8_182/blendps_xmm_xmm_imm8_182.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
+Thread 1 start: blendps_xmm_xmm_imm8_155
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/blendps_xmm_xmm_imm8/instructions/blendps_xmm_xmm_imm8_155/blendps_xmm_xmm_imm8_155.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
 Check Equivalence
 Completed 1000cases
 Completed 2000cases
+Completed 2000cases
 Completed 3000cases
 Completed 4000cases
+Completed 3000cases
 Completed 5000cases
+Completed 4000cases
 Completed 6000cases
-Thread 1 done!: blendps_xmm_xmm_imm8_182
+Completed 5000cases
+Execution time blendps_xmm_xmm_imm8_155: 38 s
+Thread 1 done!: blendps_xmm_xmm_imm8_155
+Completed 6000cases
+Execution time blendps_xmm_xmm_imm8_182: 46 s
+Thread 2 done!: blendps_xmm_xmm_imm8_182

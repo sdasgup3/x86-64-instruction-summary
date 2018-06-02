@@ -1,227 +1,218 @@
-[4m[1m[34mFiring Last 25[0m
-Thread 2 start: vpinsrd_xmm_xmm_r32_imm8_210
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_210/vpinsrd_xmm_xmm_r32_imm8_210.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" 
-Thread 1 start: vpinsrd_xmm_xmm_r32_imm8_159
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_159/vpinsrd_xmm_xmm_r32_imm8_159.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" 
-Thread 3 start: vpinsrd_xmm_xmm_r32_imm8_25
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_25/vpinsrd_xmm_xmm_r32_imm8_25.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" 
-Thread 4 start: vpinsrd_xmm_xmm_r32_imm8_69
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_69/vpinsrd_xmm_xmm_r32_imm8_69.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" 
-Thread 5 start: vpinsrd_xmm_xmm_r32_imm8_83
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_83/vpinsrd_xmm_xmm_r32_imm8_83.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" 
-Thread 7 start: vpinsrd_xmm_xmm_r32_imm8_91
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_91/vpinsrd_xmm_xmm_r32_imm8_91.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" 
-Thread 8 start: vpinsrd_xmm_xmm_r32_imm8_95
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_95/vpinsrd_xmm_xmm_r32_imm8_95.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" 
-Thread 11 start: vpinsrd_xmm_xmm_r32_imm8_129
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_129/vpinsrd_xmm_xmm_r32_imm8_129.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" 
-Thread 6 start: vpinsrd_xmm_xmm_r32_imm8_89
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_89/vpinsrd_xmm_xmm_r32_imm8_89.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" 
-Thread 9 start: vpinsrd_xmm_xmm_r32_imm8_99
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_99/vpinsrd_xmm_xmm_r32_imm8_99.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" 
-Thread 12 start: vpinsrd_xmm_xmm_r32_imm8_134
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_134/vpinsrd_xmm_xmm_r32_imm8_134.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" 
-Thread 13 start: vpinsrd_xmm_xmm_r32_imm8_147
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_147/vpinsrd_xmm_xmm_r32_imm8_147.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" 
-Thread 10 start: vpinsrd_xmm_xmm_r32_imm8_102
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_102/vpinsrd_xmm_xmm_r32_imm8_102.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" 
-Thread 15 start: vpinsrd_xmm_xmm_r32_imm8_163
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_163/vpinsrd_xmm_xmm_r32_imm8_163.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" 
-Thread 16 start: vpinsrd_xmm_xmm_r32_imm8_174
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_174/vpinsrd_xmm_xmm_r32_imm8_174.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" 
-Thread 14 start: vpinsrd_xmm_xmm_r32_imm8_155
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_155/vpinsrd_xmm_xmm_r32_imm8_155.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" 
-Thread 17 start: vpinsrd_xmm_xmm_r32_imm8_179
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_179/vpinsrd_xmm_xmm_r32_imm8_179.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" 
-Thread 18 start: vpinsrd_xmm_xmm_r32_imm8_186
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_186/vpinsrd_xmm_xmm_r32_imm8_186.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" 
-Thread 19 start: vpinsrd_xmm_xmm_r32_imm8_190
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_190/vpinsrd_xmm_xmm_r32_imm8_190.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" 
-Thread 20 start: vpinsrd_xmm_xmm_r32_imm8_195
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_195/vpinsrd_xmm_xmm_r32_imm8_195.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" 
-Thread 21 start: vpinsrd_xmm_xmm_r32_imm8_215
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_215/vpinsrd_xmm_xmm_r32_imm8_215.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" 
-Thread 23 start: vpinsrd_xmm_xmm_r32_imm8_230
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_230/vpinsrd_xmm_xmm_r32_imm8_230.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" 
-Thread 22 start: vpinsrd_xmm_xmm_r32_imm8_227
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_227/vpinsrd_xmm_xmm_r32_imm8_227.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" 
-Thread 24 start: vpinsrd_xmm_xmm_r32_imm8_238
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_238/vpinsrd_xmm_xmm_r32_imm8_238.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" 
-Thread 25 start: vpinsrd_xmm_xmm_r32_imm8_243
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_243/vpinsrd_xmm_xmm_r32_imm8_243.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" 
+[4m[1m[34mFiring Last 27[0m
+Thread 2 start: vpinsrd_xmm_xmm_r32_imm8_159
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_159/vpinsrd_xmm_xmm_r32_imm8_159.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Thread 3 start: vpinsrd_xmm_xmm_r32_imm8_210
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_210/vpinsrd_xmm_xmm_r32_imm8_210.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Thread 4 start: vpinsrd_xmm_xmm_r32_imm8_212
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_212/vpinsrd_xmm_xmm_r32_imm8_212.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Thread 5 start: vpinsrd_xmm_xmm_r32_imm8_25
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_25/vpinsrd_xmm_xmm_r32_imm8_25.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Thread 1 start: vpinsrd_xmm_xmm_r32_imm8_30
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_30/vpinsrd_xmm_xmm_r32_imm8_30.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Thread 6 start: vpinsrd_xmm_xmm_r32_imm8_69
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_69/vpinsrd_xmm_xmm_r32_imm8_69.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Thread 8 start: vpinsrd_xmm_xmm_r32_imm8_89
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_89/vpinsrd_xmm_xmm_r32_imm8_89.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Thread 7 start: vpinsrd_xmm_xmm_r32_imm8_83
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_83/vpinsrd_xmm_xmm_r32_imm8_83.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Thread 9 start: vpinsrd_xmm_xmm_r32_imm8_91
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_91/vpinsrd_xmm_xmm_r32_imm8_91.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Thread 10 start: vpinsrd_xmm_xmm_r32_imm8_95
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_95/vpinsrd_xmm_xmm_r32_imm8_95.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Thread 11 start: vpinsrd_xmm_xmm_r32_imm8_99
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_99/vpinsrd_xmm_xmm_r32_imm8_99.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Thread 12 start: vpinsrd_xmm_xmm_r32_imm8_102
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_102/vpinsrd_xmm_xmm_r32_imm8_102.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Thread 13 start: vpinsrd_xmm_xmm_r32_imm8_129
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_129/vpinsrd_xmm_xmm_r32_imm8_129.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Thread 14 start: vpinsrd_xmm_xmm_r32_imm8_134
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_134/vpinsrd_xmm_xmm_r32_imm8_134.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Thread 15 start: vpinsrd_xmm_xmm_r32_imm8_147
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_147/vpinsrd_xmm_xmm_r32_imm8_147.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Thread 16 start: vpinsrd_xmm_xmm_r32_imm8_155
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_155/vpinsrd_xmm_xmm_r32_imm8_155.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Thread 17 start: vpinsrd_xmm_xmm_r32_imm8_163
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_163/vpinsrd_xmm_xmm_r32_imm8_163.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Thread 19 start: vpinsrd_xmm_xmm_r32_imm8_179
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_179/vpinsrd_xmm_xmm_r32_imm8_179.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Thread 18 start: vpinsrd_xmm_xmm_r32_imm8_174
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_174/vpinsrd_xmm_xmm_r32_imm8_174.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Thread 20 start: vpinsrd_xmm_xmm_r32_imm8_186
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_186/vpinsrd_xmm_xmm_r32_imm8_186.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Thread 21 start: vpinsrd_xmm_xmm_r32_imm8_190
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_190/vpinsrd_xmm_xmm_r32_imm8_190.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Thread 22 start: vpinsrd_xmm_xmm_r32_imm8_195
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_195/vpinsrd_xmm_xmm_r32_imm8_195.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Thread 23 start: vpinsrd_xmm_xmm_r32_imm8_215
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_215/vpinsrd_xmm_xmm_r32_imm8_215.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Thread 24 start: vpinsrd_xmm_xmm_r32_imm8_227
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_227/vpinsrd_xmm_xmm_r32_imm8_227.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Thread 25 start: vpinsrd_xmm_xmm_r32_imm8_230
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_230/vpinsrd_xmm_xmm_r32_imm8_230.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Thread 26 start: vpinsrd_xmm_xmm_r32_imm8_238
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_238/vpinsrd_xmm_xmm_r32_imm8_238.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Thread 27 start: vpinsrd_xmm_xmm_r32_imm8_243
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vpinsrd_xmm_xmm_r32_imm8/instructions/vpinsrd_xmm_xmm_r32_imm8_243/vpinsrd_xmm_xmm_r32_imm8_243.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %ebx %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
 Check Equivalence
 Completed 1000cases
 Completed 2000cases
@@ -246,9 +237,17 @@ Completed 2000cases
 Completed 2000cases
 Completed 2000cases
 Completed 2000cases
+Completed 3000cases
+Completed 2000cases
+Completed 2000cases
+Completed 3000cases
 Completed 2000cases
 Completed 2000cases
 Completed 2000cases
+Completed 4000cases
+Completed 3000cases
+Completed 3000cases
+Completed 4000cases
 Completed 3000cases
 Completed 3000cases
 Completed 3000cases
@@ -272,8 +271,8 @@ Completed 3000cases
 Completed 3000cases
 Completed 3000cases
 Completed 3000cases
-Completed 3000cases
-Completed 3000cases
+Completed 5000cases
+Completed 5000cases
 Completed 4000cases
 Completed 4000cases
 Completed 4000cases
@@ -299,6 +298,14 @@ Completed 4000cases
 Completed 4000cases
 Completed 4000cases
 Completed 4000cases
+Completed 6000cases
+Completed 6000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Execution time vpinsrd_xmm_xmm_r32_imm8_129: 49 s
+Thread 13 done!: vpinsrd_xmm_xmm_r32_imm8_129
 Completed 5000cases
 Completed 5000cases
 Completed 5000cases
@@ -312,6 +319,8 @@ Completed 5000cases
 Completed 5000cases
 Completed 5000cases
 Completed 5000cases
+Execution time vpinsrd_xmm_xmm_r32_imm8_195: 50 s
+Thread 22 done!: vpinsrd_xmm_xmm_r32_imm8_195
 Completed 5000cases
 Completed 5000cases
 Completed 5000cases
@@ -320,11 +329,6 @@ Completed 5000cases
 Completed 5000cases
 Completed 5000cases
 Completed 5000cases
-Completed 5000cases
-Completed 5000cases
-Completed 5000cases
-Completed 6000cases
-Completed 5000cases
 Completed 6000cases
 Completed 6000cases
 Completed 6000cases
@@ -334,43 +338,69 @@ Completed 6000cases
 Completed 6000cases
 Completed 6000cases
 Completed 6000cases
-Thread 4 done!: vpinsrd_xmm_xmm_r32_imm8_69
 Completed 6000cases
 Completed 6000cases
 Completed 6000cases
 Completed 6000cases
 Completed 6000cases
-Thread 13 done!: vpinsrd_xmm_xmm_r32_imm8_147
 Completed 6000cases
 Completed 6000cases
 Completed 6000cases
 Completed 6000cases
 Completed 6000cases
-Thread 19 done!: vpinsrd_xmm_xmm_r32_imm8_190
-Thread 7 done!: vpinsrd_xmm_xmm_r32_imm8_91
 Completed 6000cases
 Completed 6000cases
 Completed 6000cases
 Completed 6000cases
-Thread 8 done!: vpinsrd_xmm_xmm_r32_imm8_95
-Thread 24 done!: vpinsrd_xmm_xmm_r32_imm8_238
-Thread 2 done!: vpinsrd_xmm_xmm_r32_imm8_210
-Thread 11 done!: vpinsrd_xmm_xmm_r32_imm8_129
 Completed 6000cases
-Thread 10 done!: vpinsrd_xmm_xmm_r32_imm8_102
-Thread 15 done!: vpinsrd_xmm_xmm_r32_imm8_163
-Thread 22 done!: vpinsrd_xmm_xmm_r32_imm8_227
-Thread 14 done!: vpinsrd_xmm_xmm_r32_imm8_155
-Thread 21 done!: vpinsrd_xmm_xmm_r32_imm8_215
-Thread 18 done!: vpinsrd_xmm_xmm_r32_imm8_186
-Thread 1 done!: vpinsrd_xmm_xmm_r32_imm8_159
-Thread 5 done!: vpinsrd_xmm_xmm_r32_imm8_83
-Thread 25 done!: vpinsrd_xmm_xmm_r32_imm8_243
-Thread 3 done!: vpinsrd_xmm_xmm_r32_imm8_25
-Thread 23 done!: vpinsrd_xmm_xmm_r32_imm8_230
-Thread 16 done!: vpinsrd_xmm_xmm_r32_imm8_174
-Thread 17 done!: vpinsrd_xmm_xmm_r32_imm8_179
-Thread 12 done!: vpinsrd_xmm_xmm_r32_imm8_134
-Thread 9 done!: vpinsrd_xmm_xmm_r32_imm8_99
-Thread 20 done!: vpinsrd_xmm_xmm_r32_imm8_195
-Thread 6 done!: vpinsrd_xmm_xmm_r32_imm8_89
+Completed 6000cases
+Execution time vpinsrd_xmm_xmm_r32_imm8_227: 61 s
+Thread 24 done!: vpinsrd_xmm_xmm_r32_imm8_227
+Execution time vpinsrd_xmm_xmm_r32_imm8_215: 62 s
+Thread 23 done!: vpinsrd_xmm_xmm_r32_imm8_215
+Execution time vpinsrd_xmm_xmm_r32_imm8_95: 62 s
+Thread 10 done!: vpinsrd_xmm_xmm_r32_imm8_95
+Execution time vpinsrd_xmm_xmm_r32_imm8_25: 62 s
+Thread 5 done!: vpinsrd_xmm_xmm_r32_imm8_25
+Execution time vpinsrd_xmm_xmm_r32_imm8_163: 62 s
+Thread 17 done!: vpinsrd_xmm_xmm_r32_imm8_163
+Execution time vpinsrd_xmm_xmm_r32_imm8_190: 62 s
+Thread 21 done!: vpinsrd_xmm_xmm_r32_imm8_190
+Execution time vpinsrd_xmm_xmm_r32_imm8_230: 62 s
+Thread 25 done!: vpinsrd_xmm_xmm_r32_imm8_230
+Execution time vpinsrd_xmm_xmm_r32_imm8_210: 62 s
+Thread 3 done!: vpinsrd_xmm_xmm_r32_imm8_210
+Execution time vpinsrd_xmm_xmm_r32_imm8_134: 63 s
+Thread 14 done!: vpinsrd_xmm_xmm_r32_imm8_134
+Execution time vpinsrd_xmm_xmm_r32_imm8_147: 63 s
+Thread 15 done!: vpinsrd_xmm_xmm_r32_imm8_147
+Execution time vpinsrd_xmm_xmm_r32_imm8_212: 63 s
+Thread 4 done!: vpinsrd_xmm_xmm_r32_imm8_212
+Execution time vpinsrd_xmm_xmm_r32_imm8_91: 63 s
+Thread 9 done!: vpinsrd_xmm_xmm_r32_imm8_91
+Execution time vpinsrd_xmm_xmm_r32_imm8_89: 63 s
+Thread 8 done!: vpinsrd_xmm_xmm_r32_imm8_89
+Execution time vpinsrd_xmm_xmm_r32_imm8_186: 63 s
+Thread 20 done!: vpinsrd_xmm_xmm_r32_imm8_186
+Execution time vpinsrd_xmm_xmm_r32_imm8_30: 63 s
+Thread 1 done!: vpinsrd_xmm_xmm_r32_imm8_30
+Execution time vpinsrd_xmm_xmm_r32_imm8_159: 63 s
+Thread 2 done!: vpinsrd_xmm_xmm_r32_imm8_159
+Execution time vpinsrd_xmm_xmm_r32_imm8_174: 63 s
+Thread 18 done!: vpinsrd_xmm_xmm_r32_imm8_174
+Execution time vpinsrd_xmm_xmm_r32_imm8_179: 63 s
+Thread 19 done!: vpinsrd_xmm_xmm_r32_imm8_179
+Execution time vpinsrd_xmm_xmm_r32_imm8_99: 63 s
+Thread 11 done!: vpinsrd_xmm_xmm_r32_imm8_99
+Execution time vpinsrd_xmm_xmm_r32_imm8_69: 63 s
+Thread 6 done!: vpinsrd_xmm_xmm_r32_imm8_69
+Execution time vpinsrd_xmm_xmm_r32_imm8_238: 64 s
+Thread 26 done!: vpinsrd_xmm_xmm_r32_imm8_238
+Execution time vpinsrd_xmm_xmm_r32_imm8_83: 64 s
+Thread 7 done!: vpinsrd_xmm_xmm_r32_imm8_83
+Execution time vpinsrd_xmm_xmm_r32_imm8_243: 64 s
+Thread 27 done!: vpinsrd_xmm_xmm_r32_imm8_243
+Execution time vpinsrd_xmm_xmm_r32_imm8_155: 64 s
+Thread 16 done!: vpinsrd_xmm_xmm_r32_imm8_155
+Execution time vpinsrd_xmm_xmm_r32_imm8_102: 64 s
+Thread 12 done!: vpinsrd_xmm_xmm_r32_imm8_102

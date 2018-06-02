@@ -1,248 +1,220 @@
 [4m[1m[34mFiring Last 27[0m
 Thread 3 start: palignr_xmm_xmm_imm8_177
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_177/palignr_xmm_xmm_imm8_177.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
-Thread 7 start: palignr_xmm_xmm_imm8_2
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_2/palignr_xmm_xmm_imm8_2.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
-Thread 4 start: palignr_xmm_xmm_imm8_198
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_198/palignr_xmm_xmm_imm8_198.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
-Thread 1 start: palignr_xmm_xmm_imm8_59
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_59/palignr_xmm_xmm_imm8_59.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
-Thread 2 start: palignr_xmm_xmm_imm8_62
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_62/palignr_xmm_xmm_imm8_62.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
-Thread 9 start: palignr_xmm_xmm_imm8_5
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_5/palignr_xmm_xmm_imm8_5.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
-Thread 8 start: palignr_xmm_xmm_imm8_3
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_3/palignr_xmm_xmm_imm8_3.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
-Thread 10 start: palignr_xmm_xmm_imm8_6
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_6/palignr_xmm_xmm_imm8_6.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
-Thread 12 start: palignr_xmm_xmm_imm8_9
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_9/palignr_xmm_xmm_imm8_9.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
-Thread 13 start: palignr_xmm_xmm_imm8_10
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_10/palignr_xmm_xmm_imm8_10.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_177/palignr_xmm_xmm_imm8_177.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
 Thread 6 start: palignr_xmm_xmm_imm8_1
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_1/palignr_xmm_xmm_imm8_1.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
-Thread 15 start: palignr_xmm_xmm_imm8_13
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_13/palignr_xmm_xmm_imm8_13.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
-Thread 17 start: palignr_xmm_xmm_imm8_15
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_15/palignr_xmm_xmm_imm8_15.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
-Thread 16 start: palignr_xmm_xmm_imm8_14
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_14/palignr_xmm_xmm_imm8_14.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_1/palignr_xmm_xmm_imm8_1.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
+Thread 10 start: palignr_xmm_xmm_imm8_6
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_6/palignr_xmm_xmm_imm8_6.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
+Thread 9 start: palignr_xmm_xmm_imm8_5
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_5/palignr_xmm_xmm_imm8_5.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
+Thread 1 start: palignr_xmm_xmm_imm8_59
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_59/palignr_xmm_xmm_imm8_59.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
+Thread 2 start: palignr_xmm_xmm_imm8_62
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_62/palignr_xmm_xmm_imm8_62.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
 Thread 5 start: palignr_xmm_xmm_imm8_229
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_229/palignr_xmm_xmm_imm8_229.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
-Thread 14 start: palignr_xmm_xmm_imm8_11
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_11/palignr_xmm_xmm_imm8_11.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
-Thread 18 start: palignr_xmm_xmm_imm8_17
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_17/palignr_xmm_xmm_imm8_17.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_229/palignr_xmm_xmm_imm8_229.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
+Thread 4 start: palignr_xmm_xmm_imm8_198
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_198/palignr_xmm_xmm_imm8_198.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
+Thread 7 start: palignr_xmm_xmm_imm8_2
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_2/palignr_xmm_xmm_imm8_2.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
+Thread 13 start: palignr_xmm_xmm_imm8_10
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_10/palignr_xmm_xmm_imm8_10.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
 Thread 11 start: palignr_xmm_xmm_imm8_7
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_7/palignr_xmm_xmm_imm8_7.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_7/palignr_xmm_xmm_imm8_7.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
+Thread 12 start: palignr_xmm_xmm_imm8_9
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_9/palignr_xmm_xmm_imm8_9.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
+Thread 14 start: palignr_xmm_xmm_imm8_11
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_11/palignr_xmm_xmm_imm8_11.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
+Thread 16 start: palignr_xmm_xmm_imm8_14
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_14/palignr_xmm_xmm_imm8_14.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
+Thread 15 start: palignr_xmm_xmm_imm8_13
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_13/palignr_xmm_xmm_imm8_13.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
+Thread 8 start: palignr_xmm_xmm_imm8_3
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_3/palignr_xmm_xmm_imm8_3.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
+Thread 17 start: palignr_xmm_xmm_imm8_15
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_15/palignr_xmm_xmm_imm8_15.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
+Thread 18 start: palignr_xmm_xmm_imm8_17
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_17/palignr_xmm_xmm_imm8_17.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
 Thread 19 start: palignr_xmm_xmm_imm8_18
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_18/palignr_xmm_xmm_imm8_18.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_18/palignr_xmm_xmm_imm8_18.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
 Thread 20 start: palignr_xmm_xmm_imm8_19
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_19/palignr_xmm_xmm_imm8_19.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_19/palignr_xmm_xmm_imm8_19.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
 Thread 21 start: palignr_xmm_xmm_imm8_21
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_21/palignr_xmm_xmm_imm8_21.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_21/palignr_xmm_xmm_imm8_21.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
 Thread 22 start: palignr_xmm_xmm_imm8_22
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_22/palignr_xmm_xmm_imm8_22.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_22/palignr_xmm_xmm_imm8_22.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
 Thread 23 start: palignr_xmm_xmm_imm8_23
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_23/palignr_xmm_xmm_imm8_23.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_23/palignr_xmm_xmm_imm8_23.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
 Thread 24 start: palignr_xmm_xmm_imm8_25
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_25/palignr_xmm_xmm_imm8_25.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_25/palignr_xmm_xmm_imm8_25.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
 Thread 25 start: palignr_xmm_xmm_imm8_26
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_26/palignr_xmm_xmm_imm8_26.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_26/palignr_xmm_xmm_imm8_26.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
 Thread 26 start: palignr_xmm_xmm_imm8_27
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_27/palignr_xmm_xmm_imm8_27.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_27/palignr_xmm_xmm_imm8_27.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
 Thread 27 start: palignr_xmm_xmm_imm8_29
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_29/palignr_xmm_xmm_imm8_29.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/palignr_xmm_xmm_imm8/instructions/palignr_xmm_xmm_imm8_29/palignr_xmm_xmm_imm8_29.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
-Completed 2000cases
 Completed 2000cases
 Completed 2000cases
 Completed 2000cases
@@ -270,6 +242,7 @@ Completed 2000cases
 Completed 2000cases
 Completed 2000cases
 Completed 3000cases
+Completed 2000cases
 Completed 3000cases
 Completed 3000cases
 Completed 3000cases
@@ -317,6 +290,7 @@ Completed 4000cases
 Completed 4000cases
 Completed 4000cases
 Completed 4000cases
+Completed 5000cases
 Completed 4000cases
 Completed 4000cases
 Completed 4000cases
@@ -343,64 +317,90 @@ Completed 5000cases
 Completed 5000cases
 Completed 5000cases
 Completed 5000cases
+Completed 6000cases
 Completed 5000cases
 Completed 5000cases
 Completed 5000cases
 Completed 5000cases
 Completed 5000cases
 Completed 5000cases
-Completed 5000cases
 Completed 6000cases
 Completed 6000cases
 Completed 6000cases
 Completed 6000cases
 Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Thread 22 done!: palignr_xmm_xmm_imm8_22
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Thread 6 done!: palignr_xmm_xmm_imm8_1
-Completed 6000cases
-Completed 6000cases
-Thread 18 done!: palignr_xmm_xmm_imm8_17
-Thread 21 done!: palignr_xmm_xmm_imm8_21
-Thread 8 done!: palignr_xmm_xmm_imm8_3
-Thread 11 done!: palignr_xmm_xmm_imm8_7
-Thread 24 done!: palignr_xmm_xmm_imm8_25
-Thread 25 done!: palignr_xmm_xmm_imm8_26
-Thread 2 done!: palignr_xmm_xmm_imm8_62
-Thread 27 done!: palignr_xmm_xmm_imm8_29
+Execution time palignr_xmm_xmm_imm8_229: 56 s
 Thread 5 done!: palignr_xmm_xmm_imm8_229
-Thread 16 done!: palignr_xmm_xmm_imm8_14
-Thread 9 done!: palignr_xmm_xmm_imm8_5
-Thread 17 done!: palignr_xmm_xmm_imm8_15
-Thread 13 done!: palignr_xmm_xmm_imm8_10
-Thread 20 done!: palignr_xmm_xmm_imm8_19
-Thread 15 done!: palignr_xmm_xmm_imm8_13
-Thread 7 done!: palignr_xmm_xmm_imm8_2
-Thread 26 done!: palignr_xmm_xmm_imm8_27
-Thread 4 done!: palignr_xmm_xmm_imm8_198
-Thread 10 done!: palignr_xmm_xmm_imm8_6
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Execution time palignr_xmm_xmm_imm8_9: 57 s
 Thread 12 done!: palignr_xmm_xmm_imm8_9
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Execution time palignr_xmm_xmm_imm8_18: 61 s
 Thread 19 done!: palignr_xmm_xmm_imm8_18
-Thread 23 done!: palignr_xmm_xmm_imm8_23
-Thread 14 done!: palignr_xmm_xmm_imm8_11
-Thread 3 done!: palignr_xmm_xmm_imm8_177
+Execution time palignr_xmm_xmm_imm8_59: 61 s
 Thread 1 done!: palignr_xmm_xmm_imm8_59
+Execution time palignr_xmm_xmm_imm8_13: 62 s
+Thread 15 done!: palignr_xmm_xmm_imm8_13
+Execution time palignr_xmm_xmm_imm8_15: 62 s
+Thread 17 done!: palignr_xmm_xmm_imm8_15
+Execution time palignr_xmm_xmm_imm8_21: 61 s
+Thread 21 done!: palignr_xmm_xmm_imm8_21
+Execution time palignr_xmm_xmm_imm8_10: 62 s
+Thread 13 done!: palignr_xmm_xmm_imm8_10
+Execution time palignr_xmm_xmm_imm8_177: 62 s
+Thread 3 done!: palignr_xmm_xmm_imm8_177
+Execution time palignr_xmm_xmm_imm8_19: 62 s
+Thread 20 done!: palignr_xmm_xmm_imm8_19
+Execution time palignr_xmm_xmm_imm8_14: 62 s
+Thread 16 done!: palignr_xmm_xmm_imm8_14
+Execution time palignr_xmm_xmm_imm8_198: 62 s
+Thread 4 done!: palignr_xmm_xmm_imm8_198
+Execution time palignr_xmm_xmm_imm8_1: 63 s
+Thread 6 done!: palignr_xmm_xmm_imm8_1
+Execution time palignr_xmm_xmm_imm8_6: 63 s
+Thread 10 done!: palignr_xmm_xmm_imm8_6
+Execution time palignr_xmm_xmm_imm8_17: 63 s
+Thread 18 done!: palignr_xmm_xmm_imm8_17
+Execution time palignr_xmm_xmm_imm8_5: 63 s
+Thread 9 done!: palignr_xmm_xmm_imm8_5
+Execution time palignr_xmm_xmm_imm8_22: 62 s
+Thread 22 done!: palignr_xmm_xmm_imm8_22
+Execution time palignr_xmm_xmm_imm8_26: 62 s
+Thread 25 done!: palignr_xmm_xmm_imm8_26
+Execution time palignr_xmm_xmm_imm8_25: 62 s
+Thread 24 done!: palignr_xmm_xmm_imm8_25
+Execution time palignr_xmm_xmm_imm8_3: 64 s
+Thread 8 done!: palignr_xmm_xmm_imm8_3
+Execution time palignr_xmm_xmm_imm8_2: 64 s
+Thread 7 done!: palignr_xmm_xmm_imm8_2
+Execution time palignr_xmm_xmm_imm8_62: 64 s
+Thread 2 done!: palignr_xmm_xmm_imm8_62
+Execution time palignr_xmm_xmm_imm8_23: 63 s
+Thread 23 done!: palignr_xmm_xmm_imm8_23
+Execution time palignr_xmm_xmm_imm8_29: 63 s
+Thread 27 done!: palignr_xmm_xmm_imm8_29
+Execution time palignr_xmm_xmm_imm8_27: 63 s
+Thread 26 done!: palignr_xmm_xmm_imm8_27
+Execution time palignr_xmm_xmm_imm8_11: 64 s
+Thread 14 done!: palignr_xmm_xmm_imm8_11
+Execution time palignr_xmm_xmm_imm8_7: 65 s
+Thread 11 done!: palignr_xmm_xmm_imm8_7

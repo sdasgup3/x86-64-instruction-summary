@@ -1,474 +1,244 @@
-[4m[1m[34mFiring Last 50[0m
-Thread 1 start: vinsertps_xmm_xmm_xmm_imm8_9
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_9/vinsertps_xmm_xmm_xmm_imm8_9.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 6 start: vinsertps_xmm_xmm_xmm_imm8_37
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_37/vinsertps_xmm_xmm_xmm_imm8_37.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 5 start: vinsertps_xmm_xmm_xmm_imm8_36
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_36/vinsertps_xmm_xmm_xmm_imm8_36.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
+[4m[1m[34mFiring 30.[0m
 Thread 2 start: vinsertps_xmm_xmm_xmm_imm8_25
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_25/vinsertps_xmm_xmm_xmm_imm8_25.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 4 start: vinsertps_xmm_xmm_xmm_imm8_34
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_34/vinsertps_xmm_xmm_xmm_imm8_34.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_25/vinsertps_xmm_xmm_xmm_imm8_25.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
 Thread 3 start: vinsertps_xmm_xmm_xmm_imm8_27
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_27/vinsertps_xmm_xmm_xmm_imm8_27.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 8 start: vinsertps_xmm_xmm_xmm_imm8_53
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_53/vinsertps_xmm_xmm_xmm_imm8_53.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_27/vinsertps_xmm_xmm_xmm_imm8_27.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 1 start: vinsertps_xmm_xmm_xmm_imm8_9
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_9/vinsertps_xmm_xmm_xmm_imm8_9.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 6 start: vinsertps_xmm_xmm_xmm_imm8_37
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_37/vinsertps_xmm_xmm_xmm_imm8_37.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 4 start: vinsertps_xmm_xmm_xmm_imm8_34
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_34/vinsertps_xmm_xmm_xmm_imm8_34.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 5 start: vinsertps_xmm_xmm_xmm_imm8_36
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_36/vinsertps_xmm_xmm_xmm_imm8_36.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
 Thread 7 start: vinsertps_xmm_xmm_xmm_imm8_49
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_49/vinsertps_xmm_xmm_xmm_imm8_49.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 9 start: vinsertps_xmm_xmm_xmm_imm8_93
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_93/vinsertps_xmm_xmm_xmm_imm8_93.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 16 start: vinsertps_xmm_xmm_xmm_imm8_137
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_137/vinsertps_xmm_xmm_xmm_imm8_137.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 12 start: vinsertps_xmm_xmm_xmm_imm8_119
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_119/vinsertps_xmm_xmm_xmm_imm8_119.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 13 start: vinsertps_xmm_xmm_xmm_imm8_123
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_123/vinsertps_xmm_xmm_xmm_imm8_123.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 14 start: vinsertps_xmm_xmm_xmm_imm8_125
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_125/vinsertps_xmm_xmm_xmm_imm8_125.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 15 start: vinsertps_xmm_xmm_xmm_imm8_129
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_129/vinsertps_xmm_xmm_xmm_imm8_129.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_49/vinsertps_xmm_xmm_xmm_imm8_49.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 8 start: vinsertps_xmm_xmm_xmm_imm8_53
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_53/vinsertps_xmm_xmm_xmm_imm8_53.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
 Thread 10 start: vinsertps_xmm_xmm_xmm_imm8_115
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_115/vinsertps_xmm_xmm_xmm_imm8_115.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_115/vinsertps_xmm_xmm_xmm_imm8_115.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 12 start: vinsertps_xmm_xmm_xmm_imm8_119
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_119/vinsertps_xmm_xmm_xmm_imm8_119.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 13 start: vinsertps_xmm_xmm_xmm_imm8_125
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_125/vinsertps_xmm_xmm_xmm_imm8_125.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
 Thread 11 start: vinsertps_xmm_xmm_xmm_imm8_117
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_117/vinsertps_xmm_xmm_xmm_imm8_117.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 17 start: vinsertps_xmm_xmm_xmm_imm8_155
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_155/vinsertps_xmm_xmm_xmm_imm8_155.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 18 start: vinsertps_xmm_xmm_xmm_imm8_159
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_159/vinsertps_xmm_xmm_xmm_imm8_159.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 19 start: vinsertps_xmm_xmm_xmm_imm8_162
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_162/vinsertps_xmm_xmm_xmm_imm8_162.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 20 start: vinsertps_xmm_xmm_xmm_imm8_169
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_169/vinsertps_xmm_xmm_xmm_imm8_169.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 28 start: vinsertps_xmm_xmm_xmm_imm8_235
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_235/vinsertps_xmm_xmm_xmm_imm8_235.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 24 start: vinsertps_xmm_xmm_xmm_imm8_209
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_209/vinsertps_xmm_xmm_xmm_imm8_209.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 25 start: vinsertps_xmm_xmm_xmm_imm8_210
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_210/vinsertps_xmm_xmm_xmm_imm8_210.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 27 start: vinsertps_xmm_xmm_xmm_imm8_225
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_225/vinsertps_xmm_xmm_xmm_imm8_225.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 22 start: vinsertps_xmm_xmm_xmm_imm8_189
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_189/vinsertps_xmm_xmm_xmm_imm8_189.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_117/vinsertps_xmm_xmm_xmm_imm8_117.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 14 start: vinsertps_xmm_xmm_xmm_imm8_129
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_129/vinsertps_xmm_xmm_xmm_imm8_129.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 15 start: vinsertps_xmm_xmm_xmm_imm8_137
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_137/vinsertps_xmm_xmm_xmm_imm8_137.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 9 start: vinsertps_xmm_xmm_xmm_imm8_93
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_93/vinsertps_xmm_xmm_xmm_imm8_93.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 16 start: vinsertps_xmm_xmm_xmm_imm8_155
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_155/vinsertps_xmm_xmm_xmm_imm8_155.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 20 start: vinsertps_xmm_xmm_xmm_imm8_173
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_173/vinsertps_xmm_xmm_xmm_imm8_173.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 19 start: vinsertps_xmm_xmm_xmm_imm8_169
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_169/vinsertps_xmm_xmm_xmm_imm8_169.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 18 start: vinsertps_xmm_xmm_xmm_imm8_162
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_162/vinsertps_xmm_xmm_xmm_imm8_162.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 17 start: vinsertps_xmm_xmm_xmm_imm8_159
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_159/vinsertps_xmm_xmm_xmm_imm8_159.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 21 start: vinsertps_xmm_xmm_xmm_imm8_180
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_180/vinsertps_xmm_xmm_xmm_imm8_180.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
 Thread 26 start: vinsertps_xmm_xmm_xmm_imm8_217
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_217/vinsertps_xmm_xmm_xmm_imm8_217.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 21 start: vinsertps_xmm_xmm_xmm_imm8_173
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_173/vinsertps_xmm_xmm_xmm_imm8_173.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 23 start: vinsertps_xmm_xmm_xmm_imm8_201
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_201/vinsertps_xmm_xmm_xmm_imm8_201.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 29 start: vinsertps_xmm_xmm_xmm_imm8_245
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_245/vinsertps_xmm_xmm_xmm_imm8_245.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_217/vinsertps_xmm_xmm_xmm_imm8_217.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 27 start: vinsertps_xmm_xmm_xmm_imm8_225
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_225/vinsertps_xmm_xmm_xmm_imm8_225.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 28 start: vinsertps_xmm_xmm_xmm_imm8_235
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_235/vinsertps_xmm_xmm_xmm_imm8_235.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
 Thread 30 start: vinsertps_xmm_xmm_xmm_imm8_5
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_5/vinsertps_xmm_xmm_xmm_imm8_5.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 31 start: vinsertps_xmm_xmm_xmm_imm8_33
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_33/vinsertps_xmm_xmm_xmm_imm8_33.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 32 start: vinsertps_xmm_xmm_xmm_imm8_35
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_35/vinsertps_xmm_xmm_xmm_imm8_35.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 33 start: vinsertps_xmm_xmm_xmm_imm8_55
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_55/vinsertps_xmm_xmm_xmm_imm8_55.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 34 start: vinsertps_xmm_xmm_xmm_imm8_81
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_81/vinsertps_xmm_xmm_xmm_imm8_81.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 35 start: vinsertps_xmm_xmm_xmm_imm8_89
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_89/vinsertps_xmm_xmm_xmm_imm8_89.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 36 start: vinsertps_xmm_xmm_xmm_imm8_97
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_97/vinsertps_xmm_xmm_xmm_imm8_97.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 37 start: vinsertps_xmm_xmm_xmm_imm8_112
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_112/vinsertps_xmm_xmm_xmm_imm8_112.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 38 start: vinsertps_xmm_xmm_xmm_imm8_113
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_113/vinsertps_xmm_xmm_xmm_imm8_113.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 39 start: vinsertps_xmm_xmm_xmm_imm8_116
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_116/vinsertps_xmm_xmm_xmm_imm8_116.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 40 start: vinsertps_xmm_xmm_xmm_imm8_132
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_132/vinsertps_xmm_xmm_xmm_imm8_132.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 41 start: vinsertps_xmm_xmm_xmm_imm8_136
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_136/vinsertps_xmm_xmm_xmm_imm8_136.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 42 start: vinsertps_xmm_xmm_xmm_imm8_145
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_145/vinsertps_xmm_xmm_xmm_imm8_145.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 43 start: vinsertps_xmm_xmm_xmm_imm8_161
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_161/vinsertps_xmm_xmm_xmm_imm8_161.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 44 start: vinsertps_xmm_xmm_xmm_imm8_164
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_164/vinsertps_xmm_xmm_xmm_imm8_164.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 45 start: vinsertps_xmm_xmm_xmm_imm8_200
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_200/vinsertps_xmm_xmm_xmm_imm8_200.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 46 start: vinsertps_xmm_xmm_xmm_imm8_212
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_212/vinsertps_xmm_xmm_xmm_imm8_212.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 47 start: vinsertps_xmm_xmm_xmm_imm8_223
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_223/vinsertps_xmm_xmm_xmm_imm8_223.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 48 start: vinsertps_xmm_xmm_xmm_imm8_240
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_240/vinsertps_xmm_xmm_xmm_imm8_240.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 49 start: vinsertps_xmm_xmm_xmm_imm8_241
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_241/vinsertps_xmm_xmm_xmm_imm8_241.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
-Thread 50 start: vinsertps_xmm_xmm_xmm_imm8_253
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_253/vinsertps_xmm_xmm_xmm_imm8_253.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" 
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_5/vinsertps_xmm_xmm_xmm_imm8_5.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 29 start: vinsertps_xmm_xmm_xmm_imm8_245
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_245/vinsertps_xmm_xmm_xmm_imm8_245.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 22 start: vinsertps_xmm_xmm_xmm_imm8_189
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_189/vinsertps_xmm_xmm_xmm_imm8_189.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 23 start: vinsertps_xmm_xmm_xmm_imm8_201
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_201/vinsertps_xmm_xmm_xmm_imm8_201.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 24 start: vinsertps_xmm_xmm_xmm_imm8_209
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_209/vinsertps_xmm_xmm_xmm_imm8_209.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 25 start: vinsertps_xmm_xmm_xmm_imm8_210
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_210/vinsertps_xmm_xmm_xmm_imm8_210.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
-Reading the Testsuit
-Preparing Sandbox
-Run 6630 tests
-Collect Results
-Build Handler
-Check Equivalence
-Completed 1000cases
-Reading the Testsuit
-Preparing Sandbox
-Run 6630 tests
-Collect Results
-Build Handler
-Check Equivalence
-Completed 1000cases
-Reading the Testsuit
-Preparing Sandbox
-Run 6630 tests
-Collect Results
-Build Handler
-Check Equivalence
-Completed 1000cases
-Reading the Testsuit
-Preparing Sandbox
-Run 6630 tests
-Collect Results
-Build Handler
-Check Equivalence
-Completed 1000cases
-Reading the Testsuit
-Preparing Sandbox
-Run 6630 tests
-Collect Results
-Build Handler
-Check Equivalence
-Completed 1000cases
-Reading the Testsuit
-Preparing Sandbox
-Run 6630 tests
-Collect Results
-Build Handler
-Check Equivalence
-Completed 1000cases
-Reading the Testsuit
-Preparing Sandbox
-Run 6630 tests
-Collect Results
-Build Handler
-Check Equivalence
-Completed 1000cases
-Reading the Testsuit
-Preparing Sandbox
-Run 6630 tests
-Collect Results
-Build Handler
-Check Equivalence
-Completed 1000cases
-Reading the Testsuit
-Preparing Sandbox
-Run 6630 tests
-Collect Results
-Build Handler
-Check Equivalence
-Completed 1000cases
-Reading the Testsuit
-Preparing Sandbox
-Run 6630 tests
-Collect Results
-Build Handler
-Check Equivalence
-Completed 1000cases
-Reading the Testsuit
-Preparing Sandbox
-Run 6630 tests
-Collect Results
-Build Handler
-Check Equivalence
-Completed 1000cases
-Reading the Testsuit
-Preparing Sandbox
-Run 6630 tests
-Collect Results
-Build Handler
-Check Equivalence
-Completed 1000cases
-Reading the Testsuit
-Preparing Sandbox
-Run 6630 tests
-Collect Results
-Build Handler
-Check Equivalence
-Completed 1000cases
-Reading the Testsuit
-Preparing Sandbox
-Run 6630 tests
-Collect Results
-Build Handler
-Check Equivalence
-Completed 1000cases
-Reading the Testsuit
-Preparing Sandbox
-Run 6630 tests
-Collect Results
-Build Handler
-Check Equivalence
-Completed 1000cases
-Reading the Testsuit
-Preparing Sandbox
-Run 6630 tests
-Collect Results
-Build Handler
-Check Equivalence
-Completed 1000cases
-Reading the Testsuit
-Preparing Sandbox
-Run 6630 tests
-Collect Results
-Build Handler
-Check Equivalence
-Completed 1000cases
-Reading the Testsuit
-Preparing Sandbox
-Run 6630 tests
-Collect Results
-Build Handler
-Check Equivalence
-Completed 1000cases
-Reading the Testsuit
-Preparing Sandbox
-Run 6630 tests
-Collect Results
-Build Handler
-Check Equivalence
-Completed 1000cases
-Reading the Testsuit
-Preparing Sandbox
-Run 6630 tests
-Collect Results
-Build Handler
-Check Equivalence
-Completed 1000cases
-Completed 2000cases
-Completed 2000cases
-Completed 2000cases
-Completed 2000cases
-Completed 2000cases
-Completed 2000cases
-Completed 2000cases
-Completed 2000cases
-Completed 2000cases
-Completed 2000cases
-Completed 2000cases
-Completed 2000cases
-Completed 2000cases
-Completed 2000cases
-Completed 2000cases
-Completed 2000cases
-Completed 2000cases
-Completed 2000cases
-Completed 2000cases
-Completed 2000cases
 Completed 2000cases
 Completed 2000cases
 Completed 2000cases
@@ -529,46 +299,6 @@ Completed 3000cases
 Completed 3000cases
 Completed 3000cases
 Completed 3000cases
-Completed 3000cases
-Completed 3000cases
-Completed 3000cases
-Completed 3000cases
-Completed 3000cases
-Completed 3000cases
-Completed 3000cases
-Completed 3000cases
-Completed 3000cases
-Completed 3000cases
-Completed 3000cases
-Completed 3000cases
-Completed 3000cases
-Completed 3000cases
-Completed 3000cases
-Completed 3000cases
-Completed 3000cases
-Completed 3000cases
-Completed 3000cases
-Completed 3000cases
-Completed 4000cases
-Completed 4000cases
-Completed 4000cases
-Completed 4000cases
-Completed 4000cases
-Completed 4000cases
-Completed 4000cases
-Completed 4000cases
-Completed 4000cases
-Completed 4000cases
-Completed 4000cases
-Completed 4000cases
-Completed 4000cases
-Completed 4000cases
-Completed 4000cases
-Completed 4000cases
-Completed 4000cases
-Completed 4000cases
-Completed 4000cases
-Completed 4000cases
 Completed 4000cases
 Completed 4000cases
 Completed 4000cases
@@ -629,26 +359,6 @@ Completed 5000cases
 Completed 5000cases
 Completed 5000cases
 Completed 5000cases
-Completed 5000cases
-Completed 5000cases
-Completed 5000cases
-Completed 5000cases
-Completed 5000cases
-Completed 5000cases
-Completed 5000cases
-Completed 5000cases
-Completed 5000cases
-Completed 5000cases
-Completed 5000cases
-Completed 5000cases
-Completed 5000cases
-Completed 5000cases
-Completed 5000cases
-Completed 5000cases
-Completed 5000cases
-Completed 5000cases
-Completed 5000cases
-Completed 5000cases
 Completed 6000cases
 Completed 6000cases
 Completed 6000cases
@@ -660,92 +370,383 @@ Completed 6000cases
 Completed 6000cases
 Completed 6000cases
 Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Thread 12 done!: vinsertps_xmm_xmm_xmm_imm8_119
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Completed 6000cases
-Thread 17 done!: vinsertps_xmm_xmm_xmm_imm8_155
-Completed 6000cases
-Thread 36 done!: vinsertps_xmm_xmm_xmm_imm8_97
-Thread 40 done!: vinsertps_xmm_xmm_xmm_imm8_132
-Thread 1 done!: vinsertps_xmm_xmm_xmm_imm8_9
-Thread 14 done!: vinsertps_xmm_xmm_xmm_imm8_125
-Thread 19 done!: vinsertps_xmm_xmm_xmm_imm8_162
-Thread 31 done!: vinsertps_xmm_xmm_xmm_imm8_33
-Thread 22 done!: vinsertps_xmm_xmm_xmm_imm8_189
-Thread 9 done!: vinsertps_xmm_xmm_xmm_imm8_93
-Thread 5 done!: vinsertps_xmm_xmm_xmm_imm8_36
-Thread 6 done!: vinsertps_xmm_xmm_xmm_imm8_37
-Thread 24 done!: vinsertps_xmm_xmm_xmm_imm8_209
-Thread 7 done!: vinsertps_xmm_xmm_xmm_imm8_49
-Thread 15 done!: vinsertps_xmm_xmm_xmm_imm8_129
-Thread 32 done!: vinsertps_xmm_xmm_xmm_imm8_35
-Thread 21 done!: vinsertps_xmm_xmm_xmm_imm8_173
-Thread 50 done!: vinsertps_xmm_xmm_xmm_imm8_253
-Thread 27 done!: vinsertps_xmm_xmm_xmm_imm8_225
-Thread 28 done!: vinsertps_xmm_xmm_xmm_imm8_235
-Thread 35 done!: vinsertps_xmm_xmm_xmm_imm8_89
-Thread 37 done!: vinsertps_xmm_xmm_xmm_imm8_112
-Thread 29 done!: vinsertps_xmm_xmm_xmm_imm8_245
-Thread 2 done!: vinsertps_xmm_xmm_xmm_imm8_25
-Thread 30 done!: vinsertps_xmm_xmm_xmm_imm8_5
-Thread 49 done!: vinsertps_xmm_xmm_xmm_imm8_241
-Thread 45 done!: vinsertps_xmm_xmm_xmm_imm8_200
-Thread 46 done!: vinsertps_xmm_xmm_xmm_imm8_212
-Thread 47 done!: vinsertps_xmm_xmm_xmm_imm8_223
-Thread 18 done!: vinsertps_xmm_xmm_xmm_imm8_159
-Thread 11 done!: vinsertps_xmm_xmm_xmm_imm8_117
-Thread 20 done!: vinsertps_xmm_xmm_xmm_imm8_169
-Thread 39 done!: vinsertps_xmm_xmm_xmm_imm8_116
-Thread 3 done!: vinsertps_xmm_xmm_xmm_imm8_27
-Thread 4 done!: vinsertps_xmm_xmm_xmm_imm8_34
-Thread 43 done!: vinsertps_xmm_xmm_xmm_imm8_161
+Execution time vinsertps_xmm_xmm_xmm_imm8_210: 104 s
 Thread 25 done!: vinsertps_xmm_xmm_xmm_imm8_210
-Thread 10 done!: vinsertps_xmm_xmm_xmm_imm8_115
-Thread 16 done!: vinsertps_xmm_xmm_xmm_imm8_137
-Thread 33 done!: vinsertps_xmm_xmm_xmm_imm8_55
-Thread 13 done!: vinsertps_xmm_xmm_xmm_imm8_123
-Thread 23 done!: vinsertps_xmm_xmm_xmm_imm8_201
-Thread 38 done!: vinsertps_xmm_xmm_xmm_imm8_113
-Thread 44 done!: vinsertps_xmm_xmm_xmm_imm8_164
-Thread 8 done!: vinsertps_xmm_xmm_xmm_imm8_53
-Thread 48 done!: vinsertps_xmm_xmm_xmm_imm8_240
+Execution time vinsertps_xmm_xmm_xmm_imm8_129: 105 s
+Thread 14 done!: vinsertps_xmm_xmm_xmm_imm8_129
+Completed 6000cases
+Execution time vinsertps_xmm_xmm_xmm_imm8_173: 105 s
+Thread 20 done!: vinsertps_xmm_xmm_xmm_imm8_173
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Execution time vinsertps_xmm_xmm_xmm_imm8_217: 110 s
 Thread 26 done!: vinsertps_xmm_xmm_xmm_imm8_217
-Thread 41 done!: vinsertps_xmm_xmm_xmm_imm8_136
-Thread 42 done!: vinsertps_xmm_xmm_xmm_imm8_145
+Completed 6000cases
+Execution time vinsertps_xmm_xmm_xmm_imm8_209: 111 s
+Thread 24 done!: vinsertps_xmm_xmm_xmm_imm8_209
+Execution time vinsertps_xmm_xmm_xmm_imm8_119: 112 s
+Thread 12 done!: vinsertps_xmm_xmm_xmm_imm8_119
+Execution time vinsertps_xmm_xmm_xmm_imm8_25: 112 s
+Thread 2 done!: vinsertps_xmm_xmm_xmm_imm8_25
+Execution time vinsertps_xmm_xmm_xmm_imm8_201: 113 s
+Thread 23 done!: vinsertps_xmm_xmm_xmm_imm8_201
+Execution time vinsertps_xmm_xmm_xmm_imm8_125: 113 s
+Thread 13 done!: vinsertps_xmm_xmm_xmm_imm8_125
+Execution time vinsertps_xmm_xmm_xmm_imm8_180: 113 s
+Thread 21 done!: vinsertps_xmm_xmm_xmm_imm8_180
+Execution time vinsertps_xmm_xmm_xmm_imm8_162: 113 s
+Thread 18 done!: vinsertps_xmm_xmm_xmm_imm8_162
+Execution time vinsertps_xmm_xmm_xmm_imm8_115: 114 s
+Thread 10 done!: vinsertps_xmm_xmm_xmm_imm8_115
+Execution time vinsertps_xmm_xmm_xmm_imm8_189: 114 s
+Thread 22 done!: vinsertps_xmm_xmm_xmm_imm8_189
+Execution time vinsertps_xmm_xmm_xmm_imm8_235: 115 s
+Thread 28 done!: vinsertps_xmm_xmm_xmm_imm8_235
+Execution time vinsertps_xmm_xmm_xmm_imm8_37: 115 s
+Thread 6 done!: vinsertps_xmm_xmm_xmm_imm8_37
+Execution time vinsertps_xmm_xmm_xmm_imm8_245: 115 s
+Thread 29 done!: vinsertps_xmm_xmm_xmm_imm8_245
+Execution time vinsertps_xmm_xmm_xmm_imm8_36: 115 s
+Thread 5 done!: vinsertps_xmm_xmm_xmm_imm8_36
+Execution time vinsertps_xmm_xmm_xmm_imm8_27: 115 s
+Thread 3 done!: vinsertps_xmm_xmm_xmm_imm8_27
+Execution time vinsertps_xmm_xmm_xmm_imm8_49: 115 s
+Thread 7 done!: vinsertps_xmm_xmm_xmm_imm8_49
+Execution time vinsertps_xmm_xmm_xmm_imm8_155: 116 s
+Thread 16 done!: vinsertps_xmm_xmm_xmm_imm8_155
+Execution time vinsertps_xmm_xmm_xmm_imm8_169: 116 s
+Thread 19 done!: vinsertps_xmm_xmm_xmm_imm8_169
+Execution time vinsertps_xmm_xmm_xmm_imm8_159: 116 s
+Thread 17 done!: vinsertps_xmm_xmm_xmm_imm8_159
+Execution time vinsertps_xmm_xmm_xmm_imm8_9: 116 s
+Thread 1 done!: vinsertps_xmm_xmm_xmm_imm8_9
+Execution time vinsertps_xmm_xmm_xmm_imm8_117: 117 s
+Thread 11 done!: vinsertps_xmm_xmm_xmm_imm8_117
+Execution time vinsertps_xmm_xmm_xmm_imm8_93: 117 s
+Thread 9 done!: vinsertps_xmm_xmm_xmm_imm8_93
+Execution time vinsertps_xmm_xmm_xmm_imm8_5: 117 s
+Thread 30 done!: vinsertps_xmm_xmm_xmm_imm8_5
+Execution time vinsertps_xmm_xmm_xmm_imm8_137: 117 s
+Thread 15 done!: vinsertps_xmm_xmm_xmm_imm8_137
+Execution time vinsertps_xmm_xmm_xmm_imm8_53: 117 s
+Thread 8 done!: vinsertps_xmm_xmm_xmm_imm8_53
+Execution time vinsertps_xmm_xmm_xmm_imm8_225: 117 s
+Thread 27 done!: vinsertps_xmm_xmm_xmm_imm8_225
+Execution time vinsertps_xmm_xmm_xmm_imm8_34: 118 s
+Thread 4 done!: vinsertps_xmm_xmm_xmm_imm8_34
+[4m[1m[34mFiring Last 20[0m
+Thread 31 start: vinsertps_xmm_xmm_xmm_imm8_33
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_33/vinsertps_xmm_xmm_xmm_imm8_33.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 32 start: vinsertps_xmm_xmm_xmm_imm8_35
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_35/vinsertps_xmm_xmm_xmm_imm8_35.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 33 start: vinsertps_xmm_xmm_xmm_imm8_55
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_55/vinsertps_xmm_xmm_xmm_imm8_55.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 35 start: vinsertps_xmm_xmm_xmm_imm8_89
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_89/vinsertps_xmm_xmm_xmm_imm8_89.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 36 start: vinsertps_xmm_xmm_xmm_imm8_97
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_97/vinsertps_xmm_xmm_xmm_imm8_97.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 34 start: vinsertps_xmm_xmm_xmm_imm8_81
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_81/vinsertps_xmm_xmm_xmm_imm8_81.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 37 start: vinsertps_xmm_xmm_xmm_imm8_112
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_112/vinsertps_xmm_xmm_xmm_imm8_112.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 38 start: vinsertps_xmm_xmm_xmm_imm8_113
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_113/vinsertps_xmm_xmm_xmm_imm8_113.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 39 start: vinsertps_xmm_xmm_xmm_imm8_116
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_116/vinsertps_xmm_xmm_xmm_imm8_116.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 40 start: vinsertps_xmm_xmm_xmm_imm8_132
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_132/vinsertps_xmm_xmm_xmm_imm8_132.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 41 start: vinsertps_xmm_xmm_xmm_imm8_136
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_136/vinsertps_xmm_xmm_xmm_imm8_136.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 43 start: vinsertps_xmm_xmm_xmm_imm8_161
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_161/vinsertps_xmm_xmm_xmm_imm8_161.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 42 start: vinsertps_xmm_xmm_xmm_imm8_145
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_145/vinsertps_xmm_xmm_xmm_imm8_145.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 44 start: vinsertps_xmm_xmm_xmm_imm8_164
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_164/vinsertps_xmm_xmm_xmm_imm8_164.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 45 start: vinsertps_xmm_xmm_xmm_imm8_200
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_200/vinsertps_xmm_xmm_xmm_imm8_200.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 46 start: vinsertps_xmm_xmm_xmm_imm8_212
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_212/vinsertps_xmm_xmm_xmm_imm8_212.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 47 start: vinsertps_xmm_xmm_xmm_imm8_223
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_223/vinsertps_xmm_xmm_xmm_imm8_223.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 48 start: vinsertps_xmm_xmm_xmm_imm8_240
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_240/vinsertps_xmm_xmm_xmm_imm8_240.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 49 start: vinsertps_xmm_xmm_xmm_imm8_241
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_241/vinsertps_xmm_xmm_xmm_imm8_241.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Thread 50 start: vinsertps_xmm_xmm_xmm_imm8_253
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/vinsertps_xmm_xmm_xmm_imm8/instructions/vinsertps_xmm_xmm_xmm_imm8_253/vinsertps_xmm_xmm_xmm_imm8_253.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 %xmm3 }" --live_out "{ %ymm1 %xmm2 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Execution time vinsertps_xmm_xmm_xmm_imm8_97: 80 s
+Thread 36 done!: vinsertps_xmm_xmm_xmm_imm8_97
+Execution time vinsertps_xmm_xmm_xmm_imm8_113: 80 s
+Thread 38 done!: vinsertps_xmm_xmm_xmm_imm8_113
+Execution time vinsertps_xmm_xmm_xmm_imm8_81: 81 s
 Thread 34 done!: vinsertps_xmm_xmm_xmm_imm8_81
+Execution time vinsertps_xmm_xmm_xmm_imm8_223: 81 s
+Thread 47 done!: vinsertps_xmm_xmm_xmm_imm8_223
+Execution time vinsertps_xmm_xmm_xmm_imm8_164: 81 s
+Thread 44 done!: vinsertps_xmm_xmm_xmm_imm8_164
+Execution time vinsertps_xmm_xmm_xmm_imm8_33: 81 s
+Thread 31 done!: vinsertps_xmm_xmm_xmm_imm8_33
+Execution time vinsertps_xmm_xmm_xmm_imm8_161: 81 s
+Thread 43 done!: vinsertps_xmm_xmm_xmm_imm8_161
+Execution time vinsertps_xmm_xmm_xmm_imm8_89: 81 s
+Thread 35 done!: vinsertps_xmm_xmm_xmm_imm8_89
+Execution time vinsertps_xmm_xmm_xmm_imm8_241: 81 s
+Thread 49 done!: vinsertps_xmm_xmm_xmm_imm8_241
+Completed 6000cases
+Execution time vinsertps_xmm_xmm_xmm_imm8_55: 84 s
+Thread 33 done!: vinsertps_xmm_xmm_xmm_imm8_55
+Execution time vinsertps_xmm_xmm_xmm_imm8_132: 85 s
+Thread 40 done!: vinsertps_xmm_xmm_xmm_imm8_132
+Execution time vinsertps_xmm_xmm_xmm_imm8_212: 86 s
+Thread 46 done!: vinsertps_xmm_xmm_xmm_imm8_212
+Execution time vinsertps_xmm_xmm_xmm_imm8_35: 86 s
+Thread 32 done!: vinsertps_xmm_xmm_xmm_imm8_35
+Execution time vinsertps_xmm_xmm_xmm_imm8_116: 87 s
+Thread 39 done!: vinsertps_xmm_xmm_xmm_imm8_116
+Execution time vinsertps_xmm_xmm_xmm_imm8_253: 87 s
+Thread 50 done!: vinsertps_xmm_xmm_xmm_imm8_253
+Execution time vinsertps_xmm_xmm_xmm_imm8_240: 87 s
+Thread 48 done!: vinsertps_xmm_xmm_xmm_imm8_240
+Execution time vinsertps_xmm_xmm_xmm_imm8_145: 87 s
+Thread 42 done!: vinsertps_xmm_xmm_xmm_imm8_145
+Execution time vinsertps_xmm_xmm_xmm_imm8_136: 87 s
+Thread 41 done!: vinsertps_xmm_xmm_xmm_imm8_136
+Execution time vinsertps_xmm_xmm_xmm_imm8_112: 87 s
+Thread 37 done!: vinsertps_xmm_xmm_xmm_imm8_112
+Execution time vinsertps_xmm_xmm_xmm_imm8_200: 88 s
+Thread 45 done!: vinsertps_xmm_xmm_xmm_imm8_200

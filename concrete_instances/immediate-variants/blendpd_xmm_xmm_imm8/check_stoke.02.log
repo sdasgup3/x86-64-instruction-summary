@@ -1,137 +1,122 @@
 [4m[1m[34mFiring Last 15[0m
-Thread 1 start: blendpd_xmm_xmm_imm8_18
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/blendpd_xmm_xmm_imm8/instructions/blendpd_xmm_xmm_imm8_18/blendpd_xmm_xmm_imm8_18.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
 Thread 2 start: blendpd_xmm_xmm_imm8_26
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/blendpd_xmm_xmm_imm8/instructions/blendpd_xmm_xmm_imm8_26/blendpd_xmm_xmm_imm8_26.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/blendpd_xmm_xmm_imm8/instructions/blendpd_xmm_xmm_imm8_26/blendpd_xmm_xmm_imm8_26.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
+Thread 1 start: blendpd_xmm_xmm_imm8_18
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/blendpd_xmm_xmm_imm8/instructions/blendpd_xmm_xmm_imm8_18/blendpd_xmm_xmm_imm8_18.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
 Thread 3 start: blendpd_xmm_xmm_imm8_45
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/blendpd_xmm_xmm_imm8/instructions/blendpd_xmm_xmm_imm8_45/blendpd_xmm_xmm_imm8_45.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/blendpd_xmm_xmm_imm8/instructions/blendpd_xmm_xmm_imm8_45/blendpd_xmm_xmm_imm8_45.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
 Thread 4 start: blendpd_xmm_xmm_imm8_47
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/blendpd_xmm_xmm_imm8/instructions/blendpd_xmm_xmm_imm8_47/blendpd_xmm_xmm_imm8_47.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
-Thread 6 start: blendpd_xmm_xmm_imm8_58
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/blendpd_xmm_xmm_imm8/instructions/blendpd_xmm_xmm_imm8_58/blendpd_xmm_xmm_imm8_58.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
-Thread 5 start: blendpd_xmm_xmm_imm8_54
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/blendpd_xmm_xmm_imm8/instructions/blendpd_xmm_xmm_imm8_54/blendpd_xmm_xmm_imm8_54.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
-Thread 7 start: blendpd_xmm_xmm_imm8_90
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/blendpd_xmm_xmm_imm8/instructions/blendpd_xmm_xmm_imm8_90/blendpd_xmm_xmm_imm8_90.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/blendpd_xmm_xmm_imm8/instructions/blendpd_xmm_xmm_imm8_47/blendpd_xmm_xmm_imm8_47.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
 Thread 8 start: blendpd_xmm_xmm_imm8_110
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/blendpd_xmm_xmm_imm8/instructions/blendpd_xmm_xmm_imm8_110/blendpd_xmm_xmm_imm8_110.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
-Thread 10 start: blendpd_xmm_xmm_imm8_126
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/blendpd_xmm_xmm_imm8/instructions/blendpd_xmm_xmm_imm8_126/blendpd_xmm_xmm_imm8_126.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/blendpd_xmm_xmm_imm8/instructions/blendpd_xmm_xmm_imm8_110/blendpd_xmm_xmm_imm8_110.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
 Thread 9 start: blendpd_xmm_xmm_imm8_114
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/blendpd_xmm_xmm_imm8/instructions/blendpd_xmm_xmm_imm8_114/blendpd_xmm_xmm_imm8_114.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/blendpd_xmm_xmm_imm8/instructions/blendpd_xmm_xmm_imm8_114/blendpd_xmm_xmm_imm8_114.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
+Thread 10 start: blendpd_xmm_xmm_imm8_126
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/blendpd_xmm_xmm_imm8/instructions/blendpd_xmm_xmm_imm8_126/blendpd_xmm_xmm_imm8_126.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
 Thread 11 start: blendpd_xmm_xmm_imm8_142
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/blendpd_xmm_xmm_imm8/instructions/blendpd_xmm_xmm_imm8_142/blendpd_xmm_xmm_imm8_142.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/blendpd_xmm_xmm_imm8/instructions/blendpd_xmm_xmm_imm8_142/blendpd_xmm_xmm_imm8_142.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
+Thread 6 start: blendpd_xmm_xmm_imm8_58
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/blendpd_xmm_xmm_imm8/instructions/blendpd_xmm_xmm_imm8_58/blendpd_xmm_xmm_imm8_58.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
+Thread 7 start: blendpd_xmm_xmm_imm8_90
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/blendpd_xmm_xmm_imm8/instructions/blendpd_xmm_xmm_imm8_90/blendpd_xmm_xmm_imm8_90.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
+Thread 5 start: blendpd_xmm_xmm_imm8_54
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/blendpd_xmm_xmm_imm8/instructions/blendpd_xmm_xmm_imm8_54/blendpd_xmm_xmm_imm8_54.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
 Thread 12 start: blendpd_xmm_xmm_imm8_174
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/blendpd_xmm_xmm_imm8/instructions/blendpd_xmm_xmm_imm8_174/blendpd_xmm_xmm_imm8_174.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
-Thread 15 start: blendpd_xmm_xmm_imm8_253
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/blendpd_xmm_xmm_imm8/instructions/blendpd_xmm_xmm_imm8_253/blendpd_xmm_xmm_imm8_253.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
-Thread 14 start: blendpd_xmm_xmm_imm8_223
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/blendpd_xmm_xmm_imm8/instructions/blendpd_xmm_xmm_imm8_223/blendpd_xmm_xmm_imm8_223.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/blendpd_xmm_xmm_imm8/instructions/blendpd_xmm_xmm_imm8_174/blendpd_xmm_xmm_imm8_174.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
 Thread 13 start: blendpd_xmm_xmm_imm8_196
-/home/sdasgup3/TYLER/strata/stoke/./bin/stoke_check_circuit --target imm_instructions/blendpd_xmm_xmm_imm8/instructions/blendpd_xmm_xmm_imm8_196/blendpd_xmm_xmm_imm8_196.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" 
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/blendpd_xmm_xmm_imm8/instructions/blendpd_xmm_xmm_imm8_196/blendpd_xmm_xmm_imm8_196.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
+Thread 15 start: blendpd_xmm_xmm_imm8_253
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/blendpd_xmm_xmm_imm8/instructions/blendpd_xmm_xmm_imm8_253/blendpd_xmm_xmm_imm8_253.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
+Thread 14 start: blendpd_xmm_xmm_imm8_223
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/blendpd_xmm_xmm_imm8/instructions/blendpd_xmm_xmm_imm8_223/blendpd_xmm_xmm_imm8_223.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
-Build Handler
 Check Equivalence
 Completed 1000cases
 Completed 2000cases
@@ -209,18 +194,33 @@ Completed 6000cases
 Completed 6000cases
 Completed 6000cases
 Completed 6000cases
-Thread 11 done!: blendpd_xmm_xmm_imm8_142
-Thread 13 done!: blendpd_xmm_xmm_imm8_196
-Thread 2 done!: blendpd_xmm_xmm_imm8_26
-Thread 4 done!: blendpd_xmm_xmm_imm8_47
-Thread 9 done!: blendpd_xmm_xmm_imm8_114
-Thread 7 done!: blendpd_xmm_xmm_imm8_90
-Thread 15 done!: blendpd_xmm_xmm_imm8_253
-Thread 6 done!: blendpd_xmm_xmm_imm8_58
-Thread 5 done!: blendpd_xmm_xmm_imm8_54
-Thread 10 done!: blendpd_xmm_xmm_imm8_126
+Execution time blendpd_xmm_xmm_imm8_110: 47 s
 Thread 8 done!: blendpd_xmm_xmm_imm8_110
-Thread 1 done!: blendpd_xmm_xmm_imm8_18
-Thread 14 done!: blendpd_xmm_xmm_imm8_223
-Thread 3 done!: blendpd_xmm_xmm_imm8_45
+Execution time blendpd_xmm_xmm_imm8_58: 47 s
+Thread 6 done!: blendpd_xmm_xmm_imm8_58
+Execution time blendpd_xmm_xmm_imm8_174: 47 s
 Thread 12 done!: blendpd_xmm_xmm_imm8_174
+Execution time blendpd_xmm_xmm_imm8_126: 47 s
+Thread 10 done!: blendpd_xmm_xmm_imm8_126
+Execution time blendpd_xmm_xmm_imm8_114: 47 s
+Thread 9 done!: blendpd_xmm_xmm_imm8_114
+Execution time blendpd_xmm_xmm_imm8_142: 47 s
+Thread 11 done!: blendpd_xmm_xmm_imm8_142
+Execution time blendpd_xmm_xmm_imm8_90: 47 s
+Thread 7 done!: blendpd_xmm_xmm_imm8_90
+Execution time blendpd_xmm_xmm_imm8_196: 47 s
+Thread 13 done!: blendpd_xmm_xmm_imm8_196
+Execution time blendpd_xmm_xmm_imm8_47: 48 s
+Thread 4 done!: blendpd_xmm_xmm_imm8_47
+Execution time blendpd_xmm_xmm_imm8_26: 48 s
+Thread 2 done!: blendpd_xmm_xmm_imm8_26
+Execution time blendpd_xmm_xmm_imm8_54: 48 s
+Thread 5 done!: blendpd_xmm_xmm_imm8_54
+Execution time blendpd_xmm_xmm_imm8_45: 48 s
+Thread 3 done!: blendpd_xmm_xmm_imm8_45
+Execution time blendpd_xmm_xmm_imm8_223: 48 s
+Thread 14 done!: blendpd_xmm_xmm_imm8_223
+Execution time blendpd_xmm_xmm_imm8_253: 48 s
+Thread 15 done!: blendpd_xmm_xmm_imm8_253
+Execution time blendpd_xmm_xmm_imm8_18: 48 s
+Thread 1 done!: blendpd_xmm_xmm_imm8_18

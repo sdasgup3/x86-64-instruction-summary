@@ -1,11 +1,76 @@
 [4m[1m[34mFiring Last 5[0m
-Thread 1 terminated abnormally: Can't open imm_instructions/insertps_xmm_xmm_imm8/instructions/insertps_xmm_xmm_imm8_82/insertps_xmm_xmm_imm8_82.meta.json: No such file or directory at /home/sdasgup3/x86-semantics/scripts/process_spec.pl line 580, <$fp> line 5.
-Thread 1 start: insertps_xmm_xmm_imm8_82
-Thread 2 terminated abnormally: Can't open imm_instructions/insertps_xmm_xmm_imm8/instructions/insertps_xmm_xmm_imm8_99/insertps_xmm_xmm_imm8_99.meta.json: No such file or directory at /home/sdasgup3/x86-semantics/scripts/process_spec.pl line 580, <$fp> line 5.
-Thread 2 start: insertps_xmm_xmm_imm8_99
-Thread 3 terminated abnormally: Can't open imm_instructions/insertps_xmm_xmm_imm8/instructions/insertps_xmm_xmm_imm8_105/insertps_xmm_xmm_imm8_105.meta.json: No such file or directory at /home/sdasgup3/x86-semantics/scripts/process_spec.pl line 580, <$fp> line 5.
-Thread 3 start: insertps_xmm_xmm_imm8_105
-Thread 4 terminated abnormally: Can't open imm_instructions/insertps_xmm_xmm_imm8/instructions/insertps_xmm_xmm_imm8_162/insertps_xmm_xmm_imm8_162.meta.json: No such file or directory at /home/sdasgup3/x86-semantics/scripts/process_spec.pl line 580, <$fp> line 5.
-Thread 4 start: insertps_xmm_xmm_imm8_162
-Thread 5 terminated abnormally: Can't open imm_instructions/insertps_xmm_xmm_imm8/instructions/insertps_xmm_xmm_imm8_96/insertps_xmm_xmm_imm8_96.meta.json: No such file or directory at /home/sdasgup3/x86-semantics/scripts/process_spec.pl line 580, <$fp> line 5.
+Thread 2 start: insertps_xmm_xmm_imm8_105
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/insertps_xmm_xmm_imm8/instructions/insertps_xmm_xmm_imm8_105/insertps_xmm_xmm_imm8_105.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
+Thread 3 start: insertps_xmm_xmm_imm8_132
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/insertps_xmm_xmm_imm8/instructions/insertps_xmm_xmm_imm8_132/insertps_xmm_xmm_imm8_132.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
 Thread 5 start: insertps_xmm_xmm_imm8_96
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/insertps_xmm_xmm_imm8/instructions/insertps_xmm_xmm_imm8_96/insertps_xmm_xmm_imm8_96.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
+Thread 4 start: insertps_xmm_xmm_imm8_162
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/insertps_xmm_xmm_imm8/instructions/insertps_xmm_xmm_imm8_162/insertps_xmm_xmm_imm8_162.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
+Thread 1 start: insertps_xmm_xmm_imm8_82
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/immediate-variants/insertps_xmm_xmm_imm8/instructions/insertps_xmm_xmm_imm8_82/insertps_xmm_xmm_imm8_82.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases /home/sdasgup3/Github/strata-data/data-regs/testcases.tc --def_in "{ %xmm1 %xmm2 }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 2000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 3000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 4000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 5000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Completed 6000cases
+Execution time insertps_xmm_xmm_imm8_82: 41 s
+Thread 1 done!: insertps_xmm_xmm_imm8_82
+Execution time insertps_xmm_xmm_imm8_162: 42 s
+Thread 4 done!: insertps_xmm_xmm_imm8_162
+Execution time insertps_xmm_xmm_imm8_96: 42 s
+Thread 5 done!: insertps_xmm_xmm_imm8_96
+Execution time insertps_xmm_xmm_imm8_105: 42 s
+Thread 2 done!: insertps_xmm_xmm_imm8_105
+Execution time insertps_xmm_xmm_imm8_132: 43 s
+Thread 3 done!: insertps_xmm_xmm_imm8_132
