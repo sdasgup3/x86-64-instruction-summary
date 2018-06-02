@@ -25,8 +25,7 @@ grep "^sat" ~/Junk/log
 | Id  | Instr Category  | Date  | Purpose  | Count   | Input | Output | Command |
 |--|--|--|--|--|--|--|--|
 | 09 | Mmeory | 2 Jun | check stoke | 1312:Generalized by registers (Generalized either from strata or stoke). The immediates are all instantiated with zero. That said the check_stoke.txt has only single instr | job.09 |runlog.09 | 09 |
-| 10 | Mmeory | 2 Jun | check stoke | 45 (55 -10 which we are not implemented):
-  All these are manually implemented. No Immediates | job.10 |runlog.10 | 10 |
+| 10 | Mmeory | 2 Jun | check stoke | 45 (55 -10 which we are not implemented). All these are manually implemented. No Immediates | job.10 |runlog.10 | 10 |
 
 ### Commands
 ```
