@@ -1,6 +1,7 @@
 {
   "def_in": "{ %rcx %rbx }",
   "live_out": "{ }",
+  "maybe_undef_out": "{ }",
   "def_in_formal": "{ %rcx %rbx }",
   "live_out_formal": "{ }",
   "search_without_uif": false,
