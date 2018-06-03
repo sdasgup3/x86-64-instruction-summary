@@ -26,6 +26,7 @@ grep "^sat" ~/Junk/log
 |--|--|--|--|--|--|--|--|
 | 09 | Mmeory | 2 Jun | check stoke | 1312:Generalized by registers (Generalized either from strata or stoke). The immediates are all instantiated with zero. That said the check_stoke.txt has only single instr | job.09 |runlog.09 | 09 |
 | 10 | Mmeory | 2 Jun | check stoke | 45 (55 -10 which we are not implemented). All these are manually implemented. No Immediates | job.10 |runlog.10 | 10 |
+| 17 | Mmeory | 3 Jun | check stoke | 203 Memory containing imm operands (216) - (not supported or manually added) | job.17 |runlog.17 | 17 |
 
 ### Commands
 
@@ -42,6 +43,14 @@ parallel -j30  -a nightlyruns/job.09  "~/x86-semantics/scripts/process_spec.pl -
 10.
 ```
 parallel -j30  -a nightlyruns/job.10  "~/x86-semantics/scripts/process_spec.pl --check_stoke --file concrete_instances/memory-variants/{}/check_stoke.09.txt --instructions_path concrete_instances/memory-variants/{}/instructions --use_updated_tc --testid 10  |& tee concrete_instances/memory-variants/{}/check_stoke.09.log" |& tee nightlyruns/runlog.10
+```
+
+17.
+```
+// Create the instruction directory for 255 imm variants. Do not run this again as its already generated.
+parallel -a nightlyruns/job.17  "~/x86-semantics/scripts/process_spec.pl --prepare_concrete_mem --opcode {} --workdir concrete_instances/memory-variants/{}"
+
+parallel -j1  -a nightlyruns/job.17  "~/x86-semantics/scripts/process_spec.pl --check_stoke --file concrete_instances/memory-variants/{}/check_stoke.17.txt --instructions_path concrete_instances/memory-variants/{}/instructions --use_updated_tc --testid 09  |& tee concrete_instances/memory-variants/{}/check_stoke.11.log" |& tee nightlyruns/runlog.11
 ```
 
 
