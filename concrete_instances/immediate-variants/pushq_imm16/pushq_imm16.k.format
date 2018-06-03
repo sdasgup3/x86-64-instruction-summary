@@ -14,7 +14,7 @@ Formula:
 
 Information about memory writes:
   Address subMInt( %rsp, mi(64, 8)) was updated to
-    mi(64, svalueMInt(Imm16)) (8 bytes).
+    Value mi(64, svalueMInt(Imm16)) (8 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus
