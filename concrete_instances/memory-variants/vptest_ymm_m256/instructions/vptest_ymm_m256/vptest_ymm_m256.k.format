@@ -1,0 +1,26 @@
+code: vptest (%rbx), %ymm1
+
+  maybe read:      { %rbx %ymm1 }
+  must read:       { %rbx %ymm1 }
+  maybe write:     { %cf %pf %af %zf %sf %of }
+  must write:      { %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%cf    : (#ifMInt eqMInt( andMInt( negMInt( %ymm1), TMP_BV_256_0), mi(256, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
+%pf    : mi(1, 0)
+%af    : mi(1, 0)
+%zf    : (#ifMInt eqMInt( andMInt( %ymm1, TMP_BV_256_0), mi(256, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : mi(1, 0)
+%of    : mi(1, 0)
+
+Information about memory reads:
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

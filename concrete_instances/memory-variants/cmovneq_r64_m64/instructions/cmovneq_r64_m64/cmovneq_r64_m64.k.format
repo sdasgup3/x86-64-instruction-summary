@@ -1,0 +1,21 @@
+code: cmovneq (%rcx), %rbx
+
+  maybe read:      { %rcx %zf }
+  must read:       { %rcx %zf }
+  maybe write:     { %rbx }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { cmov }
+
+Formula:
+
+%rbx   : (#ifMInt (notBool %zf) #then TMP_BV_64_0 #else %rbx #fi)
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rcx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

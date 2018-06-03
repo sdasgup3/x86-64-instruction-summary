@@ -1,0 +1,26 @@
+code: vtestps (%rbx), %ymm1
+
+  maybe read:      { %rbx %ymm1 }
+  must read:       { %rbx %ymm1 }
+  maybe write:     { %cf %pf %af %zf %sf %of }
+  must write:      { %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%cf    : (#ifMInt (((((((eqMInt( andMInt( negMInt( extractMInt( %ymm1, 224, 225)), extractMInt( TMP_BV_256_0, 224, 225)), mi(1, 0)) andBool eqMInt( andMInt( negMInt( extractMInt( %ymm1, 192, 193)), extractMInt( TMP_BV_256_0, 192, 193)), mi(1, 0))) andBool eqMInt( andMInt( negMInt( extractMInt( %ymm1, 160, 161)), extractMInt( TMP_BV_256_0, 160, 161)), mi(1, 0))) andBool eqMInt( andMInt( negMInt( extractMInt( %ymm1, 128, 129)), extractMInt( TMP_BV_256_0, 128, 129)), mi(1, 0))) andBool eqMInt( andMInt( negMInt( extractMInt( %ymm1, 96, 97)), extractMInt( TMP_BV_256_0, 96, 97)), mi(1, 0))) andBool eqMInt( andMInt( negMInt( extractMInt( %ymm1, 64, 65)), extractMInt( TMP_BV_256_0, 64, 65)), mi(1, 0))) andBool eqMInt( andMInt( negMInt( extractMInt( %ymm1, 32, 33)), extractMInt( TMP_BV_256_0, 32, 33)), mi(1, 0))) andBool eqMInt( andMInt( negMInt( extractMInt( %ymm1, 0, 1)), extractMInt( TMP_BV_256_0, 0, 1)), mi(1, 0))) #then mi(1, 1) #else mi(1, 0) #fi)
+%pf    : mi(1, 0)
+%af    : mi(1, 0)
+%zf    : (#ifMInt (((((((eqMInt( andMInt( extractMInt( %ymm1, 224, 225), extractMInt( TMP_BV_256_0, 224, 225)), mi(1, 0)) andBool eqMInt( andMInt( extractMInt( %ymm1, 192, 193), extractMInt( TMP_BV_256_0, 192, 193)), mi(1, 0))) andBool eqMInt( andMInt( extractMInt( %ymm1, 160, 161), extractMInt( TMP_BV_256_0, 160, 161)), mi(1, 0))) andBool eqMInt( andMInt( extractMInt( %ymm1, 128, 129), extractMInt( TMP_BV_256_0, 128, 129)), mi(1, 0))) andBool eqMInt( andMInt( extractMInt( %ymm1, 96, 97), extractMInt( TMP_BV_256_0, 96, 97)), mi(1, 0))) andBool eqMInt( andMInt( extractMInt( %ymm1, 64, 65), extractMInt( TMP_BV_256_0, 64, 65)), mi(1, 0))) andBool eqMInt( andMInt( extractMInt( %ymm1, 32, 33), extractMInt( TMP_BV_256_0, 32, 33)), mi(1, 0))) andBool eqMInt( andMInt( extractMInt( %ymm1, 0, 1), extractMInt( TMP_BV_256_0, 0, 1)), mi(1, 0))) #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : mi(1, 0)
+%of    : mi(1, 0)
+
+Information about memory reads:
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

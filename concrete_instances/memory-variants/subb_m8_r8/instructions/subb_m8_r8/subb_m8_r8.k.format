@@ -1,0 +1,30 @@
+code: subb %cl, (%rbx)
+
+  maybe read:      { %cl %rbx }
+  must read:       { %cl %rbx }
+  maybe write:     { %cf %pf %af %zf %sf %of }
+  must write:      { %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%cf    : (#ifMInt (notBool eqMInt( extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), negMInt( extractMInt( %rcx, 56, 64))), mi(9, 1)), concatenateMInt( mi(1, 0), TMP_BV_8_0)), 0, 1), mi(1, 1))) #then mi(1, 1) #else mi(1, 0) #fi)
+%pf    : (#ifMInt (notBool (((((((eqMInt( extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), negMInt( extractMInt( %rcx, 56, 64))), mi(9, 1)), concatenateMInt( mi(1, 0), TMP_BV_8_0)), 8, 9), mi(1, 1)) xorBool eqMInt( extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), negMInt( extractMInt( %rcx, 56, 64))), mi(9, 1)), concatenateMInt( mi(1, 0), TMP_BV_8_0)), 7, 8), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), negMInt( extractMInt( %rcx, 56, 64))), mi(9, 1)), concatenateMInt( mi(1, 0), TMP_BV_8_0)), 6, 7), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), negMInt( extractMInt( %rcx, 56, 64))), mi(9, 1)), concatenateMInt( mi(1, 0), TMP_BV_8_0)), 5, 6), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), negMInt( extractMInt( %rcx, 56, 64))), mi(9, 1)), concatenateMInt( mi(1, 0), TMP_BV_8_0)), 4, 5), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), negMInt( extractMInt( %rcx, 56, 64))), mi(9, 1)), concatenateMInt( mi(1, 0), TMP_BV_8_0)), 3, 4), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), negMInt( extractMInt( %rcx, 56, 64))), mi(9, 1)), concatenateMInt( mi(1, 0), TMP_BV_8_0)), 2, 3), mi(1, 1))) xorBool eqMInt( extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), negMInt( extractMInt( %rcx, 56, 64))), mi(9, 1)), concatenateMInt( mi(1, 0), TMP_BV_8_0)), 1, 2), mi(1, 1)))) #then mi(1, 1) #else mi(1, 0) #fi)
+%af    : xorMInt( xorMInt( extractMInt( %rcx, 59, 60), extractMInt( TMP_BV_8_0, 3, 4)), extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), negMInt( extractMInt( %rcx, 56, 64))), mi(9, 1)), concatenateMInt( mi(1, 0), TMP_BV_8_0)), 4, 5))
+%zf    : (#ifMInt eqMInt( extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), negMInt( extractMInt( %rcx, 56, 64))), mi(9, 1)), concatenateMInt( mi(1, 0), TMP_BV_8_0)), 1, 9), mi(8, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), negMInt( extractMInt( %rcx, 56, 64))), mi(9, 1)), concatenateMInt( mi(1, 0), TMP_BV_8_0)), 1, 2)
+%of    : (#ifMInt ((eqMInt( negMInt( extractMInt( %rcx, 56, 57)), mi(1, 1)) ==Bool eqMInt( extractMInt( TMP_BV_8_0, 0, 1), mi(1, 1))) andBool (notBool (eqMInt( negMInt( extractMInt( %rcx, 56, 57)), mi(1, 1)) ==Bool eqMInt( extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), negMInt( extractMInt( %rcx, 56, 64))), mi(9, 1)), concatenateMInt( mi(1, 0), TMP_BV_8_0)), 1, 2), mi(1, 1))))) #then mi(1, 1) #else mi(1, 0) #fi)
+
+Information about memory reads:
+  Value TMP_BV_8_0 (1 bytes)
+    was read at address %rbx.
+
+Information about memory writes:
+  Address %rbx was updated to
+    extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), negMInt( extractMInt( %rcx, 56, 64))), mi(9, 1)), concatenateMInt( mi(1, 0), TMP_BV_8_0)), 1, 9) (1 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : ((sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE)) orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

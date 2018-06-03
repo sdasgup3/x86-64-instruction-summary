@@ -1,0 +1,19 @@
+code: setle (%rbx)
+
+  maybe read:      { %rbx %zf %sf %of }
+  must read:       { %rbx %zf %sf %of }
+  maybe write:     { }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+Information about memory writes:
+  Address %rbx was updated to
+    (#ifMInt (%zf orBool (notBool (%sf ==Bool %of))) #then mi(8, 1) #else mi(8, 0) #fi) (1 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

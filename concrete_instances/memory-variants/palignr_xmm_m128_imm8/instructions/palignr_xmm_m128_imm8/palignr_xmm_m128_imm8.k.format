@@ -1,0 +1,21 @@
+code: palignr $0x0, (%rbx), %xmm1
+
+  maybe read:      { %rbx %xmm1 }
+  must read:       { %rbx %xmm1 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { ssse3 }
+
+Formula:
+
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), extractMInt( lshrMInt( concatenateMInt( extractMInt( %ymm1, 128, 256), TMP_BV_128_0), uvalueMInt(shlMInt( concatenateMInt( mi(248, 0), Imm8), uvalueMInt(mi(256, 3))))), 128, 256))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

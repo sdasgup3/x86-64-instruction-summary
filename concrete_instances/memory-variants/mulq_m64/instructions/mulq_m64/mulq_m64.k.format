@@ -1,0 +1,29 @@
+code: mulq (%rbx)
+
+  maybe read:      { %rax %rbx }
+  must read:       { %rax %rbx }
+  maybe write:     { %rax %rdx %cf %of }
+  must write:      { %rax %rdx %cf %of }
+  maybe undef:     { %pf %af %zf %sf }
+  must undef:      { %pf %af %zf %sf }
+  required flags:  { }
+
+Formula:
+
+%rax   : extractMInt( mulMInt( concatenateMInt( mi(64, 0), TMP_BV_64_0), concatenateMInt( mi(64, 0), %rax)), 64, 128)
+%rdx   : extractMInt( mulMInt( concatenateMInt( mi(64, 0), TMP_BV_64_0), concatenateMInt( mi(64, 0), %rax)), 0, 64)
+
+%cf    : (#ifMInt (notBool eqMInt( extractMInt( mulMInt( concatenateMInt( mi(64, 0), TMP_BV_64_0), concatenateMInt( mi(64, 0), %rax)), 0, 64), mi(64, 0))) #then mi(1, 1) #else mi(1, 0) #fi)
+%pf    : (#ifMInt TMP_BOOL_2 #then mi(1, 1) #else mi(1, 0) #fi)
+%af    : (#ifMInt TMP_BOOL_1 #then mi(1, 1) #else mi(1, 0) #fi)
+%zf    : (#ifMInt TMP_BOOL_0 #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : (#ifMInt TMP_BOOL_3 #then mi(1, 1) #else mi(1, 0) #fi)
+%of    : (#ifMInt (notBool eqMInt( extractMInt( mulMInt( concatenateMInt( mi(64, 0), TMP_BV_64_0), concatenateMInt( mi(64, 0), %rax)), 0, 64), mi(64, 0))) #then mi(1, 1) #else mi(1, 0) #fi)
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

@@ -1,0 +1,21 @@
+code: psrlq (%rbx), %xmm1
+
+  maybe read:      { %rbx %xmm1 }
+  must read:       { %rbx %xmm1 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+Formula:
+
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), (#ifMInt ugtMInt( extractMInt( TMP_BV_128_0, 64, 128), mi(64, 63)) #then mi(128, 0) #else concatenateMInt( lshrMInt( extractMInt( %ymm1, 128, 192), uvalueMInt(extractMInt( TMP_BV_128_0, 64, 128))), lshrMInt( extractMInt( %ymm1, 192, 256), uvalueMInt(extractMInt( TMP_BV_128_0, 64, 128)))) #fi))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

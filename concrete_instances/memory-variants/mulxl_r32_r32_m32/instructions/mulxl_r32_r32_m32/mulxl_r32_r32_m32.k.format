@@ -1,0 +1,22 @@
+code: mulxl (%rdx), %ecx, %ebx
+
+  maybe read:      { %rdx }
+  must read:       { %rdx }
+  maybe write:     { %rcx %rbx }
+  must write:      { %rcx %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { bmi2 }
+
+Formula:
+
+%rcx   : concatenateMInt( mi(32, 0), extractMInt( mulMInt( concatenateMInt( mi(32, 0), extractMInt( %rdx, 32, 64)), concatenateMInt( mi(32, 0), TMP_BV_32_0)), 32, 64))
+%rbx   : concatenateMInt( mi(32, 0), extractMInt( mulMInt( concatenateMInt( mi(32, 0), extractMInt( %rdx, 32, 64)), concatenateMInt( mi(32, 0), TMP_BV_32_0)), 0, 32))
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rdx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

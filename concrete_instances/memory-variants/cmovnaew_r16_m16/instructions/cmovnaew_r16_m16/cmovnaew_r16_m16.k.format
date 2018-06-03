@@ -1,0 +1,21 @@
+code: cmovnaew (%rcx), %bx
+
+  maybe read:      { %rcx %cf }
+  must read:       { %rcx %cf }
+  maybe write:     { %bx }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { cmov }
+
+Formula:
+
+%rbx   : concatenateMInt( extractMInt( %rbx, 0, 48), (#ifMInt %cf #then TMP_BV_16_0 #else extractMInt( %rbx, 48, 64) #fi))
+
+Information about memory reads:
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rcx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

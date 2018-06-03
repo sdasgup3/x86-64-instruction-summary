@@ -1,0 +1,23 @@
+code: vmaskmovpd %xmm2, %xmm1, (%rbx)
+
+  maybe read:      { %rbx %xmm1 %xmm2 }
+  must read:       { %rbx %xmm1 %xmm2 }
+  maybe write:     { }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+Information about memory writes:
+  Address %rbx was updated to
+    concatenateMInt( (#ifMInt eqMInt( extractMInt( %ymm1, 128, 129), mi(1, 1)) #then extractMInt( %ymm2, 128, 192) #else extractMInt( TMP_BV_128_0, 0, 64) #fi), (#ifMInt eqMInt( extractMInt( %ymm1, 192, 193), mi(1, 1)) #then extractMInt( %ymm2, 192, 256) #else extractMInt( TMP_BV_128_0, 64, 128) #fi)) (16 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : ((sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE)) orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

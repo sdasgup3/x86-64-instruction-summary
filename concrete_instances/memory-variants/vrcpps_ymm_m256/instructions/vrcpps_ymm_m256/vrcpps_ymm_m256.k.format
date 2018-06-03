@@ -1,0 +1,21 @@
+code: vrcpps (%rbx), %ymm1
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%ymm1  : concatenateMInt( approx_reciprocal_single(extractMInt( TMP_BV_256_0, 0, 32)), concatenateMInt( approx_reciprocal_single(extractMInt( TMP_BV_256_0, 32, 64)), concatenateMInt( approx_reciprocal_single(extractMInt( TMP_BV_256_0, 64, 96)), concatenateMInt( approx_reciprocal_single(extractMInt( TMP_BV_256_0, 96, 128)), concatenateMInt( approx_reciprocal_single(extractMInt( TMP_BV_256_0, 128, 160)), concatenateMInt( approx_reciprocal_single(extractMInt( TMP_BV_256_0, 160, 192)), concatenateMInt( approx_reciprocal_single(extractMInt( TMP_BV_256_0, 192, 224)), approx_reciprocal_single(extractMInt( TMP_BV_256_0, 224, 256)))))))))
+
+Information about memory reads:
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

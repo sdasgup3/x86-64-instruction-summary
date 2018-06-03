@@ -1,0 +1,21 @@
+code: vpunpcklwd (%rbx), %ymm2, %ymm1
+
+  maybe read:      { %rbx %ymm2 }
+  must read:       { %rbx %ymm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+Formula:
+
+%ymm1  : concatenateMInt( concatenateMInt( extractMInt( TMP_BV_256_0, 64, 80), extractMInt( %ymm2, 64, 80)), concatenateMInt( concatenateMInt( extractMInt( TMP_BV_256_0, 80, 96), extractMInt( %ymm2, 80, 96)), concatenateMInt( concatenateMInt( extractMInt( TMP_BV_256_0, 96, 112), extractMInt( %ymm2, 96, 112)), concatenateMInt( concatenateMInt( extractMInt( TMP_BV_256_0, 112, 128), extractMInt( %ymm2, 112, 128)), concatenateMInt( concatenateMInt( extractMInt( TMP_BV_256_0, 192, 208), extractMInt( %ymm2, 192, 208)), concatenateMInt( concatenateMInt( extractMInt( TMP_BV_256_0, 208, 224), extractMInt( %ymm2, 208, 224)), concatenateMInt( concatenateMInt( extractMInt( TMP_BV_256_0, 224, 240), extractMInt( %ymm2, 224, 240)), concatenateMInt( extractMInt( TMP_BV_256_0, 240, 256), extractMInt( %ymm2, 240, 256)))))))))
+
+Information about memory reads:
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

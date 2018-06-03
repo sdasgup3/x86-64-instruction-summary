@@ -1,0 +1,21 @@
+code: vdivsd (%rbx), %xmm2, %xmm1
+
+  maybe read:      { %rbx %xmm2 }
+  must read:       { %rbx %xmm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%ymm1  : concatenateMInt( mi(128, 0), concatenateMInt( extractMInt( %ymm2, 128, 192), div_double(extractMInt( %ymm2, 192, 256), TMP_BV_64_0)))
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

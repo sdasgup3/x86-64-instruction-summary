@@ -1,0 +1,21 @@
+code: vpshufhw $0x0, (%rbx), %ymm1
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+Formula:
+
+%ymm1  : concatenateMInt( extractMInt( lshrMInt( TMP_BV_256_0, uvalueMInt(shlMInt( concatenateMInt( mi(254, 0), extractMInt( Imm8, 0, 2)), uvalueMInt(mi(256, 4))))), 48, 64), concatenateMInt( extractMInt( lshrMInt( TMP_BV_256_0, uvalueMInt(shlMInt( concatenateMInt( mi(254, 0), extractMInt( Imm8, 2, 4)), uvalueMInt(mi(256, 4))))), 48, 64), concatenateMInt( extractMInt( lshrMInt( TMP_BV_256_0, uvalueMInt(shlMInt( concatenateMInt( mi(254, 0), extractMInt( Imm8, 4, 6)), uvalueMInt(mi(256, 4))))), 48, 64), concatenateMInt( extractMInt( lshrMInt( TMP_BV_256_0, uvalueMInt(shlMInt( concatenateMInt( mi(254, 0), extractMInt( Imm8, 6, 8)), uvalueMInt(mi(256, 4))))), 48, 64), concatenateMInt( extractMInt( TMP_BV_256_0, 64, 128), concatenateMInt( extractMInt( lshrMInt( TMP_BV_256_0, uvalueMInt(shlMInt( concatenateMInt( mi(254, 0), extractMInt( Imm8, 0, 2)), uvalueMInt(mi(256, 4))))), 176, 192), concatenateMInt( extractMInt( lshrMInt( TMP_BV_256_0, uvalueMInt(shlMInt( concatenateMInt( mi(254, 0), extractMInt( Imm8, 2, 4)), uvalueMInt(mi(256, 4))))), 176, 192), concatenateMInt( extractMInt( lshrMInt( TMP_BV_256_0, uvalueMInt(shlMInt( concatenateMInt( mi(254, 0), extractMInt( Imm8, 4, 6)), uvalueMInt(mi(256, 4))))), 176, 192), concatenateMInt( extractMInt( lshrMInt( TMP_BV_256_0, uvalueMInt(shlMInt( concatenateMInt( mi(254, 0), extractMInt( Imm8, 6, 8)), uvalueMInt(mi(256, 4))))), 176, 192), extractMInt( TMP_BV_256_0, 192, 256))))))))))
+
+Information about memory reads:
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

@@ -1,0 +1,29 @@
+code: idivl (%rbx)
+
+  maybe read:      { %eax %edx %rbx }
+  must read:       { %eax %edx %rbx }
+  maybe write:     { %rax %rdx }
+  must write:      { %rax %rdx }
+  maybe undef:     { %cf %pf %af %zf %sf %of }
+  must undef:      { %cf %pf %af %zf %sf %of }
+  required flags:  { }
+
+Formula:
+
+%rax   : concatenateMInt( mi(32, 0), idiv_quotient_int32(concatenateMInt( extractMInt( %rdx, 32, 64), extractMInt( %rax, 32, 64)), TMP_BV_32_0))
+%rdx   : concatenateMInt( mi(32, 0), idiv_remainder_int32(concatenateMInt( extractMInt( %rdx, 32, 64), extractMInt( %rax, 32, 64)), TMP_BV_32_0))
+
+%cf    : (#ifMInt TMP_BOOL_5 #then mi(1, 1) #else mi(1, 0) #fi)
+%pf    : (#ifMInt TMP_BOOL_2 #then mi(1, 1) #else mi(1, 0) #fi)
+%af    : (#ifMInt TMP_BOOL_1 #then mi(1, 1) #else mi(1, 0) #fi)
+%zf    : (#ifMInt TMP_BOOL_0 #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : (#ifMInt TMP_BOOL_3 #then mi(1, 1) #else mi(1, 0) #fi)
+%of    : (#ifMInt TMP_BOOL_4 #then mi(1, 1) #else mi(1, 0) #fi)
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

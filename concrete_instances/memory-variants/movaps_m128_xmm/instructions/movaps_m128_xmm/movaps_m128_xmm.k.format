@@ -1,0 +1,23 @@
+code: movaps %xmm1, (%rbx)
+
+  maybe read:      { %rbx %xmm1 }
+  must read:       { %rbx %xmm1 }
+  maybe write:     { }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse }
+
+Formula:
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+Information about memory writes:
+  Address %rbx was updated to
+    extractMInt( %ymm1, 128, 256) (16 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (((sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE)) orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool (notBool eqMInt( extractMInt( %rbx, 60, 64), mi(4, 0))))) orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

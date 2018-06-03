@@ -1,0 +1,21 @@
+code: vpmulhuw (%rbx), %ymm2, %ymm1
+
+  maybe read:      { %rbx %ymm2 }
+  must read:       { %rbx %ymm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+Formula:
+
+%ymm1  : concatenateMInt( extractMInt( mulMInt( concatenateMInt( mi(16, 0), extractMInt( %ymm2, 0, 16)), concatenateMInt( mi(16, 0), extractMInt( TMP_BV_256_0, 0, 16))), 0, 16), concatenateMInt( extractMInt( mulMInt( concatenateMInt( mi(16, 0), extractMInt( %ymm2, 16, 32)), concatenateMInt( mi(16, 0), extractMInt( TMP_BV_256_0, 16, 32))), 0, 16), concatenateMInt( extractMInt( mulMInt( concatenateMInt( mi(16, 0), extractMInt( %ymm2, 32, 48)), concatenateMInt( mi(16, 0), extractMInt( TMP_BV_256_0, 32, 48))), 0, 16), concatenateMInt( extractMInt( mulMInt( concatenateMInt( mi(16, 0), extractMInt( %ymm2, 48, 64)), concatenateMInt( mi(16, 0), extractMInt( TMP_BV_256_0, 48, 64))), 0, 16), concatenateMInt( extractMInt( mulMInt( concatenateMInt( mi(16, 0), extractMInt( %ymm2, 64, 80)), concatenateMInt( mi(16, 0), extractMInt( TMP_BV_256_0, 64, 80))), 0, 16), concatenateMInt( extractMInt( mulMInt( concatenateMInt( mi(16, 0), extractMInt( %ymm2, 80, 96)), concatenateMInt( mi(16, 0), extractMInt( TMP_BV_256_0, 80, 96))), 0, 16), concatenateMInt( extractMInt( mulMInt( concatenateMInt( mi(16, 0), extractMInt( %ymm2, 96, 112)), concatenateMInt( mi(16, 0), extractMInt( TMP_BV_256_0, 96, 112))), 0, 16), concatenateMInt( extractMInt( mulMInt( concatenateMInt( mi(16, 0), extractMInt( %ymm2, 112, 128)), concatenateMInt( mi(16, 0), extractMInt( TMP_BV_256_0, 112, 128))), 0, 16), concatenateMInt( extractMInt( mulMInt( concatenateMInt( mi(16, 0), extractMInt( %ymm2, 128, 144)), concatenateMInt( mi(16, 0), extractMInt( TMP_BV_256_0, 128, 144))), 0, 16), concatenateMInt( extractMInt( mulMInt( concatenateMInt( mi(16, 0), extractMInt( %ymm2, 144, 160)), concatenateMInt( mi(16, 0), extractMInt( TMP_BV_256_0, 144, 160))), 0, 16), concatenateMInt( extractMInt( mulMInt( concatenateMInt( mi(16, 0), extractMInt( %ymm2, 160, 176)), concatenateMInt( mi(16, 0), extractMInt( TMP_BV_256_0, 160, 176))), 0, 16), concatenateMInt( extractMInt( mulMInt( concatenateMInt( mi(16, 0), extractMInt( %ymm2, 176, 192)), concatenateMInt( mi(16, 0), extractMInt( TMP_BV_256_0, 176, 192))), 0, 16), concatenateMInt( extractMInt( mulMInt( concatenateMInt( mi(16, 0), extractMInt( %ymm2, 192, 208)), concatenateMInt( mi(16, 0), extractMInt( TMP_BV_256_0, 192, 208))), 0, 16), concatenateMInt( extractMInt( mulMInt( concatenateMInt( mi(16, 0), extractMInt( %ymm2, 208, 224)), concatenateMInt( mi(16, 0), extractMInt( TMP_BV_256_0, 208, 224))), 0, 16), concatenateMInt( extractMInt( mulMInt( concatenateMInt( mi(16, 0), extractMInt( %ymm2, 224, 240)), concatenateMInt( mi(16, 0), extractMInt( TMP_BV_256_0, 224, 240))), 0, 16), extractMInt( mulMInt( concatenateMInt( mi(16, 0), extractMInt( %ymm2, 240, 256)), concatenateMInt( mi(16, 0), extractMInt( TMP_BV_256_0, 240, 256))), 0, 16))))))))))))))))
+
+Information about memory reads:
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

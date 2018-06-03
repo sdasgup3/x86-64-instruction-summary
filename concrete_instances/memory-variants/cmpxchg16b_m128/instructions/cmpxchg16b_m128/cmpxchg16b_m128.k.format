@@ -1,0 +1,28 @@
+code: cmpxchg16b (%rbx)
+
+  maybe read:      { %rax %rdx %rbx }
+  must read:       { %rax %rdx %rbx }
+  maybe write:     { %rax %rcx %rdx %rbx %zf }
+  must write:      { %zf }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { cx16 }
+
+Formula:
+
+%rax   : (#ifMInt eqMInt( concatenateMInt( %rdx, %rax), TMP_BV_128_0) #then %rax #else extractMInt( TMP_BV_128_0, 64, 128) #fi)
+%rdx   : (#ifMInt eqMInt( concatenateMInt( %rdx, %rax), TMP_BV_128_0) #then %rdx #else extractMInt( TMP_BV_128_0, 0, 64) #fi)
+
+%zf    : (#ifMInt eqMInt( TMP_BV_128_0, concatenateMInt( %rdx, %rax)) #then mi(1, 1) #else mi(1, 0) #fi)
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+Information about memory writes:
+  Address %rbx was updated to
+    (#ifMInt eqMInt( concatenateMInt( %rdx, %rax), TMP_BV_128_0) #then concatenateMInt( %rcx, %rbx) #else TMP_BV_128_0 #fi) (16 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : ((sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE)) orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

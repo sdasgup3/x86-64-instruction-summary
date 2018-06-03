@@ -1,0 +1,21 @@
+code: movb (%rbx), %ah
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { %ah }
+  must write:      { %ah }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rax   : concatenateMInt( concatenateMInt( extractMInt( %rax, 0, 48), TMP_BV_8_0), extractMInt( %rax, 56, 64))
+
+Information about memory reads:
+  Value TMP_BV_8_0 (1 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

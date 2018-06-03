@@ -1,0 +1,21 @@
+code: vfmaddsub132ps (%rbx), %xmm2, %xmm1
+
+  maybe read:      { %rbx %xmm1 %xmm2 }
+  must read:       { %rbx %xmm1 %xmm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { fma }
+
+Formula:
+
+%ymm1  : concatenateMInt( mi(128, 0), concatenateMInt( concatenateMInt( vfmadd132_single(extractMInt( %ymm1, 128, 160), extractMInt( %ymm2, 128, 160), extractMInt( TMP_BV_128_0, 0, 32)), vfmsub132_single(extractMInt( %ymm1, 160, 192), extractMInt( %ymm2, 160, 192), extractMInt( TMP_BV_128_0, 32, 64))), concatenateMInt( vfmadd132_single(extractMInt( %ymm1, 192, 224), extractMInt( %ymm2, 192, 224), extractMInt( TMP_BV_128_0, 64, 96)), vfmsub132_single(extractMInt( %ymm1, 224, 256), extractMInt( %ymm2, 224, 256), extractMInt( TMP_BV_128_0, 96, 128)))))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

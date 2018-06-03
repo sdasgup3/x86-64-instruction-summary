@@ -1,0 +1,28 @@
+code: imulq $0x0, (%rcx), %rbx
+
+  maybe read:      { %rcx }
+  must read:       { %rcx }
+  maybe write:     { %rbx %cf %of }
+  must write:      { %rbx %cf %of }
+  maybe undef:     { %pf %af %zf %sf }
+  must undef:      { %pf %af %zf %sf }
+  required flags:  { }
+
+Formula:
+
+%rbx   : extractMInt( mulMInt( mi(128, svalueMInt(TMP_BV_64_0)), mi(128, svalueMInt(Imm8))), 64, 128)
+
+%cf    : (#ifMInt (notBool eqMInt( mulMInt( mi(128, svalueMInt(TMP_BV_64_0)), mi(128, svalueMInt(Imm8))), mi(128, svalueMInt(extractMInt( mulMInt( mi(128, svalueMInt(TMP_BV_64_0)), mi(128, svalueMInt(Imm8))), 64, 128))))) #then mi(1, 1) #else mi(1, 0) #fi)
+%pf    : (#ifMInt TMP_BOOL_2 #then mi(1, 1) #else mi(1, 0) #fi)
+%af    : (#ifMInt TMP_BOOL_1 #then mi(1, 1) #else mi(1, 0) #fi)
+%zf    : (#ifMInt TMP_BOOL_0 #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : (#ifMInt TMP_BOOL_3 #then mi(1, 1) #else mi(1, 0) #fi)
+%of    : (#ifMInt (notBool eqMInt( mulMInt( mi(128, svalueMInt(TMP_BV_64_0)), mi(128, svalueMInt(Imm8))), mi(128, svalueMInt(extractMInt( mulMInt( mi(128, svalueMInt(TMP_BV_64_0)), mi(128, svalueMInt(Imm8))), 64, 128))))) #then mi(1, 1) #else mi(1, 0) #fi)
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rcx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

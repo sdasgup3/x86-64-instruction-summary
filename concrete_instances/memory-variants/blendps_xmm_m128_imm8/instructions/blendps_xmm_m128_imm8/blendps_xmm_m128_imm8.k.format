@@ -1,0 +1,21 @@
+code: blendps $0x0, (%rbx), %xmm1
+
+  maybe read:      { %rbx %xmm1 }
+  must read:       { %rbx %xmm1 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse4_1 }
+
+Formula:
+
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), concatenateMInt( (#ifMInt eqMInt( extractMInt( Imm8, 4, 5), mi(1, 0)) #then extractMInt( %ymm1, 128, 160) #else extractMInt( TMP_BV_128_0, 0, 32) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( Imm8, 5, 6), mi(1, 0)) #then extractMInt( %ymm1, 160, 192) #else extractMInt( TMP_BV_128_0, 32, 64) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( Imm8, 6, 7), mi(1, 0)) #then extractMInt( %ymm1, 192, 224) #else extractMInt( TMP_BV_128_0, 64, 96) #fi), (#ifMInt eqMInt( extractMInt( Imm8, 7, 8), mi(1, 0)) #then extractMInt( %ymm1, 224, 256) #else extractMInt( TMP_BV_128_0, 96, 128) #fi)))))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

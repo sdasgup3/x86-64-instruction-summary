@@ -1,0 +1,23 @@
+code: vcvtpd2dqx (%rbx), %xmm1
+
+  maybe read:      { %rbx %mxcsr::rc[0] }
+  must read:       { %rbx %mxcsr::rc[0] }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%ymm1  : concatenateMInt( mi(192, 0), concatenateMInt( cvt_double_to_int32(extractMInt( TMP_BV_128_0, 0, 64)), cvt_double_to_int32(extractMInt( TMP_BV_128_1, 64, 128))))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+  Value TMP_BV_128_1 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : sigsegv

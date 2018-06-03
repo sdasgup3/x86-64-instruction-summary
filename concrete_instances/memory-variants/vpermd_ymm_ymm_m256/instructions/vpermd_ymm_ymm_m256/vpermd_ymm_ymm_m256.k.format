@@ -1,0 +1,21 @@
+code: vpermd (%rbx), %ymm2, %ymm1
+
+  maybe read:      { %rbx %ymm2 }
+  must read:       { %rbx %ymm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+Formula:
+
+%ymm1  : concatenateMInt( extractMInt( lshrMInt( TMP_BV_256_0, uvalueMInt(mulMInt( concatenateMInt( mi(253, 0), extractMInt( %ymm2, 29, 32)), mi(256, 32)))), 224, 256), concatenateMInt( extractMInt( lshrMInt( TMP_BV_256_0, uvalueMInt(mulMInt( concatenateMInt( mi(253, 0), extractMInt( %ymm2, 61, 64)), mi(256, 32)))), 224, 256), concatenateMInt( extractMInt( lshrMInt( TMP_BV_256_0, uvalueMInt(mulMInt( concatenateMInt( mi(253, 0), extractMInt( %ymm2, 93, 96)), mi(256, 32)))), 224, 256), concatenateMInt( extractMInt( lshrMInt( TMP_BV_256_0, uvalueMInt(mulMInt( concatenateMInt( mi(253, 0), extractMInt( %ymm2, 125, 128)), mi(256, 32)))), 224, 256), concatenateMInt( extractMInt( lshrMInt( TMP_BV_256_0, uvalueMInt(mulMInt( concatenateMInt( mi(253, 0), extractMInt( %ymm2, 157, 160)), mi(256, 32)))), 224, 256), concatenateMInt( extractMInt( lshrMInt( TMP_BV_256_0, uvalueMInt(mulMInt( concatenateMInt( mi(253, 0), extractMInt( %ymm2, 189, 192)), mi(256, 32)))), 224, 256), concatenateMInt( extractMInt( lshrMInt( TMP_BV_256_0, uvalueMInt(mulMInt( concatenateMInt( mi(253, 0), extractMInt( %ymm2, 221, 224)), mi(256, 32)))), 224, 256), extractMInt( lshrMInt( TMP_BV_256_0, uvalueMInt(mulMInt( concatenateMInt( mi(253, 0), extractMInt( %ymm2, 253, 256)), mi(256, 32)))), 224, 256))))))))
+
+Information about memory reads:
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

@@ -1,0 +1,30 @@
+code: andl %ecx, (%rbx)
+
+  maybe read:      { %ecx %rbx }
+  must read:       { %ecx %rbx }
+  maybe write:     { %cf %pf %zf %sf %of }
+  must write:      { %cf %pf %zf %sf %of }
+  maybe undef:     { %af }
+  must undef:      { %af }
+  required flags:  { }
+
+Formula:
+
+%cf    : mi(1, 0)
+%pf    : (#ifMInt (notBool (((((((eqMInt( andMInt( extractMInt( TMP_BV_32_0, 31, 32), extractMInt( %rcx, 63, 64)), mi(1, 1)) xorBool eqMInt( andMInt( extractMInt( TMP_BV_32_0, 30, 31), extractMInt( %rcx, 62, 63)), mi(1, 1))) xorBool eqMInt( andMInt( extractMInt( TMP_BV_32_0, 29, 30), extractMInt( %rcx, 61, 62)), mi(1, 1))) xorBool eqMInt( andMInt( extractMInt( TMP_BV_32_0, 28, 29), extractMInt( %rcx, 60, 61)), mi(1, 1))) xorBool eqMInt( andMInt( extractMInt( TMP_BV_32_0, 27, 28), extractMInt( %rcx, 59, 60)), mi(1, 1))) xorBool eqMInt( andMInt( extractMInt( TMP_BV_32_0, 26, 27), extractMInt( %rcx, 58, 59)), mi(1, 1))) xorBool eqMInt( andMInt( extractMInt( TMP_BV_32_0, 25, 26), extractMInt( %rcx, 57, 58)), mi(1, 1))) xorBool eqMInt( andMInt( extractMInt( TMP_BV_32_0, 24, 25), extractMInt( %rcx, 56, 57)), mi(1, 1)))) #then mi(1, 1) #else mi(1, 0) #fi)
+%af    : (#ifMInt TMP_BOOL_0 #then mi(1, 1) #else mi(1, 0) #fi)
+%zf    : (#ifMInt eqMInt( andMInt( TMP_BV_32_0, extractMInt( %rcx, 32, 64)), mi(32, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : andMInt( extractMInt( TMP_BV_32_0, 0, 1), extractMInt( %rcx, 32, 33))
+%of    : mi(1, 0)
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rbx.
+
+Information about memory writes:
+  Address %rbx was updated to
+    andMInt( TMP_BV_32_0, extractMInt( %rcx, 32, 64)) (4 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : ((sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE)) orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

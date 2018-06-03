@@ -1,0 +1,21 @@
+code: sarxl %edx, (%rcx), %ebx
+
+  maybe read:      { %rcx %edx }
+  must read:       { %rcx %edx }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { bmi2 }
+
+Formula:
+
+%rbx   : concatenateMInt( mi(32, 0), ashrMInt( TMP_BV_32_0, uvalueMInt(andMInt( extractMInt( %rdx, 32, 64), mi(32, 31)))))
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rcx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

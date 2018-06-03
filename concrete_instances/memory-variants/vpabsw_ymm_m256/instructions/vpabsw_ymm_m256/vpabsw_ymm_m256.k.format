@@ -1,0 +1,21 @@
+code: vpabsw (%rbx), %ymm1
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+Formula:
+
+%ymm1  : concatenateMInt( (#ifMInt ugtMInt( extractMInt( TMP_BV_256_0, 0, 16), mi(16, 32767)) #then addMInt(mi(16, 1), negMInt( extractMInt( TMP_BV_256_0, 0, 16))) #else extractMInt( TMP_BV_256_0, 0, 16) #fi), concatenateMInt( (#ifMInt ugtMInt( extractMInt( TMP_BV_256_0, 16, 32), mi(16, 32767)) #then addMInt(mi(16, 1), negMInt( extractMInt( TMP_BV_256_0, 16, 32))) #else extractMInt( TMP_BV_256_0, 16, 32) #fi), concatenateMInt( (#ifMInt ugtMInt( extractMInt( TMP_BV_256_0, 32, 48), mi(16, 32767)) #then addMInt(mi(16, 1), negMInt( extractMInt( TMP_BV_256_0, 32, 48))) #else extractMInt( TMP_BV_256_0, 32, 48) #fi), concatenateMInt( (#ifMInt ugtMInt( extractMInt( TMP_BV_256_0, 48, 64), mi(16, 32767)) #then addMInt(mi(16, 1), negMInt( extractMInt( TMP_BV_256_0, 48, 64))) #else extractMInt( TMP_BV_256_0, 48, 64) #fi), concatenateMInt( (#ifMInt ugtMInt( extractMInt( TMP_BV_256_0, 64, 80), mi(16, 32767)) #then addMInt(mi(16, 1), negMInt( extractMInt( TMP_BV_256_0, 64, 80))) #else extractMInt( TMP_BV_256_0, 64, 80) #fi), concatenateMInt( (#ifMInt ugtMInt( extractMInt( TMP_BV_256_0, 80, 96), mi(16, 32767)) #then addMInt(mi(16, 1), negMInt( extractMInt( TMP_BV_256_0, 80, 96))) #else extractMInt( TMP_BV_256_0, 80, 96) #fi), concatenateMInt( (#ifMInt ugtMInt( extractMInt( TMP_BV_256_0, 96, 112), mi(16, 32767)) #then addMInt(mi(16, 1), negMInt( extractMInt( TMP_BV_256_0, 96, 112))) #else extractMInt( TMP_BV_256_0, 96, 112) #fi), concatenateMInt( (#ifMInt ugtMInt( extractMInt( TMP_BV_256_0, 112, 128), mi(16, 32767)) #then addMInt(mi(16, 1), negMInt( extractMInt( TMP_BV_256_0, 112, 128))) #else extractMInt( TMP_BV_256_0, 112, 128) #fi), concatenateMInt( (#ifMInt ugtMInt( extractMInt( TMP_BV_256_0, 128, 144), mi(16, 32767)) #then addMInt(mi(16, 1), negMInt( extractMInt( TMP_BV_256_0, 128, 144))) #else extractMInt( TMP_BV_256_0, 128, 144) #fi), concatenateMInt( (#ifMInt ugtMInt( extractMInt( TMP_BV_256_0, 144, 160), mi(16, 32767)) #then addMInt(mi(16, 1), negMInt( extractMInt( TMP_BV_256_0, 144, 160))) #else extractMInt( TMP_BV_256_0, 144, 160) #fi), concatenateMInt( (#ifMInt ugtMInt( extractMInt( TMP_BV_256_0, 160, 176), mi(16, 32767)) #then addMInt(mi(16, 1), negMInt( extractMInt( TMP_BV_256_0, 160, 176))) #else extractMInt( TMP_BV_256_0, 160, 176) #fi), concatenateMInt( (#ifMInt ugtMInt( extractMInt( TMP_BV_256_0, 176, 192), mi(16, 32767)) #then addMInt(mi(16, 1), negMInt( extractMInt( TMP_BV_256_0, 176, 192))) #else extractMInt( TMP_BV_256_0, 176, 192) #fi), concatenateMInt( (#ifMInt ugtMInt( extractMInt( TMP_BV_256_0, 192, 208), mi(16, 32767)) #then addMInt(mi(16, 1), negMInt( extractMInt( TMP_BV_256_0, 192, 208))) #else extractMInt( TMP_BV_256_0, 192, 208) #fi), concatenateMInt( (#ifMInt ugtMInt( extractMInt( TMP_BV_256_0, 208, 224), mi(16, 32767)) #then addMInt(mi(16, 1), negMInt( extractMInt( TMP_BV_256_0, 208, 224))) #else extractMInt( TMP_BV_256_0, 208, 224) #fi), concatenateMInt( (#ifMInt ugtMInt( extractMInt( TMP_BV_256_0, 224, 240), mi(16, 32767)) #then addMInt(mi(16, 1), negMInt( extractMInt( TMP_BV_256_0, 224, 240))) #else extractMInt( TMP_BV_256_0, 224, 240) #fi), (#ifMInt ugtMInt( extractMInt( TMP_BV_256_0, 240, 256), mi(16, 32767)) #then addMInt(mi(16, 1), negMInt( extractMInt( TMP_BV_256_0, 240, 256))) #else extractMInt( TMP_BV_256_0, 240, 256) #fi))))))))))))))))
+
+Information about memory reads:
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

@@ -1,0 +1,26 @@
+code: comiss (%rbx), %xmm1
+
+  maybe read:      { %rbx %xmm1 }
+  must read:       { %rbx %xmm1 }
+  maybe write:     { %cf %pf %af %zf %sf %of }
+  must write:      { %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse }
+
+Formula:
+
+%cf    : (#ifMInt (eqMInt( comiss(extractMInt( %ymm1, 224, 256), TMP_BV_32_0), mi(2, 0)) orBool eqMInt( comiss(extractMInt( %ymm1, 224, 256), TMP_BV_32_0), mi(2, 2))) #then mi(1, 1) #else mi(1, 0) #fi)
+%pf    : (#ifMInt eqMInt( comiss(extractMInt( %ymm1, 224, 256), TMP_BV_32_0), mi(2, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
+%af    : mi(1, 0)
+%zf    : (#ifMInt (eqMInt( comiss(extractMInt( %ymm1, 224, 256), TMP_BV_32_0), mi(2, 0)) orBool eqMInt( comiss(extractMInt( %ymm1, 224, 256), TMP_BV_32_0), mi(2, 3))) #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : mi(1, 0)
+%of    : mi(1, 0)
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

@@ -1,0 +1,21 @@
+code: vaddsubps (%rbx), %xmm2, %xmm1
+
+  maybe read:      { %rbx %xmm2 }
+  must read:       { %rbx %xmm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%ymm1  : concatenateMInt( mi(128, 0), concatenateMInt( concatenateMInt( add_single(extractMInt( %ymm2, 128, 160), extractMInt( TMP_BV_128_0, 0, 32)), sub_single(extractMInt( %ymm2, 160, 192), extractMInt( TMP_BV_128_0, 32, 64))), concatenateMInt( add_single(extractMInt( %ymm2, 192, 224), extractMInt( TMP_BV_128_0, 64, 96)), sub_single(extractMInt( %ymm2, 224, 256), extractMInt( TMP_BV_128_0, 96, 128)))))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))
