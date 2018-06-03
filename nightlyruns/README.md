@@ -2,7 +2,7 @@
 
 ## Memory
 
-### Prepare Instruction Directory (diff operands)
+### Prepare Instruction Directory 
 ```
 ls concrete_instances/memory-variants/ | parallel  "~/x86-semantics/scripts/process_spec.pl --prepare_concrete --opcode {} --workdir concrete_instances/memory-variants/{}"
 ```
