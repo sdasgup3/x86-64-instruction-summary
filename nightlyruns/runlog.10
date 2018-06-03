@@ -1,0 +1,716 @@
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: vpcmpgtq_ymm_ymm_m256
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/vpcmpgtq_ymm_ymm_m256/instructions/vpcmpgtq_ymm_ymm_m256/vpcmpgtq_ymm_ymm_m256.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/vpcmpgtq_ymm_ymm_m256/instructions/../testcases.09.tc --def_in "{ %rbx %ymm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+
+Errors:
+
+  --target <path/to/file.s>
+      Error reading value: Failed to parse line 2:   vpcmpgtq (%rbx), %ymm2, %ymm1
+      Message: Could not match opcode/operands to an x86-64 instruction
+      
+Execution time vpcmpgtq_ymm_ymm_m256: 6 s
+Thread 1 done!: vpcmpgtq_ymm_ymm_m256
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: vmovntpd_m128_xmm
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/vmovntpd_m128_xmm/instructions/vmovntpd_m128_xmm/vmovntpd_m128_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/vmovntpd_m128_xmm/instructions/../testcases.09.tc --def_in "{ %rbx %xmm1 }" --live_out "{ }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vmovntpd_m128_xmm: 65 s
+Thread 1 done!: vmovntpd_m128_xmm
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: movnti_m32_r32
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/movnti_m32_r32/instructions/movnti_m32_r32/movnti_m32_r32.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/movnti_m32_r32/instructions/../testcases.09.tc --def_in "{ %ecx %rbx }" --live_out "{ }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time movnti_m32_r32: 76 s
+Thread 1 done!: movnti_m32_r32
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: movbew_m16_r16
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/movbew_m16_r16/instructions/movbew_m16_r16/movbew_m16_r16.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/movbew_m16_r16/instructions/../testcases.09.tc --def_in "{ %cx %rbx }" --live_out "{ }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time movbew_m16_r16: 79 s
+Thread 1 done!: movbew_m16_r16
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: movnti_m64_r64
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/movnti_m64_r64/instructions/movnti_m64_r64/movnti_m64_r64.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/movnti_m64_r64/instructions/../testcases.09.tc --def_in "{ %rcx %rbx }" --live_out "{ }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time movnti_m64_r64: 81 s
+Thread 1 done!: movnti_m64_r64
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: movbel_m32_r32
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/movbel_m32_r32/instructions/movbel_m32_r32/movbel_m32_r32.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/movbel_m32_r32/instructions/../testcases.09.tc --def_in "{ %ecx %rbx }" --live_out "{ }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time movbel_m32_r32: 81 s
+Thread 1 done!: movbel_m32_r32
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: movbeq_m64_r64
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/movbeq_m64_r64/instructions/movbeq_m64_r64/movbeq_m64_r64.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/movbeq_m64_r64/instructions/../testcases.09.tc --def_in "{ %rcx %rbx }" --live_out "{ }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time movbeq_m64_r64: 87 s
+Thread 1 done!: movbeq_m64_r64
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: movntps_m128_xmm
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/movntps_m128_xmm/instructions/movntps_m128_xmm/movntps_m128_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/movntps_m128_xmm/instructions/../testcases.09.tc --def_in "{ %rbx %xmm1 }" --live_out "{ }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time movntps_m128_xmm: 91 s
+Thread 1 done!: movntps_m128_xmm
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: vmovntps_m128_xmm
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/vmovntps_m128_xmm/instructions/vmovntps_m128_xmm/vmovntps_m128_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/vmovntps_m128_xmm/instructions/../testcases.09.tc --def_in "{ %rbx %xmm1 }" --live_out "{ }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vmovntps_m128_xmm: 92 s
+Thread 1 done!: vmovntps_m128_xmm
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: movntpd_m128_xmm
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/movntpd_m128_xmm/instructions/movntpd_m128_xmm/movntpd_m128_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/movntpd_m128_xmm/instructions/../testcases.09.tc --def_in "{ %rbx %xmm1 }" --live_out "{ }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time movntpd_m128_xmm: 92 s
+Thread 1 done!: movntpd_m128_xmm
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: vmovntdqa_m128_xmm
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/vmovntdqa_m128_xmm/instructions/vmovntdqa_m128_xmm/vmovntdqa_m128_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/vmovntdqa_m128_xmm/instructions/../testcases.09.tc --def_in "{ %rbx %xmm1 }" --live_out "{ }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vmovntdqa_m128_xmm: 93 s
+Thread 1 done!: vmovntdqa_m128_xmm
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: vmaskmovpd_m128_xmm_xmm
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/vmaskmovpd_m128_xmm_xmm/instructions/vmaskmovpd_m128_xmm_xmm/vmaskmovpd_m128_xmm_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/vmaskmovpd_m128_xmm_xmm/instructions/../testcases.09.tc --def_in "{ %rbx %xmm1 %xmm2 }" --live_out "{ }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vmaskmovpd_m128_xmm_xmm: 94 s
+Thread 1 done!: vmaskmovpd_m128_xmm_xmm
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: movntdq_m128_xmm
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/movntdq_m128_xmm/instructions/movntdq_m128_xmm/movntdq_m128_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/movntdq_m128_xmm/instructions/../testcases.09.tc --def_in "{ %rbx %xmm1 }" --live_out "{ }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time movntdq_m128_xmm: 97 s
+Thread 1 done!: movntdq_m128_xmm
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: vmaskmovpd_m256_ymm_ymm
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/vmaskmovpd_m256_ymm_ymm/instructions/vmaskmovpd_m256_ymm_ymm/vmaskmovpd_m256_ymm_ymm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/vmaskmovpd_m256_ymm_ymm/instructions/../testcases.09.tc --def_in "{ %rbx %ymm1 %ymm2 }" --live_out "{ }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vmaskmovpd_m256_ymm_ymm: 99 s
+Thread 1 done!: vmaskmovpd_m256_ymm_ymm
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: movntdq_m256_ymm
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/movntdq_m256_ymm/instructions/movntdq_m256_ymm/movntdq_m256_ymm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/movntdq_m256_ymm/instructions/../testcases.09.tc --def_in "{ %rbx %ymm1 }" --live_out "{ }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time movntdq_m256_ymm: 109 s
+Thread 1 done!: movntdq_m256_ymm
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: vmovntpd_m256_ymm
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/vmovntpd_m256_ymm/instructions/vmovntpd_m256_ymm/vmovntpd_m256_ymm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/vmovntpd_m256_ymm/instructions/../testcases.09.tc --def_in "{ %rbx %ymm1 }" --live_out "{ }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vmovntpd_m256_ymm: 110 s
+Thread 1 done!: vmovntpd_m256_ymm
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: vmovntps_m256_ymm
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/vmovntps_m256_ymm/instructions/vmovntps_m256_ymm/vmovntps_m256_ymm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/vmovntps_m256_ymm/instructions/../testcases.09.tc --def_in "{ %rbx %ymm1 }" --live_out "{ }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vmovntps_m256_ymm: 112 s
+Thread 1 done!: vmovntps_m256_ymm
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: movbel_r32_m32
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/movbel_r32_m32/instructions/movbel_r32_m32/movbel_r32_m32.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/movbel_r32_m32/instructions/../testcases.09.tc --def_in "{ %rcx }" --live_out "{ %rbx }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time movbel_r32_m32: 123 s
+Thread 1 done!: movbel_r32_m32
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: vpbroadcastb_ymm_m8
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/vpbroadcastb_ymm_m8/instructions/vpbroadcastb_ymm_m8/vpbroadcastb_ymm_m8.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/vpbroadcastb_ymm_m8/instructions/../testcases.09.tc --def_in "{ %rbx }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpbroadcastb_ymm_m8: 127 s
+Thread 1 done!: vpbroadcastb_ymm_m8
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: vpbroadcastb_xmm_m8
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/vpbroadcastb_xmm_m8/instructions/vpbroadcastb_xmm_m8/vpbroadcastb_xmm_m8.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/vpbroadcastb_xmm_m8/instructions/../testcases.09.tc --def_in "{ %rbx }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpbroadcastb_xmm_m8: 127 s
+Thread 1 done!: vpbroadcastb_xmm_m8
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: vpbroadcastw_xmm_m16
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/vpbroadcastw_xmm_m16/instructions/vpbroadcastw_xmm_m16/vpbroadcastw_xmm_m16.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/vpbroadcastw_xmm_m16/instructions/../testcases.09.tc --def_in "{ %rbx }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpbroadcastw_xmm_m16: 131 s
+Thread 1 done!: vpbroadcastw_xmm_m16
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: movbew_r16_m16
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/movbew_r16_m16/instructions/movbew_r16_m16/movbew_r16_m16.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/movbew_r16_m16/instructions/../testcases.09.tc --def_in "{ %rcx }" --live_out "{ %bx }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time movbew_r16_m16: 134 s
+Thread 1 done!: movbew_r16_m16
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: vpbroadcastw_ymm_m16
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/vpbroadcastw_ymm_m16/instructions/vpbroadcastw_ymm_m16/vpbroadcastw_ymm_m16.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/vpbroadcastw_ymm_m16/instructions/../testcases.09.tc --def_in "{ %rbx }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpbroadcastw_ymm_m16: 135 s
+Thread 1 done!: vpbroadcastw_ymm_m16
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: movbeq_r64_m64
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/movbeq_r64_m64/instructions/movbeq_r64_m64/movbeq_r64_m64.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/movbeq_r64_m64/instructions/../testcases.09.tc --def_in "{ %rcx }" --live_out "{ %rbx }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time movbeq_r64_m64: 147 s
+Thread 1 done!: movbeq_r64_m64
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: vpbroadcasti128_ymm_m128
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/vpbroadcasti128_ymm_m128/instructions/vpbroadcasti128_ymm_m128/vpbroadcasti128_ymm_m128.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/vpbroadcasti128_ymm_m128/instructions/../testcases.09.tc --def_in "{ %rbx }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpbroadcasti128_ymm_m128: 152 s
+Thread 1 done!: vpbroadcasti128_ymm_m128
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: movntdqa_xmm_m128
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/movntdqa_xmm_m128/instructions/movntdqa_xmm_m128/movntdqa_xmm_m128.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/movntdqa_xmm_m128/instructions/../testcases.09.tc --def_in "{ %rbx }" --live_out "{ %xmm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time movntdqa_xmm_m128: 155 s
+Thread 1 done!: movntdqa_xmm_m128
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: vmovntdqa_xmm_m128
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/vmovntdqa_xmm_m128/instructions/vmovntdqa_xmm_m128/vmovntdqa_xmm_m128.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/vmovntdqa_xmm_m128/instructions/../testcases.09.tc --def_in "{ %rbx }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vmovntdqa_xmm_m128: 156 s
+Thread 1 done!: vmovntdqa_xmm_m128
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: vmaskmovps_m128_xmm_xmm
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/vmaskmovps_m128_xmm_xmm/instructions/vmaskmovps_m128_xmm_xmm/vmaskmovps_m128_xmm_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/vmaskmovps_m128_xmm_xmm/instructions/../testcases.09.tc --def_in "{ %rbx %xmm1 %xmm2 }" --live_out "{ }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vmaskmovps_m128_xmm_xmm: 81 s
+Thread 1 done!: vmaskmovps_m128_xmm_xmm
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: vpmaskmovd_m128_xmm_xmm
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/vpmaskmovd_m128_xmm_xmm/instructions/vpmaskmovd_m128_xmm_xmm/vpmaskmovd_m128_xmm_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/vpmaskmovd_m128_xmm_xmm/instructions/../testcases.09.tc --def_in "{ %rbx %xmm1 %xmm2 }" --live_out "{ }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpmaskmovd_m128_xmm_xmm: 78 s
+Thread 1 done!: vpmaskmovd_m128_xmm_xmm
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: vmaskmovps_m256_ymm_ymm
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/vmaskmovps_m256_ymm_ymm/instructions/vmaskmovps_m256_ymm_ymm/vmaskmovps_m256_ymm_ymm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/vmaskmovps_m256_ymm_ymm/instructions/../testcases.09.tc --def_in "{ %rbx %ymm1 %ymm2 }" --live_out "{ }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vmaskmovps_m256_ymm_ymm: 94 s
+Thread 1 done!: vmaskmovps_m256_ymm_ymm
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: vmovntdqa_ymm_m256
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/vmovntdqa_ymm_m256/instructions/vmovntdqa_ymm_m256/vmovntdqa_ymm_m256.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/vmovntdqa_ymm_m256/instructions/../testcases.09.tc --def_in "{ %rbx }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vmovntdqa_ymm_m256: 178 s
+Thread 1 done!: vmovntdqa_ymm_m256
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: vpmaskmovq_m128_xmm_xmm
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/vpmaskmovq_m128_xmm_xmm/instructions/vpmaskmovq_m128_xmm_xmm/vpmaskmovq_m128_xmm_xmm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/vpmaskmovq_m128_xmm_xmm/instructions/../testcases.09.tc --def_in "{ %rbx %xmm1 %xmm2 }" --live_out "{ }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpmaskmovq_m128_xmm_xmm: 75 s
+Thread 1 done!: vpmaskmovq_m128_xmm_xmm
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: vpmaskmovd_m256_ymm_ymm
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/vpmaskmovd_m256_ymm_ymm/instructions/vpmaskmovd_m256_ymm_ymm/vpmaskmovd_m256_ymm_ymm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/vpmaskmovd_m256_ymm_ymm/instructions/../testcases.09.tc --def_in "{ %rbx %ymm1 %ymm2 }" --live_out "{ }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpmaskmovd_m256_ymm_ymm: 88 s
+Thread 1 done!: vpmaskmovd_m256_ymm_ymm
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: vmaskmovpd_xmm_xmm_m128
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/vmaskmovpd_xmm_xmm_m128/instructions/vmaskmovpd_xmm_xmm_m128/vmaskmovpd_xmm_xmm_m128.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/vmaskmovpd_xmm_xmm_m128/instructions/../testcases.09.tc --def_in "{ %rbx %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vmaskmovpd_xmm_xmm_m128: 124 s
+Thread 1 done!: vmaskmovpd_xmm_xmm_m128
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: vmaskmovps_xmm_xmm_m128
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/vmaskmovps_xmm_xmm_m128/instructions/vmaskmovps_xmm_xmm_m128/vmaskmovps_xmm_xmm_m128.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/vmaskmovps_xmm_xmm_m128/instructions/../testcases.09.tc --def_in "{ %rbx %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vmaskmovps_xmm_xmm_m128: 109 s
+Thread 1 done!: vmaskmovps_xmm_xmm_m128
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: vpmaskmovq_m256_ymm_ymm
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/vpmaskmovq_m256_ymm_ymm/instructions/vpmaskmovq_m256_ymm_ymm/vpmaskmovq_m256_ymm_ymm.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/vpmaskmovq_m256_ymm_ymm/instructions/../testcases.09.tc --def_in "{ %rbx %ymm1 %ymm2 }" --live_out "{ }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpmaskmovq_m256_ymm_ymm: 83 s
+Thread 1 done!: vpmaskmovq_m256_ymm_ymm
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: vpmaskmovq_xmm_xmm_m128
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/vpmaskmovq_xmm_xmm_m128/instructions/vpmaskmovq_xmm_xmm_m128/vpmaskmovq_xmm_xmm_m128.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/vpmaskmovq_xmm_xmm_m128/instructions/../testcases.09.tc --def_in "{ %rbx %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpmaskmovq_xmm_xmm_m128: 114 s
+Thread 1 done!: vpmaskmovq_xmm_xmm_m128
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: vpmaskmovd_xmm_xmm_m128
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/vpmaskmovd_xmm_xmm_m128/instructions/vpmaskmovd_xmm_xmm_m128/vpmaskmovd_xmm_xmm_m128.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/vpmaskmovd_xmm_xmm_m128/instructions/../testcases.09.tc --def_in "{ %rbx %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpmaskmovd_xmm_xmm_m128: 117 s
+Thread 1 done!: vpmaskmovd_xmm_xmm_m128
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: vmaskmovpd_ymm_ymm_m256
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/vmaskmovpd_ymm_ymm_m256/instructions/vmaskmovpd_ymm_ymm_m256/vmaskmovpd_ymm_ymm_m256.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/vmaskmovpd_ymm_ymm_m256/instructions/../testcases.09.tc --def_in "{ %rbx %ymm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vmaskmovpd_ymm_ymm_m256: 139 s
+Thread 1 done!: vmaskmovpd_ymm_ymm_m256
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: vpmaskmovq_ymm_ymm_m256
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/vpmaskmovq_ymm_ymm_m256/instructions/vpmaskmovq_ymm_ymm_m256/vpmaskmovq_ymm_ymm_m256.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/vpmaskmovq_ymm_ymm_m256/instructions/../testcases.09.tc --def_in "{ %rbx %ymm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpmaskmovq_ymm_ymm_m256: 131 s
+Thread 1 done!: vpmaskmovq_ymm_ymm_m256
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: vmaskmovps_ymm_ymm_m256
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/vmaskmovps_ymm_ymm_m256/instructions/vmaskmovps_ymm_ymm_m256/vmaskmovps_ymm_ymm_m256.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/vmaskmovps_ymm_ymm_m256/instructions/../testcases.09.tc --def_in "{ %rbx %ymm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vmaskmovps_ymm_ymm_m256: 139 s
+Thread 1 done!: vmaskmovps_ymm_ymm_m256
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: vpmaskmovd_ymm_ymm_m256
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/vpmaskmovd_ymm_ymm_m256/instructions/vpmaskmovd_ymm_ymm_m256/vpmaskmovd_ymm_ymm_m256.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/vpmaskmovd_ymm_ymm_m256/instructions/../testcases.09.tc --def_in "{ %rbx %ymm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time vpmaskmovd_ymm_ymm_m256: 134 s
+Thread 1 done!: vpmaskmovd_ymm_ymm_m256
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: cmpxchg8b_m64
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/cmpxchg8b_m64/instructions/cmpxchg8b_m64/cmpxchg8b_m64.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/cmpxchg8b_m64/instructions/../testcases.09.tc --def_in "{ %rax %rcx %rdx %rbx %zf }" --live_out "{ %rax %rcx %rdx %rbx %zf }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time cmpxchg8b_m64: 272 s
+Thread 1 done!: cmpxchg8b_m64
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: cmpxchg16b_m128
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/cmpxchg16b_m128/instructions/cmpxchg16b_m128/cmpxchg16b_m128.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/cmpxchg16b_m128/instructions/../testcases.09.tc --def_in "{ %rax %rcx %rdx %rbx %zf }" --live_out "{ %rax %rcx %rdx %rbx %zf }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time cmpxchg16b_m128: 291 s
+Thread 1 done!: cmpxchg16b_m128
+[4m[1m[34mFiring 1.[0m
+Thread 1 start: cmpxchgl_m32_r32
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/cmpxchgl_m32_r32/instructions/cmpxchgl_m32_r32/cmpxchgl_m32_r32.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/cmpxchgl_m32_r32/instructions/../testcases.09.tc --def_in "{ %rax %ecx %rbx %cf %pf %af %zf %sf %of }" --live_out "{ %rax %cf %pf %af %zf %sf %of }" --maybe_undef_out "{ }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Completed 3000cases
+Completed 4000cases
+Completed 5000cases
+Completed 6000cases
+Execution time cmpxchgl_m32_r32: 362 s
+Thread 1 done!: cmpxchgl_m32_r32

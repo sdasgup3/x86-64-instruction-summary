@@ -1,8 +1,6 @@
-[4m[1m[34mFiring Last 1[0m
+[4m[1m[34mFiring 1.[0m
 Thread 1 start: btl_m32_imm8
-Modiy /home/sdasgup3/Github/strata-data/data-regs/testcases.tc using %rbx
-Modiied: concrete_instances/memory-variants/btl_m32_imm8/instructions/../testcases.09.tc
-/home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/btl_m32_imm8/instructions/btl_m32_imm8/btl_m32_imm8.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/btl_m32_imm8/instructions/../testcases.09.tc --def_in "{ %rbx }" --live_out "{ %cf }" 
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/btl_m32_imm8/instructions/btl_m32_imm8/btl_m32_imm8.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/btl_m32_imm8/instructions/../testcases.09.tc --def_in "{ %rbx }" --live_out "{ %cf }" --maybe_undef_out "{ %pf %af %sf %of }" 
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
@@ -14,4 +12,5 @@ Completed 3000cases
 Completed 4000cases
 Completed 5000cases
 Completed 6000cases
+Execution time btl_m32_imm8: 310 s
 Thread 1 done!: btl_m32_imm8

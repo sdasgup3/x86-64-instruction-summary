@@ -1,11 +1,10 @@
-[4m[1m[34mFiring Last 1[0m
+[4m[1m[34mFiring 1.[0m
 Thread 1 start: divw_m16
-Modiy /home/sdasgup3/Github/strata-data/data-regs/testcases.tc using %rbx
-Modiied: concrete_instances/memory-variants/divw_m16/instructions/../testcases.09.tc
-/home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/divw_m16/instructions/divw_m16/divw_m16.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/divw_m16/instructions/../testcases.09.tc --def_in "{ %ax %dx %rbx }" --live_out "{ %ax %dx }" 
+timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/divw_m16/instructions/divw_m16/divw_m16.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/divw_m16/instructions/../testcases.09.tc --def_in "{ %ax %dx %rbx }" --live_out "{ %ax %dx }" --maybe_undef_out "{ %cf %pf %af %zf %sf %of }" 
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
 Sandbox did not finish normally: divw_m16 8
+Execution time divw_m16: 8 s
 Thread 1 done!: divw_m16
