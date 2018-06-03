@@ -1,0 +1,3 @@
+.target:
+  movb $0xd6, (%rbx)
+  retq

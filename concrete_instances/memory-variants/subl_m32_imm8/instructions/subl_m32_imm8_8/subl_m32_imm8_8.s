@@ -1,0 +1,3 @@
+.target:
+  subl $0x8, (%rbx)
+  retq

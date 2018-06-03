@@ -1,0 +1,3 @@
+.target:
+  subb $0x68, (%rbx)
+  retq

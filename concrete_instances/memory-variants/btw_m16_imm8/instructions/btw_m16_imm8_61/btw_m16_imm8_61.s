@@ -1,0 +1,3 @@
+.target:
+  btw $0x3d, (%rbx)
+  retq

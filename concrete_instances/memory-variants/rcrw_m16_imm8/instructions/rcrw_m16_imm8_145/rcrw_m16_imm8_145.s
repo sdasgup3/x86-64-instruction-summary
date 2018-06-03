@@ -1,0 +1,3 @@
+.target:
+  rcrw $0x91, (%rbx)
+  retq

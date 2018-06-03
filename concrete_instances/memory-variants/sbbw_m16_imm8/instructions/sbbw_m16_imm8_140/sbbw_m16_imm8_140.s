@@ -1,0 +1,3 @@
+.target:
+  sbbw $0x8c, (%rbx)
+  retq

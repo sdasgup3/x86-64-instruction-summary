@@ -1,0 +1,3 @@
+.target:
+  rolb $0xd1, (%rbx)
+  retq

@@ -1,0 +1,3 @@
+.target:
+  rclb $0x48, (%rbx)
+  retq

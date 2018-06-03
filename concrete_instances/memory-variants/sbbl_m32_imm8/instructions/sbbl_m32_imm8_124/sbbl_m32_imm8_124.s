@@ -1,0 +1,3 @@
+.target:
+  sbbl $0x7c, (%rbx)
+  retq

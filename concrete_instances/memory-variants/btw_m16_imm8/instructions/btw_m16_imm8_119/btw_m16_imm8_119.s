@@ -1,0 +1,3 @@
+.target:
+  btw $0x77, (%rbx)
+  retq

@@ -1,0 +1,3 @@
+.target:
+  shlq $0x92, (%rbx)
+  retq

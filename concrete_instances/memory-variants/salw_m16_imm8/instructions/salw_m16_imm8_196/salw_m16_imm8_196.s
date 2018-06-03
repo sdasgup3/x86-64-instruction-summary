@@ -1,0 +1,3 @@
+.target:
+  salw $0xc4, (%rbx)
+  retq

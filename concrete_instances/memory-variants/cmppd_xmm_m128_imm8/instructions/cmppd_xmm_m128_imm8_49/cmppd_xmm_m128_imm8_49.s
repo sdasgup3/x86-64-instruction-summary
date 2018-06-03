@@ -1,0 +1,3 @@
+.target:
+  cmppd $0x31, (%rbx), %xmm1
+  retq

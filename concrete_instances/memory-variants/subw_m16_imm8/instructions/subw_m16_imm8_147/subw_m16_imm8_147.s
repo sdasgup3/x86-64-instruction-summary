@@ -1,0 +1,3 @@
+.target:
+  subw $0x93, (%rbx)
+  retq

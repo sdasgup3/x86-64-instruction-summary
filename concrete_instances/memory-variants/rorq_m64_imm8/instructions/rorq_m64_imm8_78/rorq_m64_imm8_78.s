@@ -1,0 +1,3 @@
+.target:
+  rorq $0x4e, (%rbx)
+  retq

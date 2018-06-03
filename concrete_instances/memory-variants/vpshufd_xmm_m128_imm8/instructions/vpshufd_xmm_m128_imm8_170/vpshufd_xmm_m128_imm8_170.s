@@ -1,0 +1,3 @@
+.target:
+  vpshufd $0xaa, (%rbx), %xmm1
+  retq

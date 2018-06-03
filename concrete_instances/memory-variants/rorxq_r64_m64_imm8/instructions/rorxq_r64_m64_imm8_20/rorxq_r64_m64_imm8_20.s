@@ -1,0 +1,3 @@
+.target:
+  rorxq $0x14, (%rcx), %rbx
+  retq

@@ -1,0 +1,3 @@
+.target:
+  rorxl $0x6a, (%rcx), %ebx
+  retq

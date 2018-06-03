@@ -1,0 +1,3 @@
+.target:
+  vperm2f128 $0x4f, (%rbx), %ymm2, %ymm1
+  retq

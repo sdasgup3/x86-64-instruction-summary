@@ -1,0 +1,3 @@
+.target:
+  vpermq $0x79, (%rbx), %ymm1
+  retq

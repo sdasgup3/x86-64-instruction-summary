@@ -1,0 +1,3 @@
+.target:
+  pblendw $0xcf, (%rbx), %xmm1
+  retq

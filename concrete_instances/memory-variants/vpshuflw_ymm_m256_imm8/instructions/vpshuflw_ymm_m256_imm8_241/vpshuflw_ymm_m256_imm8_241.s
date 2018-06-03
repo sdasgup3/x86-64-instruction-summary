@@ -1,0 +1,3 @@
+.target:
+  vpshuflw $0xf1, (%rbx), %ymm1
+  retq

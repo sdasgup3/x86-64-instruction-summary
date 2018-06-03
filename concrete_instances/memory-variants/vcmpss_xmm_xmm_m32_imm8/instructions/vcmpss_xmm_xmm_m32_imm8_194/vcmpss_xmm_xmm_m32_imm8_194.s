@@ -1,0 +1,3 @@
+.target:
+  vcmpss $0xc2, (%rbx), %xmm2, %xmm1
+  retq

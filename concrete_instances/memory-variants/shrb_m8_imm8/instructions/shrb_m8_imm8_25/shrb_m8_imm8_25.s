@@ -1,0 +1,3 @@
+.target:
+  shrb $0x19, (%rbx)
+  retq

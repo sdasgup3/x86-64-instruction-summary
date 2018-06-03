@@ -1,0 +1,3 @@
+.target:
+  vroundsd $0x92, (%rbx), %xmm2, %xmm1
+  retq
