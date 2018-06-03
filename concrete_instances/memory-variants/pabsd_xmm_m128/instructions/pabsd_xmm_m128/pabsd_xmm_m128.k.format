@@ -1,0 +1,21 @@
+code: pabsd (%rbx), %xmm1
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { ssse3 }
+
+Formula:
+
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), concatenateMInt( (#ifMInt ugtMInt( extractMInt( TMP_BV_128_0, 0, 32), mi(32, 2147483647)) #then addMInt(mi(32, 1), negMInt( extractMInt( TMP_BV_128_0, 0, 32))) #else extractMInt( TMP_BV_128_0, 0, 32) #fi), concatenateMInt( (#ifMInt ugtMInt( extractMInt( TMP_BV_128_0, 32, 64), mi(32, 2147483647)) #then addMInt(mi(32, 1), negMInt( extractMInt( TMP_BV_128_0, 32, 64))) #else extractMInt( TMP_BV_128_0, 32, 64) #fi), concatenateMInt( (#ifMInt ugtMInt( extractMInt( TMP_BV_128_0, 64, 96), mi(32, 2147483647)) #then addMInt(mi(32, 1), negMInt( extractMInt( TMP_BV_128_0, 64, 96))) #else extractMInt( TMP_BV_128_0, 64, 96) #fi), (#ifMInt ugtMInt( extractMInt( TMP_BV_128_0, 96, 128), mi(32, 2147483647)) #then addMInt(mi(32, 1), negMInt( extractMInt( TMP_BV_128_0, 96, 128))) #else extractMInt( TMP_BV_128_0, 96, 128) #fi)))))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

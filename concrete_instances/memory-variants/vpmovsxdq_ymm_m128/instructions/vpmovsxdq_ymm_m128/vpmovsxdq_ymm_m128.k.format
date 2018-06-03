@@ -1,0 +1,21 @@
+code: vpmovsxdq (%rbx), %ymm1
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+Formula:
+
+%ymm1  : concatenateMInt( mi(64, svalueMInt(extractMInt( TMP_BV_128_0, 0, 32))), concatenateMInt( mi(64, svalueMInt(extractMInt( TMP_BV_128_0, 32, 64))), concatenateMInt( mi(64, svalueMInt(extractMInt( TMP_BV_128_0, 64, 96))), mi(64, svalueMInt(extractMInt( TMP_BV_128_0, 96, 128))))))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

@@ -1,0 +1,31 @@
+code: btw %cx, (%rbx)
+
+  maybe read:      { %cx %rbx }
+  must read:       { %cx %rbx }
+  maybe write:     { %cf }
+  must write:      { %cf }
+  maybe undef:     { %pf %af %sf %of }
+  must undef:      { %pf %af %sf %of }
+  required flags:  { }
+
+Formula:
+
+%cf    : extractMInt( lshrMInt( TMP_BV_8_1, uvalueMInt(concatenateMInt( mi(5, 0), extractMInt( %rcx, 61, 64)))), 7, 8)
+%pf    : (#ifMInt TMP_BOOL_3 #then mi(1, 1) #else mi(1, 0) #fi)
+%af    : (#ifMInt TMP_BOOL_2 #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : (#ifMInt TMP_BOOL_1 #then mi(1, 1) #else mi(1, 0) #fi)
+%of    : (#ifMInt TMP_BOOL_0 #then mi(1, 1) #else mi(1, 0) #fi)
+
+Information about memory reads:
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rbx.
+  Value TMP_BV_8_1info: Loc Size Mismatch
+
+info: Loc Address Mismatch
+
+ (1 bytes)
+    was read at address addMInt( %rbx, concatenateMInt( mi(3, 0), extractMInt( mi(64, svalueMInt(extractMInt( %rcx, 48, 64))), 0, 61))).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : ((sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE)) orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

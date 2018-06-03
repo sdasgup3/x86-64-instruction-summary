@@ -1,0 +1,28 @@
+code: lzcntw (%rcx), %bx
+
+  maybe read:      { %rcx }
+  must read:       { %rcx }
+  maybe write:     { %bx %cf %zf }
+  must write:      { %bx %cf %zf }
+  maybe undef:     { %pf %af %sf %of }
+  must undef:      { %pf %af %sf %of }
+  required flags:  { bmi1 }
+
+Formula:
+
+%rbx   : concatenateMInt( extractMInt( %rbx, 0, 48), (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 0, 1), mi(1, 1)) #then mi(16, 0) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 1, 2), mi(1, 1)) #then mi(16, 1) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 2, 3), mi(1, 1)) #then mi(16, 2) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 3, 4), mi(1, 1)) #then mi(16, 3) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 4, 5), mi(1, 1)) #then mi(16, 4) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 5, 6), mi(1, 1)) #then mi(16, 5) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 6, 7), mi(1, 1)) #then mi(16, 6) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 7, 8), mi(1, 1)) #then mi(16, 7) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 8, 9), mi(1, 1)) #then mi(16, 8) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 9, 10), mi(1, 1)) #then mi(16, 9) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 10, 11), mi(1, 1)) #then mi(16, 10) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 11, 12), mi(1, 1)) #then mi(16, 11) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 12, 13), mi(1, 1)) #then mi(16, 12) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 13, 14), mi(1, 1)) #then mi(16, 13) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 14, 15), mi(1, 1)) #then mi(16, 14) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 15, 16), mi(1, 1)) #then mi(16, 15) #else mi(16, 16) #fi) #fi) #fi) #fi) #fi) #fi) #fi) #fi) #fi) #fi) #fi) #fi) #fi) #fi) #fi) #fi))
+
+%cf    : (#ifMInt eqMInt( (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 0, 1), mi(1, 1)) #then mi(16, 0) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 1, 2), mi(1, 1)) #then mi(16, 1) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 2, 3), mi(1, 1)) #then mi(16, 2) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 3, 4), mi(1, 1)) #then mi(16, 3) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 4, 5), mi(1, 1)) #then mi(16, 4) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 5, 6), mi(1, 1)) #then mi(16, 5) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 6, 7), mi(1, 1)) #then mi(16, 6) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 7, 8), mi(1, 1)) #then mi(16, 7) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 8, 9), mi(1, 1)) #then mi(16, 8) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 9, 10), mi(1, 1)) #then mi(16, 9) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 10, 11), mi(1, 1)) #then mi(16, 10) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 11, 12), mi(1, 1)) #then mi(16, 11) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 12, 13), mi(1, 1)) #then mi(16, 12) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 13, 14), mi(1, 1)) #then mi(16, 13) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 14, 15), mi(1, 1)) #then mi(16, 14) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 15, 16), mi(1, 1)) #then mi(16, 15) #else mi(16, 16) #fi) #fi) #fi) #fi) #fi) #fi) #fi) #fi) #fi) #fi) #fi) #fi) #fi) #fi) #fi) #fi), mi(16, 16)) #then mi(1, 1) #else mi(1, 0) #fi)
+%pf    : (#ifMInt TMP_BOOL_2 #then mi(1, 1) #else mi(1, 0) #fi)
+%af    : (#ifMInt TMP_BOOL_3 #then mi(1, 1) #else mi(1, 0) #fi)
+%zf    : (#ifMInt eqMInt( (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 0, 1), mi(1, 1)) #then mi(16, 0) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 1, 2), mi(1, 1)) #then mi(16, 1) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 2, 3), mi(1, 1)) #then mi(16, 2) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 3, 4), mi(1, 1)) #then mi(16, 3) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 4, 5), mi(1, 1)) #then mi(16, 4) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 5, 6), mi(1, 1)) #then mi(16, 5) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 6, 7), mi(1, 1)) #then mi(16, 6) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 7, 8), mi(1, 1)) #then mi(16, 7) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 8, 9), mi(1, 1)) #then mi(16, 8) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 9, 10), mi(1, 1)) #then mi(16, 9) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 10, 11), mi(1, 1)) #then mi(16, 10) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 11, 12), mi(1, 1)) #then mi(16, 11) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 12, 13), mi(1, 1)) #then mi(16, 12) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 13, 14), mi(1, 1)) #then mi(16, 13) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 14, 15), mi(1, 1)) #then mi(16, 14) #else (#ifMInt eqMInt( extractMInt( TMP_BV_16_0, 15, 16), mi(1, 1)) #then mi(16, 15) #else mi(16, 16) #fi) #fi) #fi) #fi) #fi) #fi) #fi) #fi) #fi) #fi) #fi) #fi) #fi) #fi) #fi) #fi), mi(16, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : (#ifMInt TMP_BOOL_1 #then mi(1, 1) #else mi(1, 0) #fi)
+%of    : (#ifMInt TMP_BOOL_0 #then mi(1, 1) #else mi(1, 0) #fi)
+
+Information about memory reads:
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rcx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

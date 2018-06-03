@@ -1,0 +1,19 @@
+code: movb %ah, (%rbx)
+
+  maybe read:      { %ah %rbx }
+  must read:       { %ah %rbx }
+  maybe write:     { }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+Information about memory writes:
+  Address %rbx was updated to
+    extractMInt( %rax, 48, 56) (1 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

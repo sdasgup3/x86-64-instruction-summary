@@ -1,0 +1,21 @@
+code: packssdw (%rbx), %xmm1
+
+  maybe read:      { %rbx %xmm1 }
+  must read:       { %rbx %xmm1 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse2 }
+
+Formula:
+
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), concatenateMInt( (#ifMInt sgtMInt( extractMInt( TMP_BV_128_0, 0, 32), mi(32, 32767)) #then mi(16, 32767) #else (#ifMInt sltMInt( extractMInt( TMP_BV_128_0, 0, 32), mi(32, 18446744073709518848)) #then mi(16, 18446744073709518848) #else extractMInt( TMP_BV_128_0, 16, 32) #fi) #fi), concatenateMInt( (#ifMInt sgtMInt( extractMInt( TMP_BV_128_0, 32, 64), mi(32, 32767)) #then mi(16, 32767) #else (#ifMInt sltMInt( extractMInt( TMP_BV_128_0, 32, 64), mi(32, 18446744073709518848)) #then mi(16, 18446744073709518848) #else extractMInt( TMP_BV_128_0, 48, 64) #fi) #fi), concatenateMInt( (#ifMInt sgtMInt( extractMInt( TMP_BV_128_0, 64, 96), mi(32, 32767)) #then mi(16, 32767) #else (#ifMInt sltMInt( extractMInt( TMP_BV_128_0, 64, 96), mi(32, 18446744073709518848)) #then mi(16, 18446744073709518848) #else extractMInt( TMP_BV_128_0, 80, 96) #fi) #fi), concatenateMInt( (#ifMInt sgtMInt( extractMInt( TMP_BV_128_0, 96, 128), mi(32, 32767)) #then mi(16, 32767) #else (#ifMInt sltMInt( extractMInt( TMP_BV_128_0, 96, 128), mi(32, 18446744073709518848)) #then mi(16, 18446744073709518848) #else extractMInt( TMP_BV_128_0, 112, 128) #fi) #fi), concatenateMInt( (#ifMInt sgtMInt( extractMInt( %ymm1, 128, 160), mi(32, 32767)) #then mi(16, 32767) #else (#ifMInt sltMInt( extractMInt( %ymm1, 128, 160), mi(32, 18446744073709518848)) #then mi(16, 18446744073709518848) #else extractMInt( %ymm1, 144, 160) #fi) #fi), concatenateMInt( (#ifMInt sgtMInt( extractMInt( %ymm1, 160, 192), mi(32, 32767)) #then mi(16, 32767) #else (#ifMInt sltMInt( extractMInt( %ymm1, 160, 192), mi(32, 18446744073709518848)) #then mi(16, 18446744073709518848) #else extractMInt( %ymm1, 176, 192) #fi) #fi), concatenateMInt( (#ifMInt sgtMInt( extractMInt( %ymm1, 192, 224), mi(32, 32767)) #then mi(16, 32767) #else (#ifMInt sltMInt( extractMInt( %ymm1, 192, 224), mi(32, 18446744073709518848)) #then mi(16, 18446744073709518848) #else extractMInt( %ymm1, 208, 224) #fi) #fi), (#ifMInt sgtMInt( extractMInt( %ymm1, 224, 256), mi(32, 32767)) #then mi(16, 32767) #else (#ifMInt sltMInt( extractMInt( %ymm1, 224, 256), mi(32, 18446744073709518848)) #then mi(16, 18446744073709518848) #else extractMInt( %ymm1, 240, 256) #fi) #fi)))))))))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

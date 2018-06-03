@@ -1,0 +1,21 @@
+code: phaddw (%rbx), %xmm1
+
+  maybe read:      { %rbx %xmm1 }
+  must read:       { %rbx %xmm1 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { ssse3 }
+
+Formula:
+
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), concatenateMInt( concatenateMInt( concatenateMInt( concatenateMInt( concatenateMInt( concatenateMInt( concatenateMInt( addMInt( extractMInt( TMP_BV_128_0, 0, 16), extractMInt( TMP_BV_128_0, 16, 32)), addMInt( extractMInt( TMP_BV_128_0, 32, 48), extractMInt( TMP_BV_128_0, 48, 64))), addMInt( extractMInt( TMP_BV_128_0, 64, 80), extractMInt( TMP_BV_128_0, 80, 96))), addMInt( extractMInt( TMP_BV_128_0, 96, 112), extractMInt( TMP_BV_128_0, 112, 128))), addMInt( extractMInt( %ymm1, 128, 144), extractMInt( %ymm1, 144, 160))), addMInt( extractMInt( %ymm1, 160, 176), extractMInt( %ymm1, 176, 192))), addMInt( extractMInt( %ymm1, 192, 208), extractMInt( %ymm1, 208, 224))), addMInt( extractMInt( %ymm1, 224, 240), extractMInt( %ymm1, 240, 256))))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

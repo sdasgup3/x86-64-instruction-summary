@@ -1,0 +1,21 @@
+code: vpsrad (%rbx), %ymm2, %ymm1
+
+  maybe read:      { %rbx %ymm2 }
+  must read:       { %rbx %ymm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+Formula:
+
+%ymm1  : concatenateMInt( ashrMInt( extractMInt( %ymm2, 0, 32), uvalueMInt((#ifMInt ugtMInt( extractMInt( TMP_BV_128_0, 64, 128), mi(64, 31)) #then mi(32, 32) #else extractMInt( TMP_BV_128_0, 96, 128) #fi))), concatenateMInt( ashrMInt( extractMInt( %ymm2, 32, 64), uvalueMInt((#ifMInt ugtMInt( extractMInt( TMP_BV_128_0, 64, 128), mi(64, 31)) #then mi(32, 32) #else extractMInt( TMP_BV_128_0, 96, 128) #fi))), concatenateMInt( ashrMInt( extractMInt( %ymm2, 64, 96), uvalueMInt((#ifMInt ugtMInt( extractMInt( TMP_BV_128_0, 64, 128), mi(64, 31)) #then mi(32, 32) #else extractMInt( TMP_BV_128_0, 96, 128) #fi))), concatenateMInt( ashrMInt( extractMInt( %ymm2, 96, 128), uvalueMInt((#ifMInt ugtMInt( extractMInt( TMP_BV_128_0, 64, 128), mi(64, 31)) #then mi(32, 32) #else extractMInt( TMP_BV_128_0, 96, 128) #fi))), concatenateMInt( ashrMInt( extractMInt( %ymm2, 128, 160), uvalueMInt((#ifMInt ugtMInt( extractMInt( TMP_BV_128_0, 64, 128), mi(64, 31)) #then mi(32, 32) #else extractMInt( TMP_BV_128_0, 96, 128) #fi))), concatenateMInt( ashrMInt( extractMInt( %ymm2, 160, 192), uvalueMInt((#ifMInt ugtMInt( extractMInt( TMP_BV_128_0, 64, 128), mi(64, 31)) #then mi(32, 32) #else extractMInt( TMP_BV_128_0, 96, 128) #fi))), concatenateMInt( ashrMInt( extractMInt( %ymm2, 192, 224), uvalueMInt((#ifMInt ugtMInt( extractMInt( TMP_BV_128_0, 64, 128), mi(64, 31)) #then mi(32, 32) #else extractMInt( TMP_BV_128_0, 96, 128) #fi))), ashrMInt( extractMInt( %ymm2, 224, 256), uvalueMInt((#ifMInt ugtMInt( extractMInt( TMP_BV_128_0, 64, 128), mi(64, 31)) #then mi(32, 32) #else extractMInt( TMP_BV_128_0, 96, 128) #fi))))))))))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

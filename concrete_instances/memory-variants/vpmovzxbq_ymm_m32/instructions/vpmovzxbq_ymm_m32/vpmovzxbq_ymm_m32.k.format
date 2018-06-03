@@ -1,0 +1,21 @@
+code: vpmovzxbq (%rbx), %ymm1
+
+  maybe read:      { %rbx }
+  must read:       { %rbx }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+Formula:
+
+%ymm1  : concatenateMInt( concatenateMInt( mi(56, 0), extractMInt( TMP_BV_32_0, 0, 8)), concatenateMInt( concatenateMInt( mi(56, 0), extractMInt( TMP_BV_32_0, 8, 16)), concatenateMInt( concatenateMInt( mi(56, 0), extractMInt( TMP_BV_32_0, 16, 24)), concatenateMInt( mi(56, 0), extractMInt( TMP_BV_32_0, 24, 32)))))
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

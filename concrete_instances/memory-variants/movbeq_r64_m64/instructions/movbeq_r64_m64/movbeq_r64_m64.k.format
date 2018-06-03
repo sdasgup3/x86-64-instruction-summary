@@ -1,0 +1,21 @@
+code: movbeq (%rcx), %rbx
+
+  maybe read:      { %rcx }
+  must read:       { %rcx }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { movbe }
+
+Formula:
+
+%rbx   : concatenateMInt( concatenateMInt( concatenateMInt( concatenateMInt( concatenateMInt( concatenateMInt( concatenateMInt( extractMInt( TMP_BV_64_0, 56, 64), extractMInt( TMP_BV_64_0, 48, 56)), extractMInt( TMP_BV_64_0, 40, 48)), extractMInt( TMP_BV_64_0, 32, 40)), extractMInt( TMP_BV_64_0, 24, 32)), extractMInt( TMP_BV_64_0, 16, 24)), extractMInt( TMP_BV_64_0, 8, 16)), extractMInt( TMP_BV_64_0, 0, 8))
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rcx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

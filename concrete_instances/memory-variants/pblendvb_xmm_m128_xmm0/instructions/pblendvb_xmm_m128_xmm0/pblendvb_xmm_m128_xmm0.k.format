@@ -1,0 +1,21 @@
+code: pblendvb %xmm0, (%rbx), %xmm1
+
+  maybe read:      { %rbx %xmm0 %xmm1 }
+  must read:       { %rbx %xmm0 %xmm1 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse4_1 }
+
+Formula:
+
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), concatenateMInt( (#ifMInt eqMInt( extractMInt( %ymm0, 128, 129), mi(1, 1)) #then extractMInt( TMP_BV_128_0, 0, 8) #else extractMInt( %ymm1, 128, 136) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( %ymm0, 136, 137), mi(1, 1)) #then extractMInt( TMP_BV_128_0, 8, 16) #else extractMInt( %ymm1, 136, 144) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( %ymm0, 144, 145), mi(1, 1)) #then extractMInt( TMP_BV_128_0, 16, 24) #else extractMInt( %ymm1, 144, 152) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( %ymm0, 152, 153), mi(1, 1)) #then extractMInt( TMP_BV_128_0, 24, 32) #else extractMInt( %ymm1, 152, 160) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( %ymm0, 160, 161), mi(1, 1)) #then extractMInt( TMP_BV_128_0, 32, 40) #else extractMInt( %ymm1, 160, 168) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( %ymm0, 168, 169), mi(1, 1)) #then extractMInt( TMP_BV_128_0, 40, 48) #else extractMInt( %ymm1, 168, 176) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( %ymm0, 176, 177), mi(1, 1)) #then extractMInt( TMP_BV_128_0, 48, 56) #else extractMInt( %ymm1, 176, 184) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( %ymm0, 184, 185), mi(1, 1)) #then extractMInt( TMP_BV_128_0, 56, 64) #else extractMInt( %ymm1, 184, 192) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( %ymm0, 192, 193), mi(1, 1)) #then extractMInt( TMP_BV_128_0, 64, 72) #else extractMInt( %ymm1, 192, 200) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( %ymm0, 200, 201), mi(1, 1)) #then extractMInt( TMP_BV_128_0, 72, 80) #else extractMInt( %ymm1, 200, 208) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( %ymm0, 208, 209), mi(1, 1)) #then extractMInt( TMP_BV_128_0, 80, 88) #else extractMInt( %ymm1, 208, 216) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( %ymm0, 216, 217), mi(1, 1)) #then extractMInt( TMP_BV_128_0, 88, 96) #else extractMInt( %ymm1, 216, 224) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( %ymm0, 224, 225), mi(1, 1)) #then extractMInt( TMP_BV_128_0, 96, 104) #else extractMInt( %ymm1, 224, 232) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( %ymm0, 232, 233), mi(1, 1)) #then extractMInt( TMP_BV_128_0, 104, 112) #else extractMInt( %ymm1, 232, 240) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( %ymm0, 240, 241), mi(1, 1)) #then extractMInt( TMP_BV_128_0, 112, 120) #else extractMInt( %ymm1, 240, 248) #fi), (#ifMInt eqMInt( extractMInt( %ymm0, 248, 249), mi(1, 1)) #then extractMInt( TMP_BV_128_0, 120, 128) #else extractMInt( %ymm1, 248, 256) #fi)))))))))))))))))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

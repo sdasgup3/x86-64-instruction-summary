@@ -1,0 +1,22 @@
+code: mulxq (%rdx), %rcx, %rbx
+
+  maybe read:      { %rdx }
+  must read:       { %rdx }
+  maybe write:     { %rcx %rbx }
+  must write:      { %rcx %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { bmi2 }
+
+Formula:
+
+%rcx   : extractMInt( mulMInt( concatenateMInt( mi(64, 0), %rdx), concatenateMInt( mi(64, 0), TMP_BV_64_0)), 64, 128)
+%rbx   : extractMInt( mulMInt( concatenateMInt( mi(64, 0), %rdx), concatenateMInt( mi(64, 0), TMP_BV_64_0)), 0, 64)
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rdx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

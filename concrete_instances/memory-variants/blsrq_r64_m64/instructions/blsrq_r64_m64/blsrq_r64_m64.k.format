@@ -1,0 +1,28 @@
+code: blsrq (%rcx), %rbx
+
+  maybe read:      { %rcx }
+  must read:       { %rcx }
+  maybe write:     { %rbx %cf %zf %sf %of }
+  must write:      { %rbx %cf %zf %sf %of }
+  maybe undef:     { %pf %af }
+  must undef:      { %pf %af }
+  required flags:  { bmi1 }
+
+Formula:
+
+%rbx   : andMInt( subMInt( TMP_BV_64_0, mi(64, 1)), TMP_BV_64_0)
+
+%cf    : (#ifMInt eqMInt( TMP_BV_64_0, mi(64, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
+%pf    : (#ifMInt TMP_BOOL_1 #then mi(1, 1) #else mi(1, 0) #fi)
+%af    : (#ifMInt TMP_BOOL_0 #then mi(1, 1) #else mi(1, 0) #fi)
+%zf    : (#ifMInt eqMInt( andMInt( subMInt( TMP_BV_64_0, mi(64, 1)), TMP_BV_64_0), mi(64, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : andMInt( extractMInt( subMInt( TMP_BV_64_0, mi(64, 1)), 0, 1), extractMInt( TMP_BV_64_0, 0, 1))
+%of    : mi(1, 0)
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rcx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

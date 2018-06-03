@@ -1,0 +1,21 @@
+code: vpcmpeqq (%rbx), %ymm2, %ymm1
+
+  maybe read:      { %rbx %ymm2 }
+  must read:       { %rbx %ymm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+Formula:
+
+%ymm1  : concatenateMInt( (#ifMInt eqMInt( extractMInt( %ymm2, 0, 64), extractMInt( TMP_BV_256_0, 0, 64)) #then mi(64, 18446744073709551615) #else mi(64, 0) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( %ymm2, 64, 128), extractMInt( TMP_BV_256_0, 64, 128)) #then mi(64, 18446744073709551615) #else mi(64, 0) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( %ymm2, 128, 192), extractMInt( TMP_BV_256_0, 128, 192)) #then mi(64, 18446744073709551615) #else mi(64, 0) #fi), (#ifMInt eqMInt( extractMInt( %ymm2, 192, 256), extractMInt( TMP_BV_256_0, 192, 256)) #then mi(64, 18446744073709551615) #else mi(64, 0) #fi))))
+
+Information about memory reads:
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

@@ -1,0 +1,25 @@
+code: xchgl %ecx, (%rbx)
+
+  maybe read:      { %ecx %rbx }
+  must read:       { %ecx %rbx }
+  maybe write:     { %rcx }
+  must write:      { %rcx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+%rcx   : concatenateMInt( mi(32, 0), TMP_BV_32_0)
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rbx.
+
+Information about memory writes:
+  Address %rbx was updated to
+    extractMInt( %rcx, 32, 64) (4 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : ((sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE)) orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

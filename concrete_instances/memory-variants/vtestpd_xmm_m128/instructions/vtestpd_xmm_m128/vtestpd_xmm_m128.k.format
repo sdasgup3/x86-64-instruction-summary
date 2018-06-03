@@ -1,0 +1,26 @@
+code: vtestpd (%rbx), %xmm1
+
+  maybe read:      { %rbx %xmm1 }
+  must read:       { %rbx %xmm1 }
+  maybe write:     { %cf %pf %af %zf %sf %of }
+  must write:      { %cf %pf %af %zf %sf %of }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%cf    : (#ifMInt (eqMInt( andMInt( negMInt( extractMInt( %ymm1, 192, 193)), extractMInt( TMP_BV_128_0, 64, 65)), mi(1, 0)) andBool eqMInt( andMInt( negMInt( extractMInt( %ymm1, 128, 129)), extractMInt( TMP_BV_128_0, 0, 1)), mi(1, 0))) #then mi(1, 1) #else mi(1, 0) #fi)
+%pf    : mi(1, 0)
+%af    : mi(1, 0)
+%zf    : (#ifMInt (eqMInt( andMInt( extractMInt( %ymm1, 192, 193), extractMInt( TMP_BV_128_0, 64, 65)), mi(1, 0)) andBool eqMInt( andMInt( extractMInt( %ymm1, 128, 129), extractMInt( TMP_BV_128_0, 0, 1)), mi(1, 0))) #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : mi(1, 0)
+%of    : mi(1, 0)
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

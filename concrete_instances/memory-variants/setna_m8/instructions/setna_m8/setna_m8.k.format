@@ -1,0 +1,19 @@
+code: setna (%rbx)
+
+  maybe read:      { %rbx %cf %zf }
+  must read:       { %rbx %cf %zf }
+  maybe write:     { }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+Information about memory writes:
+  Address %rbx was updated to
+    (#ifMInt (%cf orBool %zf) #then mi(8, 1) #else mi(8, 0) #fi) (1 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

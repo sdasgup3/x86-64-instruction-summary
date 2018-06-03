@@ -1,0 +1,19 @@
+code: movw %cx, (%rbx)
+
+  maybe read:      { %cx %rbx }
+  must read:       { %cx %rbx }
+  maybe write:     { }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { }
+
+Formula:
+
+Information about memory writes:
+  Address %rbx was updated to
+    extractMInt( %rcx, 48, 64) (2 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

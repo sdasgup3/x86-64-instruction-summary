@@ -1,0 +1,21 @@
+code: vpsraw (%rbx), %xmm2, %xmm1
+
+  maybe read:      { %rbx %xmm2 }
+  must read:       { %rbx %xmm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%ymm1  : concatenateMInt( mi(128, 0), concatenateMInt( ashrMInt( extractMInt( %ymm2, 128, 144), uvalueMInt((#ifMInt ugtMInt( extractMInt( TMP_BV_128_0, 64, 128), mi(64, 15)) #then mi(16, 16) #else extractMInt( TMP_BV_128_0, 112, 128) #fi))), concatenateMInt( ashrMInt( extractMInt( %ymm2, 144, 160), uvalueMInt((#ifMInt ugtMInt( extractMInt( TMP_BV_128_0, 64, 128), mi(64, 15)) #then mi(16, 16) #else extractMInt( TMP_BV_128_0, 112, 128) #fi))), concatenateMInt( ashrMInt( extractMInt( %ymm2, 160, 176), uvalueMInt((#ifMInt ugtMInt( extractMInt( TMP_BV_128_0, 64, 128), mi(64, 15)) #then mi(16, 16) #else extractMInt( TMP_BV_128_0, 112, 128) #fi))), concatenateMInt( ashrMInt( extractMInt( %ymm2, 176, 192), uvalueMInt((#ifMInt ugtMInt( extractMInt( TMP_BV_128_0, 64, 128), mi(64, 15)) #then mi(16, 16) #else extractMInt( TMP_BV_128_0, 112, 128) #fi))), concatenateMInt( ashrMInt( extractMInt( %ymm2, 192, 208), uvalueMInt((#ifMInt ugtMInt( extractMInt( TMP_BV_128_0, 64, 128), mi(64, 15)) #then mi(16, 16) #else extractMInt( TMP_BV_128_0, 112, 128) #fi))), concatenateMInt( ashrMInt( extractMInt( %ymm2, 208, 224), uvalueMInt((#ifMInt ugtMInt( extractMInt( TMP_BV_128_0, 64, 128), mi(64, 15)) #then mi(16, 16) #else extractMInt( TMP_BV_128_0, 112, 128) #fi))), concatenateMInt( ashrMInt( extractMInt( %ymm2, 224, 240), uvalueMInt((#ifMInt ugtMInt( extractMInt( TMP_BV_128_0, 64, 128), mi(64, 15)) #then mi(16, 16) #else extractMInt( TMP_BV_128_0, 112, 128) #fi))), ashrMInt( extractMInt( %ymm2, 240, 256), uvalueMInt((#ifMInt ugtMInt( extractMInt( TMP_BV_128_0, 64, 128), mi(64, 15)) #then mi(16, 16) #else extractMInt( TMP_BV_128_0, 112, 128) #fi)))))))))))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

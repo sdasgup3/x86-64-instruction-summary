@@ -1,0 +1,23 @@
+code: movbew %cx, (%rbx)
+
+  maybe read:      { %cx %rbx }
+  must read:       { %cx %rbx }
+  maybe write:     { }
+  must write:      { }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { movbe }
+
+Formula:
+
+Information about memory reads:
+  Value TMP_BV_16_0 (2 bytes)
+    was read at address %rbx.
+
+Information about memory writes:
+  Address %rbx was updated to
+    concatenateMInt( extractMInt( %rcx, 56, 64), extractMInt( %rcx, 48, 56)) (2 bytes).
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : ((sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE)) orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

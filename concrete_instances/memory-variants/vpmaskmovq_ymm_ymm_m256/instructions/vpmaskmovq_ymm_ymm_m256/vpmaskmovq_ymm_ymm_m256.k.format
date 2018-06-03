@@ -1,0 +1,21 @@
+code: vpmaskmovq (%rbx), %ymm2, %ymm1
+
+  maybe read:      { %rbx %ymm2 }
+  must read:       { %rbx %ymm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+Formula:
+
+%ymm1  : concatenateMInt( (#ifMInt eqMInt( extractMInt( %ymm2, 0, 1), mi(1, 1)) #then extractMInt( TMP_BV_256_0, 0, 64) #else mi(64, 0) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( %ymm2, 64, 65), mi(1, 1)) #then extractMInt( TMP_BV_256_0, 64, 128) #else mi(64, 0) #fi), concatenateMInt( (#ifMInt eqMInt( extractMInt( %ymm2, 128, 129), mi(1, 1)) #then extractMInt( TMP_BV_256_0, 128, 192) #else mi(64, 0) #fi), (#ifMInt eqMInt( extractMInt( %ymm2, 192, 193), mi(1, 1)) #then extractMInt( TMP_BV_256_0, 192, 256) #else mi(64, 0) #fi))))
+
+Information about memory reads:
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

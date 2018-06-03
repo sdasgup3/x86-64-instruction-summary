@@ -1,0 +1,21 @@
+code: vinserti128 $0x0, (%rbx), %ymm2, %ymm1
+
+  maybe read:      { %rbx %ymm2 }
+  must read:       { %rbx %ymm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx2 }
+
+Formula:
+
+%ymm1  : (#ifMInt eqMInt( extractMInt( Imm8, 7, 8), mi(1, 0)) #then concatenateMInt( extractMInt( %ymm2, 0, 128), TMP_BV_128_0) #else concatenateMInt( TMP_BV_128_0, extractMInt( %ymm2, 128, 256)) #fi)
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

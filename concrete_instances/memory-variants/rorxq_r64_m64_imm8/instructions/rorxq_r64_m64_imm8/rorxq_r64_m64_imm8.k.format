@@ -1,0 +1,21 @@
+code: rorxq $0x0, (%rcx), %rbx
+
+  maybe read:      { %rcx }
+  must read:       { %rcx }
+  maybe write:     { %rbx }
+  must write:      { %rbx }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { bmi2 }
+
+Formula:
+
+%rbx   : orMInt( lshrMInt( TMP_BV_64_0, uvalueMInt(andMInt( concatenateMInt( mi(56, 0), Imm8), mi(64, 63)))), shlMInt( TMP_BV_64_0, uvalueMInt(subMInt( mi(64, 64), andMInt( concatenateMInt( mi(56, 0), Imm8), mi(64, 63))))))
+
+Information about memory reads:
+  Value TMP_BV_64_0 (8 bytes)
+    was read at address %rcx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

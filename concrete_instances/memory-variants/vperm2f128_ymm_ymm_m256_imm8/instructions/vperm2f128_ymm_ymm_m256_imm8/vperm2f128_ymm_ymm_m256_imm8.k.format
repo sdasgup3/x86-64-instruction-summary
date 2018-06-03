@@ -1,0 +1,21 @@
+code: vperm2f128 $0x0, (%rbx), %ymm2, %ymm1
+
+  maybe read:      { %rbx %ymm2 }
+  must read:       { %rbx %ymm2 }
+  maybe write:     { %ymm1 }
+  must write:      { %ymm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { avx }
+
+Formula:
+
+%ymm1  : (#ifMInt eqMInt( extractMInt( Imm8, 0, 1), mi(1, 1)) #then (#ifMInt eqMInt( extractMInt( Imm8, 4, 5), mi(1, 1)) #then concatenateMInt( mi(128, 0), mi(128, 0)) #else concatenateMInt( mi(128, 0), (#ifMInt eqMInt( extractMInt( Imm8, 6, 8), mi(2, 0)) #then extractMInt( %ymm2, 128, 256) #else (#ifMInt eqMInt( extractMInt( Imm8, 6, 8), mi(2, 1)) #then extractMInt( %ymm2, 0, 128) #else (#ifMInt eqMInt( extractMInt( Imm8, 6, 8), mi(2, 2)) #then extractMInt( TMP_BV_256_0, 128, 256) #else extractMInt( TMP_BV_256_0, 0, 128) #fi) #fi) #fi)) #fi) #else (#ifMInt eqMInt( extractMInt( Imm8, 4, 5), mi(1, 1)) #then concatenateMInt( (#ifMInt eqMInt( extractMInt( Imm8, 2, 4), mi(2, 0)) #then extractMInt( %ymm2, 128, 256) #else (#ifMInt eqMInt( extractMInt( Imm8, 2, 4), mi(2, 1)) #then extractMInt( %ymm2, 0, 128) #else (#ifMInt eqMInt( extractMInt( Imm8, 2, 4), mi(2, 2)) #then extractMInt( TMP_BV_256_0, 128, 256) #else extractMInt( TMP_BV_256_0, 0, 128) #fi) #fi) #fi), mi(128, 0)) #else concatenateMInt( (#ifMInt eqMInt( extractMInt( Imm8, 2, 4), mi(2, 0)) #then extractMInt( %ymm2, 128, 256) #else (#ifMInt eqMInt( extractMInt( Imm8, 2, 4), mi(2, 1)) #then extractMInt( %ymm2, 0, 128) #else (#ifMInt eqMInt( extractMInt( Imm8, 2, 4), mi(2, 2)) #then extractMInt( TMP_BV_256_0, 128, 256) #else extractMInt( TMP_BV_256_0, 0, 128) #fi) #fi) #fi), (#ifMInt eqMInt( extractMInt( Imm8, 6, 8), mi(2, 0)) #then extractMInt( %ymm2, 128, 256) #else (#ifMInt eqMInt( extractMInt( Imm8, 6, 8), mi(2, 1)) #then extractMInt( %ymm2, 0, 128) #else (#ifMInt eqMInt( extractMInt( Imm8, 6, 8), mi(2, 2)) #then extractMInt( TMP_BV_256_0, 128, 256) #else extractMInt( TMP_BV_256_0, 0, 128) #fi) #fi) #fi)) #fi) #fi)
+
+Information about memory reads:
+  Value TMP_BV_256_0 (32 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

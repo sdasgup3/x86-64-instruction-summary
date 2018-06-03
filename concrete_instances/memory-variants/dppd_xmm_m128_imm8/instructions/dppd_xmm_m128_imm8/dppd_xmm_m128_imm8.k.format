@@ -1,0 +1,21 @@
+code: dppd $0x0, (%rbx), %xmm1
+
+  maybe read:      { %rbx %xmm1 }
+  must read:       { %rbx %xmm1 }
+  maybe write:     { %xmm1 }
+  must write:      { %xmm1 }
+  maybe undef:     { }
+  must undef:      { }
+  required flags:  { sse4_1 }
+
+Formula:
+
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), concatenateMInt( (#ifMInt eqMInt( extractMInt( Imm8, 6, 7), mi(1, 1)) #then add_double((#ifMInt eqMInt( extractMInt( Imm8, 3, 4), mi(1, 1)) #then mul_double(extractMInt( %ymm1, 192, 256), extractMInt( TMP_BV_128_0, 64, 128)) #else mi(64, 0) #fi), (#ifMInt eqMInt( extractMInt( Imm8, 2, 3), mi(1, 1)) #then mul_double(extractMInt( %ymm1, 128, 192), extractMInt( TMP_BV_128_0, 0, 64)) #else mi(64, 0) #fi)) #else mi(64, 0) #fi), (#ifMInt eqMInt( extractMInt( Imm8, 7, 8), mi(1, 1)) #then add_double((#ifMInt eqMInt( extractMInt( Imm8, 3, 4), mi(1, 1)) #then mul_double(extractMInt( %ymm1, 192, 256), extractMInt( TMP_BV_128_0, 64, 128)) #else mi(64, 0) #fi), (#ifMInt eqMInt( extractMInt( Imm8, 2, 3), mi(1, 1)) #then mul_double(extractMInt( %ymm1, 128, 192), extractMInt( TMP_BV_128_0, 0, 64)) #else mi(64, 0) #fi)) #else mi(64, 0) #fi)))
+
+Information about memory reads:
+  Value TMP_BV_128_0 (16 bytes)
+    was read at address %rbx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))

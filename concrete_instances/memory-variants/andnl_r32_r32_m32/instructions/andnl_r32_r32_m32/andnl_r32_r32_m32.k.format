@@ -1,0 +1,28 @@
+code: andnl (%rdx), %ecx, %ebx
+
+  maybe read:      { %ecx %rdx }
+  must read:       { %ecx %rdx }
+  maybe write:     { %rbx %cf %zf %sf %of }
+  must write:      { %rbx %cf %zf %sf %of }
+  maybe undef:     { %pf %af }
+  must undef:      { %pf %af }
+  required flags:  { bmi1 }
+
+Formula:
+
+%rbx   : concatenateMInt( mi(32, 0), andMInt( negMInt( extractMInt( %rcx, 32, 64)), TMP_BV_32_0))
+
+%cf    : mi(1, 0)
+%pf    : (#ifMInt TMP_BOOL_1 #then mi(1, 1) #else mi(1, 0) #fi)
+%af    : (#ifMInt TMP_BOOL_0 #then mi(1, 1) #else mi(1, 0) #fi)
+%zf    : (#ifMInt eqMInt( andMInt( negMInt( extractMInt( %rcx, 32, 64)), TMP_BV_32_0), mi(32, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : andMInt( negMInt( extractMInt( %rcx, 32, 33)), extractMInt( TMP_BV_32_0, 0, 1))
+%of    : mi(1, 0)
+
+Information about memory reads:
+  Value TMP_BV_32_0 (4 bytes)
+    was read at address %rdx.
+
+sigfpe  : sigfpe
+sigbus  : sigbus
+sigsegv : (sigsegv orBool (((notBool sigfpe) andBool (notBool sigbus)) andBool FALSE))
