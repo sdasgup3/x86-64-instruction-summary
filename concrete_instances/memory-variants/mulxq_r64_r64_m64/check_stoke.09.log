@@ -1,11 +1,13 @@
 [4m[1m[34mFiring 1.[0m
 Thread 1 start: mulxq_r64_r64_m64
-timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/mulxq_r64_r64_m64/instructions/mulxq_r64_r64_m64/mulxq_r64_r64_m64.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/mulxq_r64_r64_m64/instructions/../testcases.09.tc --def_in "{ %rdx }" --live_out "{ %rcx %rbx }" --maybe_undef_out "{ }" 
+timeout 60m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/mulxq_r64_r64_m64/instructions/mulxq_r64_r64_m64/mulxq_r64_r64_m64.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/mulxq_r64_r64_m64/instructions/../testcases.09.tc --def_in "{ %rdx }" --live_out "{ %rcx %rbx }" --maybe_undef_out "{ }" 
 Reading the Testsuit
 Preparing Sandbox
 Run 6630 tests
 Collect Results
 Check Equivalence
 Completed 1000cases
-Execution time mulxq_r64_r64_m64: 1800 s
+Completed 2000cases
+Completed 3000cases
+Execution time mulxq_r64_r64_m64: 3600 s
 Thread 1 done!: mulxq_r64_r64_m64

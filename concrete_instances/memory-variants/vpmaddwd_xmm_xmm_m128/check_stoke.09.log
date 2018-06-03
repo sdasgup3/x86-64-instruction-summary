@@ -1,5 +1,5 @@
 [4m[1m[34mFiring 1.[0m
 Thread 1 start: vpmaddwd_xmm_xmm_m128
-timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/vpmaddwd_xmm_xmm_m128/instructions/vpmaddwd_xmm_xmm_m128/vpmaddwd_xmm_xmm_m128.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/vpmaddwd_xmm_xmm_m128/instructions/../testcases.09.tc --def_in "{ %rbx %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
-Execution time vpmaddwd_xmm_xmm_m128: 1800 s
+timeout 60m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/vpmaddwd_xmm_xmm_m128/instructions/vpmaddwd_xmm_xmm_m128/vpmaddwd_xmm_xmm_m128.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/vpmaddwd_xmm_xmm_m128/instructions/../testcases.09.tc --def_in "{ %rbx %xmm2 }" --live_out "{ %ymm1 }" --maybe_undef_out "{ }" 
+Execution time vpmaddwd_xmm_xmm_m128: 3600 s
 Thread 1 done!: vpmaddwd_xmm_xmm_m128

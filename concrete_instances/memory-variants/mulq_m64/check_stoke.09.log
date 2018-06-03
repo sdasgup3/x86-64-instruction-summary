@@ -1,5 +1,12 @@
 [4m[1m[34mFiring 1.[0m
 Thread 1 start: mulq_m64
-timeout 30m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/mulq_m64/instructions/mulq_m64/mulq_m64.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/mulq_m64/instructions/../testcases.09.tc --def_in "{ %rax %rbx }" --live_out "{ %rax %rdx %cf %of }" --maybe_undef_out "{ %pf %af %zf %sf }" 
-Execution time mulq_m64: 1800 s
+timeout 60m  /home/sdasgup3/Github/strata/stoke/./bin/stoke_check_circuit --strata_path /home/sdasgup3/Github/strata-data/circuits --target concrete_instances/memory-variants/mulq_m64/instructions/mulq_m64/mulq_m64.s --functions /home/sdasgup3/Github/strata-data/data-regs/functions --testcases concrete_instances/memory-variants/mulq_m64/instructions/../testcases.09.tc --def_in "{ %rax %rbx }" --live_out "{ %rax %rdx %cf %of }" --maybe_undef_out "{ %pf %af %zf %sf }" 
+Reading the Testsuit
+Preparing Sandbox
+Run 6630 tests
+Collect Results
+Check Equivalence
+Completed 1000cases
+Completed 2000cases
+Execution time mulq_m64: 3600 s
 Thread 1 done!: mulq_m64
