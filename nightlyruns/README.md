@@ -28,16 +28,20 @@ grep "^sat" ~/Junk/log
 | 10 | Mmeory | 2 Jun | check stoke | 45 (55 -10 which we are not implemented). All these are manually implemented. No Immediates | job.10 |runlog.10 | 10 |
 
 ### Commands
+
+09.
 ```
 // Update testcases
-parallel -a ~/Junk/xx "~/x86-semantics/scripts/process_spec.pl --opcode  {}    --instructions_path concrete_instances/memory-variants/{}/instructions/ --update_tc --testid 09" 
+ls concrete_instances/memory-variants/ | parallel  "~/x86-semantics/scripts/process_spec.pl --opcode  {}    --instructions_path concrete_instances/memory-variants/{}/instructions/ --update_tc --testid 09" 
 
 cd strata-data/output-strata/instruction-summary
 
-parallel -j6  -a ../nightlyruns/job.09  "~/x86-semantics/scripts/process_spec.pl --check_stoke --file concrete_instances/memory-variants/{}/check_stoke.09.txt --instructions_path concrete_instances/memory-variants/{}/instructions --use_updated_tc --testid 09  |& tee concrete_instances/memory-variants/{}/check_stoke.09.log" |& tee ~/Junk/log
+parallel -j30  -a nightlyruns/job.09  "~/x86-semantics/scripts/process_spec.pl --check_stoke --file concrete_instances/memory-variants/{}/check_stoke.09.txt --instructions_path concrete_instances/memory-variants/{}/instructions --use_updated_tc --testid 09  |& tee concrete_instances/memory-variants/{}/check_stoke.09.log" |& tee nightlyruns/runlog.09
+```
 
-Other Switches: --no_strata_handler // avoid using strata handler; mainly used for evaluating the formula of both strata and non strata handlers.
-
+10.
+```
+parallel -j30  -a nightlyruns/job.10  "~/x86-semantics/scripts/process_spec.pl --check_stoke --file concrete_instances/memory-variants/{}/check_stoke.09.txt --instructions_path concrete_instances/memory-variants/{}/instructions --use_updated_tc --testid 10  |& tee concrete_instances/memory-variants/{}/check_stoke.09.log" |& tee nightlyruns/runlog.10
 ```
 
 
