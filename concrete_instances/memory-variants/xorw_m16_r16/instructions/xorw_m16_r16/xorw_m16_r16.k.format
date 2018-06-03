@@ -23,7 +23,7 @@ Information about memory reads:
 
 Information about memory writes:
   Address %rbx was updated to
-    xorMInt( TMP_BV_16_0, extractMInt( %rcx, 48, 64)) (2 bytes).
+    Value xorMInt( TMP_BV_16_0, extractMInt( %rcx, 48, 64)) (2 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

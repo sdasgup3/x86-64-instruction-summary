@@ -19,7 +19,7 @@ Information about memory reads:
 
 Information about memory writes:
   Address %rbx was updated to
-    rol( TMP_BV_32_0, concatenateMInt( mi(24, 0), andMInt( Imm8, mi(8, 31)))) (4 bytes).
+    Value rol( TMP_BV_32_0, concatenateMInt( mi(24, 0), andMInt( Imm8, mi(8, 31)))) (4 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

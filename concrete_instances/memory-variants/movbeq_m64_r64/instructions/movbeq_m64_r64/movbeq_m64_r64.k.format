@@ -16,7 +16,7 @@ Information about memory reads:
 
 Information about memory writes:
   Address %rbx was updated to
-    concatenateMInt( concatenateMInt( concatenateMInt( concatenateMInt( concatenateMInt( concatenateMInt( concatenateMInt( extractMInt( %rcx, 56, 64), extractMInt( %rcx, 48, 56)), extractMInt( %rcx, 40, 48)), extractMInt( %rcx, 32, 40)), extractMInt( %rcx, 24, 32)), extractMInt( %rcx, 16, 24)), extractMInt( %rcx, 8, 16)), extractMInt( %rcx, 0, 8)) (8 bytes).
+    Value concatenateMInt( concatenateMInt( concatenateMInt( concatenateMInt( concatenateMInt( concatenateMInt( concatenateMInt( extractMInt( %rcx, 56, 64), extractMInt( %rcx, 48, 56)), extractMInt( %rcx, 40, 48)), extractMInt( %rcx, 32, 40)), extractMInt( %rcx, 24, 32)), extractMInt( %rcx, 16, 24)), extractMInt( %rcx, 8, 16)), extractMInt( %rcx, 0, 8)) (8 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

@@ -23,7 +23,7 @@ Information about memory reads:
 
 Information about memory writes:
   Address %rbx was updated to
-    addMInt(mi(16, 1), negMInt( TMP_BV_16_0)) (2 bytes).
+    Value addMInt(mi(16, 1), negMInt( TMP_BV_16_0)) (2 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

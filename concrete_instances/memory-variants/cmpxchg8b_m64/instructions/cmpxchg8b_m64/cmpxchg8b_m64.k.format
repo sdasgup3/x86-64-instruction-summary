@@ -21,7 +21,7 @@ Information about memory reads:
 
 Information about memory writes:
   Address %rbx was updated to
-    (#ifMInt eqMInt( concatenateMInt( extractMInt( %rdx, 32, 64), extractMInt( %rax, 32, 64)), TMP_BV_64_0) #then concatenateMInt( extractMInt( %rcx, 32, 64), extractMInt( %rbx, 32, 64)) #else TMP_BV_64_0 #fi) (8 bytes).
+    Value (#ifMInt eqMInt( concatenateMInt( extractMInt( %rdx, 32, 64), extractMInt( %rax, 32, 64)), TMP_BV_64_0) #then concatenateMInt( extractMInt( %rcx, 32, 64), extractMInt( %rbx, 32, 64)) #else TMP_BV_64_0 #fi) (8 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

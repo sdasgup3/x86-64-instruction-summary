@@ -12,7 +12,7 @@ Formula:
 
 Information about memory writes:
   Address %rbx was updated to
-    mi(64, svalueMInt(Imm32)) (8 bytes).
+    Value mi(64, svalueMInt(Imm32)) (8 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

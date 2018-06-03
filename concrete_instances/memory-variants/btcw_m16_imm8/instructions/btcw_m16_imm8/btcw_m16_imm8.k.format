@@ -28,7 +28,7 @@ info: Loc Address Mismatch
 
 Information about memory writes:
   Address addMInt( %rbx, concatenateMInt( mi(59, 0), andMInt( extractMInt( Imm8, 0, 5), mi(5, 1)))) was updated to
-    xorMInt( TMP_BV_8_1, shlMInt( mi(8, 1), uvalueMInt(concatenateMInt( mi(5, 0), andMInt( extractMInt( Imm8, 5, 8), mi(3, 7)))))) (1 bytes).
+    Value xorMInt( TMP_BV_8_1, shlMInt( mi(8, 1), uvalueMInt(concatenateMInt( mi(5, 0), andMInt( extractMInt( Imm8, 5, 8), mi(3, 7)))))) (1 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

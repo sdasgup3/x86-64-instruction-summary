@@ -16,7 +16,7 @@ Information about memory reads:
 
 Information about memory writes:
   Address %rbx was updated to
-    (#ifMInt eqMInt( extractMInt( Imm8, 7, 8), mi(1, 0)) #then extractMInt( %ymm1, 128, 256) #else extractMInt( %ymm1, 0, 128) #fi) (16 bytes).
+    Value (#ifMInt eqMInt( extractMInt( Imm8, 7, 8), mi(1, 0)) #then extractMInt( %ymm1, 128, 256) #else extractMInt( %ymm1, 0, 128) #fi) (16 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

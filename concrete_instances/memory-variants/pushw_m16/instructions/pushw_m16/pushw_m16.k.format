@@ -18,7 +18,7 @@ Information about memory reads:
 
 Information about memory writes:
   Address subMInt( %rsp, mi(64, 2)) was updated to
-    mi(16, svalueMInt(TMP_BV_16_0)) (2 bytes).
+    Value mi(16, svalueMInt(TMP_BV_16_0)) (2 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

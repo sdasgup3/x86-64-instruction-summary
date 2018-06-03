@@ -16,7 +16,7 @@ Information about memory reads:
 
 Information about memory writes:
   Address %rbx was updated to
-    extractMInt( %ymm1, 128, 192) (8 bytes).
+    Value extractMInt( %ymm1, 128, 192) (8 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

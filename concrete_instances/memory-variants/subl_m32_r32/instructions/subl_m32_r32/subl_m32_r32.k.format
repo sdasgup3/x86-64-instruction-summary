@@ -23,7 +23,7 @@ Information about memory reads:
 
 Information about memory writes:
   Address %rbx was updated to
-    extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), negMInt( extractMInt( %rcx, 32, 64))), mi(33, 1)), concatenateMInt( mi(1, 0), TMP_BV_32_0)), 1, 33) (4 bytes).
+    Value extractMInt( addMInt( addMInt( concatenateMInt( mi(1, 0), negMInt( extractMInt( %rcx, 32, 64))), mi(33, 1)), concatenateMInt( mi(1, 0), TMP_BV_32_0)), 1, 33) (4 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

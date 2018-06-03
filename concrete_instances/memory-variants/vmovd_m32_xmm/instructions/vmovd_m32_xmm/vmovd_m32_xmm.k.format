@@ -12,7 +12,7 @@ Formula:
 
 Information about memory writes:
   Address %rbx was updated to
-    extractMInt( %ymm1, 224, 256) (4 bytes).
+    Value extractMInt( %ymm1, 224, 256) (4 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

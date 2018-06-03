@@ -23,7 +23,7 @@ Information about memory reads:
 
 Information about memory writes:
   Address %rbx was updated to
-    andMInt( TMP_BV_8_0, Imm8) (1 bytes).
+    Value andMInt( TMP_BV_8_0, Imm8) (1 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

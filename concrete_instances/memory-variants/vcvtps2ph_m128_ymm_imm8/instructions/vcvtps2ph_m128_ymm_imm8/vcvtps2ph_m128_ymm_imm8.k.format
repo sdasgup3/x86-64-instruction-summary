@@ -16,7 +16,7 @@ Information about memory reads:
 
 Information about memory writes:
   Address %rbx was updated to
-    concatenateMInt( cvt_single_to_fp16_rm(extractMInt( %ymm1, 0, 32), Imm8), concatenateMInt( cvt_single_to_fp16_rm(extractMInt( %ymm1, 32, 64), Imm8), concatenateMInt( cvt_single_to_fp16_rm(extractMInt( %ymm1, 64, 96), Imm8), concatenateMInt( cvt_single_to_fp16_rm(extractMInt( %ymm1, 96, 128), Imm8), concatenateMInt( cvt_single_to_fp16_rm(extractMInt( %ymm1, 128, 160), Imm8), concatenateMInt( cvt_single_to_fp16_rm(extractMInt( %ymm1, 160, 192), Imm8), concatenateMInt( cvt_single_to_fp16_rm(extractMInt( %ymm1, 192, 224), Imm8), cvt_single_to_fp16_rm(extractMInt( %ymm1, 224, 256), Imm8)))))))) (16 bytes).
+    Value concatenateMInt( cvt_single_to_fp16_rm(extractMInt( %ymm1, 0, 32), Imm8), concatenateMInt( cvt_single_to_fp16_rm(extractMInt( %ymm1, 32, 64), Imm8), concatenateMInt( cvt_single_to_fp16_rm(extractMInt( %ymm1, 64, 96), Imm8), concatenateMInt( cvt_single_to_fp16_rm(extractMInt( %ymm1, 96, 128), Imm8), concatenateMInt( cvt_single_to_fp16_rm(extractMInt( %ymm1, 128, 160), Imm8), concatenateMInt( cvt_single_to_fp16_rm(extractMInt( %ymm1, 160, 192), Imm8), concatenateMInt( cvt_single_to_fp16_rm(extractMInt( %ymm1, 192, 224), Imm8), cvt_single_to_fp16_rm(extractMInt( %ymm1, 224, 256), Imm8)))))))) (16 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

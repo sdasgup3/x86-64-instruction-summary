@@ -12,7 +12,7 @@ Formula:
 
 Information about memory writes:
   Address %rbx was updated to
-    (#ifMInt %pf #then mi(8, 1) #else mi(8, 0) #fi) (1 bytes).
+    Value (#ifMInt %pf #then mi(8, 1) #else mi(8, 0) #fi) (1 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

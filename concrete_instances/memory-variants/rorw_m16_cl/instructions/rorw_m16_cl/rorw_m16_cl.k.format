@@ -19,7 +19,7 @@ Information about memory reads:
 
 Information about memory writes:
   Address %rbx was updated to
-    ror( TMP_BV_16_0, concatenateMInt( mi(8, 0), andMInt( extractMInt( %rcx, 56, 64), mi(8, 31)))) (2 bytes).
+    Value ror( TMP_BV_16_0, concatenateMInt( mi(8, 0), andMInt( extractMInt( %rcx, 56, 64), mi(8, 31)))) (2 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus
