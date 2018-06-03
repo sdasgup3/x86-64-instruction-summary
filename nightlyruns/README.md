@@ -48,7 +48,7 @@ parallel -j30  -a nightlyruns/job.10  "~/x86-semantics/scripts/process_spec.pl -
 ## Immediates
 ### Prepare Instruction Directory
 ```
-parallel -a ~/x86-semantics/docs/relatedwork/strata/Registers/register_instructions.txt "~/x86-semantics/scripts/process_spec.pl --prepare_concrete --opcode {} --workdir concrete_instances/register-variants/{}"
+parallel -a ~/x86-semantics/docs/relatedwork/strata/Immediates/immediate_instructions.txt "~/x86-semantics/scripts/process_spec.pl --prepare_concrete_imm --opcode {} --workdir concrete_instances/immediate-variants/{}"
 ```
 
 ### Test Charts
