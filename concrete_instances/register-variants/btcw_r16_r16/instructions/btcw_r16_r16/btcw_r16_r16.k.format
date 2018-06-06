@@ -10,7 +10,7 @@ code: btcw %cx, %bx
 
 Formula:
 
-%rbx   : concatenateMInt( extractMInt( %rbx, 0, 48), xorMInt( extractMInt( %rbx, 48, 64), shlMInt( mi(16, 1), uvalueMInt(mi(16, svalueMInt(andMInt( extractMInt( %rcx, 48, 64), mi(16, 15))))))))
+%rbx   : concatenateMInt( extractMInt( %rbx, 0, 48), xorMInt( extractMInt( %rbx, 48, 64), shiftLeftMInt( mi(16, 1), uvalueMInt(mi(16, svalueMInt(andMInt( extractMInt( %rcx, 48, 64), mi(16, 15))))))))
 
 %cf    : extractMInt( lshrMInt( extractMInt( %rbx, 48, 64), uvalueMInt(mi(16, svalueMInt(andMInt( extractMInt( %rcx, 48, 64), mi(16, 15)))))), 15, 16)
 %pf    : (#ifMInt TMP_BOOL_3 #then mi(1, 1) #else mi(1, 0) #fi)

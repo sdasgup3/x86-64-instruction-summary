@@ -10,7 +10,7 @@ code: vpsllq %xmm3, %ymm2, %ymm1
 
 Formula:
 
-%ymm1  : (#ifMInt ugtMInt( extractMInt( %ymm3, 192, 256), mi(64, 63)) #then mi(256, 0) #else concatenateMInt( shlMInt( extractMInt( %ymm2, 0, 64), uvalueMInt(extractMInt( %ymm3, 192, 256))), concatenateMInt( shlMInt( extractMInt( %ymm2, 64, 128), uvalueMInt(extractMInt( %ymm3, 192, 256))), concatenateMInt( shlMInt( extractMInt( %ymm2, 128, 192), uvalueMInt(extractMInt( %ymm3, 192, 256))), shlMInt( extractMInt( %ymm2, 192, 256), uvalueMInt(extractMInt( %ymm3, 192, 256)))))) #fi)
+%ymm1  : (#ifMInt ugtMInt( extractMInt( %ymm3, 192, 256), mi(64, 63)) #then mi(256, 0) #else concatenateMInt( shiftLeftMInt( extractMInt( %ymm2, 0, 64), uvalueMInt(extractMInt( %ymm3, 192, 256))), concatenateMInt( shiftLeftMInt( extractMInt( %ymm2, 64, 128), uvalueMInt(extractMInt( %ymm3, 192, 256))), concatenateMInt( shiftLeftMInt( extractMInt( %ymm2, 128, 192), uvalueMInt(extractMInt( %ymm3, 192, 256))), shiftLeftMInt( extractMInt( %ymm2, 192, 256), uvalueMInt(extractMInt( %ymm3, 192, 256)))))) #fi)
 
 sigfpe  : sigfpe
 sigbus  : sigbus

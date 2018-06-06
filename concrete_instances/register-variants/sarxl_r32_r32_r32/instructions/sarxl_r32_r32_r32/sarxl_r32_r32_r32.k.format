@@ -10,7 +10,7 @@ code: sarxl %edx, %ecx, %ebx
 
 Formula:
 
-%rbx   : concatenateMInt( mi(32, 0), ashrMInt( extractMInt( %rcx, 32, 64), uvalueMInt(andMInt( extractMInt( %rdx, 32, 64), mi(32, 31)))))
+%rbx   : concatenateMInt( mi(32, 0), aShiftRightMInt( extractMInt( %rcx, 32, 64), uvalueMInt(andMInt( extractMInt( %rdx, 32, 64), mi(32, 31)))))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

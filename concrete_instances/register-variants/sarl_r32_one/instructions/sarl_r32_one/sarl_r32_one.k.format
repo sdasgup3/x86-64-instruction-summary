@@ -10,13 +10,13 @@ code: sarl $0x1, %ebx
 
 Formula:
 
-%rbx   : concatenateMInt( mi(32, 0), extractMInt( ashrMInt( concatenateMInt( extractMInt( %rbx, 32, 64), mi(1, 0)), uvalueMInt(mi(33, 1))), 0, 32))
+%rbx   : concatenateMInt( mi(32, 0), extractMInt( aShiftRightMInt( concatenateMInt( extractMInt( %rbx, 32, 64), mi(1, 0)), uvalueMInt(mi(33, 1))), 0, 32))
 
-%cf    : extractMInt( ashrMInt( concatenateMInt( extractMInt( %rbx, 32, 64), mi(1, 0)), uvalueMInt(mi(33, 1))), 32, 33)
-%pf    : (#ifMInt (notBool (((((((eqMInt( extractMInt( ashrMInt( concatenateMInt( extractMInt( %rbx, 32, 64), mi(1, 0)), uvalueMInt(mi(33, 1))), 31, 32), mi(1, 1)) xorBool eqMInt( extractMInt( ashrMInt( concatenateMInt( extractMInt( %rbx, 32, 64), mi(1, 0)), uvalueMInt(mi(33, 1))), 30, 31), mi(1, 1))) xorBool eqMInt( extractMInt( ashrMInt( concatenateMInt( extractMInt( %rbx, 32, 64), mi(1, 0)), uvalueMInt(mi(33, 1))), 29, 30), mi(1, 1))) xorBool eqMInt( extractMInt( ashrMInt( concatenateMInt( extractMInt( %rbx, 32, 64), mi(1, 0)), uvalueMInt(mi(33, 1))), 28, 29), mi(1, 1))) xorBool eqMInt( extractMInt( ashrMInt( concatenateMInt( extractMInt( %rbx, 32, 64), mi(1, 0)), uvalueMInt(mi(33, 1))), 27, 28), mi(1, 1))) xorBool eqMInt( extractMInt( ashrMInt( concatenateMInt( extractMInt( %rbx, 32, 64), mi(1, 0)), uvalueMInt(mi(33, 1))), 26, 27), mi(1, 1))) xorBool eqMInt( extractMInt( ashrMInt( concatenateMInt( extractMInt( %rbx, 32, 64), mi(1, 0)), uvalueMInt(mi(33, 1))), 25, 26), mi(1, 1))) xorBool eqMInt( extractMInt( ashrMInt( concatenateMInt( extractMInt( %rbx, 32, 64), mi(1, 0)), uvalueMInt(mi(33, 1))), 24, 25), mi(1, 1)))) #then mi(1, 1) #else mi(1, 0) #fi)
+%cf    : extractMInt( aShiftRightMInt( concatenateMInt( extractMInt( %rbx, 32, 64), mi(1, 0)), uvalueMInt(mi(33, 1))), 32, 33)
+%pf    : (#ifMInt (notBool (((((((eqMInt( extractMInt( aShiftRightMInt( concatenateMInt( extractMInt( %rbx, 32, 64), mi(1, 0)), uvalueMInt(mi(33, 1))), 31, 32), mi(1, 1)) xorBool eqMInt( extractMInt( aShiftRightMInt( concatenateMInt( extractMInt( %rbx, 32, 64), mi(1, 0)), uvalueMInt(mi(33, 1))), 30, 31), mi(1, 1))) xorBool eqMInt( extractMInt( aShiftRightMInt( concatenateMInt( extractMInt( %rbx, 32, 64), mi(1, 0)), uvalueMInt(mi(33, 1))), 29, 30), mi(1, 1))) xorBool eqMInt( extractMInt( aShiftRightMInt( concatenateMInt( extractMInt( %rbx, 32, 64), mi(1, 0)), uvalueMInt(mi(33, 1))), 28, 29), mi(1, 1))) xorBool eqMInt( extractMInt( aShiftRightMInt( concatenateMInt( extractMInt( %rbx, 32, 64), mi(1, 0)), uvalueMInt(mi(33, 1))), 27, 28), mi(1, 1))) xorBool eqMInt( extractMInt( aShiftRightMInt( concatenateMInt( extractMInt( %rbx, 32, 64), mi(1, 0)), uvalueMInt(mi(33, 1))), 26, 27), mi(1, 1))) xorBool eqMInt( extractMInt( aShiftRightMInt( concatenateMInt( extractMInt( %rbx, 32, 64), mi(1, 0)), uvalueMInt(mi(33, 1))), 25, 26), mi(1, 1))) xorBool eqMInt( extractMInt( aShiftRightMInt( concatenateMInt( extractMInt( %rbx, 32, 64), mi(1, 0)), uvalueMInt(mi(33, 1))), 24, 25), mi(1, 1)))) #then mi(1, 1) #else mi(1, 0) #fi)
 %af    : (#ifMInt TMP_BOOL_1 #then mi(1, 1) #else mi(1, 0) #fi)
-%zf    : (#ifMInt eqMInt( extractMInt( ashrMInt( concatenateMInt( extractMInt( %rbx, 32, 64), mi(1, 0)), uvalueMInt(mi(33, 1))), 0, 32), mi(32, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
-%sf    : extractMInt( ashrMInt( concatenateMInt( extractMInt( %rbx, 32, 64), mi(1, 0)), uvalueMInt(mi(33, 1))), 0, 1)
+%zf    : (#ifMInt eqMInt( extractMInt( aShiftRightMInt( concatenateMInt( extractMInt( %rbx, 32, 64), mi(1, 0)), uvalueMInt(mi(33, 1))), 0, 32), mi(32, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : extractMInt( aShiftRightMInt( concatenateMInt( extractMInt( %rbx, 32, 64), mi(1, 0)), uvalueMInt(mi(33, 1))), 0, 1)
 %of    : mi(1, 0)
 
 sigfpe  : sigfpe

@@ -10,12 +10,12 @@ code: bextrl %edx, %ecx, %ebx
 
 Formula:
 
-%rbx   : concatenateMInt( mi(32, 0), andMInt( extractMInt( lshrMInt( concatenateMInt( mi(480, 0), extractMInt( %rcx, 32, 64)), uvalueMInt(concatenateMInt( mi(504, 0), extractMInt( %rdx, 56, 64)))), 480, 512), negMInt( extractMInt( shlMInt( lshrMInt( mi(512, 18446744073709551615), uvalueMInt(concatenateMInt( mi(504, 0), extractMInt( %rdx, 48, 56)))), uvalueMInt(concatenateMInt( mi(504, 0), extractMInt( %rdx, 48, 56)))), 480, 512))))
+%rbx   : concatenateMInt( mi(32, 0), andMInt( extractMInt( lshrMInt( concatenateMInt( mi(480, 0), extractMInt( %rcx, 32, 64)), uvalueMInt(concatenateMInt( mi(504, 0), extractMInt( %rdx, 56, 64)))), 480, 512), negMInt( extractMInt( shiftLeftMInt( lshrMInt( mi(512, 18446744073709551615), uvalueMInt(concatenateMInt( mi(504, 0), extractMInt( %rdx, 48, 56)))), uvalueMInt(concatenateMInt( mi(504, 0), extractMInt( %rdx, 48, 56)))), 480, 512))))
 
 %cf    : mi(1, 0)
 %pf    : (#ifMInt TMP_BOOL_2 #then mi(1, 1) #else mi(1, 0) #fi)
 %af    : (#ifMInt TMP_BOOL_0 #then mi(1, 1) #else mi(1, 0) #fi)
-%zf    : (#ifMInt eqMInt( andMInt( extractMInt( lshrMInt( concatenateMInt( mi(480, 0), extractMInt( %rcx, 32, 64)), uvalueMInt(concatenateMInt( mi(504, 0), extractMInt( %rdx, 56, 64)))), 480, 512), negMInt( extractMInt( shlMInt( lshrMInt( mi(512, 18446744073709551615), uvalueMInt(concatenateMInt( mi(504, 0), extractMInt( %rdx, 48, 56)))), uvalueMInt(concatenateMInt( mi(504, 0), extractMInt( %rdx, 48, 56)))), 480, 512))), mi(32, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
+%zf    : (#ifMInt eqMInt( andMInt( extractMInt( lshrMInt( concatenateMInt( mi(480, 0), extractMInt( %rcx, 32, 64)), uvalueMInt(concatenateMInt( mi(504, 0), extractMInt( %rdx, 56, 64)))), 480, 512), negMInt( extractMInt( shiftLeftMInt( lshrMInt( mi(512, 18446744073709551615), uvalueMInt(concatenateMInt( mi(504, 0), extractMInt( %rdx, 48, 56)))), uvalueMInt(concatenateMInt( mi(504, 0), extractMInt( %rdx, 48, 56)))), 480, 512))), mi(32, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
 %sf    : (#ifMInt TMP_BOOL_1 #then mi(1, 1) #else mi(1, 0) #fi)
 %of    : mi(1, 0)
 

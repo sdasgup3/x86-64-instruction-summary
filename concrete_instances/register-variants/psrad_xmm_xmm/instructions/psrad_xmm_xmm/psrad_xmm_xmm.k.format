@@ -10,7 +10,7 @@ code: psrad %xmm2, %xmm1
 
 Formula:
 
-%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), concatenateMInt( ashrMInt( extractMInt( %ymm1, 128, 160), uvalueMInt((#ifMInt ugtMInt( extractMInt( %ymm2, 192, 256), mi(64, 31)) #then mi(32, 32) #else extractMInt( %ymm2, 224, 256) #fi))), concatenateMInt( ashrMInt( extractMInt( %ymm1, 160, 192), uvalueMInt((#ifMInt ugtMInt( extractMInt( %ymm2, 192, 256), mi(64, 31)) #then mi(32, 32) #else extractMInt( %ymm2, 224, 256) #fi))), concatenateMInt( ashrMInt( extractMInt( %ymm1, 192, 224), uvalueMInt((#ifMInt ugtMInt( extractMInt( %ymm2, 192, 256), mi(64, 31)) #then mi(32, 32) #else extractMInt( %ymm2, 224, 256) #fi))), ashrMInt( extractMInt( %ymm1, 224, 256), uvalueMInt((#ifMInt ugtMInt( extractMInt( %ymm2, 192, 256), mi(64, 31)) #then mi(32, 32) #else extractMInt( %ymm2, 224, 256) #fi)))))))
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), concatenateMInt( aShiftRightMInt( extractMInt( %ymm1, 128, 160), uvalueMInt((#ifMInt ugtMInt( extractMInt( %ymm2, 192, 256), mi(64, 31)) #then mi(32, 32) #else extractMInt( %ymm2, 224, 256) #fi))), concatenateMInt( aShiftRightMInt( extractMInt( %ymm1, 160, 192), uvalueMInt((#ifMInt ugtMInt( extractMInt( %ymm2, 192, 256), mi(64, 31)) #then mi(32, 32) #else extractMInt( %ymm2, 224, 256) #fi))), concatenateMInt( aShiftRightMInt( extractMInt( %ymm1, 192, 224), uvalueMInt((#ifMInt ugtMInt( extractMInt( %ymm2, 192, 256), mi(64, 31)) #then mi(32, 32) #else extractMInt( %ymm2, 224, 256) #fi))), aShiftRightMInt( extractMInt( %ymm1, 224, 256), uvalueMInt((#ifMInt ugtMInt( extractMInt( %ymm2, 192, 256), mi(64, 31)) #then mi(32, 32) #else extractMInt( %ymm2, 224, 256) #fi)))))))
 
 sigfpe  : sigfpe
 sigbus  : sigbus
