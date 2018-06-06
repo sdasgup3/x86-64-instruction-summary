@@ -10,7 +10,7 @@ code: rorxq $0x0, %rcx, %rbx
 
 Formula:
 
-%rbx   : orMInt( lshrMInt( %rcx, uvalueMInt(andMInt( concatenateMInt( mi(56, 0), Imm8), mi(64, 63)))), shlMInt( %rcx, uvalueMInt(subMInt( mi(64, 64), andMInt( concatenateMInt( mi(56, 0), Imm8), mi(64, 63))))))
+%rbx   : orMInt( lshrMInt( %rcx, uvalueMInt(andMInt( concatenateMInt( mi(56, 0), Imm8), mi(64, 63)))), shiftLeftMInt( %rcx, uvalueMInt(subMInt( mi(64, 64), andMInt( concatenateMInt( mi(56, 0), Imm8), mi(64, 63))))))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

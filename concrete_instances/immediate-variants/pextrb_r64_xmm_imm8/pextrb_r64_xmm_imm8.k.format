@@ -10,7 +10,7 @@ code: pextrb $0x0, %xmm1, %rbx
 
 Formula:
 
-%rbx   : concatenateMInt( mi(56, 0), extractMInt( lshrMInt( extractMInt( %ymm1, 128, 256), uvalueMInt(shlMInt( concatenateMInt( mi(124, 0), extractMInt( Imm8, 4, 8)), uvalueMInt(mi(128, 3))))), 120, 128))
+%rbx   : concatenateMInt( mi(56, 0), extractMInt( lshrMInt( extractMInt( %ymm1, 128, 256), uvalueMInt(shiftLeftMInt( concatenateMInt( mi(124, 0), extractMInt( Imm8, 4, 8)), uvalueMInt(mi(128, 3))))), 120, 128))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

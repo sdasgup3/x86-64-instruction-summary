@@ -10,7 +10,7 @@ code: pinsrb $0x0, (%rbx), %xmm1
 
 Formula:
 
-%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), orMInt( andMInt( extractMInt( %ymm1, 128, 256), negMInt( shlMInt( mi(128, 255), uvalueMInt(shlMInt( concatenateMInt( mi(124, 0), extractMInt( Imm8, 4, 8)), uvalueMInt(mi(128, 3))))))), andMInt( shlMInt( concatenateMInt( mi(120, 0), TMP_BV_8_0), uvalueMInt(shlMInt( concatenateMInt( mi(124, 0), extractMInt( Imm8, 4, 8)), uvalueMInt(mi(128, 3))))), shlMInt( mi(128, 255), uvalueMInt(shlMInt( concatenateMInt( mi(124, 0), extractMInt( Imm8, 4, 8)), uvalueMInt(mi(128, 3))))))))
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), orMInt( andMInt( extractMInt( %ymm1, 128, 256), negMInt( shiftLeftMInt( mi(128, 255), uvalueMInt(shiftLeftMInt( concatenateMInt( mi(124, 0), extractMInt( Imm8, 4, 8)), uvalueMInt(mi(128, 3))))))), andMInt( shiftLeftMInt( concatenateMInt( mi(120, 0), TMP_BV_8_0), uvalueMInt(shiftLeftMInt( concatenateMInt( mi(124, 0), extractMInt( Imm8, 4, 8)), uvalueMInt(mi(128, 3))))), shiftLeftMInt( mi(128, 255), uvalueMInt(shiftLeftMInt( concatenateMInt( mi(124, 0), extractMInt( Imm8, 4, 8)), uvalueMInt(mi(128, 3))))))))
 
 Information about memory reads:
   Value TMP_BV_8_0 (1 bytes)

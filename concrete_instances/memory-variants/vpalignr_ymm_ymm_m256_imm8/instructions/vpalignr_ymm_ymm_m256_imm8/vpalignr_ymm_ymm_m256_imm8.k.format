@@ -10,7 +10,7 @@ code: vpalignr $0x0, (%rbx), %ymm2, %ymm1
 
 Formula:
 
-%ymm1  : concatenateMInt( extractMInt( lshrMInt( concatenateMInt( extractMInt( %ymm2, 0, 128), extractMInt( TMP_BV_256_0, 0, 128)), uvalueMInt(shlMInt( concatenateMInt( mi(248, 0), Imm8), uvalueMInt(mi(256, 3))))), 128, 256), extractMInt( lshrMInt( concatenateMInt( extractMInt( %ymm2, 128, 256), extractMInt( TMP_BV_256_0, 128, 256)), uvalueMInt(shlMInt( concatenateMInt( mi(248, 0), Imm8), uvalueMInt(mi(256, 3))))), 128, 256))
+%ymm1  : concatenateMInt( extractMInt( lshrMInt( concatenateMInt( extractMInt( %ymm2, 0, 128), extractMInt( TMP_BV_256_0, 0, 128)), uvalueMInt(shiftLeftMInt( concatenateMInt( mi(248, 0), Imm8), uvalueMInt(mi(256, 3))))), 128, 256), extractMInt( lshrMInt( concatenateMInt( extractMInt( %ymm2, 128, 256), extractMInt( TMP_BV_256_0, 128, 256)), uvalueMInt(shiftLeftMInt( concatenateMInt( mi(248, 0), Imm8), uvalueMInt(mi(256, 3))))), 128, 256))
 
 Information about memory reads:
   Value TMP_BV_256_0 (32 bytes)

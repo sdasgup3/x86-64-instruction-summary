@@ -10,7 +10,7 @@ code: sarxl %edx, (%rcx), %ebx
 
 Formula:
 
-%rbx   : concatenateMInt( mi(32, 0), ashrMInt( TMP_BV_32_0, uvalueMInt(andMInt( extractMInt( %rdx, 32, 64), mi(32, 31)))))
+%rbx   : concatenateMInt( mi(32, 0), aShiftRightMInt( TMP_BV_32_0, uvalueMInt(andMInt( extractMInt( %rdx, 32, 64), mi(32, 31)))))
 
 Information about memory reads:
   Value TMP_BV_32_0 (4 bytes)

@@ -10,7 +10,7 @@ code: pinsrb $0x0, %ebx, %xmm1
 
 Formula:
 
-%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), orMInt( andMInt( extractMInt( %ymm1, 128, 256), negMInt( shlMInt( mi(128, 255), uvalueMInt(shlMInt( concatenateMInt( mi(124, 0), extractMInt( Imm8, 4, 8)), uvalueMInt(mi(128, 3))))))), andMInt( shlMInt( concatenateMInt( mi(96, 0), extractMInt( %rbx, 32, 64)), uvalueMInt(shlMInt( concatenateMInt( mi(124, 0), extractMInt( Imm8, 4, 8)), uvalueMInt(mi(128, 3))))), shlMInt( mi(128, 255), uvalueMInt(shlMInt( concatenateMInt( mi(124, 0), extractMInt( Imm8, 4, 8)), uvalueMInt(mi(128, 3))))))))
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), orMInt( andMInt( extractMInt( %ymm1, 128, 256), negMInt( shiftLeftMInt( mi(128, 255), uvalueMInt(shiftLeftMInt( concatenateMInt( mi(124, 0), extractMInt( Imm8, 4, 8)), uvalueMInt(mi(128, 3))))))), andMInt( shiftLeftMInt( concatenateMInt( mi(96, 0), extractMInt( %rbx, 32, 64)), uvalueMInt(shiftLeftMInt( concatenateMInt( mi(124, 0), extractMInt( Imm8, 4, 8)), uvalueMInt(mi(128, 3))))), shiftLeftMInt( mi(128, 255), uvalueMInt(shiftLeftMInt( concatenateMInt( mi(124, 0), extractMInt( Imm8, 4, 8)), uvalueMInt(mi(128, 3))))))))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

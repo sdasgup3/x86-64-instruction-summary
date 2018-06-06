@@ -10,11 +10,11 @@ code: sarl $0x1, (%rbx)
 
 Formula:
 
-%cf    : extractMInt( ashrMInt( concatenateMInt( TMP_BV_32_0, mi(1, 0)), uvalueMInt(mi(33, 1))), 32, 33)
-%pf    : (#ifMInt (notBool (((((((eqMInt( extractMInt( ashrMInt( concatenateMInt( TMP_BV_32_0, mi(1, 0)), uvalueMInt(mi(33, 1))), 31, 32), mi(1, 1)) xorBool eqMInt( extractMInt( ashrMInt( concatenateMInt( TMP_BV_32_0, mi(1, 0)), uvalueMInt(mi(33, 1))), 30, 31), mi(1, 1))) xorBool eqMInt( extractMInt( ashrMInt( concatenateMInt( TMP_BV_32_0, mi(1, 0)), uvalueMInt(mi(33, 1))), 29, 30), mi(1, 1))) xorBool eqMInt( extractMInt( ashrMInt( concatenateMInt( TMP_BV_32_0, mi(1, 0)), uvalueMInt(mi(33, 1))), 28, 29), mi(1, 1))) xorBool eqMInt( extractMInt( ashrMInt( concatenateMInt( TMP_BV_32_0, mi(1, 0)), uvalueMInt(mi(33, 1))), 27, 28), mi(1, 1))) xorBool eqMInt( extractMInt( ashrMInt( concatenateMInt( TMP_BV_32_0, mi(1, 0)), uvalueMInt(mi(33, 1))), 26, 27), mi(1, 1))) xorBool eqMInt( extractMInt( ashrMInt( concatenateMInt( TMP_BV_32_0, mi(1, 0)), uvalueMInt(mi(33, 1))), 25, 26), mi(1, 1))) xorBool eqMInt( extractMInt( ashrMInt( concatenateMInt( TMP_BV_32_0, mi(1, 0)), uvalueMInt(mi(33, 1))), 24, 25), mi(1, 1)))) #then mi(1, 1) #else mi(1, 0) #fi)
+%cf    : extractMInt( aShiftRightMInt( concatenateMInt( TMP_BV_32_0, mi(1, 0)), uvalueMInt(mi(33, 1))), 32, 33)
+%pf    : (#ifMInt (notBool (((((((eqMInt( extractMInt( aShiftRightMInt( concatenateMInt( TMP_BV_32_0, mi(1, 0)), uvalueMInt(mi(33, 1))), 31, 32), mi(1, 1)) xorBool eqMInt( extractMInt( aShiftRightMInt( concatenateMInt( TMP_BV_32_0, mi(1, 0)), uvalueMInt(mi(33, 1))), 30, 31), mi(1, 1))) xorBool eqMInt( extractMInt( aShiftRightMInt( concatenateMInt( TMP_BV_32_0, mi(1, 0)), uvalueMInt(mi(33, 1))), 29, 30), mi(1, 1))) xorBool eqMInt( extractMInt( aShiftRightMInt( concatenateMInt( TMP_BV_32_0, mi(1, 0)), uvalueMInt(mi(33, 1))), 28, 29), mi(1, 1))) xorBool eqMInt( extractMInt( aShiftRightMInt( concatenateMInt( TMP_BV_32_0, mi(1, 0)), uvalueMInt(mi(33, 1))), 27, 28), mi(1, 1))) xorBool eqMInt( extractMInt( aShiftRightMInt( concatenateMInt( TMP_BV_32_0, mi(1, 0)), uvalueMInt(mi(33, 1))), 26, 27), mi(1, 1))) xorBool eqMInt( extractMInt( aShiftRightMInt( concatenateMInt( TMP_BV_32_0, mi(1, 0)), uvalueMInt(mi(33, 1))), 25, 26), mi(1, 1))) xorBool eqMInt( extractMInt( aShiftRightMInt( concatenateMInt( TMP_BV_32_0, mi(1, 0)), uvalueMInt(mi(33, 1))), 24, 25), mi(1, 1)))) #then mi(1, 1) #else mi(1, 0) #fi)
 %af    : (#ifMInt TMP_BOOL_1 #then mi(1, 1) #else mi(1, 0) #fi)
-%zf    : (#ifMInt eqMInt( extractMInt( ashrMInt( concatenateMInt( TMP_BV_32_0, mi(1, 0)), uvalueMInt(mi(33, 1))), 0, 32), mi(32, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
-%sf    : extractMInt( ashrMInt( concatenateMInt( TMP_BV_32_0, mi(1, 0)), uvalueMInt(mi(33, 1))), 0, 1)
+%zf    : (#ifMInt eqMInt( extractMInt( aShiftRightMInt( concatenateMInt( TMP_BV_32_0, mi(1, 0)), uvalueMInt(mi(33, 1))), 0, 32), mi(32, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : extractMInt( aShiftRightMInt( concatenateMInt( TMP_BV_32_0, mi(1, 0)), uvalueMInt(mi(33, 1))), 0, 1)
 %of    : mi(1, 0)
 
 Information about memory reads:
@@ -23,7 +23,7 @@ Information about memory reads:
 
 Information about memory writes:
   Address %rbx was updated to
-    Value extractMInt( ashrMInt( concatenateMInt( TMP_BV_32_0, mi(1, 0)), uvalueMInt(mi(33, 1))), 0, 32) (4 bytes).
+    Value extractMInt( aShiftRightMInt( concatenateMInt( TMP_BV_32_0, mi(1, 0)), uvalueMInt(mi(33, 1))), 0, 32) (4 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

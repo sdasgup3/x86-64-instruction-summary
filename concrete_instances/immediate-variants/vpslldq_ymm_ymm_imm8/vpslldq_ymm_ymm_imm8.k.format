@@ -10,7 +10,7 @@ code: vpslldq $0x0, %ymm2, %ymm1
 
 Formula:
 
-%ymm1  : concatenateMInt( shlMInt( extractMInt( %ymm2, 0, 128), uvalueMInt(shlMInt( (#ifMInt ugtMInt( Imm8, mi(8, 15)) #then concatenateMInt( mi(120, 0), mi(8, 16)) #else concatenateMInt( mi(120, 0), Imm8) #fi), uvalueMInt(mi(128, 3))))), shlMInt( extractMInt( %ymm2, 128, 256), uvalueMInt(shlMInt( (#ifMInt ugtMInt( Imm8, mi(8, 15)) #then concatenateMInt( mi(120, 0), mi(8, 16)) #else concatenateMInt( mi(120, 0), Imm8) #fi), uvalueMInt(mi(128, 3))))))
+%ymm1  : concatenateMInt( shiftLeftMInt( extractMInt( %ymm2, 0, 128), uvalueMInt(shiftLeftMInt( (#ifMInt ugtMInt( Imm8, mi(8, 15)) #then concatenateMInt( mi(120, 0), mi(8, 16)) #else concatenateMInt( mi(120, 0), Imm8) #fi), uvalueMInt(mi(128, 3))))), shiftLeftMInt( extractMInt( %ymm2, 128, 256), uvalueMInt(shiftLeftMInt( (#ifMInt ugtMInt( Imm8, mi(8, 15)) #then concatenateMInt( mi(120, 0), mi(8, 16)) #else concatenateMInt( mi(120, 0), Imm8) #fi), uvalueMInt(mi(128, 3))))))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

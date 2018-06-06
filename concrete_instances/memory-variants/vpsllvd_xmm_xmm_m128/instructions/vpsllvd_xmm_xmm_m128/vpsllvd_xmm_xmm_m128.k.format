@@ -10,7 +10,7 @@ code: vpsllvd (%rbx), %xmm2, %xmm1
 
 Formula:
 
-%ymm1  : concatenateMInt( mi(128, 0), concatenateMInt( shlMInt( extractMInt( %ymm2, 128, 160), uvalueMInt(extractMInt( TMP_BV_128_0, 0, 32))), concatenateMInt( shlMInt( extractMInt( %ymm2, 160, 192), uvalueMInt(extractMInt( TMP_BV_128_0, 32, 64))), concatenateMInt( shlMInt( extractMInt( %ymm2, 192, 224), uvalueMInt(extractMInt( TMP_BV_128_0, 64, 96))), shlMInt( extractMInt( %ymm2, 224, 256), uvalueMInt(extractMInt( TMP_BV_128_0, 96, 128)))))))
+%ymm1  : concatenateMInt( mi(128, 0), concatenateMInt( shiftLeftMInt( extractMInt( %ymm2, 128, 160), uvalueMInt(extractMInt( TMP_BV_128_0, 0, 32))), concatenateMInt( shiftLeftMInt( extractMInt( %ymm2, 160, 192), uvalueMInt(extractMInt( TMP_BV_128_0, 32, 64))), concatenateMInt( shiftLeftMInt( extractMInt( %ymm2, 192, 224), uvalueMInt(extractMInt( TMP_BV_128_0, 64, 96))), shiftLeftMInt( extractMInt( %ymm2, 224, 256), uvalueMInt(extractMInt( TMP_BV_128_0, 96, 128)))))))
 
 Information about memory reads:
   Value TMP_BV_128_0 (16 bytes)

@@ -10,7 +10,7 @@ code: vpextrq $0x0, %xmm1, %rbx
 
 Formula:
 
-%rbx   : extractMInt( lshrMInt( extractMInt( %ymm1, 128, 256), uvalueMInt(shlMInt( concatenateMInt( mi(127, 0), extractMInt( Imm8, 7, 8)), uvalueMInt(mi(128, 6))))), 64, 128)
+%rbx   : extractMInt( lshrMInt( extractMInt( %ymm1, 128, 256), uvalueMInt(shiftLeftMInt( concatenateMInt( mi(127, 0), extractMInt( Imm8, 7, 8)), uvalueMInt(mi(128, 6))))), 64, 128)
 
 sigfpe  : sigfpe
 sigbus  : sigbus

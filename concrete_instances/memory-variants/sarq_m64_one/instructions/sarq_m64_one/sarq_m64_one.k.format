@@ -10,11 +10,11 @@ code: sarq $0x1, (%rbx)
 
 Formula:
 
-%cf    : extractMInt( ashrMInt( concatenateMInt( TMP_BV_64_0, mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 1)))), 64, 65)
-%pf    : (#ifMInt (notBool (((((((eqMInt( extractMInt( ashrMInt( concatenateMInt( TMP_BV_64_0, mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 1)))), 63, 64), mi(1, 1)) xorBool eqMInt( extractMInt( ashrMInt( concatenateMInt( TMP_BV_64_0, mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 1)))), 62, 63), mi(1, 1))) xorBool eqMInt( extractMInt( ashrMInt( concatenateMInt( TMP_BV_64_0, mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 1)))), 61, 62), mi(1, 1))) xorBool eqMInt( extractMInt( ashrMInt( concatenateMInt( TMP_BV_64_0, mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 1)))), 60, 61), mi(1, 1))) xorBool eqMInt( extractMInt( ashrMInt( concatenateMInt( TMP_BV_64_0, mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 1)))), 59, 60), mi(1, 1))) xorBool eqMInt( extractMInt( ashrMInt( concatenateMInt( TMP_BV_64_0, mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 1)))), 58, 59), mi(1, 1))) xorBool eqMInt( extractMInt( ashrMInt( concatenateMInt( TMP_BV_64_0, mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 1)))), 57, 58), mi(1, 1))) xorBool eqMInt( extractMInt( ashrMInt( concatenateMInt( TMP_BV_64_0, mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 1)))), 56, 57), mi(1, 1)))) #then mi(1, 1) #else mi(1, 0) #fi)
+%cf    : extractMInt( aShiftRightMInt( concatenateMInt( TMP_BV_64_0, mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 1)))), 64, 65)
+%pf    : (#ifMInt (notBool (((((((eqMInt( extractMInt( aShiftRightMInt( concatenateMInt( TMP_BV_64_0, mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 1)))), 63, 64), mi(1, 1)) xorBool eqMInt( extractMInt( aShiftRightMInt( concatenateMInt( TMP_BV_64_0, mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 1)))), 62, 63), mi(1, 1))) xorBool eqMInt( extractMInt( aShiftRightMInt( concatenateMInt( TMP_BV_64_0, mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 1)))), 61, 62), mi(1, 1))) xorBool eqMInt( extractMInt( aShiftRightMInt( concatenateMInt( TMP_BV_64_0, mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 1)))), 60, 61), mi(1, 1))) xorBool eqMInt( extractMInt( aShiftRightMInt( concatenateMInt( TMP_BV_64_0, mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 1)))), 59, 60), mi(1, 1))) xorBool eqMInt( extractMInt( aShiftRightMInt( concatenateMInt( TMP_BV_64_0, mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 1)))), 58, 59), mi(1, 1))) xorBool eqMInt( extractMInt( aShiftRightMInt( concatenateMInt( TMP_BV_64_0, mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 1)))), 57, 58), mi(1, 1))) xorBool eqMInt( extractMInt( aShiftRightMInt( concatenateMInt( TMP_BV_64_0, mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 1)))), 56, 57), mi(1, 1)))) #then mi(1, 1) #else mi(1, 0) #fi)
 %af    : (#ifMInt TMP_BOOL_1 #then mi(1, 1) #else mi(1, 0) #fi)
-%zf    : (#ifMInt eqMInt( extractMInt( ashrMInt( concatenateMInt( TMP_BV_64_0, mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 1)))), 0, 64), mi(64, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
-%sf    : extractMInt( ashrMInt( concatenateMInt( TMP_BV_64_0, mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 1)))), 0, 1)
+%zf    : (#ifMInt eqMInt( extractMInt( aShiftRightMInt( concatenateMInt( TMP_BV_64_0, mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 1)))), 0, 64), mi(64, 0)) #then mi(1, 1) #else mi(1, 0) #fi)
+%sf    : extractMInt( aShiftRightMInt( concatenateMInt( TMP_BV_64_0, mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 1)))), 0, 1)
 %of    : mi(1, 0)
 
 Information about memory reads:
@@ -23,7 +23,7 @@ Information about memory reads:
 
 Information about memory writes:
   Address %rbx was updated to
-    Value extractMInt( ashrMInt( concatenateMInt( TMP_BV_64_0, mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 1)))), 0, 64) (8 bytes).
+    Value extractMInt( aShiftRightMInt( concatenateMInt( TMP_BV_64_0, mi(1, 0)), uvalueMInt(concatenateMInt( mi(57, 0), mi(8, 1)))), 0, 64) (8 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus
