@@ -16,7 +16,7 @@ Information about memory reads:
 
 Information about memory writes:
   Address %rbx was updated to
-    Value extractMInt( lshrMInt( extractMInt( %ymm1, 128, 256), uvalueMInt(shlMInt( concatenateMInt( mi(125, 0), extractMInt( Imm8, 5, 8)), uvalueMInt(mi(128, 4))))), 112, 128) (2 bytes).
+    Value extractMInt( lshrMInt( extractMInt( %ymm1, 128, 256), uvalueMInt(shiftLeftMInt( concatenateMInt( mi(125, 0), extractMInt( Imm8, 5, 8)), uvalueMInt(mi(128, 4))))), 112, 128) (2 bytes).
 
 sigfpe  : sigfpe
 sigbus  : sigbus

@@ -10,7 +10,7 @@ code: btrw $0x0, %bx
 
 Formula:
 
-%rbx   : concatenateMInt( extractMInt( %rbx, 0, 48), andMInt( extractMInt( %rbx, 48, 64), negMInt( shlMInt( mi(16, 1), uvalueMInt(mi(16, svalueMInt(andMInt( Imm8, mi(8, 15)))))))))
+%rbx   : concatenateMInt( extractMInt( %rbx, 0, 48), andMInt( extractMInt( %rbx, 48, 64), negMInt( shiftLeftMInt( mi(16, 1), uvalueMInt(mi(16, svalueMInt(andMInt( Imm8, mi(8, 15)))))))))
 
 %cf    : extractMInt( lshrMInt( extractMInt( %rbx, 48, 64), uvalueMInt(mi(16, svalueMInt(andMInt( Imm8, mi(8, 15)))))), 15, 16)
 %pf    : (#ifMInt TMP_BOOL_3 #then mi(1, 1) #else mi(1, 0) #fi)

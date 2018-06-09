@@ -10,7 +10,7 @@ code: btsl $0x0, %ebx
 
 Formula:
 
-%rbx   : concatenateMInt( mi(32, 0), orMInt( extractMInt( %rbx, 32, 64), shlMInt( mi(32, 1), uvalueMInt(mi(32, svalueMInt(andMInt( Imm8, mi(8, 31))))))))
+%rbx   : concatenateMInt( mi(32, 0), orMInt( extractMInt( %rbx, 32, 64), shiftLeftMInt( mi(32, 1), uvalueMInt(mi(32, svalueMInt(andMInt( Imm8, mi(8, 31))))))))
 
 %cf    : extractMInt( lshrMInt( extractMInt( %rbx, 32, 64), uvalueMInt(mi(32, svalueMInt(andMInt( Imm8, mi(8, 31)))))), 31, 32)
 %pf    : (#ifMInt TMP_BOOL_3 #then mi(1, 1) #else mi(1, 0) #fi)

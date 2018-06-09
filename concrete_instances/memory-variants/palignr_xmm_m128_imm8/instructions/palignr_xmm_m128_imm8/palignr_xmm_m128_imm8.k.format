@@ -10,7 +10,7 @@ code: palignr $0x0, (%rbx), %xmm1
 
 Formula:
 
-%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), extractMInt( lshrMInt( concatenateMInt( extractMInt( %ymm1, 128, 256), TMP_BV_128_0), uvalueMInt(shlMInt( concatenateMInt( mi(248, 0), Imm8), uvalueMInt(mi(256, 3))))), 128, 256))
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), extractMInt( lshrMInt( concatenateMInt( extractMInt( %ymm1, 128, 256), TMP_BV_128_0), uvalueMInt(shiftLeftMInt( concatenateMInt( mi(248, 0), Imm8), uvalueMInt(mi(256, 3))))), 128, 256))
 
 Information about memory reads:
   Value TMP_BV_128_0 (16 bytes)

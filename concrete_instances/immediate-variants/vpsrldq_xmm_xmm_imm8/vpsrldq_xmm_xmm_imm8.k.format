@@ -10,7 +10,7 @@ code: vpsrldq $0x0, %xmm2, %xmm1
 
 Formula:
 
-%ymm1  : concatenateMInt( mi(128, 0), lshrMInt( extractMInt( %ymm2, 128, 256), uvalueMInt(shlMInt( (#ifMInt ugtMInt( Imm8, mi(8, 15)) #then concatenateMInt( mi(120, 0), mi(8, 16)) #else concatenateMInt( mi(120, 0), Imm8) #fi), uvalueMInt(mi(128, 3))))))
+%ymm1  : concatenateMInt( mi(128, 0), lshrMInt( extractMInt( %ymm2, 128, 256), uvalueMInt(shiftLeftMInt( (#ifMInt ugtMInt( Imm8, mi(8, 15)) #then concatenateMInt( mi(120, 0), mi(8, 16)) #else concatenateMInt( mi(120, 0), Imm8) #fi), uvalueMInt(mi(128, 3))))))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

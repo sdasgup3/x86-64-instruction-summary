@@ -10,7 +10,7 @@ code: rorxl $0x0, (%rcx), %ebx
 
 Formula:
 
-%rbx   : concatenateMInt( mi(32, 0), orMInt( lshrMInt( TMP_BV_32_0, uvalueMInt(andMInt( concatenateMInt( mi(24, 0), Imm8), mi(32, 31)))), shlMInt( TMP_BV_32_0, uvalueMInt(subMInt( mi(32, 32), andMInt( concatenateMInt( mi(24, 0), Imm8), mi(32, 31)))))))
+%rbx   : concatenateMInt( mi(32, 0), orMInt( lshrMInt( TMP_BV_32_0, uvalueMInt(andMInt( concatenateMInt( mi(24, 0), Imm8), mi(32, 31)))), shiftLeftMInt( TMP_BV_32_0, uvalueMInt(subMInt( mi(32, 32), andMInt( concatenateMInt( mi(24, 0), Imm8), mi(32, 31)))))))
 
 Information about memory reads:
   Value TMP_BV_32_0 (4 bytes)

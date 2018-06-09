@@ -10,7 +10,7 @@ code: vpsrad %xmm3, %xmm2, %xmm1
 
 Formula:
 
-%ymm1  : concatenateMInt( mi(128, 0), concatenateMInt( ashrMInt( extractMInt( %ymm2, 128, 160), uvalueMInt((#ifMInt ugtMInt( extractMInt( %ymm3, 192, 256), mi(64, 31)) #then mi(32, 32) #else extractMInt( %ymm3, 224, 256) #fi))), concatenateMInt( ashrMInt( extractMInt( %ymm2, 160, 192), uvalueMInt((#ifMInt ugtMInt( extractMInt( %ymm3, 192, 256), mi(64, 31)) #then mi(32, 32) #else extractMInt( %ymm3, 224, 256) #fi))), concatenateMInt( ashrMInt( extractMInt( %ymm2, 192, 224), uvalueMInt((#ifMInt ugtMInt( extractMInt( %ymm3, 192, 256), mi(64, 31)) #then mi(32, 32) #else extractMInt( %ymm3, 224, 256) #fi))), ashrMInt( extractMInt( %ymm2, 224, 256), uvalueMInt((#ifMInt ugtMInt( extractMInt( %ymm3, 192, 256), mi(64, 31)) #then mi(32, 32) #else extractMInt( %ymm3, 224, 256) #fi)))))))
+%ymm1  : concatenateMInt( mi(128, 0), concatenateMInt( aShiftRightMInt( extractMInt( %ymm2, 128, 160), uvalueMInt((#ifMInt ugtMInt( extractMInt( %ymm3, 192, 256), mi(64, 31)) #then mi(32, 32) #else extractMInt( %ymm3, 224, 256) #fi))), concatenateMInt( aShiftRightMInt( extractMInt( %ymm2, 160, 192), uvalueMInt((#ifMInt ugtMInt( extractMInt( %ymm3, 192, 256), mi(64, 31)) #then mi(32, 32) #else extractMInt( %ymm3, 224, 256) #fi))), concatenateMInt( aShiftRightMInt( extractMInt( %ymm2, 192, 224), uvalueMInt((#ifMInt ugtMInt( extractMInt( %ymm3, 192, 256), mi(64, 31)) #then mi(32, 32) #else extractMInt( %ymm3, 224, 256) #fi))), aShiftRightMInt( extractMInt( %ymm2, 224, 256), uvalueMInt((#ifMInt ugtMInt( extractMInt( %ymm3, 192, 256), mi(64, 31)) #then mi(32, 32) #else extractMInt( %ymm3, 224, 256) #fi)))))))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

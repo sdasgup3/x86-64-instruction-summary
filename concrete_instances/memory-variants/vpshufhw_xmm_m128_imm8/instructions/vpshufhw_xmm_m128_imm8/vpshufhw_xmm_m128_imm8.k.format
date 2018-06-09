@@ -10,7 +10,7 @@ code: vpshufhw $0x0, (%rbx), %xmm1
 
 Formula:
 
-%ymm1  : concatenateMInt( mi(128, 0), concatenateMInt( extractMInt( lshrMInt( TMP_BV_128_0, uvalueMInt(shlMInt( concatenateMInt( mi(126, 0), extractMInt( Imm8, 0, 2)), uvalueMInt(mi(128, 4))))), 48, 64), concatenateMInt( extractMInt( lshrMInt( TMP_BV_128_0, uvalueMInt(shlMInt( concatenateMInt( mi(126, 0), extractMInt( Imm8, 2, 4)), uvalueMInt(mi(128, 4))))), 48, 64), concatenateMInt( extractMInt( lshrMInt( TMP_BV_128_0, uvalueMInt(shlMInt( concatenateMInt( mi(126, 0), extractMInt( Imm8, 4, 6)), uvalueMInt(mi(128, 4))))), 48, 64), concatenateMInt( extractMInt( lshrMInt( TMP_BV_128_0, uvalueMInt(shlMInt( concatenateMInt( mi(126, 0), extractMInt( Imm8, 6, 8)), uvalueMInt(mi(128, 4))))), 48, 64), extractMInt( TMP_BV_128_0, 64, 128))))))
+%ymm1  : concatenateMInt( mi(128, 0), concatenateMInt( extractMInt( lshrMInt( TMP_BV_128_0, uvalueMInt(shiftLeftMInt( concatenateMInt( mi(126, 0), extractMInt( Imm8, 0, 2)), uvalueMInt(mi(128, 4))))), 48, 64), concatenateMInt( extractMInt( lshrMInt( TMP_BV_128_0, uvalueMInt(shiftLeftMInt( concatenateMInt( mi(126, 0), extractMInt( Imm8, 2, 4)), uvalueMInt(mi(128, 4))))), 48, 64), concatenateMInt( extractMInt( lshrMInt( TMP_BV_128_0, uvalueMInt(shiftLeftMInt( concatenateMInt( mi(126, 0), extractMInt( Imm8, 4, 6)), uvalueMInt(mi(128, 4))))), 48, 64), concatenateMInt( extractMInt( lshrMInt( TMP_BV_128_0, uvalueMInt(shiftLeftMInt( concatenateMInt( mi(126, 0), extractMInt( Imm8, 6, 8)), uvalueMInt(mi(128, 4))))), 48, 64), extractMInt( TMP_BV_128_0, 64, 128))))))
 
 Information about memory reads:
   Value TMP_BV_128_0 (16 bytes)

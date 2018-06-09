@@ -10,7 +10,7 @@ code: pslld %xmm2, %xmm1
 
 Formula:
 
-%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), (#ifMInt ugtMInt( extractMInt( %ymm2, 192, 256), mi(64, 31)) #then mi(128, 0) #else concatenateMInt( shlMInt( extractMInt( %ymm1, 128, 160), uvalueMInt(extractMInt( %ymm2, 224, 256))), concatenateMInt( shlMInt( extractMInt( %ymm1, 160, 192), uvalueMInt(extractMInt( %ymm2, 224, 256))), concatenateMInt( shlMInt( extractMInt( %ymm1, 192, 224), uvalueMInt(extractMInt( %ymm2, 224, 256))), shlMInt( extractMInt( %ymm1, 224, 256), uvalueMInt(extractMInt( %ymm2, 224, 256)))))) #fi))
+%ymm1  : concatenateMInt( extractMInt( %ymm1, 0, 128), (#ifMInt ugtMInt( extractMInt( %ymm2, 192, 256), mi(64, 31)) #then mi(128, 0) #else concatenateMInt( shiftLeftMInt( extractMInt( %ymm1, 128, 160), uvalueMInt(extractMInt( %ymm2, 224, 256))), concatenateMInt( shiftLeftMInt( extractMInt( %ymm1, 160, 192), uvalueMInt(extractMInt( %ymm2, 224, 256))), concatenateMInt( shiftLeftMInt( extractMInt( %ymm1, 192, 224), uvalueMInt(extractMInt( %ymm2, 224, 256))), shiftLeftMInt( extractMInt( %ymm1, 224, 256), uvalueMInt(extractMInt( %ymm2, 224, 256)))))) #fi))
 
 sigfpe  : sigfpe
 sigbus  : sigbus

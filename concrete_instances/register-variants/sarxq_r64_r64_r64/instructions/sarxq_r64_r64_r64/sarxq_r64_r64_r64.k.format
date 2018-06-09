@@ -10,7 +10,7 @@ code: sarxq %rdx, %rcx, %rbx
 
 Formula:
 
-%rbx   : ashrMInt( %rcx, uvalueMInt(andMInt( %rdx, mi(64, 63))))
+%rbx   : aShiftRightMInt( %rcx, uvalueMInt(andMInt( %rdx, mi(64, 63))))
 
 sigfpe  : sigfpe
 sigbus  : sigbus
