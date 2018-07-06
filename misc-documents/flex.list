@@ -3,7 +3,7 @@ AAD	ASCII Adjust AX Before Division
 AAM	ASCII Adjust AX After Multiply
 AAS	ASCII Adjust AL After Subtraction
 ADC	Add with Carry
-ADCX	Unsigned Integer Addition of Two Operands with Carry Flag
+ADCX	Unsigned Integer Addition of Two Operands with Carry Flag Unsupported
 ADD	Add
 ADDPD	Add Packed Double-Precision Floating-Point Values
 ADDPS	Add Packed Single-Precision Floating-Point Values
@@ -11,7 +11,7 @@ ADDSD	Add Scalar Double-Precision Floating-Point Values
 ADDSS	Add Scalar Single-Precision Floating-Point Values
 ADDSUBPD	Packed Double-FP Add/Subtract
 ADDSUBPS	Packed Single-FP Add/Subtract
-ADOX	Unsigned Integer Addition of Two Operands with Overflow Flag
+ADOX	Unsigned Integer Addition of Two Operands with Overflow Flag  Unsupported
 AESDEC	Perform One Round of an AES Decryption Flow
 AESDECLAST	Perform Last Round of an AES Decryption Flow
 AESENC	Perform One Round of an AES Encryption Flow
@@ -46,7 +46,7 @@ CALL	Call Procedure
 CBW	Convert Byte to Word/Convert Word to Doubleword/Convert Doubleword to Quadword
 CDQ	Convert Word to Doubleword/Convert Doubleword to Quadword
 CDQE	Convert Byte to Word/Convert Word to Doubleword/Convert Doubleword to Quadword
-CLAC	Clear AC Flag in EFLAGS Register
+CLAC	Clear AC Flag in EFLAGS Register  Unsupported
 CLC	Clear Carry Flag
 CLD	Clear Direction Flag
 CLFLUSH	Flush Cache Line
@@ -461,7 +461,7 @@ RDGSBASE	Read FS/GS Segment Base
 RDMSR	Read from Model Specific Register
 RDPMC	Read Performance-Monitoring Counters
 RDRAND	Read Random Number
-RDSEED	Read Random SEED
+RDSEED	Read Random SEED  Unsupported
 RDTSC	Read Time-Stamp Counter
 RDTSCP	Read Time-Stamp Counter and Processor ID
 REP	Repeat String Operation Prefix
@@ -507,7 +507,7 @@ SQRTPD	Compute Square Roots of Packed Double-Precision Floating-Point Values
 SQRTPS	Compute Square Roots of Packed Single-Precision Floating-Point Values
 SQRTSD	Compute Square Root of Scalar Double-Precision Floating-Point Value
 SQRTSS	Compute Square Root of Scalar Single-Precision Floating-Point Value
-STAC	Set AC Flag in EFLAGS Register
+STAC	Set AC Flag in EFLAGS Register  Unsupported
 STC	Set Carry Flag
 STD	Set Direction Flag
 STI	Set Interrupt Flag

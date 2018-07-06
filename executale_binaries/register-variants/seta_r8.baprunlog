@@ -1,0 +1,7 @@
+00000008: program
+00000007: sub _start()
+00000002: 
+00000003: RBX := extract:63:8[RBX].pad:8[~(CF | ZF)]
+00000004: v2 := mem[RSP, el]:u64
+00000005: RSP := RSP + 8
+00000006: return v2

@@ -1,0 +1,9 @@
+0000000a: program
+00000009: sub _start()
+00000002: 
+00000003: v9 := high:64[low:128[YMM2]]
+00000004: v8 := high:64[low:128[YMM1]]
+00000005: YMM1 := extract:255:128[YMM1].extract:63:32[v9].extract:63:32[v8].extract:31:0[v9].extract:31:0[v8]
+00000006: v12 := mem[RSP, el]:u64
+00000007: RSP := RSP + 8
+00000008: return v12

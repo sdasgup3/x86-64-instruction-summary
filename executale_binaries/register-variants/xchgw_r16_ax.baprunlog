@@ -1,0 +1,9 @@
+0000000a: program
+00000009: sub _start()
+00000002: 
+00000003: v5 := low:16[low:32[RAX]]
+00000004: RAX := extract:63:16[RAX].low:16[low:32[RBX]]
+00000005: RBX := extract:63:16[RBX].v5
+00000006: v7 := mem[RSP, el]:u64
+00000007: RSP := RSP + 8
+00000008: return v7

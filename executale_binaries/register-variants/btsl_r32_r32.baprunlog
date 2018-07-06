@@ -1,0 +1,8 @@
+0000000f: program
+0000000e: sub _start()
+00000002: 
+00000003: o5 := low:5[RCX]
+0000000a: RBX := RBX | 1 << o5
+0000000b: v7 := mem[RSP, el]:u64
+0000000c: RSP := RSP + 8
+0000000d: return v7

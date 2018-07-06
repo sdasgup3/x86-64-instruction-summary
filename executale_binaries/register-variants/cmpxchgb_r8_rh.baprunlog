@@ -1,0 +1,15 @@
+00000017: program
+00000016: sub _start()
+00000002: 
+00000012: when low:8[RAX] = low:8[RCX] goto %0000000a
+00000011: goto %0000000b
+0000000a: 
+00000010: RCX := high:56[RCX].extract:15:8[RBX]
+0000000f: goto %0000000c
+0000000b: 
+0000000e: RAX := high:56[RAX].low:8[RCX]
+0000000d: goto %0000000c
+0000000c: 
+00000013: v12 := mem[RSP, el]:u64
+00000014: RSP := RSP + 8
+00000015: return v12

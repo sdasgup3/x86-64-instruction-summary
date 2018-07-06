@@ -1,0 +1,127 @@
+00000080: program
+0000007f: sub _start()
+00000002: 
+0000007b: when extract:127:96[low:128[YMM1]] <$ extract:127:96[low:128[YMM2]] goto %00000003
+0000007a: goto %00000004
+00000003: 
+00000079: when extract:95:64[low:128[YMM1]] <$ extract:95:64[low:128[YMM2]] goto %00000041
+00000078: goto %00000042
+00000041: 
+00000077: when extract:63:32[low:128[YMM1]] <$ extract:63:32[low:128[YMM2]] goto %0000005f
+00000076: goto %00000060
+0000005f: 
+00000075: when extract:31:0[low:128[YMM1]] <$ extract:31:0[low:128[YMM2]] goto %0000006d
+00000074: goto %0000006e
+0000006d: 
+00000073: YMM1 := extract:255:128[YMM1].extract:127:96[low:128[YMM1]].extract:95:64[low:128[YMM1]].extract:63:32[low:128[YMM1]].extract:31:0[low:128[YMM1]]
+00000072: goto %0000006f
+0000006e: 
+00000071: YMM1 := extract:255:128[YMM1].extract:127:96[low:128[YMM1]].extract:95:64[low:128[YMM1]].extract:63:32[low:128[YMM1]].extract:31:0[low:128[YMM2]]
+00000070: goto %0000006f
+0000006f: 
+0000006c: goto %00000061
+00000060: 
+0000006b: when extract:31:0[low:128[YMM1]] <$ extract:31:0[low:128[YMM2]] goto %00000063
+0000006a: goto %00000064
+00000063: 
+00000069: YMM1 := extract:255:128[YMM1].extract:127:96[low:128[YMM1]].extract:95:64[low:128[YMM1]].extract:63:32[low:128[YMM2]].extract:31:0[low:128[YMM1]]
+00000068: goto %00000065
+00000064: 
+00000067: YMM1 := extract:255:128[YMM1].extract:127:96[low:128[YMM1]].extract:95:64[low:128[YMM1]].extract:63:32[low:128[YMM2]].extract:31:0[low:128[YMM2]]
+00000066: goto %00000065
+00000065: 
+00000062: goto %00000061
+00000061: 
+0000005e: goto %00000043
+00000042: 
+0000005d: when extract:63:32[low:128[YMM1]] <$ extract:63:32[low:128[YMM2]] goto %00000045
+0000005c: goto %00000046
+00000045: 
+0000005b: when extract:31:0[low:128[YMM1]] <$ extract:31:0[low:128[YMM2]] goto %00000053
+0000005a: goto %00000054
+00000053: 
+00000059: YMM1 := extract:255:128[YMM1].extract:127:96[low:128[YMM1]].extract:95:64[low:128[YMM2]].extract:63:32[low:128[YMM1]].extract:31:0[low:128[YMM1]]
+00000058: goto %00000055
+00000054: 
+00000057: YMM1 := extract:255:128[YMM1].extract:127:96[low:128[YMM1]].extract:95:64[low:128[YMM2]].extract:63:32[low:128[YMM1]].extract:31:0[low:128[YMM2]]
+00000056: goto %00000055
+00000055: 
+00000052: goto %00000047
+00000046: 
+00000051: when extract:31:0[low:128[YMM1]] <$ extract:31:0[low:128[YMM2]] goto %00000049
+00000050: goto %0000004a
+00000049: 
+0000004f: YMM1 := extract:255:128[YMM1].extract:127:96[low:128[YMM1]].extract:95:64[low:128[YMM2]].extract:63:32[low:128[YMM2]].extract:31:0[low:128[YMM1]]
+0000004e: goto %0000004b
+0000004a: 
+0000004d: YMM1 := extract:255:128[YMM1].extract:127:96[low:128[YMM1]].extract:95:64[low:128[YMM2]].extract:63:32[low:128[YMM2]].extract:31:0[low:128[YMM2]]
+0000004c: goto %0000004b
+0000004b: 
+00000048: goto %00000047
+00000047: 
+00000044: goto %00000043
+00000043: 
+00000040: goto %00000005
+00000004: 
+0000003f: when extract:95:64[low:128[YMM1]] <$ extract:95:64[low:128[YMM2]] goto %00000007
+0000003e: goto %00000008
+00000007: 
+0000003d: when extract:63:32[low:128[YMM1]] <$ extract:63:32[low:128[YMM2]] goto %00000025
+0000003c: goto %00000026
+00000025: 
+0000003b: when extract:31:0[low:128[YMM1]] <$ extract:31:0[low:128[YMM2]] goto %00000033
+0000003a: goto %00000034
+00000033: 
+00000039: YMM1 := extract:255:128[YMM1].extract:127:96[low:128[YMM2]].extract:95:64[low:128[YMM1]].extract:63:32[low:128[YMM1]].extract:31:0[low:128[YMM1]]
+00000038: goto %00000035
+00000034: 
+00000037: YMM1 := extract:255:128[YMM1].extract:127:96[low:128[YMM2]].extract:95:64[low:128[YMM1]].extract:63:32[low:128[YMM1]].extract:31:0[low:128[YMM2]]
+00000036: goto %00000035
+00000035: 
+00000032: goto %00000027
+00000026: 
+00000031: when extract:31:0[low:128[YMM1]] <$ extract:31:0[low:128[YMM2]] goto %00000029
+00000030: goto %0000002a
+00000029: 
+0000002f: YMM1 := extract:255:128[YMM1].extract:127:96[low:128[YMM2]].extract:95:64[low:128[YMM1]].extract:63:32[low:128[YMM2]].extract:31:0[low:128[YMM1]]
+0000002e: goto %0000002b
+0000002a: 
+0000002d: YMM1 := extract:255:128[YMM1].extract:127:96[low:128[YMM2]].extract:95:64[low:128[YMM1]].extract:63:32[low:128[YMM2]].extract:31:0[low:128[YMM2]]
+0000002c: goto %0000002b
+0000002b: 
+00000028: goto %00000027
+00000027: 
+00000024: goto %00000009
+00000008: 
+00000023: when extract:63:32[low:128[YMM1]] <$ extract:63:32[low:128[YMM2]] goto %0000000b
+00000022: goto %0000000c
+0000000b: 
+00000021: when extract:31:0[low:128[YMM1]] <$ extract:31:0[low:128[YMM2]] goto %00000019
+00000020: goto %0000001a
+00000019: 
+0000001f: YMM1 := extract:255:128[YMM1].extract:127:96[low:128[YMM2]].extract:95:64[low:128[YMM2]].extract:63:32[low:128[YMM1]].extract:31:0[low:128[YMM1]]
+0000001e: goto %0000001b
+0000001a: 
+0000001d: YMM1 := extract:255:128[YMM1].extract:127:96[low:128[YMM2]].extract:95:64[low:128[YMM2]].extract:63:32[low:128[YMM1]].extract:31:0[low:128[YMM2]]
+0000001c: goto %0000001b
+0000001b: 
+00000018: goto %0000000d
+0000000c: 
+00000017: when extract:31:0[low:128[YMM1]] <$ extract:31:0[low:128[YMM2]] goto %0000000f
+00000016: goto %00000010
+0000000f: 
+00000015: YMM1 := extract:255:128[YMM1].extract:127:96[low:128[YMM2]].extract:95:64[low:128[YMM2]].extract:63:32[low:128[YMM2]].extract:31:0[low:128[YMM1]]
+00000014: goto %00000011
+00000010: 
+00000013: YMM1 := extract:255:128[YMM1].extract:127:96[low:128[YMM2]].extract:95:64[low:128[YMM2]].extract:63:32[low:128[YMM2]].extract:31:0[low:128[YMM2]]
+00000012: goto %00000011
+00000011: 
+0000000e: goto %0000000d
+0000000d: 
+0000000a: goto %00000009
+00000009: 
+00000006: goto %00000005
+00000005: 
+0000007c: v2 := mem[RSP, el]:u64
+0000007d: RSP := RSP + 8
+0000007e: return v2

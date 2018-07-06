@@ -1,0 +1,15 @@
+00000010: program
+0000000f: sub _start()
+00000002: 
+0000000b: when SF goto %00000003
+0000000a: goto %00000004
+00000003: 
+00000009: RBX := extract:63:16[RBX].low:16[low:32[RCX]]
+00000008: goto %00000005
+00000004: 
+00000007: RBX := extract:63:16[RBX].low:16[low:32[RBX]]
+00000006: goto %00000005
+00000005: 
+0000000c: v2 := mem[RSP, el]:u64
+0000000d: RSP := RSP + 8
+0000000e: return v2
