@@ -99,6 +99,7 @@ prefetchnta_m8
 prefetcht0_m8
 prefetcht1_m8
 prefetcht2_m8
+prefetchw
 rdfsbase_r32
 rdfsbase_r64
 rdgsbase_r32
@@ -191,7 +192,7 @@ invpcid_r64_m128
 iretw
 iretl
 iretq <-- End
-xlat_m8
+xlat_m8 <- More sys
 xlatb
 xlatb_1
 xrelease
@@ -206,3 +207,26 @@ ud2
 hlt
 rdtsc
 xtest
+rdmsr
+rdtscp
+wbinvd
+wrmsr
+movcr
+movdr
+lgdt
+lidt
+lldt
+clflushopt
+clwb
+bound
+clac
+stac <- End
+aas <- Need to be implemented
+daa
+jcxz
+popa
+popad
+popfd
+pusha
+pushad
+pushfd <- End
