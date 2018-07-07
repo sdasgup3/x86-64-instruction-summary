@@ -191,6 +191,8 @@ bsfl_r32_m32
 bsfl_r32_r32
 bsfq_r64_m64
 bsfq_r64_r64
+bsfw_r16_m16
+bsfw_r16_r16
 bsrw_r16_m16
 bsrw_r16_r16
 bsrl_r32_m32
@@ -1650,6 +1652,8 @@ phsubw_mm_m64
 phsubw_mm_mm
 phsubw_xmm_m128
 phsubw_xmm_xmm
+pinsrq_xmm_r64_imm8
+pinsrq_xmm_m64_imm8
 pinsrb_xmm_m8_imm8
 pinsrb_xmm_r32_imm8
 pinsrd_xmm_m32_imm8
@@ -2522,6 +2526,9 @@ ucomisd_xmm_xmm
 ucomiss_xmm_m32
 ucomiss_xmm_xmm
 ud2
+hlt
+rdtsc
+xtest
 unpckhpd_xmm_m128
 unpckhpd_xmm_xmm
 unpckhps_xmm_m128
@@ -3241,8 +3248,8 @@ vpcmpgtd_ymm_ymm_m256
 vpcmpgtd_ymm_ymm_ymm
 vpcmpgtq_xmm_xmm_m128
 vpcmpgtq_xmm_xmm_xmm
-vpvmpgtq_ymm_ymm_m256
-vpvmpgtq_ymm_ymm_ymm
+vpcmpgtq_ymm_ymm_m256
+vpcmpgtq_ymm_ymm_ymm
 vpcmpgtw_xmm_xmm_m128
 vpcmpgtw_xmm_xmm_xmm
 vpcmpgtw_ymm_ymm_m256

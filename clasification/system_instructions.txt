@@ -2,6 +2,8 @@ bsfl_r32_m32 <-Bit Scan
 bsfl_r32_r32
 bsfq_r64_m64
 bsfq_r64_r64
+bsfw_r16_m16
+bsfw_r16_r16
 bsrw_r16_m16
 bsrw_r16_r16
 bsrl_r32_m32
@@ -201,3 +203,6 @@ sysexit_prefrexw
 sysret
 sysret_prefrexw
 ud2
+hlt
+rdtsc
+xtest
