@@ -1,3 +1,10 @@
+AAS:aas
+DAA:daa
+BOUND:bound
+CLAC:clac
+STAC:stac
+CLFLUSHOPT:clflushopt
+CLWB:clwb
 ADC:adcb
 ADC:adcl
 ADC:adcq
@@ -403,6 +410,7 @@ JAE:jae
 JA:ja
 JBE:jbe
 JB:jb
+JCXZ:jcxz
 JC:jc
 JECXZ:jecxz
 JE:je
@@ -665,6 +673,7 @@ POPCNT:popcntq
 POPCNT:popcntw
 POPF:popf
 POPFQ:popfq
+POPFD:popfd
 POP:popq
 POP:popw
 POR:por
@@ -672,6 +681,7 @@ PREFETCHNTA:prefetchnta
 PREFETCHT0:prefetcht0
 PREFETCHT1:prefetcht1
 PREFETCHT2:prefetcht2
+PREFETCHW:prefetchw
 PSADBW:psadbw
 PSHUFB:pshufb
 PSHUFD:pshufd
@@ -710,6 +720,7 @@ PUNPCKLQDQ:punpcklqdq
 PUNPCKLWD:punpcklwd
 PUSHF:pushf
 PUSHFQ:pushfq
+PUSHFD:pushfd
 PUSH:pushq
 PUSH:pushw
 PXOR:pxor
@@ -1287,3 +1298,16 @@ XSAVE:xsave
 XTEST:xtest
 HLT:hlt
 RDTSC:rdtsc
+POPA:popa
+PUSHAD:pushad
+POPAD:popad
+PUSHA:pusha
+LGDT:lgdt
+LIDT:lidt
+MOVCR:movcr
+MOVDR:movdr
+RDMSR:rdmsr
+RDTSCP:rdtscp
+WBINVD:wbinvd
+WRMSR:wrmsr
+LLDT:lldt
