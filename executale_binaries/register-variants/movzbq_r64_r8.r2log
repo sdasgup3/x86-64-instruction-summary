@@ -1,0 +1,14 @@
+Process with PID 10557 started...
+= attach 10557 10557
+bin.baddr 0x00400000
+USING 400000
+Assuming filepath /home/sdasgup3/Github/strata-data/output-strata/instruction-summary/executale_binaries/register-variants/movzbq_r64_r8.exe
+Warning: Cannot initialize dynamic strings
+asm.bits 64
+asm.arch: cannot find (x64)
+  [36m          [0m;-- [36mentry0:
+  [36m          [0m;-- [36msection..text:
+  [36m          [0m;-- [36m_start:
+  [36m          [0m;-- [36mrip:
+  [36m          [0m[7m[32m0x00400078[0m      [33m48[37m0f[37mb6[37md9[0m       [0m[37mcl,rbx,=[0m[0m                   [31m ; [1] va=0x00400078 pa=0x00000078 sz=5 vsz=5 rwx=--r-x .text[0m
+  [36m          [0m[32m0x0040007c[0m      [37mc3[0m             [0m[31mrsp,[8],rip,=,8,rsp,+=[0m[0m
