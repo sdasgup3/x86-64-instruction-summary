@@ -1,0 +1,34 @@
+00000024: program
+00000023: sub _start()
+00000002: 
+00000003: v5 := (low:32[RDX].low:32[RAX]) = mem[RBX, el]:u64
+0000000d: when v5 goto %00000005
+0000000c: goto %00000006
+00000005: 
+0000000b: mem := mem with [RBX, el]:u64 <- low:32[RCX].low:32[RBX]
+0000000a: goto %00000007
+00000006: 
+00000009: mem := mem with [RBX, el]:u64 <- mem[RBX, el]:u64
+00000008: goto %00000007
+00000007: 
+00000016: when v5 goto %0000000e
+00000015: goto %0000000f
+0000000e: 
+00000014: RAX := pad:64[low:32[RAX]]
+00000013: goto %00000010
+0000000f: 
+00000012: RAX := pad:64[extract:63:32[mem[RBX, el]:u64]]
+00000011: goto %00000010
+00000010: 
+0000001f: when v5 goto %00000017
+0000001e: goto %00000018
+00000017: 
+0000001d: RDX := pad:64[low:32[RDX]]
+0000001c: goto %00000019
+00000018: 
+0000001b: RDX := pad:64[extract:31:0[mem[RBX, el]:u64]]
+0000001a: goto %00000019
+00000019: 
+00000020: v7 := mem[RSP, el]:u64
+00000021: RSP := RSP + 8
+00000022: return v7

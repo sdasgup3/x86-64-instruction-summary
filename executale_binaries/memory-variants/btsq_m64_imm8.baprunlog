@@ -1,0 +1,9 @@
+00000010: program
+0000000f: sub _start()
+00000002: 
+00000003: a8 := RBX
+00000004: d9 := mem[a8, el]:u64
+0000000b: mem := mem with [a8, el]:u64 <- d9 | 1
+0000000c: v12 := mem[RSP, el]:u64
+0000000d: RSP := RSP + 8
+0000000e: return v12

@@ -1,0 +1,16 @@
+00000018: program
+00000017: sub _start()
+00000002: 
+00000003: d11 := mem[RBX]
+00000013: when low:8[RAX] = d11 goto %0000000b
+00000012: goto %0000000c
+0000000b: 
+00000011: mem := mem with [RBX] <- low:8[RCX]
+00000010: goto %0000000d
+0000000c: 
+0000000f: RAX := high:56[RAX].d11
+0000000e: goto %0000000d
+0000000d: 
+00000014: v17 := mem[RSP, el]:u64
+00000015: RSP := RSP + 8
+00000016: return v17

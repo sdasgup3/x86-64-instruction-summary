@@ -1,0 +1,10 @@
+00000010: program
+0000000f: sub _start()
+00000002: 
+00000003: v11 := low:32[RCX]
+00000004: v12 := mem[RBX, el]:u32
+00000005: mem := mem with [RBX, el]:u32 <- v12 - v11 + pad:32[CF]
+00000007: CF := v12 < v11 + pad:32[CF] | v11 + pad:32[CF] < v11
+0000000c: v17 := mem[RSP, el]:u64
+0000000d: RSP := RSP + 8
+0000000e: return v17

@@ -1,0 +1,258 @@
+unable to open log file: Unix.Unix_error(Unix.ENOENT, "unlink", "/home/sdasgup3/.local/state/bap/log~99")
+will continue logging to stderr
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/primus_test.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/primus_region.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/trivial_condition_form.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/read_symbols.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/propagate_taint.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/primus_dictionary.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/primus_propagate_taint.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/trace.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/primus_taint.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/callsites.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/frontc_parser.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/objdump.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/arm.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/cache.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/dead_code_elimination.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/primus_x86.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/warn_unused.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/print.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/beagle.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/strings.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/primus_lisp.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/cxxfilt.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/mips.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/dump_symbols.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/relocatable.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/byteweight.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/x86.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/powerpc.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/ssa.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/report.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/abi.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/demangle.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/taint.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/run.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/llvm.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/api.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/map_terms.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/primus_test.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/primus_region.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/trivial_condition_form.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/read_symbols.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/propagate_taint.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/primus_dictionary.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/primus_propagate_taint.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/trace.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/primus_taint.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/callsites.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/frontc_parser.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/objdump.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/arm.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/cache.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/dead_code_elimination.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/primus_x86.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/warn_unused.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/print.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/beagle.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/strings.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/primus_lisp.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/cxxfilt.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/mips.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/dump_symbols.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/relocatable.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/byteweight.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/x86.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/powerpc.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/ssa.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/report.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/abi.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/demangle.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/taint.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/run.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/llvm.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/api.plugin
+loader.debug> Opening bundle /home/sdasgup3/.opam/4.03.0+k/lib/bap/map_terms.plugin
+loader.debug> Loading primus-test from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/primus_test.plugin"
+loader.debug> Linking library bap_abi
+loader.debug> Linking library bap_api
+loader.debug> Linking library bap_c
+loader.debug> Linking library bap_strings
+loader.debug> Linking library bap_primus
+loader.debug> Linking library primus_test_library_plugin
+loader.debug> Linking library bap_plugin_primus_test
+loader.info> Loaded primus-test from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/primus_test.plugin"
+loader.debug> Loading primus-region from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/primus_region.plugin"
+loader.debug> Linking library primus_region_library_plugin
+loader.debug> Linking library bap_plugin_primus_region
+loader.info> Loaded primus-region from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/primus_region.plugin"
+loader.debug> Loading trivial-condition-form from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/trivial_condition_form.plugin"
+loader.debug> Linking library trivial_condition_form_plugin
+loader.debug> Linking library bap_plugin_trivial_condition_form
+loader.info> Loaded trivial-condition-form from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/trivial_condition_form.plugin"
+loader.debug> Loading read-symbols from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/read_symbols.plugin"
+loader.debug> Linking library read_symbols_plugin
+loader.debug> Linking library bap_plugin_read_symbols
+loader.info> Loaded read-symbols from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/read_symbols.plugin"
+loader.debug> Loading propagate-taint from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/propagate_taint.plugin"
+loader.debug> Linking library microx
+loader.debug> Linking library propagate_taint_plugin
+loader.debug> Linking library bap_plugin_propagate_taint
+loader.info> Loaded propagate-taint from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/propagate_taint.plugin"
+loader.debug> Loading primus-dictionary from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/primus_dictionary.plugin"
+loader.debug> Linking library primus_dictionary_library_plugin
+loader.debug> Linking library bap_plugin_primus_dictionary
+loader.info> Loaded primus-dictionary from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/primus_dictionary.plugin"
+loader.debug> Loading primus-propagate-taint from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/primus_propagate_taint.plugin"
+loader.debug> Linking library taint
+loader.debug> Linking library primus_propagate_taint_plugin
+loader.debug> Linking library bap_plugin_primus_propagate_taint
+loader.info> Loaded primus-propagate-taint from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/primus_propagate_taint.plugin"
+loader.debug> Loading trace from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/trace.plugin"
+loader.debug> Linking library traces
+loader.debug> Linking library trace_plugin
+loader.debug> Linking library bap_plugin_trace
+loader.info> Loaded trace from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/trace.plugin"
+loader.debug> Loading primus-taint from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/primus_taint.plugin"
+loader.debug> Linking library primus_taint_plugin
+loader.debug> Linking library bap_plugin_primus_taint
+loader.info> Loaded primus-taint from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/primus_taint.plugin"
+loader.debug> Loading callsites from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/callsites.plugin"
+loader.debug> Linking library callsites_plugin
+loader.debug> Linking library bap_plugin_callsites
+loader.info> Loaded callsites from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/callsites.plugin"
+loader.debug> Loading frontc-parser from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/frontc_parser.plugin"
+loader.debug> Linking library frontc
+loader.debug> Linking library frontc_parser_plugin
+loader.debug> Linking library bap_plugin_frontc_parser
+loader.info> Loaded frontc-parser from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/frontc_parser.plugin"
+loader.debug> Loading objdump from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/objdump.plugin"
+loader.debug> Linking library re_perl
+loader.debug> Linking library re_pcre
+loader.debug> Linking library objdump_plugin
+loader.debug> Linking library bap_plugin_objdump
+loader.info> Loaded objdump from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/objdump.plugin"
+loader.debug> Loading arm from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/arm.plugin"
+loader.debug> Linking library bap-arm
+loader.debug> Linking library arm_plugin
+loader.debug> Linking library bap_plugin_arm
+loader.info> Loaded arm from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/arm.plugin"
+loader.debug> Loading cache from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/cache.plugin"
+loader.debug> Linking library cache_plugin
+loader.debug> Linking library bap_plugin_cache
+loader.info> Loaded cache from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/cache.plugin"
+loader.debug> Loading dead-code-elimination from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/dead_code_elimination.plugin"
+loader.debug> Linking library dead_code_elimination_plugin
+loader.debug> Linking library bap_plugin_dead_code_elimination
+loader.info> Loaded dead-code-elimination from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/dead_code_elimination.plugin"
+loader.debug> Loading primus-x86 from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/primus_x86.plugin"
+loader.debug> Linking library bap-x86-cpu
+loader.debug> Linking library primus_x86_plugin
+loader.debug> Linking library bap_plugin_primus_x86
+loader.info> Loaded primus-x86 from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/primus_x86.plugin"
+loader.debug> Loading warn-unused from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/warn_unused.plugin"
+loader.debug> Linking library warn_unused_plugin
+loader.debug> Linking library bap_plugin_warn_unused
+loader.info> Loaded warn-unused from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/warn_unused.plugin"
+loader.debug> Loading print from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/print.plugin"
+loader.debug> Linking library text-tags
+loader.debug> Linking library bap-demangle
+loader.debug> Linking library print_plugin
+loader.debug> Linking library bap_plugin_print
+loader.info> Loaded print from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/print.plugin"
+loader.debug> Loading beagle from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/beagle.plugin"
+loader.debug> Linking library beagle_prey
+loader.debug> Linking library beagle_plugin
+loader.debug> Linking library bap_plugin_beagle
+loader.info> Loaded beagle from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/beagle.plugin"
+loader.debug> Loading strings from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/strings.plugin"
+loader.debug> Linking library strings_plugin
+loader.debug> Linking library bap_plugin_strings
+loader.info> Loaded strings from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/strings.plugin"
+loader.debug> Loading primus-lisp from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/primus_lisp.plugin"
+loader.debug> Linking library primus_lisp_library_plugin
+loader.debug> Linking library bap_plugin_primus_lisp
+loader.info> Loaded primus-lisp from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/primus_lisp.plugin"
+loader.debug> Loading cxxfilt from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/cxxfilt.plugin"
+loader.debug> Linking library cxxfilt_plugin
+loader.debug> Linking library bap_plugin_cxxfilt
+loader.info> Loaded cxxfilt from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/cxxfilt.plugin"
+loader.debug> Loading mips from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/mips.plugin"
+loader.debug> Linking library mips_plugin
+loader.debug> Linking library bap_plugin_mips
+loader.info> Loaded mips from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/mips.plugin"
+loader.debug> Loading dump-symbols from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/dump_symbols.plugin"
+loader.debug> Linking library dump_symbols_plugin
+loader.debug> Linking library bap_plugin_dump_symbols
+loader.info> Loaded dump-symbols from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/dump_symbols.plugin"
+loader.debug> Loading relocatable from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/relocatable.plugin"
+loader.debug> Linking library relocatable_plugin
+loader.debug> Linking library bap_plugin_relocatable
+loader.info> Loaded relocatable from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/relocatable.plugin"
+loader.debug> Loading byteweight from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/byteweight.plugin"
+loader.debug> Linking library bap_byteweight
+loader.debug> Linking library byteweight_plugin
+loader.debug> Linking library bap_plugin_byteweight
+loader.info> Loaded byteweight from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/byteweight.plugin"
+loader.debug> Loading x86 from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/x86.plugin"
+loader.debug> Linking library bap_llvm
+loader.debug> Linking library x86_plugin
+loader.debug> Linking library bap_plugin_x86
+loader.info> Loaded x86 from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/x86.plugin"
+loader.debug> Loading powerpc from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/powerpc.plugin"
+loader.debug> Linking library powerpc_plugin
+loader.debug> Linking library bap_plugin_powerpc
+loader.info> Loaded powerpc from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/powerpc.plugin"
+loader.debug> Loading ssa from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/ssa.plugin"
+loader.debug> Linking library ssa_plugin
+loader.debug> Linking library bap_plugin_ssa
+loader.info> Loaded ssa from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/ssa.plugin"
+loader.debug> Loading report from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/report.plugin"
+loader.debug> Linking library report_plugin
+loader.debug> Linking library bap_plugin_report
+loader.info> Loaded report from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/report.plugin"
+loader.debug> Loading abi from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/abi.plugin"
+loader.debug> Linking library abi_plugin
+loader.debug> Linking library bap_plugin_abi
+loader.info> Loaded abi from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/abi.plugin"
+loader.debug> Loading demangle from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/demangle.plugin"
+loader.debug> Linking library demangle_plugin
+loader.debug> Linking library bap_plugin_demangle
+loader.info> Loaded demangle from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/demangle.plugin"
+loader.debug> Loading taint from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/taint.plugin"
+loader.debug> Linking library taint_plugin
+loader.debug> Linking library bap_plugin_taint
+loader.info> Loaded taint from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/taint.plugin"
+loader.debug> Loading run from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/run.plugin"
+loader.debug> Linking library run_plugin
+loader.debug> Linking library bap_plugin_run
+loader.info> Loaded run from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/run.plugin"
+loader.debug> Loading llvm from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/llvm.plugin"
+loader.debug> Linking library llvm_plugin
+loader.debug> Linking library bap_plugin_llvm
+loader.info> Loaded llvm from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/llvm.plugin"
+loader.debug> Loading api from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/api.plugin"
+loader.debug> Linking library api_plugin
+loader.debug> Linking library bap_plugin_api
+loader.info> Loaded api from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/api.plugin"
+loader.debug> Loading map-terms from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/map_terms.plugin"
+loader.debug> Linking library bap-bml
+loader.debug> Linking library map_terms_plugin
+loader.debug> Linking library bap_plugin_map_terms
+loader.info> Loaded map-terms from "/home/sdasgup3/.opam/4.03.0+k/lib/bap/map_terms.plugin"
+byteweight.info> no roots was found
+byteweight.info> advice - check your compiler's signatures
+cache.info> caching to /home/sdasgup3/.cache/bap/entry4b3663.cache
+x86.info> can't detect ABI, falling back to default
+x86.info> using sysv ABI
+00000010: program
+0000000f: sub _start()
+00000002: 
+00000003: v11 := low:8[low:32[RBX]]
+00000004: v12 := mem[RCX]
+00000005: RBX := extract:63:8[RBX].v11 + v12 + pad:8[CF]
+00000006: CF := extract:8:8[pad:9[v11] + pad:9[v12] + pad:9[pad:8[CF]]]
+0000000c: v17 := mem[RSP, el]:u64
+0000000d: RSP := RSP + 8
+0000000e: return v17

@@ -1,0 +1,21 @@
+0000001c: program
+0000001b: sub _start()
+00000002: 
+00000007: goto %00000004
+00000003: 
+00000006: goto %00000017
+00000004: 
+00000008: div8 := low:16[low:32[RAX]] /$ extend:16[mem[RBX]]
+00000009: rem9 := low:16[low:32[RAX]] %$ extend:16[mem[RBX]]
+00000005: when extend:16[mem[RBX]] = 0 interrupt 0x0 return %00000003
+0000000e: goto %0000000b
+0000000a: 
+0000000d: goto %00000017
+0000000b: 
+0000000f: RAX := extract:63:16[RAX].low:8[rem9].low:8[div8]
+0000000c: when ~(high:8[div8] = 0) interrupt 0x0 return %0000000a
+00000016: goto %00000017
+00000017: 
+00000018: v12 := mem[RSP, el]:u64
+00000019: RSP := RSP + 8
+0000001a: return v12

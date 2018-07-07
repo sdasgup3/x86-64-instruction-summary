@@ -1,0 +1,8 @@
+0000000f: program
+0000000e: sub _start()
+00000002: 
+00000003: v5 := extend:32[mem[RCX, el]:u16] * 0
+00000004: RBX := extract:63:16[RBX].low:16[v5]
+0000000b: v7 := mem[RSP, el]:u64
+0000000c: RSP := RSP + 8
+0000000d: return v7

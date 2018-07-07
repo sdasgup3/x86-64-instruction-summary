@@ -1,0 +1,10 @@
+00000010: program
+0000000f: sub _start()
+00000002: 
+00000003: v11 := mem[RBX, el]:u16
+00000004: v12 := low:16[low:32[RCX]]
+00000005: mem := mem with [RBX, el]:u16 <- v11 + v12 + pad:16[CF]
+00000006: CF := extract:16:16[pad:17[v11] + pad:17[v12] + pad:17[pad:16[CF]]]
+0000000c: v17 := mem[RSP, el]:u64
+0000000d: RSP := RSP + 8
+0000000e: return v17

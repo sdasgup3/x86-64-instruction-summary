@@ -1,0 +1,11 @@
+00000012: program
+00000011: sub _start()
+00000002: 
+00000003: a14 := RBX
+00000004: b15 := extend:64[4 * low:32[RCX] /$ 0x20]
+00000005: d16 := mem[a14 + b15, el]:u32
+00000006: o17 := low:5[RCX]
+0000000d: mem := mem with [a14 + b15, el]:u32 <- d16 & ~(1 << o17)
+0000000e: v22 := mem[RSP, el]:u64
+0000000f: RSP := RSP + 8
+00000010: return v22

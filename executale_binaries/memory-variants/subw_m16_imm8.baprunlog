@@ -1,0 +1,7 @@
+00000010: program
+0000000f: sub _start()
+00000002: 
+00000005: mem := mem with [RBX, el]:u16 <- mem[RBX, el]:u16
+0000000c: v17 := mem[RSP, el]:u64
+0000000d: RSP := RSP + 8
+0000000e: return v17

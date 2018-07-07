@@ -1,0 +1,9 @@
+00000010: program
+0000000f: sub _start()
+00000002: 
+00000003: v11 := mem[RBX, el]:u64
+00000005: mem := mem with [RBX, el]:u64 <- v11 + 0 + pad:64[CF]
+00000006: CF := extract:64:64[pad:65[v11] + pad:65[0] + pad:65[pad:64[CF]]]
+0000000c: v17 := mem[RSP, el]:u64
+0000000d: RSP := RSP + 8
+0000000e: return v17
