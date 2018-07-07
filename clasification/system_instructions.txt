@@ -218,15 +218,7 @@ lidt
 lldt
 clflushopt
 clwb
-bound
 clac
 stac <- End
-aas <- Need to be implemented
-daa
-jcxz
-popa
-popad
-popfd
-pusha
-pushad
+popfd <- Need to be implemented
 pushfd <- End

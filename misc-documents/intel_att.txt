@@ -1,6 +1,3 @@
-AAS:aas
-DAA:daa
-BOUND:bound
 CLAC:clac
 STAC:stac
 CLFLUSHOPT:clflushopt
@@ -410,7 +407,6 @@ JAE:jae
 JA:ja
 JBE:jbe
 JB:jb
-JCXZ:jcxz
 JC:jc
 JECXZ:jecxz
 JE:je
@@ -1298,10 +1294,6 @@ XSAVE:xsave
 XTEST:xtest
 HLT:hlt
 RDTSC:rdtsc
-POPA:popa
-PUSHAD:pushad
-POPAD:popad
-PUSHA:pusha
 LGDT:lgdt
 LIDT:lidt
 MOVCR:movcr
