@@ -1,0 +1,3 @@
+.target:
+  setna (%rbx)
+  retq

@@ -1,0 +1,4 @@
+.globl _start
+_start:
+  pshufhw $0x0, %xmm2, %xmm1
+  retq

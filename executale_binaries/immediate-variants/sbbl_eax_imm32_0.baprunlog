@@ -1,0 +1,9 @@
+00000010: program
+0000000f: sub _start()
+00000002: 
+00000004: v12 := low:32[RAX]
+00000005: RAX := pad:64[v12 - 0 + pad:32[CF]]
+00000007: CF := v12 < 0 + pad:32[CF] | 0 + pad:32[CF] < 0
+0000000c: v17 := mem[RSP, el]:u64
+0000000d: RSP := RSP + 8
+0000000e: return v17
