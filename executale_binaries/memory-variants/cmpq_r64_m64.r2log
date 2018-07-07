@@ -1,0 +1,14 @@
+Process with PID 23514 started...
+= attach 23514 23514
+bin.baddr 0x00400000
+USING 400000
+Assuming filepath /home/sdasgup3/Github/strata-data/output-strata/instruction-summary/executale_binaries/memory-variants/cmpq_r64_m64.exe
+Warning: Cannot initialize dynamic strings
+asm.bits 64
+asm.arch: cannot find (x64)
+  [36m          [0m;-- [36mentry0:
+  [36m          [0m;-- [36msection..text:
+  [36m          [0m;-- [36m_start:
+  [36m          [0m;-- [36mrip:
+  [36m          [0m[7m[32m0x00400078[0m      [33m48[33m3b[37m19[0m         [0m[36mrcx,[8],rbx,==,$z,zf,=,$b64,cf,=,$p,pf,=,$s,sf,=,$o,of,=[0m[0m[31m ; [1] va=0x00400078 pa=0x00000078 sz=4 vsz=4 rwx=--r-x .text[0m
+  [36m          [0m[32m0x0040007b[0m      [37mc3[0m             [0m[31mrsp,[8],rip,=,8,rsp,+=[0m[0m

@@ -1,0 +1,14 @@
+Process with PID 24221 started...
+= attach 24221 24221
+bin.baddr 0x00400000
+USING 400000
+Assuming filepath /home/sdasgup3/Github/strata-data/output-strata/instruction-summary/executale_binaries/memory-variants/movb_m8_rh.exe
+Warning: Cannot initialize dynamic strings
+asm.bits 64
+asm.arch: cannot find (x64)
+  [36m          [0m;-- [36mentry0:
+  [36m          [0m;-- [36msection..text:
+  [36m          [0m;-- [36m_start:
+  [36m          [0m;-- [36mrip:
+  [36m          [0m[7m[32m0x00400078[0m      [37m88[33m23[0m           [0m[37mah,rbx,=[1][0m[0m                [31m ; [1] va=0x00400078 pa=0x00000078 sz=3 vsz=3 rwx=--r-x .text[0m
+  [36m          [0m[32m0x0040007a[0m      [37mc3[0m             [0m[31mrsp,[8],rip,=,8,rsp,+=[0m[0m
