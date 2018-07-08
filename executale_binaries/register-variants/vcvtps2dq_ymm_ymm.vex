@@ -1,0 +1,68 @@
+WARNING | 2018-07-07 18:47:56,391 | [34mangr.analyses.disassembly_utils[0m | [34mYour verison of capstone does not support MIPS instruction groups.[0m
+<Arch AMD64 (LE)>
+4194424
+vcvtps2dq_ymm_ymm.exe
+IRSB {
+   t0:Ity_V256 t1:Ity_I64 t2:Ity_I64 t3:Ity_I32 t4:Ity_V128 t5:Ity_V128 t6:Ity_I64 t7:Ity_I64 t8:Ity_I32 t9:Ity_I32 t10:Ity_I32 t11:Ity_I32 t12:Ity_I64 t13:Ity_I64 t14:Ity_I32 t15:Ity_I32 t16:Ity_I32 t17:Ity_I32 t18:Ity_F32 t19:Ity_F64 t20:Ity_I32 t21:Ity_F32 t22:Ity_F64 t23:Ity_I32 t24:Ity_F32 t25:Ity_F64 t26:Ity_I32 t27:Ity_F32 t28:Ity_F64 t29:Ity_I32 t30:Ity_F32 t31:Ity_F64 t32:Ity_I32 t33:Ity_F32 t34:Ity_F64 t35:Ity_I32 t36:Ity_F32 t37:Ity_F64 t38:Ity_I32 t39:Ity_F32 t40:Ity_F64 t41:Ity_I32 t42:Ity_I64 t43:Ity_I64 t44:Ity_I64 t45:Ity_I64
+
+   00 | ------ IMark(0x400078, 4, 0) ------
+   01 | t0 = GET:V256(ymm2)
+   02 | t1 = GET:I64(sseround)
+   03 | t2 = And64(t1,0x0000000000000003)
+   04 | t3 = 64to32(t2)
+   05 | t4 = V256toV128_1(t0)
+   06 | t5 = V256toV128_0(t0)
+   07 | t6 = V128HIto64(t4)
+   08 | t7 = V128to64(t4)
+   09 | t8 = 64to32(t7)
+   10 | t9 = 64HIto32(t7)
+   11 | t10 = 64to32(t6)
+   12 | t11 = 64HIto32(t6)
+   13 | t12 = V128HIto64(t5)
+   14 | t13 = V128to64(t5)
+   15 | t14 = 64to32(t13)
+   16 | t15 = 64HIto32(t13)
+   17 | t16 = 64to32(t12)
+   18 | t17 = 64HIto32(t12)
+   19 | t18 = ReinterpI32asF32(t11)
+   20 | t19 = F32toF64(t18)
+   21 | t20 = F64toI32S(t3,t19)
+   22 | PUT(284) = t20
+   23 | t21 = ReinterpI32asF32(t10)
+   24 | t22 = F32toF64(t21)
+   25 | t23 = F64toI32S(t3,t22)
+   26 | PUT(280) = t23
+   27 | t24 = ReinterpI32asF32(t9)
+   28 | t25 = F32toF64(t24)
+   29 | t26 = F64toI32S(t3,t25)
+   30 | PUT(276) = t26
+   31 | t27 = ReinterpI32asF32(t8)
+   32 | t28 = F32toF64(t27)
+   33 | t29 = F64toI32S(t3,t28)
+   34 | PUT(272) = t29
+   35 | t30 = ReinterpI32asF32(t17)
+   36 | t31 = F32toF64(t30)
+   37 | t32 = F64toI32S(t3,t31)
+   38 | PUT(268) = t32
+   39 | t33 = ReinterpI32asF32(t16)
+   40 | t34 = F32toF64(t33)
+   41 | t35 = F64toI32S(t3,t34)
+   42 | PUT(264) = t35
+   43 | t36 = ReinterpI32asF32(t15)
+   44 | t37 = F32toF64(t36)
+   45 | t38 = F64toI32S(t3,t37)
+   46 | PUT(260) = t38
+   47 | t39 = ReinterpI32asF32(t14)
+   48 | t40 = F32toF64(t39)
+   49 | t41 = F64toI32S(t3,t40)
+   50 | PUT(ymm1) = t41
+   51 | PUT(pc) = 0x000000000040007c
+   52 | ------ IMark(0x40007c, 1, 0) ------
+   53 | t42 = GET:I64(rsp)
+   54 | t43 = LDle:I64(t42)
+   55 | t44 = Add64(t42,0x0000000000000008)
+   56 | PUT(rsp) = t44
+   57 | t45 = Sub64(t44,0x0000000000000080)
+   58 | ====== AbiHint(0xt45, 128, t43) ======
+   NEXT: PUT(rip) = t43; Ijk_Ret
+}

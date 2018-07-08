@@ -1,0 +1,22 @@
+WARNING | 2018-07-07 18:49:33,597 | [34mangr.analyses.disassembly_utils[0m | [34mYour verison of capstone does not support MIPS instruction groups.[0m
+<Arch AMD64 (LE)>
+4194424
+vpminud_ymm_ymm_ymm.exe
+IRSB {
+   t0:Ity_V256 t1:Ity_V256 t2:Ity_V256 t3:Ity_I64 t4:Ity_I64 t5:Ity_I64 t6:Ity_I64
+
+   00 | ------ IMark(0x400078, 5, 0) ------
+   01 | t0 = GET:V256(ymm2)
+   02 | t1 = GET:V256(ymm3)
+   03 | t2 = Min32Ux8(t0,t1)
+   04 | PUT(ymm1) = t2
+   05 | PUT(pc) = 0x000000000040007d
+   06 | ------ IMark(0x40007d, 1, 0) ------
+   07 | t3 = GET:I64(rsp)
+   08 | t4 = LDle:I64(t3)
+   09 | t5 = Add64(t3,0x0000000000000008)
+   10 | PUT(rsp) = t5
+   11 | t6 = Sub64(t5,0x0000000000000080)
+   12 | ====== AbiHint(0xt6, 128, t4) ======
+   NEXT: PUT(rip) = t4; Ijk_Ret
+}

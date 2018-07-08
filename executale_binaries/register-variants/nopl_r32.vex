@@ -1,0 +1,9 @@
+WARNING | 2018-07-07 18:46:02,579 | [34mangr.analyses.disassembly_utils[0m | [34mYour verison of capstone does not support MIPS instruction groups.[0m
+<Arch AMD64 (LE)>
+4194424
+nopl_r32.exe
+IRSB {
+   
+
+   NEXT: PUT(rip) = 0x0000000000400078; Ijk_NoDecode
+}

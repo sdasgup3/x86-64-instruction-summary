@@ -1,0 +1,50 @@
+WARNING | 2018-07-07 18:50:25,250 | [34mangr.analyses.disassembly_utils[0m | [34mYour verison of capstone does not support MIPS instruction groups.[0m
+<Arch AMD64 (LE)>
+4194424
+vzeroall.exe
+IRSB {
+   t0:Ity_I64 t1:Ity_I64 t2:Ity_I64 t3:Ity_I64
+
+   00 | ------ IMark(0x400078, 3, 0) ------
+   01 | PUT(xmm0) = 0
+   02 | PUT(240) = 0
+   03 | PUT(xmm1) = 0
+   04 | PUT(272) = 0
+   05 | PUT(xmm2) = 0
+   06 | PUT(304) = 0
+   07 | PUT(xmm3) = 0
+   08 | PUT(336) = 0
+   09 | PUT(xmm4) = 0
+   10 | PUT(368) = 0
+   11 | PUT(xmm5) = 0
+   12 | PUT(400) = 0
+   13 | PUT(xmm6) = 0
+   14 | PUT(432) = 0
+   15 | PUT(xmm7) = 0
+   16 | PUT(464) = 0
+   17 | PUT(xmm8) = 0
+   18 | PUT(496) = 0
+   19 | PUT(xmm9) = 0
+   20 | PUT(528) = 0
+   21 | PUT(xmm10) = 0
+   22 | PUT(560) = 0
+   23 | PUT(xmm11) = 0
+   24 | PUT(592) = 0
+   25 | PUT(xmm12) = 0
+   26 | PUT(624) = 0
+   27 | PUT(xmm13) = 0
+   28 | PUT(656) = 0
+   29 | PUT(xmm14) = 0
+   30 | PUT(688) = 0
+   31 | PUT(xmm15) = 0
+   32 | PUT(720) = 0
+   33 | PUT(pc) = 0x000000000040007b
+   34 | ------ IMark(0x40007b, 1, 0) ------
+   35 | t0 = GET:I64(rsp)
+   36 | t1 = LDle:I64(t0)
+   37 | t2 = Add64(t0,0x0000000000000008)
+   38 | PUT(rsp) = t2
+   39 | t3 = Sub64(t2,0x0000000000000080)
+   40 | ====== AbiHint(0xt3, 128, t1) ======
+   NEXT: PUT(rip) = t1; Ijk_Ret
+}
