@@ -70,6 +70,7 @@ rep insw_m16_dx <- I/O port
 rep insl_m32_dx
 rep insq_m64_dx
 rep insb_m8_dx
+rep insb_m8_dx_1
 rep outsw_dx_m16
 rep outsl_dx_m32
 rep outsq_dx_m64
@@ -171,3 +172,9 @@ clac
 stac <- End
 popfd <- Need to be implemented
 pushfd <- End
+jmpq_farptr1616
+jmpq_farptr1632
+jmpq_farptr1664
+callq_farptr1616
+callq_farptr1632
+callq_farptr1664

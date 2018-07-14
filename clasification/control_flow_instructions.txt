@@ -40,9 +40,6 @@ jle_label
 jle_label_1
 jle_rel32
 jle_rel8
-jmpq_farptr1616
-jmpq_farptr1632
-jmpq_farptr1664
 jmpq_label
 jmpq_label_1
 jmpq_m64
@@ -137,9 +134,6 @@ loope_label
 loope_rel8
 loopne_label
 loopne_rel8
-callq_farptr1616
-callq_farptr1632
-callq_farptr1664
 callq_label
 callq_m64
 callq_r64

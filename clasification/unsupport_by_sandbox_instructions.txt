@@ -42,6 +42,14 @@ repnz scasw_m16
 repnz scasl_m32
 repnz scasq_m64
 repnz scasb_m8
+rep lodsb_al_1
+rep movsb_m8_m8_1
+rep outsb_dx_m8_1
+rep stosb_m8_1
+repz cmpsb_m8_m8_1
+repz scasb_m8_1
+repnz cmpsb_m8_m8_1
+repnz scasb_m8_1
 lods_m16
 lods_m32
 lods_m64
@@ -100,4 +108,6 @@ vpgatherdq_xmm_m32_xmm
 vpgatherdq_ymm_m32_ymm
 vpgatherqd_xmm_m64_xmm
 vpgatherqq_xmm_m64_xmm
+vgatherqps_xmm_m64_xmm_1
+vpgatherqd_xmm_m64_xmm_1
 vpgatherqq_ymm_m64_ymm <-- End
