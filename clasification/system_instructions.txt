@@ -11,7 +11,6 @@ lar_r32_r32
 lar_r64_m16
 lar_r64_r32
 ldmxcsr_m32
-leaveq
 leavew_pref66
 lfence
 lfsw_r16_farptr1616
@@ -56,7 +55,6 @@ rdgsbase_r64
 rdrand_r16
 rdrand_r32
 rdrand_r64
-retq
 lretl_far
 retq_imm16
 retq_imm16_far
